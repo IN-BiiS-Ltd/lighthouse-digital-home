@@ -1,13 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import {
-  BookOpen,
-  Circle,
-  Compass,
-  Lightbulb,
-  Network,
-  Palette,
-  Sparkles,
-} from "lucide-react";
+import { Compass, Palette, Sparkles } from "lucide-react";
 import {
   Section,
   SectionHeading,
@@ -18,7 +10,7 @@ import {
 } from "@/components/blocks";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
-import { cn } from "@/lib/utils";
+
 import heroLearningImg from "@/assets/hero-learning.jpg";
 import libraryImg from "@/assets/campus-library.jpg";
 import iconLeadership from "@/assets/principle-leadership.png.asset.json";
@@ -31,6 +23,15 @@ import iconOpportunity from "@/assets/principle-opportunity.png.asset.json";
 import iconUnderstanding from "@/assets/principle-understanding.png.asset.json";
 import iconStewardship from "@/assets/principle-stewardship.png.asset.json";
 import iconExcellence from "@/assets/principle-excellence.png.asset.json";
+import logoLighthouse from "@/assets/logo-lighthouse.png.asset.json";
+import logoLight from "@/assets/logo-light.png.asset.json";
+import logoBook from "@/assets/logo-book.png.asset.json";
+import logoNetwork from "@/assets/logo-network.png.asset.json";
+import logoCircle from "@/assets/logo-circle.png.asset.json";
+import logoShield from "@/assets/logo-shield.png.asset.json";
+import logoStar from "@/assets/logo-star.png.asset.json";
+import logoCompass from "@/assets/logo-compass.png.asset.json";
+import logoDove from "@/assets/logo-dove.png.asset.json";
 
 export const Route = createFileRoute("/about_/why-lighthouse")({
   head: () => ({
@@ -138,28 +139,28 @@ const acrostic = [
 /* Symbolic elements represented within the official logo. */
 const logoSymbols = [
   {
-    icon: <Compass className="size-5" />,
+    img: logoLighthouse.url,
     title: "The Lighthouse",
     description:
       "A symbol of guidance and purposeful leadership. The lighthouse represents the role of education in illuminating the path ahead. Rather than determining a learner's destination, it provides direction, confidence, and the clarity needed to navigate an ever-changing world.",
     represents: ["Guidance", "Leadership", "Vision", "Direction"],
   },
   {
-    icon: <Lightbulb className="size-5" />,
+    img: logoLight.url,
     title: "The Light",
     description:
       "A symbol of knowledge, intelligence and possibility. The light reflects the transformative power of education. It illuminates understanding, nurtures intelligence, inspires curiosity, and empowers learners to explore new ideas with confidence and purpose.",
     represents: ["Knowledge", "Intelligence", "Discovery", "Hope", "Inspiration"],
   },
   {
-    icon: <BookOpen className="size-5" />,
+    img: logoBook.url,
     title: "The Open Book",
     description:
       "A symbol of learning without limits. The open book celebrates curiosity and the lifelong pursuit of knowledge. It reminds every learner that education is an ongoing journey of exploration, reflection, and intellectual growth.",
     represents: ["Learning", "Curiosity", "Education", "Wisdom"],
   },
   {
-    icon: <Network className="size-5" />,
+    img: logoNetwork.url,
     title: "The Connected Network",
     description:
       "A symbol of innovation, intelligence and connected learning. The interconnected network reflects the relationships that enrich education—connecting learners, educators, ideas, technology, and the wider world. It represents an educational ecosystem where collaboration, innovation, and collective intelligence prepare learners for the opportunities of tomorrow.",
@@ -173,7 +174,7 @@ const logoSymbols = [
     ],
   },
   {
-    icon: <Circle className="size-5" />,
+    img: logoCircle.url,
     title: "The Circle",
     description:
       "A symbol of belonging and lifelong community. The circle represents unity, continuity, and the enduring strength of a learning community. It reflects the belief that every learner belongs, every voice matters, and every journey contributes to the shared life of the campus.",
@@ -190,24 +191,24 @@ const logoSymbols = [
 const logoColours = [
   {
     name: "Executive Blue",
-    swatch: "bg-brand-blue",
+    img: logoShield.url,
     description:
       "A symbol of trust, wisdom, confidence, stability, and thoughtful leadership.",
   },
   {
     name: "Lighthouse Gold",
-    swatch: "bg-gold",
+    img: logoStar.url,
     description:
       "A symbol of excellence, aspiration, achievement, and the transformative power of education.",
   },
   {
     name: "Silver",
-    swatch: "bg-silver",
+    img: logoCompass.url,
     description: "A symbol of clarity, precision, balance, and modern thinking.",
   },
   {
     name: "White",
-    swatch: "bg-white",
+    img: logoDove.url,
     description: "A symbol of openness, integrity, transparency, and new beginnings.",
   },
 ];
@@ -379,8 +380,13 @@ function WhyLighthouse() {
                 key={sym.title}
                 className="flex gap-4 rounded-xl border border-border bg-card p-6 transition-colors duration-200 hover:border-gold/50"
               >
-                <div className="inline-flex size-11 shrink-0 items-center justify-center rounded-lg bg-secondary text-brand-blue">
-                  {sym.icon}
+                <div className="inline-flex size-16 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-brand-blue">
+                  <img
+                    src={sym.img}
+                    alt={sym.title}
+                    className="size-full object-cover"
+                    loading="lazy"
+                  />
                 </div>
                 <div>
                   <h3 className="font-display text-lg font-medium text-foreground">
@@ -413,13 +419,14 @@ function WhyLighthouse() {
                   className="rounded-xl border border-border bg-card p-6 transition-colors duration-200 hover:border-gold/50"
                 >
                   <div className="flex items-center gap-3">
-                    <span
-                      aria-hidden
-                      className={cn(
-                        "size-6 rounded-full ring-1 ring-inset ring-black/10",
-                        c.swatch,
-                      )}
-                    />
+                    <span className="inline-flex size-12 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-brand-blue">
+                      <img
+                        src={c.img}
+                        alt={c.name}
+                        className="size-full object-cover"
+                        loading="lazy"
+                      />
+                    </span>
                     <h3 className="font-display text-lg font-medium text-foreground">
                       {c.name}
                     </h3>
