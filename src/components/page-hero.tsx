@@ -1,0 +1,96 @@
+import type { ReactNode } from "react";
+import { cn } from "@/lib/utils";
+import { Container, Eyebrow, SmartLink } from "@/components/blocks";
+
+/**
+ * PageHero — the calm navy header used at the top of every interior page.
+ * Communicates "where you are" with an eyebrow, title and short intent line,
+ * plus optional in-page section anchors for effortless orientation.
+ */
+export function PageHero({
+  eyebrow,
+  title,
+  intro,
+  sections,
+}: {
+  eyebrow: string;
+  title: ReactNode;
+  intro?: ReactNode;
+  sections?: { label: string; to: string }[];
+}) {
+  return (
+    <header className="relative overflow-hidden bg-navy text-navy-foreground">
+      {/* soft brand glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-70"
+        style={{
+          background:
+            "radial-gradient(60% 90% at 82% -10%, color-mix(in oklab, var(--brand-blue) 40%, transparent), transparent 60%), radial-gradient(50% 80% at 6% 0%, color-mix(in oklab, var(--gold) 20%, transparent), transparent 55%)",
+        }}
+      />
+      <Container className="relative py-20 md:py-28">
+        <Eyebrow onNavy>{eyebrow}</Eyebrow>
+        <h1 className="mt-5 max-w-4xl text-balance font-display text-4xl font-medium leading-[1.06] tracking-tight md:text-6xl">
+          {title}
+        </h1>
+        {intro ? (
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-navy-foreground/80 md:text-xl">
+            {intro}
+          </p>
+        ) : null}
+        {sections && sections.length > 0 ? (
+          <nav
+            aria-label="On this page"
+            className="mt-9 flex flex-wrap gap-x-6 gap-y-3 border-t border-navy-foreground/15 pt-6"
+          >
+            {sections.map((s) => (
+              <SmartLink
+                key={s.to}
+                to={s.to}
+                className="text-sm font-medium text-navy-foreground/70 transition-colors hover:text-gold"
+              >
+                {s.label}
+              </SmartLink>
+            ))}
+          </nav>
+        ) : null}
+      </Container>
+    </header>
+  );
+}
+
+/**
+ * NarrativeFlow — a subtle strip expressing the campus content rhythm:
+ * Purpose → Experience → People → Environment → Evidence → Invitation.
+ */
+const flowSteps = [
+  "Purpose",
+  "Experience",
+  "People",
+  "Environment",
+  "Evidence",
+  "Invitation",
+];
+
+export function NarrativeFlow({ className }: { className?: string }) {
+  return (
+    <ul
+      className={cn(
+        "flex flex-wrap items-center gap-x-3 gap-y-2 text-xs font-medium",
+        className,
+      )}
+    >
+      {flowSteps.map((step, i) => (
+        <li key={step} className="flex items-center gap-3">
+          <span className="text-muted-foreground">{step}</span>
+          {i < flowSteps.length - 1 ? (
+            <span aria-hidden className="text-gold">
+              →
+            </span>
+          ) : null}
+        </li>
+      ))}
+    </ul>
+  );
+}
