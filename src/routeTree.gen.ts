@@ -9,38 +9,314 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as StudentLifeRouteImport } from './routes/student-life'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ParentsRouteImport } from './routes/parents'
+import { Route as NewsRouteImport } from './routes/news'
+import { Route as LearningJourneyRouteImport } from './routes/learning-journey'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CommunityRouteImport } from './routes/community'
+import { Route as CareersRouteImport } from './routes/careers'
+import { Route as CampusesRouteImport } from './routes/campuses'
+import { Route as CampusExperienceRouteImport } from './routes/campus-experience'
+import { Route as AdmissionsRouteImport } from './routes/admissions'
+import { Route as AcademicExperienceRouteImport } from './routes/academic-experience'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CampusesMohandessinRouteImport } from './routes/campuses.mohandessin'
 
+const StudentLifeRoute = StudentLifeRouteImport.update({
+  id: '/student-life',
+  path: '/student-life',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParentsRoute = ParentsRouteImport.update({
+  id: '/parents',
+  path: '/parents',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsRoute = NewsRouteImport.update({
+  id: '/news',
+  path: '/news',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LearningJourneyRoute = LearningJourneyRouteImport.update({
+  id: '/learning-journey',
+  path: '/learning-journey',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CommunityRoute = CommunityRouteImport.update({
+  id: '/community',
+  path: '/community',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CareersRoute = CareersRouteImport.update({
+  id: '/careers',
+  path: '/careers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CampusesRoute = CampusesRouteImport.update({
+  id: '/campuses',
+  path: '/campuses',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CampusExperienceRoute = CampusExperienceRouteImport.update({
+  id: '/campus-experience',
+  path: '/campus-experience',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdmissionsRoute = AdmissionsRouteImport.update({
+  id: '/admissions',
+  path: '/admissions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AcademicExperienceRoute = AcademicExperienceRouteImport.update({
+  id: '/academic-experience',
+  path: '/academic-experience',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CampusesMohandessinRoute = CampusesMohandessinRouteImport.update({
+  id: '/mohandessin',
+  path: '/mohandessin',
+  getParentRoute: () => CampusesRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/academic-experience': typeof AcademicExperienceRoute
+  '/admissions': typeof AdmissionsRoute
+  '/campus-experience': typeof CampusExperienceRoute
+  '/campuses': typeof CampusesRouteWithChildren
+  '/careers': typeof CareersRoute
+  '/community': typeof CommunityRoute
+  '/contact': typeof ContactRoute
+  '/learning-journey': typeof LearningJourneyRoute
+  '/news': typeof NewsRoute
+  '/parents': typeof ParentsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/student-life': typeof StudentLifeRoute
+  '/campuses/mohandessin': typeof CampusesMohandessinRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/academic-experience': typeof AcademicExperienceRoute
+  '/admissions': typeof AdmissionsRoute
+  '/campus-experience': typeof CampusExperienceRoute
+  '/campuses': typeof CampusesRouteWithChildren
+  '/careers': typeof CareersRoute
+  '/community': typeof CommunityRoute
+  '/contact': typeof ContactRoute
+  '/learning-journey': typeof LearningJourneyRoute
+  '/news': typeof NewsRoute
+  '/parents': typeof ParentsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/student-life': typeof StudentLifeRoute
+  '/campuses/mohandessin': typeof CampusesMohandessinRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/academic-experience': typeof AcademicExperienceRoute
+  '/admissions': typeof AdmissionsRoute
+  '/campus-experience': typeof CampusExperienceRoute
+  '/campuses': typeof CampusesRouteWithChildren
+  '/careers': typeof CareersRoute
+  '/community': typeof CommunityRoute
+  '/contact': typeof ContactRoute
+  '/learning-journey': typeof LearningJourneyRoute
+  '/news': typeof NewsRoute
+  '/parents': typeof ParentsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/student-life': typeof StudentLifeRoute
+  '/campuses/mohandessin': typeof CampusesMohandessinRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/academic-experience'
+    | '/admissions'
+    | '/campus-experience'
+    | '/campuses'
+    | '/careers'
+    | '/community'
+    | '/contact'
+    | '/learning-journey'
+    | '/news'
+    | '/parents'
+    | '/sitemap.xml'
+    | '/student-life'
+    | '/campuses/mohandessin'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/academic-experience'
+    | '/admissions'
+    | '/campus-experience'
+    | '/campuses'
+    | '/careers'
+    | '/community'
+    | '/contact'
+    | '/learning-journey'
+    | '/news'
+    | '/parents'
+    | '/sitemap.xml'
+    | '/student-life'
+    | '/campuses/mohandessin'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/academic-experience'
+    | '/admissions'
+    | '/campus-experience'
+    | '/campuses'
+    | '/careers'
+    | '/community'
+    | '/contact'
+    | '/learning-journey'
+    | '/news'
+    | '/parents'
+    | '/sitemap.xml'
+    | '/student-life'
+    | '/campuses/mohandessin'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AcademicExperienceRoute: typeof AcademicExperienceRoute
+  AdmissionsRoute: typeof AdmissionsRoute
+  CampusExperienceRoute: typeof CampusExperienceRoute
+  CampusesRoute: typeof CampusesRouteWithChildren
+  CareersRoute: typeof CareersRoute
+  CommunityRoute: typeof CommunityRoute
+  ContactRoute: typeof ContactRoute
+  LearningJourneyRoute: typeof LearningJourneyRoute
+  NewsRoute: typeof NewsRoute
+  ParentsRoute: typeof ParentsRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  StudentLifeRoute: typeof StudentLifeRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/student-life': {
+      id: '/student-life'
+      path: '/student-life'
+      fullPath: '/student-life'
+      preLoaderRoute: typeof StudentLifeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parents': {
+      id: '/parents'
+      path: '/parents'
+      fullPath: '/parents'
+      preLoaderRoute: typeof ParentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/news': {
+      id: '/news'
+      path: '/news'
+      fullPath: '/news'
+      preLoaderRoute: typeof NewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/learning-journey': {
+      id: '/learning-journey'
+      path: '/learning-journey'
+      fullPath: '/learning-journey'
+      preLoaderRoute: typeof LearningJourneyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/community': {
+      id: '/community'
+      path: '/community'
+      fullPath: '/community'
+      preLoaderRoute: typeof CommunityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/careers': {
+      id: '/careers'
+      path: '/careers'
+      fullPath: '/careers'
+      preLoaderRoute: typeof CareersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/campuses': {
+      id: '/campuses'
+      path: '/campuses'
+      fullPath: '/campuses'
+      preLoaderRoute: typeof CampusesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/campus-experience': {
+      id: '/campus-experience'
+      path: '/campus-experience'
+      fullPath: '/campus-experience'
+      preLoaderRoute: typeof CampusExperienceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admissions': {
+      id: '/admissions'
+      path: '/admissions'
+      fullPath: '/admissions'
+      preLoaderRoute: typeof AdmissionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academic-experience': {
+      id: '/academic-experience'
+      path: '/academic-experience'
+      fullPath: '/academic-experience'
+      preLoaderRoute: typeof AcademicExperienceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,11 +324,43 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/campuses/mohandessin': {
+      id: '/campuses/mohandessin'
+      path: '/mohandessin'
+      fullPath: '/campuses/mohandessin'
+      preLoaderRoute: typeof CampusesMohandessinRouteImport
+      parentRoute: typeof CampusesRoute
+    }
   }
 }
 
+interface CampusesRouteChildren {
+  CampusesMohandessinRoute: typeof CampusesMohandessinRoute
+}
+
+const CampusesRouteChildren: CampusesRouteChildren = {
+  CampusesMohandessinRoute: CampusesMohandessinRoute,
+}
+
+const CampusesRouteWithChildren = CampusesRoute._addFileChildren(
+  CampusesRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AcademicExperienceRoute: AcademicExperienceRoute,
+  AdmissionsRoute: AdmissionsRoute,
+  CampusExperienceRoute: CampusExperienceRoute,
+  CampusesRoute: CampusesRouteWithChildren,
+  CareersRoute: CareersRoute,
+  CommunityRoute: CommunityRoute,
+  ContactRoute: ContactRoute,
+  LearningJourneyRoute: LearningJourneyRoute,
+  NewsRoute: NewsRoute,
+  ParentsRoute: ParentsRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  StudentLifeRoute: StudentLifeRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
