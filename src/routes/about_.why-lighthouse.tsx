@@ -145,7 +145,7 @@ const logoSymbols = [
   {
     icon: <Lightbulb className="size-5" />,
     title: "The Light",
-    meanings: ["Knowledge", "Discovery", "Hope", "Inspiration"],
+    meanings: ["Knowledge", "Discovery", "Hope", "Inspiration", "Intelligence"],
   },
   {
     icon: <BookOpen className="size-5" />,
