@@ -9,11 +9,17 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as StudentLifeRouteImport } from './routes/student-life'
 import { Route as LearningJourneyRouteImport } from './routes/learning-journey'
 import { Route as AcademicExperienceRouteImport } from './routes/academic-experience'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const StudentLifeRoute = StudentLifeRouteImport.update({
+  id: '/student-life',
+  path: '/student-life',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LearningJourneyRoute = LearningJourneyRouteImport.update({
   id: '/learning-journey',
   path: '/learning-journey',
@@ -40,12 +46,14 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/academic-experience': typeof AcademicExperienceRoute
   '/learning-journey': typeof LearningJourneyRoute
+  '/student-life': typeof StudentLifeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/academic-experience': typeof AcademicExperienceRoute
   '/learning-journey': typeof LearningJourneyRoute
+  '/student-life': typeof StudentLifeRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,13 +61,30 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/academic-experience': typeof AcademicExperienceRoute
   '/learning-journey': typeof LearningJourneyRoute
+  '/student-life': typeof StudentLifeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/academic-experience' | '/learning-journey'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/academic-experience'
+    | '/learning-journey'
+    | '/student-life'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/academic-experience' | '/learning-journey'
-  id: '__root__' | '/' | '/about' | '/academic-experience' | '/learning-journey'
+  to:
+    | '/'
+    | '/about'
+    | '/academic-experience'
+    | '/learning-journey'
+    | '/student-life'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/academic-experience'
+    | '/learning-journey'
+    | '/student-life'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -67,10 +92,18 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   AcademicExperienceRoute: typeof AcademicExperienceRoute
   LearningJourneyRoute: typeof LearningJourneyRoute
+  StudentLifeRoute: typeof StudentLifeRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/student-life': {
+      id: '/student-life'
+      path: '/student-life'
+      fullPath: '/student-life'
+      preLoaderRoute: typeof StudentLifeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/learning-journey': {
       id: '/learning-journey'
       path: '/learning-journey'
@@ -107,6 +140,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   AcademicExperienceRoute: AcademicExperienceRoute,
   LearningJourneyRoute: LearningJourneyRoute,
+  StudentLifeRoute: StudentLifeRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
