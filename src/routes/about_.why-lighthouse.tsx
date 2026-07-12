@@ -388,8 +388,13 @@ function WhyLighthouse() {
                 key={sym.title}
                 className="flex gap-4 rounded-xl border border-border bg-card p-6 transition-colors duration-200 hover:border-gold/50"
               >
-                <div className="inline-flex size-11 shrink-0 items-center justify-center rounded-lg bg-secondary text-brand-blue">
-                  {sym.icon}
+                <div className="inline-flex size-16 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-brand-blue">
+                  <img
+                    src={sym.img}
+                    alt={sym.title}
+                    className="size-full object-cover"
+                    loading="lazy"
+                  />
                 </div>
                 <div>
                   <h3 className="font-display text-lg font-medium text-foreground">
