@@ -21,6 +21,7 @@ import { Route as AdmissionsRouteImport } from './routes/admissions'
 import { Route as AcademicExperienceRouteImport } from './routes/academic-experience'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CampusesMohandessinRouteImport } from './routes/campuses.mohandessin'
 
 const StudentLifeRoute = StudentLifeRouteImport.update({
   id: '/student-life',
@@ -82,6 +83,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CampusesMohandessinRoute = CampusesMohandessinRouteImport.update({
+  id: '/mohandessin',
+  path: '/mohandessin',
+  getParentRoute: () => CampusesRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -89,13 +95,14 @@ export interface FileRoutesByFullPath {
   '/academic-experience': typeof AcademicExperienceRoute
   '/admissions': typeof AdmissionsRoute
   '/campus-experience': typeof CampusExperienceRoute
-  '/campuses': typeof CampusesRoute
+  '/campuses': typeof CampusesRouteWithChildren
   '/careers': typeof CareersRoute
   '/community': typeof CommunityRoute
   '/learning-journey': typeof LearningJourneyRoute
   '/news': typeof NewsRoute
   '/parents': typeof ParentsRoute
   '/student-life': typeof StudentLifeRoute
+  '/campuses/mohandessin': typeof CampusesMohandessinRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -103,13 +110,14 @@ export interface FileRoutesByTo {
   '/academic-experience': typeof AcademicExperienceRoute
   '/admissions': typeof AdmissionsRoute
   '/campus-experience': typeof CampusExperienceRoute
-  '/campuses': typeof CampusesRoute
+  '/campuses': typeof CampusesRouteWithChildren
   '/careers': typeof CareersRoute
   '/community': typeof CommunityRoute
   '/learning-journey': typeof LearningJourneyRoute
   '/news': typeof NewsRoute
   '/parents': typeof ParentsRoute
   '/student-life': typeof StudentLifeRoute
+  '/campuses/mohandessin': typeof CampusesMohandessinRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -118,13 +126,14 @@ export interface FileRoutesById {
   '/academic-experience': typeof AcademicExperienceRoute
   '/admissions': typeof AdmissionsRoute
   '/campus-experience': typeof CampusExperienceRoute
-  '/campuses': typeof CampusesRoute
+  '/campuses': typeof CampusesRouteWithChildren
   '/careers': typeof CareersRoute
   '/community': typeof CommunityRoute
   '/learning-journey': typeof LearningJourneyRoute
   '/news': typeof NewsRoute
   '/parents': typeof ParentsRoute
   '/student-life': typeof StudentLifeRoute
+  '/campuses/mohandessin': typeof CampusesMohandessinRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -141,6 +150,7 @@ export interface FileRouteTypes {
     | '/news'
     | '/parents'
     | '/student-life'
+    | '/campuses/mohandessin'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -155,6 +165,7 @@ export interface FileRouteTypes {
     | '/news'
     | '/parents'
     | '/student-life'
+    | '/campuses/mohandessin'
   id:
     | '__root__'
     | '/'
@@ -169,6 +180,7 @@ export interface FileRouteTypes {
     | '/news'
     | '/parents'
     | '/student-life'
+    | '/campuses/mohandessin'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -177,7 +189,7 @@ export interface RootRouteChildren {
   AcademicExperienceRoute: typeof AcademicExperienceRoute
   AdmissionsRoute: typeof AdmissionsRoute
   CampusExperienceRoute: typeof CampusExperienceRoute
-  CampusesRoute: typeof CampusesRoute
+  CampusesRoute: typeof CampusesRouteWithChildren
   CareersRoute: typeof CareersRoute
   CommunityRoute: typeof CommunityRoute
   LearningJourneyRoute: typeof LearningJourneyRoute
@@ -272,8 +284,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/campuses/mohandessin': {
+      id: '/campuses/mohandessin'
+      path: '/mohandessin'
+      fullPath: '/campuses/mohandessin'
+      preLoaderRoute: typeof CampusesMohandessinRouteImport
+      parentRoute: typeof CampusesRoute
+    }
   }
 }
+
+interface CampusesRouteChildren {
+  CampusesMohandessinRoute: typeof CampusesMohandessinRoute
+}
+
+const CampusesRouteChildren: CampusesRouteChildren = {
+  CampusesMohandessinRoute: CampusesMohandessinRoute,
+}
+
+const CampusesRouteWithChildren = CampusesRoute._addFileChildren(
+  CampusesRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -281,7 +312,7 @@ const rootRouteChildren: RootRouteChildren = {
   AcademicExperienceRoute: AcademicExperienceRoute,
   AdmissionsRoute: AdmissionsRoute,
   CampusExperienceRoute: CampusExperienceRoute,
-  CampusesRoute: CampusesRoute,
+  CampusesRoute: CampusesRouteWithChildren,
   CareersRoute: CareersRoute,
   CommunityRoute: CommunityRoute,
   LearningJourneyRoute: LearningJourneyRoute,
