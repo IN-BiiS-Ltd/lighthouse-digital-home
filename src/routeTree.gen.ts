@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as StudentLifeRouteImport } from './routes/student-life'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ParentsRouteImport } from './routes/parents'
 import { Route as NewsRouteImport } from './routes/news'
 import { Route as LearningJourneyRouteImport } from './routes/learning-journey'
@@ -27,6 +28,11 @@ import { Route as CampusesMohandessinRouteImport } from './routes/campuses.mohan
 const StudentLifeRoute = StudentLifeRouteImport.update({
   id: '/student-life',
   path: '/student-life',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ParentsRoute = ParentsRouteImport.update({
@@ -108,6 +114,7 @@ export interface FileRoutesByFullPath {
   '/learning-journey': typeof LearningJourneyRoute
   '/news': typeof NewsRoute
   '/parents': typeof ParentsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/student-life': typeof StudentLifeRoute
   '/campuses/mohandessin': typeof CampusesMohandessinRoute
 }
@@ -124,6 +131,7 @@ export interface FileRoutesByTo {
   '/learning-journey': typeof LearningJourneyRoute
   '/news': typeof NewsRoute
   '/parents': typeof ParentsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/student-life': typeof StudentLifeRoute
   '/campuses/mohandessin': typeof CampusesMohandessinRoute
 }
@@ -141,6 +149,7 @@ export interface FileRoutesById {
   '/learning-journey': typeof LearningJourneyRoute
   '/news': typeof NewsRoute
   '/parents': typeof ParentsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/student-life': typeof StudentLifeRoute
   '/campuses/mohandessin': typeof CampusesMohandessinRoute
 }
@@ -159,6 +168,7 @@ export interface FileRouteTypes {
     | '/learning-journey'
     | '/news'
     | '/parents'
+    | '/sitemap.xml'
     | '/student-life'
     | '/campuses/mohandessin'
   fileRoutesByTo: FileRoutesByTo
@@ -175,6 +185,7 @@ export interface FileRouteTypes {
     | '/learning-journey'
     | '/news'
     | '/parents'
+    | '/sitemap.xml'
     | '/student-life'
     | '/campuses/mohandessin'
   id:
@@ -191,6 +202,7 @@ export interface FileRouteTypes {
     | '/learning-journey'
     | '/news'
     | '/parents'
+    | '/sitemap.xml'
     | '/student-life'
     | '/campuses/mohandessin'
   fileRoutesById: FileRoutesById
@@ -208,6 +220,7 @@ export interface RootRouteChildren {
   LearningJourneyRoute: typeof LearningJourneyRoute
   NewsRoute: typeof NewsRoute
   ParentsRoute: typeof ParentsRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StudentLifeRoute: typeof StudentLifeRoute
 }
 
@@ -218,6 +231,13 @@ declare module '@tanstack/react-router' {
       path: '/student-life'
       fullPath: '/student-life'
       preLoaderRoute: typeof StudentLifeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/parents': {
@@ -339,6 +359,7 @@ const rootRouteChildren: RootRouteChildren = {
   LearningJourneyRoute: LearningJourneyRoute,
   NewsRoute: NewsRoute,
   ParentsRoute: ParentsRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   StudentLifeRoute: StudentLifeRoute,
 }
 export const routeTree = rootRouteImport
