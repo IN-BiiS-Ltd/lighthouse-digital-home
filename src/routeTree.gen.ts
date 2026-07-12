@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as StudentLifeRouteImport } from './routes/student-life'
+import { Route as ParentsRouteImport } from './routes/parents'
 import { Route as LearningJourneyRouteImport } from './routes/learning-journey'
 import { Route as CampusExperienceRouteImport } from './routes/campus-experience'
 import { Route as AdmissionsRouteImport } from './routes/admissions'
@@ -20,6 +21,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const StudentLifeRoute = StudentLifeRouteImport.update({
   id: '/student-life',
   path: '/student-life',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParentsRoute = ParentsRouteImport.update({
+  id: '/parents',
+  path: '/parents',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LearningJourneyRoute = LearningJourneyRouteImport.update({
@@ -60,6 +66,7 @@ export interface FileRoutesByFullPath {
   '/admissions': typeof AdmissionsRoute
   '/campus-experience': typeof CampusExperienceRoute
   '/learning-journey': typeof LearningJourneyRoute
+  '/parents': typeof ParentsRoute
   '/student-life': typeof StudentLifeRoute
 }
 export interface FileRoutesByTo {
@@ -69,6 +76,7 @@ export interface FileRoutesByTo {
   '/admissions': typeof AdmissionsRoute
   '/campus-experience': typeof CampusExperienceRoute
   '/learning-journey': typeof LearningJourneyRoute
+  '/parents': typeof ParentsRoute
   '/student-life': typeof StudentLifeRoute
 }
 export interface FileRoutesById {
@@ -79,6 +87,7 @@ export interface FileRoutesById {
   '/admissions': typeof AdmissionsRoute
   '/campus-experience': typeof CampusExperienceRoute
   '/learning-journey': typeof LearningJourneyRoute
+  '/parents': typeof ParentsRoute
   '/student-life': typeof StudentLifeRoute
 }
 export interface FileRouteTypes {
@@ -90,6 +99,7 @@ export interface FileRouteTypes {
     | '/admissions'
     | '/campus-experience'
     | '/learning-journey'
+    | '/parents'
     | '/student-life'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -99,6 +109,7 @@ export interface FileRouteTypes {
     | '/admissions'
     | '/campus-experience'
     | '/learning-journey'
+    | '/parents'
     | '/student-life'
   id:
     | '__root__'
@@ -108,6 +119,7 @@ export interface FileRouteTypes {
     | '/admissions'
     | '/campus-experience'
     | '/learning-journey'
+    | '/parents'
     | '/student-life'
   fileRoutesById: FileRoutesById
 }
@@ -118,6 +130,7 @@ export interface RootRouteChildren {
   AdmissionsRoute: typeof AdmissionsRoute
   CampusExperienceRoute: typeof CampusExperienceRoute
   LearningJourneyRoute: typeof LearningJourneyRoute
+  ParentsRoute: typeof ParentsRoute
   StudentLifeRoute: typeof StudentLifeRoute
 }
 
@@ -128,6 +141,13 @@ declare module '@tanstack/react-router' {
       path: '/student-life'
       fullPath: '/student-life'
       preLoaderRoute: typeof StudentLifeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parents': {
+      id: '/parents'
+      path: '/parents'
+      fullPath: '/parents'
+      preLoaderRoute: typeof ParentsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/learning-journey': {
@@ -182,6 +202,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdmissionsRoute: AdmissionsRoute,
   CampusExperienceRoute: CampusExperienceRoute,
   LearningJourneyRoute: LearningJourneyRoute,
+  ParentsRoute: ParentsRoute,
   StudentLifeRoute: StudentLifeRoute,
 }
 export const routeTree = rootRouteImport
