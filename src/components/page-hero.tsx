@@ -12,11 +12,13 @@ export function PageHero({
   title,
   intro,
   sections,
+  breadcrumb,
 }: {
   eyebrow: string;
   title: ReactNode;
   intro?: ReactNode;
   sections?: { label: string; to: string }[];
+  breadcrumb?: { label: string; to?: string }[];
 }) {
   return (
     <header className="relative overflow-hidden bg-navy text-navy-foreground">
@@ -30,6 +32,34 @@ export function PageHero({
         }}
       />
       <Container className="relative py-20 md:py-28">
+        {breadcrumb && breadcrumb.length > 0 ? (
+          <nav
+            aria-label="Breadcrumb"
+            className="mb-6 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-navy-foreground/60"
+          >
+            {breadcrumb.map((crumb, i) => (
+              <span key={`${crumb.label}-${i}`} className="flex items-center gap-2">
+                {crumb.to ? (
+                  <SmartLink
+                    to={crumb.to}
+                    className="transition-colors hover:text-gold"
+                  >
+                    {crumb.label}
+                  </SmartLink>
+                ) : (
+                  <span aria-current="page" className="text-navy-foreground/90">
+                    {crumb.label}
+                  </span>
+                )}
+                {i < breadcrumb.length - 1 ? (
+                  <span aria-hidden className="text-navy-foreground/40">
+                    /
+                  </span>
+                ) : null}
+              </span>
+            ))}
+          </nav>
+        ) : null}
         <Eyebrow onNavy>{eyebrow}</Eyebrow>
         <h1 className="mt-5 max-w-4xl text-balance font-display text-4xl font-medium leading-[1.06] tracking-tight md:text-6xl">
           {title}
