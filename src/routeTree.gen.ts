@@ -15,6 +15,7 @@ import { Route as NewsRouteImport } from './routes/news'
 import { Route as LearningJourneyRouteImport } from './routes/learning-journey'
 import { Route as CommunityRouteImport } from './routes/community'
 import { Route as CareersRouteImport } from './routes/careers'
+import { Route as CampusesRouteImport } from './routes/campuses'
 import { Route as CampusExperienceRouteImport } from './routes/campus-experience'
 import { Route as AdmissionsRouteImport } from './routes/admissions'
 import { Route as AcademicExperienceRouteImport } from './routes/academic-experience'
@@ -51,6 +52,11 @@ const CareersRoute = CareersRouteImport.update({
   path: '/careers',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CampusesRoute = CampusesRouteImport.update({
+  id: '/campuses',
+  path: '/campuses',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CampusExperienceRoute = CampusExperienceRouteImport.update({
   id: '/campus-experience',
   path: '/campus-experience',
@@ -83,6 +89,7 @@ export interface FileRoutesByFullPath {
   '/academic-experience': typeof AcademicExperienceRoute
   '/admissions': typeof AdmissionsRoute
   '/campus-experience': typeof CampusExperienceRoute
+  '/campuses': typeof CampusesRoute
   '/careers': typeof CareersRoute
   '/community': typeof CommunityRoute
   '/learning-journey': typeof LearningJourneyRoute
@@ -96,6 +103,7 @@ export interface FileRoutesByTo {
   '/academic-experience': typeof AcademicExperienceRoute
   '/admissions': typeof AdmissionsRoute
   '/campus-experience': typeof CampusExperienceRoute
+  '/campuses': typeof CampusesRoute
   '/careers': typeof CareersRoute
   '/community': typeof CommunityRoute
   '/learning-journey': typeof LearningJourneyRoute
@@ -110,6 +118,7 @@ export interface FileRoutesById {
   '/academic-experience': typeof AcademicExperienceRoute
   '/admissions': typeof AdmissionsRoute
   '/campus-experience': typeof CampusExperienceRoute
+  '/campuses': typeof CampusesRoute
   '/careers': typeof CareersRoute
   '/community': typeof CommunityRoute
   '/learning-journey': typeof LearningJourneyRoute
@@ -125,6 +134,7 @@ export interface FileRouteTypes {
     | '/academic-experience'
     | '/admissions'
     | '/campus-experience'
+    | '/campuses'
     | '/careers'
     | '/community'
     | '/learning-journey'
@@ -138,6 +148,7 @@ export interface FileRouteTypes {
     | '/academic-experience'
     | '/admissions'
     | '/campus-experience'
+    | '/campuses'
     | '/careers'
     | '/community'
     | '/learning-journey'
@@ -151,6 +162,7 @@ export interface FileRouteTypes {
     | '/academic-experience'
     | '/admissions'
     | '/campus-experience'
+    | '/campuses'
     | '/careers'
     | '/community'
     | '/learning-journey'
@@ -165,6 +177,7 @@ export interface RootRouteChildren {
   AcademicExperienceRoute: typeof AcademicExperienceRoute
   AdmissionsRoute: typeof AdmissionsRoute
   CampusExperienceRoute: typeof CampusExperienceRoute
+  CampusesRoute: typeof CampusesRoute
   CareersRoute: typeof CareersRoute
   CommunityRoute: typeof CommunityRoute
   LearningJourneyRoute: typeof LearningJourneyRoute
@@ -217,6 +230,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CareersRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/campuses': {
+      id: '/campuses'
+      path: '/campuses'
+      fullPath: '/campuses'
+      preLoaderRoute: typeof CampusesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/campus-experience': {
       id: '/campus-experience'
       path: '/campus-experience'
@@ -261,6 +281,7 @@ const rootRouteChildren: RootRouteChildren = {
   AcademicExperienceRoute: AcademicExperienceRoute,
   AdmissionsRoute: AdmissionsRoute,
   CampusExperienceRoute: CampusExperienceRoute,
+  CampusesRoute: CampusesRoute,
   CareersRoute: CareersRoute,
   CommunityRoute: CommunityRoute,
   LearningJourneyRoute: LearningJourneyRoute,
