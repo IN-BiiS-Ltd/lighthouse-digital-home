@@ -10,7 +10,7 @@ import {
 } from "@/components/blocks";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
-import { cn } from "@/lib/utils";
+
 import heroLearningImg from "@/assets/hero-learning.jpg";
 import libraryImg from "@/assets/campus-library.jpg";
 import iconLeadership from "@/assets/principle-leadership.png.asset.json";
