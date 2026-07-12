@@ -22,7 +22,7 @@ import { cn } from "@/lib/utils";
 import heroLearningImg from "@/assets/hero-learning.jpg";
 import libraryImg from "@/assets/campus-library.jpg";
 
-export const Route = createFileRoute("/about/why-lighthouse")({
+export const Route = createFileRoute("/about_/why-lighthouse")({
   head: () => ({
     meta: [
       { title: "Why Lighthouse? | Lighthouse Campus" },
