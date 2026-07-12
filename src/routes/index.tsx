@@ -27,7 +27,6 @@ import curiosityIcon from "@/assets/value-curiosity.png.asset.json";
 import belongingIcon from "@/assets/value-belonging.png.asset.json";
 import integrityIcon from "@/assets/value-integrity.png.asset.json";
 import excellenceIcon from "@/assets/value-excellence.png.asset.json";
-import libraryImg from "@/assets/campus-library.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
