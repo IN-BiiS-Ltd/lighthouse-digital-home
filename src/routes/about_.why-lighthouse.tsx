@@ -76,51 +76,61 @@ const acrostic = [
   {
     letter: "L",
     title: "Leadership",
+    icon: iconLeadership.url,
     body: "Developing confident, ethical and responsible leaders.",
   },
   {
     letter: "I",
     title: "Inquiry",
+    icon: iconInquiry.url,
     body: "Encouraging curiosity, exploration and lifelong learning.",
   },
   {
     letter: "G",
     title: "Growth",
+    icon: iconGrowth.url,
     body: "Supporting continuous intellectual, emotional and personal development.",
   },
   {
     letter: "H",
     title: "Humanity",
+    icon: iconHumanity.url,
     body: "Building compassion, kindness and respect for others.",
   },
   {
     letter: "T",
     title: "Transformation",
+    icon: iconTransformation.url,
     body: "Helping every learner become the best version of themselves.",
   },
   {
     letter: "H",
     title: "Harmony",
+    icon: iconHarmony.url,
     body: "Creating balance between academic excellence, wellbeing and character.",
   },
   {
     letter: "O",
     title: "Opportunity",
+    icon: iconOpportunity.url,
     body: "Helping every learner discover and develop individual strengths.",
   },
   {
     letter: "U",
     title: "Understanding",
+    icon: iconUnderstanding.url,
     body: "Promoting reflection, wisdom and global awareness.",
   },
   {
     letter: "S",
     title: "Stewardship",
+    icon: iconStewardship.url,
     body: "Preparing learners to contribute responsibly to their communities and the wider world.",
   },
   {
     letter: "E",
     title: "Excellence",
+    icon: iconExcellence.url,
     body: "Pursuing quality, achievement and continuous improvement in everything we do.",
   },
 ];
