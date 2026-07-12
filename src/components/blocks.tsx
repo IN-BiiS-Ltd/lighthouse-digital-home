@@ -25,8 +25,14 @@ export function SmartLink({ to, children, ...rest }: SmartLinkProps) {
   }
   const [path, hash] = to.split("#");
   return (
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    <Link to={(path || "/") as any} hash={hash} {...(rest as any)}>
+    <Link
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      to={(path || "/") as any}
+      hash={hash}
+      hashScrollIntoView={hash ? { behavior: "smooth", block: "start" } : undefined}
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      {...(rest as any)}
+    >
       {children}
     </Link>
   );
