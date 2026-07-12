@@ -427,13 +427,14 @@ function WhyLighthouse() {
                   className="rounded-xl border border-border bg-card p-6 transition-colors duration-200 hover:border-gold/50"
                 >
                   <div className="flex items-center gap-3">
-                    <span
-                      aria-hidden
-                      className={cn(
-                        "size-6 rounded-full ring-1 ring-inset ring-black/10",
-                        c.swatch,
-                      )}
-                    />
+                    <span className="inline-flex size-12 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-brand-blue">
+                      <img
+                        src={c.img}
+                        alt={c.name}
+                        className="size-full object-cover"
+                        loading="lazy"
+                      />
+                    </span>
                     <h3 className="font-display text-lg font-medium text-foreground">
                       {c.name}
                     </h3>
