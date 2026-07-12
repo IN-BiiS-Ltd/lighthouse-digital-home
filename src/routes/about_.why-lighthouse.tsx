@@ -140,7 +140,7 @@ const acrostic = [
 /* Symbolic elements represented within the official logo. */
 const logoSymbols = [
   {
-    img: logoLighthouse.url,
+    img: approvedLogo.url,
     title: "The Lighthouse",
     description:
       "A symbol of guidance and purposeful leadership. The lighthouse represents the role of education in illuminating the path ahead. Rather than determining a learner's destination, it provides direction, confidence, and the clarity needed to navigate an ever-changing world.",
