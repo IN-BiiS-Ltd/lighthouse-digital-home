@@ -31,6 +31,15 @@ import iconOpportunity from "@/assets/principle-opportunity.png.asset.json";
 import iconUnderstanding from "@/assets/principle-understanding.png.asset.json";
 import iconStewardship from "@/assets/principle-stewardship.png.asset.json";
 import iconExcellence from "@/assets/principle-excellence.png.asset.json";
+import logoLighthouse from "@/assets/logo-lighthouse.png.asset.json";
+import logoLight from "@/assets/logo-light.png.asset.json";
+import logoBook from "@/assets/logo-book.png.asset.json";
+import logoNetwork from "@/assets/logo-network.png.asset.json";
+import logoCircle from "@/assets/logo-circle.png.asset.json";
+import logoShield from "@/assets/logo-shield.png.asset.json";
+import logoStar from "@/assets/logo-star.png.asset.json";
+import logoCompass from "@/assets/logo-compass.png.asset.json";
+import logoDove from "@/assets/logo-dove.png.asset.json";
 
 export const Route = createFileRoute("/about_/why-lighthouse")({
   head: () => ({
