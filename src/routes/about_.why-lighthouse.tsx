@@ -1,13 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import {
-  BookOpen,
-  Circle,
-  Compass,
-  Lightbulb,
-  Network,
-  Palette,
-  Sparkles,
-} from "lucide-react";
+import { Compass, Palette, Sparkles } from "lucide-react";
 import {
   Section,
   SectionHeading,
