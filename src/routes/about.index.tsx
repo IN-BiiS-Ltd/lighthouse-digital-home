@@ -12,7 +12,7 @@ import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import libraryImg from "@/assets/campus-library.jpg";
 
-export const Route = createFileRoute("/about")({
+export const Route = createFileRoute("/about/")({
   head: () => ({
     meta: [
       { title: "About — Lighthouse Campus" },
