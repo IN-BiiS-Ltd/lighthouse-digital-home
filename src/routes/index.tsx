@@ -159,9 +159,25 @@ function Home() {
         />
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {values.map((v) => (
-            <FeatureCard key={v.title} title={v.title} icon={v.icon}>
-              {v.body}
-            </FeatureCard>
+            <div
+              key={v.title}
+              className="group rounded-xl border border-border bg-card p-7 transition-all duration-200 hover:border-gold/60 hover:shadow-[0_8px_30px_-12px_rgba(11,29,58,0.18)]"
+            >
+              <img
+                src={v.img}
+                alt=""
+                width={112}
+                height={112}
+                loading="lazy"
+                className="mb-5 size-20 object-contain transition-transform duration-300 group-hover:scale-105"
+              />
+              <h3 className="font-display text-xl font-medium text-foreground">
+                {v.title}
+              </h3>
+              <p className="mt-3 text-[0.975rem] leading-relaxed text-muted-foreground">
+                {v.body}
+              </p>
+            </div>
           ))}
         </div>
       </Section>
