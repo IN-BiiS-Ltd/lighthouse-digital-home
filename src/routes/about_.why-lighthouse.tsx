@@ -140,23 +140,32 @@ const logoSymbols = [
   {
     icon: <Compass className="size-5" />,
     title: "The Lighthouse",
-    meanings: ["Guidance", "Leadership", "Vision", "Direction"],
+    description:
+      "A symbol of guidance and purposeful leadership. The lighthouse represents the role of education in illuminating the path ahead. Rather than determining a learner's destination, it provides direction, confidence, and the clarity needed to navigate an ever-changing world.",
+    represents: ["Guidance", "Leadership", "Vision", "Direction"],
   },
   {
     icon: <Lightbulb className="size-5" />,
     title: "The Light",
-    meanings: ["Knowledge", "Discovery", "Hope", "Inspiration", "Intelligence"],
+    description:
+      "A symbol of knowledge, intelligence and possibility. The light reflects the transformative power of education. It illuminates understanding, nurtures intelligence, inspires curiosity, and empowers learners to explore new ideas with confidence and purpose.",
+    represents: ["Knowledge", "Intelligence", "Discovery", "Hope", "Inspiration"],
   },
   {
     icon: <BookOpen className="size-5" />,
     title: "The Open Book",
-    meanings: ["Learning", "Curiosity", "Education", "Wisdom"],
+    description:
+      "A symbol of learning without limits. The open book celebrates curiosity and the lifelong pursuit of knowledge. It reminds every learner that education is an ongoing journey of exploration, reflection, and intellectual growth.",
+    represents: ["Learning", "Curiosity", "Education", "Wisdom"],
   },
   {
     icon: <Network className="size-5" />,
     title: "The Connected Network",
-    meanings: [
+    description:
+      "A symbol of innovation, intelligence and connected learning. The interconnected network reflects the relationships that enrich education—connecting learners, educators, ideas, technology, and the wider world. It represents an educational ecosystem where collaboration, innovation, and collective intelligence prepare learners for the opportunities of tomorrow.",
+    represents: [
       "Innovation",
+      "Intelligence",
       "Technology",
       "Collaboration",
       "Future Learning",
@@ -166,7 +175,9 @@ const logoSymbols = [
   {
     icon: <Circle className="size-5" />,
     title: "The Circle",
-    meanings: [
+    description:
+      "A symbol of belonging and lifelong community. The circle represents unity, continuity, and the enduring strength of a learning community. It reflects the belief that every learner belongs, every voice matters, and every journey contributes to the shared life of the campus.",
+    represents: [
       "Belonging",
       "Continuity",
       "Unity",
@@ -178,20 +189,26 @@ const logoSymbols = [
 
 const logoColours = [
   {
-    name: "Gold",
-    swatch: "bg-gold",
-    meanings: ["Excellence", "Achievement", "Aspiration", "Leadership"],
+    name: "Executive Blue",
+    swatch: "bg-brand-blue",
+    description:
+      "A symbol of trust, wisdom, confidence, stability, and thoughtful leadership.",
   },
   {
-    name: "Blue",
-    swatch: "bg-brand-blue",
-    meanings: [
-      "Trust",
-      "Confidence",
-      "Wisdom",
-      "Professionalism",
-      "Stability",
-    ],
+    name: "Lighthouse Gold",
+    swatch: "bg-gold",
+    description:
+      "A symbol of excellence, aspiration, achievement, and the transformative power of education.",
+  },
+  {
+    name: "Silver",
+    swatch: "bg-silver",
+    description: "A symbol of clarity, precision, balance, and modern thinking.",
+  },
+  {
+    name: "White",
+    swatch: "bg-white",
+    description: "A symbol of openness, integrity, transparency, and new beginnings.",
   },
 ];
 
