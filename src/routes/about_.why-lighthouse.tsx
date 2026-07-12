@@ -24,6 +24,7 @@ import iconUnderstanding from "@/assets/principle-understanding.png.asset.json";
 import iconStewardship from "@/assets/principle-stewardship.png.asset.json";
 import iconExcellence from "@/assets/principle-excellence.png.asset.json";
 import logoLighthouse from "@/assets/logo-lighthouse.png.asset.json";
+import approvedLogo from "@/assets/lighthouse-approved-logo.png.asset.json";
 import logoLight from "@/assets/logo-light.png.asset.json";
 import logoBook from "@/assets/logo-book.png.asset.json";
 import logoNetwork from "@/assets/logo-network.png.asset.json";
@@ -139,7 +140,7 @@ const acrostic = [
 /* Symbolic elements represented within the official logo. */
 const logoSymbols = [
   {
-    img: logoLighthouse.url,
+    img: approvedLogo.url,
     title: "The Lighthouse",
     description:
       "A symbol of guidance and purposeful leadership. The lighthouse represents the role of education in illuminating the path ahead. Rather than determining a learner's destination, it provides direction, confidence, and the clarity needed to navigate an ever-changing world.",
