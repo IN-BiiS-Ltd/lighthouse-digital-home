@@ -300,12 +300,24 @@ function WhyLighthouse() {
               key={`${item.letter}-${i}`}
               className="group relative overflow-hidden rounded-xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-[0_16px_40px_-20px_rgba(11,29,58,0.35)]"
             >
-              <span
-                aria-hidden
-                className="font-display text-5xl font-semibold text-gold/25 transition-colors duration-300 group-hover:text-gold/60"
-              >
-                {item.letter}
-              </span>
+              <div className="mb-1 flex items-center gap-4">
+                <div className="relative overflow-hidden rounded-xl ring-1 ring-navy/10 shadow-[0_10px_28px_-16px_rgba(11,29,58,0.5)]">
+                  <img
+                    src={item.icon}
+                    alt={`${item.title} emblem`}
+                    loading="lazy"
+                    width={816}
+                    height={816}
+                    className="size-20 object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <span
+                  aria-hidden
+                  className="font-display text-4xl font-semibold text-gold/25 transition-colors duration-300 group-hover:text-gold/60"
+                >
+                  {item.letter}
+                </span>
+              </div>
               <h3 className="mt-4 font-display text-lg font-medium text-foreground">
                 {item.title}
               </h3>
