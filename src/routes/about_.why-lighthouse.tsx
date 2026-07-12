@@ -21,6 +21,16 @@ import { CtaBand } from "@/components/cta-band";
 import { cn } from "@/lib/utils";
 import heroLearningImg from "@/assets/hero-learning.jpg";
 import libraryImg from "@/assets/campus-library.jpg";
+import iconLeadership from "@/assets/principle-leadership.png.asset.json";
+import iconInquiry from "@/assets/principle-inquiry.png.asset.json";
+import iconGrowth from "@/assets/principle-growth.png.asset.json";
+import iconHumanity from "@/assets/principle-humanity.png.asset.json";
+import iconTransformation from "@/assets/principle-transformation.png.asset.json";
+import iconHarmony from "@/assets/principle-harmony.png.asset.json";
+import iconOpportunity from "@/assets/principle-opportunity.png.asset.json";
+import iconUnderstanding from "@/assets/principle-understanding.png.asset.json";
+import iconStewardship from "@/assets/principle-stewardship.png.asset.json";
+import iconExcellence from "@/assets/principle-excellence.png.asset.json";
 
 export const Route = createFileRoute("/about_/why-lighthouse")({
   head: () => ({
@@ -66,51 +76,61 @@ const acrostic = [
   {
     letter: "L",
     title: "Leadership",
+    icon: iconLeadership.url,
     body: "Developing confident, ethical and responsible leaders.",
   },
   {
     letter: "I",
     title: "Inquiry",
+    icon: iconInquiry.url,
     body: "Encouraging curiosity, exploration and lifelong learning.",
   },
   {
     letter: "G",
     title: "Growth",
+    icon: iconGrowth.url,
     body: "Supporting continuous intellectual, emotional and personal development.",
   },
   {
     letter: "H",
     title: "Humanity",
+    icon: iconHumanity.url,
     body: "Building compassion, kindness and respect for others.",
   },
   {
     letter: "T",
     title: "Transformation",
+    icon: iconTransformation.url,
     body: "Helping every learner become the best version of themselves.",
   },
   {
     letter: "H",
     title: "Harmony",
+    icon: iconHarmony.url,
     body: "Creating balance between academic excellence, wellbeing and character.",
   },
   {
     letter: "O",
     title: "Opportunity",
+    icon: iconOpportunity.url,
     body: "Helping every learner discover and develop individual strengths.",
   },
   {
     letter: "U",
     title: "Understanding",
+    icon: iconUnderstanding.url,
     body: "Promoting reflection, wisdom and global awareness.",
   },
   {
     letter: "S",
     title: "Stewardship",
+    icon: iconStewardship.url,
     body: "Preparing learners to contribute responsibly to their communities and the wider world.",
   },
   {
     letter: "E",
     title: "Excellence",
+    icon: iconExcellence.url,
     body: "Pursuing quality, achievement and continuous improvement in everything we do.",
   },
 ];
@@ -280,12 +300,24 @@ function WhyLighthouse() {
               key={`${item.letter}-${i}`}
               className="group relative overflow-hidden rounded-xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-[0_16px_40px_-20px_rgba(11,29,58,0.35)]"
             >
-              <span
-                aria-hidden
-                className="font-display text-5xl font-semibold text-gold/25 transition-colors duration-300 group-hover:text-gold/60"
-              >
-                {item.letter}
-              </span>
+              <div className="mb-1 flex items-center gap-4">
+                <div className="relative overflow-hidden rounded-xl ring-1 ring-navy/10 shadow-[0_10px_28px_-16px_rgba(11,29,58,0.5)]">
+                  <img
+                    src={item.icon}
+                    alt={`${item.title} emblem`}
+                    loading="lazy"
+                    width={816}
+                    height={816}
+                    className="size-20 object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <span
+                  aria-hidden
+                  className="font-display text-4xl font-semibold text-gold/25 transition-colors duration-300 group-hover:text-gold/60"
+                >
+                  {item.letter}
+                </span>
+              </div>
               <h3 className="mt-4 font-display text-lg font-medium text-foreground">
                 {item.title}
               </h3>
