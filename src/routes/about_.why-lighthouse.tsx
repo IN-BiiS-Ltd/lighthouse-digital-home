@@ -21,6 +21,16 @@ import { CtaBand } from "@/components/cta-band";
 import { cn } from "@/lib/utils";
 import heroLearningImg from "@/assets/hero-learning.jpg";
 import libraryImg from "@/assets/campus-library.jpg";
+import iconLeadership from "@/assets/principle-leadership.png.asset.json";
+import iconInquiry from "@/assets/principle-inquiry.png.asset.json";
+import iconGrowth from "@/assets/principle-growth.png.asset.json";
+import iconHumanity from "@/assets/principle-humanity.png.asset.json";
+import iconTransformation from "@/assets/principle-transformation.png.asset.json";
+import iconHarmony from "@/assets/principle-harmony.png.asset.json";
+import iconOpportunity from "@/assets/principle-opportunity.png.asset.json";
+import iconUnderstanding from "@/assets/principle-understanding.png.asset.json";
+import iconStewardship from "@/assets/principle-stewardship.png.asset.json";
+import iconExcellence from "@/assets/principle-excellence.png.asset.json";
 
 export const Route = createFileRoute("/about_/why-lighthouse")({
   head: () => ({
