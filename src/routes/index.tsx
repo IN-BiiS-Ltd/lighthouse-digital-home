@@ -52,22 +52,22 @@ export const Route = createFileRoute("/")({
 
 const values = [
   {
-    icon: <Lightbulb className="size-5" />,
+    img: curiosityIcon.url,
     title: "Curiosity",
     body: "We protect the instinct to wonder, question and explore — the engine of lifelong learning.",
   },
   {
-    icon: <HeartHandshake className="size-5" />,
+    img: belongingIcon.url,
     title: "Belonging",
     body: "Every child is known by name. A campus is a community before it is anything else.",
   },
   {
-    icon: <Compass className="size-5" />,
+    img: integrityIcon.url,
     title: "Integrity",
     body: "Character is taught the way it is learned — through relationships, example and trust.",
   },
   {
-    icon: <Sparkles className="size-5" />,
+    img: excellenceIcon.url,
     title: "Excellence",
     body: "High expectations held with warmth. Ambition matched by genuine support.",
   },
