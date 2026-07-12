@@ -140,23 +140,32 @@ const logoSymbols = [
   {
     icon: <Compass className="size-5" />,
     title: "The Lighthouse",
-    meanings: ["Guidance", "Leadership", "Vision", "Direction"],
+    description:
+      "A symbol of guidance and purposeful leadership. The lighthouse represents the role of education in illuminating the path ahead. Rather than determining a learner's destination, it provides direction, confidence, and the clarity needed to navigate an ever-changing world.",
+    represents: ["Guidance", "Leadership", "Vision", "Direction"],
   },
   {
     icon: <Lightbulb className="size-5" />,
     title: "The Light",
-    meanings: ["Knowledge", "Discovery", "Hope", "Inspiration", "Intelligence"],
+    description:
+      "A symbol of knowledge, intelligence and possibility. The light reflects the transformative power of education. It illuminates understanding, nurtures intelligence, inspires curiosity, and empowers learners to explore new ideas with confidence and purpose.",
+    represents: ["Knowledge", "Intelligence", "Discovery", "Hope", "Inspiration"],
   },
   {
     icon: <BookOpen className="size-5" />,
     title: "The Open Book",
-    meanings: ["Learning", "Curiosity", "Education", "Wisdom"],
+    description:
+      "A symbol of learning without limits. The open book celebrates curiosity and the lifelong pursuit of knowledge. It reminds every learner that education is an ongoing journey of exploration, reflection, and intellectual growth.",
+    represents: ["Learning", "Curiosity", "Education", "Wisdom"],
   },
   {
     icon: <Network className="size-5" />,
     title: "The Connected Network",
-    meanings: [
+    description:
+      "A symbol of innovation, intelligence and connected learning. The interconnected network reflects the relationships that enrich education—connecting learners, educators, ideas, technology, and the wider world. It represents an educational ecosystem where collaboration, innovation, and collective intelligence prepare learners for the opportunities of tomorrow.",
+    represents: [
       "Innovation",
+      "Intelligence",
       "Technology",
       "Collaboration",
       "Future Learning",
@@ -166,7 +175,9 @@ const logoSymbols = [
   {
     icon: <Circle className="size-5" />,
     title: "The Circle",
-    meanings: [
+    description:
+      "A symbol of belonging and lifelong community. The circle represents unity, continuity, and the enduring strength of a learning community. It reflects the belief that every learner belongs, every voice matters, and every journey contributes to the shared life of the campus.",
+    represents: [
       "Belonging",
       "Continuity",
       "Unity",
@@ -178,20 +189,26 @@ const logoSymbols = [
 
 const logoColours = [
   {
-    name: "Gold",
-    swatch: "bg-gold",
-    meanings: ["Excellence", "Achievement", "Aspiration", "Leadership"],
+    name: "Executive Blue",
+    swatch: "bg-brand-blue",
+    description:
+      "A symbol of trust, wisdom, confidence, stability, and thoughtful leadership.",
   },
   {
-    name: "Blue",
-    swatch: "bg-brand-blue",
-    meanings: [
-      "Trust",
-      "Confidence",
-      "Wisdom",
-      "Professionalism",
-      "Stability",
-    ],
+    name: "Lighthouse Gold",
+    swatch: "bg-gold",
+    description:
+      "A symbol of excellence, aspiration, achievement, and the transformative power of education.",
+  },
+  {
+    name: "Silver",
+    swatch: "bg-silver",
+    description: "A symbol of clarity, precision, balance, and modern thinking.",
+  },
+  {
+    name: "White",
+    swatch: "bg-white",
+    description: "A symbol of openness, integrity, transparency, and new beginnings.",
   },
 ];
 
@@ -335,8 +352,17 @@ function WhyLighthouse() {
           align="center"
           eyebrow="Understanding Our Logo"
           title="Every element tells part of the story"
-          description="Our official identity brings together symbols of guidance, learning and belonging. Each one carries meaning drawn directly from our educational philosophy."
+          description="Our visual identity is more than a logo. It is a reflection of our educational philosophy. Every shape, every line, every colour, and every symbol has been intentionally designed to express the values that define Lighthouse Campus."
         />
+        <div className="mt-6 max-w-3xl mx-auto text-center text-lg leading-relaxed text-muted-foreground">
+          <p>
+            Together, these elements tell the story of a learning community where
+            curiosity is encouraged, intelligence is cultivated, character is
+            strengthened, and every learner is prepared to contribute confidently
+            to an evolving world.
+          </p>
+        </div>
+
         <div className="mt-14 grid items-start gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <div className="lg:sticky lg:top-28">
             <div className="mx-auto flex max-w-sm flex-col items-center rounded-2xl border border-border bg-card p-10 text-center shadow-[0_20px_60px_-30px_rgba(11,29,58,0.4)]">
@@ -360,13 +386,19 @@ function WhyLighthouse() {
                   <h3 className="font-display text-lg font-medium text-foreground">
                     {sym.title}
                   </h3>
-                  <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted-foreground">
-                    {sym.meanings.map((m) => (
-                      <li key={m} className="flex items-center gap-2">
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    {sym.description}
+                  </p>
+                  <p className="mt-3 text-xs font-semibold uppercase tracking-wider text-foreground">
+                    Represents
+                  </p>
+                  <ul className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted-foreground">
+                    {sym.represents.map((item) => (
+                      <li key={item} className="flex items-center gap-2">
                         <span aria-hidden className="text-gold">
                           &bull;
                         </span>
-                        {m}
+                        {item}
                       </li>
                     ))}
                   </ul>
@@ -392,14 +424,36 @@ function WhyLighthouse() {
                       {c.name}
                     </h3>
                   </div>
-                  <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
-                    {c.meanings.map((m) => (
-                      <li key={m}>{m}</li>
-                    ))}
-                  </ul>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    {c.description}
+                  </p>
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+
+        {/* Together, They Tell One Story */}
+        <div className="mt-20 max-w-3xl mx-auto text-center">
+          <h3 className="font-display text-2xl font-medium text-foreground md:text-3xl">
+            Together, They Tell One Story
+          </h3>
+          <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
+            Every element of the Lighthouse Campus identity contributes to a single
+            purpose: creating a learning environment where curiosity is encouraged,
+            intelligence is developed, character is nurtured, and every learner is
+            empowered to lead with confidence.
+          </p>
+          <div className="mt-8 space-y-1 text-lg font-medium text-foreground">
+            <p>Our identity reflects more than who we are.</p>
+            <p>It reflects how we learn.</p>
+            <p>How we grow.</p>
+            <p>How we lead.</p>
+            <p>How we belong.</p>
+            <p className="text-muted-foreground">
+              And how we prepare every learner to illuminate the future with
+              knowledge, wisdom, integrity, and purpose.
+            </p>
           </div>
         </div>
       </Section>
