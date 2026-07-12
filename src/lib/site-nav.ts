@@ -22,7 +22,6 @@ export const primaryNav: NavSection[] = [
     summary: "Our story, philosophy and the people who guide the campus.",
     children: [
       { label: "Our Story", to: "/about", description: "How Lighthouse Campus came to be." },
-      { label: "Why Lighthouse?", to: "/about/why-lighthouse", description: "The meaning behind the name and the logo." },
       { label: "Vision & Mission", to: "/about#vision", description: "The future we are building toward." },
       { label: "Core Values", to: "/about#values", description: "The principles that shape daily life." },
       { label: "Educational Philosophy", to: "/about#philosophy", description: "How we believe children learn best." },
