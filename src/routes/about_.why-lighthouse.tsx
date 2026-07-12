@@ -352,8 +352,17 @@ function WhyLighthouse() {
           align="center"
           eyebrow="Understanding Our Logo"
           title="Every element tells part of the story"
-          description="Our official identity brings together symbols of guidance, learning and belonging. Each one carries meaning drawn directly from our educational philosophy."
+          description="Our visual identity is more than a logo. It is a reflection of our educational philosophy. Every shape, every line, every colour, and every symbol has been intentionally designed to express the values that define Lighthouse Campus."
         />
+        <div className="mt-6 max-w-3xl mx-auto text-center text-lg leading-relaxed text-muted-foreground">
+          <p>
+            Together, these elements tell the story of a learning community where
+            curiosity is encouraged, intelligence is cultivated, character is
+            strengthened, and every learner is prepared to contribute confidently
+            to an evolving world.
+          </p>
+        </div>
+
         <div className="mt-14 grid items-start gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <div className="lg:sticky lg:top-28">
             <div className="mx-auto flex max-w-sm flex-col items-center rounded-2xl border border-border bg-card p-10 text-center shadow-[0_20px_60px_-30px_rgba(11,29,58,0.4)]">
@@ -377,13 +386,19 @@ function WhyLighthouse() {
                   <h3 className="font-display text-lg font-medium text-foreground">
                     {sym.title}
                   </h3>
-                  <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted-foreground">
-                    {sym.meanings.map((m) => (
-                      <li key={m} className="flex items-center gap-2">
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    {sym.description}
+                  </p>
+                  <p className="mt-3 text-xs font-semibold uppercase tracking-wider text-foreground">
+                    Represents
+                  </p>
+                  <ul className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted-foreground">
+                    {sym.represents.map((item) => (
+                      <li key={item} className="flex items-center gap-2">
                         <span aria-hidden className="text-gold">
                           &bull;
                         </span>
-                        {m}
+                        {item}
                       </li>
                     ))}
                   </ul>
@@ -409,14 +424,36 @@ function WhyLighthouse() {
                       {c.name}
                     </h3>
                   </div>
-                  <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
-                    {c.meanings.map((m) => (
-                      <li key={m}>{m}</li>
-                    ))}
-                  </ul>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    {c.description}
+                  </p>
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+
+        {/* Together, They Tell One Story */}
+        <div className="mt-20 max-w-3xl mx-auto text-center">
+          <h3 className="font-display text-2xl font-medium text-foreground md:text-3xl">
+            Together, They Tell One Story
+          </h3>
+          <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
+            Every element of the Lighthouse Campus identity contributes to a single
+            purpose: creating a learning environment where curiosity is encouraged,
+            intelligence is developed, character is nurtured, and every learner is
+            empowered to lead with confidence.
+          </p>
+          <div className="mt-8 space-y-1 text-lg font-medium text-foreground">
+            <p>Our identity reflects more than who we are.</p>
+            <p>It reflects how we learn.</p>
+            <p>How we grow.</p>
+            <p>How we lead.</p>
+            <p>How we belong.</p>
+            <p className="text-muted-foreground">
+              And how we prepare every learner to illuminate the future with
+              knowledge, wisdom, integrity, and purpose.
+            </p>
           </div>
         </div>
       </Section>
