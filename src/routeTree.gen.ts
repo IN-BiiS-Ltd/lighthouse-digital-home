@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as LearningJourneyRouteImport } from './routes/learning-journey'
+import { Route as AcademicExperienceRouteImport } from './routes/academic-experience'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
 const LearningJourneyRoute = LearningJourneyRouteImport.update({
   id: '/learning-journey',
   path: '/learning-journey',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AcademicExperienceRoute = AcademicExperienceRouteImport.update({
+  id: '/academic-experience',
+  path: '/academic-experience',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -32,30 +38,34 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/academic-experience': typeof AcademicExperienceRoute
   '/learning-journey': typeof LearningJourneyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/academic-experience': typeof AcademicExperienceRoute
   '/learning-journey': typeof LearningJourneyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/academic-experience': typeof AcademicExperienceRoute
   '/learning-journey': typeof LearningJourneyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/learning-journey'
+  fullPaths: '/' | '/about' | '/academic-experience' | '/learning-journey'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/learning-journey'
-  id: '__root__' | '/' | '/about' | '/learning-journey'
+  to: '/' | '/about' | '/academic-experience' | '/learning-journey'
+  id: '__root__' | '/' | '/about' | '/academic-experience' | '/learning-journey'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AcademicExperienceRoute: typeof AcademicExperienceRoute
   LearningJourneyRoute: typeof LearningJourneyRoute
 }
 
@@ -66,6 +76,13 @@ declare module '@tanstack/react-router' {
       path: '/learning-journey'
       fullPath: '/learning-journey'
       preLoaderRoute: typeof LearningJourneyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academic-experience': {
+      id: '/academic-experience'
+      path: '/academic-experience'
+      fullPath: '/academic-experience'
+      preLoaderRoute: typeof AcademicExperienceRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -88,6 +105,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AcademicExperienceRoute: AcademicExperienceRoute,
   LearningJourneyRoute: LearningJourneyRoute,
 }
 export const routeTree = rootRouteImport
