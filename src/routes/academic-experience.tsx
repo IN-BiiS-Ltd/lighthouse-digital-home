@@ -3,13 +3,9 @@ import {
   Section,
   SectionHeading,
   FeatureCard,
-  MediaRow,
-  Eyebrow,
 } from "@/components/blocks";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
-import stemImg from "@/assets/academic-stem.jpg";
-import leadershipImg from "@/assets/leadership.jpg";
 
 export const Route = createFileRoute("/academic-experience")({
   head: () => ({
@@ -18,13 +14,13 @@ export const Route = createFileRoute("/academic-experience")({
       {
         name: "description",
         content:
-          "A rigorous, human curriculum: teaching approach, assessment, languages, STEM, arts, sports, innovation, leadership development and learning support.",
+          "A coherent educational framework combining internationally recognised standards, accredited national pathways, exceptional teaching, meaningful assessment and connected learning experiences.",
       },
       { property: "og:title", content: "Academic Experience — Lighthouse Campus" },
       {
         property: "og:description",
         content:
-          "How Lighthouse Campus develops deep knowledge and enduring capabilities.",
+          "A coherent educational framework combining internationally recognised standards, accredited national pathways, exceptional teaching and meaningful assessment.",
       },
       { property: "og:url", content: "/academic-experience" },
     ],
@@ -33,13 +29,46 @@ export const Route = createFileRoute("/academic-experience")({
   component: AcademicExperience,
 });
 
+const pathways = [
+  {
+    title: "Cambridge International Curriculum",
+    body: "An internationally respected curriculum that develops academic excellence, critical thinking, creativity, independent learning and global perspectives. Students are prepared for internationally recognised qualifications while developing the confidence to succeed at leading universities around the world.",
+  },
+  {
+    title: "Republic of the Sudan National Curriculum",
+    body: "Delivered in accordance with the requirements of the Ministry of Education of the Republic of the Sudan. This pathway enables students to continue their national educational journey while benefiting from the wider Lighthouse Campus learning experience.",
+  },
+  {
+    title: "Republic of South Sudan National Curriculum",
+    body: "Delivered in accordance with the requirements of the Ministry of General Education and Instruction of the Republic of South Sudan. Students follow nationally recognised academic standards while learning within an internationally inspired educational environment.",
+  },
+];
+
 const disciplines = [
-  { title: "Languages", body: "Confident multilingual learners, with language taught as a living tool for connection and thought." },
-  { title: "Mathematics", body: "Reasoning, fluency and problem-solving built on genuine understanding, not memorisation." },
-  { title: "Sciences", body: "Inquiry-led study where students investigate, test and explain the world around them." },
-  { title: "Humanities", body: "History, geography and society explored to build perspective, empathy and judgement." },
-  { title: "The Arts", body: "Visual art, music, drama and design — expression, discipline and creative courage." },
-  { title: "Physical Education", body: "Health, teamwork and resilience through sport and active, joyful movement." },
+  {
+    title: "Languages",
+    body: "Confident multilingual learners who use language as a powerful tool for communication, critical thinking, cultural understanding and global citizenship.",
+  },
+  {
+    title: "Mathematics",
+    body: "Developing reasoning, fluency and problem-solving through deep conceptual understanding rather than memorisation.",
+  },
+  {
+    title: "Sciences",
+    body: "Inquiry-driven learning where students investigate, experiment, analyse and explain the natural world through evidence and discovery.",
+  },
+  {
+    title: "Humanities",
+    body: "History, geography and social studies that cultivate perspective, empathy, responsibility and informed global citizenship.",
+  },
+  {
+    title: "The Arts",
+    body: "Visual arts, music, drama and design that inspire creativity, discipline, imagination and confident self-expression.",
+  },
+  {
+    title: "Physical Education",
+    body: "Promoting health, wellbeing, resilience, teamwork and confidence through purposeful movement and lifelong healthy habits.",
+  },
 ];
 
 function AcademicExperience() {
@@ -51,10 +80,10 @@ function AcademicExperience() {
         intro="Our curriculum develops deep knowledge and the capabilities that endure — thinking, creating, collaborating and leading."
         sections={[
           { label: "Curriculum", to: "/academic-experience#curriculum" },
+          { label: "Pathways", to: "/academic-experience#pathways" },
+          { label: "Areas of Learning", to: "/academic-experience#areas" },
           { label: "Teaching", to: "/academic-experience#teaching" },
-          { label: "STEM", to: "/academic-experience#stem" },
-          { label: "Arts & Sports", to: "/academic-experience#arts" },
-          { label: "Support", to: "/academic-experience#support" },
+          { label: "Assessment", to: "/academic-experience#assessment" },
         ]}
       />
 
@@ -63,7 +92,39 @@ function AcademicExperience() {
         <SectionHeading
           eyebrow="Curriculum"
           title="A coherent, ambitious programme"
-          description="Our curriculum is carefully sequenced so that knowledge builds meaningfully year on year, while leaving room for depth, exploration and joy."
+          description="Our curriculum is thoughtfully designed to combine internationally recognised educational standards with accredited national educational pathways, ensuring every learner develops deep understanding, strong academic foundations, intellectual curiosity and the confidence to thrive in a rapidly changing world."
+        />
+        <p className="mt-7 max-w-3xl text-lg leading-relaxed text-muted-foreground">
+          Learning is intentionally sequenced so that knowledge develops progressively
+          from year to year while creating space for exploration, creativity, reflection
+          and authentic understanding. Rather than teaching isolated subjects, Lighthouse
+          Campus creates connected learning experiences that prepare students for
+          academic success, responsible citizenship and lifelong learning.
+        </p>
+      </Section>
+
+      {/* Academic Pathways */}
+      <Section tone="muted" id="pathways">
+        <SectionHeading
+          eyebrow="Our Academic Pathways"
+          title="Three pathways, one educational framework"
+          description="Every pathway is offered as an equal academic option within the Lighthouse Campus educational framework, enabling families to choose the route that best serves their child's future."
+        />
+        <div className="mt-14 grid gap-5 md:grid-cols-3">
+          {pathways.map((p) => (
+            <FeatureCard key={p.title} title={p.title}>
+              {p.body}
+            </FeatureCard>
+          ))}
+        </div>
+      </Section>
+
+      {/* Areas of Learning */}
+      <Section id="areas">
+        <SectionHeading
+          eyebrow="Areas of Learning"
+          title="A broad, connected curriculum"
+          description="Subjects are taught as interrelated fields of understanding, encouraging students to make connections across disciplines and apply their learning with purpose."
         />
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {disciplines.map((d) => (
@@ -74,101 +135,57 @@ function AcademicExperience() {
         </div>
       </Section>
 
-      {/* Teaching approach */}
-      <Section tone="muted" id="teaching">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-          <div>
-            <Eyebrow>Teaching Approach</Eyebrow>
-            <h2 className="mt-4 font-display text-3xl font-medium md:text-4xl">
-              Mentors, not lecturers
-            </h2>
-            <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
-              Our teachers know their students as individuals. They ask better
-              questions, model curiosity, and design lessons that invite
-              thinking rather than passive listening.
-            </p>
-          </div>
-          <div id="assessment" className="scroll-mt-24">
-            <Eyebrow>Assessment</Eyebrow>
-            <h2 className="mt-4 font-display text-3xl font-medium md:text-4xl">
-              Feedback that helps students grow
-            </h2>
-            <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
-              Assessment is used to understand and support learning — timely,
-              honest and constructive — so students always know where they are
-              and what comes next.
-            </p>
-          </div>
+      {/* Teaching Approach */}
+      <Section tone="sand" id="teaching">
+        <SectionHeading
+          eyebrow="Teaching Approach"
+          title="Mentors, not lecturers"
+          description="Learning begins with relationships."
+        />
+        <div className="mt-7 max-w-3xl space-y-5 text-lg leading-relaxed text-muted-foreground">
+          <p>
+            Our teachers know their students as individuals and recognise that every
+            learner brings different strengths, interests and aspirations. They design
+            meaningful learning experiences that encourage inquiry, creativity,
+            collaboration and critical thinking.
+          </p>
+          <p>
+            Rather than simply delivering information, teachers act as mentors,
+            facilitators and guides who inspire confidence, curiosity and independent
+            learning.
+          </p>
+          <p className="text-foreground">
+            Technology supports great teaching. Human relationships define it.
+          </p>
         </div>
       </Section>
 
-      {/* STEM & Innovation */}
-      <Section id="stem">
-        <MediaRow
-          eyebrow="STEM & Innovation"
-          title="Curiosity turned into capability"
-          image={stemImg}
-          imageAlt="Students conducting a science experiment together in a laboratory"
-        >
-          <p>
-            From early scientific play to advanced laboratory work, students
-            learn to investigate, test ideas and build. Innovation spaces let
-            them prototype, code and design solutions to real problems.
-          </p>
-          <p>
-            We treat questions as the starting point of understanding — and give
-            students the tools and confidence to pursue them.
-          </p>
-        </MediaRow>
-      </Section>
-
-      {/* Arts, Sports & Leadership */}
-      <Section tone="sand" id="arts">
-        <MediaRow
-          reverse
-          eyebrow="Arts, Sports & Leadership"
-          title="Expression, discipline and joy"
-          image={leadershipImg}
-          imageAlt="Students collaborating on a leadership project at a whiteboard"
-        >
-          <p>
-            The arts and athletics are central, not optional. They build
-            creativity, teamwork, resilience and voice — and give every student
-            a place to shine beyond the academic day.
-          </p>
-          <p id="languages" className="scroll-mt-24">
-            Leadership development runs throughout the journey, cultivating
-            responsibility, service and the confidence to lead with integrity.
-          </p>
-        </MediaRow>
-      </Section>
-
-      {/* Learning Support */}
-      <Section id="support">
+      {/* Assessment */}
+      <Section id="assessment">
         <SectionHeading
-          eyebrow="Learning Support"
-          title="Every learner known and guided"
-          description="We meet students where they are. Thoughtful support and enrichment ensure that each child is appropriately challenged and genuinely cared for."
+          eyebrow="Assessment"
+          title="Feedback that helps students grow"
+          description="Assessment is an essential part of learning rather than the end of learning."
         />
-        <div className="mt-14 grid gap-5 sm:grid-cols-3">
-          <FeatureCard title="Personalised support">
-            Targeted help for students who need it, delivered with dignity and
-            without stigma.
-          </FeatureCard>
-          <FeatureCard title="Enrichment & extension">
-            Opportunities that stretch curious and able learners further into
-            their interests.
-          </FeatureCard>
-          <FeatureCard title="Wellbeing at the core">
-            Academic support and pastoral care work together, because learning
-            and wellbeing are inseparable.
-          </FeatureCard>
+        <div className="mt-7 max-w-3xl space-y-5 text-lg leading-relaxed text-muted-foreground">
+          <p>
+            It provides timely, meaningful and constructive feedback that helps every
+            learner understand progress, recognise strengths and identify the next steps
+            for improvement.
+          </p>
+          <p>
+            Assessment informs teaching, supports personalised learning and encourages
+            students to take increasing ownership of their own development.
+          </p>
+          <p className="text-foreground">
+            Success is measured not only by achievement, but by continuous growth.
+          </p>
         </div>
       </Section>
 
       <CtaBand
         title="Discover the academic experience in person"
-        body="See our classrooms, laboratories and studios — and meet the mentors who bring the curriculum to life."
+        body="Learn more about our curriculum pathways, teaching approach and assessment philosophy — and meet the mentors who bring learning to life."
       />
     </>
   );
