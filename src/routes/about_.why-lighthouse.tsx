@@ -10,6 +10,7 @@ import {
 } from "@/components/blocks";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
+import { CrystalField } from "@/components/crystal-field";
 
 import heroLearningImg from "@/assets/hero-learning.jpg";
 import libraryImg from "@/assets/campus-library.jpg";
