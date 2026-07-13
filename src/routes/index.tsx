@@ -84,7 +84,7 @@ function Home() {
           width={1600}
           height={1104}
           fetchPriority="high"
-          className="absolute inset-0 -z-10 size-full object-cover"
+          className="absolute inset-0 -z-10 size-full object-cover animate-ken-burns"
         />
         <div
           aria-hidden
@@ -94,8 +94,10 @@ function Home() {
               "linear-gradient(90deg, color-mix(in oklab, var(--navy) 92%, transparent) 0%, color-mix(in oklab, var(--navy) 78%, transparent) 45%, color-mix(in oklab, var(--navy) 30%, transparent) 100%)",
           }}
         />
+        <BrandAtmosphere className="-z-10" density={1.1} />
         <Container className="relative flex min-h-[78vh] flex-col justify-center py-24">
           <div className="max-w-2xl">
+
             <Eyebrow onNavy>Lighthouse Campus · Mohandessin</Eyebrow>
             <h1 className="mt-6 text-balance font-display text-4xl font-medium leading-[1.04] tracking-tight md:text-6xl lg:text-[4.2rem]">
               A place where learning leads and every student is seen.
