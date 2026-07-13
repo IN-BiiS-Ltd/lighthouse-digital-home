@@ -215,3 +215,105 @@
   max-width: 80rem;
   padding-inline: 1.5rem;
 }
+
+/*
+ * CINEMATIC BRAND LAYER
+ * ------------------------------------------------
+ * Motion is intelligence, not decoration. Every animation below is subtle,
+ * purposeful and honours prefers-reduced-motion.
+ */
+
+/* Scroll reveal — a calm rise + fade as content enters the frame */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  filter: blur(6px);
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-in {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* The lighthouse beam — a slow sweep of light across navy sections */
+.lighthouse-beam {
+  position: absolute;
+  left: 50%;
+  top: -30%;
+  height: 160%;
+  width: 160%;
+  transform-origin: center;
+  translate: -50% 0;
+  background: conic-gradient(
+    from 0deg at 50% 30%,
+    transparent 0deg,
+    color-mix(in oklab, var(--gold) 22%, transparent) 12deg,
+    color-mix(in oklab, var(--sky) 10%, transparent) 22deg,
+    transparent 40deg,
+    transparent 320deg,
+    color-mix(in oklab, var(--gold) 14%, transparent) 348deg,
+    transparent 360deg
+  );
+  filter: blur(28px);
+  opacity: 0.55;
+  animation: beam-sweep 26s linear infinite;
+  mask-image: radial-gradient(60% 60% at 50% 30%, black, transparent 78%);
+}
+
+@keyframes beam-sweep {
+  to {
+    rotate: 360deg;
+  }
+}
+
+/* Gentle drifting glow for hero backdrops */
+@keyframes aurora-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate3d(2%, -2%, 0) scale(1.08);
+    opacity: 1;
+  }
+}
+
+.animate-aurora {
+  animation: aurora-drift 18s ease-in-out infinite;
+}
+
+/* Slow zoom for hero imagery — the "Ken Burns" cinematic breath */
+@keyframes ken-burns {
+  from {
+    transform: scale(1) translateY(0);
+  }
+  to {
+    transform: scale(1.08) translateY(-1.5%);
+  }
+}
+
+.animate-ken-burns {
+  animation: ken-burns 22s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lighthouse-beam,
+  .animate-aurora,
+  .animate-ken-burns {
+    animation: none !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+}
+
