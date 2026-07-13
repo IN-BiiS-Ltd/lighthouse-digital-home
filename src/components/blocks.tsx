@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { cva, type VariantProps } from "class-variance-authority";
-import type { ComponentPropsWithoutRef, ReactNode } from "react";
+import type { ComponentPropsWithoutRef, MouseEvent, ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/reveal";
 import { BrandAtmosphere } from "@/components/brand-atmosphere";
@@ -292,19 +292,29 @@ export function FeatureCard({
   icon?: ReactNode;
   className?: string;
 }) {
+  const handleMove = (e: MouseEvent<HTMLDivElement>) => {
+    const el = e.currentTarget;
+    const rect = el.getBoundingClientRect();
+    el.style.setProperty("--mx", `${((e.clientX - rect.left) / rect.width) * 100}%`);
+    el.style.setProperty("--my", `${((e.clientY - rect.top) / rect.height) * 100}%`);
+  };
+
   return (
     <div
+      onMouseMove={handleMove}
       className={cn(
-        "group rounded-xl border border-border bg-card p-7 transition-all duration-200 hover:border-gold/60 hover:shadow-[0_8px_30px_-12px_rgba(11,29,58,0.18)]",
+        "cine-card group rounded-xl border border-border bg-card p-7",
         className,
       )}
     >
       {icon ? (
-        <div className="mb-5 inline-flex size-11 items-center justify-center rounded-lg bg-secondary text-brand-blue">
-          {icon}
+        <div className="mb-5 inline-flex size-11 items-center justify-center rounded-lg bg-secondary text-brand-blue transition-all duration-500 group-hover:-translate-y-0.5 group-hover:bg-gold/15 group-hover:text-gold group-hover:shadow-[0_10px_24px_-14px_color-mix(in_oklab,var(--gold)_70%,transparent)]">
+          <span className="transition-transform duration-500 group-hover:scale-110">
+            {icon}
+          </span>
         </div>
       ) : null}
-      <h3 className="font-display text-xl font-medium text-foreground">
+      <h3 className="font-display text-xl font-medium text-foreground transition-colors duration-300 group-hover:text-brand-blue">
         {title}
       </h3>
       <p className="mt-3 text-[0.975rem] leading-relaxed text-muted-foreground">
