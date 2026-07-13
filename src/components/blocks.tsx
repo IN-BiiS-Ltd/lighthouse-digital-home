@@ -176,16 +176,19 @@ export function Section({
   children: ReactNode;
   id?: string;
 }) {
+  const isNavy = tone === "navy";
   return (
     <section
       id={id}
       className={cn(
         "scroll-mt-24 py-20 md:py-28",
+        isNavy && "relative isolate overflow-hidden",
         sectionTone[tone],
         className,
       )}
     >
-      <Container>
+      {isNavy ? <BrandAtmosphere density={0.55} beam={false} /> : null}
+      <Container className={cn(isNavy && "relative")}>
         <Reveal>{children}</Reveal>
       </Container>
     </section>
