@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { Container, Eyebrow, SmartLink } from "@/components/blocks";
+import { BrandAtmosphere } from "@/components/brand-atmosphere";
 
 /**
  * PageHero — the calm navy header used at the top of every interior page.
