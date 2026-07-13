@@ -89,6 +89,7 @@ export function PageHero({
             ))}
           </nav>
         ) : null}
+        </div>
       </Container>
     </header>
   );
