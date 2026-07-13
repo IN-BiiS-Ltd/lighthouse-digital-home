@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { cva, type VariantProps } from "class-variance-authority";
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import { Reveal } from "@/components/reveal";
 import logo from "@/assets/lighthouse-logo.png.asset.json";
 
 /* ------------------------------------------------------------------ */
