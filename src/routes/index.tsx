@@ -98,17 +98,18 @@ function Home() {
         <BrandAtmosphere density={1.1} />
         <Container className="relative flex min-h-[78vh] flex-col justify-center py-24">
           <div className="max-w-2xl">
-
-            <Eyebrow onNavy>Lighthouse Campus · Mohandessin</Eyebrow>
-            <h1 className="mt-6 text-balance font-display text-4xl font-medium leading-[1.04] tracking-tight md:text-6xl lg:text-[4.2rem]">
+            <div className="animate-[fade-in_0.8s_cubic-bezier(0.22,1,0.36,1)_both]">
+              <Eyebrow onNavy>Lighthouse Campus · Mohandessin</Eyebrow>
+            </div>
+            <h1 className="mt-6 text-balance font-display text-4xl font-medium leading-[1.04] tracking-tight md:text-6xl lg:text-[4.2rem] animate-[fade-in_1s_cubic-bezier(0.22,1,0.36,1)_0.1s_both]">
               A place where learning leads and every student is seen.
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-navy-foreground/85 md:text-xl">
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-navy-foreground/85 md:text-xl animate-[fade-in_1s_cubic-bezier(0.22,1,0.36,1)_0.25s_both]">
               Guiding minds. Inspiring futures. Connecting possibilities. An
               international learning community built around curiosity, character
               and belonging.
             </p>
-            <div className="mt-9 flex flex-wrap gap-3">
+            <div className="mt-9 flex flex-wrap gap-3 animate-[fade-in_1s_cubic-bezier(0.22,1,0.36,1)_0.4s_both]">
               <ButtonLink to="/admissions" variant="gold" size="lg">
                 Begin the admissions journey
               </ButtonLink>
@@ -117,6 +118,7 @@ function Home() {
               </ButtonLink>
             </div>
           </div>
+
         </Container>
       </section>
 
