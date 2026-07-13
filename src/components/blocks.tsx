@@ -292,7 +292,7 @@ export function FeatureCard({
   icon?: ReactNode;
   className?: string;
 }) {
-  const handleMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMove = (e: MouseEvent<HTMLDivElement>) => {
     const el = e.currentTarget;
     const rect = el.getBoundingClientRect();
     el.style.setProperty("--mx", `${((e.clientX - rect.left) / rect.width) * 100}%`);
