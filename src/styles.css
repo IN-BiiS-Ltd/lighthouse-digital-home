@@ -303,11 +303,74 @@
   animation: ken-burns 22s ease-out forwards;
 }
 
+/* Cinematic feature card — pointer-tracked spotlight, lift and drawn accent */
+.cine-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.5s ease;
+  will-change: transform;
+}
+
+/* soft golden spotlight that follows the cursor */
+.cine-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  background: radial-gradient(
+    20rem 20rem at var(--mx, 50%) var(--my, 0%),
+    color-mix(in oklab, var(--gold) 22%, transparent),
+    color-mix(in oklab, var(--sky) 8%, transparent) 42%,
+    transparent 66%
+  );
+}
+
+/* gold rule that draws across the top edge on hover */
+.cine-card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cine-card:hover {
+  transform: translateY(-6px);
+  border-color: color-mix(in oklab, var(--gold) 55%, transparent);
+  box-shadow: 0 26px 60px -28px color-mix(in oklab, var(--navy) 55%, transparent);
+}
+
+.cine-card:hover::before {
+  opacity: 1;
+}
+
+.cine-card:hover::after {
+  transform: scaleX(1);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .lighthouse-beam,
   .animate-aurora,
   .animate-ken-burns {
     animation: none !important;
+  }
+  .cine-card {
+    transition: none;
+  }
+  .cine-card:hover {
+    transform: none;
   }
   .reveal {
     opacity: 1;
