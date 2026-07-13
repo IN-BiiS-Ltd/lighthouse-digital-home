@@ -307,7 +307,9 @@ function WhyLighthouse() {
       </Section>
 
       {/* Section 3 — The Meaning Behind LIGHTHOUSE */}
-      <Section id="meaning">
+      <Section id="meaning" className="relative isolate overflow-hidden">
+        <CrystalField />
+        <div className="relative">
         <SectionHeading
           eyebrow="The Meaning Behind LIGHTHOUSE"
           title="Ten principles, held within a single word"
@@ -317,7 +319,19 @@ function WhyLighthouse() {
           {acrostic.map((item, i) => (
             <article
               key={`${item.letter}-${i}`}
-              className="group relative overflow-hidden rounded-xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-[0_16px_40px_-20px_rgba(11,29,58,0.35)]"
+              onMouseMove={(e) => {
+                const el = e.currentTarget;
+                const rect = el.getBoundingClientRect();
+                el.style.setProperty(
+                  "--mx",
+                  `${((e.clientX - rect.left) / rect.width) * 100}%`,
+                );
+                el.style.setProperty(
+                  "--my",
+                  `${((e.clientY - rect.top) / rect.height) * 100}%`,
+                );
+              }}
+              className="cine-card group rounded-xl border border-border bg-card/90 p-7 backdrop-blur-sm"
             >
               <div className="mb-1 flex items-center gap-4">
                 <div className="relative overflow-hidden rounded-xl ring-1 ring-navy/10 shadow-[0_10px_28px_-16px_rgba(11,29,58,0.5)]">
@@ -327,17 +341,21 @@ function WhyLighthouse() {
                     loading="lazy"
                     width={816}
                     height={816}
-                    className="size-20 object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="size-20 object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 group-hover:translate-x-full"
                   />
                 </div>
                 <span
                   aria-hidden
-                  className="font-display text-4xl font-semibold text-gold/25 transition-colors duration-300 group-hover:text-gold/60"
+                  className="font-display text-4xl font-semibold text-gold/25 transition-all duration-500 group-hover:scale-110 group-hover:text-gold/70"
                 >
                   {item.letter}
                 </span>
               </div>
-              <h3 className="mt-4 font-display text-lg font-medium text-foreground">
+              <h3 className="mt-4 font-display text-lg font-medium text-foreground transition-colors duration-300 group-hover:text-brand-blue">
                 {item.title}
               </h3>
               <p className="mt-2 text-[0.95rem] leading-relaxed text-muted-foreground">
@@ -346,7 +364,9 @@ function WhyLighthouse() {
             </article>
           ))}
         </div>
+        </div>
       </Section>
+
 
       {/* Section 4 — Understanding Our Logo */}
       <Section tone="muted" id="logo">
