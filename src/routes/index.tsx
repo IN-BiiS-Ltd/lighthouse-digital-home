@@ -95,7 +95,7 @@ function Home() {
               "linear-gradient(90deg, color-mix(in oklab, var(--navy) 92%, transparent) 0%, color-mix(in oklab, var(--navy) 78%, transparent) 45%, color-mix(in oklab, var(--navy) 30%, transparent) 100%)",
           }}
         />
-        <BrandAtmosphere className="-z-10" density={1.1} />
+        <BrandAtmosphere density={1.1} />
         <Container className="relative flex min-h-[78vh] flex-col justify-center py-24">
           <div className="max-w-2xl">
 
