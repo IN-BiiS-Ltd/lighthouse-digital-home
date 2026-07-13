@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { Container, Eyebrow, SmartLink } from "@/components/blocks";
+import { BrandAtmosphere } from "@/components/brand-atmosphere";
 
 /**
  * PageHero — the calm navy header used at the top of every interior page.
@@ -31,7 +32,10 @@ export function PageHero({
             "radial-gradient(60% 90% at 82% -10%, color-mix(in oklab, var(--brand-blue) 40%, transparent), transparent 60%), radial-gradient(50% 80% at 6% 0%, color-mix(in oklab, var(--gold) 20%, transparent), transparent 55%)",
         }}
       />
+      <BrandAtmosphere density={0.7} />
       <Container className="relative py-20 md:py-28">
+        <div className="reveal reveal-in animate-[fade-in_0.9s_cubic-bezier(0.22,1,0.36,1)_both]">
+
         {breadcrumb && breadcrumb.length > 0 ? (
           <nav
             aria-label="Breadcrumb"
@@ -85,6 +89,7 @@ export function PageHero({
             ))}
           </nav>
         ) : null}
+        </div>
       </Container>
     </header>
   );
