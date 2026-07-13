@@ -18,6 +18,7 @@ import {
   SmartLink,
 } from "@/components/blocks";
 import { NarrativeFlow } from "@/components/page-hero";
+import { BrandAtmosphere } from "@/components/brand-atmosphere";
 import heroImg from "@/assets/hero-learning.jpg";
 import stemImg from "@/assets/academic-stem.jpg";
 import studentLifeImg from "@/assets/student-life.jpg";
