@@ -184,7 +184,9 @@ export function Section({
         className,
       )}
     >
-      <Container>{children}</Container>
+      <Container>
+        <Reveal>{children}</Reveal>
+      </Container>
     </section>
   );
 }
