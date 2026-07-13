@@ -360,10 +360,49 @@
   transform: scaleX(1);
 }
 
+/* Crystal field — drifting prismatic shards in the lighthouse palette */
+.crystal-field {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.crystal {
+  position: absolute;
+  width: var(--size, 3rem);
+  height: var(--size, 3rem);
+  background: linear-gradient(
+    135deg,
+    color-mix(in oklab, var(--c1, var(--gold)) 85%, white),
+    var(--c1, var(--gold)) 40%,
+    color-mix(in oklab, var(--c2, var(--brand-blue)) 70%, transparent)
+  );
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+  opacity: var(--opacity, 0.22);
+  filter: blur(0.3px) drop-shadow(0 6px 14px color-mix(in oklab, var(--c1, var(--gold)) 30%, transparent));
+  animation: crystal-drift var(--dur, 16s) ease-in-out var(--delay, 0s) infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes crystal-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(var(--rot, 0deg)) scale(1);
+    opacity: var(--opacity, 0.22);
+  }
+  50% {
+    transform: translate3d(var(--dx, 1.5rem), var(--dy, -2rem), 0)
+      rotate(calc(var(--rot, 0deg) + 40deg)) scale(1.12);
+    opacity: calc(var(--opacity, 0.22) * 1.6);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .lighthouse-beam,
   .animate-aurora,
-  .animate-ken-burns {
+  .animate-ken-burns,
+  .crystal {
     animation: none !important;
   }
   .cine-card {
