@@ -2169,3 +2169,119 @@ After implementation, return a concise report containing:
 Do not begin Phase 3.
 
 Stop only after Phase 2 is fully implemented, verified and reported.
+---
+
+# PHASE 3 — APPROVED CONTENT INTEGRATION (INTEGRATED)
+
+Phase 3 approved neutral institutional content has been integrated into
+the routed pages listed below. Content lives inside each route file
+under `src/routes/` and uses the shared `InternalPage` / `OverviewPage`
+templates. No operational facts have been invented; where information
+is not yet verified, pages display an accurate implementation-status
+block instead of a fabricated claim.
+
+## Sections integrated
+
+### Student Life
+- `/student-life` — Overview
+- `/student-life/community-belonging`
+- `/student-life/clubs-activities`
+- `/student-life/athletics`
+- `/student-life/arts-performance`
+- `/student-life/leadership-service`
+- `/student-life/wellbeing`
+- `/student-life/events`
+
+### Campus
+- `/campus-experience` — Campus Experience Overview
+- `/campus-experience/overview` — Campus Overview
+- `/campus-experience/classrooms`
+- `/campus-experience/library`
+- `/campus-experience/laboratories`
+- `/campus-experience/innovation-creative-spaces`
+- `/campus-experience/sports-facilities`
+- `/campus-experience/dining`
+- `/campus-experience/health-services`
+- `/campus-experience/safety`
+- `/campus-experience/transportation`
+
+### Admissions
+- `/admissions` — Overview
+- `/admissions/application-process` (five-step journey: Enquire, Visit, Apply, Assessment & Meeting, Offer & Enrolment)
+- `/admissions/requirements`
+- `/admissions/tuition-fees` (fees on request, not published)
+- `/admissions/scholarships` (awaiting approved policy)
+- `/admissions/faq`
+- `/admissions/schedule-a-visit`
+- `/admissions/apply-online` (In Development)
+
+### Parents
+- `/parents` — Overview
+- `/parents/parent-partnership`
+- `/parents/parent-journey`
+- `/parents/communication`
+- `/parents/parent-portal` (In Development)
+- `/parents/school-calendar`
+- `/parents/family-resources`
+- `/parents/school-policies`
+- `/parents/family-engagement`
+
+### Community
+- `/community` — Overview
+- `/community/partnerships`
+- `/community/alumni` ("The future Lighthouse alumni community")
+- `/community/community-programmes`
+- `/community/events`
+- `/community/careers`
+
+### News & Insights
+- `/news` — Editorial home
+- `/news/school-news`
+- `/news/educational-insights`
+- `/news/student-stories`
+- `/news/teacher-stories`
+- `/news/parent-guides`
+- `/news/research-reflection`
+- `/news/campus-events`
+- `/news/community-stories`
+
+## Content governance applied
+
+- No tuition amounts, scholarship criteria, staff names, counselling
+  capacity, transport routes, facility specifications, partnerships,
+  alumni activity, event dates, news stories, career vacancies,
+  admissions deadlines, statistics, awards or examination outcomes
+  have been invented.
+- Where operational content is not yet verified, pages carry an
+  accurate implementation-status block ("In Development", "as
+  established", "shared with enrolled families through official
+  channels").
+- No deceptive online application form or active parent portal has
+  been built. `/admissions/apply-online` and `/parents/parent-portal`
+  clearly state their status.
+- Fee page uses the approved wording: "Clear, transparent fee
+  information is available on request."
+- Alumni page uses: "The future Lighthouse alumni community."
+- News/insights architecture is CMS-ready — category landing pages
+  plus a documented article model (category, title, summary, author,
+  publication date, reading time, hero image, body content, related
+  articles, CTA, SEO metadata). No editorial placeholder records are
+  exposed publicly.
+
+## Shared components (new)
+
+- `InternalPage` (`src/components/internal-page.tsx`) — internal-page
+  template used by every Phase 3 sub-page. Renders breadcrumb + compact
+  page header, title, intro, alternating content sections, optional
+  implementation-status block, related-page cards and closing CTA.
+- `OverviewPage` (same file) — editorial landing template used by all
+  Phase 3 section homes (Student Life, Campus, Admissions, Parents,
+  Community, News & Insights).
+
+## SEO
+
+Every Phase 3 page has a unique `<title>`, unique `<meta name="description">`,
+matching `og:title`, `og:description`, `og:url`, `og:type="article"` (or
+`"website"` for overviews) and a self-referencing canonical link.
+Sitemap entries added for every route.
+

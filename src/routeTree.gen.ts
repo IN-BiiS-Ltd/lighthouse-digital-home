@@ -24,6 +24,21 @@ import { Route as AdmissionsRouteImport } from './routes/admissions'
 import { Route as AcademicExperienceRouteImport } from './routes/academic-experience'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as StudentLifeWellbeingRouteImport } from './routes/student-life_.wellbeing'
+import { Route as StudentLifeLeadershipServiceRouteImport } from './routes/student-life_.leadership-service'
+import { Route as StudentLifeEventsRouteImport } from './routes/student-life_.events'
+import { Route as StudentLifeCommunityBelongingRouteImport } from './routes/student-life_.community-belonging'
+import { Route as StudentLifeClubsActivitiesRouteImport } from './routes/student-life_.clubs-activities'
+import { Route as StudentLifeAthleticsRouteImport } from './routes/student-life_.athletics'
+import { Route as StudentLifeArtsPerformanceRouteImport } from './routes/student-life_.arts-performance'
+import { Route as ParentsSchoolPoliciesRouteImport } from './routes/parents_.school-policies'
+import { Route as ParentsSchoolCalendarRouteImport } from './routes/parents_.school-calendar'
+import { Route as ParentsParentPortalRouteImport } from './routes/parents_.parent-portal'
+import { Route as ParentsParentPartnershipRouteImport } from './routes/parents_.parent-partnership'
+import { Route as ParentsParentJourneyRouteImport } from './routes/parents_.parent-journey'
+import { Route as ParentsFamilyResourcesRouteImport } from './routes/parents_.family-resources'
+import { Route as ParentsFamilyEngagementRouteImport } from './routes/parents_.family-engagement'
+import { Route as ParentsCommunicationRouteImport } from './routes/parents_.communication'
 import { Route as OurModelTeachingFrameworkRouteImport } from './routes/our-model.teaching-framework'
 import { Route as OurModelStudentDevelopmentRouteImport } from './routes/our-model.student-development'
 import { Route as OurModelParentPartnershipRouteImport } from './routes/our-model.parent-partnership'
@@ -34,13 +49,43 @@ import { Route as OurModelInnovationRouteImport } from './routes/our-model.innov
 import { Route as OurModelGraduateProfileRouteImport } from './routes/our-model.graduate-profile'
 import { Route as OurModelEducationalModelRouteImport } from './routes/our-model.educational-model'
 import { Route as OurModelAssessmentFrameworkRouteImport } from './routes/our-model.assessment-framework'
+import { Route as NewsTeacherStoriesRouteImport } from './routes/news_.teacher-stories'
+import { Route as NewsStudentStoriesRouteImport } from './routes/news_.student-stories'
+import { Route as NewsSchoolNewsRouteImport } from './routes/news_.school-news'
+import { Route as NewsResearchReflectionRouteImport } from './routes/news_.research-reflection'
+import { Route as NewsParentGuidesRouteImport } from './routes/news_.parent-guides'
+import { Route as NewsEducationalInsightsRouteImport } from './routes/news_.educational-insights'
+import { Route as NewsCommunityStoriesRouteImport } from './routes/news_.community-stories'
+import { Route as NewsCampusEventsRouteImport } from './routes/news_.campus-events'
 import { Route as LearningJourneySecondaryRouteImport } from './routes/learning-journey_.secondary'
 import { Route as LearningJourneyPrimaryRouteImport } from './routes/learning-journey_.primary'
 import { Route as LearningJourneyPreparatoryRouteImport } from './routes/learning-journey_.preparatory'
 import { Route as LearningJourneyGraduationPathwaysRouteImport } from './routes/learning-journey_.graduation-pathways'
 import { Route as LearningJourneyEarlyYearsRouteImport } from './routes/learning-journey_.early-years'
 import { Route as ExploreDigitalEcosystemRouteImport } from './routes/explore.digital-ecosystem'
+import { Route as CommunityPartnershipsRouteImport } from './routes/community_.partnerships'
+import { Route as CommunityEventsRouteImport } from './routes/community_.events'
+import { Route as CommunityCommunityProgrammesRouteImport } from './routes/community_.community-programmes'
+import { Route as CommunityCareersRouteImport } from './routes/community_.careers'
+import { Route as CommunityAlumniRouteImport } from './routes/community_.alumni'
 import { Route as CampusesMohandessinRouteImport } from './routes/campuses.mohandessin'
+import { Route as CampusExperienceTransportationRouteImport } from './routes/campus-experience_.transportation'
+import { Route as CampusExperienceSportsFacilitiesRouteImport } from './routes/campus-experience_.sports-facilities'
+import { Route as CampusExperienceSafetyRouteImport } from './routes/campus-experience_.safety'
+import { Route as CampusExperienceOverviewRouteImport } from './routes/campus-experience_.overview'
+import { Route as CampusExperienceLibraryRouteImport } from './routes/campus-experience_.library'
+import { Route as CampusExperienceLaboratoriesRouteImport } from './routes/campus-experience_.laboratories'
+import { Route as CampusExperienceInnovationCreativeSpacesRouteImport } from './routes/campus-experience_.innovation-creative-spaces'
+import { Route as CampusExperienceHealthServicesRouteImport } from './routes/campus-experience_.health-services'
+import { Route as CampusExperienceDiningRouteImport } from './routes/campus-experience_.dining'
+import { Route as CampusExperienceClassroomsRouteImport } from './routes/campus-experience_.classrooms'
+import { Route as AdmissionsTuitionFeesRouteImport } from './routes/admissions_.tuition-fees'
+import { Route as AdmissionsScholarshipsRouteImport } from './routes/admissions_.scholarships'
+import { Route as AdmissionsScheduleAVisitRouteImport } from './routes/admissions_.schedule-a-visit'
+import { Route as AdmissionsRequirementsRouteImport } from './routes/admissions_.requirements'
+import { Route as AdmissionsFaqRouteImport } from './routes/admissions_.faq'
+import { Route as AdmissionsApplyOnlineRouteImport } from './routes/admissions_.apply-online'
+import { Route as AdmissionsApplicationProcessRouteImport } from './routes/admissions_.application-process'
 import { Route as AboutWhyLighthouseRouteImport } from './routes/about_.why-lighthouse'
 import { Route as AboutVisionRouteImport } from './routes/about_.vision'
 import { Route as AboutOurStoryRouteImport } from './routes/about_.our-story'
@@ -126,6 +171,86 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const StudentLifeWellbeingRoute = StudentLifeWellbeingRouteImport.update({
+  id: '/student-life_/wellbeing',
+  path: '/student-life/wellbeing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StudentLifeLeadershipServiceRoute =
+  StudentLifeLeadershipServiceRouteImport.update({
+    id: '/student-life_/leadership-service',
+    path: '/student-life/leadership-service',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const StudentLifeEventsRoute = StudentLifeEventsRouteImport.update({
+  id: '/student-life_/events',
+  path: '/student-life/events',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StudentLifeCommunityBelongingRoute =
+  StudentLifeCommunityBelongingRouteImport.update({
+    id: '/student-life_/community-belonging',
+    path: '/student-life/community-belonging',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const StudentLifeClubsActivitiesRoute =
+  StudentLifeClubsActivitiesRouteImport.update({
+    id: '/student-life_/clubs-activities',
+    path: '/student-life/clubs-activities',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const StudentLifeAthleticsRoute = StudentLifeAthleticsRouteImport.update({
+  id: '/student-life_/athletics',
+  path: '/student-life/athletics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StudentLifeArtsPerformanceRoute =
+  StudentLifeArtsPerformanceRouteImport.update({
+    id: '/student-life_/arts-performance',
+    path: '/student-life/arts-performance',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ParentsSchoolPoliciesRoute = ParentsSchoolPoliciesRouteImport.update({
+  id: '/parents_/school-policies',
+  path: '/parents/school-policies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParentsSchoolCalendarRoute = ParentsSchoolCalendarRouteImport.update({
+  id: '/parents_/school-calendar',
+  path: '/parents/school-calendar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParentsParentPortalRoute = ParentsParentPortalRouteImport.update({
+  id: '/parents_/parent-portal',
+  path: '/parents/parent-portal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParentsParentPartnershipRoute =
+  ParentsParentPartnershipRouteImport.update({
+    id: '/parents_/parent-partnership',
+    path: '/parents/parent-partnership',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ParentsParentJourneyRoute = ParentsParentJourneyRouteImport.update({
+  id: '/parents_/parent-journey',
+  path: '/parents/parent-journey',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParentsFamilyResourcesRoute = ParentsFamilyResourcesRouteImport.update({
+  id: '/parents_/family-resources',
+  path: '/parents/family-resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParentsFamilyEngagementRoute = ParentsFamilyEngagementRouteImport.update({
+  id: '/parents_/family-engagement',
+  path: '/parents/family-engagement',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParentsCommunicationRoute = ParentsCommunicationRouteImport.update({
+  id: '/parents_/communication',
+  path: '/parents/communication',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OurModelTeachingFrameworkRoute =
   OurModelTeachingFrameworkRouteImport.update({
     id: '/teaching-framework',
@@ -183,6 +308,46 @@ const OurModelAssessmentFrameworkRoute =
     path: '/assessment-framework',
     getParentRoute: () => OurModelRoute,
   } as any)
+const NewsTeacherStoriesRoute = NewsTeacherStoriesRouteImport.update({
+  id: '/news_/teacher-stories',
+  path: '/news/teacher-stories',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsStudentStoriesRoute = NewsStudentStoriesRouteImport.update({
+  id: '/news_/student-stories',
+  path: '/news/student-stories',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsSchoolNewsRoute = NewsSchoolNewsRouteImport.update({
+  id: '/news_/school-news',
+  path: '/news/school-news',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsResearchReflectionRoute = NewsResearchReflectionRouteImport.update({
+  id: '/news_/research-reflection',
+  path: '/news/research-reflection',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsParentGuidesRoute = NewsParentGuidesRouteImport.update({
+  id: '/news_/parent-guides',
+  path: '/news/parent-guides',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsEducationalInsightsRoute = NewsEducationalInsightsRouteImport.update({
+  id: '/news_/educational-insights',
+  path: '/news/educational-insights',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsCommunityStoriesRoute = NewsCommunityStoriesRouteImport.update({
+  id: '/news_/community-stories',
+  path: '/news/community-stories',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsCampusEventsRoute = NewsCampusEventsRouteImport.update({
+  id: '/news_/campus-events',
+  path: '/news/campus-events',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LearningJourneySecondaryRoute =
   LearningJourneySecondaryRouteImport.update({
     id: '/learning-journey_/secondary',
@@ -217,11 +382,131 @@ const ExploreDigitalEcosystemRoute = ExploreDigitalEcosystemRouteImport.update({
   path: '/explore/digital-ecosystem',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CommunityPartnershipsRoute = CommunityPartnershipsRouteImport.update({
+  id: '/community_/partnerships',
+  path: '/community/partnerships',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CommunityEventsRoute = CommunityEventsRouteImport.update({
+  id: '/community_/events',
+  path: '/community/events',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CommunityCommunityProgrammesRoute =
+  CommunityCommunityProgrammesRouteImport.update({
+    id: '/community_/community-programmes',
+    path: '/community/community-programmes',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CommunityCareersRoute = CommunityCareersRouteImport.update({
+  id: '/community_/careers',
+  path: '/community/careers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CommunityAlumniRoute = CommunityAlumniRouteImport.update({
+  id: '/community_/alumni',
+  path: '/community/alumni',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CampusesMohandessinRoute = CampusesMohandessinRouteImport.update({
   id: '/mohandessin',
   path: '/mohandessin',
   getParentRoute: () => CampusesRoute,
 } as any)
+const CampusExperienceTransportationRoute =
+  CampusExperienceTransportationRouteImport.update({
+    id: '/campus-experience_/transportation',
+    path: '/campus-experience/transportation',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CampusExperienceSportsFacilitiesRoute =
+  CampusExperienceSportsFacilitiesRouteImport.update({
+    id: '/campus-experience_/sports-facilities',
+    path: '/campus-experience/sports-facilities',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CampusExperienceSafetyRoute = CampusExperienceSafetyRouteImport.update({
+  id: '/campus-experience_/safety',
+  path: '/campus-experience/safety',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CampusExperienceOverviewRoute =
+  CampusExperienceOverviewRouteImport.update({
+    id: '/campus-experience_/overview',
+    path: '/campus-experience/overview',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CampusExperienceLibraryRoute = CampusExperienceLibraryRouteImport.update({
+  id: '/campus-experience_/library',
+  path: '/campus-experience/library',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CampusExperienceLaboratoriesRoute =
+  CampusExperienceLaboratoriesRouteImport.update({
+    id: '/campus-experience_/laboratories',
+    path: '/campus-experience/laboratories',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CampusExperienceInnovationCreativeSpacesRoute =
+  CampusExperienceInnovationCreativeSpacesRouteImport.update({
+    id: '/campus-experience_/innovation-creative-spaces',
+    path: '/campus-experience/innovation-creative-spaces',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CampusExperienceHealthServicesRoute =
+  CampusExperienceHealthServicesRouteImport.update({
+    id: '/campus-experience_/health-services',
+    path: '/campus-experience/health-services',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CampusExperienceDiningRoute = CampusExperienceDiningRouteImport.update({
+  id: '/campus-experience_/dining',
+  path: '/campus-experience/dining',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CampusExperienceClassroomsRoute =
+  CampusExperienceClassroomsRouteImport.update({
+    id: '/campus-experience_/classrooms',
+    path: '/campus-experience/classrooms',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdmissionsTuitionFeesRoute = AdmissionsTuitionFeesRouteImport.update({
+  id: '/admissions_/tuition-fees',
+  path: '/admissions/tuition-fees',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdmissionsScholarshipsRoute = AdmissionsScholarshipsRouteImport.update({
+  id: '/admissions_/scholarships',
+  path: '/admissions/scholarships',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdmissionsScheduleAVisitRoute =
+  AdmissionsScheduleAVisitRouteImport.update({
+    id: '/admissions_/schedule-a-visit',
+    path: '/admissions/schedule-a-visit',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AdmissionsRequirementsRoute = AdmissionsRequirementsRouteImport.update({
+  id: '/admissions_/requirements',
+  path: '/admissions/requirements',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdmissionsFaqRoute = AdmissionsFaqRouteImport.update({
+  id: '/admissions_/faq',
+  path: '/admissions/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdmissionsApplyOnlineRoute = AdmissionsApplyOnlineRouteImport.update({
+  id: '/admissions_/apply-online',
+  path: '/admissions/apply-online',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdmissionsApplicationProcessRoute =
+  AdmissionsApplicationProcessRouteImport.update({
+    id: '/admissions_/application-process',
+    path: '/admissions/application-process',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AboutWhyLighthouseRoute = AboutWhyLighthouseRouteImport.update({
   id: '/about_/why-lighthouse',
   path: '/about/why-lighthouse',
@@ -294,13 +579,43 @@ export interface FileRoutesByFullPath {
   '/about/our-story': typeof AboutOurStoryRoute
   '/about/vision': typeof AboutVisionRoute
   '/about/why-lighthouse': typeof AboutWhyLighthouseRoute
+  '/admissions/application-process': typeof AdmissionsApplicationProcessRoute
+  '/admissions/apply-online': typeof AdmissionsApplyOnlineRoute
+  '/admissions/faq': typeof AdmissionsFaqRoute
+  '/admissions/requirements': typeof AdmissionsRequirementsRoute
+  '/admissions/schedule-a-visit': typeof AdmissionsScheduleAVisitRoute
+  '/admissions/scholarships': typeof AdmissionsScholarshipsRoute
+  '/admissions/tuition-fees': typeof AdmissionsTuitionFeesRoute
+  '/campus-experience/classrooms': typeof CampusExperienceClassroomsRoute
+  '/campus-experience/dining': typeof CampusExperienceDiningRoute
+  '/campus-experience/health-services': typeof CampusExperienceHealthServicesRoute
+  '/campus-experience/innovation-creative-spaces': typeof CampusExperienceInnovationCreativeSpacesRoute
+  '/campus-experience/laboratories': typeof CampusExperienceLaboratoriesRoute
+  '/campus-experience/library': typeof CampusExperienceLibraryRoute
+  '/campus-experience/overview': typeof CampusExperienceOverviewRoute
+  '/campus-experience/safety': typeof CampusExperienceSafetyRoute
+  '/campus-experience/sports-facilities': typeof CampusExperienceSportsFacilitiesRoute
+  '/campus-experience/transportation': typeof CampusExperienceTransportationRoute
   '/campuses/mohandessin': typeof CampusesMohandessinRoute
+  '/community/alumni': typeof CommunityAlumniRoute
+  '/community/careers': typeof CommunityCareersRoute
+  '/community/community-programmes': typeof CommunityCommunityProgrammesRoute
+  '/community/events': typeof CommunityEventsRoute
+  '/community/partnerships': typeof CommunityPartnershipsRoute
   '/explore/digital-ecosystem': typeof ExploreDigitalEcosystemRoute
   '/learning-journey/early-years': typeof LearningJourneyEarlyYearsRoute
   '/learning-journey/graduation-pathways': typeof LearningJourneyGraduationPathwaysRoute
   '/learning-journey/preparatory': typeof LearningJourneyPreparatoryRoute
   '/learning-journey/primary': typeof LearningJourneyPrimaryRoute
   '/learning-journey/secondary': typeof LearningJourneySecondaryRoute
+  '/news/campus-events': typeof NewsCampusEventsRoute
+  '/news/community-stories': typeof NewsCommunityStoriesRoute
+  '/news/educational-insights': typeof NewsEducationalInsightsRoute
+  '/news/parent-guides': typeof NewsParentGuidesRoute
+  '/news/research-reflection': typeof NewsResearchReflectionRoute
+  '/news/school-news': typeof NewsSchoolNewsRoute
+  '/news/student-stories': typeof NewsStudentStoriesRoute
+  '/news/teacher-stories': typeof NewsTeacherStoriesRoute
   '/our-model/assessment-framework': typeof OurModelAssessmentFrameworkRoute
   '/our-model/educational-model': typeof OurModelEducationalModelRoute
   '/our-model/graduate-profile': typeof OurModelGraduateProfileRoute
@@ -311,6 +626,21 @@ export interface FileRoutesByFullPath {
   '/our-model/parent-partnership': typeof OurModelParentPartnershipRoute
   '/our-model/student-development': typeof OurModelStudentDevelopmentRoute
   '/our-model/teaching-framework': typeof OurModelTeachingFrameworkRoute
+  '/parents/communication': typeof ParentsCommunicationRoute
+  '/parents/family-engagement': typeof ParentsFamilyEngagementRoute
+  '/parents/family-resources': typeof ParentsFamilyResourcesRoute
+  '/parents/parent-journey': typeof ParentsParentJourneyRoute
+  '/parents/parent-partnership': typeof ParentsParentPartnershipRoute
+  '/parents/parent-portal': typeof ParentsParentPortalRoute
+  '/parents/school-calendar': typeof ParentsSchoolCalendarRoute
+  '/parents/school-policies': typeof ParentsSchoolPoliciesRoute
+  '/student-life/arts-performance': typeof StudentLifeArtsPerformanceRoute
+  '/student-life/athletics': typeof StudentLifeAthleticsRoute
+  '/student-life/clubs-activities': typeof StudentLifeClubsActivitiesRoute
+  '/student-life/community-belonging': typeof StudentLifeCommunityBelongingRoute
+  '/student-life/events': typeof StudentLifeEventsRoute
+  '/student-life/leadership-service': typeof StudentLifeLeadershipServiceRoute
+  '/student-life/wellbeing': typeof StudentLifeWellbeingRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -337,13 +667,43 @@ export interface FileRoutesByTo {
   '/about/our-story': typeof AboutOurStoryRoute
   '/about/vision': typeof AboutVisionRoute
   '/about/why-lighthouse': typeof AboutWhyLighthouseRoute
+  '/admissions/application-process': typeof AdmissionsApplicationProcessRoute
+  '/admissions/apply-online': typeof AdmissionsApplyOnlineRoute
+  '/admissions/faq': typeof AdmissionsFaqRoute
+  '/admissions/requirements': typeof AdmissionsRequirementsRoute
+  '/admissions/schedule-a-visit': typeof AdmissionsScheduleAVisitRoute
+  '/admissions/scholarships': typeof AdmissionsScholarshipsRoute
+  '/admissions/tuition-fees': typeof AdmissionsTuitionFeesRoute
+  '/campus-experience/classrooms': typeof CampusExperienceClassroomsRoute
+  '/campus-experience/dining': typeof CampusExperienceDiningRoute
+  '/campus-experience/health-services': typeof CampusExperienceHealthServicesRoute
+  '/campus-experience/innovation-creative-spaces': typeof CampusExperienceInnovationCreativeSpacesRoute
+  '/campus-experience/laboratories': typeof CampusExperienceLaboratoriesRoute
+  '/campus-experience/library': typeof CampusExperienceLibraryRoute
+  '/campus-experience/overview': typeof CampusExperienceOverviewRoute
+  '/campus-experience/safety': typeof CampusExperienceSafetyRoute
+  '/campus-experience/sports-facilities': typeof CampusExperienceSportsFacilitiesRoute
+  '/campus-experience/transportation': typeof CampusExperienceTransportationRoute
   '/campuses/mohandessin': typeof CampusesMohandessinRoute
+  '/community/alumni': typeof CommunityAlumniRoute
+  '/community/careers': typeof CommunityCareersRoute
+  '/community/community-programmes': typeof CommunityCommunityProgrammesRoute
+  '/community/events': typeof CommunityEventsRoute
+  '/community/partnerships': typeof CommunityPartnershipsRoute
   '/explore/digital-ecosystem': typeof ExploreDigitalEcosystemRoute
   '/learning-journey/early-years': typeof LearningJourneyEarlyYearsRoute
   '/learning-journey/graduation-pathways': typeof LearningJourneyGraduationPathwaysRoute
   '/learning-journey/preparatory': typeof LearningJourneyPreparatoryRoute
   '/learning-journey/primary': typeof LearningJourneyPrimaryRoute
   '/learning-journey/secondary': typeof LearningJourneySecondaryRoute
+  '/news/campus-events': typeof NewsCampusEventsRoute
+  '/news/community-stories': typeof NewsCommunityStoriesRoute
+  '/news/educational-insights': typeof NewsEducationalInsightsRoute
+  '/news/parent-guides': typeof NewsParentGuidesRoute
+  '/news/research-reflection': typeof NewsResearchReflectionRoute
+  '/news/school-news': typeof NewsSchoolNewsRoute
+  '/news/student-stories': typeof NewsStudentStoriesRoute
+  '/news/teacher-stories': typeof NewsTeacherStoriesRoute
   '/our-model/assessment-framework': typeof OurModelAssessmentFrameworkRoute
   '/our-model/educational-model': typeof OurModelEducationalModelRoute
   '/our-model/graduate-profile': typeof OurModelGraduateProfileRoute
@@ -354,6 +714,21 @@ export interface FileRoutesByTo {
   '/our-model/parent-partnership': typeof OurModelParentPartnershipRoute
   '/our-model/student-development': typeof OurModelStudentDevelopmentRoute
   '/our-model/teaching-framework': typeof OurModelTeachingFrameworkRoute
+  '/parents/communication': typeof ParentsCommunicationRoute
+  '/parents/family-engagement': typeof ParentsFamilyEngagementRoute
+  '/parents/family-resources': typeof ParentsFamilyResourcesRoute
+  '/parents/parent-journey': typeof ParentsParentJourneyRoute
+  '/parents/parent-partnership': typeof ParentsParentPartnershipRoute
+  '/parents/parent-portal': typeof ParentsParentPortalRoute
+  '/parents/school-calendar': typeof ParentsSchoolCalendarRoute
+  '/parents/school-policies': typeof ParentsSchoolPoliciesRoute
+  '/student-life/arts-performance': typeof StudentLifeArtsPerformanceRoute
+  '/student-life/athletics': typeof StudentLifeAthleticsRoute
+  '/student-life/clubs-activities': typeof StudentLifeClubsActivitiesRoute
+  '/student-life/community-belonging': typeof StudentLifeCommunityBelongingRoute
+  '/student-life/events': typeof StudentLifeEventsRoute
+  '/student-life/leadership-service': typeof StudentLifeLeadershipServiceRoute
+  '/student-life/wellbeing': typeof StudentLifeWellbeingRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -381,13 +756,43 @@ export interface FileRoutesById {
   '/about_/our-story': typeof AboutOurStoryRoute
   '/about_/vision': typeof AboutVisionRoute
   '/about_/why-lighthouse': typeof AboutWhyLighthouseRoute
+  '/admissions_/application-process': typeof AdmissionsApplicationProcessRoute
+  '/admissions_/apply-online': typeof AdmissionsApplyOnlineRoute
+  '/admissions_/faq': typeof AdmissionsFaqRoute
+  '/admissions_/requirements': typeof AdmissionsRequirementsRoute
+  '/admissions_/schedule-a-visit': typeof AdmissionsScheduleAVisitRoute
+  '/admissions_/scholarships': typeof AdmissionsScholarshipsRoute
+  '/admissions_/tuition-fees': typeof AdmissionsTuitionFeesRoute
+  '/campus-experience_/classrooms': typeof CampusExperienceClassroomsRoute
+  '/campus-experience_/dining': typeof CampusExperienceDiningRoute
+  '/campus-experience_/health-services': typeof CampusExperienceHealthServicesRoute
+  '/campus-experience_/innovation-creative-spaces': typeof CampusExperienceInnovationCreativeSpacesRoute
+  '/campus-experience_/laboratories': typeof CampusExperienceLaboratoriesRoute
+  '/campus-experience_/library': typeof CampusExperienceLibraryRoute
+  '/campus-experience_/overview': typeof CampusExperienceOverviewRoute
+  '/campus-experience_/safety': typeof CampusExperienceSafetyRoute
+  '/campus-experience_/sports-facilities': typeof CampusExperienceSportsFacilitiesRoute
+  '/campus-experience_/transportation': typeof CampusExperienceTransportationRoute
   '/campuses/mohandessin': typeof CampusesMohandessinRoute
+  '/community_/alumni': typeof CommunityAlumniRoute
+  '/community_/careers': typeof CommunityCareersRoute
+  '/community_/community-programmes': typeof CommunityCommunityProgrammesRoute
+  '/community_/events': typeof CommunityEventsRoute
+  '/community_/partnerships': typeof CommunityPartnershipsRoute
   '/explore/digital-ecosystem': typeof ExploreDigitalEcosystemRoute
   '/learning-journey_/early-years': typeof LearningJourneyEarlyYearsRoute
   '/learning-journey_/graduation-pathways': typeof LearningJourneyGraduationPathwaysRoute
   '/learning-journey_/preparatory': typeof LearningJourneyPreparatoryRoute
   '/learning-journey_/primary': typeof LearningJourneyPrimaryRoute
   '/learning-journey_/secondary': typeof LearningJourneySecondaryRoute
+  '/news_/campus-events': typeof NewsCampusEventsRoute
+  '/news_/community-stories': typeof NewsCommunityStoriesRoute
+  '/news_/educational-insights': typeof NewsEducationalInsightsRoute
+  '/news_/parent-guides': typeof NewsParentGuidesRoute
+  '/news_/research-reflection': typeof NewsResearchReflectionRoute
+  '/news_/school-news': typeof NewsSchoolNewsRoute
+  '/news_/student-stories': typeof NewsStudentStoriesRoute
+  '/news_/teacher-stories': typeof NewsTeacherStoriesRoute
   '/our-model/assessment-framework': typeof OurModelAssessmentFrameworkRoute
   '/our-model/educational-model': typeof OurModelEducationalModelRoute
   '/our-model/graduate-profile': typeof OurModelGraduateProfileRoute
@@ -398,6 +803,21 @@ export interface FileRoutesById {
   '/our-model/parent-partnership': typeof OurModelParentPartnershipRoute
   '/our-model/student-development': typeof OurModelStudentDevelopmentRoute
   '/our-model/teaching-framework': typeof OurModelTeachingFrameworkRoute
+  '/parents_/communication': typeof ParentsCommunicationRoute
+  '/parents_/family-engagement': typeof ParentsFamilyEngagementRoute
+  '/parents_/family-resources': typeof ParentsFamilyResourcesRoute
+  '/parents_/parent-journey': typeof ParentsParentJourneyRoute
+  '/parents_/parent-partnership': typeof ParentsParentPartnershipRoute
+  '/parents_/parent-portal': typeof ParentsParentPortalRoute
+  '/parents_/school-calendar': typeof ParentsSchoolCalendarRoute
+  '/parents_/school-policies': typeof ParentsSchoolPoliciesRoute
+  '/student-life_/arts-performance': typeof StudentLifeArtsPerformanceRoute
+  '/student-life_/athletics': typeof StudentLifeAthleticsRoute
+  '/student-life_/clubs-activities': typeof StudentLifeClubsActivitiesRoute
+  '/student-life_/community-belonging': typeof StudentLifeCommunityBelongingRoute
+  '/student-life_/events': typeof StudentLifeEventsRoute
+  '/student-life_/leadership-service': typeof StudentLifeLeadershipServiceRoute
+  '/student-life_/wellbeing': typeof StudentLifeWellbeingRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -426,13 +846,43 @@ export interface FileRouteTypes {
     | '/about/our-story'
     | '/about/vision'
     | '/about/why-lighthouse'
+    | '/admissions/application-process'
+    | '/admissions/apply-online'
+    | '/admissions/faq'
+    | '/admissions/requirements'
+    | '/admissions/schedule-a-visit'
+    | '/admissions/scholarships'
+    | '/admissions/tuition-fees'
+    | '/campus-experience/classrooms'
+    | '/campus-experience/dining'
+    | '/campus-experience/health-services'
+    | '/campus-experience/innovation-creative-spaces'
+    | '/campus-experience/laboratories'
+    | '/campus-experience/library'
+    | '/campus-experience/overview'
+    | '/campus-experience/safety'
+    | '/campus-experience/sports-facilities'
+    | '/campus-experience/transportation'
     | '/campuses/mohandessin'
+    | '/community/alumni'
+    | '/community/careers'
+    | '/community/community-programmes'
+    | '/community/events'
+    | '/community/partnerships'
     | '/explore/digital-ecosystem'
     | '/learning-journey/early-years'
     | '/learning-journey/graduation-pathways'
     | '/learning-journey/preparatory'
     | '/learning-journey/primary'
     | '/learning-journey/secondary'
+    | '/news/campus-events'
+    | '/news/community-stories'
+    | '/news/educational-insights'
+    | '/news/parent-guides'
+    | '/news/research-reflection'
+    | '/news/school-news'
+    | '/news/student-stories'
+    | '/news/teacher-stories'
     | '/our-model/assessment-framework'
     | '/our-model/educational-model'
     | '/our-model/graduate-profile'
@@ -443,6 +893,21 @@ export interface FileRouteTypes {
     | '/our-model/parent-partnership'
     | '/our-model/student-development'
     | '/our-model/teaching-framework'
+    | '/parents/communication'
+    | '/parents/family-engagement'
+    | '/parents/family-resources'
+    | '/parents/parent-journey'
+    | '/parents/parent-partnership'
+    | '/parents/parent-portal'
+    | '/parents/school-calendar'
+    | '/parents/school-policies'
+    | '/student-life/arts-performance'
+    | '/student-life/athletics'
+    | '/student-life/clubs-activities'
+    | '/student-life/community-belonging'
+    | '/student-life/events'
+    | '/student-life/leadership-service'
+    | '/student-life/wellbeing'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -469,13 +934,43 @@ export interface FileRouteTypes {
     | '/about/our-story'
     | '/about/vision'
     | '/about/why-lighthouse'
+    | '/admissions/application-process'
+    | '/admissions/apply-online'
+    | '/admissions/faq'
+    | '/admissions/requirements'
+    | '/admissions/schedule-a-visit'
+    | '/admissions/scholarships'
+    | '/admissions/tuition-fees'
+    | '/campus-experience/classrooms'
+    | '/campus-experience/dining'
+    | '/campus-experience/health-services'
+    | '/campus-experience/innovation-creative-spaces'
+    | '/campus-experience/laboratories'
+    | '/campus-experience/library'
+    | '/campus-experience/overview'
+    | '/campus-experience/safety'
+    | '/campus-experience/sports-facilities'
+    | '/campus-experience/transportation'
     | '/campuses/mohandessin'
+    | '/community/alumni'
+    | '/community/careers'
+    | '/community/community-programmes'
+    | '/community/events'
+    | '/community/partnerships'
     | '/explore/digital-ecosystem'
     | '/learning-journey/early-years'
     | '/learning-journey/graduation-pathways'
     | '/learning-journey/preparatory'
     | '/learning-journey/primary'
     | '/learning-journey/secondary'
+    | '/news/campus-events'
+    | '/news/community-stories'
+    | '/news/educational-insights'
+    | '/news/parent-guides'
+    | '/news/research-reflection'
+    | '/news/school-news'
+    | '/news/student-stories'
+    | '/news/teacher-stories'
     | '/our-model/assessment-framework'
     | '/our-model/educational-model'
     | '/our-model/graduate-profile'
@@ -486,6 +981,21 @@ export interface FileRouteTypes {
     | '/our-model/parent-partnership'
     | '/our-model/student-development'
     | '/our-model/teaching-framework'
+    | '/parents/communication'
+    | '/parents/family-engagement'
+    | '/parents/family-resources'
+    | '/parents/parent-journey'
+    | '/parents/parent-partnership'
+    | '/parents/parent-portal'
+    | '/parents/school-calendar'
+    | '/parents/school-policies'
+    | '/student-life/arts-performance'
+    | '/student-life/athletics'
+    | '/student-life/clubs-activities'
+    | '/student-life/community-belonging'
+    | '/student-life/events'
+    | '/student-life/leadership-service'
+    | '/student-life/wellbeing'
   id:
     | '__root__'
     | '/'
@@ -512,13 +1022,43 @@ export interface FileRouteTypes {
     | '/about_/our-story'
     | '/about_/vision'
     | '/about_/why-lighthouse'
+    | '/admissions_/application-process'
+    | '/admissions_/apply-online'
+    | '/admissions_/faq'
+    | '/admissions_/requirements'
+    | '/admissions_/schedule-a-visit'
+    | '/admissions_/scholarships'
+    | '/admissions_/tuition-fees'
+    | '/campus-experience_/classrooms'
+    | '/campus-experience_/dining'
+    | '/campus-experience_/health-services'
+    | '/campus-experience_/innovation-creative-spaces'
+    | '/campus-experience_/laboratories'
+    | '/campus-experience_/library'
+    | '/campus-experience_/overview'
+    | '/campus-experience_/safety'
+    | '/campus-experience_/sports-facilities'
+    | '/campus-experience_/transportation'
     | '/campuses/mohandessin'
+    | '/community_/alumni'
+    | '/community_/careers'
+    | '/community_/community-programmes'
+    | '/community_/events'
+    | '/community_/partnerships'
     | '/explore/digital-ecosystem'
     | '/learning-journey_/early-years'
     | '/learning-journey_/graduation-pathways'
     | '/learning-journey_/preparatory'
     | '/learning-journey_/primary'
     | '/learning-journey_/secondary'
+    | '/news_/campus-events'
+    | '/news_/community-stories'
+    | '/news_/educational-insights'
+    | '/news_/parent-guides'
+    | '/news_/research-reflection'
+    | '/news_/school-news'
+    | '/news_/student-stories'
+    | '/news_/teacher-stories'
     | '/our-model/assessment-framework'
     | '/our-model/educational-model'
     | '/our-model/graduate-profile'
@@ -529,6 +1069,21 @@ export interface FileRouteTypes {
     | '/our-model/parent-partnership'
     | '/our-model/student-development'
     | '/our-model/teaching-framework'
+    | '/parents_/communication'
+    | '/parents_/family-engagement'
+    | '/parents_/family-resources'
+    | '/parents_/parent-journey'
+    | '/parents_/parent-partnership'
+    | '/parents_/parent-portal'
+    | '/parents_/school-calendar'
+    | '/parents_/school-policies'
+    | '/student-life_/arts-performance'
+    | '/student-life_/athletics'
+    | '/student-life_/clubs-activities'
+    | '/student-life_/community-belonging'
+    | '/student-life_/events'
+    | '/student-life_/leadership-service'
+    | '/student-life_/wellbeing'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -556,12 +1111,57 @@ export interface RootRouteChildren {
   AboutOurStoryRoute: typeof AboutOurStoryRoute
   AboutVisionRoute: typeof AboutVisionRoute
   AboutWhyLighthouseRoute: typeof AboutWhyLighthouseRoute
+  AdmissionsApplicationProcessRoute: typeof AdmissionsApplicationProcessRoute
+  AdmissionsApplyOnlineRoute: typeof AdmissionsApplyOnlineRoute
+  AdmissionsFaqRoute: typeof AdmissionsFaqRoute
+  AdmissionsRequirementsRoute: typeof AdmissionsRequirementsRoute
+  AdmissionsScheduleAVisitRoute: typeof AdmissionsScheduleAVisitRoute
+  AdmissionsScholarshipsRoute: typeof AdmissionsScholarshipsRoute
+  AdmissionsTuitionFeesRoute: typeof AdmissionsTuitionFeesRoute
+  CampusExperienceClassroomsRoute: typeof CampusExperienceClassroomsRoute
+  CampusExperienceDiningRoute: typeof CampusExperienceDiningRoute
+  CampusExperienceHealthServicesRoute: typeof CampusExperienceHealthServicesRoute
+  CampusExperienceInnovationCreativeSpacesRoute: typeof CampusExperienceInnovationCreativeSpacesRoute
+  CampusExperienceLaboratoriesRoute: typeof CampusExperienceLaboratoriesRoute
+  CampusExperienceLibraryRoute: typeof CampusExperienceLibraryRoute
+  CampusExperienceOverviewRoute: typeof CampusExperienceOverviewRoute
+  CampusExperienceSafetyRoute: typeof CampusExperienceSafetyRoute
+  CampusExperienceSportsFacilitiesRoute: typeof CampusExperienceSportsFacilitiesRoute
+  CampusExperienceTransportationRoute: typeof CampusExperienceTransportationRoute
+  CommunityAlumniRoute: typeof CommunityAlumniRoute
+  CommunityCareersRoute: typeof CommunityCareersRoute
+  CommunityCommunityProgrammesRoute: typeof CommunityCommunityProgrammesRoute
+  CommunityEventsRoute: typeof CommunityEventsRoute
+  CommunityPartnershipsRoute: typeof CommunityPartnershipsRoute
   ExploreDigitalEcosystemRoute: typeof ExploreDigitalEcosystemRoute
   LearningJourneyEarlyYearsRoute: typeof LearningJourneyEarlyYearsRoute
   LearningJourneyGraduationPathwaysRoute: typeof LearningJourneyGraduationPathwaysRoute
   LearningJourneyPreparatoryRoute: typeof LearningJourneyPreparatoryRoute
   LearningJourneyPrimaryRoute: typeof LearningJourneyPrimaryRoute
   LearningJourneySecondaryRoute: typeof LearningJourneySecondaryRoute
+  NewsCampusEventsRoute: typeof NewsCampusEventsRoute
+  NewsCommunityStoriesRoute: typeof NewsCommunityStoriesRoute
+  NewsEducationalInsightsRoute: typeof NewsEducationalInsightsRoute
+  NewsParentGuidesRoute: typeof NewsParentGuidesRoute
+  NewsResearchReflectionRoute: typeof NewsResearchReflectionRoute
+  NewsSchoolNewsRoute: typeof NewsSchoolNewsRoute
+  NewsStudentStoriesRoute: typeof NewsStudentStoriesRoute
+  NewsTeacherStoriesRoute: typeof NewsTeacherStoriesRoute
+  ParentsCommunicationRoute: typeof ParentsCommunicationRoute
+  ParentsFamilyEngagementRoute: typeof ParentsFamilyEngagementRoute
+  ParentsFamilyResourcesRoute: typeof ParentsFamilyResourcesRoute
+  ParentsParentJourneyRoute: typeof ParentsParentJourneyRoute
+  ParentsParentPartnershipRoute: typeof ParentsParentPartnershipRoute
+  ParentsParentPortalRoute: typeof ParentsParentPortalRoute
+  ParentsSchoolCalendarRoute: typeof ParentsSchoolCalendarRoute
+  ParentsSchoolPoliciesRoute: typeof ParentsSchoolPoliciesRoute
+  StudentLifeArtsPerformanceRoute: typeof StudentLifeArtsPerformanceRoute
+  StudentLifeAthleticsRoute: typeof StudentLifeAthleticsRoute
+  StudentLifeClubsActivitiesRoute: typeof StudentLifeClubsActivitiesRoute
+  StudentLifeCommunityBelongingRoute: typeof StudentLifeCommunityBelongingRoute
+  StudentLifeEventsRoute: typeof StudentLifeEventsRoute
+  StudentLifeLeadershipServiceRoute: typeof StudentLifeLeadershipServiceRoute
+  StudentLifeWellbeingRoute: typeof StudentLifeWellbeingRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -671,6 +1271,111 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/student-life_/wellbeing': {
+      id: '/student-life_/wellbeing'
+      path: '/student-life/wellbeing'
+      fullPath: '/student-life/wellbeing'
+      preLoaderRoute: typeof StudentLifeWellbeingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/student-life_/leadership-service': {
+      id: '/student-life_/leadership-service'
+      path: '/student-life/leadership-service'
+      fullPath: '/student-life/leadership-service'
+      preLoaderRoute: typeof StudentLifeLeadershipServiceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/student-life_/events': {
+      id: '/student-life_/events'
+      path: '/student-life/events'
+      fullPath: '/student-life/events'
+      preLoaderRoute: typeof StudentLifeEventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/student-life_/community-belonging': {
+      id: '/student-life_/community-belonging'
+      path: '/student-life/community-belonging'
+      fullPath: '/student-life/community-belonging'
+      preLoaderRoute: typeof StudentLifeCommunityBelongingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/student-life_/clubs-activities': {
+      id: '/student-life_/clubs-activities'
+      path: '/student-life/clubs-activities'
+      fullPath: '/student-life/clubs-activities'
+      preLoaderRoute: typeof StudentLifeClubsActivitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/student-life_/athletics': {
+      id: '/student-life_/athletics'
+      path: '/student-life/athletics'
+      fullPath: '/student-life/athletics'
+      preLoaderRoute: typeof StudentLifeAthleticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/student-life_/arts-performance': {
+      id: '/student-life_/arts-performance'
+      path: '/student-life/arts-performance'
+      fullPath: '/student-life/arts-performance'
+      preLoaderRoute: typeof StudentLifeArtsPerformanceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parents_/school-policies': {
+      id: '/parents_/school-policies'
+      path: '/parents/school-policies'
+      fullPath: '/parents/school-policies'
+      preLoaderRoute: typeof ParentsSchoolPoliciesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parents_/school-calendar': {
+      id: '/parents_/school-calendar'
+      path: '/parents/school-calendar'
+      fullPath: '/parents/school-calendar'
+      preLoaderRoute: typeof ParentsSchoolCalendarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parents_/parent-portal': {
+      id: '/parents_/parent-portal'
+      path: '/parents/parent-portal'
+      fullPath: '/parents/parent-portal'
+      preLoaderRoute: typeof ParentsParentPortalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parents_/parent-partnership': {
+      id: '/parents_/parent-partnership'
+      path: '/parents/parent-partnership'
+      fullPath: '/parents/parent-partnership'
+      preLoaderRoute: typeof ParentsParentPartnershipRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parents_/parent-journey': {
+      id: '/parents_/parent-journey'
+      path: '/parents/parent-journey'
+      fullPath: '/parents/parent-journey'
+      preLoaderRoute: typeof ParentsParentJourneyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parents_/family-resources': {
+      id: '/parents_/family-resources'
+      path: '/parents/family-resources'
+      fullPath: '/parents/family-resources'
+      preLoaderRoute: typeof ParentsFamilyResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parents_/family-engagement': {
+      id: '/parents_/family-engagement'
+      path: '/parents/family-engagement'
+      fullPath: '/parents/family-engagement'
+      preLoaderRoute: typeof ParentsFamilyEngagementRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parents_/communication': {
+      id: '/parents_/communication'
+      path: '/parents/communication'
+      fullPath: '/parents/communication'
+      preLoaderRoute: typeof ParentsCommunicationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/our-model/teaching-framework': {
       id: '/our-model/teaching-framework'
       path: '/teaching-framework'
@@ -741,6 +1446,62 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OurModelAssessmentFrameworkRouteImport
       parentRoute: typeof OurModelRoute
     }
+    '/news_/teacher-stories': {
+      id: '/news_/teacher-stories'
+      path: '/news/teacher-stories'
+      fullPath: '/news/teacher-stories'
+      preLoaderRoute: typeof NewsTeacherStoriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/news_/student-stories': {
+      id: '/news_/student-stories'
+      path: '/news/student-stories'
+      fullPath: '/news/student-stories'
+      preLoaderRoute: typeof NewsStudentStoriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/news_/school-news': {
+      id: '/news_/school-news'
+      path: '/news/school-news'
+      fullPath: '/news/school-news'
+      preLoaderRoute: typeof NewsSchoolNewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/news_/research-reflection': {
+      id: '/news_/research-reflection'
+      path: '/news/research-reflection'
+      fullPath: '/news/research-reflection'
+      preLoaderRoute: typeof NewsResearchReflectionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/news_/parent-guides': {
+      id: '/news_/parent-guides'
+      path: '/news/parent-guides'
+      fullPath: '/news/parent-guides'
+      preLoaderRoute: typeof NewsParentGuidesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/news_/educational-insights': {
+      id: '/news_/educational-insights'
+      path: '/news/educational-insights'
+      fullPath: '/news/educational-insights'
+      preLoaderRoute: typeof NewsEducationalInsightsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/news_/community-stories': {
+      id: '/news_/community-stories'
+      path: '/news/community-stories'
+      fullPath: '/news/community-stories'
+      preLoaderRoute: typeof NewsCommunityStoriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/news_/campus-events': {
+      id: '/news_/campus-events'
+      path: '/news/campus-events'
+      fullPath: '/news/campus-events'
+      preLoaderRoute: typeof NewsCampusEventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/learning-journey_/secondary': {
       id: '/learning-journey_/secondary'
       path: '/learning-journey/secondary'
@@ -783,12 +1544,166 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ExploreDigitalEcosystemRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/community_/partnerships': {
+      id: '/community_/partnerships'
+      path: '/community/partnerships'
+      fullPath: '/community/partnerships'
+      preLoaderRoute: typeof CommunityPartnershipsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/community_/events': {
+      id: '/community_/events'
+      path: '/community/events'
+      fullPath: '/community/events'
+      preLoaderRoute: typeof CommunityEventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/community_/community-programmes': {
+      id: '/community_/community-programmes'
+      path: '/community/community-programmes'
+      fullPath: '/community/community-programmes'
+      preLoaderRoute: typeof CommunityCommunityProgrammesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/community_/careers': {
+      id: '/community_/careers'
+      path: '/community/careers'
+      fullPath: '/community/careers'
+      preLoaderRoute: typeof CommunityCareersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/community_/alumni': {
+      id: '/community_/alumni'
+      path: '/community/alumni'
+      fullPath: '/community/alumni'
+      preLoaderRoute: typeof CommunityAlumniRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/campuses/mohandessin': {
       id: '/campuses/mohandessin'
       path: '/mohandessin'
       fullPath: '/campuses/mohandessin'
       preLoaderRoute: typeof CampusesMohandessinRouteImport
       parentRoute: typeof CampusesRoute
+    }
+    '/campus-experience_/transportation': {
+      id: '/campus-experience_/transportation'
+      path: '/campus-experience/transportation'
+      fullPath: '/campus-experience/transportation'
+      preLoaderRoute: typeof CampusExperienceTransportationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/campus-experience_/sports-facilities': {
+      id: '/campus-experience_/sports-facilities'
+      path: '/campus-experience/sports-facilities'
+      fullPath: '/campus-experience/sports-facilities'
+      preLoaderRoute: typeof CampusExperienceSportsFacilitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/campus-experience_/safety': {
+      id: '/campus-experience_/safety'
+      path: '/campus-experience/safety'
+      fullPath: '/campus-experience/safety'
+      preLoaderRoute: typeof CampusExperienceSafetyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/campus-experience_/overview': {
+      id: '/campus-experience_/overview'
+      path: '/campus-experience/overview'
+      fullPath: '/campus-experience/overview'
+      preLoaderRoute: typeof CampusExperienceOverviewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/campus-experience_/library': {
+      id: '/campus-experience_/library'
+      path: '/campus-experience/library'
+      fullPath: '/campus-experience/library'
+      preLoaderRoute: typeof CampusExperienceLibraryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/campus-experience_/laboratories': {
+      id: '/campus-experience_/laboratories'
+      path: '/campus-experience/laboratories'
+      fullPath: '/campus-experience/laboratories'
+      preLoaderRoute: typeof CampusExperienceLaboratoriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/campus-experience_/innovation-creative-spaces': {
+      id: '/campus-experience_/innovation-creative-spaces'
+      path: '/campus-experience/innovation-creative-spaces'
+      fullPath: '/campus-experience/innovation-creative-spaces'
+      preLoaderRoute: typeof CampusExperienceInnovationCreativeSpacesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/campus-experience_/health-services': {
+      id: '/campus-experience_/health-services'
+      path: '/campus-experience/health-services'
+      fullPath: '/campus-experience/health-services'
+      preLoaderRoute: typeof CampusExperienceHealthServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/campus-experience_/dining': {
+      id: '/campus-experience_/dining'
+      path: '/campus-experience/dining'
+      fullPath: '/campus-experience/dining'
+      preLoaderRoute: typeof CampusExperienceDiningRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/campus-experience_/classrooms': {
+      id: '/campus-experience_/classrooms'
+      path: '/campus-experience/classrooms'
+      fullPath: '/campus-experience/classrooms'
+      preLoaderRoute: typeof CampusExperienceClassroomsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admissions_/tuition-fees': {
+      id: '/admissions_/tuition-fees'
+      path: '/admissions/tuition-fees'
+      fullPath: '/admissions/tuition-fees'
+      preLoaderRoute: typeof AdmissionsTuitionFeesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admissions_/scholarships': {
+      id: '/admissions_/scholarships'
+      path: '/admissions/scholarships'
+      fullPath: '/admissions/scholarships'
+      preLoaderRoute: typeof AdmissionsScholarshipsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admissions_/schedule-a-visit': {
+      id: '/admissions_/schedule-a-visit'
+      path: '/admissions/schedule-a-visit'
+      fullPath: '/admissions/schedule-a-visit'
+      preLoaderRoute: typeof AdmissionsScheduleAVisitRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admissions_/requirements': {
+      id: '/admissions_/requirements'
+      path: '/admissions/requirements'
+      fullPath: '/admissions/requirements'
+      preLoaderRoute: typeof AdmissionsRequirementsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admissions_/faq': {
+      id: '/admissions_/faq'
+      path: '/admissions/faq'
+      fullPath: '/admissions/faq'
+      preLoaderRoute: typeof AdmissionsFaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admissions_/apply-online': {
+      id: '/admissions_/apply-online'
+      path: '/admissions/apply-online'
+      fullPath: '/admissions/apply-online'
+      preLoaderRoute: typeof AdmissionsApplyOnlineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admissions_/application-process': {
+      id: '/admissions_/application-process'
+      path: '/admissions/application-process'
+      fullPath: '/admissions/application-process'
+      preLoaderRoute: typeof AdmissionsApplicationProcessRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/about_/why-lighthouse': {
       id: '/about_/why-lighthouse'
@@ -924,6 +1839,29 @@ const rootRouteChildren: RootRouteChildren = {
   AboutOurStoryRoute: AboutOurStoryRoute,
   AboutVisionRoute: AboutVisionRoute,
   AboutWhyLighthouseRoute: AboutWhyLighthouseRoute,
+  AdmissionsApplicationProcessRoute: AdmissionsApplicationProcessRoute,
+  AdmissionsApplyOnlineRoute: AdmissionsApplyOnlineRoute,
+  AdmissionsFaqRoute: AdmissionsFaqRoute,
+  AdmissionsRequirementsRoute: AdmissionsRequirementsRoute,
+  AdmissionsScheduleAVisitRoute: AdmissionsScheduleAVisitRoute,
+  AdmissionsScholarshipsRoute: AdmissionsScholarshipsRoute,
+  AdmissionsTuitionFeesRoute: AdmissionsTuitionFeesRoute,
+  CampusExperienceClassroomsRoute: CampusExperienceClassroomsRoute,
+  CampusExperienceDiningRoute: CampusExperienceDiningRoute,
+  CampusExperienceHealthServicesRoute: CampusExperienceHealthServicesRoute,
+  CampusExperienceInnovationCreativeSpacesRoute:
+    CampusExperienceInnovationCreativeSpacesRoute,
+  CampusExperienceLaboratoriesRoute: CampusExperienceLaboratoriesRoute,
+  CampusExperienceLibraryRoute: CampusExperienceLibraryRoute,
+  CampusExperienceOverviewRoute: CampusExperienceOverviewRoute,
+  CampusExperienceSafetyRoute: CampusExperienceSafetyRoute,
+  CampusExperienceSportsFacilitiesRoute: CampusExperienceSportsFacilitiesRoute,
+  CampusExperienceTransportationRoute: CampusExperienceTransportationRoute,
+  CommunityAlumniRoute: CommunityAlumniRoute,
+  CommunityCareersRoute: CommunityCareersRoute,
+  CommunityCommunityProgrammesRoute: CommunityCommunityProgrammesRoute,
+  CommunityEventsRoute: CommunityEventsRoute,
+  CommunityPartnershipsRoute: CommunityPartnershipsRoute,
   ExploreDigitalEcosystemRoute: ExploreDigitalEcosystemRoute,
   LearningJourneyEarlyYearsRoute: LearningJourneyEarlyYearsRoute,
   LearningJourneyGraduationPathwaysRoute:
@@ -931,7 +1869,40 @@ const rootRouteChildren: RootRouteChildren = {
   LearningJourneyPreparatoryRoute: LearningJourneyPreparatoryRoute,
   LearningJourneyPrimaryRoute: LearningJourneyPrimaryRoute,
   LearningJourneySecondaryRoute: LearningJourneySecondaryRoute,
+  NewsCampusEventsRoute: NewsCampusEventsRoute,
+  NewsCommunityStoriesRoute: NewsCommunityStoriesRoute,
+  NewsEducationalInsightsRoute: NewsEducationalInsightsRoute,
+  NewsParentGuidesRoute: NewsParentGuidesRoute,
+  NewsResearchReflectionRoute: NewsResearchReflectionRoute,
+  NewsSchoolNewsRoute: NewsSchoolNewsRoute,
+  NewsStudentStoriesRoute: NewsStudentStoriesRoute,
+  NewsTeacherStoriesRoute: NewsTeacherStoriesRoute,
+  ParentsCommunicationRoute: ParentsCommunicationRoute,
+  ParentsFamilyEngagementRoute: ParentsFamilyEngagementRoute,
+  ParentsFamilyResourcesRoute: ParentsFamilyResourcesRoute,
+  ParentsParentJourneyRoute: ParentsParentJourneyRoute,
+  ParentsParentPartnershipRoute: ParentsParentPartnershipRoute,
+  ParentsParentPortalRoute: ParentsParentPortalRoute,
+  ParentsSchoolCalendarRoute: ParentsSchoolCalendarRoute,
+  ParentsSchoolPoliciesRoute: ParentsSchoolPoliciesRoute,
+  StudentLifeArtsPerformanceRoute: StudentLifeArtsPerformanceRoute,
+  StudentLifeAthleticsRoute: StudentLifeAthleticsRoute,
+  StudentLifeClubsActivitiesRoute: StudentLifeClubsActivitiesRoute,
+  StudentLifeCommunityBelongingRoute: StudentLifeCommunityBelongingRoute,
+  StudentLifeEventsRoute: StudentLifeEventsRoute,
+  StudentLifeLeadershipServiceRoute: StudentLifeLeadershipServiceRoute,
+  StudentLifeWellbeingRoute: StudentLifeWellbeingRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
