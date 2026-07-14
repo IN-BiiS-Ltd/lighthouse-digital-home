@@ -288,6 +288,11 @@ function Home() {
               eyebrow="Why Lighthouse Campus"
               title="A calm, ambitious environment for growth"
             />
+            <div className="mt-6">
+              <ButtonLink to="/our-model" variant="outline" size="md">
+                Explore Our Model
+              </ButtonLink>
+            </div>
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:col-span-2">
             <FeatureCard title="Students at the centre" icon={<Users className="size-5" />}>
