@@ -30,6 +30,23 @@ export const primaryNav: NavSection[] = [
     ],
   },
   {
+    label: "Our Model",
+    to: "/our-model",
+    summary: "How education, relationships, leadership and intelligence work together at Lighthouse Campus.",
+    children: [
+      { label: "Educational Model", to: "/our-model/educational-model", description: "One coherent approach to learning, growth and contribution." },
+      { label: "Learning Ecosystem", to: "/our-model/learning-ecosystem", description: "People, knowledge and intelligence connected around every learner." },
+      { label: "Learner Profile", to: "/our-model/learner-profile", description: "The qualities we develop through every stage." },
+      { label: "Graduate Profile", to: "/our-model/graduate-profile", description: "Prepared for university. Ready for life." },
+      { label: "Teaching Framework", to: "/our-model/teaching-framework", description: "Mentorship, expertise and thoughtful design." },
+      { label: "Assessment Framework", to: "/our-model/assessment-framework", description: "Assessment that supports learning and growth." },
+      { label: "Student Development", to: "/our-model/student-development", description: "Character, confidence, wellbeing and contribution." },
+      { label: "Parent Partnership", to: "/our-model/parent-partnership", description: "Families as educational partners." },
+      { label: "Institutional Intelligence", to: "/our-model/institutional-intelligence", description: "An institution that learns from its own experience." },
+      { label: "Innovation", to: "/our-model/innovation", description: "New possibilities guided by educational value." },
+    ],
+  },
+  {
     label: "Learning Journey",
     to: "/learning-journey",
     summary: "A continuous path from early years to graduation.",
@@ -137,6 +154,14 @@ export const secondaryNav: NavSection[] = [
       { label: "Alumni Network", to: "/community#alumni" },
       { label: "Working at Lighthouse", to: "/careers" },
       { label: "Professional Growth", to: "/careers#growth" },
+    ],
+  },
+  {
+    label: "Digital Ecosystem",
+    to: "/explore/digital-ecosystem",
+    summary: "Connected services designed around the learner and the community.",
+    children: [
+      { label: "Digital Ecosystem Overview", to: "/explore/digital-ecosystem" },
     ],
   },
 ];

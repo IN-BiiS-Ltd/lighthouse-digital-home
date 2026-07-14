@@ -1,0 +1,151 @@
+import { createFileRoute } from "@tanstack/react-router";
+import {
+  Compass,
+  Network,
+  UserRound,
+  GraduationCap,
+  BookOpen,
+  ClipboardCheck,
+  HeartHandshake,
+  Users2,
+  Brain,
+  Lightbulb,
+} from "lucide-react";
+import {
+  Section,
+  SectionHeading,
+  FeatureCard,
+  Pullquote,
+} from "@/components/blocks";
+import { PageHero } from "@/components/page-hero";
+import { CtaBand } from "@/components/cta-band";
+
+export const Route = createFileRoute("/our-model")({
+  head: () => ({
+    meta: [
+      { title: "Our Model — Lighthouse Campus" },
+      {
+        name: "description",
+        content:
+          "How education, relationships, leadership and intelligence work together at Lighthouse Campus — one coherent institutional model built around the learner.",
+      },
+      { property: "og:title", content: "Our Model — Lighthouse Campus" },
+      {
+        property: "og:description",
+        content:
+          "The educational and institutional model of Lighthouse Campus, in ten connected pillars.",
+      },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "/our-model" },
+    ],
+    links: [{ rel: "canonical", href: "/our-model" }],
+  }),
+  component: OurModel,
+});
+
+const pillars = [
+  {
+    to: "/our-model/educational-model",
+    title: "The Educational Model",
+    body: "A coherent approach to learning, growth and contribution across every stage.",
+    icon: <Compass className="size-5" />,
+  },
+  {
+    to: "/our-model/learning-ecosystem",
+    title: "The Learning Ecosystem",
+    body: "People, knowledge and intelligence connected around every learner.",
+    icon: <Network className="size-5" />,
+  },
+  {
+    to: "/our-model/learner-profile",
+    title: "The Lighthouse Learner",
+    body: "The qualities we develop through every stage of a child’s journey.",
+    icon: <UserRound className="size-5" />,
+  },
+  {
+    to: "/our-model/graduate-profile",
+    title: "The Lighthouse Graduate",
+    body: "Prepared for university. Ready for life. Grounded in purpose.",
+    icon: <GraduationCap className="size-5" />,
+  },
+  {
+    to: "/our-model/teaching-framework",
+    title: "Teaching Framework",
+    body: "Mentorship, expertise and thoughtful design in every classroom.",
+    icon: <BookOpen className="size-5" />,
+  },
+  {
+    to: "/our-model/assessment-framework",
+    title: "Assessment Framework",
+    body: "Understanding where learning is, and what should happen next.",
+    icon: <ClipboardCheck className="size-5" />,
+  },
+  {
+    to: "/our-model/student-development",
+    title: "Student Development",
+    body: "Character, confidence, wellbeing and contribution beyond the classroom.",
+    icon: <HeartHandshake className="size-5" />,
+  },
+  {
+    to: "/our-model/parent-partnership",
+    title: "Parent Partnership",
+    body: "Families as educational partners, from the first conversation onward.",
+    icon: <Users2 className="size-5" />,
+  },
+  {
+    to: "/our-model/institutional-intelligence",
+    title: "Institutional Intelligence",
+    body: "An institution that learns from its own experience to improve decisions.",
+    icon: <Brain className="size-5" />,
+  },
+  {
+    to: "/our-model/innovation",
+    title: "Innovation with Purpose",
+    body: "New possibilities guided by educational value.",
+    icon: <Lightbulb className="size-5" />,
+  },
+];
+
+function OurModel() {
+  return (
+    <>
+      <PageHero
+        breadcrumb={[{ label: "Home", to: "/" }, { label: "Our Model" }]}
+        eyebrow="Our Model"
+        title="The institutional model behind the Lighthouse experience."
+        intro="Lighthouse Campus is a coherent educational system. Every part of the institution — learning, teaching, assessment, partnership, leadership and intelligence — is designed to work together around the learner."
+        sections={pillars.map((p) => ({ label: p.title, to: p.to }))}
+      />
+
+      <Section>
+        <SectionHeading
+          eyebrow="A connected system"
+          title="Ten pillars, one coherent institution."
+          description="Each pillar describes one dimension of how Lighthouse Campus is designed. Together they form the model that shapes daily life on campus."
+        />
+        <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {pillars.map((p) => (
+            <FeatureCard key={p.to} title={p.title} icon={p.icon}>
+              {p.body}
+            </FeatureCard>
+          ))}
+        </div>
+      </Section>
+
+      <Section tone="navy">
+        <Pullquote
+          onNavy
+          quote="One campus. One community. One connected learning ecosystem — where every learner is known, every teacher is supported, and every decision returns to educational purpose."
+        />
+      </Section>
+
+      <CtaBand
+        eyebrow="Continue"
+        title="Explore how the model comes to life"
+        body="Begin with the Educational Model, or step into the Learning Ecosystem to see how every part of the institution connects around the learner."
+        primary={{ to: "/our-model/educational-model", label: "The Educational Model" }}
+        secondary={{ to: "/our-model/learning-ecosystem", label: "The Learning Ecosystem" }}
+      />
+    </>
+  );
+}
