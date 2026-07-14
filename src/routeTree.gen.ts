@@ -34,6 +34,7 @@ import { Route as OurModelInnovationRouteImport } from './routes/our-model.innov
 import { Route as OurModelGraduateProfileRouteImport } from './routes/our-model.graduate-profile'
 import { Route as OurModelEducationalModelRouteImport } from './routes/our-model.educational-model'
 import { Route as OurModelAssessmentFrameworkRouteImport } from './routes/our-model.assessment-framework'
+import { Route as LearningJourneySecondaryRouteImport } from './routes/learning-journey_.secondary'
 import { Route as LearningJourneyPrimaryRouteImport } from './routes/learning-journey_.primary'
 import { Route as LearningJourneyPreparatoryRouteImport } from './routes/learning-journey_.preparatory'
 import { Route as LearningJourneyEarlyYearsRouteImport } from './routes/learning-journey_.early-years'
@@ -181,6 +182,12 @@ const OurModelAssessmentFrameworkRoute =
     path: '/assessment-framework',
     getParentRoute: () => OurModelRoute,
   } as any)
+const LearningJourneySecondaryRoute =
+  LearningJourneySecondaryRouteImport.update({
+    id: '/learning-journey_/secondary',
+    path: '/learning-journey/secondary',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const LearningJourneyPrimaryRoute = LearningJourneyPrimaryRouteImport.update({
   id: '/learning-journey_/primary',
   path: '/learning-journey/primary',
@@ -285,6 +292,7 @@ export interface FileRoutesByFullPath {
   '/learning-journey/early-years': typeof LearningJourneyEarlyYearsRoute
   '/learning-journey/preparatory': typeof LearningJourneyPreparatoryRoute
   '/learning-journey/primary': typeof LearningJourneyPrimaryRoute
+  '/learning-journey/secondary': typeof LearningJourneySecondaryRoute
   '/our-model/assessment-framework': typeof OurModelAssessmentFrameworkRoute
   '/our-model/educational-model': typeof OurModelEducationalModelRoute
   '/our-model/graduate-profile': typeof OurModelGraduateProfileRoute
@@ -326,6 +334,7 @@ export interface FileRoutesByTo {
   '/learning-journey/early-years': typeof LearningJourneyEarlyYearsRoute
   '/learning-journey/preparatory': typeof LearningJourneyPreparatoryRoute
   '/learning-journey/primary': typeof LearningJourneyPrimaryRoute
+  '/learning-journey/secondary': typeof LearningJourneySecondaryRoute
   '/our-model/assessment-framework': typeof OurModelAssessmentFrameworkRoute
   '/our-model/educational-model': typeof OurModelEducationalModelRoute
   '/our-model/graduate-profile': typeof OurModelGraduateProfileRoute
@@ -368,6 +377,7 @@ export interface FileRoutesById {
   '/learning-journey_/early-years': typeof LearningJourneyEarlyYearsRoute
   '/learning-journey_/preparatory': typeof LearningJourneyPreparatoryRoute
   '/learning-journey_/primary': typeof LearningJourneyPrimaryRoute
+  '/learning-journey_/secondary': typeof LearningJourneySecondaryRoute
   '/our-model/assessment-framework': typeof OurModelAssessmentFrameworkRoute
   '/our-model/educational-model': typeof OurModelEducationalModelRoute
   '/our-model/graduate-profile': typeof OurModelGraduateProfileRoute
@@ -411,6 +421,7 @@ export interface FileRouteTypes {
     | '/learning-journey/early-years'
     | '/learning-journey/preparatory'
     | '/learning-journey/primary'
+    | '/learning-journey/secondary'
     | '/our-model/assessment-framework'
     | '/our-model/educational-model'
     | '/our-model/graduate-profile'
@@ -452,6 +463,7 @@ export interface FileRouteTypes {
     | '/learning-journey/early-years'
     | '/learning-journey/preparatory'
     | '/learning-journey/primary'
+    | '/learning-journey/secondary'
     | '/our-model/assessment-framework'
     | '/our-model/educational-model'
     | '/our-model/graduate-profile'
@@ -493,6 +505,7 @@ export interface FileRouteTypes {
     | '/learning-journey_/early-years'
     | '/learning-journey_/preparatory'
     | '/learning-journey_/primary'
+    | '/learning-journey_/secondary'
     | '/our-model/assessment-framework'
     | '/our-model/educational-model'
     | '/our-model/graduate-profile'
@@ -534,6 +547,7 @@ export interface RootRouteChildren {
   LearningJourneyEarlyYearsRoute: typeof LearningJourneyEarlyYearsRoute
   LearningJourneyPreparatoryRoute: typeof LearningJourneyPreparatoryRoute
   LearningJourneyPrimaryRoute: typeof LearningJourneyPrimaryRoute
+  LearningJourneySecondaryRoute: typeof LearningJourneySecondaryRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -713,6 +727,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OurModelAssessmentFrameworkRouteImport
       parentRoute: typeof OurModelRoute
     }
+    '/learning-journey_/secondary': {
+      id: '/learning-journey_/secondary'
+      path: '/learning-journey/secondary'
+      fullPath: '/learning-journey/secondary'
+      preLoaderRoute: typeof LearningJourneySecondaryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/learning-journey_/primary': {
       id: '/learning-journey_/primary'
       path: '/learning-journey/primary'
@@ -886,6 +907,7 @@ const rootRouteChildren: RootRouteChildren = {
   LearningJourneyEarlyYearsRoute: LearningJourneyEarlyYearsRoute,
   LearningJourneyPreparatoryRoute: LearningJourneyPreparatoryRoute,
   LearningJourneyPrimaryRoute: LearningJourneyPrimaryRoute,
+  LearningJourneySecondaryRoute: LearningJourneySecondaryRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
