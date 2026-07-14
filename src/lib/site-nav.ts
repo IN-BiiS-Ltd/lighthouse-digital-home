@@ -55,11 +55,12 @@ export const primaryNav: NavSection[] = [
     to: "/learning-journey",
     summary: "A continuous path from early years to graduation.",
     children: [
-      { label: "Early Years", to: "/learning-journey#early-years", description: "Wonder, play and first discoveries." },
-      { label: "Primary", to: "/learning-journey#primary", description: "Foundations of knowledge and character." },
-      { label: "Preparatory", to: "/learning-journey#preparatory", description: "Independence and deeper thinking." },
-      { label: "Secondary", to: "/learning-journey#secondary", description: "Scholarship, identity and direction." },
-      { label: "Graduation Pathways", to: "/learning-journey#pathways", description: "Ready for university and life." },
+      { label: "Learning Journey Overview", to: "/learning-journey", description: "One continuous path from Early Years to graduation." },
+      { label: "Early Years", to: "/learning-journey/early-years", description: "Wonder, play and first discoveries." },
+      { label: "Primary", to: "/learning-journey/primary", description: "Foundations of knowledge and character." },
+      { label: "Preparatory", to: "/learning-journey/preparatory", description: "Independence and deeper thinking." },
+      { label: "Secondary", to: "/learning-journey/secondary", description: "Scholarship, identity and direction." },
+      { label: "Graduation Pathways", to: "/learning-journey/graduation-pathways", description: "Ready for university and life." },
     ],
   },
   {
