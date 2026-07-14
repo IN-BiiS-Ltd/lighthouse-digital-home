@@ -316,55 +316,63 @@ function WhyLighthouse() {
           title="Ten principles, held within a single word"
           description="Every letter of LIGHTHOUSE names a principle that shapes daily life on campus — a quiet promise about the kind of learners, and people, we help form."
         />
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <ul
+          className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5"
+          aria-label="The ten principles of LIGHTHOUSE"
+        >
           {acrostic.map((item, i) => (
-            <article
-              key={`${item.letter}-${i}`}
-              onMouseMove={(e) => {
-                const el = e.currentTarget;
-                const rect = el.getBoundingClientRect();
-                el.style.setProperty(
-                  "--mx",
-                  `${((e.clientX - rect.left) / rect.width) * 100}%`,
-                );
-                el.style.setProperty(
-                  "--my",
-                  `${((e.clientY - rect.top) / rect.height) * 100}%`,
-                );
-              }}
-              className="cine-card group rounded-xl border border-border bg-card/90 p-7 backdrop-blur-sm"
-            >
-              <div className="mb-1 flex items-center gap-4">
-                <div className="relative overflow-hidden rounded-xl ring-1 ring-navy/10 shadow-[0_10px_28px_-16px_rgba(11,29,58,0.5)]">
-                  <img
-                    src={item.icon}
-                    alt={`${item.title} emblem`}
-                    loading="lazy"
-                    width={816}
-                    height={816}
-                    className="size-20 object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
+            <li key={`${item.letter}-${i}`}>
+              <article
+                tabIndex={0}
+                role="group"
+                aria-label={`${item.letter} — ${item.title}. ${item.body}`}
+                onMouseMove={(e) => {
+                  const el = e.currentTarget;
+                  const rect = el.getBoundingClientRect();
+                  el.style.setProperty(
+                    "--mx",
+                    `${((e.clientX - rect.left) / rect.width) * 100}%`,
+                  );
+                  el.style.setProperty(
+                    "--my",
+                    `${((e.clientY - rect.top) / rect.height) * 100}%`,
+                  );
+                }}
+                className="cine-card group h-full rounded-xl border border-border bg-card/90 p-7 backdrop-blur-sm outline-none transition-shadow focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              >
+                <div className="mb-1 flex items-center gap-4">
+                  <div className="relative overflow-hidden rounded-xl ring-1 ring-navy/10 shadow-[0_10px_28px_-16px_rgba(11,29,58,0.5)]">
+                    <img
+                      src={item.icon}
+                      alt=""
+                      aria-hidden
+                      loading="lazy"
+                      width={816}
+                      height={816}
+                      className="size-20 object-cover transition-transform duration-500 group-hover:scale-110 group-focus-visible:scale-110"
+                    />
+                    <span
+                      aria-hidden
+                      className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 group-hover:translate-x-full"
+                    />
+                  </div>
                   <span
                     aria-hidden
-                    className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 group-hover:translate-x-full"
-                  />
+                    className="font-display text-4xl font-semibold text-gold/25 transition-all duration-500 group-hover:scale-110 group-hover:text-gold/70 group-focus-visible:scale-110 group-focus-visible:text-gold/70"
+                  >
+                    {item.letter}
+                  </span>
                 </div>
-                <span
-                  aria-hidden
-                  className="font-display text-4xl font-semibold text-gold/25 transition-all duration-500 group-hover:scale-110 group-hover:text-gold/70"
-                >
-                  {item.letter}
-                </span>
-              </div>
-              <h3 className="mt-4 font-display text-lg font-medium text-foreground transition-colors duration-300 group-hover:text-brand-blue">
-                {item.title}
-              </h3>
-              <p className="mt-2 text-[0.95rem] leading-relaxed text-muted-foreground">
-                {item.body}
-              </p>
-            </article>
+                <h3 className="mt-4 font-display text-lg font-medium text-foreground transition-colors duration-300 group-hover:text-brand-blue group-focus-visible:text-brand-blue">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-[0.95rem] leading-relaxed text-muted-foreground">
+                  {item.body}
+                </p>
+              </article>
+            </li>
           ))}
-        </div>
+        </ul>
         </div>
       </Section>
 
