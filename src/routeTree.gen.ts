@@ -39,6 +39,7 @@ import { Route as CampusesMohandessinRouteImport } from './routes/campuses.mohan
 import { Route as AboutWhyLighthouseRouteImport } from './routes/about_.why-lighthouse'
 import { Route as AboutVisionRouteImport } from './routes/about_.vision'
 import { Route as AboutOurStoryRouteImport } from './routes/about_.our-story'
+import { Route as AboutMissionRouteImport } from './routes/about_.mission'
 
 const StudentLifeRoute = StudentLifeRouteImport.update({
   id: '/student-life',
@@ -197,6 +198,11 @@ const AboutOurStoryRoute = AboutOurStoryRouteImport.update({
   path: '/about/our-story',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutMissionRoute = AboutMissionRouteImport.update({
+  id: '/about_/mission',
+  path: '/about/mission',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -214,6 +220,7 @@ export interface FileRoutesByFullPath {
   '/parents': typeof ParentsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/student-life': typeof StudentLifeRoute
+  '/about/mission': typeof AboutMissionRoute
   '/about/our-story': typeof AboutOurStoryRoute
   '/about/vision': typeof AboutVisionRoute
   '/about/why-lighthouse': typeof AboutWhyLighthouseRoute
@@ -246,6 +253,7 @@ export interface FileRoutesByTo {
   '/parents': typeof ParentsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/student-life': typeof StudentLifeRoute
+  '/about/mission': typeof AboutMissionRoute
   '/about/our-story': typeof AboutOurStoryRoute
   '/about/vision': typeof AboutVisionRoute
   '/about/why-lighthouse': typeof AboutWhyLighthouseRoute
@@ -279,6 +287,7 @@ export interface FileRoutesById {
   '/parents': typeof ParentsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/student-life': typeof StudentLifeRoute
+  '/about_/mission': typeof AboutMissionRoute
   '/about_/our-story': typeof AboutOurStoryRoute
   '/about_/vision': typeof AboutVisionRoute
   '/about_/why-lighthouse': typeof AboutWhyLighthouseRoute
@@ -313,6 +322,7 @@ export interface FileRouteTypes {
     | '/parents'
     | '/sitemap.xml'
     | '/student-life'
+    | '/about/mission'
     | '/about/our-story'
     | '/about/vision'
     | '/about/why-lighthouse'
@@ -345,6 +355,7 @@ export interface FileRouteTypes {
     | '/parents'
     | '/sitemap.xml'
     | '/student-life'
+    | '/about/mission'
     | '/about/our-story'
     | '/about/vision'
     | '/about/why-lighthouse'
@@ -377,6 +388,7 @@ export interface FileRouteTypes {
     | '/parents'
     | '/sitemap.xml'
     | '/student-life'
+    | '/about_/mission'
     | '/about_/our-story'
     | '/about_/vision'
     | '/about_/why-lighthouse'
@@ -410,6 +422,7 @@ export interface RootRouteChildren {
   ParentsRoute: typeof ParentsRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StudentLifeRoute: typeof StudentLifeRoute
+  AboutMissionRoute: typeof AboutMissionRoute
   AboutOurStoryRoute: typeof AboutOurStoryRoute
   AboutVisionRoute: typeof AboutVisionRoute
   AboutWhyLighthouseRoute: typeof AboutWhyLighthouseRoute
@@ -628,6 +641,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutOurStoryRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about_/mission': {
+      id: '/about_/mission'
+      path: '/about/mission'
+      fullPath: '/about/mission'
+      preLoaderRoute: typeof AboutMissionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -690,6 +710,7 @@ const rootRouteChildren: RootRouteChildren = {
   ParentsRoute: ParentsRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   StudentLifeRoute: StudentLifeRoute,
+  AboutMissionRoute: AboutMissionRoute,
   AboutOurStoryRoute: AboutOurStoryRoute,
   AboutVisionRoute: AboutVisionRoute,
   AboutWhyLighthouseRoute: AboutWhyLighthouseRoute,
