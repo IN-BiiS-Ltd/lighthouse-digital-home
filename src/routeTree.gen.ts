@@ -37,6 +37,7 @@ import { Route as OurModelAssessmentFrameworkRouteImport } from './routes/our-mo
 import { Route as ExploreDigitalEcosystemRouteImport } from './routes/explore.digital-ecosystem'
 import { Route as CampusesMohandessinRouteImport } from './routes/campuses.mohandessin'
 import { Route as AboutWhyLighthouseRouteImport } from './routes/about_.why-lighthouse'
+import { Route as AboutOurStoryRouteImport } from './routes/about_.our-story'
 
 const StudentLifeRoute = StudentLifeRouteImport.update({
   id: '/student-life',
@@ -185,6 +186,11 @@ const AboutWhyLighthouseRoute = AboutWhyLighthouseRouteImport.update({
   path: '/about/why-lighthouse',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutOurStoryRoute = AboutOurStoryRouteImport.update({
+  id: '/about_/our-story',
+  path: '/about/our-story',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -202,6 +208,7 @@ export interface FileRoutesByFullPath {
   '/parents': typeof ParentsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/student-life': typeof StudentLifeRoute
+  '/about/our-story': typeof AboutOurStoryRoute
   '/about/why-lighthouse': typeof AboutWhyLighthouseRoute
   '/campuses/mohandessin': typeof CampusesMohandessinRoute
   '/explore/digital-ecosystem': typeof ExploreDigitalEcosystemRoute
@@ -232,6 +239,7 @@ export interface FileRoutesByTo {
   '/parents': typeof ParentsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/student-life': typeof StudentLifeRoute
+  '/about/our-story': typeof AboutOurStoryRoute
   '/about/why-lighthouse': typeof AboutWhyLighthouseRoute
   '/campuses/mohandessin': typeof CampusesMohandessinRoute
   '/explore/digital-ecosystem': typeof ExploreDigitalEcosystemRoute
@@ -263,6 +271,7 @@ export interface FileRoutesById {
   '/parents': typeof ParentsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/student-life': typeof StudentLifeRoute
+  '/about_/our-story': typeof AboutOurStoryRoute
   '/about_/why-lighthouse': typeof AboutWhyLighthouseRoute
   '/campuses/mohandessin': typeof CampusesMohandessinRoute
   '/explore/digital-ecosystem': typeof ExploreDigitalEcosystemRoute
@@ -295,6 +304,7 @@ export interface FileRouteTypes {
     | '/parents'
     | '/sitemap.xml'
     | '/student-life'
+    | '/about/our-story'
     | '/about/why-lighthouse'
     | '/campuses/mohandessin'
     | '/explore/digital-ecosystem'
@@ -325,6 +335,7 @@ export interface FileRouteTypes {
     | '/parents'
     | '/sitemap.xml'
     | '/student-life'
+    | '/about/our-story'
     | '/about/why-lighthouse'
     | '/campuses/mohandessin'
     | '/explore/digital-ecosystem'
@@ -355,6 +366,7 @@ export interface FileRouteTypes {
     | '/parents'
     | '/sitemap.xml'
     | '/student-life'
+    | '/about_/our-story'
     | '/about_/why-lighthouse'
     | '/campuses/mohandessin'
     | '/explore/digital-ecosystem'
@@ -386,6 +398,7 @@ export interface RootRouteChildren {
   ParentsRoute: typeof ParentsRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StudentLifeRoute: typeof StudentLifeRoute
+  AboutOurStoryRoute: typeof AboutOurStoryRoute
   AboutWhyLighthouseRoute: typeof AboutWhyLighthouseRoute
   ExploreDigitalEcosystemRoute: typeof ExploreDigitalEcosystemRoute
 }
@@ -588,6 +601,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutWhyLighthouseRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about_/our-story': {
+      id: '/about_/our-story'
+      path: '/about/our-story'
+      fullPath: '/about/our-story'
+      preLoaderRoute: typeof AboutOurStoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -650,19 +670,10 @@ const rootRouteChildren: RootRouteChildren = {
   ParentsRoute: ParentsRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   StudentLifeRoute: StudentLifeRoute,
+  AboutOurStoryRoute: AboutOurStoryRoute,
   AboutWhyLighthouseRoute: AboutWhyLighthouseRoute,
   ExploreDigitalEcosystemRoute: ExploreDigitalEcosystemRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
