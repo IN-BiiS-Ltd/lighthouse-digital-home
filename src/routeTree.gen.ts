@@ -41,6 +41,7 @@ import { Route as AboutVisionRouteImport } from './routes/about_.vision'
 import { Route as AboutOurStoryRouteImport } from './routes/about_.our-story'
 import { Route as AboutMissionRouteImport } from './routes/about_.mission'
 import { Route as AboutLeadershipRouteImport } from './routes/about_.leadership'
+import { Route as AboutGovernanceRouteImport } from './routes/about_.governance'
 import { Route as AboutEducationalPhilosophyRouteImport } from './routes/about_.educational-philosophy'
 import { Route as AboutCoreValuesRouteImport } from './routes/about_.core-values'
 
@@ -211,6 +212,11 @@ const AboutLeadershipRoute = AboutLeadershipRouteImport.update({
   path: '/about/leadership',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutGovernanceRoute = AboutGovernanceRouteImport.update({
+  id: '/about_/governance',
+  path: '/about/governance',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutEducationalPhilosophyRoute =
   AboutEducationalPhilosophyRouteImport.update({
     id: '/about_/educational-philosophy',
@@ -241,6 +247,7 @@ export interface FileRoutesByFullPath {
   '/student-life': typeof StudentLifeRoute
   '/about/core-values': typeof AboutCoreValuesRoute
   '/about/educational-philosophy': typeof AboutEducationalPhilosophyRoute
+  '/about/governance': typeof AboutGovernanceRoute
   '/about/leadership': typeof AboutLeadershipRoute
   '/about/mission': typeof AboutMissionRoute
   '/about/our-story': typeof AboutOurStoryRoute
@@ -277,6 +284,7 @@ export interface FileRoutesByTo {
   '/student-life': typeof StudentLifeRoute
   '/about/core-values': typeof AboutCoreValuesRoute
   '/about/educational-philosophy': typeof AboutEducationalPhilosophyRoute
+  '/about/governance': typeof AboutGovernanceRoute
   '/about/leadership': typeof AboutLeadershipRoute
   '/about/mission': typeof AboutMissionRoute
   '/about/our-story': typeof AboutOurStoryRoute
@@ -314,6 +322,7 @@ export interface FileRoutesById {
   '/student-life': typeof StudentLifeRoute
   '/about_/core-values': typeof AboutCoreValuesRoute
   '/about_/educational-philosophy': typeof AboutEducationalPhilosophyRoute
+  '/about_/governance': typeof AboutGovernanceRoute
   '/about_/leadership': typeof AboutLeadershipRoute
   '/about_/mission': typeof AboutMissionRoute
   '/about_/our-story': typeof AboutOurStoryRoute
@@ -352,6 +361,7 @@ export interface FileRouteTypes {
     | '/student-life'
     | '/about/core-values'
     | '/about/educational-philosophy'
+    | '/about/governance'
     | '/about/leadership'
     | '/about/mission'
     | '/about/our-story'
@@ -388,6 +398,7 @@ export interface FileRouteTypes {
     | '/student-life'
     | '/about/core-values'
     | '/about/educational-philosophy'
+    | '/about/governance'
     | '/about/leadership'
     | '/about/mission'
     | '/about/our-story'
@@ -424,6 +435,7 @@ export interface FileRouteTypes {
     | '/student-life'
     | '/about_/core-values'
     | '/about_/educational-philosophy'
+    | '/about_/governance'
     | '/about_/leadership'
     | '/about_/mission'
     | '/about_/our-story'
@@ -461,6 +473,7 @@ export interface RootRouteChildren {
   StudentLifeRoute: typeof StudentLifeRoute
   AboutCoreValuesRoute: typeof AboutCoreValuesRoute
   AboutEducationalPhilosophyRoute: typeof AboutEducationalPhilosophyRoute
+  AboutGovernanceRoute: typeof AboutGovernanceRoute
   AboutLeadershipRoute: typeof AboutLeadershipRoute
   AboutMissionRoute: typeof AboutMissionRoute
   AboutOurStoryRoute: typeof AboutOurStoryRoute
@@ -695,6 +708,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutLeadershipRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about_/governance': {
+      id: '/about_/governance'
+      path: '/about/governance'
+      fullPath: '/about/governance'
+      preLoaderRoute: typeof AboutGovernanceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about_/educational-philosophy': {
       id: '/about_/educational-philosophy'
       path: '/about/educational-philosophy'
@@ -773,6 +793,7 @@ const rootRouteChildren: RootRouteChildren = {
   StudentLifeRoute: StudentLifeRoute,
   AboutCoreValuesRoute: AboutCoreValuesRoute,
   AboutEducationalPhilosophyRoute: AboutEducationalPhilosophyRoute,
+  AboutGovernanceRoute: AboutGovernanceRoute,
   AboutLeadershipRoute: AboutLeadershipRoute,
   AboutMissionRoute: AboutMissionRoute,
   AboutOurStoryRoute: AboutOurStoryRoute,
