@@ -34,6 +34,7 @@ import { Route as OurModelInnovationRouteImport } from './routes/our-model.innov
 import { Route as OurModelGraduateProfileRouteImport } from './routes/our-model.graduate-profile'
 import { Route as OurModelEducationalModelRouteImport } from './routes/our-model.educational-model'
 import { Route as OurModelAssessmentFrameworkRouteImport } from './routes/our-model.assessment-framework'
+import { Route as LearningJourneyPrimaryRouteImport } from './routes/learning-journey_.primary'
 import { Route as LearningJourneyEarlyYearsRouteImport } from './routes/learning-journey_.early-years'
 import { Route as ExploreDigitalEcosystemRouteImport } from './routes/explore.digital-ecosystem'
 import { Route as CampusesMohandessinRouteImport } from './routes/campuses.mohandessin'
@@ -179,6 +180,11 @@ const OurModelAssessmentFrameworkRoute =
     path: '/assessment-framework',
     getParentRoute: () => OurModelRoute,
   } as any)
+const LearningJourneyPrimaryRoute = LearningJourneyPrimaryRouteImport.update({
+  id: '/learning-journey_/primary',
+  path: '/learning-journey/primary',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LearningJourneyEarlyYearsRoute =
   LearningJourneyEarlyYearsRouteImport.update({
     id: '/learning-journey_/early-years',
@@ -270,6 +276,7 @@ export interface FileRoutesByFullPath {
   '/campuses/mohandessin': typeof CampusesMohandessinRoute
   '/explore/digital-ecosystem': typeof ExploreDigitalEcosystemRoute
   '/learning-journey/early-years': typeof LearningJourneyEarlyYearsRoute
+  '/learning-journey/primary': typeof LearningJourneyPrimaryRoute
   '/our-model/assessment-framework': typeof OurModelAssessmentFrameworkRoute
   '/our-model/educational-model': typeof OurModelEducationalModelRoute
   '/our-model/graduate-profile': typeof OurModelGraduateProfileRoute
@@ -309,6 +316,7 @@ export interface FileRoutesByTo {
   '/campuses/mohandessin': typeof CampusesMohandessinRoute
   '/explore/digital-ecosystem': typeof ExploreDigitalEcosystemRoute
   '/learning-journey/early-years': typeof LearningJourneyEarlyYearsRoute
+  '/learning-journey/primary': typeof LearningJourneyPrimaryRoute
   '/our-model/assessment-framework': typeof OurModelAssessmentFrameworkRoute
   '/our-model/educational-model': typeof OurModelEducationalModelRoute
   '/our-model/graduate-profile': typeof OurModelGraduateProfileRoute
@@ -349,6 +357,7 @@ export interface FileRoutesById {
   '/campuses/mohandessin': typeof CampusesMohandessinRoute
   '/explore/digital-ecosystem': typeof ExploreDigitalEcosystemRoute
   '/learning-journey_/early-years': typeof LearningJourneyEarlyYearsRoute
+  '/learning-journey_/primary': typeof LearningJourneyPrimaryRoute
   '/our-model/assessment-framework': typeof OurModelAssessmentFrameworkRoute
   '/our-model/educational-model': typeof OurModelEducationalModelRoute
   '/our-model/graduate-profile': typeof OurModelGraduateProfileRoute
@@ -390,6 +399,7 @@ export interface FileRouteTypes {
     | '/campuses/mohandessin'
     | '/explore/digital-ecosystem'
     | '/learning-journey/early-years'
+    | '/learning-journey/primary'
     | '/our-model/assessment-framework'
     | '/our-model/educational-model'
     | '/our-model/graduate-profile'
@@ -429,6 +439,7 @@ export interface FileRouteTypes {
     | '/campuses/mohandessin'
     | '/explore/digital-ecosystem'
     | '/learning-journey/early-years'
+    | '/learning-journey/primary'
     | '/our-model/assessment-framework'
     | '/our-model/educational-model'
     | '/our-model/graduate-profile'
@@ -468,6 +479,7 @@ export interface FileRouteTypes {
     | '/campuses/mohandessin'
     | '/explore/digital-ecosystem'
     | '/learning-journey_/early-years'
+    | '/learning-journey_/primary'
     | '/our-model/assessment-framework'
     | '/our-model/educational-model'
     | '/our-model/graduate-profile'
@@ -507,6 +519,7 @@ export interface RootRouteChildren {
   AboutWhyLighthouseRoute: typeof AboutWhyLighthouseRoute
   ExploreDigitalEcosystemRoute: typeof ExploreDigitalEcosystemRoute
   LearningJourneyEarlyYearsRoute: typeof LearningJourneyEarlyYearsRoute
+  LearningJourneyPrimaryRoute: typeof LearningJourneyPrimaryRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -686,6 +699,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OurModelAssessmentFrameworkRouteImport
       parentRoute: typeof OurModelRoute
     }
+    '/learning-journey_/primary': {
+      id: '/learning-journey_/primary'
+      path: '/learning-journey/primary'
+      fullPath: '/learning-journey/primary'
+      preLoaderRoute: typeof LearningJourneyPrimaryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/learning-journey_/early-years': {
       id: '/learning-journey_/early-years'
       path: '/learning-journey/early-years'
@@ -843,6 +863,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutWhyLighthouseRoute: AboutWhyLighthouseRoute,
   ExploreDigitalEcosystemRoute: ExploreDigitalEcosystemRoute,
   LearningJourneyEarlyYearsRoute: LearningJourneyEarlyYearsRoute,
+  LearningJourneyPrimaryRoute: LearningJourneyPrimaryRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
