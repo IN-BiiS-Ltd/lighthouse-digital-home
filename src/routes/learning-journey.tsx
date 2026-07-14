@@ -80,7 +80,7 @@ function LearningJourney() {
         eyebrow="The Learning Journey"
         title="One continuous path, from first wonder to graduation."
         intro="Each stage is designed for who a child is becoming — not only what they need to know. The journey is coherent, humane and ambitious throughout."
-        sections={stages.map((s) => ({ label: s.name, to: `/learning-journey#${s.id}` }))}
+        sections={stages.map((s) => ({ label: s.name, to: s.to }))}
       />
 
       <Section>
