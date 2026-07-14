@@ -34,6 +34,7 @@ import logoShield from "@/assets/logo-shield.png.asset.json";
 import logoStar from "@/assets/logo-star.png.asset.json";
 import logoCompass from "@/assets/logo-compass.png.asset.json";
 import logoDove from "@/assets/logo-dove.png.asset.json";
+import lighthouseFlag from "@/assets/lighthouse-flag.png.asset.json";
 
 export const Route = createFileRoute("/about_/why-lighthouse")({
   head: () => ({
@@ -560,6 +561,30 @@ function WhyLighthouse() {
         </div>
       </Section>
 
+      {/* Section 7 — The Lighthouse Campus Flag */}
+      <Section id="flag">
+        <SectionHeading
+          align="center"
+          eyebrow="Institutional Presence"
+          title="The Lighthouse Campus flag"
+          description="The flag gathers our name, our identity and our promise into one enduring emblem — the visible sign of a community with a shared philosophy of learning."
+        />
+        <figure className="mt-14">
+          <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl border border-border shadow-[0_40px_120px_-40px_rgba(11,29,58,0.55)]">
+            <img
+              src={lighthouseFlag.url}
+              alt="The Lighthouse Campus flag flying above the campus — carrying the institutional emblem and the promise: Guiding minds. Inspiring futures. Connecting possibilities."
+              loading="lazy"
+              className="block h-auto w-full object-cover"
+            />
+          </div>
+          <figcaption className="mx-auto mt-8 max-w-2xl text-center text-sm leading-relaxed text-muted-foreground">
+            Raised above the campus, the flag is a quiet daily reminder of the
+            institution we are becoming — and of the promise we make to every
+            learner who walks through our gates.
+          </figcaption>
+        </figure>
+      </Section>
       <CtaBand
         title="Discover the community behind the name"
         body="The clearest way to understand Lighthouse Campus is to experience it. We would be glad to welcome your family."
