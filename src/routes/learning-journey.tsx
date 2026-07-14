@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Section, SectionHeading, Eyebrow, Pullquote } from "@/components/blocks";
+import { Section, Eyebrow, Pullquote, ButtonLink } from "@/components/blocks";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 
@@ -30,41 +30,46 @@ const stages = [
     id: "early-years",
     number: "01",
     name: "Early Years",
+    to: "/learning-journey/early-years",
     tagline: "Wonder & first discoveries",
-    body: "The foundations of learning are built through play, story, movement and relationships. Children develop language, confidence and a joyful curiosity about the world in a warm, secure environment.",
-    focus: ["Language & communication", "Social & emotional growth", "Play-based inquiry", "Care & routine"],
+    body: "The foundations of learning are built through play, story, movement, language, exploration and relationships. Children develop confidence, communication and joyful curiosity within a warm and secure environment.",
+    focus: ["Language and communication", "Social and emotional growth", "Play-based inquiry", "Movement and coordination", "Care and routine"],
   },
   {
     id: "primary",
     number: "02",
     name: "Primary",
+    to: "/learning-journey/primary",
     tagline: "Foundations of knowledge & character",
-    body: "Students build strong literacy and numeracy alongside a growing sense of themselves as learners. Knowledge deepens, and habits of focus, kindness and perseverance take root.",
-    focus: ["Literacy & numeracy", "Scientific curiosity", "Creativity & the arts", "Character & community"],
+    body: "Students build strong literacy and numeracy alongside a growing understanding of themselves as learners. Knowledge develops across subjects while habits of focus, curiosity, kindness and perseverance take root.",
+    focus: ["Literacy and numeracy", "Scientific curiosity", "Knowledge development", "Creativity and the arts", "Character and community"],
   },
   {
     id: "preparatory",
     number: "03",
     name: "Preparatory",
+    to: "/learning-journey/preparatory",
     tagline: "Independence & deeper thinking",
-    body: "As learners mature, they take greater ownership of their work. The curriculum broadens and challenges grow, developing critical thinking, collaboration and self-direction.",
-    focus: ["Critical thinking", "Independent study", "Collaboration", "Digital fluency"],
+    body: "As learners mature, they take increasing ownership of their work. The curriculum broadens and challenge deepens, developing critical thinking, collaboration, digital fluency and self-direction.",
+    focus: ["Critical thinking", "Independent study", "Collaboration", "Subject depth", "Digital fluency"],
   },
   {
     id: "secondary",
     number: "04",
     name: "Secondary",
+    to: "/learning-journey/secondary",
     tagline: "Scholarship, identity & direction",
-    body: "Students pursue rigorous academic study while discovering their strengths, passions and voice. Mentorship, leadership and service prepare them for the responsibilities ahead.",
-    focus: ["Academic rigour", "Leadership & service", "Specialisation", "University readiness"],
+    body: "Students pursue rigorous academic learning while discovering strengths, interests and future aspirations. Mentorship, leadership and service prepare them for the responsibilities ahead.",
+    focus: ["Academic rigour", "Specialisation", "Leadership and service", "Research and communication", "University readiness"],
   },
   {
     id: "pathways",
     number: "05",
     name: "Graduation Pathways",
+    to: "/learning-journey/graduation-pathways",
     tagline: "Ready for university and life",
-    body: "Graduates leave with the knowledge, character and confidence to thrive — supported by careful guidance toward universities and pathways that fit who they are and what they hope to build.",
-    focus: ["University guidance", "Personal statement support", "Careers & aspirations", "Alumni community"],
+    body: "Graduates leave with knowledge, character and confidence. Guidance supports students in identifying universities, careers and future pathways aligned with their strengths, values and aspirations.",
+    focus: ["University guidance", "Careers and aspirations", "Personal statement support", "Transition planning", "Alumni community"],
   },
 ];
 
@@ -75,7 +80,7 @@ function LearningJourney() {
         eyebrow="The Learning Journey"
         title="One continuous path, from first wonder to graduation."
         intro="Each stage is designed for who a child is becoming — not only what they need to know. The journey is coherent, humane and ambitious throughout."
-        sections={stages.map((s) => ({ label: s.name, to: `/learning-journey#${s.id}` }))}
+        sections={stages.map((s) => ({ label: s.name, to: s.to }))}
       />
 
       <Section>
@@ -110,6 +115,11 @@ function LearningJourney() {
                     </li>
                   ))}
                 </ul>
+                <div className="mt-7">
+                  <ButtonLink to={stage.to} variant="outline" size="sm">
+                    Explore {stage.name}
+                  </ButtonLink>
+                </div>
               </div>
               {i < stages.length - 1 ? null : null}
             </div>
@@ -127,7 +137,9 @@ function LearningJourney() {
       <CtaBand
         eyebrow="Invitation"
         title="Find the right stage for your child"
-        body="Whether your child is beginning Early Years or joining Secondary, our admissions team will guide you."
+        body="Whether a child is beginning Early Years or joining Secondary, the admissions team will guide the family through the next step."
+        primary={{ to: "/admissions", label: "Admissions Overview" }}
+        secondary={{ to: "/contact", label: "Schedule a Visit" }}
       />
     </>
   );

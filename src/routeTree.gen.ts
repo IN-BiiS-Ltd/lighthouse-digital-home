@@ -34,9 +34,22 @@ import { Route as OurModelInnovationRouteImport } from './routes/our-model.innov
 import { Route as OurModelGraduateProfileRouteImport } from './routes/our-model.graduate-profile'
 import { Route as OurModelEducationalModelRouteImport } from './routes/our-model.educational-model'
 import { Route as OurModelAssessmentFrameworkRouteImport } from './routes/our-model.assessment-framework'
+import { Route as LearningJourneySecondaryRouteImport } from './routes/learning-journey_.secondary'
+import { Route as LearningJourneyPrimaryRouteImport } from './routes/learning-journey_.primary'
+import { Route as LearningJourneyPreparatoryRouteImport } from './routes/learning-journey_.preparatory'
+import { Route as LearningJourneyGraduationPathwaysRouteImport } from './routes/learning-journey_.graduation-pathways'
+import { Route as LearningJourneyEarlyYearsRouteImport } from './routes/learning-journey_.early-years'
 import { Route as ExploreDigitalEcosystemRouteImport } from './routes/explore.digital-ecosystem'
 import { Route as CampusesMohandessinRouteImport } from './routes/campuses.mohandessin'
 import { Route as AboutWhyLighthouseRouteImport } from './routes/about_.why-lighthouse'
+import { Route as AboutVisionRouteImport } from './routes/about_.vision'
+import { Route as AboutOurStoryRouteImport } from './routes/about_.our-story'
+import { Route as AboutMissionRouteImport } from './routes/about_.mission'
+import { Route as AboutLeadershipRouteImport } from './routes/about_.leadership'
+import { Route as AboutGovernanceRouteImport } from './routes/about_.governance'
+import { Route as AboutEducationalPhilosophyRouteImport } from './routes/about_.educational-philosophy'
+import { Route as AboutCoreValuesRouteImport } from './routes/about_.core-values'
+import { Route as AboutCampusCultureRouteImport } from './routes/about_.campus-culture'
 
 const StudentLifeRoute = StudentLifeRouteImport.update({
   id: '/student-life',
@@ -170,6 +183,35 @@ const OurModelAssessmentFrameworkRoute =
     path: '/assessment-framework',
     getParentRoute: () => OurModelRoute,
   } as any)
+const LearningJourneySecondaryRoute =
+  LearningJourneySecondaryRouteImport.update({
+    id: '/learning-journey_/secondary',
+    path: '/learning-journey/secondary',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const LearningJourneyPrimaryRoute = LearningJourneyPrimaryRouteImport.update({
+  id: '/learning-journey_/primary',
+  path: '/learning-journey/primary',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LearningJourneyPreparatoryRoute =
+  LearningJourneyPreparatoryRouteImport.update({
+    id: '/learning-journey_/preparatory',
+    path: '/learning-journey/preparatory',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const LearningJourneyGraduationPathwaysRoute =
+  LearningJourneyGraduationPathwaysRouteImport.update({
+    id: '/learning-journey_/graduation-pathways',
+    path: '/learning-journey/graduation-pathways',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const LearningJourneyEarlyYearsRoute =
+  LearningJourneyEarlyYearsRouteImport.update({
+    id: '/learning-journey_/early-years',
+    path: '/learning-journey/early-years',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ExploreDigitalEcosystemRoute = ExploreDigitalEcosystemRouteImport.update({
   id: '/explore/digital-ecosystem',
   path: '/explore/digital-ecosystem',
@@ -183,6 +225,47 @@ const CampusesMohandessinRoute = CampusesMohandessinRouteImport.update({
 const AboutWhyLighthouseRoute = AboutWhyLighthouseRouteImport.update({
   id: '/about_/why-lighthouse',
   path: '/about/why-lighthouse',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutVisionRoute = AboutVisionRouteImport.update({
+  id: '/about_/vision',
+  path: '/about/vision',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutOurStoryRoute = AboutOurStoryRouteImport.update({
+  id: '/about_/our-story',
+  path: '/about/our-story',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutMissionRoute = AboutMissionRouteImport.update({
+  id: '/about_/mission',
+  path: '/about/mission',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutLeadershipRoute = AboutLeadershipRouteImport.update({
+  id: '/about_/leadership',
+  path: '/about/leadership',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutGovernanceRoute = AboutGovernanceRouteImport.update({
+  id: '/about_/governance',
+  path: '/about/governance',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutEducationalPhilosophyRoute =
+  AboutEducationalPhilosophyRouteImport.update({
+    id: '/about_/educational-philosophy',
+    path: '/about/educational-philosophy',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AboutCoreValuesRoute = AboutCoreValuesRouteImport.update({
+  id: '/about_/core-values',
+  path: '/about/core-values',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutCampusCultureRoute = AboutCampusCultureRouteImport.update({
+  id: '/about_/campus-culture',
+  path: '/about/campus-culture',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -202,9 +285,22 @@ export interface FileRoutesByFullPath {
   '/parents': typeof ParentsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/student-life': typeof StudentLifeRoute
+  '/about/campus-culture': typeof AboutCampusCultureRoute
+  '/about/core-values': typeof AboutCoreValuesRoute
+  '/about/educational-philosophy': typeof AboutEducationalPhilosophyRoute
+  '/about/governance': typeof AboutGovernanceRoute
+  '/about/leadership': typeof AboutLeadershipRoute
+  '/about/mission': typeof AboutMissionRoute
+  '/about/our-story': typeof AboutOurStoryRoute
+  '/about/vision': typeof AboutVisionRoute
   '/about/why-lighthouse': typeof AboutWhyLighthouseRoute
   '/campuses/mohandessin': typeof CampusesMohandessinRoute
   '/explore/digital-ecosystem': typeof ExploreDigitalEcosystemRoute
+  '/learning-journey/early-years': typeof LearningJourneyEarlyYearsRoute
+  '/learning-journey/graduation-pathways': typeof LearningJourneyGraduationPathwaysRoute
+  '/learning-journey/preparatory': typeof LearningJourneyPreparatoryRoute
+  '/learning-journey/primary': typeof LearningJourneyPrimaryRoute
+  '/learning-journey/secondary': typeof LearningJourneySecondaryRoute
   '/our-model/assessment-framework': typeof OurModelAssessmentFrameworkRoute
   '/our-model/educational-model': typeof OurModelEducationalModelRoute
   '/our-model/graduate-profile': typeof OurModelGraduateProfileRoute
@@ -232,9 +328,22 @@ export interface FileRoutesByTo {
   '/parents': typeof ParentsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/student-life': typeof StudentLifeRoute
+  '/about/campus-culture': typeof AboutCampusCultureRoute
+  '/about/core-values': typeof AboutCoreValuesRoute
+  '/about/educational-philosophy': typeof AboutEducationalPhilosophyRoute
+  '/about/governance': typeof AboutGovernanceRoute
+  '/about/leadership': typeof AboutLeadershipRoute
+  '/about/mission': typeof AboutMissionRoute
+  '/about/our-story': typeof AboutOurStoryRoute
+  '/about/vision': typeof AboutVisionRoute
   '/about/why-lighthouse': typeof AboutWhyLighthouseRoute
   '/campuses/mohandessin': typeof CampusesMohandessinRoute
   '/explore/digital-ecosystem': typeof ExploreDigitalEcosystemRoute
+  '/learning-journey/early-years': typeof LearningJourneyEarlyYearsRoute
+  '/learning-journey/graduation-pathways': typeof LearningJourneyGraduationPathwaysRoute
+  '/learning-journey/preparatory': typeof LearningJourneyPreparatoryRoute
+  '/learning-journey/primary': typeof LearningJourneyPrimaryRoute
+  '/learning-journey/secondary': typeof LearningJourneySecondaryRoute
   '/our-model/assessment-framework': typeof OurModelAssessmentFrameworkRoute
   '/our-model/educational-model': typeof OurModelEducationalModelRoute
   '/our-model/graduate-profile': typeof OurModelGraduateProfileRoute
@@ -263,9 +372,22 @@ export interface FileRoutesById {
   '/parents': typeof ParentsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/student-life': typeof StudentLifeRoute
+  '/about_/campus-culture': typeof AboutCampusCultureRoute
+  '/about_/core-values': typeof AboutCoreValuesRoute
+  '/about_/educational-philosophy': typeof AboutEducationalPhilosophyRoute
+  '/about_/governance': typeof AboutGovernanceRoute
+  '/about_/leadership': typeof AboutLeadershipRoute
+  '/about_/mission': typeof AboutMissionRoute
+  '/about_/our-story': typeof AboutOurStoryRoute
+  '/about_/vision': typeof AboutVisionRoute
   '/about_/why-lighthouse': typeof AboutWhyLighthouseRoute
   '/campuses/mohandessin': typeof CampusesMohandessinRoute
   '/explore/digital-ecosystem': typeof ExploreDigitalEcosystemRoute
+  '/learning-journey_/early-years': typeof LearningJourneyEarlyYearsRoute
+  '/learning-journey_/graduation-pathways': typeof LearningJourneyGraduationPathwaysRoute
+  '/learning-journey_/preparatory': typeof LearningJourneyPreparatoryRoute
+  '/learning-journey_/primary': typeof LearningJourneyPrimaryRoute
+  '/learning-journey_/secondary': typeof LearningJourneySecondaryRoute
   '/our-model/assessment-framework': typeof OurModelAssessmentFrameworkRoute
   '/our-model/educational-model': typeof OurModelEducationalModelRoute
   '/our-model/graduate-profile': typeof OurModelGraduateProfileRoute
@@ -295,9 +417,22 @@ export interface FileRouteTypes {
     | '/parents'
     | '/sitemap.xml'
     | '/student-life'
+    | '/about/campus-culture'
+    | '/about/core-values'
+    | '/about/educational-philosophy'
+    | '/about/governance'
+    | '/about/leadership'
+    | '/about/mission'
+    | '/about/our-story'
+    | '/about/vision'
     | '/about/why-lighthouse'
     | '/campuses/mohandessin'
     | '/explore/digital-ecosystem'
+    | '/learning-journey/early-years'
+    | '/learning-journey/graduation-pathways'
+    | '/learning-journey/preparatory'
+    | '/learning-journey/primary'
+    | '/learning-journey/secondary'
     | '/our-model/assessment-framework'
     | '/our-model/educational-model'
     | '/our-model/graduate-profile'
@@ -325,9 +460,22 @@ export interface FileRouteTypes {
     | '/parents'
     | '/sitemap.xml'
     | '/student-life'
+    | '/about/campus-culture'
+    | '/about/core-values'
+    | '/about/educational-philosophy'
+    | '/about/governance'
+    | '/about/leadership'
+    | '/about/mission'
+    | '/about/our-story'
+    | '/about/vision'
     | '/about/why-lighthouse'
     | '/campuses/mohandessin'
     | '/explore/digital-ecosystem'
+    | '/learning-journey/early-years'
+    | '/learning-journey/graduation-pathways'
+    | '/learning-journey/preparatory'
+    | '/learning-journey/primary'
+    | '/learning-journey/secondary'
     | '/our-model/assessment-framework'
     | '/our-model/educational-model'
     | '/our-model/graduate-profile'
@@ -355,9 +503,22 @@ export interface FileRouteTypes {
     | '/parents'
     | '/sitemap.xml'
     | '/student-life'
+    | '/about_/campus-culture'
+    | '/about_/core-values'
+    | '/about_/educational-philosophy'
+    | '/about_/governance'
+    | '/about_/leadership'
+    | '/about_/mission'
+    | '/about_/our-story'
+    | '/about_/vision'
     | '/about_/why-lighthouse'
     | '/campuses/mohandessin'
     | '/explore/digital-ecosystem'
+    | '/learning-journey_/early-years'
+    | '/learning-journey_/graduation-pathways'
+    | '/learning-journey_/preparatory'
+    | '/learning-journey_/primary'
+    | '/learning-journey_/secondary'
     | '/our-model/assessment-framework'
     | '/our-model/educational-model'
     | '/our-model/graduate-profile'
@@ -386,8 +547,21 @@ export interface RootRouteChildren {
   ParentsRoute: typeof ParentsRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StudentLifeRoute: typeof StudentLifeRoute
+  AboutCampusCultureRoute: typeof AboutCampusCultureRoute
+  AboutCoreValuesRoute: typeof AboutCoreValuesRoute
+  AboutEducationalPhilosophyRoute: typeof AboutEducationalPhilosophyRoute
+  AboutGovernanceRoute: typeof AboutGovernanceRoute
+  AboutLeadershipRoute: typeof AboutLeadershipRoute
+  AboutMissionRoute: typeof AboutMissionRoute
+  AboutOurStoryRoute: typeof AboutOurStoryRoute
+  AboutVisionRoute: typeof AboutVisionRoute
   AboutWhyLighthouseRoute: typeof AboutWhyLighthouseRoute
   ExploreDigitalEcosystemRoute: typeof ExploreDigitalEcosystemRoute
+  LearningJourneyEarlyYearsRoute: typeof LearningJourneyEarlyYearsRoute
+  LearningJourneyGraduationPathwaysRoute: typeof LearningJourneyGraduationPathwaysRoute
+  LearningJourneyPreparatoryRoute: typeof LearningJourneyPreparatoryRoute
+  LearningJourneyPrimaryRoute: typeof LearningJourneyPrimaryRoute
+  LearningJourneySecondaryRoute: typeof LearningJourneySecondaryRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -567,6 +741,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OurModelAssessmentFrameworkRouteImport
       parentRoute: typeof OurModelRoute
     }
+    '/learning-journey_/secondary': {
+      id: '/learning-journey_/secondary'
+      path: '/learning-journey/secondary'
+      fullPath: '/learning-journey/secondary'
+      preLoaderRoute: typeof LearningJourneySecondaryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/learning-journey_/primary': {
+      id: '/learning-journey_/primary'
+      path: '/learning-journey/primary'
+      fullPath: '/learning-journey/primary'
+      preLoaderRoute: typeof LearningJourneyPrimaryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/learning-journey_/preparatory': {
+      id: '/learning-journey_/preparatory'
+      path: '/learning-journey/preparatory'
+      fullPath: '/learning-journey/preparatory'
+      preLoaderRoute: typeof LearningJourneyPreparatoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/learning-journey_/graduation-pathways': {
+      id: '/learning-journey_/graduation-pathways'
+      path: '/learning-journey/graduation-pathways'
+      fullPath: '/learning-journey/graduation-pathways'
+      preLoaderRoute: typeof LearningJourneyGraduationPathwaysRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/learning-journey_/early-years': {
+      id: '/learning-journey_/early-years'
+      path: '/learning-journey/early-years'
+      fullPath: '/learning-journey/early-years'
+      preLoaderRoute: typeof LearningJourneyEarlyYearsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/explore/digital-ecosystem': {
       id: '/explore/digital-ecosystem'
       path: '/explore/digital-ecosystem'
@@ -586,6 +795,62 @@ declare module '@tanstack/react-router' {
       path: '/about/why-lighthouse'
       fullPath: '/about/why-lighthouse'
       preLoaderRoute: typeof AboutWhyLighthouseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about_/vision': {
+      id: '/about_/vision'
+      path: '/about/vision'
+      fullPath: '/about/vision'
+      preLoaderRoute: typeof AboutVisionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about_/our-story': {
+      id: '/about_/our-story'
+      path: '/about/our-story'
+      fullPath: '/about/our-story'
+      preLoaderRoute: typeof AboutOurStoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about_/mission': {
+      id: '/about_/mission'
+      path: '/about/mission'
+      fullPath: '/about/mission'
+      preLoaderRoute: typeof AboutMissionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about_/leadership': {
+      id: '/about_/leadership'
+      path: '/about/leadership'
+      fullPath: '/about/leadership'
+      preLoaderRoute: typeof AboutLeadershipRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about_/governance': {
+      id: '/about_/governance'
+      path: '/about/governance'
+      fullPath: '/about/governance'
+      preLoaderRoute: typeof AboutGovernanceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about_/educational-philosophy': {
+      id: '/about_/educational-philosophy'
+      path: '/about/educational-philosophy'
+      fullPath: '/about/educational-philosophy'
+      preLoaderRoute: typeof AboutEducationalPhilosophyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about_/core-values': {
+      id: '/about_/core-values'
+      path: '/about/core-values'
+      fullPath: '/about/core-values'
+      preLoaderRoute: typeof AboutCoreValuesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about_/campus-culture': {
+      id: '/about_/campus-culture'
+      path: '/about/campus-culture'
+      fullPath: '/about/campus-culture'
+      preLoaderRoute: typeof AboutCampusCultureRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -650,19 +915,23 @@ const rootRouteChildren: RootRouteChildren = {
   ParentsRoute: ParentsRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   StudentLifeRoute: StudentLifeRoute,
+  AboutCampusCultureRoute: AboutCampusCultureRoute,
+  AboutCoreValuesRoute: AboutCoreValuesRoute,
+  AboutEducationalPhilosophyRoute: AboutEducationalPhilosophyRoute,
+  AboutGovernanceRoute: AboutGovernanceRoute,
+  AboutLeadershipRoute: AboutLeadershipRoute,
+  AboutMissionRoute: AboutMissionRoute,
+  AboutOurStoryRoute: AboutOurStoryRoute,
+  AboutVisionRoute: AboutVisionRoute,
   AboutWhyLighthouseRoute: AboutWhyLighthouseRoute,
   ExploreDigitalEcosystemRoute: ExploreDigitalEcosystemRoute,
+  LearningJourneyEarlyYearsRoute: LearningJourneyEarlyYearsRoute,
+  LearningJourneyGraduationPathwaysRoute:
+    LearningJourneyGraduationPathwaysRoute,
+  LearningJourneyPreparatoryRoute: LearningJourneyPreparatoryRoute,
+  LearningJourneyPrimaryRoute: LearningJourneyPrimaryRoute,
+  LearningJourneySecondaryRoute: LearningJourneySecondaryRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
