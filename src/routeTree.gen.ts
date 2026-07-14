@@ -37,6 +37,7 @@ import { Route as OurModelAssessmentFrameworkRouteImport } from './routes/our-mo
 import { Route as ExploreDigitalEcosystemRouteImport } from './routes/explore.digital-ecosystem'
 import { Route as CampusesMohandessinRouteImport } from './routes/campuses.mohandessin'
 import { Route as AboutWhyLighthouseRouteImport } from './routes/about_.why-lighthouse'
+import { Route as AboutVisionRouteImport } from './routes/about_.vision'
 import { Route as AboutOurStoryRouteImport } from './routes/about_.our-story'
 
 const StudentLifeRoute = StudentLifeRouteImport.update({
@@ -186,6 +187,11 @@ const AboutWhyLighthouseRoute = AboutWhyLighthouseRouteImport.update({
   path: '/about/why-lighthouse',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutVisionRoute = AboutVisionRouteImport.update({
+  id: '/about_/vision',
+  path: '/about/vision',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutOurStoryRoute = AboutOurStoryRouteImport.update({
   id: '/about_/our-story',
   path: '/about/our-story',
@@ -209,6 +215,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/student-life': typeof StudentLifeRoute
   '/about/our-story': typeof AboutOurStoryRoute
+  '/about/vision': typeof AboutVisionRoute
   '/about/why-lighthouse': typeof AboutWhyLighthouseRoute
   '/campuses/mohandessin': typeof CampusesMohandessinRoute
   '/explore/digital-ecosystem': typeof ExploreDigitalEcosystemRoute
@@ -240,6 +247,7 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/student-life': typeof StudentLifeRoute
   '/about/our-story': typeof AboutOurStoryRoute
+  '/about/vision': typeof AboutVisionRoute
   '/about/why-lighthouse': typeof AboutWhyLighthouseRoute
   '/campuses/mohandessin': typeof CampusesMohandessinRoute
   '/explore/digital-ecosystem': typeof ExploreDigitalEcosystemRoute
@@ -272,6 +280,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/student-life': typeof StudentLifeRoute
   '/about_/our-story': typeof AboutOurStoryRoute
+  '/about_/vision': typeof AboutVisionRoute
   '/about_/why-lighthouse': typeof AboutWhyLighthouseRoute
   '/campuses/mohandessin': typeof CampusesMohandessinRoute
   '/explore/digital-ecosystem': typeof ExploreDigitalEcosystemRoute
@@ -305,6 +314,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/student-life'
     | '/about/our-story'
+    | '/about/vision'
     | '/about/why-lighthouse'
     | '/campuses/mohandessin'
     | '/explore/digital-ecosystem'
@@ -336,6 +346,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/student-life'
     | '/about/our-story'
+    | '/about/vision'
     | '/about/why-lighthouse'
     | '/campuses/mohandessin'
     | '/explore/digital-ecosystem'
@@ -367,6 +378,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/student-life'
     | '/about_/our-story'
+    | '/about_/vision'
     | '/about_/why-lighthouse'
     | '/campuses/mohandessin'
     | '/explore/digital-ecosystem'
@@ -399,6 +411,7 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StudentLifeRoute: typeof StudentLifeRoute
   AboutOurStoryRoute: typeof AboutOurStoryRoute
+  AboutVisionRoute: typeof AboutVisionRoute
   AboutWhyLighthouseRoute: typeof AboutWhyLighthouseRoute
   ExploreDigitalEcosystemRoute: typeof ExploreDigitalEcosystemRoute
 }
@@ -601,6 +614,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutWhyLighthouseRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about_/vision': {
+      id: '/about_/vision'
+      path: '/about/vision'
+      fullPath: '/about/vision'
+      preLoaderRoute: typeof AboutVisionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about_/our-story': {
       id: '/about_/our-story'
       path: '/about/our-story'
@@ -671,6 +691,7 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   StudentLifeRoute: StudentLifeRoute,
   AboutOurStoryRoute: AboutOurStoryRoute,
+  AboutVisionRoute: AboutVisionRoute,
   AboutWhyLighthouseRoute: AboutWhyLighthouseRoute,
   ExploreDigitalEcosystemRoute: ExploreDigitalEcosystemRoute,
 }
