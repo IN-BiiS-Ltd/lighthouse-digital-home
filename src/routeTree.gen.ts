@@ -40,6 +40,7 @@ import { Route as AboutWhyLighthouseRouteImport } from './routes/about_.why-ligh
 import { Route as AboutVisionRouteImport } from './routes/about_.vision'
 import { Route as AboutOurStoryRouteImport } from './routes/about_.our-story'
 import { Route as AboutMissionRouteImport } from './routes/about_.mission'
+import { Route as AboutEducationalPhilosophyRouteImport } from './routes/about_.educational-philosophy'
 import { Route as AboutCoreValuesRouteImport } from './routes/about_.core-values'
 
 const StudentLifeRoute = StudentLifeRouteImport.update({
@@ -204,6 +205,12 @@ const AboutMissionRoute = AboutMissionRouteImport.update({
   path: '/about/mission',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutEducationalPhilosophyRoute =
+  AboutEducationalPhilosophyRouteImport.update({
+    id: '/about_/educational-philosophy',
+    path: '/about/educational-philosophy',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AboutCoreValuesRoute = AboutCoreValuesRouteImport.update({
   id: '/about_/core-values',
   path: '/about/core-values',
@@ -227,6 +234,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/student-life': typeof StudentLifeRoute
   '/about/core-values': typeof AboutCoreValuesRoute
+  '/about/educational-philosophy': typeof AboutEducationalPhilosophyRoute
   '/about/mission': typeof AboutMissionRoute
   '/about/our-story': typeof AboutOurStoryRoute
   '/about/vision': typeof AboutVisionRoute
@@ -261,6 +269,7 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/student-life': typeof StudentLifeRoute
   '/about/core-values': typeof AboutCoreValuesRoute
+  '/about/educational-philosophy': typeof AboutEducationalPhilosophyRoute
   '/about/mission': typeof AboutMissionRoute
   '/about/our-story': typeof AboutOurStoryRoute
   '/about/vision': typeof AboutVisionRoute
@@ -296,6 +305,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/student-life': typeof StudentLifeRoute
   '/about_/core-values': typeof AboutCoreValuesRoute
+  '/about_/educational-philosophy': typeof AboutEducationalPhilosophyRoute
   '/about_/mission': typeof AboutMissionRoute
   '/about_/our-story': typeof AboutOurStoryRoute
   '/about_/vision': typeof AboutVisionRoute
@@ -332,6 +342,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/student-life'
     | '/about/core-values'
+    | '/about/educational-philosophy'
     | '/about/mission'
     | '/about/our-story'
     | '/about/vision'
@@ -366,6 +377,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/student-life'
     | '/about/core-values'
+    | '/about/educational-philosophy'
     | '/about/mission'
     | '/about/our-story'
     | '/about/vision'
@@ -400,6 +412,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/student-life'
     | '/about_/core-values'
+    | '/about_/educational-philosophy'
     | '/about_/mission'
     | '/about_/our-story'
     | '/about_/vision'
@@ -435,6 +448,7 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StudentLifeRoute: typeof StudentLifeRoute
   AboutCoreValuesRoute: typeof AboutCoreValuesRoute
+  AboutEducationalPhilosophyRoute: typeof AboutEducationalPhilosophyRoute
   AboutMissionRoute: typeof AboutMissionRoute
   AboutOurStoryRoute: typeof AboutOurStoryRoute
   AboutVisionRoute: typeof AboutVisionRoute
@@ -661,6 +675,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutMissionRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about_/educational-philosophy': {
+      id: '/about_/educational-philosophy'
+      path: '/about/educational-philosophy'
+      fullPath: '/about/educational-philosophy'
+      preLoaderRoute: typeof AboutEducationalPhilosophyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about_/core-values': {
       id: '/about_/core-values'
       path: '/about/core-values'
@@ -731,6 +752,7 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   StudentLifeRoute: StudentLifeRoute,
   AboutCoreValuesRoute: AboutCoreValuesRoute,
+  AboutEducationalPhilosophyRoute: AboutEducationalPhilosophyRoute,
   AboutMissionRoute: AboutMissionRoute,
   AboutOurStoryRoute: AboutOurStoryRoute,
   AboutVisionRoute: AboutVisionRoute,
