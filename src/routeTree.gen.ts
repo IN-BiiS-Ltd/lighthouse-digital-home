@@ -44,6 +44,7 @@ import { Route as AboutLeadershipRouteImport } from './routes/about_.leadership'
 import { Route as AboutGovernanceRouteImport } from './routes/about_.governance'
 import { Route as AboutEducationalPhilosophyRouteImport } from './routes/about_.educational-philosophy'
 import { Route as AboutCoreValuesRouteImport } from './routes/about_.core-values'
+import { Route as AboutCampusCultureRouteImport } from './routes/about_.campus-culture'
 
 const StudentLifeRoute = StudentLifeRouteImport.update({
   id: '/student-life',
@@ -228,6 +229,11 @@ const AboutCoreValuesRoute = AboutCoreValuesRouteImport.update({
   path: '/about/core-values',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutCampusCultureRoute = AboutCampusCultureRouteImport.update({
+  id: '/about_/campus-culture',
+  path: '/about/campus-culture',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -245,6 +251,7 @@ export interface FileRoutesByFullPath {
   '/parents': typeof ParentsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/student-life': typeof StudentLifeRoute
+  '/about/campus-culture': typeof AboutCampusCultureRoute
   '/about/core-values': typeof AboutCoreValuesRoute
   '/about/educational-philosophy': typeof AboutEducationalPhilosophyRoute
   '/about/governance': typeof AboutGovernanceRoute
@@ -282,6 +289,7 @@ export interface FileRoutesByTo {
   '/parents': typeof ParentsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/student-life': typeof StudentLifeRoute
+  '/about/campus-culture': typeof AboutCampusCultureRoute
   '/about/core-values': typeof AboutCoreValuesRoute
   '/about/educational-philosophy': typeof AboutEducationalPhilosophyRoute
   '/about/governance': typeof AboutGovernanceRoute
@@ -320,6 +328,7 @@ export interface FileRoutesById {
   '/parents': typeof ParentsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/student-life': typeof StudentLifeRoute
+  '/about_/campus-culture': typeof AboutCampusCultureRoute
   '/about_/core-values': typeof AboutCoreValuesRoute
   '/about_/educational-philosophy': typeof AboutEducationalPhilosophyRoute
   '/about_/governance': typeof AboutGovernanceRoute
@@ -359,6 +368,7 @@ export interface FileRouteTypes {
     | '/parents'
     | '/sitemap.xml'
     | '/student-life'
+    | '/about/campus-culture'
     | '/about/core-values'
     | '/about/educational-philosophy'
     | '/about/governance'
@@ -396,6 +406,7 @@ export interface FileRouteTypes {
     | '/parents'
     | '/sitemap.xml'
     | '/student-life'
+    | '/about/campus-culture'
     | '/about/core-values'
     | '/about/educational-philosophy'
     | '/about/governance'
@@ -433,6 +444,7 @@ export interface FileRouteTypes {
     | '/parents'
     | '/sitemap.xml'
     | '/student-life'
+    | '/about_/campus-culture'
     | '/about_/core-values'
     | '/about_/educational-philosophy'
     | '/about_/governance'
@@ -471,6 +483,7 @@ export interface RootRouteChildren {
   ParentsRoute: typeof ParentsRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StudentLifeRoute: typeof StudentLifeRoute
+  AboutCampusCultureRoute: typeof AboutCampusCultureRoute
   AboutCoreValuesRoute: typeof AboutCoreValuesRoute
   AboutEducationalPhilosophyRoute: typeof AboutEducationalPhilosophyRoute
   AboutGovernanceRoute: typeof AboutGovernanceRoute
@@ -729,6 +742,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutCoreValuesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about_/campus-culture': {
+      id: '/about_/campus-culture'
+      path: '/about/campus-culture'
+      fullPath: '/about/campus-culture'
+      preLoaderRoute: typeof AboutCampusCultureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -791,6 +811,7 @@ const rootRouteChildren: RootRouteChildren = {
   ParentsRoute: ParentsRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   StudentLifeRoute: StudentLifeRoute,
+  AboutCampusCultureRoute: AboutCampusCultureRoute,
   AboutCoreValuesRoute: AboutCoreValuesRoute,
   AboutEducationalPhilosophyRoute: AboutEducationalPhilosophyRoute,
   AboutGovernanceRoute: AboutGovernanceRoute,
