@@ -59,7 +59,7 @@ export function Wordmark({
           onNavy ? "text-navy-foreground" : "text-foreground",
         )}
       >
-        LIGHTHAUSE
+        LIGHTHOUSE
       </span>
       <span className="eyebrow mt-1 text-gold tracking-[0.42em]">Campus</span>
     </span>
