@@ -137,7 +137,9 @@ function LearningJourney() {
       <CtaBand
         eyebrow="Invitation"
         title="Find the right stage for your child"
-        body="Whether your child is beginning Early Years or joining Secondary, our admissions team will guide you."
+        body="Whether a child is beginning Early Years or joining Secondary, the admissions team will guide the family through the next step."
+        primary={{ to: "/admissions", label: "Admissions Overview" }}
+        secondary={{ to: "/contact", label: "Schedule a Visit" }}
       />
     </>
   );
