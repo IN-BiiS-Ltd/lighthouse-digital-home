@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Section, SectionHeading, Eyebrow, Pullquote } from "@/components/blocks";
+import { Section, Eyebrow, Pullquote, ButtonLink } from "@/components/blocks";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 
