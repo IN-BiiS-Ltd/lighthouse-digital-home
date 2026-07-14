@@ -585,7 +585,7 @@ function WhyLighthouse() {
           </figcaption>
         </figure>
       </Section>
-
+      <CtaBand
         title="Discover the community behind the name"
         body="The clearest way to understand Lighthouse Campus is to experience it. We would be glad to welcome your family."
       />
