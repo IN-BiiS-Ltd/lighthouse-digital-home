@@ -156,6 +156,14 @@ export const secondaryNav: NavSection[] = [
       { label: "Professional Growth", to: "/careers#growth" },
     ],
   },
+  {
+    label: "Digital Ecosystem",
+    to: "/explore/digital-ecosystem",
+    summary: "Connected services designed around the learner and the community.",
+    children: [
+      { label: "Digital Ecosystem Overview", to: "/explore/digital-ecosystem" },
+    ],
+  },
 ];
 
 export const allNav: NavSection[] = [...primaryNav, ...secondaryNav];
