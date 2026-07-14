@@ -34,6 +34,7 @@ import logoShield from "@/assets/logo-shield.png.asset.json";
 import logoStar from "@/assets/logo-star.png.asset.json";
 import logoCompass from "@/assets/logo-compass.png.asset.json";
 import logoDove from "@/assets/logo-dove.png.asset.json";
+import lighthouseFlag from "@/assets/lighthouse-flag.png.asset.json";
 
 export const Route = createFileRoute("/about_/why-lighthouse")({
   head: () => ({
