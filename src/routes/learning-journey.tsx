@@ -115,6 +115,11 @@ function LearningJourney() {
                     </li>
                   ))}
                 </ul>
+                <div className="mt-7">
+                  <ButtonLink to={stage.to} variant="outline" size="sm">
+                    Explore {stage.name}
+                  </ButtonLink>
+                </div>
               </div>
               {i < stages.length - 1 ? null : null}
             </div>
