@@ -40,6 +40,7 @@ import { Route as AboutWhyLighthouseRouteImport } from './routes/about_.why-ligh
 import { Route as AboutVisionRouteImport } from './routes/about_.vision'
 import { Route as AboutOurStoryRouteImport } from './routes/about_.our-story'
 import { Route as AboutMissionRouteImport } from './routes/about_.mission'
+import { Route as AboutCoreValuesRouteImport } from './routes/about_.core-values'
 
 const StudentLifeRoute = StudentLifeRouteImport.update({
   id: '/student-life',
@@ -203,6 +204,11 @@ const AboutMissionRoute = AboutMissionRouteImport.update({
   path: '/about/mission',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutCoreValuesRoute = AboutCoreValuesRouteImport.update({
+  id: '/about_/core-values',
+  path: '/about/core-values',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -220,6 +226,7 @@ export interface FileRoutesByFullPath {
   '/parents': typeof ParentsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/student-life': typeof StudentLifeRoute
+  '/about/core-values': typeof AboutCoreValuesRoute
   '/about/mission': typeof AboutMissionRoute
   '/about/our-story': typeof AboutOurStoryRoute
   '/about/vision': typeof AboutVisionRoute
@@ -253,6 +260,7 @@ export interface FileRoutesByTo {
   '/parents': typeof ParentsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/student-life': typeof StudentLifeRoute
+  '/about/core-values': typeof AboutCoreValuesRoute
   '/about/mission': typeof AboutMissionRoute
   '/about/our-story': typeof AboutOurStoryRoute
   '/about/vision': typeof AboutVisionRoute
@@ -287,6 +295,7 @@ export interface FileRoutesById {
   '/parents': typeof ParentsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/student-life': typeof StudentLifeRoute
+  '/about_/core-values': typeof AboutCoreValuesRoute
   '/about_/mission': typeof AboutMissionRoute
   '/about_/our-story': typeof AboutOurStoryRoute
   '/about_/vision': typeof AboutVisionRoute
@@ -322,6 +331,7 @@ export interface FileRouteTypes {
     | '/parents'
     | '/sitemap.xml'
     | '/student-life'
+    | '/about/core-values'
     | '/about/mission'
     | '/about/our-story'
     | '/about/vision'
@@ -355,6 +365,7 @@ export interface FileRouteTypes {
     | '/parents'
     | '/sitemap.xml'
     | '/student-life'
+    | '/about/core-values'
     | '/about/mission'
     | '/about/our-story'
     | '/about/vision'
@@ -388,6 +399,7 @@ export interface FileRouteTypes {
     | '/parents'
     | '/sitemap.xml'
     | '/student-life'
+    | '/about_/core-values'
     | '/about_/mission'
     | '/about_/our-story'
     | '/about_/vision'
@@ -422,6 +434,7 @@ export interface RootRouteChildren {
   ParentsRoute: typeof ParentsRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StudentLifeRoute: typeof StudentLifeRoute
+  AboutCoreValuesRoute: typeof AboutCoreValuesRoute
   AboutMissionRoute: typeof AboutMissionRoute
   AboutOurStoryRoute: typeof AboutOurStoryRoute
   AboutVisionRoute: typeof AboutVisionRoute
@@ -648,6 +661,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutMissionRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about_/core-values': {
+      id: '/about_/core-values'
+      path: '/about/core-values'
+      fullPath: '/about/core-values'
+      preLoaderRoute: typeof AboutCoreValuesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -710,6 +730,7 @@ const rootRouteChildren: RootRouteChildren = {
   ParentsRoute: ParentsRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   StudentLifeRoute: StudentLifeRoute,
+  AboutCoreValuesRoute: AboutCoreValuesRoute,
   AboutMissionRoute: AboutMissionRoute,
   AboutOurStoryRoute: AboutOurStoryRoute,
   AboutVisionRoute: AboutVisionRoute,
