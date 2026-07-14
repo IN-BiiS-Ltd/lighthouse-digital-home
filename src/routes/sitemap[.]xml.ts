@@ -24,6 +24,7 @@ export const Route = createFileRoute("/sitemap.xml")({
         const entries: SitemapEntry[] = [
           { path: "/", changefreq: "weekly", priority: "1.0" },
           { path: "/about", changefreq: "monthly", priority: "0.9" },
+          { path: "/about/why-lighthouse", changefreq: "monthly", priority: "0.7" },
           { path: "/learning-journey", changefreq: "monthly", priority: "0.9" },
           { path: "/academic-experience", changefreq: "monthly", priority: "0.9" },
           { path: "/student-life", changefreq: "monthly", priority: "0.8" },
@@ -36,6 +37,20 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/campuses", changefreq: "monthly", priority: "0.8" },
           { path: "/campuses/mohandessin", changefreq: "monthly", priority: "0.8" },
           { path: "/contact", changefreq: "yearly", priority: "0.7" },
+          // Our Model
+          { path: "/our-model", changefreq: "monthly", priority: "0.9" },
+          { path: "/our-model/educational-model", changefreq: "monthly", priority: "0.8" },
+          { path: "/our-model/learning-ecosystem", changefreq: "monthly", priority: "0.8" },
+          { path: "/our-model/learner-profile", changefreq: "monthly", priority: "0.8" },
+          { path: "/our-model/graduate-profile", changefreq: "monthly", priority: "0.8" },
+          { path: "/our-model/teaching-framework", changefreq: "monthly", priority: "0.8" },
+          { path: "/our-model/assessment-framework", changefreq: "monthly", priority: "0.8" },
+          { path: "/our-model/student-development", changefreq: "monthly", priority: "0.8" },
+          { path: "/our-model/parent-partnership", changefreq: "monthly", priority: "0.8" },
+          { path: "/our-model/institutional-intelligence", changefreq: "monthly", priority: "0.8" },
+          { path: "/our-model/innovation", changefreq: "monthly", priority: "0.8" },
+          // Explore
+          { path: "/explore/digital-ecosystem", changefreq: "monthly", priority: "0.7" },
         ];
 
         const urls = entries.map((e) =>
