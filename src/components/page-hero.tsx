@@ -64,9 +64,14 @@ export function PageHero({
             ))}
           </nav>
         ) : null}
-        <Eyebrow onNavy>{eyebrow}</Eyebrow>
-        <h1 className="mt-5 max-w-4xl text-balance font-display text-4xl font-medium leading-[1.06] tracking-tight md:text-6xl">
-          {title}
+        <div className="mb-6 flex items-center gap-3">
+          <BrandLogo
+            variant="dark"
+            className="h-12 w-12 object-contain md:h-14 md:w-14"
+            alt="Lighthouse Campus emblem"
+          />
+          <Eyebrow onNavy>{eyebrow}</Eyebrow>
+        </div>
         </h1>
         {intro ? (
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-navy-foreground/80 md:text-xl">
