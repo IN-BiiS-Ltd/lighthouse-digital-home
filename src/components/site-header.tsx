@@ -19,6 +19,7 @@ import { primaryNav, secondaryNav, allNav } from "@/lib/site-nav";
 import {
   Container,
   Wordmark,
+  BrandLogo,
   ButtonLink,
   SmartLink,
 } from "@/components/blocks";
