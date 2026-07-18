@@ -68,7 +68,7 @@ export function PageHero({
           <BrandLogo
             variant="dark"
             className="h-12 w-12 object-contain md:h-14 md:w-14"
-            alt="Lighthouse Campus emblem"
+            alt=""
           />
           <Eyebrow onNavy>{eyebrow}</Eyebrow>
         </div>
