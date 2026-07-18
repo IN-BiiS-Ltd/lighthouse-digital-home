@@ -16,6 +16,7 @@ import {
   Pullquote,
   MediaRow,
   SmartLink,
+  BrandLogo,
 } from "@/components/blocks";
 import { NarrativeFlow } from "@/components/page-hero";
 import { BrandAtmosphere } from "@/components/brand-atmosphere";
@@ -98,6 +99,13 @@ function Home() {
         <BrandAtmosphere density={1.1} />
         <Container className="relative flex min-h-[78vh] flex-col justify-center py-24">
           <div className="max-w-2xl">
+            <div className="mb-8 animate-[fade-in_0.8s_cubic-bezier(0.22,1,0.36,1)_both]">
+              <BrandLogo
+                variant="dark"
+                className="h-24 w-24 object-contain drop-shadow-[0_10px_40px_color-mix(in_oklab,var(--gold)_35%,transparent)] md:h-32 md:w-32"
+                alt="Lighthouse Campus — by Readers International"
+              />
+            </div>
             <div className="animate-[fade-in_0.8s_cubic-bezier(0.22,1,0.36,1)_both]">
               <Eyebrow onNavy>Lighthouse Campus · Mohandessin</Eyebrow>
             </div>

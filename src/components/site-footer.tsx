@@ -35,16 +35,16 @@ export function SiteFooter() {
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1.1fr]">
           {/* Brand */}
           <div>
-            <Link to="/" aria-label="Lighthouse Campus — home">
-              <Wordmark />
+            <Link to="/" aria-label="Lighthouse Campus — home" className="inline-block">
+              <BrandLogo variant="dark" className="h-24 w-24 object-contain" alt="Lighthouse Campus — by Readers International" />
             </Link>
+            <div className="mt-4">
+              <Wordmark />
+            </div>
             <p className="mt-6 max-w-xs text-sm leading-relaxed text-navy-foreground/70">
               Guiding minds. Inspiring futures. Connecting possibilities. A
               living learning community where students remain at the centre.
             </p>
-            <div className="mt-6">
-              <BrandLogo className="h-20 w-20 rounded-lg" />
-            </div>
           </div>
 
           {/* Nav columns */}

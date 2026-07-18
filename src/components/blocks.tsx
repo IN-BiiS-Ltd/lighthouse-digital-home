@@ -5,6 +5,8 @@ import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/reveal";
 import { BrandAtmosphere } from "@/components/brand-atmosphere";
 import logo from "@/assets/lighthouse-logo.png.asset.json";
+import logoDark from "@/assets/lighthouse-mark-dark.png.asset.json";
+import logoLight from "@/assets/lighthouse-mark-light.png.asset.json";
 
 /* ------------------------------------------------------------------ */
 /* SmartLink — internal (TanStack) or external, with hash support     */
@@ -68,20 +70,52 @@ export function Wordmark({
 
 export function BrandLogo({
   className,
-  alt = "Lighthouse Campus",
+  alt = "Lighthouse Campus — by Readers International",
+  variant = "dark",
 }: {
   className?: string;
   alt?: string;
+  /** "dark" — for navy/dark surfaces · "light" — for light surfaces · "legacy" — original mark */
+  variant?: "dark" | "light" | "legacy";
 }) {
+  const src =
+    variant === "light" ? logoLight.url : variant === "legacy" ? logo.url : logoDark.url;
   return (
     <img
-      src={logo.url}
+      src={src}
       alt={alt}
       width={512}
       height={512}
       className={cn("select-none", className)}
       loading="lazy"
+      decoding="async"
     />
+  );
+}
+
+/**
+ * BrandLockup — official mark + wordmark, side by side.
+ * Use in hero, header, page hero and footer for a consistent institutional signature.
+ */
+export function BrandLockup({
+  className,
+  onNavy = true,
+  size = "md",
+}: {
+  className?: string;
+  onNavy?: boolean;
+  size?: "sm" | "md" | "lg";
+}) {
+  const markSize =
+    size === "lg" ? "h-16 w-16 md:h-20 md:w-20" : size === "sm" ? "h-9 w-9" : "h-12 w-12";
+  return (
+    <span className={cn("inline-flex items-center gap-3", className)}>
+      <BrandLogo
+        variant={onNavy ? "dark" : "light"}
+        className={cn(markSize, "shrink-0 object-contain")}
+      />
+      <Wordmark onNavy={onNavy} />
+    </span>
   );
 }
 
