@@ -103,7 +103,7 @@ function Home() {
               <BrandLogo
                 variant="dark"
                 className="h-24 w-24 object-contain drop-shadow-[0_10px_40px_color-mix(in_oklab,var(--gold)_35%,transparent)] md:h-32 md:w-32"
-                alt="Lighthouse Campus — by Readers International"
+                alt=""
               />
             </div>
             <div className="animate-[fade-in_0.8s_cubic-bezier(0.22,1,0.36,1)_both]">
