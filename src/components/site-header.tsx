@@ -106,7 +106,16 @@ export function SiteHeader() {
       )}
     >
       <Container className="flex h-[4.75rem] items-center justify-between gap-4">
-        <Link to="/" className="shrink-0" aria-label="Lighthouse Campus — home">
+        <Link
+          to="/"
+          className="flex shrink-0 items-center gap-3"
+          aria-label="Lighthouse Campus — home"
+        >
+          <BrandLogo
+            variant="dark"
+            className="h-10 w-10 object-contain md:h-11 md:w-11"
+            alt="Lighthouse Campus emblem"
+          />
           <Wordmark />
         </Link>
 
