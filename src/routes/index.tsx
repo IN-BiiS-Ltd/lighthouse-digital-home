@@ -16,6 +16,7 @@ import {
   Pullquote,
   MediaRow,
   SmartLink,
+  BrandLogo,
 } from "@/components/blocks";
 import { NarrativeFlow } from "@/components/page-hero";
 import { BrandAtmosphere } from "@/components/brand-atmosphere";
