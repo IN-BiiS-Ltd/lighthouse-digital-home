@@ -70,25 +70,29 @@ export function Wordmark({
 
 export function BrandLogo({
   className,
-  alt = "Lighthouse Campus — by Readers International",
+  alt = "Lighthouse Campus — official emblem by Readers International",
   variant = "dark",
 }: {
   className?: string;
+  /** Pass `""` for decorative use when a nearby heading, aria-label or Wordmark already names the brand. */
   alt?: string;
   /** "dark" — for navy/dark surfaces · "light" — for light surfaces · "legacy" — original mark */
   variant?: "dark" | "light" | "legacy";
 }) {
   const src =
     variant === "light" ? logoLight.url : variant === "legacy" ? logo.url : logoDark.url;
+  const decorative = alt === "";
   return (
     <img
       src={src}
       alt={alt}
+      {...(decorative ? { "aria-hidden": true, role: "presentation" as const } : {})}
       width={512}
       height={512}
       className={cn("select-none", className)}
       loading="lazy"
       decoding="async"
+      draggable={false}
     />
   );
 }
