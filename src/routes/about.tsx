@@ -15,17 +15,17 @@ import {
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Lighthouse Campus | Our Purpose, People and Educational Philosophy" },
+      { title: "About Lighthouse Campus | A Legacy of Educational Excellence" },
       {
         name: "description",
         content:
-          "Discover the story, purpose, values, educational philosophy, leadership and culture that shape Lighthouse Campus.",
+          "Lighthouse Campus is a new educational experience built on the trusted legacy of Readers International School in Mohandessin, Cairo — combining academic excellence with innovation, leadership and modern practice.",
       },
       { property: "og:title", content: "About Lighthouse Campus" },
       {
         property: "og:description",
         content:
-          "The story, purpose, values, philosophy, leadership and culture that shape Lighthouse Campus.",
+          "A legacy of educational excellence. A vision for the future. Discover the Lighthouse Campus story in Mohandessin, Cairo.",
       },
       { property: "og:url", content: "/about" },
       { property: "og:type", content: "website" },
