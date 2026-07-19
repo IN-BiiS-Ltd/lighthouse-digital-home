@@ -89,11 +89,11 @@ function About() {
       </Section>
 
       <Section tone="sand">
-        <SectionHeading eyebrow="One Identity Across Every Campus" title="Growth that preserves quality, culture and educational purpose" />
+        <SectionHeading eyebrow="Readers International School — Mohandessin" title="A new campus in the heart of Greater Cairo" />
         <div className="mt-8 max-w-3xl space-y-5 text-lg leading-relaxed text-muted-foreground">
-          <p>Mohandessin Campus is the founding operational campus of Lighthouse Campus.</p>
-          <p>As the institution grows, every future campus will share one educational philosophy, institutional voice and commitment to learners while remaining connected to its own local community.</p>
-          <p>Growth will be thoughtful. Quality, culture and educational purpose will remain constant.</p>
+          <p>Lighthouse Campus is the newest campus of Readers International School, located in Mohandessin, Cairo.</p>
+          <p>Rooted in the trusted legacy of Readers International School, this campus combines the strengths of a long-standing educational institution with a forward-looking vision for learning, leadership and global readiness.</p>
+          <p>Every learner here is known, challenged and supported — academically, personally and as a future citizen of the world.</p>
         </div>
       </Section>
 
