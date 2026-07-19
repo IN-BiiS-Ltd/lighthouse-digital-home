@@ -7,9 +7,9 @@ export const Route = createFileRoute("/about_/campus-culture")({
   head: () => ({
     meta: [
       { title: "Campus Culture | Lighthouse Campus" },
-      { name: "description", content: "Explore the culture of belonging, curiosity, responsibility, warmth and high expectations that shapes daily life at Lighthouse Campus." },
+      { name: "description", content: "Discover a welcoming campus culture where students, teachers and families build confidence, celebrate diversity, inspire achievement and cultivate lifelong values." },
       { property: "og:title", content: "Campus Culture | Lighthouse Campus" },
-      { property: "og:description", content: "A community shaped by belonging, purpose and shared responsibility." },
+      { property: "og:description", content: "A community where everyone belongs. Confidence, achievement, diversity and lifelong values." },
       { property: "og:url", content: "/about/campus-culture" },
       { property: "og:type", content: "article" },
     ],
@@ -19,6 +19,10 @@ export const Route = createFileRoute("/about_/campus-culture")({
 });
 
 const sections = [
+  { eyebrow: "A Community Where Everyone Belongs", title: "More than classrooms and curriculum", body: [
+    "Lighthouse Campus is more than classrooms and curriculum.",
+    "It is a welcoming community where students, teachers, and families work together to build confidence, inspire achievement, celebrate diversity, and cultivate lifelong values.",
+  ] },
   { eyebrow: "Every Learner Known", title: "Students recognised as individuals", body: [
     "Teachers understand their strengths, interests, needs and development.",
     "Being known creates trust. Trust creates the confidence to participate, question and grow.",
@@ -27,9 +31,8 @@ const sections = [
     "Learners experience encouragement, clear boundaries, meaningful challenge and genuine support.",
     "The community believes that every learner can continue developing.",
   ] },
-  { eyebrow: "Curiosity in Daily Life", title: "Questions welcomed, ideas discussed", body: [
-    "Mistakes become opportunities for reflection.",
-    "Learning remains visible throughout classrooms, libraries, laboratories, studios, sports spaces and community activities.",
+  { eyebrow: "Discover Strengths and Embrace Opportunities", title: "Culture encourages growth and contribution", body: [
+    "Our culture encourages every learner to discover their strengths, embrace new opportunities, and contribute positively to the community around them.",
   ] },
   { eyebrow: "Responsibility and Respect", title: "Every member contributes to community life", body: [
     "Students learn to care for shared spaces, honour commitments, listen to others and take responsibility for their actions.",
@@ -50,8 +53,8 @@ function CampusCulture() {
       <PageHero
         breadcrumb={[{ label: "Home", to: "/" }, { label: "About", to: "/about" }, { label: "Campus Culture" }]}
         eyebrow="About / Campus Culture"
-        title="A community shaped by belonging, purpose and shared responsibility."
-        intro="Culture is experienced through the way people speak, listen, learn, lead and care for one another. At Lighthouse Campus, culture is created every day."
+        title="A community where everyone belongs."
+        intro="Lighthouse Campus is a welcoming community where students, teachers, and families work together to build confidence, inspire achievement, celebrate diversity, and cultivate lifelong values."
       />
 
       {sections.map((s, i) => (

@@ -7,9 +7,9 @@ export const Route = createFileRoute("/about_/educational-philosophy")({
   head: () => ({
     meta: [
       { title: "Educational Philosophy | Lighthouse Campus" },
-      { name: "description", content: "Discover the educational principles guiding learning, teaching, relationships and student development at Lighthouse Campus." },
+      { name: "description", content: "Discover how Lighthouse Campus believes education should shape the future through critical thinking, problem-solving, diversity and real-world learning." },
       { property: "og:title", content: "Educational Philosophy | Lighthouse Campus" },
-      { property: "og:description", content: "Learning grows through knowledge, curiosity, relationships and purposeful experience." },
+      { property: "og:description", content: "Learning that shapes the future. Academic excellence combined with character development, innovation and real-world experiences." },
       { property: "og:url", content: "/about/educational-philosophy" },
       { property: "og:type", content: "article" },
     ],
@@ -19,37 +19,29 @@ export const Route = createFileRoute("/about_/educational-philosophy")({
 });
 
 const sections = [
-  { eyebrow: "Knowledge Creates Possibility", title: "Deep knowledge as the foundation of thought", body: [
+  { eyebrow: "Learning That Shapes the Future", title: "Education beyond examinations", body: [
+    "We believe education should do more than prepare students for examinations.",
+    "It should prepare them to think critically, solve meaningful problems, embrace diversity, lead with confidence, and make a positive impact on the world around them.",
+  ] },
+  { eyebrow: "Academic Excellence", title: "Secure knowledge as the foundation", body: [
     "Deep knowledge gives learners the foundations required to think, question, create and communicate.",
-    "The curriculum builds understanding progressively.",
-    "Students connect new ideas with prior learning and apply knowledge across subjects and experiences.",
+    "The curriculum builds understanding progressively while students connect new ideas with prior learning and apply knowledge across subjects and experiences.",
   ] },
-  { eyebrow: "Curiosity Gives Learning Direction", title: "Questions are central to intellectual development", body: [
-    "Learners investigate, discuss, test, create and reflect.",
-    "Teaching protects curiosity while guiding students toward disciplined understanding and thoughtful judgement.",
-  ] },
-  { eyebrow: "Relationships Make Learning Human", title: "Meaningful learning begins with trust", body: [
-    "Teachers know learners as individuals.",
-    "Students experience respect, encouragement and clear expectations.",
-    "Families contribute understanding and continuity.",
-    "Relationships create the confidence required to take intellectual and personal risks.",
-  ] },
-  { eyebrow: "Character Develops Through Practice", title: "Responsibility, integrity, empathy and leadership grow through experience", body: [
+  { eyebrow: "Character Development", title: "Integrity, empathy and responsibility grow through practice", body: [
     "Students learn character by making choices, participating in community life, receiving guidance and observing the example of others.",
+    "Responsibility, integrity, empathy and leadership develop through daily experience.",
   ] },
-  { eyebrow: "Challenge and Support Belong Together", title: "High expectations held with warmth and responsiveness", body: [
+  { eyebrow: "Innovation and Real-World Learning", title: "Connecting knowledge with life", body: [
+    "Our educational philosophy combines academic excellence with innovation and real-world learning experiences.",
+    "Technology expands access, creativity, communication and institutional understanding when it creates genuine educational value.",
+  ] },
+  { eyebrow: "Challenge and Support", title: "High expectations held with warmth and responsiveness", body: [
     "High expectations communicate belief in a learner’s potential.",
-    "Support provides the conditions required to meet those expectations.",
-    "Students are challenged with warmth, clarity and responsiveness.",
-  ] },
-  { eyebrow: "Technology Serves Education", title: "Used when it creates educational value", body: [
-    "Technology expands access, creativity, communication and institutional understanding.",
-    "It is used when it creates educational value.",
-    "It supports teachers and learners without replacing professional judgement or human relationships.",
+    "Support provides the conditions required to meet those expectations, so students are challenged with warmth, clarity and responsiveness.",
   ] },
 ];
 
-const beyond = ["clubs", "arts", "athletics", "service", "leadership", "research", "collaboration", "community experiences", "reflection"];
+const beyond = ["critical thinking", "problem solving", "creativity", "collaboration", "character", "global citizenship", "real-world experiences", "reflection"];
 
 function Philosophy() {
   return (
@@ -57,8 +49,8 @@ function Philosophy() {
       <PageHero
         breadcrumb={[{ label: "Home", to: "/" }, { label: "About", to: "/about" }, { label: "Educational Philosophy" }]}
         eyebrow="About / Educational Philosophy"
-        title="Learning grows through knowledge, curiosity, relationships and purposeful experience."
-        intro="Our educational philosophy begins with a clear understanding: children learn best when they feel secure, known, challenged and actively involved in making meaning."
+        title="Learning that shapes the future."
+        intro="We believe education should prepare students to think critically, solve meaningful problems, embrace diversity, lead with confidence, and make a positive impact on the world around them."
       />
 
       {sections.map((s, i) => (
