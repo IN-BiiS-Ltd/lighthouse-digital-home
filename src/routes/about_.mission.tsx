@@ -7,9 +7,9 @@ export const Route = createFileRoute("/about_/mission")({
   head: () => ({
     meta: [
       { title: "Our Mission | Lighthouse Campus" },
-      { name: "description", content: "Discover how Lighthouse Campus turns its educational purpose into daily learning, relationships and institutional practice." },
+      { name: "description", content: "Discover the Lighthouse Campus mission: illuminating every learner’s potential through outstanding education, inspiring educators and a culture of excellence, integrity and opportunity." },
       { property: "og:title", content: "Our Mission | Lighthouse Campus" },
-      { property: "og:description", content: "A coherent, human-centred learning experience that develops knowledge, character, confidence and the capacity to contribute." },
+      { property: "og:description", content: "Our promise: every learner deserves a place where learning leads, every student is seen, and every future begins with purpose." },
       { property: "og:url", content: "/about/mission" },
       { property: "og:type", content: "article" },
     ],
@@ -19,6 +19,10 @@ export const Route = createFileRoute("/about_/mission")({
 });
 
 const sections = [
+  { eyebrow: "Our Promise", title: "Every child carries extraordinary potential", body: [
+    "Every child carries extraordinary potential.",
+    "Our mission is to illuminate that potential through outstanding education, inspiring educators, innovative learning experiences, and a culture built on excellence, integrity, and opportunity.",
+  ] },
   { eyebrow: "Learning with Depth", title: "Ambitious academic experience with genuine understanding", body: [
     "We provide an ambitious academic experience that develops secure knowledge, genuine understanding and intellectual independence.",
     "Learning is carefully sequenced while remaining open to curiosity, exploration, reflection and creative thought.",
@@ -36,6 +40,10 @@ const sections = [
     "We prepare learners to communicate clearly, think critically, collaborate constructively and act with integrity.",
     "Education develops the capability and responsibility to contribute meaningfully to communities and the wider world.",
   ] },
+  { eyebrow: "Every Learner Deserves More", title: "A place where learning leads and every future begins with purpose", body: [
+    "Every learner deserves more than an education.",
+    "Every learner deserves a place where learning leads, every student is seen, and every future begins with purpose.",
+  ] },
 ];
 
 function Mission() {
@@ -44,7 +52,7 @@ function Mission() {
       <PageHero
         breadcrumb={[{ label: "Home", to: "/" }, { label: "About", to: "/about" }, { label: "Mission" }]}
         eyebrow="About / Mission"
-        title="To create a coherent, human-centred learning experience that develops knowledge, character, confidence and the capacity to contribute."
+        title="Our promise: every learner deserves a place where learning leads, every student is seen, and every future begins with purpose."
       />
 
       {sections.map((s, i) => (

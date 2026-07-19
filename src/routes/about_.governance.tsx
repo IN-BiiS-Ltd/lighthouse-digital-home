@@ -7,9 +7,9 @@ export const Route = createFileRoute("/about_/governance")({
   head: () => ({
     meta: [
       { title: "Governance | Lighthouse Campus" },
-      { name: "description", content: "Discover the governance principles supporting accountability, educational purpose, responsible growth and long-term stewardship at Lighthouse Campus." },
+      { name: "description", content: "Discover how Lighthouse Campus builds excellence through strong institutional systems, governance, quality assurance and continuous improvement in partnership with IN-BiiS." },
       { property: "og:title", content: "Governance | Lighthouse Campus" },
-      { property: "og:description", content: "Responsible stewardship of educational purpose, people and institutional growth." },
+      { property: "og:description", content: "Excellence begins with strong institutions. A modern framework supporting governance, quality assurance and operational excellence." },
       { property: "og:url", content: "/about/governance" },
       { property: "og:type", content: "article" },
     ],
@@ -21,8 +21,13 @@ export const Route = createFileRoute("/about_/governance")({
 const oversight = ["curriculum", "teaching", "assessment", "safeguarding", "student development", "professional practice", "school improvement"];
 
 const sections = [
+  { eyebrow: "Excellence Begins with Strong Institutions", title: "Exceptional schools are built on exceptional systems", body: [
+    "Exceptional schools are built on exceptional systems.",
+    "Through its partnership with IN-BiiS, Lighthouse Campus benefits from a modern institutional framework that supports governance, quality assurance, operational excellence, digital transformation, and continuous improvement.",
+  ] },
   { eyebrow: "Purpose Before Process", title: "Governance begins with educational purpose", body: [
     "Policies, structures and decisions exist to protect learning, wellbeing, integrity and institutional sustainability.",
+    "This strong institutional foundation enables our educators to focus on what matters most — delivering an outstanding educational experience for every learner.",
   ] },
   { eyebrow: "Clear Responsibility", title: "Authority matched by accountability", body: [
     "Roles and responsibilities are defined clearly.",
@@ -47,8 +52,8 @@ function Governance() {
       <PageHero
         breadcrumb={[{ label: "Home", to: "/" }, { label: "About", to: "/about" }, { label: "Governance" }]}
         eyebrow="About / Governance"
-        title="Responsible stewardship of educational purpose, people and institutional growth."
-        intro="Governance provides the structures through which Lighthouse Campus protects its mission, fulfils its responsibilities and develops with clarity."
+        title="Excellence begins with strong institutions."
+        intro="Through a modern institutional framework, Lighthouse Campus protects its mission, fulfils its responsibilities and creates the conditions for outstanding education."
       />
 
       {sections.map((s, i) => (
