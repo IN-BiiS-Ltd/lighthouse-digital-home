@@ -237,9 +237,9 @@ function WhyLighthouse() {
         ]}
         eyebrow="Our Identity"
         title="Why Lighthouse?"
-        intro="Every meaningful institution begins with a purpose. Lighthouse Campus was named to reflect an educational philosophy that guides learning, inspires curiosity, develops character, and prepares young people to navigate an evolving world with confidence."
+        intro="More than a campus, Lighthouse Campus is a new educational experience designed to prepare students for academic success, leadership, innovation and responsible global citizenship."
         sections={[
-          { label: "More Than a Name", to: "/about/why-lighthouse#more-than-a-name" },
+          { label: "A New Educational Experience", to: "/about/why-lighthouse#a-new-educational-experience" },
           { label: "Why a Lighthouse?", to: "/about/why-lighthouse#why-a-lighthouse" },
           { label: "The Meaning of LIGHTHOUSE", to: "/about/why-lighthouse#meaning" },
           { label: "Understanding Our Logo", to: "/about/why-lighthouse#logo" },
@@ -247,24 +247,22 @@ function WhyLighthouse() {
         ]}
       />
 
-      {/* Section 1 — More Than a Name */}
-      <Section id="more-than-a-name">
+      {/* Section 1 — A New Educational Experience */}
+      <Section id="a-new-educational-experience">
         <MediaRow
-          eyebrow="More Than a Name"
-          title="A name that carries a philosophy"
+          eyebrow="More Than a Campus"
+          title="A new educational experience"
           image={heroLearningImg}
           imageAlt="Students learning together in a bright, purposeful classroom"
         >
           <p>
-            Lighthouse Campus is more than the name of a school. It represents a
-            complete philosophy of education — one that begins with the belief
-            that learning should illuminate, not simply inform.
+            Lighthouse Campus is not simply another school campus. It is a purposefully
+            designed learning community that prepares students not only for academic
+            success but also for leadership, innovation, and responsible global citizenship.
           </p>
           <p>
-            Education is not only the transfer of knowledge. It helps learners
-            discover purpose, develop confidence, build character and become
-            responsible members of society. That conviction shapes every
-            decision we make, and it is written into our very name.
+            Every aspect of the campus — from learning spaces to educational programs —
+            has been created to inspire curiosity, confidence, creativity, and excellence.
           </p>
         </MediaRow>
       </Section>
