@@ -15,17 +15,17 @@ import {
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Lighthouse Campus | Our Purpose, People and Educational Philosophy" },
+      { title: "About Lighthouse Campus | A Legacy of Educational Excellence" },
       {
         name: "description",
         content:
-          "Discover the story, purpose, values, educational philosophy, leadership and culture that shape Lighthouse Campus.",
+          "Lighthouse Campus is a new educational experience built on the trusted legacy of Readers International School in Mohandessin, Cairo — combining academic excellence with innovation, leadership and modern practice.",
       },
       { property: "og:title", content: "About Lighthouse Campus" },
       {
         property: "og:description",
         content:
-          "The story, purpose, values, philosophy, leadership and culture that shape Lighthouse Campus.",
+          "A legacy of educational excellence. A vision for the future. Discover the Lighthouse Campus story in Mohandessin, Cairo.",
       },
       { property: "og:url", content: "/about" },
       { property: "og:type", content: "website" },
@@ -51,8 +51,8 @@ function About() {
       <PageHero
         breadcrumb={[{ label: "Home", to: "/" }, { label: "About" }]}
         eyebrow="About Lighthouse Campus"
-        title="An educational institution shaped by purpose, relationships and a lasting commitment to learning."
-        intro="Lighthouse Campus brings together learners, educators, families and communities within one coherent educational experience. Our identity is expressed through what students learn, how teachers guide them, how families participate and how the institution continues to grow with clarity and responsibility."
+        title="A Legacy of Educational Excellence. A Vision for the Future."
+        intro="Lighthouse Campus is a new educational experience built upon the trusted legacy of Readers International School and designed to shape the future of learning."
         sections={[
           { label: "Our Story", to: "/about/our-story" },
           { label: "Why Lighthouse?", to: "/about/why-lighthouse" },
@@ -68,12 +68,12 @@ function About() {
 
       <Section>
         <SectionHeading
-          eyebrow="An Institution Built Around Learning"
-          title="A learning community where knowledge, character, curiosity, confidence and belonging develop together."
+          eyebrow="Built on Heritage, Designed for Tomorrow"
+          title="Academic excellence, innovation, leadership and modern educational practice — together."
         />
         <div className="mt-8 max-w-3xl space-y-5 text-lg leading-relaxed text-muted-foreground">
-          <p>Lighthouse Campus was created with a clear purpose: to establish a learning community where knowledge, character, curiosity, confidence and belonging develop together.</p>
-          <p>Students remain at the centre of the institution. Teachers act as mentors and learning designers. Families participate as educational partners. Leadership creates the conditions in which learning and human development can flourish.</p>
+          <p>Combining academic excellence with innovation, leadership, and modern educational practices, Lighthouse Campus provides an environment where every learner is challenged to grow, inspired to lead, and prepared to thrive in a rapidly changing world.</p>
+          <p>As the newest campus of Readers International School in Mohandessin, Cairo, we are committed to creating an exceptional educational journey that empowers students academically, personally, and globally.</p>
         </div>
       </Section>
 
@@ -89,11 +89,11 @@ function About() {
       </Section>
 
       <Section tone="sand">
-        <SectionHeading eyebrow="One Identity Across Every Campus" title="Growth that preserves quality, culture and educational purpose" />
+        <SectionHeading eyebrow="Readers International School — Mohandessin" title="A new campus in the heart of Greater Cairo" />
         <div className="mt-8 max-w-3xl space-y-5 text-lg leading-relaxed text-muted-foreground">
-          <p>Mohandessin Campus is the founding operational campus of Lighthouse Campus.</p>
-          <p>As the institution grows, every future campus will share one educational philosophy, institutional voice and commitment to learners while remaining connected to its own local community.</p>
-          <p>Growth will be thoughtful. Quality, culture and educational purpose will remain constant.</p>
+          <p>Lighthouse Campus is the newest campus of Readers International School, located in Mohandessin, Cairo.</p>
+          <p>Rooted in the trusted legacy of Readers International School, this campus combines the strengths of a long-standing educational institution with a forward-looking vision for learning, leadership and global readiness.</p>
+          <p>Every learner here is known, challenged and supported — academically, personally and as a future citizen of the world.</p>
         </div>
       </Section>
 
