@@ -68,12 +68,12 @@ function About() {
 
       <Section>
         <SectionHeading
-          eyebrow="An Institution Built Around Learning"
-          title="A learning community where knowledge, character, curiosity, confidence and belonging develop together."
+          eyebrow="Built on Heritage, Designed for Tomorrow"
+          title="Academic excellence, innovation, leadership and modern educational practice — together."
         />
         <div className="mt-8 max-w-3xl space-y-5 text-lg leading-relaxed text-muted-foreground">
-          <p>Lighthouse Campus was created with a clear purpose: to establish a learning community where knowledge, character, curiosity, confidence and belonging develop together.</p>
-          <p>Students remain at the centre of the institution. Teachers act as mentors and learning designers. Families participate as educational partners. Leadership creates the conditions in which learning and human development can flourish.</p>
+          <p>Combining academic excellence with innovation, leadership, and modern educational practices, Lighthouse Campus provides an environment where every learner is challenged to grow, inspired to lead, and prepared to thrive in a rapidly changing world.</p>
+          <p>As the newest campus of Readers International School in Mohandessin, Cairo, we are committed to creating an exceptional educational journey that empowers students academically, personally, and globally.</p>
         </div>
       </Section>
 
