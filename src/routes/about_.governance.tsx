@@ -7,7 +7,7 @@ export const Route = createFileRoute("/about_/governance")({
   head: () => ({
     meta: [
       { title: "Governance | Lighthouse Campus" },
-      { name: "description", content: "Discover how Lighthouse Campus builds excellence through strong institutional systems, governance, quality assurance and continuous improvement in partnership with IN-BiiS." },
+      { name: "description", content: "Discover how Lighthouse Campus builds excellence through strong institutional systems, governance, quality assurance and continuous improvement." },
       { property: "og:title", content: "Governance | Lighthouse Campus" },
       { property: "og:description", content: "Excellence begins with strong institutions. A modern framework supporting governance, quality assurance and operational excellence." },
       { property: "og:url", content: "/about/governance" },
@@ -23,7 +23,7 @@ const oversight = ["curriculum", "teaching", "assessment", "safeguarding", "stud
 const sections = [
   { eyebrow: "Excellence Begins with Strong Institutions", title: "Exceptional schools are built on exceptional systems", body: [
     "Exceptional schools are built on exceptional systems.",
-    "Through its partnership with IN-BiiS, Lighthouse Campus benefits from a modern institutional framework that supports governance, quality assurance, operational excellence, digital transformation, and continuous improvement.",
+    "Lighthouse Campus is supported by a modern institutional framework that ensures governance, quality assurance, operational excellence, digital transformation, and continuous improvement.",
   ] },
   { eyebrow: "Purpose Before Process", title: "Governance begins with educational purpose", body: [
     "Policies, structures and decisions exist to protect learning, wellbeing, integrity and institutional sustainability.",
