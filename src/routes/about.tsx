@@ -51,8 +51,8 @@ function About() {
       <PageHero
         breadcrumb={[{ label: "Home", to: "/" }, { label: "About" }]}
         eyebrow="About Lighthouse Campus"
-        title="An educational institution shaped by purpose, relationships and a lasting commitment to learning."
-        intro="Lighthouse Campus brings together learners, educators, families and communities within one coherent educational experience. Our identity is expressed through what students learn, how teachers guide them, how families participate and how the institution continues to grow with clarity and responsibility."
+        title="A Legacy of Educational Excellence. A Vision for the Future."
+        intro="Lighthouse Campus is a new educational experience built upon the trusted legacy of Readers International School and designed to shape the future of learning."
         sections={[
           { label: "Our Story", to: "/about/our-story" },
           { label: "Why Lighthouse?", to: "/about/why-lighthouse" },
