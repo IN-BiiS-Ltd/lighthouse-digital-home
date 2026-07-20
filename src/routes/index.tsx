@@ -20,6 +20,7 @@ import {
 } from "@/components/blocks";
 import { NarrativeFlow } from "@/components/page-hero";
 import { BrandAtmosphere } from "@/components/brand-atmosphere";
+import { ShareBar } from "@/components/share-bar";
 import heroImg from "@/assets/photo-classroom-primary.jpg";
 import stemImg from "@/assets/photo-teacher-portrait.jpg";
 import studentLifeImg from "@/assets/photo-classroom-primary.jpg";
