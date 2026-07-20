@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { InternalPage } from "@/components/internal-page";
+import libraryPhoto from "@/assets/photo-library.jpg";
 
 export const Route = createFileRoute("/campus-experience_/library")({
   head: () => ({
@@ -37,6 +38,11 @@ const config = {
   "eyebrow": "Campus / Library",
   "title": "A place for reading, thinking, questioning and quiet.",
   "intro": "The library is a home for readers, researchers and thinkers. Its role in learning is intentional and central.",
+  "heroImage": {
+    "src": libraryPhoto,
+    "alt": "Lighthouse students reading at long oak tables in the campus library, warm afternoon light through arched windows",
+    "caption": "A quiet centre of the campus — reading rooms shaped by attention and light."
+  },
   "blocks": [
     {
       "eyebrow": "Purpose",
