@@ -16,7 +16,8 @@ export function CtaBand({
   secondary?: { to: string; label: string };
 }) {
   return (
-    <section className="bg-navy text-navy-foreground">
+    <section className="ambient-stage bg-navy text-navy-foreground grain">
+      <div aria-hidden className="pointer-events-none absolute inset-0 mesh-navy opacity-60" />
       <Container className="py-20 md:py-24">
         <div className="mx-auto max-w-3xl text-center">
           <Eyebrow onNavy className="justify-center">
