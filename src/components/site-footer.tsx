@@ -106,20 +106,17 @@ export function SiteFooter() {
             A growing digital ecosystem
           </p>
           <ul className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {futureEcosystem.map((f) => {
-              const Glyph = ecosystemIcons[f.icon];
-              return (
-                <li
-                  key={f.label}
-                  className="flex items-center gap-3 text-sm text-navy-foreground/80"
-                >
-                  <span className="lh-chip on-navy size-9 rounded-lg" aria-hidden>
-                    <Glyph className="size-4" />
-                  </span>
-                  <span className="font-medium">{f.label}</span>
-                </li>
-              );
-            })}
+            {futureEcosystem.map((f) => (
+              <li
+                key={f.label}
+                className="flex items-center gap-3 text-sm text-navy-foreground/80"
+              >
+                <span className="lh-chip on-navy size-9 rounded-lg" aria-hidden>
+                  <LhIcon name={f.icon} className="size-4" />
+                </span>
+                <span className="font-medium">{f.label}</span>
+              </li>
+            ))}
           </ul>
         </div>
 
