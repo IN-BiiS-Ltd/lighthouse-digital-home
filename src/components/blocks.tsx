@@ -5,8 +5,9 @@ import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/reveal";
 import { BrandAtmosphere } from "@/components/brand-atmosphere";
 import logo from "@/assets/lighthouse-logo.png.asset.json";
-import logoDark from "@/assets/lighthouse-mark-dark.png.asset.json";
-import logoLight from "@/assets/lighthouse-mark-light.png.asset.json";
+import logoApproved from "@/assets/lighthouse-campus-approved.png.asset.json";
+const logoDark = logoApproved;
+const logoLight = logoApproved;
 
 /* ------------------------------------------------------------------ */
 /* SmartLink — internal (TanStack) or external, with hash support     */

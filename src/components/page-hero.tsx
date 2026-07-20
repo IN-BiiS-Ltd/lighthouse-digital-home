@@ -64,12 +64,14 @@ export function PageHero({
             ))}
           </nav>
         ) : null}
-        <div className="mb-6 flex items-center gap-3">
-          <BrandLogo
-            variant="dark"
-            className="h-12 w-12 object-contain md:h-14 md:w-14"
-            alt=""
-          />
+        <div className="mb-6 flex items-center gap-4">
+          <span className="inline-flex items-center justify-center rounded-2xl bg-white p-2 shadow-[0_18px_50px_-20px_rgba(0,0,0,0.6)] ring-1 ring-gold/50">
+            <BrandLogo
+              variant="dark"
+              className="h-16 w-16 object-contain md:h-20 md:w-20"
+              alt=""
+            />
+          </span>
           <Eyebrow onNavy>{eyebrow}</Eyebrow>
         </div>
         <h1 className="mt-5 max-w-4xl text-balance font-display text-4xl font-medium leading-[1.06] tracking-tight md:text-6xl">
