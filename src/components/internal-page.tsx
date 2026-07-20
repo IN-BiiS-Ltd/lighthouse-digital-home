@@ -23,6 +23,7 @@ export interface InternalPageConfig {
   eyebrow: string;
   title: string;
   intro: string;
+  heroImage?: { src: string; alt: string; caption?: string };
   blocks: InternalBlock[];
   status?: { label: string; body: string };
   related?: RelatedLink[];
@@ -40,7 +41,7 @@ export interface InternalPageConfig {
  * alternating tone sections, calm typography, CTA band).
  */
 export function InternalPage({ config }: { config: InternalPageConfig }) {
-  const { breadcrumb, eyebrow, title, intro, blocks, status, related, cta } = config;
+  const { breadcrumb, eyebrow, title, intro, heroImage, blocks, status, related, cta } = config;
   return (
     <>
       <PageHero
@@ -49,6 +50,29 @@ export function InternalPage({ config }: { config: InternalPageConfig }) {
         title={title}
         intro={intro}
       />
+
+      {heroImage ? (
+        <Section>
+          <figure className="mx-auto max-w-5xl">
+            <div className="overflow-hidden rounded-2xl bg-navy shadow-[0_40px_100px_-30px_rgba(11,29,58,0.45)] ring-1 ring-gold/25">
+              <img
+                src={heroImage.src}
+                alt={heroImage.alt}
+                width={1600}
+                height={1008}
+                loading="lazy"
+                decoding="async"
+                className="block h-auto w-full object-cover"
+              />
+            </div>
+            {heroImage.caption ? (
+              <figcaption className="mt-4 text-center text-sm text-muted-foreground">
+                {heroImage.caption}
+              </figcaption>
+            ) : null}
+          </figure>
+        </Section>
+      ) : null}
 
       {blocks.map((b, i) => (
         <Section key={`${b.title}-${i}`} tone={b.tone ?? (i % 2 === 1 ? "muted" : "default")}>

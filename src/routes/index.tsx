@@ -20,11 +20,11 @@ import {
 } from "@/components/blocks";
 import { NarrativeFlow } from "@/components/page-hero";
 import { BrandAtmosphere } from "@/components/brand-atmosphere";
-import heroImg from "@/assets/hero-learning.jpg";
-import stemImg from "@/assets/academic-stem.jpg";
-import studentLifeImg from "@/assets/student-life.jpg";
+import heroImg from "@/assets/photo-classroom-primary.jpg";
+import stemImg from "@/assets/photo-teacher-portrait.jpg";
+import studentLifeImg from "@/assets/photo-classroom-primary.jpg";
 import parentImg from "@/assets/parent-partnership.jpg";
-import libraryImg from "@/assets/campus-library.jpg";
+import libraryImg from "@/assets/photo-library.jpg";
 import curiosityIcon from "@/assets/value-curiosity.png.asset.json";
 import belongingIcon from "@/assets/value-belonging.png.asset.json";
 import integrityIcon from "@/assets/value-integrity.png.asset.json";
@@ -82,7 +82,7 @@ function Home() {
       <section className="relative isolate overflow-hidden bg-navy text-navy-foreground">
         <img
           src={heroImg}
-          alt="Students in discussion with a mentor teacher in a bright classroom"
+          alt="Diverse group of Lighthouse Campus students — Sudanese, Arab and African — exploring an illustrated book together in a warm sunlit classroom"
           width={1600}
           height={1104}
           fetchPriority="high"
@@ -259,7 +259,7 @@ function Home() {
             eyebrow="STEM & Innovation"
             title="Curiosity turned into capability"
             image={stemImg}
-            imageAlt="Secondary students conducting a science experiment together in a laboratory"
+            imageAlt="A Sudanese teacher mentoring two Lighthouse students — one Arab, one African — through a science experiment with brass instruments"
             action={
               <ButtonLink to="/academic-experience" variant="outline" size="md">
                 See the academic programme
@@ -277,7 +277,7 @@ function Home() {
             eyebrow="Reading & Research"
             title="A culture of depth and discovery"
             image={libraryImg}
-            imageAlt="Students reading and collaborating in a bright modern library"
+            imageAlt="Lighthouse secondary students reading quietly at long oak tables in the campus library, warm afternoon light through arched windows"
           >
             <p>
               Our library sits at the heart of campus life — a calm space for
@@ -339,7 +339,7 @@ function Home() {
             eyebrow="Student Life"
             title="Belonging beyond the classroom"
             image={studentLifeImg}
-            imageAlt="Young children exploring art materials with a teacher in a bright early-years classroom"
+            imageAlt="Lighthouse primary students learning together as a diverse community — belonging is where learning begins"
             action={
               <ButtonLink to="/student-life" variant="outline" size="md">
                 Explore student life

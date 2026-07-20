@@ -3,6 +3,7 @@ import { Section, SectionHeading, FeatureCard } from "@/components/blocks";
 import lighthouseFlag from "@/assets/lighthouse-flag.png.asset.json";
 import readersFlag from "@/assets/readers-international-flag.png.asset.json";
 import officialLockup from "@/assets/lighthouse-official-lockup.png.asset.json";
+import campusExteriorPhoto from "@/assets/photo-campus-exterior.jpg";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import {
@@ -98,6 +99,23 @@ function About() {
           <p>Rooted in the trusted legacy of Readers International School, this campus combines the strengths of a long-standing educational institution with a forward-looking vision for learning, leadership and global readiness.</p>
           <p>Every learner here is known, challenged and supported — academically, personally and as a future citizen of the world.</p>
         </div>
+
+        <figure className="mx-auto mt-14 max-w-5xl">
+          <div className="overflow-hidden rounded-2xl bg-navy shadow-[0_50px_120px_-30px_rgba(11,29,58,0.55)] ring-1 ring-gold/30">
+            <img
+              src={campusExteriorPhoto}
+              alt="The Lighthouse Campus building in Mohandessin, Giza — a modern limestone institutional facade framed by mature palm trees under a deep blue sky"
+              width={1600}
+              height={1008}
+              loading="lazy"
+              decoding="async"
+              className="block h-auto w-full object-cover"
+            />
+          </div>
+          <figcaption className="mt-4 text-center text-sm text-muted-foreground">
+            The Lighthouse Campus · Mohandessin, Giza — Greater Cairo
+          </figcaption>
+        </figure>
       </Section>
 
       <Section>

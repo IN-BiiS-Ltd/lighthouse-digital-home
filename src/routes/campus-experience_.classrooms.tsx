@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { InternalPage } from "@/components/internal-page";
+import classroomPhoto from "@/assets/photo-classroom-primary.jpg";
 
 export const Route = createFileRoute("/campus-experience_/classrooms")({
   head: () => ({
@@ -37,6 +38,11 @@ const config = {
   "eyebrow": "Campus / Classrooms",
   "title": "Rooms designed for focused work and thoughtful conversation.",
   "intro": "The classroom is where much of daily learning happens. Its design supports attention, dialogue and care.",
+  "heroImage": {
+    "src": classroomPhoto,
+    "alt": "A diverse group of Lighthouse primary students — Sudanese, Arab and African — collaborating around an open illustrated book in a warm sunlit classroom",
+    "caption": "Rooms designed for focused work, thoughtful conversation and every voice."
+  },
   "blocks": [
     {
       "eyebrow": "Design Principle",
