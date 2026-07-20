@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Section, SectionHeading, FeatureCard } from "@/components/blocks";
+import { Section, SectionHeading, FeatureCard, BrandLogo } from "@/components/blocks";
+import readersLogo from "@/assets/readers-international-schools.png.asset.json";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import {
@@ -94,6 +95,46 @@ function About() {
           <p>Lighthouse Campus is the newest campus of Readers International School, located in Mohandessin, Cairo.</p>
           <p>Rooted in the trusted legacy of Readers International School, this campus combines the strengths of a long-standing educational institution with a forward-looking vision for learning, leadership and global readiness.</p>
           <p>Every learner here is known, challenged and supported — academically, personally and as a future citizen of the world.</p>
+        </div>
+      </Section>
+
+      <Section>
+        <SectionHeading
+          align="center"
+          eyebrow="Institutional Heritage"
+          title="Readers International Schools"
+          description="Building on a Legacy of Excellence. Advancing Through Lighthouse Campus. Shaping a Future Driven by Learning and Innovation."
+        />
+        <div className="mt-14 flex flex-col items-center justify-center gap-10 md:flex-row md:gap-16">
+          <figure className="flex flex-col items-center">
+            <div className="rounded-full bg-background p-4 shadow-[0_20px_60px_-30px_rgba(11,29,58,0.35)] ring-1 ring-border">
+              <img
+                src={readersLogo.url}
+                alt="Readers International Schools — official seal, since 2022"
+                width={220}
+                height={220}
+                className="h-40 w-40 object-contain md:h-48 md:w-48"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <figcaption className="mt-4 eyebrow text-brand-blue">Readers International Schools</figcaption>
+            <p className="mt-1 text-sm text-muted-foreground">The founding institution · Since 2022</p>
+          </figure>
+
+          <span aria-hidden className="hidden text-3xl font-light text-gold md:block">×</span>
+
+          <figure className="flex flex-col items-center">
+            <div className="rounded-full bg-navy p-6 shadow-[0_20px_60px_-30px_rgba(11,29,58,0.6)] ring-1 ring-navy/40">
+              <BrandLogo
+                variant="dark"
+                alt="Lighthouse Campus — official emblem"
+                className="h-32 w-32 object-contain md:h-40 md:w-40"
+              />
+            </div>
+            <figcaption className="mt-4 eyebrow text-brand-blue">Lighthouse Campus</figcaption>
+            <p className="mt-1 text-sm text-muted-foreground">By Readers International · Mohandessin, Cairo</p>
+          </figure>
         </div>
       </Section>
 
