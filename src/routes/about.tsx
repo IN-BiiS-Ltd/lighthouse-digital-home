@@ -20,13 +20,13 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Lighthouse Campus is a new educational experience built on the trusted legacy of Readers International School in Mohandessin, Cairo — combining academic excellence with innovation, leadership and modern practice.",
+          "Lighthouse Campus is a new educational experience built on the trusted legacy of Readers International School in Mohandessin, Giza — combining academic excellence with innovation, leadership and modern practice.",
       },
       { property: "og:title", content: "About Lighthouse Campus" },
       {
         property: "og:description",
         content:
-          "A legacy of educational excellence. A vision for the future. Discover the Lighthouse Campus story in Mohandessin, Cairo.",
+          "A legacy of educational excellence. A vision for the future. Discover the Lighthouse Campus story in Mohandessin, Giza, Greater Cairo.",
       },
       { property: "og:url", content: "/about" },
       { property: "og:type", content: "website" },
@@ -74,7 +74,7 @@ function About() {
         />
         <div className="mt-8 max-w-3xl space-y-5 text-lg leading-relaxed text-muted-foreground">
           <p>Combining academic excellence with innovation, leadership, and modern educational practices, Lighthouse Campus provides an environment where every learner is challenged to grow, inspired to lead, and prepared to thrive in a rapidly changing world.</p>
-          <p>As the newest campus of Readers International School in Mohandessin, Cairo, we are committed to creating an exceptional educational journey that empowers students academically, personally, and globally.</p>
+          <p>As the newest campus of Readers International School in Mohandessin, Giza, we are committed to creating an exceptional educational journey that empowers students academically, personally, and globally.</p>
         </div>
       </Section>
 
@@ -90,9 +90,9 @@ function About() {
       </Section>
 
       <Section tone="sand">
-        <SectionHeading eyebrow="Readers International School — Mohandessin" title="A new campus in the heart of Greater Cairo" />
+        <SectionHeading eyebrow="Readers International School — Mohandessin, Giza" title="A new campus in the heart of Greater Cairo" />
         <div className="mt-8 max-w-3xl space-y-5 text-lg leading-relaxed text-muted-foreground">
-          <p>Lighthouse Campus is the newest campus of Readers International School, located in Mohandessin, Cairo.</p>
+          <p>Lighthouse Campus is the newest campus of Readers International School, located in Mohandessin, Giza, Greater Cairo.</p>
           <p>Rooted in the trusted legacy of Readers International School, this campus combines the strengths of a long-standing educational institution with a forward-looking vision for learning, leadership and global readiness.</p>
           <p>Every learner here is known, challenged and supported — academically, personally and as a future citizen of the world.</p>
         </div>
@@ -133,7 +133,7 @@ function About() {
               />
             </div>
             <figcaption className="mt-4 eyebrow text-brand-blue">Lighthouse Campus</figcaption>
-            <p className="mt-1 text-sm text-muted-foreground">By Readers International · Mohandessin, Cairo</p>
+            <p className="mt-1 text-sm text-muted-foreground">By Readers International · Mohandessin, Giza</p>
           </figure>
         </div>
       </Section>
