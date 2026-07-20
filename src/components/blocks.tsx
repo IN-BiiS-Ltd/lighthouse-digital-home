@@ -406,12 +406,13 @@ export function Stat({
     <div>
       <p
         className={cn(
-          "font-display text-4xl font-medium md:text-5xl",
+          "text-display-2 tabular",
           onNavy ? "text-gold" : "text-brand-blue",
         )}
       >
         {value}
       </p>
+
       <p
         className={cn(
           "mt-2 text-sm leading-snug",
@@ -437,18 +438,19 @@ export function Pullquote({
     <figure className="mx-auto max-w-3xl text-center">
       <span
         aria-hidden
-        className="mx-auto mb-4 block font-display text-6xl leading-none text-gold"
+        className="text-serif-accent mx-auto mb-4 block text-7xl leading-none text-gold italic"
       >
         &ldquo;
       </span>
       <blockquote
         className={cn(
-          "text-balance font-display text-2xl font-medium leading-snug md:text-[2rem]",
+          "text-serif-accent text-balance text-3xl leading-[1.15] md:text-[2.4rem]",
           onNavy ? "text-navy-foreground" : "text-foreground",
         )}
       >
         {quote}
       </blockquote>
+
       {attribution ? (
         <figcaption
           className={cn(
