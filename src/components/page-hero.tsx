@@ -65,42 +65,23 @@ export function PageHero({
           </nav>
         ) : null}
         <div className="mb-8 flex items-center gap-5">
-          {/* Single accessible name comes from the <img alt>; the wrapper and
-              all layered effects are decorative for AT. */}
+          {/* Cinematic luminous halo — decorative layers around the mark */}
           <div
             role="presentation"
-            className="relative shrink-0 forced-colors:rounded-full forced-colors:border forced-colors:border-[CanvasText] forced-colors:p-1"
+            className="logo-halo relative shrink-0 forced-colors:rounded-full forced-colors:border forced-colors:border-[CanvasText] forced-colors:p-1"
           >
-            {/* Luminous halo — hidden in forced-colors so the OS palette isn't overridden */}
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 -m-4 rounded-full blur-2xl forced-colors:hidden"
-              style={{
-                background:
-                  "radial-gradient(closest-side, rgba(255,255,255,0.92) 0%, rgba(255,246,214,0.55) 38%, rgba(212,175,55,0.18) 62%, transparent 78%)",
-              }}
-            />
-            {/* Gold hairline arc — decorative, hidden in forced-colors (border above replaces it) */}
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 -m-2 rounded-full forced-colors:hidden"
-              style={{
-                background:
-                  "conic-gradient(from 210deg, transparent 0deg, var(--gold) 60deg, transparent 140deg, transparent 220deg, color-mix(in oklab, var(--brand-blue) 80%, white) 280deg, transparent 340deg)",
-                mask: "radial-gradient(farthest-side, transparent calc(100% - 1.5px), #000 calc(100% - 1.5px))",
-                WebkitMask:
-                  "radial-gradient(farthest-side, transparent calc(100% - 1.5px), #000 calc(100% - 1.5px))",
-                opacity: 0.85,
-              }}
-            />
+            <div aria-hidden="true" className="logo-halo__glow forced-colors:hidden" />
+            <div aria-hidden="true" className="logo-halo__aura forced-colors:hidden" />
+            <div aria-hidden="true" className="logo-halo__ring forced-colors:hidden" />
+            <span aria-hidden="true" className="logo-halo__spark logo-halo__spark--a forced-colors:hidden" />
+            <span aria-hidden="true" className="logo-halo__spark logo-halo__spark--b forced-colors:hidden" />
+            <span aria-hidden="true" className="logo-halo__spark logo-halo__spark--c forced-colors:hidden" />
+            <span aria-hidden="true" className="logo-halo__spark logo-halo__spark--d forced-colors:hidden" />
             <BrandLogo
               variant="dark"
-              className="relative h-20 w-20 object-contain drop-shadow-[0_6px_20px_rgba(0,0,0,0.35)] forced-colors:drop-shadow-none md:h-24 md:w-24"
+              className="relative h-20 w-20 object-contain drop-shadow-[0_8px_28px_rgba(0,0,0,0.45)] forced-colors:drop-shadow-none md:h-24 md:w-24"
               alt="Lighthouse Campus"
             />
-            {/* Visual-only fallback for forced-colors: aria-hidden so screen
-                readers don't announce the brand twice (the <img alt> already
-                carries the accessible name). */}
             <span
               aria-hidden="true"
               className="pointer-events-none absolute inset-0 hidden flex-col items-center justify-center text-center font-display text-[10px] font-semibold leading-tight text-[CanvasText] forced-colors:flex"
@@ -111,6 +92,7 @@ export function PageHero({
           </div>
           <Eyebrow onNavy>{eyebrow}</Eyebrow>
         </div>
+
         <h1 className="mt-5 max-w-4xl text-balance font-display text-4xl font-medium leading-[1.06] tracking-tight md:text-6xl">
           {title}
         </h1>
