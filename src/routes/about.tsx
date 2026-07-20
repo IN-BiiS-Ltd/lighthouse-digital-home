@@ -6,6 +6,7 @@ import officialLockup from "@/assets/lighthouse-official-lockup.png.asset.json";
 import campusExteriorPhoto from "@/assets/photo-campus-exterior.jpg";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
+import { PullQuote, Marginalia, StatBand } from "@/components/editorial";
 import {
   BookOpen,
   Compass,
