@@ -64,14 +64,37 @@ export function PageHero({
             ))}
           </nav>
         ) : null}
-        <div className="mb-6 flex items-center gap-4">
-          <span className="inline-flex items-center justify-center rounded-2xl bg-white p-2 shadow-[0_18px_50px_-20px_rgba(0,0,0,0.6)] ring-1 ring-gold/50">
+        <div className="mb-8 flex items-center gap-5">
+          <div className="relative shrink-0">
+            {/* Luminous halo — preserves the transparent logo's silhouette while
+                giving the navy sub-text inside the mark a soft light bed */}
+            <div
+              aria-hidden
+              className="absolute inset-0 -m-4 rounded-full blur-2xl"
+              style={{
+                background:
+                  "radial-gradient(closest-side, rgba(255,255,255,0.92) 0%, rgba(255,246,214,0.55) 38%, rgba(212,175,55,0.18) 62%, transparent 78%)",
+              }}
+            />
+            {/* Gold hairline arc */}
+            <div
+              aria-hidden
+              className="absolute inset-0 -m-2 rounded-full"
+              style={{
+                background:
+                  "conic-gradient(from 210deg, transparent 0deg, var(--gold) 60deg, transparent 140deg, transparent 220deg, color-mix(in oklab, var(--brand-blue) 80%, white) 280deg, transparent 340deg)",
+                mask: "radial-gradient(farthest-side, transparent calc(100% - 1.5px), #000 calc(100% - 1.5px))",
+                WebkitMask:
+                  "radial-gradient(farthest-side, transparent calc(100% - 1.5px), #000 calc(100% - 1.5px))",
+                opacity: 0.85,
+              }}
+            />
             <BrandLogo
               variant="dark"
-              className="h-16 w-16 object-contain md:h-20 md:w-20"
+              className="relative h-20 w-20 object-contain drop-shadow-[0_6px_20px_rgba(0,0,0,0.35)] md:h-24 md:w-24"
               alt=""
             />
-          </span>
+          </div>
           <Eyebrow onNavy>{eyebrow}</Eyebrow>
         </div>
         <h1 className="mt-5 max-w-4xl text-balance font-display text-4xl font-medium leading-[1.06] tracking-tight md:text-6xl">

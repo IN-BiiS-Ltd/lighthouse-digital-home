@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/reveal";
 import { BrandAtmosphere } from "@/components/brand-atmosphere";
 import logo from "@/assets/lighthouse-logo.png.asset.json";
-import logoApproved from "@/assets/lighthouse-campus-approved.png.asset.json";
+import logoApproved from "@/assets/lighthouse-transparent.png.asset.json";
 const logoDark = logoApproved;
 const logoLight = logoApproved;
 
