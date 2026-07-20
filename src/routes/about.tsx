@@ -133,7 +133,7 @@ function About() {
               />
             </div>
             <figcaption className="mt-4 eyebrow text-brand-blue">Lighthouse Campus</figcaption>
-            <p className="mt-1 text-sm text-muted-foreground">By Readers International · Mohandessin, Cairo</p>
+            <p className="mt-1 text-sm text-muted-foreground">By Readers International · Mohandessin, Giza</p>
           </figure>
         </div>
       </Section>
