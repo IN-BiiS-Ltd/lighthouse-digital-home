@@ -69,7 +69,24 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Editorial serif accent — for pull-quotes and display eyebrows */
+  --font-serif-accent: "Instrument Serif", "Fraunces", Georgia, serif;
+
+  /* Fluid type ramp — Apple-editorial scale */
+  --text-display-1: clamp(2.75rem, 5.2vw + 1rem, 5.75rem);
+  --text-display-2: clamp(2.25rem, 3.6vw + 1rem, 4.25rem);
+  --text-display-3: clamp(1.75rem, 2vw + 1rem, 2.75rem);
+  --leading-display: 1.02;
+  --tracking-display: -0.025em;
+
+  /* Elevation — layered, brand-tinted shadows */
+  --shadow-e1: 0 1px 2px rgba(11, 29, 58, 0.05), 0 2px 8px -2px rgba(11, 29, 58, 0.06);
+  --shadow-e2: 0 6px 18px -8px rgba(11, 29, 58, 0.18), 0 2px 6px -2px rgba(11, 29, 58, 0.08);
+  --shadow-e3: 0 24px 60px -24px rgba(11, 29, 58, 0.35), 0 6px 20px -8px rgba(11, 29, 58, 0.16);
+  --shadow-gold-glow: 0 0 40px -10px color-mix(in oklab, var(--gold) 55%, transparent);
 }
+
 
 :root {
   --radius: 0.5rem;
