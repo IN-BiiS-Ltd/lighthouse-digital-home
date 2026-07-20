@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Section, Eyebrow, Pullquote, ButtonLink } from "@/components/blocks";
+import { Section, SectionHeading, Eyebrow, Pullquote, ButtonLink } from "@/components/blocks";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
+import { JourneyTimeline } from "@/components/journey-timeline";
+
 
 export const Route = createFileRoute("/learning-journey")({
   head: () => ({
@@ -84,19 +86,31 @@ function LearningJourney() {
       />
 
       <Section>
+        <SectionHeading
+          eyebrow="The journey at a glance"
+          title="Five continuous chapters, one connected education."
+          description="From first wonder to the moment a student graduates — each stage flows into the next."
+        />
+        <div className="mt-14">
+          <JourneyTimeline stages={stages} />
+        </div>
+      </Section>
+
+      <Section tone="muted">
         <div className="space-y-16 md:space-y-24">
-          {stages.map((stage, i) => (
+          {stages.map((stage) => (
             <div
               key={stage.id}
               id={stage.id}
               className="grid scroll-mt-24 gap-8 md:grid-cols-[auto_1fr] md:gap-14"
             >
               <div className="md:pt-2">
-                <span className="font-display text-6xl text-gold/70 md:text-7xl">
+                <span className="text-serif-accent text-7xl italic text-gold/80 md:text-8xl">
                   {stage.number}
                 </span>
               </div>
               <div className="border-t border-border pt-6">
+
                 <Eyebrow>{stage.tagline}</Eyebrow>
                 <h2 className="mt-4 font-display text-3xl font-medium md:text-4xl">
                   {stage.name}
@@ -121,8 +135,8 @@ function LearningJourney() {
                   </ButtonLink>
                 </div>
               </div>
-              {i < stages.length - 1 ? null : null}
             </div>
+
           ))}
         </div>
       </Section>
