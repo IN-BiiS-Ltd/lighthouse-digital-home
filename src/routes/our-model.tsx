@@ -20,15 +20,8 @@ import {
   IconLens,
   IconPrism,
 } from "@/components/lighthouse-icons";
-import {
-  Section,
-  SectionHeading,
-  FeatureCard,
-  Pullquote,
-} from "@/components/blocks";
-import { PageHero } from "@/components/page-hero";
-import { CtaBand } from "@/components/cta-band";
-import { PillarWheel } from "@/components/pillar-wheel";
+
+
 
 
 export const Route = createFileRoute("/our-model")({
