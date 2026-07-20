@@ -98,13 +98,13 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 border-b transition-shadow duration-200",
-        "bg-navy text-navy-foreground",
+        "sticky top-0 z-50 border-b transition-all duration-300",
         scrolled
-          ? "border-navy-foreground/15 shadow-[0_10px_30px_-20px_rgba(0,0,0,0.8)]"
-          : "border-transparent",
+          ? "glass-navy text-navy-foreground border-navy-foreground/12 shadow-[0_10px_30px_-20px_rgba(0,0,0,0.6)]"
+          : "bg-navy text-navy-foreground border-transparent",
       )}
     >
+
       <Container className="flex h-[4.75rem] items-center justify-between gap-4">
         <Link
           to="/"

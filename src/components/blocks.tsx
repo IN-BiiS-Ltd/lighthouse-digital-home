@@ -145,13 +145,13 @@ export function Container({
 /* ------------------------------------------------------------------ */
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 rounded-md text-sm font-semibold transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center gap-2 rounded-md text-sm font-semibold transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold disabled:pointer-events-none disabled:opacity-50 magnetic",
   {
     variants: {
       variant: {
         primary:
-          "bg-navy text-navy-foreground hover:bg-navy/90 shadow-sm hover:shadow",
-        gold: "bg-gold text-gold-foreground hover:brightness-105 shadow-sm",
+          "bg-navy text-navy-foreground hover:bg-navy/90 shadow-e1 hover:shadow-e2",
+        gold: "bg-gold text-gold-foreground hover:brightness-105 shadow-e1 hover:shadow-gold-glow",
         outline:
           "border border-navy/25 text-foreground hover:border-navy hover:bg-secondary",
         "outline-light":
@@ -181,18 +181,43 @@ export function ButtonLink({
   size,
   className,
   children,
+  onPointerMove,
+  onPointerLeave,
   ...rest
 }: ButtonLinkProps) {
+  // Inline magnetic pull — subtle 6px max, disabled under reduced-motion by CSS
+  const handleMove = (e: MouseEvent<HTMLAnchorElement>) => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const el = e.currentTarget;
+    const r = el.getBoundingClientRect();
+    const dx = ((e.clientX - (r.left + r.width / 2)) * 0.22);
+    const dy = ((e.clientY - (r.top + r.height / 2)) * 0.22);
+    el.style.setProperty("--mgx", `${Math.max(-6, Math.min(6, dx))}px`);
+    el.style.setProperty("--mgy", `${Math.max(-5, Math.min(5, dy))}px`);
+  };
+  const handleLeave = (e: MouseEvent<HTMLAnchorElement>) => {
+    e.currentTarget.style.setProperty("--mgx", "0px");
+    e.currentTarget.style.setProperty("--mgy", "0px");
+  };
   return (
     <SmartLink
       to={to}
       className={cn(buttonVariants({ variant, size }), className)}
+      onPointerMove={(e) => {
+        handleMove(e as unknown as MouseEvent<HTMLAnchorElement>);
+        onPointerMove?.(e);
+      }}
+      onPointerLeave={(e) => {
+        handleLeave(e as unknown as MouseEvent<HTMLAnchorElement>);
+        onPointerLeave?.(e);
+      }}
       {...rest}
     >
       {children}
     </SmartLink>
   );
 }
+
 
 /* ------------------------------------------------------------------ */
 /* Section band + heading                                              */
@@ -222,18 +247,24 @@ export function Section({
       id={id}
       className={cn(
         "scroll-mt-24 py-20 md:py-28",
-        isNavy && "relative isolate overflow-hidden",
+        isNavy && "relative isolate overflow-hidden grain",
         sectionTone[tone],
         className,
       )}
     >
-      {isNavy ? <BrandAtmosphere density={0.55} beam={false} /> : null}
+      {isNavy ? (
+        <>
+          <div aria-hidden className="pointer-events-none absolute inset-0 mesh-navy opacity-70" />
+          <BrandAtmosphere density={0.55} beam={false} />
+        </>
+      ) : null}
       <Container className={cn(isNavy && "relative")}>
         <Reveal>{children}</Reveal>
       </Container>
     </section>
   );
 }
+
 
 export function Eyebrow({
   children,
@@ -293,15 +324,14 @@ export function SectionHeading({
       ) : null}
       <Tag
         className={cn(
-          "mt-5 text-balance font-display font-medium tracking-tight",
-          Tag === "h1"
-            ? "text-4xl md:text-5xl lg:text-[3.4rem] leading-[1.05]"
-            : "text-3xl md:text-4xl leading-[1.1]",
+          "mt-5 text-balance",
+          Tag === "h1" ? "text-display-1" : "text-display-2",
           onNavy ? "text-navy-foreground" : "text-foreground",
         )}
       >
         {title}
       </Tag>
+
       {description ? (
         <p
           className={cn(
@@ -376,12 +406,13 @@ export function Stat({
     <div>
       <p
         className={cn(
-          "font-display text-4xl font-medium md:text-5xl",
+          "text-display-2 tabular",
           onNavy ? "text-gold" : "text-brand-blue",
         )}
       >
         {value}
       </p>
+
       <p
         className={cn(
           "mt-2 text-sm leading-snug",
@@ -407,18 +438,19 @@ export function Pullquote({
     <figure className="mx-auto max-w-3xl text-center">
       <span
         aria-hidden
-        className="mx-auto mb-4 block font-display text-6xl leading-none text-gold"
+        className="text-serif-accent mx-auto mb-4 block text-7xl leading-none text-gold italic"
       >
         &ldquo;
       </span>
       <blockquote
         className={cn(
-          "text-balance font-display text-2xl font-medium leading-snug md:text-[2rem]",
+          "text-serif-accent text-balance text-3xl leading-[1.15] md:text-[2.4rem]",
           onNavy ? "text-navy-foreground" : "text-foreground",
         )}
       >
         {quote}
       </blockquote>
+
       {attribution ? (
         <figcaption
           className={cn(
