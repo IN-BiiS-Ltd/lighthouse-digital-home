@@ -56,12 +56,14 @@ export function ShareBar({ title = "Lighthouse Campus", path }: ShareBarProps) {
   const [url, setUrl] = useState(SITE_ORIGIN + (path ?? "/"));
   const [pageTitle, setPageTitle] = useState(title);
   const [copied, setCopied] = useState(false);
+  const [hasNative, setHasNative] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
     const p = path ?? window.location.pathname + window.location.search;
     setUrl(SITE_ORIGIN + p);
     if (document.title) setPageTitle(document.title);
+    setHasNative(typeof navigator !== "undefined" && "share" in navigator);
   }, [path]);
 
   const enc = encodeURIComponent;
@@ -130,7 +132,7 @@ export function ShareBar({ title = "Lighthouse Campus", path }: ShareBarProps) {
     }
   }
 
-  const hasNative = typeof navigator !== "undefined" && "share" in navigator;
+  
 
   return (
     <Section tone="muted" className="border-t border-border/60">
