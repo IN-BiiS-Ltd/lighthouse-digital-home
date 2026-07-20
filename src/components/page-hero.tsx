@@ -65,21 +65,22 @@ export function PageHero({
           </nav>
         ) : null}
         <div className="mb-8 flex items-center gap-5">
-          <div className="relative shrink-0">
-            {/* Luminous halo — preserves the transparent logo's silhouette while
-                giving the navy sub-text inside the mark a soft light bed */}
+          <div
+            className="relative shrink-0 forced-colors:rounded-full forced-colors:border forced-colors:border-[CanvasText] forced-colors:p-1"
+          >
+            {/* Luminous halo — hidden in forced-colors so the OS palette isn't overridden */}
             <div
               aria-hidden
-              className="absolute inset-0 -m-4 rounded-full blur-2xl"
+              className="absolute inset-0 -m-4 rounded-full blur-2xl forced-colors:hidden"
               style={{
                 background:
                   "radial-gradient(closest-side, rgba(255,255,255,0.92) 0%, rgba(255,246,214,0.55) 38%, rgba(212,175,55,0.18) 62%, transparent 78%)",
               }}
             />
-            {/* Gold hairline arc */}
+            {/* Gold hairline arc — decorative, hidden in forced-colors (border above replaces it) */}
             <div
               aria-hidden
-              className="absolute inset-0 -m-2 rounded-full"
+              className="absolute inset-0 -m-2 rounded-full forced-colors:hidden"
               style={{
                 background:
                   "conic-gradient(from 210deg, transparent 0deg, var(--gold) 60deg, transparent 140deg, transparent 220deg, color-mix(in oklab, var(--brand-blue) 80%, white) 280deg, transparent 340deg)",
@@ -91,9 +92,19 @@ export function PageHero({
             />
             <BrandLogo
               variant="dark"
-              className="relative h-20 w-20 object-contain drop-shadow-[0_6px_20px_rgba(0,0,0,0.35)] md:h-24 md:w-24"
-              alt=""
+              className="relative h-20 w-20 object-contain drop-shadow-[0_6px_20px_rgba(0,0,0,0.35)] forced-colors:drop-shadow-none md:h-24 md:w-24"
+              alt="Lighthouse Campus"
             />
+            {/* Text fallback: invisible normally, revealed in forced-colors so
+                the brand identity survives even if the raster logo is dropped
+                or dimmed by the OS palette. */}
+            <span
+              className="pointer-events-none absolute inset-0 hidden items-center justify-center text-center font-display text-[10px] font-semibold leading-tight text-[CanvasText] forced-colors:flex"
+            >
+              Lighthouse
+              <br />
+              Campus
+            </span>
           </div>
           <Eyebrow onNavy>{eyebrow}</Eyebrow>
         </div>
