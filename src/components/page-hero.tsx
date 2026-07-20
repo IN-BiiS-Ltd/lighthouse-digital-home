@@ -104,9 +104,10 @@ export function PageHero({
           <Eyebrow onNavy>{eyebrow}</Eyebrow>
         </div>
 
-        <h1 className="mt-5 max-w-4xl text-balance font-display text-4xl font-medium leading-[1.06] tracking-tight md:text-6xl">
+        <h1 className="text-display-1 mt-5 max-w-4xl text-balance">
           {title}
         </h1>
+
         {intro ? (
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-navy-foreground/80 md:text-xl">
             {intro}
