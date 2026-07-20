@@ -8,6 +8,7 @@ import {
 } from "@/components/blocks";
 import { primaryNav, secondaryNav } from "@/lib/site-nav";
 import officialLockup from "@/assets/lighthouse-official-lockup.png.asset.json";
+import { FollowLinks } from "@/components/share-bar";
 
 const footerColumns = [
   { title: "Explore", items: primaryNav.slice(0, 5) },
@@ -52,6 +53,9 @@ export function SiteFooter() {
               Guiding minds. Inspiring futures. Connecting possibilities. A
               living learning community where students remain at the centre.
             </p>
+            <div className="mt-8">
+              <FollowLinks />
+            </div>
           </div>
 
           {/* Nav columns */}

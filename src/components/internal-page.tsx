@@ -3,6 +3,7 @@ import { Section, SectionHeading, FeatureCard, Eyebrow } from "@/components/bloc
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { SmartLink } from "@/components/blocks";
+import { ShareBar } from "@/components/share-bar";
 
 export interface InternalBlock {
   eyebrow?: string;
@@ -131,6 +132,7 @@ export function InternalPage({ config }: { config: InternalPageConfig }) {
         primary={cta.primary}
         secondary={cta.secondary}
       />
+      <ShareBar title={title} />
     </>
   );
 }
@@ -196,6 +198,7 @@ export function OverviewPage({
         primary={cta.primary}
         secondary={cta.secondary}
       />
+      <ShareBar title={title} />
     </>
   );
 }
