@@ -76,11 +76,36 @@ function About() {
           eyebrow="Built on Heritage, Designed for Tomorrow"
           title="Academic excellence, innovation, leadership and modern educational practice — together."
         />
-        <div className="mt-8 max-w-3xl space-y-5 text-lg leading-relaxed text-muted-foreground">
-          <p>Combining academic excellence with innovation, leadership, and modern educational practices, Lighthouse Campus provides an environment where every learner is challenged to grow, inspired to lead, and prepared to thrive in a rapidly changing world.</p>
-          <p>As the newest campus of Readers International School in Mohandessin, Giza, we are committed to creating an exceptional educational journey that empowers students academically, personally, and globally.</p>
+        <div className="mt-12">
+          <Marginalia
+            note={
+              <>
+                A new campus, rooted in a trusted legacy — where every learner is
+                known, challenged and supported.
+              </>
+            }
+          >
+            <p>Combining academic excellence with innovation, leadership, and modern educational practices, Lighthouse Campus provides an environment where every learner is challenged to grow, inspired to lead, and prepared to thrive in a rapidly changing world.</p>
+            <p>As the newest campus of Readers International School in Mohandessin, Giza, we are committed to creating an exceptional educational journey that empowers students academically, personally, and globally.</p>
+          </Marginalia>
         </div>
       </Section>
+
+      <PullQuote
+        quote={<>Guiding minds. Inspiring futures. Connecting possibilities.</>}
+        attribution="The Lighthouse Promise"
+      />
+
+      <StatBand
+        eyebrow="The Institutional Footprint"
+        tone="navy"
+        stats={[
+          { value: "Ages 3–18", label: "Learning Journey", caption: "From Early Years foundations through Upper Secondary readiness." },
+          { value: "10", label: "Educational Pillars", caption: "The interlocking commitments that shape every classroom decision." },
+          { value: "1", label: "Trusted Legacy", caption: "Rooted in Readers International School — a heritage of excellence." },
+          { value: "∞", label: "Possibilities", caption: "A learning community designed to open — not to narrow — futures." },
+        ]}
+      />
 
       <Section tone="muted">
         <SectionHeading eyebrow="Understanding Lighthouse Campus" title="Explore the ideas, people and principles behind the institution" />
