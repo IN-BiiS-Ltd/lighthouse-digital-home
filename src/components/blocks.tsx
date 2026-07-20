@@ -247,18 +247,24 @@ export function Section({
       id={id}
       className={cn(
         "scroll-mt-24 py-20 md:py-28",
-        isNavy && "relative isolate overflow-hidden",
+        isNavy && "relative isolate overflow-hidden grain",
         sectionTone[tone],
         className,
       )}
     >
-      {isNavy ? <BrandAtmosphere density={0.55} beam={false} /> : null}
+      {isNavy ? (
+        <>
+          <div aria-hidden className="pointer-events-none absolute inset-0 mesh-navy opacity-70" />
+          <BrandAtmosphere density={0.55} beam={false} />
+        </>
+      ) : null}
       <Container className={cn(isNavy && "relative")}>
         <Reveal>{children}</Reveal>
       </Container>
     </section>
   );
 }
+
 
 export function Eyebrow({
   children,
