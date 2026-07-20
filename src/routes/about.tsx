@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Section, SectionHeading, FeatureCard, BrandLogo } from "@/components/blocks";
 import readersLogo from "@/assets/readers-international-schools.png.asset.json";
+import officialLockup from "@/assets/lighthouse-official-lockup.png.asset.json";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import {
@@ -105,9 +106,36 @@ function About() {
           title="Readers International Schools"
           description="Building on a Legacy of Excellence. Advancing Through Lighthouse Campus. Shaping a Future Driven by Learning and Innovation."
         />
-        <div className="mt-14 flex flex-col items-center justify-center gap-10 md:flex-row md:gap-16">
+
+        {/* Official lockup — full institutional signature */}
+        <figure className="mx-auto mt-14 max-w-3xl">
+          <div className="relative overflow-hidden rounded-3xl bg-white p-8 shadow-[0_40px_100px_-30px_rgba(11,29,58,0.55)] ring-2 ring-gold md:p-12">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-inset ring-navy/10"
+            />
+            <img
+              src={officialLockup.url}
+              alt="Lighthouse Campus — Readers International School. Guiding Minds. Inspiring Futures. Connecting Possibilities."
+              width={1200}
+              height={1200}
+              className="mx-auto block h-auto w-full max-w-xl object-contain"
+              loading="lazy"
+              decoding="async"
+              draggable={false}
+            />
+          </div>
+          <figcaption className="mt-5 text-center">
+            <span className="eyebrow text-brand-blue">Official Institutional Lockup</span>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Lighthouse Campus · Readers International School · Mohandessin, Giza
+            </p>
+          </figcaption>
+        </figure>
+
+        <div className="mt-16 flex flex-col items-center justify-center gap-10 md:flex-row md:gap-16">
           <figure className="flex flex-col items-center">
-            <div className="rounded-full bg-background p-4 shadow-[0_20px_60px_-30px_rgba(11,29,58,0.35)] ring-1 ring-border">
+            <div className="rounded-full bg-white p-4 shadow-[0_20px_60px_-25px_rgba(11,29,58,0.55)] ring-2 ring-gold/70">
               <img
                 src={readersLogo.url}
                 alt="Readers International Schools — official seal, since 2022"
@@ -125,7 +153,7 @@ function About() {
           <span aria-hidden className="hidden text-3xl font-light text-gold md:block">×</span>
 
           <figure className="flex flex-col items-center">
-            <div className="rounded-full bg-navy p-6 shadow-[0_20px_60px_-30px_rgba(11,29,58,0.6)] ring-1 ring-navy/40">
+            <div className="rounded-full bg-navy p-6 shadow-[0_20px_60px_-25px_rgba(11,29,58,0.75)] ring-2 ring-gold">
               <BrandLogo
                 variant="dark"
                 alt="Lighthouse Campus — official emblem"
