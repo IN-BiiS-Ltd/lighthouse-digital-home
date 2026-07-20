@@ -7,6 +7,7 @@ import {
   BrandLogo,
 } from "@/components/blocks";
 import { primaryNav, secondaryNav } from "@/lib/site-nav";
+import officialLockup from "@/assets/lighthouse-official-lockup.png.asset.json";
 
 const footerColumns = [
   { title: "Explore", items: primaryNav.slice(0, 5) },
@@ -110,6 +111,25 @@ export function SiteFooter() {
               </li>
             ))}
           </ul>
+        </div>
+
+        {/* Official institutional signature */}
+        <div className="mt-12 flex justify-center">
+          <figure className="w-full max-w-md rounded-2xl bg-white p-6 shadow-[0_25px_70px_-25px_rgba(0,0,0,0.6)] ring-2 ring-gold">
+            <img
+              src={officialLockup.url}
+              alt="Lighthouse Campus — Readers International School. Guiding Minds. Inspiring Futures. Connecting Possibilities."
+              width={800}
+              height={800}
+              className="mx-auto block h-auto w-full max-w-xs object-contain"
+              loading="lazy"
+              decoding="async"
+              draggable={false}
+            />
+            <figcaption className="mt-3 text-center text-[0.7rem] uppercase tracking-[0.28em] text-navy/70">
+              Official Institutional Lockup
+            </figcaption>
+          </figure>
         </div>
 
         <div className="mt-12 flex flex-col gap-4 border-t border-navy-foreground/12 pt-8 text-sm text-navy-foreground/55 md:flex-row md:items-center md:justify-between">
