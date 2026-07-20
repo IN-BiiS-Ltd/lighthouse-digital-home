@@ -415,6 +415,7 @@ function Home() {
           </div>
         </Container>
       </section>
+      <ShareBar title="Lighthouse Campus — Guiding Minds. Inspiring Futures." path="/" />
     </>
   );
 }
