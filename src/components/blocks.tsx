@@ -324,15 +324,14 @@ export function SectionHeading({
       ) : null}
       <Tag
         className={cn(
-          "mt-5 text-balance font-display font-medium tracking-tight",
-          Tag === "h1"
-            ? "text-4xl md:text-5xl lg:text-[3.4rem] leading-[1.05]"
-            : "text-3xl md:text-4xl leading-[1.1]",
+          "mt-5 text-balance",
+          Tag === "h1" ? "text-display-1" : "text-display-2",
           onNavy ? "text-navy-foreground" : "text-foreground",
         )}
       >
         {title}
       </Tag>
+
       {description ? (
         <p
           className={cn(
