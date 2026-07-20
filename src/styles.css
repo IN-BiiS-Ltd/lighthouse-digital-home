@@ -478,9 +478,14 @@
   .lighthouse-beam,
   .animate-aurora,
   .animate-ken-burns,
-  .crystal {
+  .crystal,
+  .logo-halo__glow,
+  .logo-halo__aura,
+  .logo-halo__ring,
+  .logo-halo__spark {
     animation: none !important;
   }
+
   .cine-card {
     transition: none;
   }
