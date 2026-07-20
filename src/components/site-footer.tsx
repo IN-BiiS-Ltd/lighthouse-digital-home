@@ -20,14 +20,32 @@ const footerColumns = [
   },
 ];
 
-const futureEcosystem = [
-  "Parent Portal",
-  "Student Portal",
-  "Learning Platform",
-  "Online Admissions",
-  "Resource Library",
-  "Alumni Network",
+import {
+  IconDialogue,
+  IconRoot,
+  IconLens,
+  IconArc,
+  IconLedger,
+  IconConstellation,
+  type LhIconName,
+} from "@/components/lighthouse-icons";
+
+const futureEcosystem: { label: string; icon: LhIconName }[] = [
+  { label: "Parent Portal", icon: "dialogue" },
+  { label: "Student Portal", icon: "root" },
+  { label: "Learning Platform", icon: "lens" },
+  { label: "Online Admissions", icon: "arc" },
+  { label: "Resource Library", icon: "ledger" },
+  { label: "Alumni Network", icon: "constellation" },
 ];
+const ecosystemIcons = {
+  dialogue: IconDialogue,
+  root: IconRoot,
+  lens: IconLens,
+  arc: IconArc,
+  ledger: IconLedger,
+  constellation: IconConstellation,
+} as const;
 
 export function SiteFooter() {
   return (
@@ -98,18 +116,26 @@ export function SiteFooter() {
           </div>
         </div>
 
-        {/* Future ecosystem note */}
-        <div className="mt-14 rounded-xl border border-navy-foreground/12 bg-navy-foreground/[0.03] p-6">
-          <p className="eyebrow text-navy-foreground/50">
+        {/* Future ecosystem note — with custom Lighthouse glyphs */}
+        <div className="ambient-stage mt-14 rounded-2xl border border-navy-foreground/12 bg-navy-foreground/[0.03] p-6">
+          <p className="eyebrow text-navy-foreground/60">
             A growing digital ecosystem
           </p>
-          <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm text-navy-foreground/60">
-            {futureEcosystem.map((f) => (
-              <li key={f} className="flex items-center gap-2">
-                <span aria-hidden className="size-1.5 rounded-full bg-gold/60" />
-                {f}
-              </li>
-            ))}
+          <ul className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {futureEcosystem.map((f) => {
+              const Glyph = ecosystemIcons[f.icon];
+              return (
+                <li
+                  key={f.label}
+                  className="flex items-center gap-3 text-sm text-navy-foreground/80"
+                >
+                  <span className="lh-chip on-navy size-9 rounded-lg" aria-hidden>
+                    <Glyph className="size-4" />
+                  </span>
+                  <span className="font-medium">{f.label}</span>
+                </li>
+              );
+            })}
           </ul>
         </div>
 
