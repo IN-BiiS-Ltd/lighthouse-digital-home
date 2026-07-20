@@ -145,13 +145,13 @@ export function Container({
 /* ------------------------------------------------------------------ */
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 rounded-md text-sm font-semibold transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center gap-2 rounded-md text-sm font-semibold transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold disabled:pointer-events-none disabled:opacity-50 magnetic",
   {
     variants: {
       variant: {
         primary:
-          "bg-navy text-navy-foreground hover:bg-navy/90 shadow-sm hover:shadow",
-        gold: "bg-gold text-gold-foreground hover:brightness-105 shadow-sm",
+          "bg-navy text-navy-foreground hover:bg-navy/90 shadow-e1 hover:shadow-e2",
+        gold: "bg-gold text-gold-foreground hover:brightness-105 shadow-e1 hover:shadow-gold-glow",
         outline:
           "border border-navy/25 text-foreground hover:border-navy hover:bg-secondary",
         "outline-light":
@@ -181,18 +181,43 @@ export function ButtonLink({
   size,
   className,
   children,
+  onPointerMove,
+  onPointerLeave,
   ...rest
 }: ButtonLinkProps) {
+  // Inline magnetic pull — subtle 6px max, disabled under reduced-motion by CSS
+  const handleMove = (e: MouseEvent<HTMLAnchorElement>) => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const el = e.currentTarget;
+    const r = el.getBoundingClientRect();
+    const dx = ((e.clientX - (r.left + r.width / 2)) * 0.22);
+    const dy = ((e.clientY - (r.top + r.height / 2)) * 0.22);
+    el.style.setProperty("--mgx", `${Math.max(-6, Math.min(6, dx))}px`);
+    el.style.setProperty("--mgy", `${Math.max(-5, Math.min(5, dy))}px`);
+  };
+  const handleLeave = (e: MouseEvent<HTMLAnchorElement>) => {
+    e.currentTarget.style.setProperty("--mgx", "0px");
+    e.currentTarget.style.setProperty("--mgy", "0px");
+  };
   return (
     <SmartLink
       to={to}
       className={cn(buttonVariants({ variant, size }), className)}
+      onPointerMove={(e) => {
+        handleMove(e as unknown as MouseEvent<HTMLAnchorElement>);
+        onPointerMove?.(e);
+      }}
+      onPointerLeave={(e) => {
+        handleLeave(e as unknown as MouseEvent<HTMLAnchorElement>);
+        onPointerLeave?.(e);
+      }}
       {...rest}
     >
       {children}
     </SmartLink>
   );
 }
+
 
 /* ------------------------------------------------------------------ */
 /* Section band + heading                                              */
