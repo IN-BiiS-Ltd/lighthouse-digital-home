@@ -22,18 +22,29 @@ export function PageHero({
   breadcrumb?: { label: string; to?: string }[];
 }) {
   return (
-    <header className="relative overflow-hidden bg-navy text-navy-foreground">
-      {/* soft brand glow */}
+    <header className="relative overflow-hidden bg-navy text-navy-foreground beacon-surface grain"
+      onPointerMove={(e) => {
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        const el = e.currentTarget;
+        const r = el.getBoundingClientRect();
+        el.style.setProperty("--bx", `${((e.clientX - r.left) / r.width) * 100}%`);
+        el.style.setProperty("--by", `${((e.clientY - r.top) / r.height) * 100}%`);
+      }}
+    >
+      {/* Living gradient mesh — sovereign navy backdrop */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 mesh-navy opacity-80" />
+      {/* Radial vignette — draws the eye to the headline */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-70"
+        className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(60% 90% at 82% -10%, color-mix(in oklab, var(--brand-blue) 40%, transparent), transparent 60%), radial-gradient(50% 80% at 6% 0%, color-mix(in oklab, var(--gold) 20%, transparent), transparent 55%)",
+            "radial-gradient(90% 100% at 50% 30%, transparent 30%, color-mix(in oklab, var(--navy) 60%, transparent) 100%)",
         }}
       />
       <BrandAtmosphere density={0.7} />
       <Container className="relative py-20 md:py-28">
+
         <div className="reveal reveal-in animate-[fade-in_0.9s_cubic-bezier(0.22,1,0.36,1)_both]">
 
         {breadcrumb && breadcrumb.length > 0 ? (
