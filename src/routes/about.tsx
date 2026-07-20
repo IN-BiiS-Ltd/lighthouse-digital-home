@@ -20,13 +20,13 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Lighthouse Campus is a new educational experience built on the trusted legacy of Readers International School in Mohandessin, Cairo — combining academic excellence with innovation, leadership and modern practice.",
+          "Lighthouse Campus is a new educational experience built on the trusted legacy of Readers International School in Mohandessin, Giza — combining academic excellence with innovation, leadership and modern practice.",
       },
       { property: "og:title", content: "About Lighthouse Campus" },
       {
         property: "og:description",
         content:
-          "A legacy of educational excellence. A vision for the future. Discover the Lighthouse Campus story in Mohandessin, Cairo.",
+          "A legacy of educational excellence. A vision for the future. Discover the Lighthouse Campus story in Mohandessin, Giza, Greater Cairo.",
       },
       { property: "og:url", content: "/about" },
       { property: "og:type", content: "website" },
