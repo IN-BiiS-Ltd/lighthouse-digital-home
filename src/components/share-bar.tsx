@@ -132,7 +132,7 @@ export function ShareBar({ title = "Lighthouse Campus", path }: ShareBarProps) {
     }
   }
 
-  const hasNative = typeof navigator !== "undefined" && "share" in navigator;
+  
 
   return (
     <Section tone="muted" className="border-t border-border/60">
