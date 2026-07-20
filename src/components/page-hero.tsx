@@ -65,12 +65,15 @@ export function PageHero({
           </nav>
         ) : null}
         <div className="mb-8 flex items-center gap-5">
+          {/* Single accessible name comes from the <img alt>; the wrapper and
+              all layered effects are decorative for AT. */}
           <div
+            role="presentation"
             className="relative shrink-0 forced-colors:rounded-full forced-colors:border forced-colors:border-[CanvasText] forced-colors:p-1"
           >
             {/* Luminous halo — hidden in forced-colors so the OS palette isn't overridden */}
             <div
-              aria-hidden
+              aria-hidden="true"
               className="absolute inset-0 -m-4 rounded-full blur-2xl forced-colors:hidden"
               style={{
                 background:
@@ -79,7 +82,7 @@ export function PageHero({
             />
             {/* Gold hairline arc — decorative, hidden in forced-colors (border above replaces it) */}
             <div
-              aria-hidden
+              aria-hidden="true"
               className="absolute inset-0 -m-2 rounded-full forced-colors:hidden"
               style={{
                 background:
@@ -95,15 +98,15 @@ export function PageHero({
               className="relative h-20 w-20 object-contain drop-shadow-[0_6px_20px_rgba(0,0,0,0.35)] forced-colors:drop-shadow-none md:h-24 md:w-24"
               alt="Lighthouse Campus"
             />
-            {/* Text fallback: invisible normally, revealed in forced-colors so
-                the brand identity survives even if the raster logo is dropped
-                or dimmed by the OS palette. */}
+            {/* Visual-only fallback for forced-colors: aria-hidden so screen
+                readers don't announce the brand twice (the <img alt> already
+                carries the accessible name). */}
             <span
-              className="pointer-events-none absolute inset-0 hidden items-center justify-center text-center font-display text-[10px] font-semibold leading-tight text-[CanvasText] forced-colors:flex"
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 hidden flex-col items-center justify-center text-center font-display text-[10px] font-semibold leading-tight text-[CanvasText] forced-colors:flex"
             >
-              Lighthouse
-              <br />
-              Campus
+              <span>Lighthouse</span>
+              <span>Campus</span>
             </span>
           </div>
           <Eyebrow onNavy>{eyebrow}</Eyebrow>
