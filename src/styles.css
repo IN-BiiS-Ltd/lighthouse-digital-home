@@ -707,3 +707,69 @@ p, li      { text-wrap: pretty; }
   ::view-transition-new(root) { animation: none !important; }
 }
 
+/* ------------------------------------------------------------------ */
+/* Ambient viewport gold — a slow luminous sweep that awakens when a  */
+/* CTA / footer band enters the viewport. Signature "arrival" moment. */
+/* ------------------------------------------------------------------ */
+@keyframes ambient-sweep {
+  0%   { transform: translate3d(-30%, 0, 0); opacity: 0; }
+  25%  { opacity: 0.55; }
+  75%  { opacity: 0.55; }
+  100% { transform: translate3d(30%, 0, 0); opacity: 0; }
+}
+@keyframes ambient-breathe {
+  0%, 100% { opacity: 0.35; }
+  50%      { opacity: 0.7;  }
+}
+.ambient-stage { position: relative; isolation: isolate; overflow: hidden; }
+.ambient-stage::before {
+  content: "";
+  position: absolute; inset: -20% -10%;
+  background:
+    radial-gradient(40% 60% at 20% 50%, color-mix(in oklab, var(--gold) 22%, transparent), transparent 70%),
+    radial-gradient(35% 55% at 82% 55%, color-mix(in oklab, var(--sky) 14%, transparent), transparent 72%);
+  filter: blur(6px);
+  animation: ambient-sweep 18s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  pointer-events: none; z-index: 0;
+}
+.ambient-stage::after {
+  content: "";
+  position: absolute; left: 0; right: 0; bottom: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, color-mix(in oklab, var(--gold) 85%, white), transparent);
+  animation: ambient-breathe 6s ease-in-out infinite;
+  pointer-events: none; z-index: 0;
+}
+.ambient-stage > * { position: relative; z-index: 1; }
+
+/* Editorial hero — vertical rule + tall serif drop */
+.editorial-rule {
+  width: 1px; background: linear-gradient(to bottom,
+    color-mix(in oklab, var(--gold) 85%, transparent),
+    color-mix(in oklab, var(--gold) 15%, transparent));
+}
+
+/* Custom icon "chip" — softly haloed frame for LhIcon glyphs */
+.lh-chip {
+  display: inline-grid; place-items: center;
+  width: 3rem; height: 3rem; border-radius: 0.9rem;
+  background: color-mix(in oklab, var(--gold) 10%, transparent);
+  border: 1px solid color-mix(in oklab, var(--gold) 32%, transparent);
+  box-shadow: 0 6px 20px -12px color-mix(in oklab, var(--gold) 60%, transparent),
+              inset 0 1px 0 color-mix(in oklab, white 40%, transparent);
+  color: var(--navy);
+  transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 240ms;
+}
+.lh-chip:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px -14px color-mix(in oklab, var(--gold) 70%, transparent);
+}
+.lh-chip.on-navy {
+  color: var(--gold);
+  background: color-mix(in oklab, var(--gold) 12%, transparent);
+  border-color: color-mix(in oklab, var(--gold) 45%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-stage::before,
+  .ambient-stage::after { animation: none !important; }
+}
