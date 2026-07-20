@@ -96,7 +96,7 @@ function LearningJourney() {
         </div>
       </Section>
 
-      <Section tone="soft">
+      <Section tone="muted">
         <div className="space-y-16 md:space-y-24">
           {stages.map((stage) => (
             <div
@@ -135,8 +135,8 @@ function LearningJourney() {
                   </ButtonLink>
                 </div>
               </div>
-              {i < stages.length - 1 ? null : null}
             </div>
+
           ))}
         </div>
       </Section>
