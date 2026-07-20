@@ -398,13 +398,94 @@
   }
 }
 
+/* ------------------------------------------------------------------ */
+/* Cinematic logo halo — layered luminous aura around the brand mark  */
+/* ------------------------------------------------------------------ */
+@keyframes halo-breathe {
+  0%, 100% { transform: scale(1); opacity: 0.85; }
+  50%      { transform: scale(1.08); opacity: 1; }
+}
+@keyframes halo-spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes halo-spin-reverse {
+  to { transform: rotate(-360deg); }
+}
+@keyframes halo-shimmer {
+  0%, 100% { opacity: 0.35; filter: hue-rotate(0deg); }
+  50%      { opacity: 0.75; filter: hue-rotate(18deg); }
+}
+@keyframes halo-sparkle {
+  0%, 100% { opacity: 0; transform: scale(0.6); }
+  50%      { opacity: 1; transform: scale(1); }
+}
+
+.logo-halo { position: relative; isolation: isolate; }
+.logo-halo__glow {
+  position: absolute; inset: -22%; border-radius: 9999px; pointer-events: none;
+  background:
+    radial-gradient(closest-side,
+      rgba(255,255,255,0.95) 0%,
+      rgba(255,240,190,0.70) 28%,
+      rgba(212,175,55,0.35) 52%,
+      rgba(59,110,180,0.18) 72%,
+      transparent 82%);
+  filter: blur(14px);
+  animation: halo-breathe 6s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+.logo-halo__aura {
+  position: absolute; inset: -14%; border-radius: 9999px; pointer-events: none;
+  background: conic-gradient(from 0deg,
+    color-mix(in oklab, var(--gold) 85%, white) 0deg,
+    transparent 70deg,
+    color-mix(in oklab, var(--brand-blue) 85%, white) 150deg,
+    transparent 220deg,
+    color-mix(in oklab, var(--gold) 75%, white) 300deg,
+    transparent 360deg);
+  mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
+  animation: halo-spin 14s linear infinite, halo-shimmer 5s ease-in-out infinite;
+  filter: drop-shadow(0 0 12px color-mix(in oklab, var(--gold) 60%, transparent));
+}
+.logo-halo__ring {
+  position: absolute; inset: -6%; border-radius: 9999px; pointer-events: none;
+  background: conic-gradient(from 180deg,
+    transparent 0deg,
+    color-mix(in oklab, var(--brand-blue) 90%, white) 90deg,
+    transparent 180deg,
+    color-mix(in oklab, var(--gold) 90%, white) 270deg,
+    transparent 360deg);
+  mask: radial-gradient(farthest-side, transparent calc(100% - 1.5px), #000 calc(100% - 1.5px));
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 1.5px), #000 calc(100% - 1.5px));
+  animation: halo-spin-reverse 22s linear infinite;
+  opacity: 0.9;
+}
+.logo-halo__spark {
+  position: absolute; width: 6px; height: 6px; border-radius: 9999px;
+  background: radial-gradient(circle, #fff 0%, color-mix(in oklab, var(--gold) 80%, white) 45%, transparent 70%);
+  box-shadow: 0 0 12px 2px color-mix(in oklab, var(--gold) 70%, transparent);
+  animation: halo-sparkle 3.6s ease-in-out infinite;
+  pointer-events: none;
+}
+.logo-halo__spark--a { top: 4%;  left: 50%; animation-delay: 0s; }
+.logo-halo__spark--b { top: 50%; right: 2%;  animation-delay: 1.2s; }
+.logo-halo__spark--c { bottom: 6%; left: 46%; animation-delay: 2.1s; }
+.logo-halo__spark--d { top: 46%; left: 2%;   animation-delay: 2.7s; }
+
+
 @media (prefers-reduced-motion: reduce) {
   .lighthouse-beam,
   .animate-aurora,
   .animate-ken-burns,
-  .crystal {
+  .crystal,
+  .logo-halo__glow,
+  .logo-halo__aura,
+  .logo-halo__ring,
+  .logo-halo__spark {
     animation: none !important;
   }
+
   .cine-card {
     transition: none;
   }
