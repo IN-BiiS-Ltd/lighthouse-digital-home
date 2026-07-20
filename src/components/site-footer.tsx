@@ -20,15 +20,7 @@ const footerColumns = [
   },
 ];
 
-import {
-  IconDialogue,
-  IconRoot,
-  IconLens,
-  IconArc,
-  IconLedger,
-  IconConstellation,
-  type LhIconName,
-} from "@/components/lighthouse-icons";
+import { LhIcon, type LhIconName } from "@/components/lighthouse-icons";
 
 const futureEcosystem: { label: string; icon: LhIconName }[] = [
   { label: "Parent Portal", icon: "dialogue" },
@@ -38,14 +30,6 @@ const futureEcosystem: { label: string; icon: LhIconName }[] = [
   { label: "Resource Library", icon: "ledger" },
   { label: "Alumni Network", icon: "constellation" },
 ];
-const ecosystemIcons = {
-  dialogue: IconDialogue,
-  root: IconRoot,
-  lens: IconLens,
-  arc: IconArc,
-  ledger: IconLedger,
-  constellation: IconConstellation,
-} as const;
 
 export function SiteFooter() {
   return (
