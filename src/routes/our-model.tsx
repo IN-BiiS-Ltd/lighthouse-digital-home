@@ -1,16 +1,25 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
-  Compass,
-  Network,
-  UserRound,
-  GraduationCap,
-  BookOpen,
-  ClipboardCheck,
-  HeartHandshake,
-  Users2,
-  Brain,
-  Lightbulb,
-} from "lucide-react";
+  Section,
+  SectionHeading,
+  FeatureCard,
+  Pullquote,
+} from "@/components/blocks";
+import { PageHero } from "@/components/page-hero";
+import { CtaBand } from "@/components/cta-band";
+import { PillarWheel } from "@/components/pillar-wheel";
+import {
+  IconCompass,
+  IconConstellation,
+  IconRoot,
+  IconHorizon,
+  IconDialogue,
+  IconLedger,
+  IconSpark,
+  IconArc,
+  IconLens,
+  IconPrism,
+} from "@/components/lighthouse-icons";
 import {
   Section,
   SectionHeading,
