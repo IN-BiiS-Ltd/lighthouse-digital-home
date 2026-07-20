@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Section, SectionHeading, FeatureCard, BrandLogo } from "@/components/blocks";
-import readersLogo from "@/assets/readers-international-schools.png.asset.json";
+import { Section, SectionHeading, FeatureCard } from "@/components/blocks";
+import lighthouseFlag from "@/assets/lighthouse-flag.png.asset.json";
+import readersFlag from "@/assets/readers-international-flag.png.asset.json";
 import officialLockup from "@/assets/lighthouse-official-lockup.png.asset.json";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
@@ -133,35 +134,43 @@ function About() {
           </figcaption>
         </figure>
 
-        <div className="mt-16 flex flex-col items-center justify-center gap-10 md:flex-row md:gap-16">
+        <div className="mt-16 grid gap-10 md:grid-cols-2 md:gap-8">
           <figure className="flex flex-col items-center">
-            <div className="rounded-full bg-white p-4 shadow-[0_20px_60px_-25px_rgba(11,29,58,0.55)] ring-2 ring-gold/70">
+            <div className="overflow-hidden rounded-2xl bg-white p-3 shadow-[0_30px_80px_-25px_rgba(11,29,58,0.55)] ring-2 ring-gold">
               <img
-                src={readersLogo.url}
-                alt="Readers International Schools — official seal, since 2022"
-                width={220}
-                height={220}
-                className="h-40 w-40 object-contain md:h-48 md:w-48"
+                src={readersFlag.url}
+                alt="Readers International Schools — institutional flag with official seal (since 2022)"
+                width={1536}
+                height={1024}
+                className="block h-auto w-full object-contain"
                 loading="lazy"
                 decoding="async"
+                draggable={false}
               />
             </div>
-            <figcaption className="mt-4 eyebrow text-brand-blue">Readers International Schools</figcaption>
-            <p className="mt-1 text-sm text-muted-foreground">The founding institution · Since 2022</p>
+            <figcaption className="mt-4 text-center">
+              <span className="eyebrow text-brand-blue">Readers International Schools</span>
+              <p className="mt-1 text-sm text-muted-foreground">The founding institution · Since 2022</p>
+            </figcaption>
           </figure>
 
-          <span aria-hidden className="hidden text-3xl font-light text-gold md:block">×</span>
-
           <figure className="flex flex-col items-center">
-            <div className="rounded-full bg-navy p-6 shadow-[0_20px_60px_-25px_rgba(11,29,58,0.75)] ring-2 ring-gold">
-              <BrandLogo
-                variant="dark"
-                alt="Lighthouse Campus — official emblem"
-                className="h-32 w-32 object-contain md:h-40 md:w-40"
+            <div className="overflow-hidden rounded-2xl bg-white p-3 shadow-[0_30px_80px_-25px_rgba(11,29,58,0.55)] ring-2 ring-gold">
+              <img
+                src={lighthouseFlag.url}
+                alt="Lighthouse Campus — institutional flag: Readers International School. Guiding Minds. Inspiring Futures. Connecting Possibilities."
+                width={1536}
+                height={1024}
+                className="block h-auto w-full object-contain"
+                loading="lazy"
+                decoding="async"
+                draggable={false}
               />
             </div>
-            <figcaption className="mt-4 eyebrow text-brand-blue">Lighthouse Campus</figcaption>
-            <p className="mt-1 text-sm text-muted-foreground">By Readers International · Mohandessin, Giza</p>
+            <figcaption className="mt-4 text-center">
+              <span className="eyebrow text-brand-blue">Lighthouse Campus</span>
+              <p className="mt-1 text-sm text-muted-foreground">By Readers International · Mohandessin, Giza</p>
+            </figcaption>
           </figure>
         </div>
       </Section>
