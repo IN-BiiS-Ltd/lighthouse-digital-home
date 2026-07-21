@@ -9,7 +9,7 @@ import {
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 
-export const Route = createFileRoute("/our-model/educational-model")({
+export const Route = createFileRoute("/our-model_/educational-model")({
   head: () => ({
     meta: [
       { title: "The Lighthouse Educational Model — Lighthouse Campus" },

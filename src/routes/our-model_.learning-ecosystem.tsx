@@ -19,7 +19,7 @@ import {
   HeartPulse,
 } from "lucide-react";
 
-export const Route = createFileRoute("/our-model/learning-ecosystem")({
+export const Route = createFileRoute("/our-model_/learning-ecosystem")({
   head: () => ({
     meta: [
       { title: "The Learning Ecosystem — Lighthouse Campus" },
