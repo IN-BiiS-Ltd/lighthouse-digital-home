@@ -1,3 +1,4 @@
+import { assetUrl } from "@/lib/asset-url";
 import { Link } from "@tanstack/react-router";
 import { MapPin, Mail, Phone } from "lucide-react";
 import {
@@ -128,7 +129,7 @@ export function SiteFooter() {
         <div className="mt-12 flex justify-center">
           <figure className="w-full max-w-md rounded-2xl bg-white p-6 shadow-[0_25px_70px_-25px_rgba(0,0,0,0.6)] ring-2 ring-gold">
             <img
-              src={officialLockup.url}
+              src={assetUrl(officialLockup)}
               alt="Lighthouse Campus — Readers International School. Guiding Minds. Inspiring Futures. Connecting Possibilities."
               width={800}
               height={800}

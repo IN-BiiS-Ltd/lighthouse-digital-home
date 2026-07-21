@@ -1,3 +1,4 @@
+import { assetUrl } from "@/lib/asset-url";
 import { Link } from "@tanstack/react-router";
 import { cva, type VariantProps } from "class-variance-authority";
 import type { ComponentPropsWithoutRef, MouseEvent, ReactNode } from "react";
@@ -81,7 +82,7 @@ export function BrandLogo({
   variant?: "dark" | "light" | "legacy";
 }) {
   const src =
-    variant === "light" ? logoLight.url : variant === "legacy" ? logo.url : logoDark.url;
+    variant === "light" ? assetUrl(logoLight) : variant === "legacy" ? assetUrl(logo) : assetUrl(logoDark);
   const decorative = alt === "";
   return (
     <img

@@ -1,3 +1,4 @@
+import { assetUrl } from "@/lib/asset-url";
 import { createFileRoute } from "@tanstack/react-router";
 import { Section, SectionHeading, FeatureCard } from "@/components/blocks";
 import lighthouseFlag from "@/assets/lighthouse-flag.png.asset.json";
@@ -160,7 +161,7 @@ function About() {
               className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-inset ring-navy/10"
             />
             <img
-              src={officialLockup.url}
+              src={assetUrl(officialLockup)}
               alt="Lighthouse Campus — Readers International School. Guiding Minds. Inspiring Futures. Connecting Possibilities."
               width={1200}
               height={1200}
@@ -182,7 +183,7 @@ function About() {
           <figure className="flex flex-col items-center">
             <div className="overflow-hidden rounded-2xl bg-white p-3 shadow-[0_30px_80px_-25px_rgba(11,29,58,0.55)] ring-2 ring-gold">
               <img
-                src={readersFlag.url}
+                src={assetUrl(readersFlag)}
                 alt="Readers International Schools — institutional flag with official seal (since 2022)"
                 width={1536}
                 height={1024}
@@ -201,7 +202,7 @@ function About() {
           <figure className="flex flex-col items-center">
             <div className="overflow-hidden rounded-2xl bg-white p-3 shadow-[0_30px_80px_-25px_rgba(11,29,58,0.55)] ring-2 ring-gold">
               <img
-                src={lighthouseFlag.url}
+                src={assetUrl(lighthouseFlag)}
                 alt="Lighthouse Campus — institutional flag: Readers International School. Guiding Minds. Inspiring Futures. Connecting Possibilities."
                 width={1536}
                 height={1024}

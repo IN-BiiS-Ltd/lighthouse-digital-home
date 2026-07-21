@@ -1,3 +1,4 @@
+import { assetUrl } from "@/lib/asset-url";
 import { createFileRoute } from "@tanstack/react-router";
 import { Compass, Palette, Sparkles } from "lucide-react";
 import {
@@ -80,61 +81,61 @@ const acrostic = [
   {
     letter: "L",
     title: "Leadership",
-    icon: iconLeadership.url,
+    icon: assetUrl(iconLeadership),
     body: "Developing confident, ethical and responsible leaders.",
   },
   {
     letter: "I",
     title: "Inquiry",
-    icon: iconInquiry.url,
+    icon: assetUrl(iconInquiry),
     body: "Encouraging curiosity, exploration and lifelong learning.",
   },
   {
     letter: "G",
     title: "Growth",
-    icon: iconGrowth.url,
+    icon: assetUrl(iconGrowth),
     body: "Supporting continuous intellectual, emotional and personal development.",
   },
   {
     letter: "H",
     title: "Humanity",
-    icon: iconHumanity.url,
+    icon: assetUrl(iconHumanity),
     body: "Building compassion, kindness and respect for others.",
   },
   {
     letter: "T",
     title: "Transformation",
-    icon: iconTransformation.url,
+    icon: assetUrl(iconTransformation),
     body: "Helping every learner become the best version of themselves.",
   },
   {
     letter: "H",
     title: "Harmony",
-    icon: iconHarmony.url,
+    icon: assetUrl(iconHarmony),
     body: "Creating balance between academic excellence, wellbeing and character.",
   },
   {
     letter: "O",
     title: "Opportunity",
-    icon: iconOpportunity.url,
+    icon: assetUrl(iconOpportunity),
     body: "Helping every learner discover and develop individual strengths.",
   },
   {
     letter: "U",
     title: "Understanding",
-    icon: iconUnderstanding.url,
+    icon: assetUrl(iconUnderstanding),
     body: "Promoting reflection, wisdom and global awareness.",
   },
   {
     letter: "S",
     title: "Stewardship",
-    icon: iconStewardship.url,
+    icon: assetUrl(iconStewardship),
     body: "Preparing learners to contribute responsibly to their communities and the wider world.",
   },
   {
     letter: "E",
     title: "Excellence",
-    icon: iconExcellence.url,
+    icon: assetUrl(iconExcellence),
     body: "Pursuing quality, achievement and continuous improvement in everything we do.",
   },
 ];
@@ -142,28 +143,28 @@ const acrostic = [
 /* Symbolic elements represented within the official logo. */
 const logoSymbols = [
   {
-    img: approvedLogo.url,
+    img: assetUrl(approvedLogo),
     title: "The Lighthouse",
     description:
       "A symbol of guidance and purposeful leadership. The lighthouse represents the role of education in illuminating the path ahead. Rather than determining a learner's destination, it provides direction, confidence, and the clarity needed to navigate an ever-changing world.",
     represents: ["Guidance", "Leadership", "Vision", "Direction"],
   },
   {
-    img: logoLight.url,
+    img: assetUrl(logoLight),
     title: "The Light",
     description:
       "A symbol of knowledge, intelligence and possibility. The light reflects the transformative power of education. It illuminates understanding, nurtures intelligence, inspires curiosity, and empowers learners to explore new ideas with confidence and purpose.",
     represents: ["Knowledge", "Intelligence", "Discovery", "Hope", "Inspiration"],
   },
   {
-    img: logoBook.url,
+    img: assetUrl(logoBook),
     title: "The Open Book",
     description:
       "A symbol of learning without limits. The open book celebrates curiosity and the lifelong pursuit of knowledge. It reminds every learner that education is an ongoing journey of exploration, reflection, and intellectual growth.",
     represents: ["Learning", "Curiosity", "Education", "Wisdom"],
   },
   {
-    img: logoNetwork.url,
+    img: assetUrl(logoNetwork),
     title: "The Connected Network",
     description:
       "A symbol of innovation, intelligence and connected learning. The interconnected network reflects the relationships that enrich education—connecting learners, educators, ideas, technology, and the wider world. It represents an educational ecosystem where collaboration, innovation, and collective intelligence prepare learners for the opportunities of tomorrow.",
@@ -177,7 +178,7 @@ const logoSymbols = [
     ],
   },
   {
-    img: logoCircle.url,
+    img: assetUrl(logoCircle),
     title: "The Circle",
     description:
       "A symbol of belonging and lifelong community. The circle represents unity, continuity, and the enduring strength of a learning community. It reflects the belief that every learner belongs, every voice matters, and every journey contributes to the shared life of the campus.",
@@ -194,24 +195,24 @@ const logoSymbols = [
 const logoColours = [
   {
     name: "Executive Blue",
-    img: logoShield.url,
+    img: assetUrl(logoShield),
     description:
       "A symbol of trust, wisdom, confidence, stability, and thoughtful leadership.",
   },
   {
     name: "Lighthouse Gold",
-    img: logoStar.url,
+    img: assetUrl(logoStar),
     description:
       "A symbol of excellence, aspiration, achievement, and the transformative power of education.",
   },
   {
     name: "Silver",
-    img: logoCompass.url,
+    img: assetUrl(logoCompass),
     description: "A symbol of clarity, precision, balance, and modern thinking.",
   },
   {
     name: "White",
-    img: logoDove.url,
+    img: assetUrl(logoDove),
     description: "A symbol of openness, integrity, transparency, and new beginnings.",
   },
 ];
@@ -570,7 +571,7 @@ function WhyLighthouse() {
         <figure className="mt-14">
           <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl border border-border shadow-[0_40px_120px_-40px_rgba(11,29,58,0.55)]">
             <img
-              src={lighthouseFlag.url}
+              src={assetUrl(lighthouseFlag)}
               alt="The Lighthouse Campus flag flying above the campus — carrying the institutional emblem and the promise: Guiding minds. Inspiring futures. Connecting possibilities."
               loading="lazy"
               className="block h-auto w-full object-cover"
