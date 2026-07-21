@@ -12,7 +12,7 @@ import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import exteriorImg from "@/assets/campus-exterior.jpg";
 
-export const Route = createFileRoute("/campuses/mohandessin")({
+export const Route = createFileRoute("/campuses_/mohandessin")({
   head: () => ({
     meta: [
       { title: "Mohandessin Campus — Lighthouse Campus" },
