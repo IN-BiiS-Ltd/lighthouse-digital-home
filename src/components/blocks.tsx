@@ -1,4 +1,3 @@
-import { assetUrl } from "@/lib/asset-url";
 import { Link } from "@tanstack/react-router";
 import { cva, type VariantProps } from "class-variance-authority";
 import type { ComponentPropsWithoutRef, MouseEvent, ReactNode } from "react";
@@ -70,7 +69,7 @@ export function Wordmark({
 export function BrandLogo({
   className,
   alt = "Lighthouse Campus — official emblem by Readers International",
-  variant = "dark",
+  variant: _variant = "dark",
 }: {
   className?: string;
   /** Pass `""` for decorative use when a nearby heading, aria-label or Wordmark already names the brand. */
