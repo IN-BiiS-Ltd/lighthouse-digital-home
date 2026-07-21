@@ -1,4 +1,3 @@
-import { assetUrl } from "@/lib/asset-url";
 import { Link } from "@tanstack/react-router";
 import { MapPin, Mail, Phone } from "lucide-react";
 import {
@@ -8,8 +7,8 @@ import {
   BrandLogo,
 } from "@/components/blocks";
 import { primaryNav, secondaryNav } from "@/lib/site-nav";
-import officialLockup from "@/assets/lighthouse-official-lockup.png.asset.json";
 import { FollowLinks } from "@/components/share-bar";
+import officialLockupSrc from "@/assets/lighthouse-official-lockup.webp";
 
 const footerColumns = [
   { title: "Explore", items: primaryNav.slice(0, 5) },
@@ -129,7 +128,7 @@ export function SiteFooter() {
         <div className="mt-12 flex justify-center">
           <figure className="w-full max-w-md rounded-2xl bg-white p-6 shadow-[0_25px_70px_-25px_rgba(0,0,0,0.6)] ring-2 ring-gold">
             <img
-              src={assetUrl(officialLockup)}
+              src={officialLockupSrc}
               alt="Lighthouse Campus — Readers International School. Guiding Minds. Inspiring Futures. Connecting Possibilities."
               width={800}
               height={800}
