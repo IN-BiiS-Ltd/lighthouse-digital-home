@@ -8,8 +8,7 @@ import {
 } from "@/components/blocks";
 import { primaryNav, secondaryNav } from "@/lib/site-nav";
 import { FollowLinks } from "@/components/share-bar";
-
-const officialLockupSrc = "/lighthouse-official-lockup.webp";
+import officialLockupSrc from "@/assets/lighthouse-official-lockup.webp";
 
 const footerColumns = [
   { title: "Explore", items: primaryNav.slice(0, 5) },

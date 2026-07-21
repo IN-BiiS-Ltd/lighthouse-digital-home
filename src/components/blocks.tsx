@@ -4,7 +4,7 @@ import type { ComponentPropsWithoutRef, MouseEvent, ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/reveal";
 import { BrandAtmosphere } from "@/components/brand-atmosphere";
-const primaryLogoSrc = "/lighthouse-campus-logo.webp";
+import primaryLogoSrc from "@/assets/lighthouse-campus-logo.webp";
 
 /* ------------------------------------------------------------------ */
 /* SmartLink — internal (TanStack) or external, with hash support     */
