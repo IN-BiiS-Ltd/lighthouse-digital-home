@@ -1,3 +1,4 @@
+import { assetUrl } from "@/lib/asset-url";
 import { createFileRoute } from "@tanstack/react-router";
 import {
   BookOpen,
@@ -55,22 +56,22 @@ export const Route = createFileRoute("/")({
 
 const values = [
   {
-    img: curiosityIcon.url,
+    img: assetUrl(curiosityIcon),
     title: "Curiosity",
     body: "We protect the instinct to wonder, question and explore — the engine of lifelong learning.",
   },
   {
-    img: belongingIcon.url,
+    img: assetUrl(belongingIcon),
     title: "Belonging",
     body: "Every child is known by name. A campus is a community before it is anything else.",
   },
   {
-    img: integrityIcon.url,
+    img: assetUrl(integrityIcon),
     title: "Integrity",
     body: "Character is taught the way it is learned — through relationships, example and trust.",
   },
   {
-    img: excellenceIcon.url,
+    img: assetUrl(excellenceIcon),
     title: "Excellence",
     body: "High expectations held with warmth. Ambition matched by genuine support.",
   },
