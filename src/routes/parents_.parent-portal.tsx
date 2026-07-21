@@ -135,9 +135,9 @@ function Page() {
 
       <CtaBand
         title="Enter the parent experience."
-        body="Sign in to the Lighthouse portals, or contact the school if you need help getting started."
-        primary={{ to: "https://placeholder.invalid/portals-entry", label: "Enter the portals" }}
-        secondary={{ to: "/contact", label: "Contact the school" }}
+        body="The parent portal lives inside the Lighthouse portals area. If you need help signing in, the school team is the quickest route."
+        primary={{ to: "/contact", label: "Contact the school" }}
+        secondary={{ to: "/parents", label: "Parents overview" }}
       />
       <ShareBar title="The Lighthouse parent portal." />
     </>
