@@ -68,7 +68,7 @@ import { Route as CommunityEventsRouteImport } from './routes/community_.events'
 import { Route as CommunityCommunityProgrammesRouteImport } from './routes/community_.community-programmes'
 import { Route as CommunityCareersRouteImport } from './routes/community_.careers'
 import { Route as CommunityAlumniRouteImport } from './routes/community_.alumni'
-import { Route as CampusesMohandessinRouteImport } from './routes/campuses.mohandessin'
+import { Route as CampusesMohandessinRouteImport } from './routes/campuses_.mohandessin'
 import { Route as CampusExperienceTransportationRouteImport } from './routes/campus-experience_.transportation'
 import { Route as CampusExperienceSportsFacilitiesRouteImport } from './routes/campus-experience_.sports-facilities'
 import { Route as CampusExperienceSafetyRouteImport } from './routes/campus-experience_.safety'
@@ -409,9 +409,9 @@ const CommunityAlumniRoute = CommunityAlumniRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const CampusesMohandessinRoute = CampusesMohandessinRouteImport.update({
-  id: '/mohandessin',
-  path: '/mohandessin',
-  getParentRoute: () => CampusesRoute,
+  id: '/campuses_/mohandessin',
+  path: '/campuses/mohandessin',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const CampusExperienceTransportationRoute =
   CampusExperienceTransportationRouteImport.update({
@@ -560,7 +560,7 @@ export interface FileRoutesByFullPath {
   '/academic-experience': typeof AcademicExperienceRoute
   '/admissions': typeof AdmissionsRoute
   '/campus-experience': typeof CampusExperienceRoute
-  '/campuses': typeof CampusesRouteWithChildren
+  '/campuses': typeof CampusesRoute
   '/careers': typeof CareersRoute
   '/community': typeof CommunityRoute
   '/contact': typeof ContactRoute
@@ -648,7 +648,7 @@ export interface FileRoutesByTo {
   '/academic-experience': typeof AcademicExperienceRoute
   '/admissions': typeof AdmissionsRoute
   '/campus-experience': typeof CampusExperienceRoute
-  '/campuses': typeof CampusesRouteWithChildren
+  '/campuses': typeof CampusesRoute
   '/careers': typeof CareersRoute
   '/community': typeof CommunityRoute
   '/contact': typeof ContactRoute
@@ -737,7 +737,7 @@ export interface FileRoutesById {
   '/academic-experience': typeof AcademicExperienceRoute
   '/admissions': typeof AdmissionsRoute
   '/campus-experience': typeof CampusExperienceRoute
-  '/campuses': typeof CampusesRouteWithChildren
+  '/campuses': typeof CampusesRoute
   '/careers': typeof CareersRoute
   '/community': typeof CommunityRoute
   '/contact': typeof ContactRoute
@@ -773,7 +773,7 @@ export interface FileRoutesById {
   '/campus-experience_/safety': typeof CampusExperienceSafetyRoute
   '/campus-experience_/sports-facilities': typeof CampusExperienceSportsFacilitiesRoute
   '/campus-experience_/transportation': typeof CampusExperienceTransportationRoute
-  '/campuses/mohandessin': typeof CampusesMohandessinRoute
+  '/campuses_/mohandessin': typeof CampusesMohandessinRoute
   '/community_/alumni': typeof CommunityAlumniRoute
   '/community_/careers': typeof CommunityCareersRoute
   '/community_/community-programmes': typeof CommunityCommunityProgrammesRoute
@@ -1039,7 +1039,7 @@ export interface FileRouteTypes {
     | '/campus-experience_/safety'
     | '/campus-experience_/sports-facilities'
     | '/campus-experience_/transportation'
-    | '/campuses/mohandessin'
+    | '/campuses_/mohandessin'
     | '/community_/alumni'
     | '/community_/careers'
     | '/community_/community-programmes'
@@ -1092,7 +1092,7 @@ export interface RootRouteChildren {
   AcademicExperienceRoute: typeof AcademicExperienceRoute
   AdmissionsRoute: typeof AdmissionsRoute
   CampusExperienceRoute: typeof CampusExperienceRoute
-  CampusesRoute: typeof CampusesRouteWithChildren
+  CampusesRoute: typeof CampusesRoute
   CareersRoute: typeof CareersRoute
   CommunityRoute: typeof CommunityRoute
   ContactRoute: typeof ContactRoute
@@ -1128,6 +1128,7 @@ export interface RootRouteChildren {
   CampusExperienceSafetyRoute: typeof CampusExperienceSafetyRoute
   CampusExperienceSportsFacilitiesRoute: typeof CampusExperienceSportsFacilitiesRoute
   CampusExperienceTransportationRoute: typeof CampusExperienceTransportationRoute
+  CampusesMohandessinRoute: typeof CampusesMohandessinRoute
   CommunityAlumniRoute: typeof CommunityAlumniRoute
   CommunityCareersRoute: typeof CommunityCareersRoute
   CommunityCommunityProgrammesRoute: typeof CommunityCommunityProgrammesRoute
@@ -1589,12 +1590,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CommunityAlumniRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/campuses/mohandessin': {
-      id: '/campuses/mohandessin'
-      path: '/mohandessin'
+    '/campuses_/mohandessin': {
+      id: '/campuses_/mohandessin'
+      path: '/campuses/mohandessin'
       fullPath: '/campuses/mohandessin'
       preLoaderRoute: typeof CampusesMohandessinRouteImport
-      parentRoute: typeof CampusesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/campus-experience_/transportation': {
       id: '/campus-experience_/transportation'
@@ -1781,25 +1782,13 @@ declare module '@tanstack/react-router' {
   }
 }
 
-interface CampusesRouteChildren {
-  CampusesMohandessinRoute: typeof CampusesMohandessinRoute
-}
-
-const CampusesRouteChildren: CampusesRouteChildren = {
-  CampusesMohandessinRoute: CampusesMohandessinRoute,
-}
-
-const CampusesRouteWithChildren = CampusesRoute._addFileChildren(
-  CampusesRouteChildren,
-)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   AcademicExperienceRoute: AcademicExperienceRoute,
   AdmissionsRoute: AdmissionsRoute,
   CampusExperienceRoute: CampusExperienceRoute,
-  CampusesRoute: CampusesRouteWithChildren,
+  CampusesRoute: CampusesRoute,
   CareersRoute: CareersRoute,
   CommunityRoute: CommunityRoute,
   ContactRoute: ContactRoute,
@@ -1836,6 +1825,7 @@ const rootRouteChildren: RootRouteChildren = {
   CampusExperienceSafetyRoute: CampusExperienceSafetyRoute,
   CampusExperienceSportsFacilitiesRoute: CampusExperienceSportsFacilitiesRoute,
   CampusExperienceTransportationRoute: CampusExperienceTransportationRoute,
+  CampusesMohandessinRoute: CampusesMohandessinRoute,
   CommunityAlumniRoute: CommunityAlumniRoute,
   CommunityCareersRoute: CommunityCareersRoute,
   CommunityCommunityProgrammesRoute: CommunityCommunityProgrammesRoute,
