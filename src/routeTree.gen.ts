@@ -39,16 +39,16 @@ import { Route as ParentsParentJourneyRouteImport } from './routes/parents_.pare
 import { Route as ParentsFamilyResourcesRouteImport } from './routes/parents_.family-resources'
 import { Route as ParentsFamilyEngagementRouteImport } from './routes/parents_.family-engagement'
 import { Route as ParentsCommunicationRouteImport } from './routes/parents_.communication'
-import { Route as OurModelTeachingFrameworkRouteImport } from './routes/our-model.teaching-framework'
-import { Route as OurModelStudentDevelopmentRouteImport } from './routes/our-model.student-development'
-import { Route as OurModelParentPartnershipRouteImport } from './routes/our-model.parent-partnership'
-import { Route as OurModelLearningEcosystemRouteImport } from './routes/our-model.learning-ecosystem'
-import { Route as OurModelLearnerProfileRouteImport } from './routes/our-model.learner-profile'
-import { Route as OurModelInstitutionalIntelligenceRouteImport } from './routes/our-model.institutional-intelligence'
-import { Route as OurModelInnovationRouteImport } from './routes/our-model.innovation'
-import { Route as OurModelGraduateProfileRouteImport } from './routes/our-model.graduate-profile'
-import { Route as OurModelEducationalModelRouteImport } from './routes/our-model.educational-model'
-import { Route as OurModelAssessmentFrameworkRouteImport } from './routes/our-model.assessment-framework'
+import { Route as OurModelTeachingFrameworkRouteImport } from './routes/our-model_.teaching-framework'
+import { Route as OurModelStudentDevelopmentRouteImport } from './routes/our-model_.student-development'
+import { Route as OurModelParentPartnershipRouteImport } from './routes/our-model_.parent-partnership'
+import { Route as OurModelLearningEcosystemRouteImport } from './routes/our-model_.learning-ecosystem'
+import { Route as OurModelLearnerProfileRouteImport } from './routes/our-model_.learner-profile'
+import { Route as OurModelInstitutionalIntelligenceRouteImport } from './routes/our-model_.institutional-intelligence'
+import { Route as OurModelInnovationRouteImport } from './routes/our-model_.innovation'
+import { Route as OurModelGraduateProfileRouteImport } from './routes/our-model_.graduate-profile'
+import { Route as OurModelEducationalModelRouteImport } from './routes/our-model_.educational-model'
+import { Route as OurModelAssessmentFrameworkRouteImport } from './routes/our-model_.assessment-framework'
 import { Route as NewsTeacherStoriesRouteImport } from './routes/news_.teacher-stories'
 import { Route as NewsStudentStoriesRouteImport } from './routes/news_.student-stories'
 import { Route as NewsSchoolNewsRouteImport } from './routes/news_.school-news'
@@ -253,60 +253,60 @@ const ParentsCommunicationRoute = ParentsCommunicationRouteImport.update({
 } as any)
 const OurModelTeachingFrameworkRoute =
   OurModelTeachingFrameworkRouteImport.update({
-    id: '/teaching-framework',
-    path: '/teaching-framework',
-    getParentRoute: () => OurModelRoute,
+    id: '/our-model_/teaching-framework',
+    path: '/our-model/teaching-framework',
+    getParentRoute: () => rootRouteImport,
   } as any)
 const OurModelStudentDevelopmentRoute =
   OurModelStudentDevelopmentRouteImport.update({
-    id: '/student-development',
-    path: '/student-development',
-    getParentRoute: () => OurModelRoute,
+    id: '/our-model_/student-development',
+    path: '/our-model/student-development',
+    getParentRoute: () => rootRouteImport,
   } as any)
 const OurModelParentPartnershipRoute =
   OurModelParentPartnershipRouteImport.update({
-    id: '/parent-partnership',
-    path: '/parent-partnership',
-    getParentRoute: () => OurModelRoute,
+    id: '/our-model_/parent-partnership',
+    path: '/our-model/parent-partnership',
+    getParentRoute: () => rootRouteImport,
   } as any)
 const OurModelLearningEcosystemRoute =
   OurModelLearningEcosystemRouteImport.update({
-    id: '/learning-ecosystem',
-    path: '/learning-ecosystem',
-    getParentRoute: () => OurModelRoute,
+    id: '/our-model_/learning-ecosystem',
+    path: '/our-model/learning-ecosystem',
+    getParentRoute: () => rootRouteImport,
   } as any)
 const OurModelLearnerProfileRoute = OurModelLearnerProfileRouteImport.update({
-  id: '/learner-profile',
-  path: '/learner-profile',
-  getParentRoute: () => OurModelRoute,
+  id: '/our-model_/learner-profile',
+  path: '/our-model/learner-profile',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const OurModelInstitutionalIntelligenceRoute =
   OurModelInstitutionalIntelligenceRouteImport.update({
-    id: '/institutional-intelligence',
-    path: '/institutional-intelligence',
-    getParentRoute: () => OurModelRoute,
+    id: '/our-model_/institutional-intelligence',
+    path: '/our-model/institutional-intelligence',
+    getParentRoute: () => rootRouteImport,
   } as any)
 const OurModelInnovationRoute = OurModelInnovationRouteImport.update({
-  id: '/innovation',
-  path: '/innovation',
-  getParentRoute: () => OurModelRoute,
+  id: '/our-model_/innovation',
+  path: '/our-model/innovation',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const OurModelGraduateProfileRoute = OurModelGraduateProfileRouteImport.update({
-  id: '/graduate-profile',
-  path: '/graduate-profile',
-  getParentRoute: () => OurModelRoute,
+  id: '/our-model_/graduate-profile',
+  path: '/our-model/graduate-profile',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const OurModelEducationalModelRoute =
   OurModelEducationalModelRouteImport.update({
-    id: '/educational-model',
-    path: '/educational-model',
-    getParentRoute: () => OurModelRoute,
+    id: '/our-model_/educational-model',
+    path: '/our-model/educational-model',
+    getParentRoute: () => rootRouteImport,
   } as any)
 const OurModelAssessmentFrameworkRoute =
   OurModelAssessmentFrameworkRouteImport.update({
-    id: '/assessment-framework',
-    path: '/assessment-framework',
-    getParentRoute: () => OurModelRoute,
+    id: '/our-model_/assessment-framework',
+    path: '/our-model/assessment-framework',
+    getParentRoute: () => rootRouteImport,
   } as any)
 const NewsTeacherStoriesRoute = NewsTeacherStoriesRouteImport.update({
   id: '/news_/teacher-stories',
@@ -566,7 +566,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/learning-journey': typeof LearningJourneyRoute
   '/news': typeof NewsRoute
-  '/our-model': typeof OurModelRouteWithChildren
+  '/our-model': typeof OurModelRoute
   '/parents': typeof ParentsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/student-life': typeof StudentLifeRoute
@@ -654,7 +654,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/learning-journey': typeof LearningJourneyRoute
   '/news': typeof NewsRoute
-  '/our-model': typeof OurModelRouteWithChildren
+  '/our-model': typeof OurModelRoute
   '/parents': typeof ParentsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/student-life': typeof StudentLifeRoute
@@ -743,7 +743,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/learning-journey': typeof LearningJourneyRoute
   '/news': typeof NewsRoute
-  '/our-model': typeof OurModelRouteWithChildren
+  '/our-model': typeof OurModelRoute
   '/parents': typeof ParentsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/student-life': typeof StudentLifeRoute
@@ -793,16 +793,16 @@ export interface FileRoutesById {
   '/news_/school-news': typeof NewsSchoolNewsRoute
   '/news_/student-stories': typeof NewsStudentStoriesRoute
   '/news_/teacher-stories': typeof NewsTeacherStoriesRoute
-  '/our-model/assessment-framework': typeof OurModelAssessmentFrameworkRoute
-  '/our-model/educational-model': typeof OurModelEducationalModelRoute
-  '/our-model/graduate-profile': typeof OurModelGraduateProfileRoute
-  '/our-model/innovation': typeof OurModelInnovationRoute
-  '/our-model/institutional-intelligence': typeof OurModelInstitutionalIntelligenceRoute
-  '/our-model/learner-profile': typeof OurModelLearnerProfileRoute
-  '/our-model/learning-ecosystem': typeof OurModelLearningEcosystemRoute
-  '/our-model/parent-partnership': typeof OurModelParentPartnershipRoute
-  '/our-model/student-development': typeof OurModelStudentDevelopmentRoute
-  '/our-model/teaching-framework': typeof OurModelTeachingFrameworkRoute
+  '/our-model_/assessment-framework': typeof OurModelAssessmentFrameworkRoute
+  '/our-model_/educational-model': typeof OurModelEducationalModelRoute
+  '/our-model_/graduate-profile': typeof OurModelGraduateProfileRoute
+  '/our-model_/innovation': typeof OurModelInnovationRoute
+  '/our-model_/institutional-intelligence': typeof OurModelInstitutionalIntelligenceRoute
+  '/our-model_/learner-profile': typeof OurModelLearnerProfileRoute
+  '/our-model_/learning-ecosystem': typeof OurModelLearningEcosystemRoute
+  '/our-model_/parent-partnership': typeof OurModelParentPartnershipRoute
+  '/our-model_/student-development': typeof OurModelStudentDevelopmentRoute
+  '/our-model_/teaching-framework': typeof OurModelTeachingFrameworkRoute
   '/parents_/communication': typeof ParentsCommunicationRoute
   '/parents_/family-engagement': typeof ParentsFamilyEngagementRoute
   '/parents_/family-resources': typeof ParentsFamilyResourcesRoute
@@ -1059,16 +1059,16 @@ export interface FileRouteTypes {
     | '/news_/school-news'
     | '/news_/student-stories'
     | '/news_/teacher-stories'
-    | '/our-model/assessment-framework'
-    | '/our-model/educational-model'
-    | '/our-model/graduate-profile'
-    | '/our-model/innovation'
-    | '/our-model/institutional-intelligence'
-    | '/our-model/learner-profile'
-    | '/our-model/learning-ecosystem'
-    | '/our-model/parent-partnership'
-    | '/our-model/student-development'
-    | '/our-model/teaching-framework'
+    | '/our-model_/assessment-framework'
+    | '/our-model_/educational-model'
+    | '/our-model_/graduate-profile'
+    | '/our-model_/innovation'
+    | '/our-model_/institutional-intelligence'
+    | '/our-model_/learner-profile'
+    | '/our-model_/learning-ecosystem'
+    | '/our-model_/parent-partnership'
+    | '/our-model_/student-development'
+    | '/our-model_/teaching-framework'
     | '/parents_/communication'
     | '/parents_/family-engagement'
     | '/parents_/family-resources'
@@ -1098,7 +1098,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   LearningJourneyRoute: typeof LearningJourneyRoute
   NewsRoute: typeof NewsRoute
-  OurModelRoute: typeof OurModelRouteWithChildren
+  OurModelRoute: typeof OurModelRoute
   ParentsRoute: typeof ParentsRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StudentLifeRoute: typeof StudentLifeRoute
@@ -1147,6 +1147,16 @@ export interface RootRouteChildren {
   NewsSchoolNewsRoute: typeof NewsSchoolNewsRoute
   NewsStudentStoriesRoute: typeof NewsStudentStoriesRoute
   NewsTeacherStoriesRoute: typeof NewsTeacherStoriesRoute
+  OurModelAssessmentFrameworkRoute: typeof OurModelAssessmentFrameworkRoute
+  OurModelEducationalModelRoute: typeof OurModelEducationalModelRoute
+  OurModelGraduateProfileRoute: typeof OurModelGraduateProfileRoute
+  OurModelInnovationRoute: typeof OurModelInnovationRoute
+  OurModelInstitutionalIntelligenceRoute: typeof OurModelInstitutionalIntelligenceRoute
+  OurModelLearnerProfileRoute: typeof OurModelLearnerProfileRoute
+  OurModelLearningEcosystemRoute: typeof OurModelLearningEcosystemRoute
+  OurModelParentPartnershipRoute: typeof OurModelParentPartnershipRoute
+  OurModelStudentDevelopmentRoute: typeof OurModelStudentDevelopmentRoute
+  OurModelTeachingFrameworkRoute: typeof OurModelTeachingFrameworkRoute
   ParentsCommunicationRoute: typeof ParentsCommunicationRoute
   ParentsFamilyEngagementRoute: typeof ParentsFamilyEngagementRoute
   ParentsFamilyResourcesRoute: typeof ParentsFamilyResourcesRoute
@@ -1376,75 +1386,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ParentsCommunicationRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/our-model/teaching-framework': {
-      id: '/our-model/teaching-framework'
-      path: '/teaching-framework'
+    '/our-model_/teaching-framework': {
+      id: '/our-model_/teaching-framework'
+      path: '/our-model/teaching-framework'
       fullPath: '/our-model/teaching-framework'
       preLoaderRoute: typeof OurModelTeachingFrameworkRouteImport
-      parentRoute: typeof OurModelRoute
+      parentRoute: typeof rootRouteImport
     }
-    '/our-model/student-development': {
-      id: '/our-model/student-development'
-      path: '/student-development'
+    '/our-model_/student-development': {
+      id: '/our-model_/student-development'
+      path: '/our-model/student-development'
       fullPath: '/our-model/student-development'
       preLoaderRoute: typeof OurModelStudentDevelopmentRouteImport
-      parentRoute: typeof OurModelRoute
+      parentRoute: typeof rootRouteImport
     }
-    '/our-model/parent-partnership': {
-      id: '/our-model/parent-partnership'
-      path: '/parent-partnership'
+    '/our-model_/parent-partnership': {
+      id: '/our-model_/parent-partnership'
+      path: '/our-model/parent-partnership'
       fullPath: '/our-model/parent-partnership'
       preLoaderRoute: typeof OurModelParentPartnershipRouteImport
-      parentRoute: typeof OurModelRoute
+      parentRoute: typeof rootRouteImport
     }
-    '/our-model/learning-ecosystem': {
-      id: '/our-model/learning-ecosystem'
-      path: '/learning-ecosystem'
+    '/our-model_/learning-ecosystem': {
+      id: '/our-model_/learning-ecosystem'
+      path: '/our-model/learning-ecosystem'
       fullPath: '/our-model/learning-ecosystem'
       preLoaderRoute: typeof OurModelLearningEcosystemRouteImport
-      parentRoute: typeof OurModelRoute
+      parentRoute: typeof rootRouteImport
     }
-    '/our-model/learner-profile': {
-      id: '/our-model/learner-profile'
-      path: '/learner-profile'
+    '/our-model_/learner-profile': {
+      id: '/our-model_/learner-profile'
+      path: '/our-model/learner-profile'
       fullPath: '/our-model/learner-profile'
       preLoaderRoute: typeof OurModelLearnerProfileRouteImport
-      parentRoute: typeof OurModelRoute
+      parentRoute: typeof rootRouteImport
     }
-    '/our-model/institutional-intelligence': {
-      id: '/our-model/institutional-intelligence'
-      path: '/institutional-intelligence'
+    '/our-model_/institutional-intelligence': {
+      id: '/our-model_/institutional-intelligence'
+      path: '/our-model/institutional-intelligence'
       fullPath: '/our-model/institutional-intelligence'
       preLoaderRoute: typeof OurModelInstitutionalIntelligenceRouteImport
-      parentRoute: typeof OurModelRoute
+      parentRoute: typeof rootRouteImport
     }
-    '/our-model/innovation': {
-      id: '/our-model/innovation'
-      path: '/innovation'
+    '/our-model_/innovation': {
+      id: '/our-model_/innovation'
+      path: '/our-model/innovation'
       fullPath: '/our-model/innovation'
       preLoaderRoute: typeof OurModelInnovationRouteImport
-      parentRoute: typeof OurModelRoute
+      parentRoute: typeof rootRouteImport
     }
-    '/our-model/graduate-profile': {
-      id: '/our-model/graduate-profile'
-      path: '/graduate-profile'
+    '/our-model_/graduate-profile': {
+      id: '/our-model_/graduate-profile'
+      path: '/our-model/graduate-profile'
       fullPath: '/our-model/graduate-profile'
       preLoaderRoute: typeof OurModelGraduateProfileRouteImport
-      parentRoute: typeof OurModelRoute
+      parentRoute: typeof rootRouteImport
     }
-    '/our-model/educational-model': {
-      id: '/our-model/educational-model'
-      path: '/educational-model'
+    '/our-model_/educational-model': {
+      id: '/our-model_/educational-model'
+      path: '/our-model/educational-model'
       fullPath: '/our-model/educational-model'
       preLoaderRoute: typeof OurModelEducationalModelRouteImport
-      parentRoute: typeof OurModelRoute
+      parentRoute: typeof rootRouteImport
     }
-    '/our-model/assessment-framework': {
-      id: '/our-model/assessment-framework'
-      path: '/assessment-framework'
+    '/our-model_/assessment-framework': {
+      id: '/our-model_/assessment-framework'
+      path: '/our-model/assessment-framework'
       fullPath: '/our-model/assessment-framework'
       preLoaderRoute: typeof OurModelAssessmentFrameworkRouteImport
-      parentRoute: typeof OurModelRoute
+      parentRoute: typeof rootRouteImport
     }
     '/news_/teacher-stories': {
       id: '/news_/teacher-stories'
@@ -1783,37 +1793,6 @@ const CampusesRouteWithChildren = CampusesRoute._addFileChildren(
   CampusesRouteChildren,
 )
 
-interface OurModelRouteChildren {
-  OurModelAssessmentFrameworkRoute: typeof OurModelAssessmentFrameworkRoute
-  OurModelEducationalModelRoute: typeof OurModelEducationalModelRoute
-  OurModelGraduateProfileRoute: typeof OurModelGraduateProfileRoute
-  OurModelInnovationRoute: typeof OurModelInnovationRoute
-  OurModelInstitutionalIntelligenceRoute: typeof OurModelInstitutionalIntelligenceRoute
-  OurModelLearnerProfileRoute: typeof OurModelLearnerProfileRoute
-  OurModelLearningEcosystemRoute: typeof OurModelLearningEcosystemRoute
-  OurModelParentPartnershipRoute: typeof OurModelParentPartnershipRoute
-  OurModelStudentDevelopmentRoute: typeof OurModelStudentDevelopmentRoute
-  OurModelTeachingFrameworkRoute: typeof OurModelTeachingFrameworkRoute
-}
-
-const OurModelRouteChildren: OurModelRouteChildren = {
-  OurModelAssessmentFrameworkRoute: OurModelAssessmentFrameworkRoute,
-  OurModelEducationalModelRoute: OurModelEducationalModelRoute,
-  OurModelGraduateProfileRoute: OurModelGraduateProfileRoute,
-  OurModelInnovationRoute: OurModelInnovationRoute,
-  OurModelInstitutionalIntelligenceRoute:
-    OurModelInstitutionalIntelligenceRoute,
-  OurModelLearnerProfileRoute: OurModelLearnerProfileRoute,
-  OurModelLearningEcosystemRoute: OurModelLearningEcosystemRoute,
-  OurModelParentPartnershipRoute: OurModelParentPartnershipRoute,
-  OurModelStudentDevelopmentRoute: OurModelStudentDevelopmentRoute,
-  OurModelTeachingFrameworkRoute: OurModelTeachingFrameworkRoute,
-}
-
-const OurModelRouteWithChildren = OurModelRoute._addFileChildren(
-  OurModelRouteChildren,
-)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
@@ -1826,7 +1805,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   LearningJourneyRoute: LearningJourneyRoute,
   NewsRoute: NewsRoute,
-  OurModelRoute: OurModelRouteWithChildren,
+  OurModelRoute: OurModelRoute,
   ParentsRoute: ParentsRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   StudentLifeRoute: StudentLifeRoute,
@@ -1877,6 +1856,17 @@ const rootRouteChildren: RootRouteChildren = {
   NewsSchoolNewsRoute: NewsSchoolNewsRoute,
   NewsStudentStoriesRoute: NewsStudentStoriesRoute,
   NewsTeacherStoriesRoute: NewsTeacherStoriesRoute,
+  OurModelAssessmentFrameworkRoute: OurModelAssessmentFrameworkRoute,
+  OurModelEducationalModelRoute: OurModelEducationalModelRoute,
+  OurModelGraduateProfileRoute: OurModelGraduateProfileRoute,
+  OurModelInnovationRoute: OurModelInnovationRoute,
+  OurModelInstitutionalIntelligenceRoute:
+    OurModelInstitutionalIntelligenceRoute,
+  OurModelLearnerProfileRoute: OurModelLearnerProfileRoute,
+  OurModelLearningEcosystemRoute: OurModelLearningEcosystemRoute,
+  OurModelParentPartnershipRoute: OurModelParentPartnershipRoute,
+  OurModelStudentDevelopmentRoute: OurModelStudentDevelopmentRoute,
+  OurModelTeachingFrameworkRoute: OurModelTeachingFrameworkRoute,
   ParentsCommunicationRoute: ParentsCommunicationRoute,
   ParentsFamilyEngagementRoute: ParentsFamilyEngagementRoute,
   ParentsFamilyResourcesRoute: ParentsFamilyResourcesRoute,
@@ -1896,13 +1886,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

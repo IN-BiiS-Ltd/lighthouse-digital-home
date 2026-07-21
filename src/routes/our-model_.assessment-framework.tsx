@@ -11,7 +11,7 @@ import { Section, SectionHeading, FeatureCard, Eyebrow } from "@/components/bloc
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 
-export const Route = createFileRoute("/our-model/assessment-framework")({
+export const Route = createFileRoute("/our-model_/assessment-framework")({
   head: () => ({
     meta: [
       { title: "Assessment for Growth — Lighthouse Campus" },

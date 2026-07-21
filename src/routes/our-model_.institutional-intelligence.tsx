@@ -12,7 +12,7 @@ import { Section, SectionHeading, FeatureCard, Eyebrow } from "@/components/bloc
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 
-export const Route = createFileRoute("/our-model/institutional-intelligence")({
+export const Route = createFileRoute("/our-model_/institutional-intelligence")({
   head: () => ({
     meta: [
       { title: "An Institution That Learns — Lighthouse Campus" },

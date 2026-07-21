@@ -14,7 +14,7 @@ import { Section, SectionHeading, FeatureCard, Eyebrow } from "@/components/bloc
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 
-export const Route = createFileRoute("/our-model/learner-profile")({
+export const Route = createFileRoute("/our-model_/learner-profile")({
   head: () => ({
     meta: [
       { title: "The Lighthouse Learner — Lighthouse Campus" },

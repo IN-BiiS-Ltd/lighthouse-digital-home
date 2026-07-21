@@ -13,7 +13,7 @@ import { Section, SectionHeading, FeatureCard, Eyebrow } from "@/components/bloc
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 
-export const Route = createFileRoute("/our-model/student-development")({
+export const Route = createFileRoute("/our-model_/student-development")({
   head: () => ({
     meta: [
       { title: "Growing the Whole Learner — Lighthouse Campus" },

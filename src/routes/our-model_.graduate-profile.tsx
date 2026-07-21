@@ -11,7 +11,7 @@ import { Section, SectionHeading, FeatureCard, Eyebrow } from "@/components/bloc
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 
-export const Route = createFileRoute("/our-model/graduate-profile")({
+export const Route = createFileRoute("/our-model_/graduate-profile")({
   head: () => ({
     meta: [
       { title: "The Lighthouse Graduate — Lighthouse Campus" },
