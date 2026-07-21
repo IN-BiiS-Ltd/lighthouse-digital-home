@@ -5,10 +5,7 @@ import type { ComponentPropsWithoutRef, MouseEvent, ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/reveal";
 import { BrandAtmosphere } from "@/components/brand-atmosphere";
-import logo from "@/assets/lighthouse-logo.png.asset.json";
-import logoApproved from "@/assets/lighthouse-transparent.png.asset.json";
-const logoDark = logoApproved;
-const logoLight = logoApproved;
+const primaryLogoSrc = "/lighthouse-campus-logo.webp";
 
 /* ------------------------------------------------------------------ */
 /* SmartLink — internal (TanStack) or external, with hash support     */
@@ -81,8 +78,7 @@ export function BrandLogo({
   /** "dark" — for navy/dark surfaces · "light" — for light surfaces · "legacy" — original mark */
   variant?: "dark" | "light" | "legacy";
 }) {
-  const src =
-    variant === "light" ? assetUrl(logoLight) : variant === "legacy" ? assetUrl(logo) : assetUrl(logoDark);
+  const src = primaryLogoSrc;
   const decorative = alt === "";
   return (
     <img
