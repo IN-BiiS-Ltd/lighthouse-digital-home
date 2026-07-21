@@ -3,7 +3,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Section, SectionHeading, FeatureCard } from "@/components/blocks";
 import lighthouseFlag from "@/assets/lighthouse-flag.png.asset.json";
 import readersFlag from "@/assets/readers-international-flag.png.asset.json";
-import officialLockup from "@/assets/lighthouse-official-lockup.png.asset.json";
 import campusExteriorPhoto from "@/assets/photo-campus-exterior.jpg";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
@@ -17,6 +16,8 @@ import {
   Heart,
   Sparkles,
 } from "lucide-react";
+
+const officialLockupSrc = "/lighthouse-official-lockup.webp";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -161,7 +162,7 @@ function About() {
               className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-inset ring-navy/10"
             />
             <img
-              src={assetUrl(officialLockup)}
+              src={officialLockupSrc}
               alt="Lighthouse Campus — Readers International School. Guiding Minds. Inspiring Futures. Connecting Possibilities."
               width={1200}
               height={1200}
