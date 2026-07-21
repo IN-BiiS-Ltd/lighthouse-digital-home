@@ -48,8 +48,16 @@ export const Route = createFileRoute("/")({
           "Guiding minds. Inspiring futures. Connecting possibilities. An international learning community where students remain at the centre.",
       },
       { property: "og:url", content: "/" },
+      { property: "og:image", content: "https://lighthousecampus.lovable.app/lighthouse-card-logo-inspired.webp" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "Lighthouse Campus — A Readers International School in Mohandessin, Giza" },
+      { property: "og:image:type", content: "image/webp" },
+      { name: "twitter:image", content: "https://lighthousecampus.lovable.app/lighthouse-card-logo-inspired.webp" },
+      { name: "twitter:image:alt", content: "Lighthouse Campus — A Readers International School in Mohandessin, Giza" },
     ],
     links: [{ rel: "canonical", href: "/" }],
+
   }),
   component: Home,
 });
