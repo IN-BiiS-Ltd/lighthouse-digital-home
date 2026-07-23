@@ -15,6 +15,7 @@ import { SiteHeader } from "../components/site-header";
 import { SiteFooter } from "../components/site-footer";
 import { ScrollProgress } from "../components/scroll-progress";
 import { CookieConsent } from "../components/cookie-consent";
+import { Analytics } from "../components/analytics";
 
 function NotFoundComponent() {
   return (
@@ -241,6 +242,7 @@ function RootComponent() {
         </main>
         <SiteFooter />
         <CookieConsent />
+        <Analytics />
       </div>
     </QueryClientProvider>
   );
