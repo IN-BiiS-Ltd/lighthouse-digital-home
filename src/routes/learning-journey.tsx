@@ -4,6 +4,8 @@ import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { JourneyTimeline } from "@/components/journey-timeline";
 import { CrystalField } from "@/components/crystal-field";
+import { ChapterRail } from "@/components/chapter-rail";
+import { ChapterActions } from "@/components/chapter-actions";
 import { Sparkles, BookOpen, Compass, GraduationCap, Rocket, ArrowRight } from "lucide-react";
 
 
