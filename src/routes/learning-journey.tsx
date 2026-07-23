@@ -276,7 +276,7 @@ function StageCinema({ stages }: { stages: Stage[] }) {
                   ))}
                 </ul>
 
-                <div className="mt-10">
+                <div className="mt-10 flex flex-wrap items-center gap-3">
                   <Link
                     to={stage.to}
                     className={cx(
@@ -290,6 +290,16 @@ function StageCinema({ stages }: { stages: Stage[] }) {
                     <ArrowRight aria-hidden className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </Link>
                 </div>
+
+                <ChapterActions
+                  hash={stage.id}
+                  number={stage.number}
+                  eyebrow={stage.tagline}
+                  title={stage.name}
+                  body={stage.body}
+                  focus={stage.focus}
+                  dark={dark}
+                />
               </div>
             </div>
           </section>
