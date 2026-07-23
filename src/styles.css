@@ -401,7 +401,8 @@
   object-fit: contain;
   user-select: none;
   -webkit-user-drag: none;
-  mix-blend-mode: soft-light;
+  mix-blend-mode: screen;
+  filter: brightness(1.15) contrast(1.05) drop-shadow(0 6px 18px rgba(0, 0, 0, 0.35));
 }
 
 
