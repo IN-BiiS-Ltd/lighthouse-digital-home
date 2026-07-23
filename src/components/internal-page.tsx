@@ -224,7 +224,15 @@ export function OverviewPage({
         <SectionHeading eyebrow="Explore" title="Sections in this area" />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {cards.map((c) => (
-            <SmartLink key={c.to} to={c.to} className="block group">
+            <SmartLink
+              key={c.to}
+              to={c.to}
+              className="block group"
+              data-event="Section Card Click"
+              data-event-prop-to={c.to}
+              data-event-prop-title={c.title}
+              data-event-prop-from-section={eyebrow}
+            >
               <FeatureCard title={c.title} icon={c.icon}>{c.body}</FeatureCard>
             </SmartLink>
           ))}
