@@ -21,6 +21,7 @@ import {
 } from "@/components/blocks";
 import { NarrativeFlow } from "@/components/page-hero";
 import { BrandAtmosphere } from "@/components/brand-atmosphere";
+import { WatermarkFloat } from "@/components/watermark-float";
 import { ShareBar } from "@/components/share-bar";
 import heroImg from "@/assets/photo-classroom-primary.jpg";
 import stemImg from "@/assets/photo-teacher-portrait.jpg";
