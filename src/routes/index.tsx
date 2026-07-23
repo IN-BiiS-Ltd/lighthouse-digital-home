@@ -141,10 +141,24 @@ function Home() {
               and belonging.
             </p>
             <div className="mt-9 flex flex-wrap gap-3 animate-[fade-in_1s_cubic-bezier(0.22,1,0.36,1)_0.4s_both]">
-              <ButtonLink to="/admissions" variant="gold" size="lg">
+              <ButtonLink
+                to="/admissions"
+                variant="gold"
+                size="lg"
+                data-event="CTA Click"
+                data-event-prop-cta="Admissions"
+                data-event-prop-location="Home Hero"
+              >
                 Begin the admissions journey
               </ButtonLink>
-              <ButtonLink to="/about" variant="outline-light" size="lg">
+              <ButtonLink
+                to="/about"
+                variant="outline-light"
+                size="lg"
+                data-event="CTA Click"
+                data-event-prop-cta="About"
+                data-event-prop-location="Home Hero"
+              >
                 Discover our story
               </ButtonLink>
             </div>
