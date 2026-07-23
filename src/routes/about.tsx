@@ -75,21 +75,15 @@ function About() {
 
       <Section>
         <SectionHeading
-          eyebrow="A Modern Institution, Built to Endure"
-          title="Academic excellence, innovation, leadership and modern educational practice — together."
+          eyebrow="Our Purpose"
+          title="Where Potential Becomes Purpose"
         />
-        <div className="mt-12">
-          <Marginalia
-            note={
-              <>
-                An institution designed for the long term — where every learner is
-                known, challenged and supported.
-              </>
-            }
-          >
-            <p>Combining academic excellence with innovation, leadership, and modern educational practices, Lighthouse Campus provides an environment where every learner is challenged to grow, inspired to lead, and prepared to thrive in a rapidly changing world.</p>
-            <p>Located in Mohandessin, Giza, our first campus is committed to creating an exceptional educational journey that empowers students academically, personally, and globally.</p>
-          </Marginalia>
+        <div className="mt-12 max-w-3xl space-y-5 text-lg leading-relaxed text-muted-foreground">
+          <p>Every family dreams of a future where their children are confident, compassionate, and prepared to succeed in an ever-changing world.</p>
+          <p className="font-medium text-foreground">LIGHTHOUSE CAMPUS exists to help make that future possible.</p>
+          <p>Through exceptional teaching, meaningful relationships, and an inspiring learning environment, we empower every learner to discover their strengths, develop their character, and pursue excellence with confidence.</p>
+          <p>We are not simply preparing students for examinations.</p>
+          <p className="font-medium text-foreground">We are preparing them for life, leadership, and the opportunities of tomorrow.</p>
         </div>
       </Section>
 
