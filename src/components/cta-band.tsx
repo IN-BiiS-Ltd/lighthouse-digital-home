@@ -32,10 +32,26 @@ export function CtaBand({
             {body}
           </p>
           <div className="mt-9 flex flex-wrap justify-center gap-3">
-            <ButtonLink to={primary.to} variant="gold" size="lg">
+            <ButtonLink
+              to={primary.to}
+              variant="gold"
+              size="lg"
+              data-event="CTA Click"
+              data-event-prop-label={primary.label}
+              data-event-prop-to={primary.to}
+              data-event-prop-placement="cta-band-primary"
+            >
               {primary.label}
             </ButtonLink>
-            <ButtonLink to={secondary.to} variant="outline-light" size="lg">
+            <ButtonLink
+              to={secondary.to}
+              variant="outline-light"
+              size="lg"
+              data-event="CTA Click"
+              data-event-prop-label={secondary.label}
+              data-event-prop-to={secondary.to}
+              data-event-prop-placement="cta-band-secondary"
+            >
               {secondary.label}
             </ButtonLink>
           </div>
