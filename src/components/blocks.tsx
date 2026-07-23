@@ -4,6 +4,7 @@ import type { ComponentPropsWithoutRef, MouseEvent, ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/reveal";
 import { BrandAtmosphere } from "@/components/brand-atmosphere";
+import { CrystalField } from "@/components/crystal-field";
 import primaryLogoSrc from "@/assets/lighthouse-campus-logo.webp";
 
 /* ------------------------------------------------------------------ */
@@ -237,12 +238,14 @@ export function Section({
   id?: string;
 }) {
   const isNavy = tone === "navy";
+  const isTinted = tone === "muted" || tone === "sand";
   return (
     <section
       id={id}
       className={cn(
         "scroll-mt-24 py-20 md:py-28",
-        isNavy && "relative isolate overflow-hidden grain",
+        (isNavy || isTinted) && "relative isolate overflow-hidden",
+        isNavy && "grain",
         sectionTone[tone],
         className,
       )}
@@ -251,9 +254,13 @@ export function Section({
         <>
           <div aria-hidden className="pointer-events-none absolute inset-0 mesh-navy opacity-70" />
           <BrandAtmosphere density={0.55} beam={false} />
+          <CrystalField className="opacity-60" count={5} />
         </>
       ) : null}
-      <Container className={cn(isNavy && "relative")}>
+      {isTinted ? (
+        <CrystalField variant="light" count={4} className="opacity-90" />
+      ) : null}
+      <Container className={cn((isNavy || isTinted) && "relative")}>
         <Reveal>{children}</Reveal>
       </Container>
     </section>

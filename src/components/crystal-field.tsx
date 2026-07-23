@@ -32,10 +32,26 @@ const motes: Mote[] = [
   { top: "44%", left: "92%", size: "5.25rem",opacity: 0.28, dur: "52s", delay: "1.2s", dx: "-1.6rem", dy: "1rem",    rot: "-9deg" },
 ];
 
-export function CrystalField({ className }: { className?: string }) {
+export function CrystalField({
+  className,
+  variant = "dark",
+  count,
+}: {
+  className?: string;
+  variant?: "dark" | "light";
+  count?: number;
+}) {
+  const items = typeof count === "number" ? motes.slice(0, count) : motes;
   return (
-    <div aria-hidden className={cn("crystal-field -z-0", className)}>
-      {motes.map((m, i) => (
+    <div
+      aria-hidden
+      className={cn(
+        "crystal-field -z-0",
+        variant === "light" && "crystal-field--light",
+        className,
+      )}
+    >
+      {items.map((m, i) => (
         <span
           key={i}
           className="crystal"
@@ -44,7 +60,7 @@ export function CrystalField({ className }: { className?: string }) {
               top: m.top,
               left: m.left,
               "--size": m.size,
-              "--opacity": m.opacity,
+              "--opacity": variant === "light" ? Math.min(m.opacity * 0.55, 0.18) : m.opacity,
               "--dur": m.dur,
               "--delay": m.delay,
               "--dx": m.dx,
