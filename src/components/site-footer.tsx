@@ -8,6 +8,7 @@ import {
 } from "@/components/blocks";
 import { primaryNav, secondaryNav } from "@/lib/site-nav";
 import { FollowLinks } from "@/components/share-bar";
+import { CrystalField } from "@/components/crystal-field";
 import officialLockupAsset from "@/assets/lighthouse-official-lockup-v2.png.asset.json";
 const officialLockupSrc = officialLockupAsset.url;
 
