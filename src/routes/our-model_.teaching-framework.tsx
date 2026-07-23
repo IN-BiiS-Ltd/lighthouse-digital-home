@@ -106,7 +106,7 @@ function TeachingFramework() {
           },
         ],
         cta: {
-          eyebrow: "Continue",
+
           title: "How is progress understood?",
           body: "See how assessment supports learning, growth and responsible decisions.",
           primary: { to: "/our-model/assessment-framework", label: "Assessment Framework" },

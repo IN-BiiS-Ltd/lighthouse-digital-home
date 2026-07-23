@@ -92,7 +92,7 @@ function StudentDevelopment() {
             "Student development is not an additional programme. It is part of how students learn, participate, build relationships and grow throughout campus life.",
         },
         cta: {
-          eyebrow: "Continue",
+
           title: "How do families take part?",
           body: "See how Lighthouse and families partner around every learner.",
           primary: { to: "/our-model/parent-partnership", label: "Parent Partnership" },
