@@ -125,7 +125,9 @@ function LearningJourney() {
 
 const stageIcons = [Sparkles, BookOpen, Compass, GraduationCap, Rocket] as const;
 
-function StageCinema({ stages }: { stages: typeof import("./learning-journey").stages | typeof stages }) {
+type Stage = { id: string; number: string; name: string; to: string; tagline: string; body: string; focus: string[] };
+
+function StageCinema({ stages }: { stages: Stage[] }) {
   return (
     <div className="relative">
       {stages.map((stage, i) => {
