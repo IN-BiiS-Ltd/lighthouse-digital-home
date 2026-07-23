@@ -204,7 +204,7 @@ function About() {
             <div className="overflow-hidden rounded-2xl bg-white p-3 shadow-[0_30px_80px_-25px_rgba(11,29,58,0.55)] ring-2 ring-gold">
               <img
                 src={assetUrl(lighthouseFlag)}
-                alt="Lighthouse Campus — institutional flag: Readers International School. Guiding Minds. Inspiring Futures. Connecting Possibilities."
+                alt="Lighthouse Campus — institutional flag carrying the emblem and promise: Guiding minds. Inspiring futures. Connecting possibilities."
                 width={1536}
                 height={1024}
                 className="block h-auto w-full object-contain"
