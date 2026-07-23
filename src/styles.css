@@ -555,6 +555,13 @@ p, li      { text-wrap: pretty; }
   letter-spacing: -0.015em;
   font-weight: 500;
 }
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 @utility text-serif-accent {
   font-family: var(--font-serif-accent);
   font-weight: 400;

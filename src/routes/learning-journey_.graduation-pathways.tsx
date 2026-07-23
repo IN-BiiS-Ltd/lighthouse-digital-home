@@ -3,6 +3,8 @@ import { Eyebrow, Pullquote, Section } from "@/components/blocks";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { CrystalField } from "@/components/crystal-field";
+import { ChapterRail } from "@/components/chapter-rail";
+import { ChapterActions } from "@/components/chapter-actions";
 import {
   Compass,
   GraduationCap,
@@ -188,6 +190,10 @@ function GraduationPathways() {
 function PathwayCinema({ chapters }: { chapters: Chapter[] }) {
   return (
     <div className="relative">
+      <ChapterRail
+        ariaLabel="Graduation pathways chapters"
+        chapters={chapters.map((c) => ({ id: c.id, number: c.number, label: c.eyebrow }))}
+      />
       {chapters.map((c, i) => {
         const dark = i % 2 === 0;
         const Icon = c.icon;
@@ -338,6 +344,17 @@ function PathwayCinema({ chapters }: { chapters: Chapter[] }) {
                     {c.prose}
                   </blockquote>
                 )}
+
+                <ChapterActions
+                  hash={c.id}
+                  number={c.number}
+                  eyebrow={c.eyebrow}
+                  title={c.title}
+                  body={c.body}
+                  focus={c.focus}
+                  prose={c.prose}
+                  dark={dark}
+                />
               </div>
             </div>
           </section>

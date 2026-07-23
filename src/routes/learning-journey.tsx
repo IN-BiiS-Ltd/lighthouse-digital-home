@@ -4,6 +4,8 @@ import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { JourneyTimeline } from "@/components/journey-timeline";
 import { CrystalField } from "@/components/crystal-field";
+import { ChapterRail } from "@/components/chapter-rail";
+import { ChapterActions } from "@/components/chapter-actions";
 import { Sparkles, BookOpen, Compass, GraduationCap, Rocket, ArrowRight } from "lucide-react";
 
 
@@ -130,6 +132,10 @@ type Stage = { id: string; number: string; name: string; to: string; tagline: st
 function StageCinema({ stages }: { stages: Stage[] }) {
   return (
     <div className="relative">
+      <ChapterRail
+        ariaLabel="Learning journey chapters"
+        chapters={stages.map((s) => ({ id: s.id, number: s.number, label: s.name }))}
+      />
       {stages.map((stage, i) => {
         const dark = i % 2 === 0;
         const Icon = stageIcons[i] ?? Sparkles;
@@ -270,7 +276,7 @@ function StageCinema({ stages }: { stages: Stage[] }) {
                   ))}
                 </ul>
 
-                <div className="mt-10">
+                <div className="mt-10 flex flex-wrap items-center gap-3">
                   <Link
                     to={stage.to}
                     className={cx(
@@ -284,6 +290,16 @@ function StageCinema({ stages }: { stages: Stage[] }) {
                     <ArrowRight aria-hidden className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </Link>
                 </div>
+
+                <ChapterActions
+                  hash={stage.id}
+                  number={stage.number}
+                  eyebrow={stage.tagline}
+                  title={stage.name}
+                  body={stage.body}
+                  focus={stage.focus}
+                  dark={dark}
+                />
               </div>
             </div>
           </section>
