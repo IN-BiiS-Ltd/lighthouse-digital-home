@@ -20,6 +20,7 @@ export function CtaBand({
     <section className="ambient-stage relative overflow-hidden bg-navy text-navy-foreground grain">
       <div aria-hidden className="pointer-events-none absolute inset-0 mesh-navy opacity-60" />
       <CrystalField className="opacity-80" />
+      <Container className="relative py-20 md:py-24">
         <div className="mx-auto max-w-3xl text-center">
           <Eyebrow onNavy className="justify-center">
             {eyebrow}
