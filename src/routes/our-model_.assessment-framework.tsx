@@ -10,6 +10,7 @@ import {
 import { Section, SectionHeading, FeatureCard, Eyebrow } from "@/components/blocks";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
+import { ShareBar } from "@/components/share-bar";
 
 export const Route = createFileRoute("/our-model_/assessment-framework")({
   head: () => ({
@@ -88,6 +89,7 @@ function AssessmentFramework() {
         primary={{ to: "/our-model/student-development", label: "Student Development" }}
         secondary={{ to: "/our-model/institutional-intelligence", label: "Institutional Intelligence" }}
       />
+      <ShareBar title="Assessment for Growth — Lighthouse Campus" />
     </>
   );
 }

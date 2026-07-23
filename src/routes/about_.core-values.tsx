@@ -3,6 +3,7 @@ import { Eye, Heart, Compass, Flag } from "lucide-react";
 import { Section, SectionHeading, FeatureCard } from "@/components/blocks";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
+import { ShareBar } from "@/components/share-bar";
 
 export const Route = createFileRoute("/about_/core-values")({
   head: () => ({
@@ -91,6 +92,7 @@ function CoreValues() {
         primary={{ to: "/about/educational-philosophy", label: "Explore Our Educational Philosophy" }}
         secondary={{ to: "/our-model/learner-profile", label: "Meet the Lighthouse Learner" }}
       />
+      <ShareBar title="Core Values | Lighthouse Campus" />
     </>
   );
 }

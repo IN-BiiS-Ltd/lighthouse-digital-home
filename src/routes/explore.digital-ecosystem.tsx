@@ -18,6 +18,7 @@ import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { ServiceCard } from "@/components/service-card";
 import type { ServiceStatus } from "@/components/status-pill";
+import { ShareBar } from "@/components/share-bar";
 
 export const Route = createFileRoute("/explore/digital-ecosystem")({
   head: () => ({
@@ -193,6 +194,7 @@ function DigitalEcosystem() {
         primary={{ to: "/our-model/institutional-intelligence", label: "Institutional Intelligence" }}
         secondary={{ to: "/our-model/innovation", label: "Innovation with Purpose" }}
       />
+      <ShareBar title="A Growing Digital Ecosystem — Lighthouse Campus" />
     </>
   );
 }

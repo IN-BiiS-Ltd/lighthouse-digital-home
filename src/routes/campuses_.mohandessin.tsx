@@ -11,6 +11,7 @@ import {
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import exteriorImg from "@/assets/campus-exterior.jpg";
+import { ShareBar } from "@/components/share-bar";
 
 export const Route = createFileRoute("/campuses_/mohandessin")({
   head: () => ({
@@ -225,6 +226,7 @@ function Mohandessin() {
         title="Begin your journey at Mohandessin"
         body="Our founding campus is ready to welcome your family."
       />
+      <ShareBar title="Mohandessin Campus — Lighthouse Campus" />
     </>
   );
 }

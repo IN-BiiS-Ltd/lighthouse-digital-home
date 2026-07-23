@@ -30,6 +30,7 @@ import principleOpportunity from "@/assets/principle-opportunity.png.asset.json"
 import principleUnderstanding from "@/assets/principle-understanding.png.asset.json";
 import principleStewardship from "@/assets/principle-stewardship.png.asset.json";
 import principleExcellence from "@/assets/principle-excellence.png.asset.json";
+import { ShareBar } from "@/components/share-bar";
 
 export const Route = createFileRoute("/about_/why-lighthouse")({
   head: () => ({
@@ -553,6 +554,7 @@ function WhyLighthouse() {
         primary={{ to: "/admissions/schedule-a-visit", label: "Schedule a Visit" }}
         secondary={{ to: "/about", label: "About Lighthouse Campus" }}
       />
+      <ShareBar title="Why LIGHTHOUSE CAMPUS? | Lighthouse Campus" />
     </>
   );
 }

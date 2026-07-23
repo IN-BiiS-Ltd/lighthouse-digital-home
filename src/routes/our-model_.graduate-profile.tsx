@@ -10,6 +10,7 @@ import {
 import { Section, SectionHeading, FeatureCard, Eyebrow } from "@/components/blocks";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
+import { ShareBar } from "@/components/share-bar";
 
 export const Route = createFileRoute("/our-model_/graduate-profile")({
   head: () => ({
@@ -89,6 +90,7 @@ function GraduateProfile() {
         primary={{ to: "/our-model/teaching-framework", label: "Teaching Framework" }}
         secondary={{ to: "/our-model/assessment-framework", label: "Assessment Framework" }}
       />
+      <ShareBar title="The Lighthouse Graduate — Lighthouse Campus" />
     </>
   );
 }

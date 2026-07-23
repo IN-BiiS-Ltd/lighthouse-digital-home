@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Section, SectionHeading } from "@/components/blocks";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
+import { ShareBar } from "@/components/share-bar";
 
 export const Route = createFileRoute("/about_/campus-culture")({
   head: () => ({
@@ -80,6 +81,7 @@ function CampusCulture() {
         primary={{ to: "/student-life", label: "Explore Student Life" }}
         secondary={{ to: "/campus-experience", label: "Visit the Campus" }}
       />
+      <ShareBar title="Campus Culture | Lighthouse Campus" />
     </>
   );
 }

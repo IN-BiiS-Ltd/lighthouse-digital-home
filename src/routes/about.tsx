@@ -8,6 +8,7 @@ import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { PullQuote, StatBand } from "@/components/editorial";
 import officialLockupAsset from "@/assets/lighthouse-official-lockup-v2.png.asset.json";
+import { ShareBar } from "@/components/share-bar";
 const officialLockupSrc = officialLockupAsset.url;
 import {
   BookOpen,
@@ -326,6 +327,7 @@ function About() {
         primary={{ to: "/about/our-story", label: "Read Our Story" }}
         secondary={{ to: "/about/why-lighthouse", label: "Why Lighthouse?" }}
       />
+      <ShareBar title="About Lighthouse Campus | An Independent Institution for Modern Learning" />
     </>
   );
 }

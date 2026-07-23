@@ -11,6 +11,7 @@ import {
 import { Section, SectionHeading, FeatureCard, Eyebrow } from "@/components/blocks";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
+import { ShareBar } from "@/components/share-bar";
 
 export const Route = createFileRoute("/our-model_/institutional-intelligence")({
   head: () => ({
@@ -91,6 +92,7 @@ function InstitutionalIntelligence() {
         primary={{ to: "/our-model/innovation", label: "Innovation with Purpose" }}
         secondary={{ to: "/explore/digital-ecosystem", label: "Digital Ecosystem" }}
       />
+      <ShareBar title="An Institution That Learns — Lighthouse Campus" />
     </>
   );
 }

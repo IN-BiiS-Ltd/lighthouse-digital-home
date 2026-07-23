@@ -8,6 +8,7 @@ import {
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { PillarWheel } from "@/components/pillar-wheel";
+import { ShareBar } from "@/components/share-bar";
 import {
   IconCompass,
   IconConstellation,
@@ -173,6 +174,7 @@ function OurModel() {
         primary={{ to: "/our-model/educational-model", label: "The Educational Model" }}
         secondary={{ to: "/our-model/learning-ecosystem", label: "The Learning Ecosystem" }}
       />
+      <ShareBar title="Our Model — Lighthouse Campus" />
     </>
   );
 }

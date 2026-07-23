@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Section, SectionHeading } from "@/components/blocks";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
+import { ShareBar } from "@/components/share-bar";
 
 export const Route = createFileRoute("/about_/governance")({
   head: () => ({
@@ -82,6 +83,7 @@ function Governance() {
         primary={{ to: "/about/leadership", label: "Explore Leadership" }}
         secondary={{ to: "/about", label: "Read Our Strategic Direction" }}
       />
+      <ShareBar title="Governance | Lighthouse Campus" />
     </>
   );
 }

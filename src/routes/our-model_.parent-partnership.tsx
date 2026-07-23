@@ -10,6 +10,7 @@ import {
 import { Section, SectionHeading, FeatureCard, Eyebrow } from "@/components/blocks";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
+import { ShareBar } from "@/components/share-bar";
 
 export const Route = createFileRoute("/our-model_/parent-partnership")({
   head: () => ({
@@ -88,6 +89,7 @@ function ParentPartnership() {
         primary={{ to: "/parents", label: "Parents at Lighthouse" }}
         secondary={{ to: "/contact", label: "Schedule a visit" }}
       />
+      <ShareBar title="Families as Educational Partners — Lighthouse Campus" />
     </>
   );
 }

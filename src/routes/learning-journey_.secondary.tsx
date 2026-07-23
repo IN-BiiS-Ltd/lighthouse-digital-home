@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Section, SectionHeading } from "@/components/blocks";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
+import { ShareBar } from "@/components/share-bar";
 
 export const Route = createFileRoute("/learning-journey_/secondary")({
   head: () => ({
@@ -126,6 +127,7 @@ function Secondary() {
         primary={{ to: "/learning-journey/graduation-pathways", label: "Explore Graduation Pathways" }}
         secondary={{ to: "/admissions", label: "Admissions Overview" }}
       />
+      <ShareBar title="Secondary School | Lighthouse Campus" />
     </>
   );
 }
