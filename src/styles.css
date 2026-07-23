@@ -390,7 +390,7 @@
   width: var(--size, 6rem);
   height: var(--size, 6rem);
   opacity: var(--opacity, 0.14);
-  filter: drop-shadow(0 10px 24px color-mix(in oklab, var(--navy) 45%, transparent));
+  filter: drop-shadow(0 12px 28px color-mix(in oklab, var(--gold) 35%, transparent));
   animation: crystal-drift var(--dur, 22s) ease-in-out var(--delay, 0s) infinite;
   will-change: transform, opacity;
 }
@@ -402,7 +402,7 @@
   user-select: none;
   -webkit-user-drag: none;
   mix-blend-mode: screen;
-  filter: brightness(1.15) contrast(1.05) drop-shadow(0 6px 18px rgba(0, 0, 0, 0.35));
+  filter: brightness(1.45) contrast(1.12) saturate(1.05) drop-shadow(0 0 28px color-mix(in oklab, var(--gold) 40%, transparent));
 }
 
 
