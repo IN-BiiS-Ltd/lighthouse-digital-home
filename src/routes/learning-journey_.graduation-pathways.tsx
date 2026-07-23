@@ -190,6 +190,10 @@ function GraduationPathways() {
 function PathwayCinema({ chapters }: { chapters: Chapter[] }) {
   return (
     <div className="relative">
+      <ChapterRail
+        ariaLabel="Graduation pathways chapters"
+        chapters={chapters.map((c) => ({ id: c.id, number: c.number, label: c.eyebrow }))}
+      />
       {chapters.map((c, i) => {
         const dark = i % 2 === 0;
         const Icon = c.icon;
