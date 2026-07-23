@@ -160,17 +160,40 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "EducationalOrganization",
-          name: "Lighthouse Campus",
-          slogan: "Guiding Minds. Inspiring Futures. Connecting Possibilities.",
-          description:
-            "An international learning community in Cairo where students remain at the centre.",
-          address: {
-            "@type": "PostalAddress",
-            addressLocality: "Mohandessin, Giza",
-            addressRegion: "Greater Cairo",
-            addressCountry: "EG",
-          },
+          "@graph": [
+            {
+              "@type": "EducationalOrganization",
+              "@id": "https://lighthousecampus.lovable.app/#organization",
+              name: "Lighthouse Campus",
+              alternateName: "Lighthouse Campus — By Readers International",
+              url: "https://lighthousecampus.lovable.app",
+              logo: "https://lighthousecampus.lovable.app/icon-512.png",
+              image: "https://lighthousecampus.lovable.app/lighthouse-social-card.webp",
+              slogan: "Guiding Minds. Inspiring Futures. Connecting Possibilities.",
+              description:
+                "An international learning community in Cairo where students remain at the centre.",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Mohandessin, Giza",
+                addressRegion: "Greater Cairo",
+                addressCountry: "EG",
+              },
+              areaServed: { "@type": "Country", name: "Egypt" },
+              foundingLocation: "Cairo, Egypt",
+              parentOrganization: {
+                "@type": "Organization",
+                name: "Readers International",
+              },
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://lighthousecampus.lovable.app/#website",
+              url: "https://lighthousecampus.lovable.app",
+              name: "Lighthouse Campus",
+              publisher: { "@id": "https://lighthousecampus.lovable.app/#organization" },
+              inLanguage: "en",
+            },
+          ],
         }),
       },
     ],
