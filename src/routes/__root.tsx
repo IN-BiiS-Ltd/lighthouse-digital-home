@@ -17,21 +17,52 @@ import { ScrollProgress } from "../components/scroll-progress";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+    <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-navy px-4 text-navy-foreground">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-40"
+        style={{
+          background:
+            "radial-gradient(ellipse at 20% 10%, color-mix(in oklab, var(--gold) 30%, transparent), transparent 55%), radial-gradient(ellipse at 80% 90%, color-mix(in oklab, var(--brand-blue, #4a7bd6) 30%, transparent), transparent 55%)",
+        }}
+      />
+      <div aria-hidden className="pointer-events-none absolute inset-0 grain opacity-30" />
+      <div className="relative mx-auto max-w-2xl text-center">
+        <p className="font-display text-sm uppercase tracking-[0.4em] text-gold/80">Off the map</p>
+        <h1
+          className="mt-6 font-display text-[7rem] font-medium italic leading-none md:text-[10rem]"
+          style={{
+            background:
+              "linear-gradient(180deg, color-mix(in oklab, var(--gold) 90%, white) 0%, var(--gold) 45%, color-mix(in oklab, var(--gold) 60%, black) 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+          }}
+        >
+          404
+        </h1>
+        <h2 className="mt-4 font-display text-2xl md:text-3xl">This page has drifted from the harbour.</h2>
+        <p className="mx-auto mt-4 max-w-md text-navy-foreground/75">
+          The link you followed may be out of date, or the page may have moved as the campus grows.
+          Let the lighthouse guide you back.
         </p>
-        <div className="mt-6">
+        <div className="mt-9 flex flex-wrap justify-center gap-3">
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="inline-flex items-center justify-center rounded-md bg-gold px-5 py-2.5 text-sm font-semibold text-navy shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-gold/90"
           >
-            Go home
+            Return home
+          </Link>
+          <Link
+            to="/contact"
+            className="inline-flex items-center justify-center rounded-md border border-navy-foreground/30 bg-transparent px-5 py-2.5 text-sm font-semibold text-navy-foreground transition-colors hover:bg-navy-foreground/10"
+          >
+            Contact the campus
           </Link>
         </div>
+        <p className="mt-10 text-xs uppercase tracking-[0.35em] text-navy-foreground/50">
+          Lighthouse Campus · Mohandessin, Giza
+        </p>
       </div>
     </div>
   );
@@ -129,17 +160,40 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "EducationalOrganization",
-          name: "Lighthouse Campus",
-          slogan: "Guiding Minds. Inspiring Futures. Connecting Possibilities.",
-          description:
-            "An international learning community in Cairo where students remain at the centre.",
-          address: {
-            "@type": "PostalAddress",
-            addressLocality: "Mohandessin, Giza",
-            addressRegion: "Greater Cairo",
-            addressCountry: "EG",
-          },
+          "@graph": [
+            {
+              "@type": "EducationalOrganization",
+              "@id": "https://lighthousecampus.lovable.app/#organization",
+              name: "Lighthouse Campus",
+              alternateName: "Lighthouse Campus — By Readers International",
+              url: "https://lighthousecampus.lovable.app",
+              logo: "https://lighthousecampus.lovable.app/icon-512.png",
+              image: "https://lighthousecampus.lovable.app/lighthouse-social-card.webp",
+              slogan: "Guiding Minds. Inspiring Futures. Connecting Possibilities.",
+              description:
+                "An international learning community in Cairo where students remain at the centre.",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Mohandessin, Giza",
+                addressRegion: "Greater Cairo",
+                addressCountry: "EG",
+              },
+              areaServed: { "@type": "Country", name: "Egypt" },
+              foundingLocation: "Cairo, Egypt",
+              parentOrganization: {
+                "@type": "Organization",
+                name: "Readers International",
+              },
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://lighthousecampus.lovable.app/#website",
+              url: "https://lighthousecampus.lovable.app",
+              name: "Lighthouse Campus",
+              publisher: { "@id": "https://lighthousecampus.lovable.app/#organization" },
+              inLanguage: "en",
+            },
+          ],
         }),
       },
     ],

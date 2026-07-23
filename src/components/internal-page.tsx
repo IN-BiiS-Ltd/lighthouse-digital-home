@@ -43,14 +43,29 @@ export interface InternalPageConfig {
  */
 export function InternalPage({ config }: { config: InternalPageConfig }) {
   const { breadcrumb, eyebrow, title, intro, heroImage, blocks, status, related, cta } = config;
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: breadcrumb.map((b, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: b.label,
+      ...(b.to ? { item: `https://lighthousecampus.lovable.app${b.to}` } : {}),
+    })),
+  };
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <PageHero
         breadcrumb={breadcrumb}
         eyebrow={eyebrow}
         title={title}
         intro={intro}
       />
+
 
       {heroImage ? (
         <Section>
@@ -164,8 +179,22 @@ export function OverviewPage({
     secondary?: { to: string; label: string };
   };
 }) {
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: breadcrumb.map((b, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: b.label,
+      ...(b.to ? { item: `https://lighthousecampus.lovable.app${b.to}` } : {}),
+    })),
+  };
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <PageHero
         breadcrumb={breadcrumb}
         eyebrow={eyebrow}
