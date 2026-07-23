@@ -58,8 +58,16 @@ function About() {
       <PageHero
         breadcrumb={[{ label: "Home", to: "/" }, { label: "About" }]}
         eyebrow="About Lighthouse Campus"
-        title="An Independent Institution. A Vision for the Future."
-        intro="Lighthouse Campus is an independent educational institution designed to shape the future of learning — with its own philosophy, identity and long-term vision."
+        title="Where Potential Becomes Purpose"
+        intro={
+          <>
+            <p>Every family dreams of a future where their children are confident, compassionate, and prepared to succeed in an ever-changing world.</p>
+            <p className="mt-4 font-medium text-navy-foreground">LIGHTHOUSE CAMPUS exists to help make that future possible.</p>
+            <p className="mt-4">Through exceptional teaching, meaningful relationships, and an inspiring learning environment, we empower every learner to discover their strengths, develop their character, and pursue excellence with confidence.</p>
+            <p className="mt-4">We are not simply preparing students for examinations.</p>
+            <p className="mt-4 font-medium text-navy-foreground">We are preparing them for life, leadership, and the opportunities of tomorrow.</p>
+          </>
+        }
         sections={[
           { label: "Our Story", to: "/about/our-story" },
           { label: "Why Lighthouse?", to: "/about/why-lighthouse" },
