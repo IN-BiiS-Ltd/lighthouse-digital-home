@@ -256,7 +256,7 @@ function About() {
           <div className="rounded-2xl bg-white p-8 shadow-[0_20px_60px_-20px_rgba(11,29,58,0.25)] ring-1 ring-gold/40">
             <h3 className="font-display text-xl text-navy">Readers International School</h3>
             <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-              Contributes its educational license and institutional presence as the founding strategic educational partner for the first campus.
+              The partnership between LIGHTHOUSE CAMPUS and Readers International School reflects a shared belief that lasting educational excellence is achieved when institutions combine their experience, expertise, and vision to create greater value for learners and their families.
             </p>
           </div>
           <div className="rounded-2xl bg-navy p-8 text-navy-foreground shadow-[0_20px_60px_-20px_rgba(11,29,58,0.35)] ring-1 ring-gold/40">
