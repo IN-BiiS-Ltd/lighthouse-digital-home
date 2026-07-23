@@ -2,7 +2,6 @@ import { assetUrl } from "@/lib/asset-url";
 import { createFileRoute } from "@tanstack/react-router";
 import { Section, SectionHeading, FeatureCard } from "@/components/blocks";
 import lighthouseFlag from "@/assets/lighthouse-flag.png.asset.json";
-import readersFlag from "@/assets/readers-international-flag.png.asset.json";
 import campusExteriorPhoto from "@/assets/photo-campus-exterior.jpg";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
@@ -22,17 +21,17 @@ import {
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Lighthouse Campus | A Legacy of Educational Excellence" },
+      { title: "About Lighthouse Campus | An Independent Institution for Modern Learning" },
       {
         name: "description",
         content:
-          "Lighthouse Campus is a new educational experience built on the trusted legacy of Readers International School in Mohandessin, Giza — combining academic excellence with innovation, leadership and modern practice.",
+          "Lighthouse Campus is an independent educational institution in Mohandessin, Giza — a modern learning community built around curiosity, character and belonging.",
       },
       { property: "og:title", content: "About Lighthouse Campus" },
       {
         property: "og:description",
         content:
-          "A legacy of educational excellence. A vision for the future. Discover the Lighthouse Campus story in Mohandessin, Giza, Greater Cairo.",
+          "An independent institution with its own philosophy, identity and long-term vision. Discover Lighthouse Campus in Mohandessin, Giza.",
       },
       { property: "og:url", content: "/about" },
       { property: "og:type", content: "website" },
@@ -58,8 +57,8 @@ function About() {
       <PageHero
         breadcrumb={[{ label: "Home", to: "/" }, { label: "About" }]}
         eyebrow="About Lighthouse Campus"
-        title="A Legacy of Educational Excellence. A Vision for the Future."
-        intro="Lighthouse Campus is a new educational experience built upon the trusted legacy of Readers International School and designed to shape the future of learning."
+        title="An Independent Institution. A Vision for the Future."
+        intro="Lighthouse Campus is an independent educational institution designed to shape the future of learning — with its own philosophy, identity and long-term vision."
         sections={[
           { label: "Our Story", to: "/about/our-story" },
           { label: "Why Lighthouse?", to: "/about/why-lighthouse" },
@@ -75,20 +74,20 @@ function About() {
 
       <Section>
         <SectionHeading
-          eyebrow="Built on Heritage, Designed for Tomorrow"
+          eyebrow="A Modern Institution, Built to Endure"
           title="Academic excellence, innovation, leadership and modern educational practice — together."
         />
         <div className="mt-12">
           <Marginalia
             note={
               <>
-                A new campus, rooted in a trusted legacy — where every learner is
+                An institution designed for the long term — where every learner is
                 known, challenged and supported.
               </>
             }
           >
             <p>Combining academic excellence with innovation, leadership, and modern educational practices, Lighthouse Campus provides an environment where every learner is challenged to grow, inspired to lead, and prepared to thrive in a rapidly changing world.</p>
-            <p>As the newest campus of Readers International School in Mohandessin, Giza, we are committed to creating an exceptional educational journey that empowers students academically, personally, and globally.</p>
+            <p>Located in Mohandessin, Giza, our first campus is committed to creating an exceptional educational journey that empowers students academically, personally, and globally.</p>
           </Marginalia>
         </div>
       </Section>
@@ -104,7 +103,7 @@ function About() {
         stats={[
           { value: "Ages 3–18", label: "Learning Journey", caption: "From Early Years foundations through Upper Secondary readiness." },
           { value: "10", label: "Educational Pillars", caption: "The interlocking commitments that shape every classroom decision." },
-          { value: "1", label: "Trusted Legacy", caption: "Rooted in Readers International School — a heritage of excellence." },
+          { value: "1", label: "Founding Campus", caption: "Mohandessin, Giza — the first campus of a growing institution." },
           { value: "∞", label: "Possibilities", caption: "A learning community designed to open — not to narrow — futures." },
         ]}
       />
@@ -121,11 +120,11 @@ function About() {
       </Section>
 
       <Section tone="sand">
-        <SectionHeading eyebrow="Readers International School — Mohandessin, Giza" title="A new campus in the heart of Greater Cairo" />
+        <SectionHeading eyebrow="Mohandessin, Giza" title="A new campus in the heart of Greater Cairo" />
         <div className="mt-8 max-w-3xl space-y-5 text-lg leading-relaxed text-muted-foreground">
-          <p>Lighthouse Campus is the newest campus of Readers International School, located in Mohandessin, Giza, Greater Cairo.</p>
-          <p>Rooted in the trusted legacy of Readers International School, this campus combines the strengths of a long-standing educational institution with a forward-looking vision for learning, leadership and global readiness.</p>
-          <p>Every learner here is known, challenged and supported — academically, personally and as a future citizen of the world.</p>
+          <p>Lighthouse Campus is located in Mohandessin, Giza, Greater Cairo — the founding campus of an institution designed to grow thoughtfully across the region.</p>
+          <p>Here, the strengths of a modern educational institution meet a forward-looking vision for learning, leadership and global readiness.</p>
+          <p>Every learner is known, challenged and supported — academically, personally and as a future citizen of the world.</p>
         </div>
 
         <figure className="mx-auto mt-14 max-w-5xl">
@@ -149,9 +148,9 @@ function About() {
       <Section>
         <SectionHeading
           align="center"
-          eyebrow="Institutional Heritage"
-          title="Readers International Schools"
-          description="Building on a Legacy of Excellence. Advancing Through Lighthouse Campus. Shaping a Future Driven by Learning and Innovation."
+          eyebrow="Institutional Identity"
+          title="Lighthouse Campus"
+          description="Guiding Minds. Inspiring Futures. Connecting Possibilities."
         />
 
         {/* Official lockup — full institutional signature */}
@@ -163,7 +162,7 @@ function About() {
             />
             <img
               src={officialLockupSrc}
-              alt="Lighthouse Campus — Readers International School. Guiding Minds. Inspiring Futures. Connecting Possibilities."
+              alt="Lighthouse Campus — Guiding Minds. Inspiring Futures. Connecting Possibilities."
               width={1200}
               height={1200}
               className="mx-auto block h-auto w-full max-w-xl object-contain"
@@ -175,31 +174,12 @@ function About() {
           <figcaption className="mt-5 text-center">
             <span className="eyebrow text-brand-blue">Official Institutional Lockup</span>
             <p className="mt-2 text-sm text-muted-foreground">
-              Lighthouse Campus · Readers International School · Mohandessin, Giza
+              Lighthouse Campus · Mohandessin, Giza
             </p>
           </figcaption>
         </figure>
 
-        <div className="mt-16 grid gap-10 md:grid-cols-2 md:gap-8">
-          <figure className="flex flex-col items-center">
-            <div className="overflow-hidden rounded-2xl bg-white p-3 shadow-[0_30px_80px_-25px_rgba(11,29,58,0.55)] ring-2 ring-gold">
-              <img
-                src={assetUrl(readersFlag)}
-                alt="Readers International Schools — institutional flag with official seal (since 2022)"
-                width={1536}
-                height={1024}
-                className="block h-auto w-full object-contain"
-                loading="lazy"
-                decoding="async"
-                draggable={false}
-              />
-            </div>
-            <figcaption className="mt-4 text-center">
-              <span className="eyebrow text-brand-blue">Readers International Schools</span>
-              <p className="mt-1 text-sm text-muted-foreground">The founding institution · Since 2022</p>
-            </figcaption>
-          </figure>
-
+        <div className="mt-16 mx-auto max-w-2xl">
           <figure className="flex flex-col items-center">
             <div className="overflow-hidden rounded-2xl bg-white p-3 shadow-[0_30px_80px_-25px_rgba(11,29,58,0.55)] ring-2 ring-gold">
               <img
@@ -215,9 +195,29 @@ function About() {
             </div>
             <figcaption className="mt-4 text-center">
               <span className="eyebrow text-brand-blue">Lighthouse Campus</span>
-              <p className="mt-1 text-sm text-muted-foreground">By Readers International · Mohandessin, Giza</p>
+              <p className="mt-1 text-sm text-muted-foreground">Mohandessin, Giza</p>
             </figcaption>
           </figure>
+        </div>
+      </Section>
+
+      <Section tone="sand">
+        <SectionHeading
+          eyebrow="Strategic Educational Partnership"
+          title="A founding partnership with Readers International School"
+        />
+        <div className="mt-8 max-w-3xl space-y-5 text-lg leading-relaxed text-muted-foreground">
+          <p>
+            Lighthouse Campus was established through a strategic educational
+            partnership with Readers International School — the founding
+            strategic educational partner of the first Lighthouse Campus in
+            Mohandessin, Giza.
+          </p>
+          <p>
+            This partnership supports the launch of the founding campus while
+            Lighthouse Campus operates as an independent institution with its
+            own philosophy, identity, leadership and long-term direction.
+          </p>
         </div>
       </Section>
 
