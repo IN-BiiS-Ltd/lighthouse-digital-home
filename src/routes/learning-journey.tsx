@@ -98,50 +98,8 @@ function LearningJourney() {
         </div>
       </Section>
 
-      <Section tone="muted">
-        <div className="space-y-16 md:space-y-24">
-          {stages.map((stage) => (
-            <div
-              key={stage.id}
-              id={stage.id}
-              className="grid scroll-mt-24 gap-8 md:grid-cols-[auto_1fr] md:gap-14"
-            >
-              <div className="md:pt-2">
-                <span className="text-serif-accent text-7xl italic text-gold/80 md:text-8xl">
-                  {stage.number}
-                </span>
-              </div>
-              <div className="border-t border-border pt-6">
+      <StageCinema stages={stages} />
 
-                <Eyebrow>{stage.tagline}</Eyebrow>
-                <h2 className="mt-4 font-display text-3xl font-medium md:text-4xl">
-                  {stage.name}
-                </h2>
-                <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-                  {stage.body}
-                </p>
-                <ul className="mt-7 grid gap-3 sm:grid-cols-2 lg:max-w-2xl">
-                  {stage.focus.map((f) => (
-                    <li
-                      key={f}
-                      className="flex items-center gap-3 rounded-lg bg-secondary px-4 py-3 text-sm font-medium text-foreground"
-                    >
-                      <span aria-hidden className="size-1.5 rounded-full bg-gold" />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-7">
-                  <ButtonLink to={stage.to} variant="outline" size="sm">
-                    Explore {stage.name}
-                  </ButtonLink>
-                </div>
-              </div>
-            </div>
-
-          ))}
-        </div>
-      </Section>
 
       <Section tone="navy">
         <Pullquote
