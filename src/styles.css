@@ -405,6 +405,12 @@
   filter: brightness(1.45) contrast(1.12) saturate(1.05) drop-shadow(0 0 28px color-mix(in oklab, var(--gold) 40%, transparent));
 }
 
+/* Light variant — for use over sand / muted / background sections */
+.crystal-field--light .crystal > img {
+  mix-blend-mode: multiply;
+  filter: contrast(1.05) saturate(1.1) drop-shadow(0 10px 24px color-mix(in oklab, var(--navy) 25%, transparent));
+}
+
 
 @keyframes crystal-drift {
   0%,
