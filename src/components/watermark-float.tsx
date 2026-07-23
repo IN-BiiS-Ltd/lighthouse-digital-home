@@ -1,4 +1,4 @@
-import logoSrc from "@/assets/lighthouse-campus-logo.webp";
+import emblem from "@/assets/lighthouse-emblem-transparent.png.asset.json";
 import { cn } from "@/lib/utils";
 
 /**
