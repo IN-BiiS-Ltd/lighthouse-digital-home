@@ -344,6 +344,17 @@ function PathwayCinema({ chapters }: { chapters: Chapter[] }) {
                     {c.prose}
                   </blockquote>
                 )}
+
+                <ChapterActions
+                  hash={c.id}
+                  number={c.number}
+                  eyebrow={c.eyebrow}
+                  title={c.title}
+                  body={c.body}
+                  focus={c.focus}
+                  prose={c.prose}
+                  dark={dark}
+                />
               </div>
             </div>
           </section>
