@@ -137,6 +137,7 @@ function WhyLighthouse() {
   return (
     <>
       <PageHero
+        watermark
         breadcrumb={[
           { label: "Home", to: "/" },
           { label: "About Lighthouse Campus", to: "/about" },
