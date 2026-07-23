@@ -117,6 +117,11 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/our-model/innovation", changefreq: "monthly", priority: "0.8" },
           // Explore
           { path: "/explore/digital-ecosystem", changefreq: "monthly", priority: "0.7" },
+          // Legal
+          { path: "/privacy", changefreq: "yearly", priority: "0.3" },
+          { path: "/terms", changefreq: "yearly", priority: "0.3" },
+          { path: "/cookies", changefreq: "yearly", priority: "0.3" },
+          { path: "/accessibility", changefreq: "yearly", priority: "0.3" },
         ];
 
         const urls = entries.map((e) =>

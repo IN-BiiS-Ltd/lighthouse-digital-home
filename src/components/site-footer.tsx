@@ -151,8 +151,17 @@ export function SiteFooter() {
             © {new Date().getFullYear()} Lighthouse Campus. All rights reserved.
           </p>
           <div className="flex flex-wrap gap-x-6 gap-y-2">
-            <SmartLink to="/parents#resources" className="hover:text-gold">
-              Policies
+            <SmartLink to="/privacy" className="hover:text-gold">
+              Privacy
+            </SmartLink>
+            <SmartLink to="/terms" className="hover:text-gold">
+              Terms
+            </SmartLink>
+            <SmartLink to="/cookies" className="hover:text-gold">
+              Cookies
+            </SmartLink>
+            <SmartLink to="/accessibility" className="hover:text-gold">
+              Accessibility
             </SmartLink>
             <SmartLink to="/contact" className="hover:text-gold">
               Contact
