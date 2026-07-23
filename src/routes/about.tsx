@@ -57,6 +57,7 @@ function About() {
   return (
     <>
       <PageHero
+        watermark
         breadcrumb={[{ label: "Home", to: "/" }, { label: "About" }]}
         eyebrow="About Lighthouse Campus"
         title="Where Potential Becomes Purpose"

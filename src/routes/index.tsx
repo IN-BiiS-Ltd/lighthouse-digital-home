@@ -21,6 +21,7 @@ import {
 } from "@/components/blocks";
 import { NarrativeFlow } from "@/components/page-hero";
 import { BrandAtmosphere } from "@/components/brand-atmosphere";
+import { WatermarkFloat } from "@/components/watermark-float";
 import { ShareBar } from "@/components/share-bar";
 import heroImg from "@/assets/photo-classroom-primary.jpg";
 import stemImg from "@/assets/photo-teacher-portrait.jpg";
@@ -106,6 +107,7 @@ function Home() {
               "linear-gradient(90deg, color-mix(in oklab, var(--navy) 92%, transparent) 0%, color-mix(in oklab, var(--navy) 78%, transparent) 45%, color-mix(in oklab, var(--navy) 30%, transparent) 100%)",
           }}
         />
+        <WatermarkFloat side="right" />
         <BrandAtmosphere density={1.1} />
         <Container className="relative flex min-h-[78vh] flex-col justify-center py-24">
           <div className="max-w-2xl">

@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { Container, Eyebrow, SmartLink, BrandLogo } from "@/components/blocks";
 import { BrandAtmosphere } from "@/components/brand-atmosphere";
+import { WatermarkFloat } from "@/components/watermark-float";
 
 /**
  * PageHero — the calm navy header used at the top of every interior page.
@@ -14,12 +15,14 @@ export function PageHero({
   intro,
   sections,
   breadcrumb,
+  watermark = false,
 }: {
   eyebrow: string;
   title: ReactNode;
   intro?: ReactNode;
   sections?: { label: string; to: string }[];
   breadcrumb?: { label: string; to?: string }[];
+  watermark?: boolean;
 }) {
   return (
     <header className="relative overflow-hidden bg-navy text-navy-foreground beacon-surface grain"
@@ -42,6 +45,7 @@ export function PageHero({
             "radial-gradient(90% 100% at 50% 30%, transparent 30%, color-mix(in oklab, var(--navy) 60%, transparent) 100%)",
         }}
       />
+      {watermark ? <WatermarkFloat side="right" /> : null}
       <BrandAtmosphere density={0.7} />
       <Container className="relative py-20 md:py-28">
 
