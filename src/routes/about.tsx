@@ -7,7 +7,8 @@ import campusExteriorPhoto from "@/assets/photo-campus-exterior.jpg";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { PullQuote, Marginalia, StatBand } from "@/components/editorial";
-import officialLockupSrc from "@/assets/lighthouse-official-lockup.webp";
+import officialLockupAssetJson from "@/assets/lighthouse-campus-final.png.asset.json";
+const officialLockupSrc = assetUrl(officialLockupAssetJson);
 import {
   BookOpen,
   Compass,
@@ -162,7 +163,7 @@ function About() {
             />
             <img
               src={officialLockupSrc}
-              alt="Lighthouse Campus — Readers International School. Guiding Minds. Inspiring Futures. Connecting Possibilities."
+              alt="Lighthouse Campus — Guiding Minds. Inspiring Futures. Connecting Possibilities."
               width={1200}
               height={1200}
               className="mx-auto block h-auto w-full max-w-xl object-contain"
@@ -179,31 +180,12 @@ function About() {
           </figcaption>
         </figure>
 
-        <div className="mt-16 grid gap-10 md:grid-cols-2 md:gap-8">
-          <figure className="flex flex-col items-center">
-            <div className="overflow-hidden rounded-2xl bg-white p-3 shadow-[0_30px_80px_-25px_rgba(11,29,58,0.55)] ring-2 ring-gold">
-              <img
-                src={assetUrl(readersFlag)}
-                alt="Readers International Schools — institutional flag with official seal (since 2022)"
-                width={1536}
-                height={1024}
-                className="block h-auto w-full object-contain"
-                loading="lazy"
-                decoding="async"
-                draggable={false}
-              />
-            </div>
-            <figcaption className="mt-4 text-center">
-              <span className="eyebrow text-brand-blue">Readers International Schools</span>
-              <p className="mt-1 text-sm text-muted-foreground">The founding institution · Since 2022</p>
-            </figcaption>
-          </figure>
-
-          <figure className="flex flex-col items-center">
+        <div className="mt-16 flex justify-center">
+          <figure className="flex max-w-lg flex-col items-center">
             <div className="overflow-hidden rounded-2xl bg-white p-3 shadow-[0_30px_80px_-25px_rgba(11,29,58,0.55)] ring-2 ring-gold">
               <img
                 src={assetUrl(lighthouseFlag)}
-                alt="Lighthouse Campus — institutional flag: Readers International School. Guiding Minds. Inspiring Futures. Connecting Possibilities."
+                alt="Lighthouse Campus — institutional flag: Guiding Minds. Inspiring Futures. Connecting Possibilities."
                 width={1536}
                 height={1024}
                 className="block h-auto w-full object-contain"
@@ -214,7 +196,7 @@ function About() {
             </div>
             <figcaption className="mt-4 text-center">
               <span className="eyebrow text-brand-blue">Lighthouse Campus</span>
-              <p className="mt-1 text-sm text-muted-foreground">By Readers International · Mohandessin, Giza</p>
+              <p className="mt-1 text-sm text-muted-foreground">Mohandessin, Giza</p>
             </figcaption>
           </figure>
         </div>
