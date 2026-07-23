@@ -15,7 +15,7 @@ import {
 } from "@/components/blocks";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
-import { Pullquote } from "@/components/editorial";
+import { PullQuote } from "@/components/editorial";
 import { CrystalField } from "@/components/crystal-field";
 
 import lighthouseFlag from "@/assets/lighthouse-flag.png.asset.json";
