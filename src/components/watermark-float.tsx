@@ -1,4 +1,4 @@
-import emblem from "@/assets/lighthouse-emblem-transparent.png.asset.json";
+import emblem from "@/assets/lighthouse-emblem-watermark.webp.asset.json";
 import { cn } from "@/lib/utils";
 
 /**
