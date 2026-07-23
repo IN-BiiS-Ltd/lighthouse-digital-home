@@ -1,4 +1,4 @@
-import logoSrc from "@/assets/lighthouse-campus-logo.webp";
+import emblem from "@/assets/lighthouse-emblem-transparent.png.asset.json";
 import { cn } from "@/lib/utils";
 
 /**
@@ -22,7 +22,7 @@ export function WatermarkFloat({
   return (
     <div aria-hidden="true" className={cn("watermark-float", className)}>
       <img
-        src={logoSrc}
+        src={emblem.url}
         alt=""
         className="watermark-float__img"
         style={{ left, translate: "-50% -50%" }}
