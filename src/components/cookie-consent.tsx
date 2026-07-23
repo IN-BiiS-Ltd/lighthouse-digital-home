@@ -8,6 +8,13 @@ export function CookieConsent() {
   const [choice, setChoice] = useConsent();
   const [mounted, setMounted] = useState(false);
 
+  const decide = (c: ConsentChoice) => {
+    setChoice(c);
+    // Fire immediately; when accepted, this queues into plausible.q until
+    // the script (loaded reactively by <Analytics />) flushes it.
+    track("Consent", { choice: c ?? "unknown" });
+  };
+
   useEffect(() => {
     const t = setTimeout(() => setMounted(true), 400);
     return () => clearTimeout(t);
