@@ -1,24 +1,35 @@
 import { assetUrl } from "@/lib/asset-url";
 import { createFileRoute } from "@tanstack/react-router";
-import {
-  Lightbulb,
-  Users,
-  Shield,
-  Heart,
-  Globe,
-} from "lucide-react";
+import { Lightbulb, Users, Shield, Heart, Globe, Palette, Sun, Compass } from "lucide-react";
 import {
   Section,
   SectionHeading,
   Eyebrow,
-  BrandLogo,
 } from "@/components/blocks";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
-
 import { CrystalField } from "@/components/crystal-field";
 
 import lighthouseFlag from "@/assets/lighthouse-flag.png.asset.json";
+import lighthouseLogo from "@/assets/lighthouse-campus-approved.png.asset.json";
+import logoLighthouse from "@/assets/logo-lighthouse.png.asset.json";
+import logoLight from "@/assets/logo-light.png.asset.json";
+import logoBook from "@/assets/logo-book.png.asset.json";
+import logoNetwork from "@/assets/logo-network.png.asset.json";
+import logoCircle from "@/assets/logo-circle.png.asset.json";
+import photoClassroom from "@/assets/photo-classroom-primary.jpg";
+import photoLibrary from "@/assets/photo-library.jpg";
+
+import principleLeadership from "@/assets/principle-leadership.png.asset.json";
+import principleInquiry from "@/assets/principle-inquiry.png.asset.json";
+import principleGrowth from "@/assets/principle-growth.png.asset.json";
+import principleHumanity from "@/assets/principle-humanity.png.asset.json";
+import principleTransformation from "@/assets/principle-transformation.png.asset.json";
+import principleHarmony from "@/assets/principle-harmony.png.asset.json";
+import principleOpportunity from "@/assets/principle-opportunity.png.asset.json";
+import principleUnderstanding from "@/assets/principle-understanding.png.asset.json";
+import principleStewardship from "@/assets/principle-stewardship.png.asset.json";
+import principleExcellence from "@/assets/principle-excellence.png.asset.json";
 
 export const Route = createFileRoute("/about_/why-lighthouse")({
   head: () => ({
@@ -33,7 +44,7 @@ export const Route = createFileRoute("/about_/why-lighthouse")({
       {
         property: "og:description",
         content:
-          "More than a school. A place where futures begin. Explore the five pillars that define the LIGHTHOUSE CAMPUS experience.",
+          "More than a school. A place where futures begin. Explore the five pillars, the meaning behind our name, and the story our identity tells.",
       },
       { property: "og:url", content: "/about/why-lighthouse" },
       { property: "og:type", content: "article" },
@@ -60,31 +71,66 @@ export const Route = createFileRoute("/about_/why-lighthouse")({
 });
 
 const pillars = [
+  { icon: Lightbulb, title: "Inspired Learning", body: "Learning that sparks curiosity, creativity, critical thinking, and a lifelong love of discovery." },
+  { icon: Users, title: "Exceptional Educators", body: "Passionate teachers who inspire, mentor, and help every learner reach their full potential." },
+  { icon: Shield, title: "Character & Leadership", body: "Building integrity, responsibility, resilience, empathy, and the confidence to lead with purpose." },
+  { icon: Heart, title: "Safe & Nurturing Environment", body: "A welcoming community where every child feels respected, valued, supported, and encouraged to grow." },
+  { icon: Globe, title: "Global Perspective", body: "Preparing learners with the knowledge, skills, and mindset to succeed in an interconnected world while remaining proud of their identity and values." },
+];
+
+const lighthouseValues = ["Guidance", "Hope", "Vision", "Leadership", "Trust", "Safety", "Direction"];
+
+const acronym = [
+  { letter: "L", title: "Leadership", body: "Developing confident, ethical and responsible leaders.", img: principleLeadership },
+  { letter: "I", title: "Inquiry", body: "Encouraging curiosity, exploration and lifelong learning.", img: principleInquiry },
+  { letter: "G", title: "Growth", body: "Supporting continuous intellectual, emotional and personal development.", img: principleGrowth },
+  { letter: "H", title: "Humanity", body: "Building compassion, kindness and respect for others.", img: principleHumanity },
+  { letter: "T", title: "Transformation", body: "Helping every learner become the best version of themselves.", img: principleTransformation },
+  { letter: "H", title: "Harmony", body: "Creating balance between academic excellence, wellbeing and character.", img: principleHarmony },
+  { letter: "O", title: "Opportunity", body: "Helping every learner discover and develop individual strengths.", img: principleOpportunity },
+  { letter: "U", title: "Understanding", body: "Promoting reflection, wisdom and global awareness.", img: principleUnderstanding },
+  { letter: "S", title: "Stewardship", body: "Preparing learners to contribute responsibly to their communities and the wider world.", img: principleStewardship },
+  { letter: "E", title: "Excellence", body: "Pursuing quality, achievement and continuous improvement in everything we do.", img: principleExcellence },
+];
+
+const logoElements = [
   {
-    icon: Lightbulb,
-    title: "Inspired Learning",
-    body: "Learning that sparks curiosity, creativity, critical thinking, and a lifelong love of discovery.",
+    img: logoLighthouse,
+    title: "The Lighthouse",
+    body: "A symbol of guidance and purposeful leadership. The lighthouse represents the role of education in illuminating the path ahead. Rather than determining a learner's destination, it provides direction, confidence, and the clarity needed to navigate an ever-changing world.",
+    tags: ["Guidance", "Leadership", "Vision", "Direction"],
   },
   {
-    icon: Users,
-    title: "Exceptional Educators",
-    body: "Passionate teachers who inspire, mentor, and help every learner reach their full potential.",
+    img: logoLight,
+    title: "The Light",
+    body: "A symbol of knowledge, intelligence and possibility. The light reflects the transformative power of education. It illuminates understanding, nurtures intelligence, inspires curiosity, and empowers learners to explore new ideas with confidence and purpose.",
+    tags: ["Knowledge", "Intelligence", "Discovery", "Hope", "Inspiration"],
   },
   {
-    icon: Shield,
-    title: "Character & Leadership",
-    body: "Building integrity, responsibility, resilience, empathy, and the confidence to lead with purpose.",
+    img: logoBook,
+    title: "The Open Book",
+    body: "A symbol of learning without limits. The open book celebrates curiosity and the lifelong pursuit of knowledge. It reminds every learner that education is an ongoing journey of exploration, reflection, and intellectual growth.",
+    tags: ["Learning", "Curiosity", "Education", "Wisdom"],
   },
   {
-    icon: Heart,
-    title: "Safe & Nurturing Environment",
-    body: "A welcoming community where every child feels respected, valued, supported, and encouraged to grow.",
+    img: logoNetwork,
+    title: "The Connected Network",
+    body: "A symbol of innovation, intelligence and connected learning. The interconnected network reflects the relationships that enrich education — connecting learners, educators, ideas, technology, and the wider world. It represents an educational ecosystem where collaboration, innovation, and collective intelligence prepare learners for the opportunities of tomorrow.",
+    tags: ["Innovation", "Intelligence", "Technology", "Collaboration", "Future Learning", "Global Connection"],
   },
   {
-    icon: Globe,
-    title: "Global Perspective",
-    body: "Preparing learners with the knowledge, skills, and mindset to succeed in an interconnected world while remaining proud of their identity and values.",
+    img: logoCircle,
+    title: "The Circle",
+    body: "A symbol of belonging and lifelong community. The circle represents unity, continuity, and the enduring strength of a learning community. It reflects the belief that every learner belongs, every voice matters, and every journey contributes to the shared life of the campus.",
+    tags: ["Belonging", "Continuity", "Unity", "Lifelong Learning", "Institutional Community"],
   },
+];
+
+const palette = [
+  { name: "Executive Blue", swatch: "#0B1D3A", ink: "text-white", body: "A symbol of trust, wisdom, confidence, stability, and thoughtful leadership." },
+  { name: "Lighthouse Gold", swatch: "#C9A24C", ink: "text-navy", body: "A symbol of excellence, aspiration, achievement, and the transformative power of education." },
+  { name: "Silver", swatch: "#C7CBD1", ink: "text-navy", body: "A symbol of clarity, precision, balance, and modern thinking." },
+  { name: "White", swatch: "#FFFFFF", ink: "text-navy", body: "A symbol of openness, integrity, transparency, and new beginnings." },
 ];
 
 function WhyLighthouse() {
@@ -107,9 +153,12 @@ function WhyLighthouse() {
         }
         intro="Choosing a school is one of the most important decisions a family will ever make. At LIGHTHOUSE CAMPUS, we believe education should do more than prepare children for examinations — it should prepare them to thrive in life."
         sections={[
-          { label: "Our Promise", to: "/about/why-lighthouse#promise" },
+          { label: "A New Experience", to: "/about/why-lighthouse#experience" },
           { label: "Five Pillars", to: "/about/why-lighthouse#pillars" },
-          { label: "Our Identity", to: "/about/why-lighthouse#identity" },
+          { label: "Why a Lighthouse?", to: "/about/why-lighthouse#identity" },
+          { label: "The Meaning", to: "/about/why-lighthouse#acronym" },
+          { label: "Understanding Our Logo", to: "/about/why-lighthouse#logo" },
+          { label: "Every Detail", to: "/about/why-lighthouse#detail" },
           { label: "Institutional Flag", to: "/about/why-lighthouse#flag" },
         ]}
       />
@@ -122,22 +171,46 @@ function WhyLighthouse() {
             A Place Where Futures Begin
           </h2>
           <div className="mt-8 space-y-5 text-lg leading-relaxed text-muted-foreground">
-            <p>
-              Choosing a school is one of the most important decisions a family will ever make.
-            </p>
+            <p>Choosing a school is one of the most important decisions a family will ever make.</p>
             <p>
               At LIGHTHOUSE CAMPUS, we believe education should do more than prepare children for examinations. It should prepare them to thrive in life — with confidence, character, curiosity, and the ability to lead in a rapidly changing world.
             </p>
             <p>
               Every aspect of our campus is intentionally designed to help learners grow academically, socially, emotionally, and personally.
             </p>
-            <p className="font-medium text-foreground">
-              Because we believe every child deserves more than an education.
-            </p>
+            <p className="font-medium text-foreground">Because we believe every child deserves more than an education.</p>
             <p className="font-medium text-foreground">
               Every child deserves the opportunity to discover their potential and become the best version of themselves.
             </p>
           </div>
+        </div>
+      </Section>
+
+      {/* Section — A New Educational Experience */}
+      <Section tone="muted" id="experience">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          <div>
+            <Eyebrow>More Than a Campus</Eyebrow>
+            <h2 className="mt-5 font-display text-3xl font-medium leading-[1.12] md:text-[2.6rem]">
+              A new educational experience
+            </h2>
+            <div className="mt-8 space-y-5 text-lg leading-relaxed text-muted-foreground">
+              <p>
+                Lighthouse Campus is not simply another school campus. It is a purposefully designed learning community that prepares students not only for academic success but also for leadership, innovation, and responsible global citizenship.
+              </p>
+              <p>
+                Every aspect of the campus — from learning spaces to educational programs — has been created to inspire curiosity, confidence, creativity, and excellence.
+              </p>
+            </div>
+          </div>
+          <figure className="overflow-hidden rounded-2xl border border-border shadow-[0_30px_80px_-40px_rgba(11,29,58,0.45)]">
+            <img
+              src={photoClassroom}
+              alt="Lighthouse Campus students in a collaborative classroom discussion"
+              loading="lazy"
+              className="block h-full w-full object-cover"
+            />
+          </figure>
         </div>
       </Section>
 
@@ -152,7 +225,7 @@ function WhyLighthouse() {
             description="Our educational experience is built on a clear commitment to excellence in every dimension of learning and growth."
           />
           <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {pillars.map((pillar, i) => {
+            {pillars.map((pillar) => {
               const Icon = pillar.icon;
               return (
                 <li key={pillar.title}>
@@ -178,38 +251,248 @@ function WhyLighthouse() {
         </div>
       </Section>
 
-      {/* Section 3 — Our Identity */}
-      <Section tone="muted" id="identity">
-        <SectionHeading
-          align="center"
-          eyebrow="Understanding Our Identity"
-          title="A name that stands for something"
-          description="LIGHTHOUSE is more than a name. It is a symbol of guidance, hope, vision, and the quiet confidence that helps every learner find their own way."
-        />
-        <div className="mt-14 grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
-          <div className="mx-auto flex max-w-sm flex-col items-center rounded-2xl border border-border bg-card p-10 text-center shadow-[0_20px_60px_-30px_rgba(11,29,58,0.4)]">
-            <BrandLogo
-              className="h-auto w-56"
-              alt="The official LIGHTHOUSE CAMPUS logo"
-            />
-            <p className="mt-6 eyebrow text-brand-blue">LIGHTHOUSE CAMPUS</p>
+      {/* Section — Why a Lighthouse? */}
+      <Section id="identity">
+        <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
+          <div>
+            <Eyebrow>Why a Lighthouse?</Eyebrow>
+            <h2 className="mt-5 font-display text-3xl font-medium leading-[1.08] md:text-[2.6rem]">
+              A light that never controls the journey —<br />it illuminates the way.
+            </h2>
+            <ul className="mt-10 flex flex-wrap gap-2.5" aria-label="What the lighthouse represents">
+              {lighthouseValues.map((v) => (
+                <li
+                  key={v}
+                  className="rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-foreground shadow-sm"
+                >
+                  {v}
+                </li>
+              ))}
+            </ul>
           </div>
           <div className="space-y-5 text-lg leading-relaxed text-muted-foreground">
             <p>
-              Throughout history, the lighthouse has stood for guidance, hope, vision, leadership, trust, safety, and direction. It watches over the horizon so that others can travel with confidence.
+              Throughout history, the lighthouse has stood for guidance, hope, vision, leadership, trust, safety and direction. It watches over the horizon so that others can travel with confidence.
             </p>
             <p>
               Yet a lighthouse never steers the ship. It does not control the journey — it simply shows what is possible and lets each traveller find their own way.
             </p>
             <p>
-              This is exactly how we understand education. LIGHTHOUSE CAMPUS does not aim to give students every answer. We help them develop the confidence and understanding to discover answers for themselves.
+              This is exactly how we understand education. Lighthouse Campus does not aim to give students every answer. We help them develop the confidence and understanding to discover answers for themselves.
             </p>
           </div>
         </div>
       </Section>
 
-      {/* Section 4 — The Lighthouse Campus Flag */}
-      <Section id="flag">
+      {/* Section — LIGHTHOUSE Acronym */}
+      <Section tone="sand" id="acronym" className="relative isolate overflow-hidden">
+        <CrystalField />
+        <div className="relative">
+          <Eyebrow>The Meaning Behind LIGHTHOUSE</Eyebrow>
+          <h2 className="mt-5 font-display text-3xl font-medium leading-tight md:text-4xl">
+            Ten principles, held within a single word
+          </h2>
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+            Every letter of LIGHTHOUSE names a principle that shapes daily life on campus — a quiet promise about the kind of learners, and people, we help form.
+          </p>
+          <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+            {acronym.map((p, i) => (
+              <li key={`${p.letter}-${i}`}>
+                <article className="cine-card group relative h-full rounded-xl border border-border bg-card p-6 shadow-sm">
+                  <div className="relative">
+                    <img
+                      src={assetUrl(p.img)}
+                      alt=""
+                      aria-hidden
+                      loading="lazy"
+                      className="size-20 rounded-xl object-cover shadow-[0_10px_28px_-16px_rgba(11,29,58,0.55)]"
+                    />
+                    <span
+                      aria-hidden
+                      className="absolute right-0 top-1 select-none font-display text-4xl font-medium text-gold/40"
+                    >
+                      {p.letter}
+                    </span>
+                  </div>
+                  <h3 className="mt-6 font-display text-xl font-medium text-foreground">
+                    {p.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    {p.body}
+                  </p>
+                </article>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Section>
+
+      {/* Section — Understanding Our Logo */}
+      <Section id="logo">
+        <div className="mx-auto max-w-3xl text-center">
+          <Eyebrow className="justify-center">Understanding Our Logo</Eyebrow>
+          <h2 className="mt-5 font-display text-3xl font-medium leading-tight md:text-4xl">
+            Every element tells part of the story
+          </h2>
+          <div className="mt-8 space-y-5 text-lg leading-relaxed text-muted-foreground">
+            <p>
+              Our visual identity is more than a logo. It is a reflection of our educational philosophy. Every shape, every line, every colour, and every symbol has been intentionally designed to express the values that define Lighthouse Campus.
+            </p>
+            <p>
+              Together, these elements tell the story of a learning community where curiosity is encouraged, intelligence is cultivated, character is strengthened, and every learner is prepared to contribute confidently to an evolving world.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-14 grid items-start gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
+          <div className="lg:sticky lg:top-24">
+            <div className="mx-auto flex max-w-sm flex-col items-center rounded-2xl border border-border bg-card p-10 text-center shadow-[0_30px_80px_-40px_rgba(11,29,58,0.45)]">
+              <img
+                src={assetUrl(lighthouseLogo)}
+                alt="The official LIGHTHOUSE CAMPUS logo"
+                className="h-auto w-64"
+              />
+              <p className="mt-6 eyebrow text-brand-blue">LIGHTHOUSE CAMPUS</p>
+            </div>
+          </div>
+          <ul className="space-y-6">
+            {logoElements.map((el) => (
+              <li key={el.title}>
+                <article className="rounded-2xl border border-border bg-card p-6 shadow-sm md:p-8">
+                  <div className="flex items-start gap-5">
+                    <img
+                      src={assetUrl(el.img)}
+                      alt=""
+                      aria-hidden
+                      loading="lazy"
+                      className="size-16 shrink-0 rounded-xl object-cover shadow-[0_10px_28px_-16px_rgba(11,29,58,0.55)]"
+                    />
+                    <div className="min-w-0">
+                      <h3 className="font-display text-xl font-medium text-foreground">
+                        {el.title}
+                      </h3>
+                      <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+                        {el.body}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="mt-5 border-t border-border/70 pt-4">
+                    <p className="eyebrow mb-3 text-brand-blue">Represents</p>
+                    <ul className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-muted-foreground">
+                      {el.tags.map((t) => (
+                        <li key={t} className="flex items-center gap-2">
+                          <span aria-hidden className="size-1.5 rounded-full bg-gold" />
+                          {t}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </article>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Institutional Palette */}
+        <div className="mt-16">
+          <SectionHeading
+            eyebrow="Institutional Palette"
+            title="Colours chosen for meaning"
+            description="Every colour in our palette carries institutional intent — the visual grammar of trust, excellence, clarity, and openness."
+          />
+          <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {palette.map((c) => (
+              <li key={c.name} className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+                <div className="flex items-center gap-4">
+                  <span
+                    aria-hidden
+                    className={`inline-flex size-14 items-center justify-center rounded-xl border border-border/60 shadow-inner ${c.ink}`}
+                    style={{ backgroundColor: c.swatch }}
+                  >
+                    {c.name === "Executive Blue" ? (
+                      <Shield className="size-6" />
+                    ) : c.name === "Lighthouse Gold" ? (
+                      <Sun className="size-6" />
+                    ) : c.name === "Silver" ? (
+                      <Compass className="size-6" />
+                    ) : (
+                      <Palette className="size-6" />
+                    )}
+                  </span>
+                  <h3 className="font-display text-lg font-medium text-foreground">{c.name}</h3>
+                </div>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{c.body}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Section>
+
+      {/* Section — Together, They Tell One Story */}
+      <Section tone="muted">
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="font-display text-3xl font-medium leading-tight md:text-4xl">
+            Together, They Tell One Story
+          </h2>
+          <div className="mt-8 space-y-5 text-lg leading-relaxed text-muted-foreground">
+            <p>
+              Every element of the Lighthouse Campus identity contributes to a single purpose: creating a learning environment where curiosity is encouraged, intelligence is developed, character is nurtured, and every learner is empowered to lead with confidence.
+            </p>
+          </div>
+          <div className="mt-10 space-y-2 font-display text-xl leading-relaxed text-foreground md:text-2xl">
+            <p>Our identity reflects more than who we are.</p>
+            <p>It reflects how we learn.</p>
+            <p>How we grow.</p>
+            <p>How we lead.</p>
+            <p>How we belong.</p>
+          </div>
+          <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+            And how we prepare every learner to illuminate the future with knowledge, wisdom, integrity, and purpose.
+          </p>
+        </div>
+      </Section>
+
+      {/* Section — Every Detail Has Meaning */}
+      <Section id="detail">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          <figure className="overflow-hidden rounded-2xl border border-border shadow-[0_30px_80px_-40px_rgba(11,29,58,0.45)]">
+            <img
+              src={photoLibrary}
+              alt="Students studying together in the Lighthouse Campus library"
+              loading="lazy"
+              className="block h-full w-full object-cover"
+            />
+          </figure>
+          <div>
+            <Eyebrow>Every Detail Has Meaning</Eyebrow>
+            <h2 className="mt-5 font-display text-3xl font-medium leading-[1.12] md:text-[2.6rem]">
+              Nothing here exists by accident
+            </h2>
+            <div className="mt-8 space-y-5 text-lg leading-relaxed text-muted-foreground">
+              <p>
+                Every colour, every line, every proportion, every curve, every symbol and every beam of light has been considered with care. Each element reflects the educational philosophy of the institution.
+              </p>
+              <p>
+                Our visual identity is designed to reinforce learning before branding — so that what families recognise first is not a logo, but a way of thinking about education.
+              </p>
+            </div>
+            <ul className="mt-8 flex flex-wrap gap-2.5">
+              {["Colour", "Light", "Form"].map((t, i) => (
+                <li
+                  key={t}
+                  className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-foreground shadow-sm"
+                >
+                  {i === 0 ? <Palette className="size-4 text-brand-blue" /> : i === 1 ? <Sun className="size-4 text-brand-blue" /> : <Compass className="size-4 text-brand-blue" />}
+                  {t}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </Section>
+
+      {/* Section — The Lighthouse Campus Flag */}
+      <Section tone="sand" id="flag">
         <SectionHeading
           align="center"
           eyebrow="Institutional Presence"
