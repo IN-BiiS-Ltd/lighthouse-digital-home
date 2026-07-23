@@ -22,9 +22,14 @@ type Mote = {
 };
 
 const motes: Mote[] = [
-  { top: "12%", left: "6%",  size: "6.5rem", opacity: 0.18, dur: "38s", delay: "0s",   dx: "1.4rem",  dy: "-2rem",   rot: "4deg" },
-  { top: "58%", left: "82%", size: "7.5rem", opacity: 0.20, dur: "42s", delay: "1.6s", dx: "-1.4rem", dy: "-1.6rem", rot: "-6deg" },
-  { top: "72%", left: "38%", size: "5.5rem", opacity: 0.16, dur: "46s", delay: "0.9s", dx: "1rem",    dy: "-2.2rem", rot: "10deg" },
+  { top: "8%",  left: "6%",  size: "6.5rem", opacity: 0.18, dur: "38s", delay: "0s",   dx: "1.4rem",  dy: "-2rem",   rot: "4deg" },
+  { top: "22%", left: "48%", size: "5rem",   opacity: 0.14, dur: "44s", delay: "2.2s", dx: "-1.2rem", dy: "1.8rem",  rot: "-8deg" },
+  { top: "34%", left: "78%", size: "7rem",   opacity: 0.20, dur: "42s", delay: "1.6s", dx: "-1.4rem", dy: "-1.6rem", rot: "-6deg" },
+  { top: "52%", left: "18%", size: "5.5rem", opacity: 0.15, dur: "48s", delay: "3s",   dx: "1.6rem",  dy: "1.2rem",  rot: "7deg" },
+  { top: "60%", left: "62%", size: "6rem",   opacity: 0.17, dur: "40s", delay: "0.6s", dx: "-1rem",   dy: "-1.4rem", rot: "5deg" },
+  { top: "78%", left: "32%", size: "5.75rem",opacity: 0.16, dur: "46s", delay: "0.9s", dx: "1rem",    dy: "-2.2rem", rot: "10deg" },
+  { top: "84%", left: "86%", size: "4.5rem", opacity: 0.13, dur: "50s", delay: "2.4s", dx: "-1.2rem", dy: "-1.6rem", rot: "-4deg" },
+  { top: "44%", left: "92%", size: "4.75rem",opacity: 0.14, dur: "52s", delay: "1.2s", dx: "-1.6rem", dy: "1rem",    rot: "-9deg" },
 ];
 
 export function CrystalField({ className }: { className?: string }) {
