@@ -22,9 +22,9 @@ type Mote = {
 };
 
 const motes: Mote[] = [
-  { top: "12%", left: "6%",  size: "5rem",   opacity: 0.06, dur: "38s", delay: "0s",   dx: "1.4rem",  dy: "-2rem",   rot: "4deg" },
-  { top: "58%", left: "82%", size: "6rem",   opacity: 0.07, dur: "42s", delay: "1.6s", dx: "-1.4rem", dy: "-1.6rem", rot: "-6deg" },
-  { top: "72%", left: "38%", size: "4.5rem", opacity: 0.05, dur: "46s", delay: "0.9s", dx: "1rem",    dy: "-2.2rem", rot: "10deg" },
+  { top: "12%", left: "6%",  size: "6.5rem", opacity: 0.18, dur: "38s", delay: "0s",   dx: "1.4rem",  dy: "-2rem",   rot: "4deg" },
+  { top: "58%", left: "82%", size: "7.5rem", opacity: 0.20, dur: "42s", delay: "1.6s", dx: "-1.4rem", dy: "-1.6rem", rot: "-6deg" },
+  { top: "72%", left: "38%", size: "5.5rem", opacity: 0.16, dur: "46s", delay: "0.9s", dx: "1rem",    dy: "-2.2rem", rot: "10deg" },
 ];
 
 export function CrystalField({ className }: { className?: string }) {
