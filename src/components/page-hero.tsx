@@ -15,12 +15,14 @@ export function PageHero({
   intro,
   sections,
   breadcrumb,
+  watermark = false,
 }: {
   eyebrow: string;
   title: ReactNode;
   intro?: ReactNode;
   sections?: { label: string; to: string }[];
   breadcrumb?: { label: string; to?: string }[];
+  watermark?: boolean;
 }) {
   return (
     <header className="relative overflow-hidden bg-navy text-navy-foreground beacon-surface grain"
