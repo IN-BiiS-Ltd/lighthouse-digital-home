@@ -3,6 +3,8 @@ import { Eyebrow, Pullquote, Section } from "@/components/blocks";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { CrystalField } from "@/components/crystal-field";
+import { ChapterRail } from "@/components/chapter-rail";
+import { ChapterActions } from "@/components/chapter-actions";
 import {
   Compass,
   GraduationCap,
