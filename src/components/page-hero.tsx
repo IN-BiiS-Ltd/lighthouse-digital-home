@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { Container, Eyebrow, SmartLink, BrandLogo } from "@/components/blocks";
 import { BrandAtmosphere } from "@/components/brand-atmosphere";
 import { WatermarkFloat } from "@/components/watermark-float";
+import { CrystalField } from "@/components/crystal-field";
 
 /**
  * PageHero — the calm navy header used at the top of every interior page.
@@ -47,6 +48,7 @@ export function PageHero({
       />
       {watermark ? <WatermarkFloat side="right" /> : null}
       <BrandAtmosphere density={0.7} />
+      <CrystalField className="opacity-70" />
       <Container className="relative py-20 md:py-28">
 
         <div className="reveal reveal-in animate-[fade-in_0.9s_cubic-bezier(0.22,1,0.36,1)_both]">
