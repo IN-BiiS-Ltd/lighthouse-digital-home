@@ -198,10 +198,13 @@ function About() {
         />
         <div className="mt-8 max-w-3xl space-y-5 text-lg leading-relaxed text-muted-foreground">
           <p>
-            LIGHTHOUSE CAMPUS was established through a strategic partnership that brings together two institutions with complementary strengths and a shared commitment to educational excellence.
+            Great educational institutions are built not only on vision, but also on meaningful partnerships that amplify excellence.
           </p>
           <p>
-            This partnership was formed around a simple principle: when each institution contributes what it does best, students benefit from a richer, stronger, and more future-ready learning experience.
+            The strategic partnership between LIGHTHOUSE CAMPUS and Readers International School reflects a shared commitment to educational quality, innovation, and continuous growth. By bringing together complementary strengths, diverse experience, and a common purpose, the partnership creates an environment where learners benefit from the best of both institutions.
+          </p>
+          <p>
+            Together, we are shaping an educational experience that inspires curiosity, develops character, promotes academic excellence, and prepares every learner for the opportunities of tomorrow.
           </p>
         </div>
 
