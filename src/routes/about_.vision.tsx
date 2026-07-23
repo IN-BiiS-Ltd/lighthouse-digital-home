@@ -1,7 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Section, SectionHeading } from "@/components/blocks";
-import { PageHero } from "@/components/page-hero";
-import { CtaBand } from "@/components/cta-band";
+import { EditorialPage, type EditorialPageConfig } from "@/components/editorial-page";
 
 export const Route = createFileRoute("/about_/vision")({
   head: () => ({
@@ -18,57 +16,59 @@ export const Route = createFileRoute("/about_/vision")({
   component: Vision,
 });
 
+const config: EditorialPageConfig = {
+  breadcrumb: [{ label: "Home", to: "/" }, { label: "About", to: "/about" }, { label: "Vision" }],
+  eyebrow: "About / Vision",
+  title: "A learning community where every learner develops the knowledge, character and confidence to shape a meaningful future.",
+  intro:
+    "The long-term horizon of Lighthouse Campus — the future we are working toward, day by day, learner by learner.",
+  focus: ["knowledge", "character", "confidence", "purpose"],
+  chapters: [
+    {
+      numeral: "I",
+      eyebrow: "The Future We Seek",
+      title: "Young people growing as knowledgeable, capable, responsible and compassionate human beings",
+      body: [
+        "We envision an educational community where young people grow as knowledgeable, capable, responsible and compassionate human beings.",
+        "Learning develops intellectual strength. Relationships build confidence and belonging. Character guides decisions. Opportunity enables learners to discover and develop their individual potential.",
+      ],
+    },
+    {
+      numeral: "II",
+      eyebrow: "Education for an Evolving World",
+      title: "Preparing learners for a world that will continue to change",
+      body: [
+        "They will need secure knowledge and the ability to continue learning.",
+        "They will need curiosity, creativity, communication and critical thinking.",
+        "They will need resilience, responsibility, empathy and the confidence to collaborate across differences.",
+        "Our vision brings these qualities together within one coherent educational journey.",
+      ],
+      quote: { text: "One coherent educational journey — knowledge, character and confidence, together." },
+    },
+    {
+      numeral: "III",
+      eyebrow: "Growth with Purpose",
+      title: "An educational ecosystem that grows with clarity and responsibility",
+      body: [
+        "Future campuses will extend the institution’s learning philosophy while remaining responsive to their local communities.",
+        "Digital services, educational research and institutional intelligence will support this growth.",
+        "Human development and educational purpose will remain central.",
+      ],
+    },
+  ],
+  manifesto: {
+    eyebrow: "Vision Statement",
+    statement:
+      "To nurture knowledgeable, capable and responsible learners who approach the future with curiosity, confidence, character and purpose.",
+  },
+  cta: {
+    title: "Read Our Mission",
+    body: "Discover how our vision becomes daily practice through learning, relationships and institutional life.",
+    primary: { to: "/about/mission", label: "Read Our Mission" },
+    secondary: { to: "/our-model/educational-model", label: "Explore Our Educational Model" },
+  },
+};
+
 function Vision() {
-  return (
-    <>
-      <PageHero
-        breadcrumb={[{ label: "Home", to: "/" }, { label: "About", to: "/about" }, { label: "Vision" }]}
-        eyebrow="About / Vision"
-        title="A learning community where every learner develops the knowledge, character and confidence to shape a meaningful future."
-      />
-
-      <Section>
-        <SectionHeading eyebrow="The Future We Seek" title="Young people growing as knowledgeable, capable, responsible and compassionate human beings" />
-        <div className="mt-8 max-w-3xl space-y-5 text-lg leading-relaxed text-muted-foreground">
-          <p>We envision an educational community where young people grow as knowledgeable, capable, responsible and compassionate human beings.</p>
-          <p>Learning develops intellectual strength. Relationships build confidence and belonging. Character guides decisions. Opportunity enables learners to discover and develop their individual potential.</p>
-        </div>
-      </Section>
-
-      <Section tone="muted">
-        <SectionHeading eyebrow="Education for an Evolving World" title="Preparing learners for a world that will continue to change" />
-        <div className="mt-8 max-w-3xl space-y-5 text-lg leading-relaxed text-muted-foreground">
-          <p>They will need secure knowledge and the ability to continue learning.</p>
-          <p>They will need curiosity, creativity, communication and critical thinking.</p>
-          <p>They will need resilience, responsibility, empathy and the confidence to collaborate across differences.</p>
-          <p>Our vision brings these qualities together within one coherent educational journey.</p>
-        </div>
-      </Section>
-
-      <Section>
-        <SectionHeading eyebrow="Growth with Purpose" title="An educational ecosystem that grows with clarity and responsibility" />
-        <div className="mt-8 max-w-3xl space-y-5 text-lg leading-relaxed text-muted-foreground">
-          <p>Future campuses will extend the institution&rsquo;s learning philosophy while remaining responsive to their local communities.</p>
-          <p>Digital services, educational research and institutional intelligence will support this growth.</p>
-          <p>Human development and educational purpose will remain central.</p>
-        </div>
-      </Section>
-
-      <Section tone="navy">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="eyebrow text-gold">Vision Statement</p>
-          <p className="mt-6 font-display text-3xl font-medium leading-snug text-navy-foreground md:text-4xl">
-            To nurture knowledgeable, capable and responsible learners who approach the future with curiosity, confidence, character and purpose.
-          </p>
-        </div>
-      </Section>
-
-      <CtaBand
-        title="Read Our Mission"
-        body="Discover how our vision becomes daily practice through learning, relationships and institutional life."
-        primary={{ to: "/about/mission", label: "Read Our Mission" }}
-        secondary={{ to: "/our-model/educational-model", label: "Explore Our Educational Model" }}
-      />
-    </>
-  );
+  return <EditorialPage config={config} />;
 }
