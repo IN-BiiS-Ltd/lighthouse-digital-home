@@ -10,6 +10,7 @@ import officialLockupAsset from "@/assets/lighthouse-official-lockup-v2.png.asse
 const officialLockupSrc = officialLockupAsset.url;
 import {
   BookOpen,
+  CheckCircle,
   Compass,
   Eye,
   Flag,
@@ -204,20 +205,70 @@ function About() {
       <Section tone="sand">
         <SectionHeading
           eyebrow="Strategic Educational Partnership"
-          title="A founding partnership with Readers International School"
+          title="Building on Shared Strengths"
         />
         <div className="mt-8 max-w-3xl space-y-5 text-lg leading-relaxed text-muted-foreground">
           <p>
-            Lighthouse Campus was established through a strategic educational
-            partnership with Readers International School — the founding
-            strategic educational partner of the first Lighthouse Campus in
-            Mohandessin, Giza.
+            LIGHTHOUSE CAMPUS was established through a strategic partnership that brings together two institutions with complementary strengths and a shared commitment to educational excellence.
           </p>
           <p>
-            This partnership supports the launch of the founding campus while
-            Lighthouse Campus operates as an independent institution with its
-            own philosophy, identity, leadership and long-term direction.
+            This partnership was formed around a simple principle: when each institution contributes what it does best, students benefit from a richer, stronger, and more future-ready learning experience.
           </p>
+        </div>
+
+        <div className="mt-14 grid gap-6 md:grid-cols-2">
+          <div className="rounded-2xl bg-white p-8 shadow-[0_20px_60px_-20px_rgba(11,29,58,0.25)] ring-1 ring-gold/40">
+            <h3 className="font-display text-xl text-navy">Readers International School</h3>
+            <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+              Contributes its educational license and institutional presence as the founding strategic educational partner for the first campus.
+            </p>
+          </div>
+          <div className="rounded-2xl bg-navy p-8 text-navy-foreground shadow-[0_20px_60px_-20px_rgba(11,29,58,0.35)] ring-1 ring-gold/40">
+            <h3 className="font-display text-xl text-gold">LIGHTHOUSE CAMPUS</h3>
+            <p className="mt-3 text-base leading-relaxed text-navy-foreground/90">
+              Contributes its educational vision, institutional operating model, academic leadership, governance framework, digital transformation, operational excellence, and continuous innovation.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-12 max-w-3xl space-y-5 text-lg leading-relaxed text-muted-foreground">
+          <p>
+            Rather than duplicating capabilities, the partnership enables each institution to build upon the strengths of the other while maintaining a shared commitment to quality, integrity, and long-term educational impact.
+          </p>
+          <p>
+            The result is an institution designed not only to deliver excellent education today, but to continuously evolve to meet the needs of tomorrow's learners.
+          </p>
+        </div>
+
+        <div className="mt-14">
+          <h3 className="font-display text-2xl text-navy">Our Shared Commitment</h3>
+          <p className="mt-4 text-lg text-muted-foreground">Together, the partnership is committed to:</p>
+          <ul className="mt-6 grid gap-4 sm:grid-cols-2">
+            {[
+              "Delivering high-quality, student-centered education.",
+              "Building a culture of excellence, integrity, and innovation.",
+              "Creating a safe, inclusive, and inspiring learning environment.",
+              "Developing future-ready learners equipped with knowledge, character, and leadership.",
+              "Pursuing continuous institutional improvement through collaboration and shared expertise.",
+            ].map((item) => (
+              <li key={item} className="flex items-start gap-3 rounded-xl bg-white p-4 shadow-sm ring-1 ring-gold/20">
+                <CheckCircle className="mt-0.5 size-5 shrink-0 text-gold" aria-hidden="true" />
+                <span className="text-base leading-relaxed text-muted-foreground">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="mt-14 rounded-2xl bg-white p-8 md:p-10 shadow-[0_30px_80px_-30px_rgba(11,29,58,0.25)] ring-1 ring-gold/40">
+          <h3 className="font-display text-2xl text-navy">A Partnership for Long-Term Impact</h3>
+          <div className="mt-5 max-w-3xl space-y-5 text-lg leading-relaxed text-muted-foreground">
+            <p>
+              This partnership represents more than operational collaboration.
+            </p>
+            <p>
+              It reflects a shared belief that sustainable educational excellence is achieved when institutions work together, respect each other's strengths, and remain committed to continuous improvement for the benefit of every learner.
+            </p>
+          </div>
         </div>
       </Section>
 
