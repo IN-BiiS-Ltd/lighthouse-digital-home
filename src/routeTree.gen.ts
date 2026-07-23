@@ -18,6 +18,7 @@ import { Route as OurModelRouteImport } from './routes/our-model'
 import { Route as NewsRouteImport } from './routes/news'
 import { Route as LearningJourneyRouteImport } from './routes/learning-journey'
 import { Route as CookiesRouteImport } from './routes/cookies'
+import { Route as CookieSettingsRouteImport } from './routes/cookie-settings'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CommunityRouteImport } from './routes/community'
 import { Route as CareersRouteImport } from './routes/careers'
@@ -145,6 +146,11 @@ const LearningJourneyRoute = LearningJourneyRouteImport.update({
 const CookiesRoute = CookiesRouteImport.update({
   id: '/cookies',
   path: '/cookies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CookieSettingsRoute = CookieSettingsRouteImport.update({
+  id: '/cookie-settings',
+  path: '/cookie-settings',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -603,6 +609,7 @@ export interface FileRoutesByFullPath {
   '/careers': typeof CareersRoute
   '/community': typeof CommunityRoute
   '/contact': typeof ContactRoute
+  '/cookie-settings': typeof CookieSettingsRoute
   '/cookies': typeof CookiesRoute
   '/learning-journey': typeof LearningJourneyRoute
   '/news': typeof NewsRoute
@@ -697,6 +704,7 @@ export interface FileRoutesByTo {
   '/careers': typeof CareersRoute
   '/community': typeof CommunityRoute
   '/contact': typeof ContactRoute
+  '/cookie-settings': typeof CookieSettingsRoute
   '/cookies': typeof CookiesRoute
   '/learning-journey': typeof LearningJourneyRoute
   '/news': typeof NewsRoute
@@ -792,6 +800,7 @@ export interface FileRoutesById {
   '/careers': typeof CareersRoute
   '/community': typeof CommunityRoute
   '/contact': typeof ContactRoute
+  '/cookie-settings': typeof CookieSettingsRoute
   '/cookies': typeof CookiesRoute
   '/learning-journey': typeof LearningJourneyRoute
   '/news': typeof NewsRoute
@@ -888,6 +897,7 @@ export interface FileRouteTypes {
     | '/careers'
     | '/community'
     | '/contact'
+    | '/cookie-settings'
     | '/cookies'
     | '/learning-journey'
     | '/news'
@@ -982,6 +992,7 @@ export interface FileRouteTypes {
     | '/careers'
     | '/community'
     | '/contact'
+    | '/cookie-settings'
     | '/cookies'
     | '/learning-journey'
     | '/news'
@@ -1076,6 +1087,7 @@ export interface FileRouteTypes {
     | '/careers'
     | '/community'
     | '/contact'
+    | '/cookie-settings'
     | '/cookies'
     | '/learning-journey'
     | '/news'
@@ -1171,6 +1183,7 @@ export interface RootRouteChildren {
   CareersRoute: typeof CareersRoute
   CommunityRoute: typeof CommunityRoute
   ContactRoute: typeof ContactRoute
+  CookieSettingsRoute: typeof CookieSettingsRoute
   CookiesRoute: typeof CookiesRoute
   LearningJourneyRoute: typeof LearningJourneyRoute
   NewsRoute: typeof NewsRoute
@@ -1318,6 +1331,13 @@ declare module '@tanstack/react-router' {
       path: '/cookies'
       fullPath: '/cookies'
       preLoaderRoute: typeof CookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cookie-settings': {
+      id: '/cookie-settings'
+      path: '/cookie-settings'
+      fullPath: '/cookie-settings'
+      preLoaderRoute: typeof CookieSettingsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -1915,6 +1935,7 @@ const rootRouteChildren: RootRouteChildren = {
   CareersRoute: CareersRoute,
   CommunityRoute: CommunityRoute,
   ContactRoute: ContactRoute,
+  CookieSettingsRoute: CookieSettingsRoute,
   CookiesRoute: CookiesRoute,
   LearningJourneyRoute: LearningJourneyRoute,
   NewsRoute: NewsRoute,

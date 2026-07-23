@@ -160,6 +160,9 @@ export function SiteFooter() {
             <SmartLink to="/cookies" className="hover:text-gold">
               Cookies
             </SmartLink>
+            <SmartLink to="/cookie-settings" className="hover:text-gold">
+              Cookie settings
+            </SmartLink>
             <SmartLink to="/accessibility" className="hover:text-gold">
               Accessibility
             </SmartLink>
