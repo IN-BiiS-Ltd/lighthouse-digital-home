@@ -8,6 +8,7 @@ import {
 } from "@/components/blocks";
 import { primaryNav, secondaryNav } from "@/lib/site-nav";
 import { FollowLinks } from "@/components/share-bar";
+import { CrystalField } from "@/components/crystal-field";
 import officialLockupAsset from "@/assets/lighthouse-official-lockup-v2.png.asset.json";
 const officialLockupSrc = officialLockupAsset.url;
 
@@ -35,8 +36,9 @@ const futureEcosystem: { label: string; icon: LhIconName }[] = [
 
 export function SiteFooter() {
   return (
-    <footer className="bg-navy text-navy-foreground">
-      <Container className="py-16 md:py-20">
+    <footer className="relative overflow-hidden bg-navy text-navy-foreground">
+      <CrystalField className="opacity-70" />
+      <Container className="relative py-16 md:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1.1fr]">
           {/* Brand */}
           <div>
