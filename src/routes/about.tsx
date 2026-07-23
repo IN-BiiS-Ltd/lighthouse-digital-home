@@ -2,6 +2,7 @@ import { assetUrl } from "@/lib/asset-url";
 import { createFileRoute } from "@tanstack/react-router";
 import { Section, SectionHeading, FeatureCard } from "@/components/blocks";
 import lighthouseFlag from "@/assets/lighthouse-flag.png.asset.json";
+import readersFlag from "@/assets/readers-international-flag.png.asset.json";
 import campusExteriorPhoto from "@/assets/photo-campus-exterior.jpg";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
@@ -202,6 +203,54 @@ function About() {
           <p>
             This partnership was formed around a simple principle: when each institution contributes what it does best, students benefit from a richer, stronger, and more future-ready learning experience.
           </p>
+        </div>
+
+        {/* Partnership flags — both institutions side by side */}
+        <div className="mt-14 grid items-center gap-8 sm:grid-cols-[1fr_auto_1fr]">
+          <figure className="flex flex-col items-center">
+            <div className="overflow-hidden rounded-2xl bg-white p-3 shadow-[0_30px_80px_-25px_rgba(11,29,58,0.55)] ring-2 ring-gold">
+              <img
+                src={assetUrl(lighthouseFlag)}
+                alt="Lighthouse Campus institutional flag — blue field carrying the gold and silver emblem and promise: Guiding minds. Inspiring futures. Connecting possibilities."
+                width={1536}
+                height={1024}
+                className="block h-auto w-full object-contain"
+                loading="lazy"
+                decoding="async"
+                draggable={false}
+              />
+            </div>
+            <figcaption className="mt-4 text-center">
+              <span className="eyebrow text-brand-blue">Lighthouse Campus</span>
+              <p className="mt-1 text-sm text-muted-foreground">Mohandessin, Giza</p>
+            </figcaption>
+          </figure>
+
+          <div className="hidden text-gold sm:flex" aria-hidden="true">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </div>
+
+          <figure className="flex flex-col items-center">
+            <div className="overflow-hidden rounded-2xl bg-white p-3 shadow-[0_30px_80px_-25px_rgba(11,29,58,0.55)] ring-2 ring-gold">
+              <img
+                src={assetUrl(readersFlag)}
+                alt="Readers International School flag — white field with the school emblem and name, representing the founding strategic educational partner."
+                width={1536}
+                height={1024}
+                className="block h-auto w-full object-contain"
+                loading="lazy"
+                decoding="async"
+                draggable={false}
+              />
+            </div>
+            <figcaption className="mt-4 text-center">
+              <span className="eyebrow text-brand-blue">Readers International School</span>
+              <p className="mt-1 text-sm text-muted-foreground">Founding Strategic Educational Partner</p>
+            </figcaption>
+          </figure>
         </div>
 
         <div className="mt-14 grid gap-6 md:grid-cols-2">
