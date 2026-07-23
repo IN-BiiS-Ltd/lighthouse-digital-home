@@ -25,7 +25,7 @@ export function WatermarkFloat({
         src={logoSrc}
         alt=""
         className="watermark-float__img"
-        style={{ left, transform: "translate(-50%, -50%)" }}
+        style={{ left, translate: "-50% -50%" }}
         loading="lazy"
         decoding="async"
       />
