@@ -70,8 +70,8 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  /* Editorial serif accent — for pull-quotes and display eyebrows */
-  --font-serif-accent: "Instrument Serif", "Fraunces", Georgia, serif;
+  /* Editorial serif accent — reuses Fraunces italic to keep font families to 2 */
+  --font-serif-accent: "Fraunces", Georgia, "Times New Roman", serif;
 
   /* Fluid type ramp — Apple-editorial scale */
   --text-display-1: clamp(2.75rem, 5.2vw + 1rem, 5.75rem);
