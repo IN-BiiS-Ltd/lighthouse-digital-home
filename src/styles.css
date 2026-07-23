@@ -568,6 +568,20 @@ p, li      { text-wrap: pretty; }
   letter-spacing: -0.005em;
 }
 
+/* Editorial drop-cap — the opening paragraph of an editorial chapter */
+@utility editorial-lead {
+  &::first-letter {
+    font-family: var(--font-serif-accent);
+    font-style: italic;
+    float: left;
+    font-size: 3.75em;
+    line-height: 0.85;
+    padding: 0.35rem 0.6rem 0 0;
+    color: color-mix(in oklab, var(--gold) 85%, var(--foreground));
+    font-weight: 400;
+  }
+}
+
 /* Elevation shortcut utilities */
 @utility shadow-e1 { box-shadow: var(--shadow-e1); }
 @utility shadow-e2 { box-shadow: var(--shadow-e2); }
