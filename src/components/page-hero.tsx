@@ -45,6 +45,7 @@ export function PageHero({
             "radial-gradient(90% 100% at 50% 30%, transparent 30%, color-mix(in oklab, var(--navy) 60%, transparent) 100%)",
         }}
       />
+      {watermark ? <WatermarkFloat side="right" /> : null}
       <BrandAtmosphere density={0.7} />
       <Container className="relative py-20 md:py-28">
 
