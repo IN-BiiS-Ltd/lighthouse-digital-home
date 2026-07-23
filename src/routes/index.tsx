@@ -64,9 +64,8 @@ export const Route = createFileRoute("/")({
         rel: "preload",
         as: "image",
         href: heroImg,
-        // @ts-expect-error — valid HTML attribute, not yet in the React types map
         fetchpriority: "high",
-      },
+      } as unknown as { rel: string },
     ],
 
   }),
@@ -106,7 +105,9 @@ function Home() {
           alt="Diverse group of Lighthouse Campus students — Sudanese, Arab and African — exploring an illustrated book together in a warm sunlit classroom"
           width={1600}
           height={1104}
+          sizes="100vw"
           fetchPriority="high"
+          decoding="async"
           className="absolute inset-0 -z-10 size-full object-cover animate-ken-burns"
         />
         <div

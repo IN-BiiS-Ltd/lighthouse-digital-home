@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { X, Cookie } from "lucide-react";
-import { useConsent } from "@/lib/consent";
+import { useConsent, type ConsentChoice } from "@/lib/consent";
+import { track } from "@/lib/analytics";
 
 export function CookieConsent() {
   const [choice, setChoice] = useConsent();
