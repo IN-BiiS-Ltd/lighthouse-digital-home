@@ -68,7 +68,7 @@ export function Wordmark({
 
 export function BrandLogo({
   className,
-  alt = "Lighthouse Campus — official emblem by Readers International",
+  alt = "Lighthouse Campus — official emblem",
 }: {
   className?: string;
   /** Pass `""` for decorative use when a nearby heading, aria-label or Wordmark already names the brand. */

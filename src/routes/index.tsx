@@ -51,10 +51,10 @@ export const Route = createFileRoute("/")({
       { property: "og:image", content: "https://lighthousecampus.lovable.app/lighthouse-social-card.webp" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "Lighthouse Campus — A Readers International School in Mohandessin, Giza" },
+      { property: "og:image:alt", content: "Lighthouse Campus — Mohandessin, Giza" },
       { property: "og:image:type", content: "image/webp" },
       { name: "twitter:image", content: "https://lighthousecampus.lovable.app/lighthouse-social-card.webp" },
-      { name: "twitter:image:alt", content: "Lighthouse Campus — A Readers International School in Mohandessin, Giza" },
+      { name: "twitter:image:alt", content: "Lighthouse Campus — Mohandessin, Giza" },
     ],
     links: [{ rel: "canonical", href: "/" }],
 
