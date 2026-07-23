@@ -4,9 +4,7 @@ import type { ComponentPropsWithoutRef, MouseEvent, ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/reveal";
 import { BrandAtmosphere } from "@/components/brand-atmosphere";
-import primaryLogoAsset from "@/assets/lighthouse-campus-final.png.asset.json";
-import { assetUrl } from "@/lib/asset-url";
-const primaryLogoSrc = assetUrl(primaryLogoAsset);
+import primaryLogoSrc from "@/assets/lighthouse-campus-logo.webp";
 
 /* ------------------------------------------------------------------ */
 /* SmartLink — internal (TanStack) or external, with hash support     */
@@ -70,7 +68,7 @@ export function Wordmark({
 
 export function BrandLogo({
   className,
-  alt = "Lighthouse Campus — official emblem",
+  alt = "Lighthouse Campus — official emblem by Readers International",
 }: {
   className?: string;
   /** Pass `""` for decorative use when a nearby heading, aria-label or Wordmark already names the brand. */
