@@ -4,6 +4,7 @@ import type { ComponentPropsWithoutRef, MouseEvent, ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/reveal";
 import { BrandAtmosphere } from "@/components/brand-atmosphere";
+import { CrystalField } from "@/components/crystal-field";
 import primaryLogoSrc from "@/assets/lighthouse-campus-logo.webp";
 
 /* ------------------------------------------------------------------ */
