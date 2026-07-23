@@ -145,7 +145,7 @@ function WhyLighthouse() {
         eyebrow="Our Promise"
         title={
           <>
-            Why LIGHTHOUSE CAMPUS
+            Why <span className="text-gilded">LIGHTHOUSE CAMPUS</span>
             <span className="block mt-2 text-navy-foreground/80 font-display text-2xl md:text-3xl">
               More Than a School. A Place Where Futures Begin.
             </span>
@@ -164,12 +164,15 @@ function WhyLighthouse() {
       />
 
       {/* Section 1 — Our Promise */}
-      <Section id="promise">
+      <Section id="promise" className="section-spotlight">
         <div className="mx-auto max-w-3xl text-center">
           <Eyebrow>More Than a School</Eyebrow>
           <h2 className="mt-5 font-display text-3xl font-medium leading-[1.12] md:text-[2.6rem]">
-            A Place Where Futures Begin
+            A Place Where <span className="text-gilded">Futures Begin</span>
           </h2>
+          <div className="ornament-rule mt-8" aria-hidden>
+            <span className="ornament-rule__mark" />
+          </div>
           <div className="mt-8 space-y-5 text-lg leading-relaxed text-muted-foreground">
             <p>Choosing a school is one of the most important decisions a family will ever make.</p>
             <p>
@@ -432,8 +435,11 @@ function WhyLighthouse() {
       <Section tone="muted">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-display text-3xl font-medium leading-tight md:text-4xl">
-            Together, They Tell One Story
+            Together, They Tell <span className="text-gilded">One Story</span>
           </h2>
+          <div className="ornament-rule mt-8" aria-hidden>
+            <span className="ornament-rule__mark" />
+          </div>
           <div className="mt-8 space-y-5 text-lg leading-relaxed text-muted-foreground">
             <p>
               Every element of the Lighthouse Campus identity contributes to a single purpose: creating a learning environment where curiosity is encouraged, intelligence is developed, character is nurtured, and every learner is empowered to lead with confidence.
@@ -515,7 +521,7 @@ function WhyLighthouse() {
       </Section>
 
       <Section tone="navy">
-        <figure className="relative mx-auto my-12 max-w-3xl border-l-2 border-gold pl-8 md:my-20 md:pl-12">
+        <figure className="sheen relative mx-auto my-12 max-w-3xl border-l-2 border-gold pl-8 md:my-20 md:pl-12">
           <span
             aria-hidden
             className="absolute -left-2 -top-8 select-none font-display text-[6rem] leading-none text-gold/30 md:text-[8rem]"
@@ -523,11 +529,11 @@ function WhyLighthouse() {
             &ldquo;
           </span>
           <blockquote className="font-display text-2xl italic leading-snug text-navy-foreground md:text-4xl">
-            Guiding Minds.
+            <span className="text-gilded">Guiding Minds.</span>
             <br />
-            Inspiring Futures.
+            <span className="text-gilded">Inspiring Futures.</span>
             <br />
-            Connecting Possibilities.
+            <span className="text-gilded">Connecting Possibilities.</span>
           </blockquote>
         </figure>
         <div className="mx-auto mt-10 max-w-2xl space-y-5 text-center text-lg leading-relaxed text-navy-foreground/80">
