@@ -2,6 +2,7 @@ import { assetUrl } from "@/lib/asset-url";
 import { createFileRoute } from "@tanstack/react-router";
 import { Section, SectionHeading, FeatureCard } from "@/components/blocks";
 import lighthouseFlag from "@/assets/lighthouse-flag.png.asset.json";
+import readersFlag from "@/assets/readers-international-flag.png.asset.json";
 import campusExteriorPhoto from "@/assets/photo-campus-exterior.jpg";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
