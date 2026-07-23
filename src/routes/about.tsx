@@ -262,7 +262,7 @@ function About() {
           <div className="rounded-2xl bg-navy p-8 text-navy-foreground shadow-[0_20px_60px_-20px_rgba(11,29,58,0.35)] ring-1 ring-gold/40">
             <h3 className="font-display text-xl text-gold">LIGHTHOUSE CAMPUS</h3>
             <p className="mt-3 text-base leading-relaxed text-navy-foreground/90">
-              Contributes its educational vision, institutional operating model, academic leadership, governance framework, digital transformation, operational excellence, and continuous innovation.
+              Shapes the educational experience through visionary leadership, academic excellence, institutional innovation, and a commitment to continuous growth. Every aspect of the campus is intentionally designed to inspire curiosity, develop character, and prepare learners for a lifetime of success.
             </p>
           </div>
         </div>
