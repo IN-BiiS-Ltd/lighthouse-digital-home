@@ -8,10 +8,10 @@ export const Route = createFileRoute("/student-life_/athletics")({
       { name: "description", content: "Sport at Lighthouse Campus develops discipline, teamwork, resilience and joy — not only performance." },
       { property: "og:title", content: "Athletics | Student Life | Lighthouse Campus" },
       { property: "og:description", content: "Sport at Lighthouse Campus develops discipline, teamwork, resilience and joy — not only performance." },
-      { property: "og:url", content: "/student-life/athletics" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/student-life/athletics" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/student-life/athletics" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/student-life/athletics" }],
   }),
   component: Page,
 });

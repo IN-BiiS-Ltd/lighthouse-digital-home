@@ -8,10 +8,10 @@ export const Route = createFileRoute("/community_/community-programmes")({
       { name: "description", content: "Community programmes give learners and educators a way to contribute meaningfully to the world around them." },
       { property: "og:title", content: "Community Programmes | Community | Lighthouse Campus" },
       { property: "og:description", content: "Community programmes give learners and educators a way to contribute meaningfully to the world around them." },
-      { property: "og:url", content: "/community/community-programmes" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/community/community-programmes" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/community/community-programmes" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/community/community-programmes" }],
   }),
   component: Page,
 });

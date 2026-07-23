@@ -26,10 +26,10 @@ export const Route = createFileRoute("/campuses_/mohandessin")({
         property: "og:description",
         content: "The first operational Lighthouse campus, in Mohandessin, Giza.",
       },
-      { property: "og:url", content: "/campuses/mohandessin" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/campuses/mohandessin" },
       { property: "og:type", content: "place" },
     ],
-    links: [{ rel: "canonical", href: "/campuses/mohandessin" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/campuses/mohandessin" }],
     scripts: [
       {
         type: "application/ld+json",

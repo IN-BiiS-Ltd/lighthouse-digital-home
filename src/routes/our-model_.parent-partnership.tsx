@@ -26,9 +26,9 @@ export const Route = createFileRoute("/our-model_/parent-partnership")({
         content: "How the school and families work together around every learner.",
       },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/our-model/parent-partnership" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/our-model/parent-partnership" },
     ],
-    links: [{ rel: "canonical", href: "/our-model/parent-partnership" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/our-model/parent-partnership" }],
   }),
   component: ParentPartnership,
 });

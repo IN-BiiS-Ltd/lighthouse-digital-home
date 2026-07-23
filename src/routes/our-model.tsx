@@ -40,9 +40,9 @@ export const Route = createFileRoute("/our-model")({
           "The educational and institutional model of Lighthouse Campus, in ten connected pillars.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/our-model" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/our-model" },
     ],
-    links: [{ rel: "canonical", href: "/our-model" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/our-model" }],
   }),
   component: OurModel,
 });

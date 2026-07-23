@@ -8,10 +8,10 @@ export const Route = createFileRoute("/admissions_/schedule-a-visit")({
       { name: "description", content: "A visit is the clearest way to understand life at Lighthouse Campus." },
       { property: "og:title", content: "Schedule a Visit | Admissions | Lighthouse Campus" },
       { property: "og:description", content: "A visit is the clearest way to understand life at Lighthouse Campus." },
-      { property: "og:url", content: "/admissions/schedule-a-visit" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/admissions/schedule-a-visit" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/admissions/schedule-a-visit" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/admissions/schedule-a-visit" }],
   }),
   component: Page,
 });

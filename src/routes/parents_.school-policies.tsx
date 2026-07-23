@@ -8,10 +8,10 @@ export const Route = createFileRoute("/parents_/school-policies")({
       { name: "description", content: "School policies exist to protect learners, guide the community and make expectations clear." },
       { property: "og:title", content: "School Policies | Parents | Lighthouse Campus" },
       { property: "og:description", content: "School policies exist to protect learners, guide the community and make expectations clear." },
-      { property: "og:url", content: "/parents/school-policies" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/parents/school-policies" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/parents/school-policies" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/parents/school-policies" }],
   }),
   component: Page,
 });

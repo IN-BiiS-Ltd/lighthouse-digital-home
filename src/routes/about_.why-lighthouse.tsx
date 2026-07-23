@@ -46,10 +46,10 @@ export const Route = createFileRoute("/about_/why-lighthouse")({
         content:
           "More than a school. A place where futures begin. Explore the five pillars, the meaning behind our name, and the story our identity tells.",
       },
-      { property: "og:url", content: "/about/why-lighthouse" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/about/why-lighthouse" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/about/why-lighthouse" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/about/why-lighthouse" }],
     scripts: [
       {
         type: "application/ld+json",

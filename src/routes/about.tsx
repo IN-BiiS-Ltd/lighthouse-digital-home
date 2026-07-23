@@ -35,10 +35,10 @@ export const Route = createFileRoute("/about")({
         content:
           "An independent institution with its own philosophy, identity and long-term vision. Discover Lighthouse Campus in Mohandessin, Giza.",
       },
-      { property: "og:url", content: "/about" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/about" },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/about" }],
   }),
   component: About,
 });

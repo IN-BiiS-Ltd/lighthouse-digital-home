@@ -8,10 +8,10 @@ export const Route = createFileRoute("/campus-experience_/outdoor-learning")({
       { name: "description", content: "Courtyards, gardens and open spaces where learning continues beyond the classroom walls." },
       { property: "og:title", content: "Outdoor Learning & Gardens | Campus | Lighthouse Campus" },
       { property: "og:description", content: "Courtyards, gardens and open spaces where learning continues beyond the classroom walls." },
-      { property: "og:url", content: "/campus-experience/outdoor-learning" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/campus-experience/outdoor-learning" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/campus-experience/outdoor-learning" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/campus-experience/outdoor-learning" }],
   }),
   component: Page,
 });

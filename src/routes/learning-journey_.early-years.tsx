@@ -10,10 +10,10 @@ export const Route = createFileRoute("/learning-journey_/early-years")({
       { name: "description", content: "Explore the Lighthouse Campus Early Years experience, where play, relationships, language and discovery build the foundations for lifelong learning." },
       { property: "og:title", content: "Early Years | Lighthouse Campus" },
       { property: "og:description", content: "Wonder, security and the first foundations of learning." },
-      { property: "og:url", content: "/learning-journey/early-years" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/learning-journey/early-years" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/learning-journey/early-years" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/learning-journey/early-years" }],
   }),
   component: EarlyYears,
 });

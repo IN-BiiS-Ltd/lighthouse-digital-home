@@ -8,10 +8,10 @@ export const Route = createFileRoute("/about_/educational-philosophy")({
       { name: "description", content: "Discover how Lighthouse Campus believes education should shape the future through critical thinking, problem-solving, diversity and real-world learning." },
       { property: "og:title", content: "Educational Philosophy | Lighthouse Campus" },
       { property: "og:description", content: "Learning that shapes the future. Academic excellence combined with character development, innovation and real-world experiences." },
-      { property: "og:url", content: "/about/educational-philosophy" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/about/educational-philosophy" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/about/educational-philosophy" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/about/educational-philosophy" }],
   }),
   component: Philosophy,
 });

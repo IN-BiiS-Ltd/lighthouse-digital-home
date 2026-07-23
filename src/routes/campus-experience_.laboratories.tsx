@@ -8,10 +8,10 @@ export const Route = createFileRoute("/campus-experience_/laboratories")({
       { name: "description", content: "Laboratories give learners the experience of scientific thinking — question, method, evidence and reflection." },
       { property: "og:title", content: "Laboratories | Campus | Lighthouse Campus" },
       { property: "og:description", content: "Laboratories give learners the experience of scientific thinking — question, method, evidence and reflection." },
-      { property: "og:url", content: "/campus-experience/laboratories" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/campus-experience/laboratories" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/campus-experience/laboratories" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/campus-experience/laboratories" }],
   }),
   component: Page,
 });

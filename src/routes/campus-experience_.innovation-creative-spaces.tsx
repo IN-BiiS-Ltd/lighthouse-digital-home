@@ -8,10 +8,10 @@ export const Route = createFileRoute("/campus-experience_/innovation-creative-sp
       { name: "description", content: "Innovation and creative spaces give learners room to design, build and refine — with the freedom and discipline both require." },
       { property: "og:title", content: "Innovation & Creative Spaces | Campus | Lighthouse Campus" },
       { property: "og:description", content: "Innovation and creative spaces give learners room to design, build and refine — with the freedom and discipline both require." },
-      { property: "og:url", content: "/campus-experience/innovation-creative-spaces" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/campus-experience/innovation-creative-spaces" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/campus-experience/innovation-creative-spaces" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/campus-experience/innovation-creative-spaces" }],
   }),
   component: Page,
 });

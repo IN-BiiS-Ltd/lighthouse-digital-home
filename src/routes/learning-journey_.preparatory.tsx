@@ -10,10 +10,10 @@ export const Route = createFileRoute("/learning-journey_/preparatory")({
       { name: "description", content: "Explore the Lighthouse Campus Preparatory experience, where learners develop independence, critical thinking, subject depth and growing responsibility." },
       { property: "og:title", content: "Preparatory School | Lighthouse Campus" },
       { property: "og:description", content: "Independence, deeper thinking and an expanding view of the world." },
-      { property: "og:url", content: "/learning-journey/preparatory" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/learning-journey/preparatory" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/learning-journey/preparatory" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/learning-journey/preparatory" }],
   }),
   component: Preparatory,
 });

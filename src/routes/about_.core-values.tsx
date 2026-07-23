@@ -11,10 +11,10 @@ export const Route = createFileRoute("/about_/core-values")({
       { name: "description", content: "Explore the values of curiosity, belonging, integrity and excellence that guide life and learning at Lighthouse Campus." },
       { property: "og:title", content: "Core Values | Lighthouse Campus" },
       { property: "og:description", content: "The principles that shape learning, relationships and institutional life." },
-      { property: "og:url", content: "/about/core-values" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/about/core-values" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/about/core-values" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/about/core-values" }],
   }),
   component: CoreValues,
 });

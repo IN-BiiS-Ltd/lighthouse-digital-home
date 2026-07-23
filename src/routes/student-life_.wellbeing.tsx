@@ -8,10 +8,10 @@ export const Route = createFileRoute("/student-life_/wellbeing")({
       { name: "description", content: "Wellbeing is not a separate programme. It is expressed in relationships, routines, environments and expectations across the whole campus." },
       { property: "og:title", content: "Wellbeing | Student Life | Lighthouse Campus" },
       { property: "og:description", content: "Wellbeing is not a separate programme. It is expressed in relationships, routines, environments and expectations across the whole campus." },
-      { property: "og:url", content: "/student-life/wellbeing" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/student-life/wellbeing" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/student-life/wellbeing" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/student-life/wellbeing" }],
   }),
   component: Page,
 });

@@ -8,10 +8,10 @@ export const Route = createFileRoute("/community_/alumni")({
       { name: "description", content: "Lighthouse Campus is at the beginning of its story. The alumni community described here is the one we are preparing to welcome — a relationship of long-term contribution, not a mailing list." },
       { property: "og:title", content: "Alumni | Community | Lighthouse Campus" },
       { property: "og:description", content: "Lighthouse Campus is at the beginning of its story. The alumni community described here is the one we are preparing to welcome — a relationship of long-term contribution, not a mailing list." },
-      { property: "og:url", content: "/community/alumni" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/community/alumni" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/community/alumni" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/community/alumni" }],
   }),
   component: Page,
 });

@@ -26,9 +26,9 @@ export const Route = createFileRoute("/our-model_/assessment-framework")({
         content: "How assessment supports learning, growth and responsible decisions.",
       },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/our-model/assessment-framework" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/our-model/assessment-framework" },
     ],
-    links: [{ rel: "canonical", href: "/our-model/assessment-framework" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/our-model/assessment-framework" }],
   }),
   component: AssessmentFramework,
 });

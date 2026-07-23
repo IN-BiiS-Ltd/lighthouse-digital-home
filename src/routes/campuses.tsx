@@ -20,9 +20,9 @@ export const Route = createFileRoute("/campuses")({
         property: "og:description",
         content: "One community, growing across locations.",
       },
-      { property: "og:url", content: "/campuses" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/campuses" },
     ],
-    links: [{ rel: "canonical", href: "/campuses" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/campuses" }],
   }),
   component: Campuses,
 });

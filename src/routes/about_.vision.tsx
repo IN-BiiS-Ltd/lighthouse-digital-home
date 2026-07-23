@@ -8,10 +8,10 @@ export const Route = createFileRoute("/about_/vision")({
       { name: "description", content: "Read the long-term educational vision guiding Lighthouse Campus and its growing community." },
       { property: "og:title", content: "Our Vision | Lighthouse Campus" },
       { property: "og:description", content: "The future we seek — a learning community where every learner develops knowledge, character and confidence." },
-      { property: "og:url", content: "/about/vision" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/about/vision" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/about/vision" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/about/vision" }],
   }),
   component: Vision,
 });

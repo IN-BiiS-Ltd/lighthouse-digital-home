@@ -26,9 +26,9 @@ export const Route = createFileRoute("/our-model_/innovation")({
         content: "Innovation at Lighthouse begins with a clear question: how does this improve learning, teaching or the life of the community?",
       },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/our-model/innovation" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/our-model/innovation" },
     ],
-    links: [{ rel: "canonical", href: "/our-model/innovation" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/our-model/innovation" }],
   }),
   component: Innovation,
 });

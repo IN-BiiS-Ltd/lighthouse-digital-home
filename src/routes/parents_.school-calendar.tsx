@@ -8,10 +8,10 @@ export const Route = createFileRoute("/parents_/school-calendar")({
       { name: "description", content: "A shared rhythm across the school year — terms, key moments and community events that families and the school live by together." },
       { property: "og:title", content: "School Calendar | Parents | Lighthouse Campus" },
       { property: "og:description", content: "A shared rhythm across the school year — terms, key moments and community events that families and the school live by together." },
-      { property: "og:url", content: "/parents/school-calendar" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/parents/school-calendar" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/parents/school-calendar" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/parents/school-calendar" }],
   }),
   component: Page,
 });

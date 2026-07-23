@@ -10,10 +10,10 @@ export const Route = createFileRoute("/about_/leadership")({
       { name: "description", content: "Learn how educational leadership at Lighthouse Campus creates the conditions for learning, wellbeing, professional growth and institutional development." },
       { property: "og:title", content: "Leadership | Lighthouse Campus" },
       { property: "og:description", content: "Educational purpose expressed through responsibility, service and thoughtful action." },
-      { property: "og:url", content: "/about/leadership" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/about/leadership" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/about/leadership" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/about/leadership" }],
   }),
   component: Leadership,
 });

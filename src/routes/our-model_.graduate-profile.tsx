@@ -27,9 +27,9 @@ export const Route = createFileRoute("/our-model_/graduate-profile")({
           "The knowledge, character and capabilities Lighthouse graduates carry beyond school.",
       },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/our-model/graduate-profile" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/our-model/graduate-profile" },
     ],
-    links: [{ rel: "canonical", href: "/our-model/graduate-profile" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/our-model/graduate-profile" }],
   }),
   component: GraduateProfile,
 });

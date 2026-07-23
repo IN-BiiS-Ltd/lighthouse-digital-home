@@ -8,10 +8,10 @@ export const Route = createFileRoute("/news_/research-reflection")({
       { name: "description", content: "Longer-form reflection on educational research and institutional practice." },
       { property: "og:title", content: "Research & Reflection | News & Insights | Lighthouse Campus" },
       { property: "og:description", content: "Longer-form reflection on educational research and institutional practice." },
-      { property: "og:url", content: "/news/research-reflection" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/news/research-reflection" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/news/research-reflection" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/news/research-reflection" }],
   }),
   component: Page,
 });

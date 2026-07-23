@@ -8,10 +8,10 @@ export const Route = createFileRoute("/campus-experience_/health-services")({
       { name: "description", content: "Health services at Lighthouse Campus support the everyday wellbeing of learners and complement the pastoral life of the campus." },
       { property: "og:title", content: "Health Services | Campus | Lighthouse Campus" },
       { property: "og:description", content: "Health services at Lighthouse Campus support the everyday wellbeing of learners and complement the pastoral life of the campus." },
-      { property: "og:url", content: "/campus-experience/health-services" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/campus-experience/health-services" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/campus-experience/health-services" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/campus-experience/health-services" }],
   }),
   component: Page,
 });

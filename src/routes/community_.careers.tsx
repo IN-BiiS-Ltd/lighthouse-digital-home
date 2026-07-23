@@ -8,10 +8,10 @@ export const Route = createFileRoute("/community_/careers")({
       { name: "description", content: "Careers at Lighthouse Campus are for people who take teaching, learning and community life seriously. Open roles are published only when they are formally open." },
       { property: "og:title", content: "Careers | Community | Lighthouse Campus" },
       { property: "og:description", content: "Careers at Lighthouse Campus are for people who take teaching, learning and community life seriously. Open roles are published only when they are formally open." },
-      { property: "og:url", content: "/community/careers" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/community/careers" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/community/careers" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/community/careers" }],
   }),
   component: Page,
 });

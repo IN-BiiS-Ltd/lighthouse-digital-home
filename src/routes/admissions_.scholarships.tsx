@@ -8,10 +8,10 @@ export const Route = createFileRoute("/admissions_/scholarships")({
       { name: "description", content: "Lighthouse Campus recognises the value of scholarship programmes as part of a diverse, ambitious learning community." },
       { property: "og:title", content: "Scholarships | Admissions | Lighthouse Campus" },
       { property: "og:description", content: "Lighthouse Campus recognises the value of scholarship programmes as part of a diverse, ambitious learning community." },
-      { property: "og:url", content: "/admissions/scholarships" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/admissions/scholarships" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/admissions/scholarships" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/admissions/scholarships" }],
   }),
   component: Page,
 });

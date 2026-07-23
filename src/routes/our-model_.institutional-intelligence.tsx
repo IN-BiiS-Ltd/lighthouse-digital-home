@@ -27,9 +27,9 @@ export const Route = createFileRoute("/our-model_/institutional-intelligence")({
         content: "How Lighthouse Campus turns meaningful information into better understanding and responsible action.",
       },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/our-model/institutional-intelligence" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/our-model/institutional-intelligence" },
     ],
-    links: [{ rel: "canonical", href: "/our-model/institutional-intelligence" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/our-model/institutional-intelligence" }],
   }),
   component: InstitutionalIntelligence,
 });

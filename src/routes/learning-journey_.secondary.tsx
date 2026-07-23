@@ -10,10 +10,10 @@ export const Route = createFileRoute("/learning-journey_/secondary")({
       { name: "description", content: "Explore the Lighthouse Campus Secondary experience, combining rigorous academic study, mentorship, leadership and preparation for university and life." },
       { property: "og:title", content: "Secondary School | Lighthouse Campus" },
       { property: "og:description", content: "Scholarship, identity and purposeful direction." },
-      { property: "og:url", content: "/learning-journey/secondary" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/learning-journey/secondary" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/learning-journey/secondary" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/learning-journey/secondary" }],
   }),
   component: Secondary,
 });
