@@ -132,6 +132,10 @@ type Stage = { id: string; number: string; name: string; to: string; tagline: st
 function StageCinema({ stages }: { stages: Stage[] }) {
   return (
     <div className="relative">
+      <ChapterRail
+        ariaLabel="Learning journey chapters"
+        chapters={stages.map((s) => ({ id: s.id, number: s.number, label: s.name }))}
+      />
       {stages.map((stage, i) => {
         const dark = i % 2 === 0;
         const Icon = stageIcons[i] ?? Sparkles;
