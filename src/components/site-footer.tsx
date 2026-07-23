@@ -8,9 +8,7 @@ import {
 } from "@/components/blocks";
 import { primaryNav, secondaryNav } from "@/lib/site-nav";
 import { FollowLinks } from "@/components/share-bar";
-import officialLockupAsset from "@/assets/lighthouse-campus-final.png.asset.json";
-import { assetUrl } from "@/lib/asset-url";
-const officialLockupSrc = assetUrl(officialLockupAsset);
+import officialLockupSrc from "@/assets/lighthouse-official-lockup.webp";
 
 const footerColumns = [
   { title: "Explore", items: primaryNav.slice(0, 5) },
@@ -131,7 +129,7 @@ export function SiteFooter() {
           <figure className="w-full max-w-md rounded-2xl bg-white p-6 shadow-[0_25px_70px_-25px_rgba(0,0,0,0.6)] ring-2 ring-gold">
             <img
               src={officialLockupSrc}
-              alt="Lighthouse Campus — Guiding Minds. Inspiring Futures. Connecting Possibilities."
+              alt="Lighthouse Campus — Readers International School. Guiding Minds. Inspiring Futures. Connecting Possibilities."
               width={800}
               height={800}
               className="mx-auto block h-auto w-full max-w-xs object-contain"
