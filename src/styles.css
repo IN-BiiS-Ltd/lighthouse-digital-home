@@ -401,7 +401,7 @@
   object-fit: contain;
   user-select: none;
   -webkit-user-drag: none;
-  mix-blend-mode: luminosity;
+  mix-blend-mode: soft-light;
 }
 
 
