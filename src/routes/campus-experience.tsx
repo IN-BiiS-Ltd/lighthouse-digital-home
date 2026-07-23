@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { OverviewPage } from "@/components/internal-page";
-import { Building2, BookOpen, FlaskConical, Lightbulb, Dumbbell, UtensilsCrossed, Stethoscope, ShieldCheck, Bus, Compass } from "lucide-react";
+import { Building2, BookOpen, FlaskConical, Lightbulb, Dumbbell, UtensilsCrossed, Stethoscope, ShieldCheck, Bus, Compass, Trees, Users } from "lucide-react";
 
 export const Route = createFileRoute("/campus-experience")({
   head: () => ({
@@ -47,6 +47,8 @@ function Campus() {
         { title: "Health Services", to: "/campus-experience/health-services", body: "Care available on campus.", icon: <Stethoscope className="size-5" /> },
         { title: "Safety", to: "/campus-experience/safety", body: "A safe and orderly campus.", icon: <ShieldCheck className="size-5" /> },
         { title: "Transportation", to: "/campus-experience/transportation", body: "Safe, considered journeys.", icon: <Bus className="size-5" /> },
+        { title: "Outdoor Learning & Gardens", to: "/campus-experience/outdoor-learning", body: "Courtyards, gardens and open-air learning.", icon: <Trees className="size-5" /> },
+        { title: "Assembly & Community Hall", to: "/campus-experience/assembly-hall", body: "Where the whole campus comes together.", icon: <Users className="size-5" /> },
       ]}
       cta={{
         title: "Come and see the campus.",

@@ -73,12 +73,14 @@ import { Route as CampusExperienceTransportationRouteImport } from './routes/cam
 import { Route as CampusExperienceSportsFacilitiesRouteImport } from './routes/campus-experience_.sports-facilities'
 import { Route as CampusExperienceSafetyRouteImport } from './routes/campus-experience_.safety'
 import { Route as CampusExperienceOverviewRouteImport } from './routes/campus-experience_.overview'
+import { Route as CampusExperienceOutdoorLearningRouteImport } from './routes/campus-experience_.outdoor-learning'
 import { Route as CampusExperienceLibraryRouteImport } from './routes/campus-experience_.library'
 import { Route as CampusExperienceLaboratoriesRouteImport } from './routes/campus-experience_.laboratories'
 import { Route as CampusExperienceInnovationCreativeSpacesRouteImport } from './routes/campus-experience_.innovation-creative-spaces'
 import { Route as CampusExperienceHealthServicesRouteImport } from './routes/campus-experience_.health-services'
 import { Route as CampusExperienceDiningRouteImport } from './routes/campus-experience_.dining'
 import { Route as CampusExperienceClassroomsRouteImport } from './routes/campus-experience_.classrooms'
+import { Route as CampusExperienceAssemblyHallRouteImport } from './routes/campus-experience_.assembly-hall'
 import { Route as AdmissionsTuitionFeesRouteImport } from './routes/admissions_.tuition-fees'
 import { Route as AdmissionsScholarshipsRouteImport } from './routes/admissions_.scholarships'
 import { Route as AdmissionsScheduleAVisitRouteImport } from './routes/admissions_.schedule-a-visit'
@@ -436,6 +438,12 @@ const CampusExperienceOverviewRoute =
     path: '/campus-experience/overview',
     getParentRoute: () => rootRouteImport,
   } as any)
+const CampusExperienceOutdoorLearningRoute =
+  CampusExperienceOutdoorLearningRouteImport.update({
+    id: '/campus-experience_/outdoor-learning',
+    path: '/campus-experience/outdoor-learning',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const CampusExperienceLibraryRoute = CampusExperienceLibraryRouteImport.update({
   id: '/campus-experience_/library',
   path: '/campus-experience/library',
@@ -468,6 +476,12 @@ const CampusExperienceClassroomsRoute =
   CampusExperienceClassroomsRouteImport.update({
     id: '/campus-experience_/classrooms',
     path: '/campus-experience/classrooms',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CampusExperienceAssemblyHallRoute =
+  CampusExperienceAssemblyHallRouteImport.update({
+    id: '/campus-experience_/assembly-hall',
+    path: '/campus-experience/assembly-hall',
     getParentRoute: () => rootRouteImport,
   } as any)
 const AdmissionsTuitionFeesRoute = AdmissionsTuitionFeesRouteImport.update({
@@ -586,12 +600,14 @@ export interface FileRoutesByFullPath {
   '/admissions/schedule-a-visit': typeof AdmissionsScheduleAVisitRoute
   '/admissions/scholarships': typeof AdmissionsScholarshipsRoute
   '/admissions/tuition-fees': typeof AdmissionsTuitionFeesRoute
+  '/campus-experience/assembly-hall': typeof CampusExperienceAssemblyHallRoute
   '/campus-experience/classrooms': typeof CampusExperienceClassroomsRoute
   '/campus-experience/dining': typeof CampusExperienceDiningRoute
   '/campus-experience/health-services': typeof CampusExperienceHealthServicesRoute
   '/campus-experience/innovation-creative-spaces': typeof CampusExperienceInnovationCreativeSpacesRoute
   '/campus-experience/laboratories': typeof CampusExperienceLaboratoriesRoute
   '/campus-experience/library': typeof CampusExperienceLibraryRoute
+  '/campus-experience/outdoor-learning': typeof CampusExperienceOutdoorLearningRoute
   '/campus-experience/overview': typeof CampusExperienceOverviewRoute
   '/campus-experience/safety': typeof CampusExperienceSafetyRoute
   '/campus-experience/sports-facilities': typeof CampusExperienceSportsFacilitiesRoute
@@ -674,12 +690,14 @@ export interface FileRoutesByTo {
   '/admissions/schedule-a-visit': typeof AdmissionsScheduleAVisitRoute
   '/admissions/scholarships': typeof AdmissionsScholarshipsRoute
   '/admissions/tuition-fees': typeof AdmissionsTuitionFeesRoute
+  '/campus-experience/assembly-hall': typeof CampusExperienceAssemblyHallRoute
   '/campus-experience/classrooms': typeof CampusExperienceClassroomsRoute
   '/campus-experience/dining': typeof CampusExperienceDiningRoute
   '/campus-experience/health-services': typeof CampusExperienceHealthServicesRoute
   '/campus-experience/innovation-creative-spaces': typeof CampusExperienceInnovationCreativeSpacesRoute
   '/campus-experience/laboratories': typeof CampusExperienceLaboratoriesRoute
   '/campus-experience/library': typeof CampusExperienceLibraryRoute
+  '/campus-experience/outdoor-learning': typeof CampusExperienceOutdoorLearningRoute
   '/campus-experience/overview': typeof CampusExperienceOverviewRoute
   '/campus-experience/safety': typeof CampusExperienceSafetyRoute
   '/campus-experience/sports-facilities': typeof CampusExperienceSportsFacilitiesRoute
@@ -763,12 +781,14 @@ export interface FileRoutesById {
   '/admissions_/schedule-a-visit': typeof AdmissionsScheduleAVisitRoute
   '/admissions_/scholarships': typeof AdmissionsScholarshipsRoute
   '/admissions_/tuition-fees': typeof AdmissionsTuitionFeesRoute
+  '/campus-experience_/assembly-hall': typeof CampusExperienceAssemblyHallRoute
   '/campus-experience_/classrooms': typeof CampusExperienceClassroomsRoute
   '/campus-experience_/dining': typeof CampusExperienceDiningRoute
   '/campus-experience_/health-services': typeof CampusExperienceHealthServicesRoute
   '/campus-experience_/innovation-creative-spaces': typeof CampusExperienceInnovationCreativeSpacesRoute
   '/campus-experience_/laboratories': typeof CampusExperienceLaboratoriesRoute
   '/campus-experience_/library': typeof CampusExperienceLibraryRoute
+  '/campus-experience_/outdoor-learning': typeof CampusExperienceOutdoorLearningRoute
   '/campus-experience_/overview': typeof CampusExperienceOverviewRoute
   '/campus-experience_/safety': typeof CampusExperienceSafetyRoute
   '/campus-experience_/sports-facilities': typeof CampusExperienceSportsFacilitiesRoute
@@ -853,12 +873,14 @@ export interface FileRouteTypes {
     | '/admissions/schedule-a-visit'
     | '/admissions/scholarships'
     | '/admissions/tuition-fees'
+    | '/campus-experience/assembly-hall'
     | '/campus-experience/classrooms'
     | '/campus-experience/dining'
     | '/campus-experience/health-services'
     | '/campus-experience/innovation-creative-spaces'
     | '/campus-experience/laboratories'
     | '/campus-experience/library'
+    | '/campus-experience/outdoor-learning'
     | '/campus-experience/overview'
     | '/campus-experience/safety'
     | '/campus-experience/sports-facilities'
@@ -941,12 +963,14 @@ export interface FileRouteTypes {
     | '/admissions/schedule-a-visit'
     | '/admissions/scholarships'
     | '/admissions/tuition-fees'
+    | '/campus-experience/assembly-hall'
     | '/campus-experience/classrooms'
     | '/campus-experience/dining'
     | '/campus-experience/health-services'
     | '/campus-experience/innovation-creative-spaces'
     | '/campus-experience/laboratories'
     | '/campus-experience/library'
+    | '/campus-experience/outdoor-learning'
     | '/campus-experience/overview'
     | '/campus-experience/safety'
     | '/campus-experience/sports-facilities'
@@ -1029,12 +1053,14 @@ export interface FileRouteTypes {
     | '/admissions_/schedule-a-visit'
     | '/admissions_/scholarships'
     | '/admissions_/tuition-fees'
+    | '/campus-experience_/assembly-hall'
     | '/campus-experience_/classrooms'
     | '/campus-experience_/dining'
     | '/campus-experience_/health-services'
     | '/campus-experience_/innovation-creative-spaces'
     | '/campus-experience_/laboratories'
     | '/campus-experience_/library'
+    | '/campus-experience_/outdoor-learning'
     | '/campus-experience_/overview'
     | '/campus-experience_/safety'
     | '/campus-experience_/sports-facilities'
@@ -1118,12 +1144,14 @@ export interface RootRouteChildren {
   AdmissionsScheduleAVisitRoute: typeof AdmissionsScheduleAVisitRoute
   AdmissionsScholarshipsRoute: typeof AdmissionsScholarshipsRoute
   AdmissionsTuitionFeesRoute: typeof AdmissionsTuitionFeesRoute
+  CampusExperienceAssemblyHallRoute: typeof CampusExperienceAssemblyHallRoute
   CampusExperienceClassroomsRoute: typeof CampusExperienceClassroomsRoute
   CampusExperienceDiningRoute: typeof CampusExperienceDiningRoute
   CampusExperienceHealthServicesRoute: typeof CampusExperienceHealthServicesRoute
   CampusExperienceInnovationCreativeSpacesRoute: typeof CampusExperienceInnovationCreativeSpacesRoute
   CampusExperienceLaboratoriesRoute: typeof CampusExperienceLaboratoriesRoute
   CampusExperienceLibraryRoute: typeof CampusExperienceLibraryRoute
+  CampusExperienceOutdoorLearningRoute: typeof CampusExperienceOutdoorLearningRoute
   CampusExperienceOverviewRoute: typeof CampusExperienceOverviewRoute
   CampusExperienceSafetyRoute: typeof CampusExperienceSafetyRoute
   CampusExperienceSportsFacilitiesRoute: typeof CampusExperienceSportsFacilitiesRoute
@@ -1625,6 +1653,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CampusExperienceOverviewRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/campus-experience_/outdoor-learning': {
+      id: '/campus-experience_/outdoor-learning'
+      path: '/campus-experience/outdoor-learning'
+      fullPath: '/campus-experience/outdoor-learning'
+      preLoaderRoute: typeof CampusExperienceOutdoorLearningRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/campus-experience_/library': {
       id: '/campus-experience_/library'
       path: '/campus-experience/library'
@@ -1665,6 +1700,13 @@ declare module '@tanstack/react-router' {
       path: '/campus-experience/classrooms'
       fullPath: '/campus-experience/classrooms'
       preLoaderRoute: typeof CampusExperienceClassroomsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/campus-experience_/assembly-hall': {
+      id: '/campus-experience_/assembly-hall'
+      path: '/campus-experience/assembly-hall'
+      fullPath: '/campus-experience/assembly-hall'
+      preLoaderRoute: typeof CampusExperienceAssemblyHallRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admissions_/tuition-fees': {
@@ -1814,6 +1856,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdmissionsScheduleAVisitRoute: AdmissionsScheduleAVisitRoute,
   AdmissionsScholarshipsRoute: AdmissionsScholarshipsRoute,
   AdmissionsTuitionFeesRoute: AdmissionsTuitionFeesRoute,
+  CampusExperienceAssemblyHallRoute: CampusExperienceAssemblyHallRoute,
   CampusExperienceClassroomsRoute: CampusExperienceClassroomsRoute,
   CampusExperienceDiningRoute: CampusExperienceDiningRoute,
   CampusExperienceHealthServicesRoute: CampusExperienceHealthServicesRoute,
@@ -1821,6 +1864,7 @@ const rootRouteChildren: RootRouteChildren = {
     CampusExperienceInnovationCreativeSpacesRoute,
   CampusExperienceLaboratoriesRoute: CampusExperienceLaboratoriesRoute,
   CampusExperienceLibraryRoute: CampusExperienceLibraryRoute,
+  CampusExperienceOutdoorLearningRoute: CampusExperienceOutdoorLearningRoute,
   CampusExperienceOverviewRoute: CampusExperienceOverviewRoute,
   CampusExperienceSafetyRoute: CampusExperienceSafetyRoute,
   CampusExperienceSportsFacilitiesRoute: CampusExperienceSportsFacilitiesRoute,
