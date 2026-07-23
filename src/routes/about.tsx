@@ -10,6 +10,7 @@ import officialLockupAsset from "@/assets/lighthouse-official-lockup-v2.png.asse
 const officialLockupSrc = officialLockupAsset.url;
 import {
   BookOpen,
+  CheckCircle,
   Compass,
   Eye,
   Flag,
