@@ -232,7 +232,7 @@ function WhyLighthouse() {
       </Section>
 
       <Section tone="navy">
-        <Pullquote
+        <PullQuote
           onNavy
           quote={
             <>
