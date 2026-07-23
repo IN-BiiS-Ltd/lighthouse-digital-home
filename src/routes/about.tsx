@@ -81,20 +81,6 @@ function About() {
         ]}
       />
 
-      <Section>
-        <SectionHeading
-          eyebrow="Our Purpose"
-          title="Where Potential Becomes Purpose"
-        />
-        <div className="mt-12 max-w-3xl space-y-5 text-lg leading-relaxed text-muted-foreground">
-          <p>Every family dreams of a future where their children are confident, compassionate, and prepared to succeed in an ever-changing world.</p>
-          <p className="font-medium text-foreground">LIGHTHOUSE CAMPUS exists to help make that future possible.</p>
-          <p>Through exceptional teaching, meaningful relationships, and an inspiring learning environment, we empower every learner to discover their strengths, develop their character, and pursue excellence with confidence.</p>
-          <p>We are not simply preparing students for examinations.</p>
-          <p className="font-medium text-foreground">We are preparing them for life, leadership, and the opportunities of tomorrow.</p>
-        </div>
-      </Section>
-
       <PullQuote
         quote={<>Guiding minds. Inspiring futures. Connecting possibilities.</>}
         attribution="The Lighthouse Promise"
