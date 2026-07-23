@@ -248,7 +248,6 @@ function About() {
             </div>
             <figcaption className="mt-4 text-center">
               <span className="eyebrow text-brand-blue">Readers International School</span>
-              <p className="mt-1 text-sm text-muted-foreground">Founding Strategic Educational Partner</p>
             </figcaption>
           </figure>
         </div>
