@@ -9,18 +9,22 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as StudentLifeRouteImport } from './routes/student-life'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ParentsRouteImport } from './routes/parents'
 import { Route as OurModelRouteImport } from './routes/our-model'
 import { Route as NewsRouteImport } from './routes/news'
 import { Route as LearningJourneyRouteImport } from './routes/learning-journey'
+import { Route as CookiesRouteImport } from './routes/cookies'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CommunityRouteImport } from './routes/community'
 import { Route as CareersRouteImport } from './routes/careers'
 import { Route as CampusesRouteImport } from './routes/campuses'
 import { Route as CampusExperienceRouteImport } from './routes/campus-experience'
 import { Route as AdmissionsRouteImport } from './routes/admissions'
+import { Route as AccessibilityRouteImport } from './routes/accessibility'
 import { Route as AcademicExperienceRouteImport } from './routes/academic-experience'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -98,6 +102,11 @@ import { Route as AboutEducationalPhilosophyRouteImport } from './routes/about_.
 import { Route as AboutCoreValuesRouteImport } from './routes/about_.core-values'
 import { Route as AboutCampusCultureRouteImport } from './routes/about_.campus-culture'
 
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const StudentLifeRoute = StudentLifeRouteImport.update({
   id: '/student-life',
   path: '/student-life',
@@ -106,6 +115,11 @@ const StudentLifeRoute = StudentLifeRouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ParentsRoute = ParentsRouteImport.update({
@@ -126,6 +140,11 @@ const NewsRoute = NewsRouteImport.update({
 const LearningJourneyRoute = LearningJourneyRouteImport.update({
   id: '/learning-journey',
   path: '/learning-journey',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CookiesRoute = CookiesRouteImport.update({
+  id: '/cookies',
+  path: '/cookies',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -156,6 +175,11 @@ const CampusExperienceRoute = CampusExperienceRouteImport.update({
 const AdmissionsRoute = AdmissionsRouteImport.update({
   id: '/admissions',
   path: '/admissions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AccessibilityRoute = AccessibilityRouteImport.update({
+  id: '/accessibility',
+  path: '/accessibility',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AcademicExperienceRoute = AcademicExperienceRouteImport.update({
@@ -572,18 +596,22 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/academic-experience': typeof AcademicExperienceRoute
+  '/accessibility': typeof AccessibilityRoute
   '/admissions': typeof AdmissionsRoute
   '/campus-experience': typeof CampusExperienceRoute
   '/campuses': typeof CampusesRoute
   '/careers': typeof CareersRoute
   '/community': typeof CommunityRoute
   '/contact': typeof ContactRoute
+  '/cookies': typeof CookiesRoute
   '/learning-journey': typeof LearningJourneyRoute
   '/news': typeof NewsRoute
   '/our-model': typeof OurModelRoute
   '/parents': typeof ParentsRoute
+  '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/student-life': typeof StudentLifeRoute
+  '/terms': typeof TermsRoute
   '/about/campus-culture': typeof AboutCampusCultureRoute
   '/about/core-values': typeof AboutCoreValuesRoute
   '/about/educational-philosophy': typeof AboutEducationalPhilosophyRoute
@@ -662,18 +690,22 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/academic-experience': typeof AcademicExperienceRoute
+  '/accessibility': typeof AccessibilityRoute
   '/admissions': typeof AdmissionsRoute
   '/campus-experience': typeof CampusExperienceRoute
   '/campuses': typeof CampusesRoute
   '/careers': typeof CareersRoute
   '/community': typeof CommunityRoute
   '/contact': typeof ContactRoute
+  '/cookies': typeof CookiesRoute
   '/learning-journey': typeof LearningJourneyRoute
   '/news': typeof NewsRoute
   '/our-model': typeof OurModelRoute
   '/parents': typeof ParentsRoute
+  '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/student-life': typeof StudentLifeRoute
+  '/terms': typeof TermsRoute
   '/about/campus-culture': typeof AboutCampusCultureRoute
   '/about/core-values': typeof AboutCoreValuesRoute
   '/about/educational-philosophy': typeof AboutEducationalPhilosophyRoute
@@ -753,18 +785,22 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/academic-experience': typeof AcademicExperienceRoute
+  '/accessibility': typeof AccessibilityRoute
   '/admissions': typeof AdmissionsRoute
   '/campus-experience': typeof CampusExperienceRoute
   '/campuses': typeof CampusesRoute
   '/careers': typeof CareersRoute
   '/community': typeof CommunityRoute
   '/contact': typeof ContactRoute
+  '/cookies': typeof CookiesRoute
   '/learning-journey': typeof LearningJourneyRoute
   '/news': typeof NewsRoute
   '/our-model': typeof OurModelRoute
   '/parents': typeof ParentsRoute
+  '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/student-life': typeof StudentLifeRoute
+  '/terms': typeof TermsRoute
   '/about_/campus-culture': typeof AboutCampusCultureRoute
   '/about_/core-values': typeof AboutCoreValuesRoute
   '/about_/educational-philosophy': typeof AboutEducationalPhilosophyRoute
@@ -845,18 +881,22 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/academic-experience'
+    | '/accessibility'
     | '/admissions'
     | '/campus-experience'
     | '/campuses'
     | '/careers'
     | '/community'
     | '/contact'
+    | '/cookies'
     | '/learning-journey'
     | '/news'
     | '/our-model'
     | '/parents'
+    | '/privacy'
     | '/sitemap.xml'
     | '/student-life'
+    | '/terms'
     | '/about/campus-culture'
     | '/about/core-values'
     | '/about/educational-philosophy'
@@ -935,18 +975,22 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/academic-experience'
+    | '/accessibility'
     | '/admissions'
     | '/campus-experience'
     | '/campuses'
     | '/careers'
     | '/community'
     | '/contact'
+    | '/cookies'
     | '/learning-journey'
     | '/news'
     | '/our-model'
     | '/parents'
+    | '/privacy'
     | '/sitemap.xml'
     | '/student-life'
+    | '/terms'
     | '/about/campus-culture'
     | '/about/core-values'
     | '/about/educational-philosophy'
@@ -1025,18 +1069,22 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/academic-experience'
+    | '/accessibility'
     | '/admissions'
     | '/campus-experience'
     | '/campuses'
     | '/careers'
     | '/community'
     | '/contact'
+    | '/cookies'
     | '/learning-journey'
     | '/news'
     | '/our-model'
     | '/parents'
+    | '/privacy'
     | '/sitemap.xml'
     | '/student-life'
+    | '/terms'
     | '/about_/campus-culture'
     | '/about_/core-values'
     | '/about_/educational-philosophy'
@@ -1116,18 +1164,22 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   AcademicExperienceRoute: typeof AcademicExperienceRoute
+  AccessibilityRoute: typeof AccessibilityRoute
   AdmissionsRoute: typeof AdmissionsRoute
   CampusExperienceRoute: typeof CampusExperienceRoute
   CampusesRoute: typeof CampusesRoute
   CareersRoute: typeof CareersRoute
   CommunityRoute: typeof CommunityRoute
   ContactRoute: typeof ContactRoute
+  CookiesRoute: typeof CookiesRoute
   LearningJourneyRoute: typeof LearningJourneyRoute
   NewsRoute: typeof NewsRoute
   OurModelRoute: typeof OurModelRoute
   ParentsRoute: typeof ParentsRoute
+  PrivacyRoute: typeof PrivacyRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StudentLifeRoute: typeof StudentLifeRoute
+  TermsRoute: typeof TermsRoute
   AboutCampusCultureRoute: typeof AboutCampusCultureRoute
   AboutCoreValuesRoute: typeof AboutCoreValuesRoute
   AboutEducationalPhilosophyRoute: typeof AboutEducationalPhilosophyRoute
@@ -1205,6 +1257,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/student-life': {
       id: '/student-life'
       path: '/student-life'
@@ -1217,6 +1276,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/parents': {
@@ -1245,6 +1311,13 @@ declare module '@tanstack/react-router' {
       path: '/learning-journey'
       fullPath: '/learning-journey'
       preLoaderRoute: typeof LearningJourneyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cookies': {
+      id: '/cookies'
+      path: '/cookies'
+      fullPath: '/cookies'
+      preLoaderRoute: typeof CookiesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -1287,6 +1360,13 @@ declare module '@tanstack/react-router' {
       path: '/admissions'
       fullPath: '/admissions'
       preLoaderRoute: typeof AdmissionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/accessibility': {
+      id: '/accessibility'
+      path: '/accessibility'
+      fullPath: '/accessibility'
+      preLoaderRoute: typeof AccessibilityRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/academic-experience': {
@@ -1828,18 +1908,22 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   AcademicExperienceRoute: AcademicExperienceRoute,
+  AccessibilityRoute: AccessibilityRoute,
   AdmissionsRoute: AdmissionsRoute,
   CampusExperienceRoute: CampusExperienceRoute,
   CampusesRoute: CampusesRoute,
   CareersRoute: CareersRoute,
   CommunityRoute: CommunityRoute,
   ContactRoute: ContactRoute,
+  CookiesRoute: CookiesRoute,
   LearningJourneyRoute: LearningJourneyRoute,
   NewsRoute: NewsRoute,
   OurModelRoute: OurModelRoute,
   ParentsRoute: ParentsRoute,
+  PrivacyRoute: PrivacyRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   StudentLifeRoute: StudentLifeRoute,
+  TermsRoute: TermsRoute,
   AboutCampusCultureRoute: AboutCampusCultureRoute,
   AboutCoreValuesRoute: AboutCoreValuesRoute,
   AboutEducationalPhilosophyRoute: AboutEducationalPhilosophyRoute,
