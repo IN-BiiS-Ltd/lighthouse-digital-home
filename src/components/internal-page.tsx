@@ -134,7 +134,15 @@ export function InternalPage({ config }: { config: InternalPageConfig }) {
           <SectionHeading eyebrow="Related" title="Continue exploring" />
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((r) => (
-              <SmartLink key={r.to} to={r.to} className="block group">
+              <SmartLink
+                key={r.to}
+                to={r.to}
+                className="block group"
+                data-event="Related Link Click"
+                data-event-prop-to={r.to}
+                data-event-prop-title={r.title}
+                data-event-prop-from-section={eyebrow}
+              >
                 <FeatureCard title={r.title}>{r.body}</FeatureCard>
               </SmartLink>
             ))}
