@@ -894,3 +894,39 @@ p, li      { text-wrap: pretty; }
   .sheen::after { animation: none !important; opacity: 0 !important; }
   .tilt-card:hover { transform: none !important; }
 }
+
+/* ============================================================
+ * WatermarkFloat — a large, near-invisible institutional mark
+ * that drifts slowly across sovereign hero sections.
+ * Purposeful atmosphere; disabled under reduced motion.
+ * ============================================================ */
+@keyframes watermark-drift {
+  0%   { transform: translate3d(-2%, 0%, 0) rotate(-2deg) scale(1.00); }
+  50%  { transform: translate3d( 2%, 1%, 0) rotate( 1deg) scale(1.04); }
+  100% { transform: translate3d(-2%, 0%, 0) rotate(-2deg) scale(1.00); }
+}
+.watermark-float {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  mix-blend-mode: soft-light;
+  opacity: 0.045;
+  -webkit-mask-image: radial-gradient(60% 60% at 65% 45%, black 40%, transparent 100%);
+          mask-image: radial-gradient(60% 60% at 65% 45%, black 40%, transparent 100%);
+}
+.watermark-float__img {
+  position: absolute;
+  top: 50%;
+  left: 62%;
+  width: min(140vh, 1100px);
+  height: auto;
+  transform-origin: center;
+  animation: watermark-drift 62s ease-in-out infinite;
+  filter: saturate(0) contrast(1.05);
+  will-change: transform;
+}
+@media (prefers-reduced-motion: reduce) {
+  .watermark-float__img { animation: none !important; }
+}
