@@ -232,18 +232,21 @@ function WhyLighthouse() {
       </Section>
 
       <Section tone="navy">
-        <PullQuote
-          onNavy
-          quote={
-            <>
-              Guiding Minds.
-              <br />
-              Inspiring Futures.
-              <br />
-              Connecting Possibilities.
-            </>
-          }
-        />
+        <figure className="relative mx-auto my-12 max-w-3xl border-l-2 border-gold pl-8 md:my-20 md:pl-12">
+          <span
+            aria-hidden
+            className="absolute -left-2 -top-8 select-none font-display text-[6rem] leading-none text-gold/30 md:text-[8rem]"
+          >
+            &ldquo;
+          </span>
+          <blockquote className="font-display text-2xl italic leading-snug text-navy-foreground md:text-4xl">
+            Guiding Minds.
+            <br />
+            Inspiring Futures.
+            <br />
+            Connecting Possibilities.
+          </blockquote>
+        </figure>
         <div className="mx-auto mt-10 max-w-2xl space-y-5 text-center text-lg leading-relaxed text-navy-foreground/80">
           <p>
             At LIGHTHOUSE CAMPUS, learning is more than academic achievement. It is a lifelong journey of discovery — a journey of curiosity, character, responsibility, leadership, and confidence.
