@@ -109,9 +109,9 @@ export function PageHero({
         </h1>
 
         {intro ? (
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-navy-foreground/80 md:text-xl">
+          <div className="mt-6 max-w-2xl text-lg leading-relaxed text-navy-foreground/80 md:text-xl">
             {intro}
-          </p>
+          </div>
         ) : null}
         {sections && sections.length > 0 ? (
           <nav
