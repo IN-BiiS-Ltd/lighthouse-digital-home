@@ -18,6 +18,7 @@ import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { ServiceCard } from "@/components/service-card";
 import type { ServiceStatus } from "@/components/status-pill";
+import { ShareBar } from "@/components/share-bar";
 
 export const Route = createFileRoute("/explore/digital-ecosystem")({
   head: () => ({
@@ -34,9 +35,9 @@ export const Route = createFileRoute("/explore/digital-ecosystem")({
         content: "Connected services designed around the learner and the community.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/explore/digital-ecosystem" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/explore/digital-ecosystem" },
     ],
-    links: [{ rel: "canonical", href: "/explore/digital-ecosystem" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/explore/digital-ecosystem" }],
   }),
   component: DigitalEcosystem,
 });
@@ -193,6 +194,7 @@ function DigitalEcosystem() {
         primary={{ to: "/our-model/institutional-intelligence", label: "Institutional Intelligence" }}
         secondary={{ to: "/our-model/innovation", label: "Innovation with Purpose" }}
       />
+      <ShareBar title="A Growing Digital Ecosystem — Lighthouse Campus" />
     </>
   );
 }

@@ -8,10 +8,10 @@ export const Route = createFileRoute("/campus-experience_/sports-facilities")({
       { name: "description", content: "Sports facilities support physical education, teamwork and healthy habits as part of a full education." },
       { property: "og:title", content: "Sports Facilities | Campus | Lighthouse Campus" },
       { property: "og:description", content: "Sports facilities support physical education, teamwork and healthy habits as part of a full education." },
-      { property: "og:url", content: "/campus-experience/sports-facilities" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/campus-experience/sports-facilities" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/campus-experience/sports-facilities" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/campus-experience/sports-facilities" }],
   }),
   component: Page,
 });

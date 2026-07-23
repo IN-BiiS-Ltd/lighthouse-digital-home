@@ -8,10 +8,10 @@ export const Route = createFileRoute("/student-life_/arts-performance")({
       { name: "description", content: "The arts help students find their voice, refine craft and understand the world differently. They are essential, not optional." },
       { property: "og:title", content: "Arts & Performance | Student Life | Lighthouse Campus" },
       { property: "og:description", content: "The arts help students find their voice, refine craft and understand the world differently. They are essential, not optional." },
-      { property: "og:url", content: "/student-life/arts-performance" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/student-life/arts-performance" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/student-life/arts-performance" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/student-life/arts-performance" }],
   }),
   component: Page,
 });

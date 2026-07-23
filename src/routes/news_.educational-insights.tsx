@@ -8,10 +8,10 @@ export const Route = createFileRoute("/news_/educational-insights")({
       { name: "description", content: "Thinking pieces on learning, teaching, childhood and the wider educational conversation." },
       { property: "og:title", content: "Educational Insights | News & Insights | Lighthouse Campus" },
       { property: "og:description", content: "Thinking pieces on learning, teaching, childhood and the wider educational conversation." },
-      { property: "og:url", content: "/news/educational-insights" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/news/educational-insights" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/news/educational-insights" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/news/educational-insights" }],
   }),
   component: Page,
 });

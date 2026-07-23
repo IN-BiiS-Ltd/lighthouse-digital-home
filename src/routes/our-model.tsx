@@ -8,6 +8,7 @@ import {
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { PillarWheel } from "@/components/pillar-wheel";
+import { ShareBar } from "@/components/share-bar";
 import {
   IconCompass,
   IconConstellation,
@@ -40,9 +41,9 @@ export const Route = createFileRoute("/our-model")({
           "The educational and institutional model of Lighthouse Campus, in ten connected pillars.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/our-model" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/our-model" },
     ],
-    links: [{ rel: "canonical", href: "/our-model" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/our-model" }],
   }),
   component: OurModel,
 });
@@ -173,6 +174,7 @@ function OurModel() {
         primary={{ to: "/our-model/educational-model", label: "The Educational Model" }}
         secondary={{ to: "/our-model/learning-ecosystem", label: "The Learning Ecosystem" }}
       />
+      <ShareBar title="Our Model — Lighthouse Campus" />
     </>
   );
 }

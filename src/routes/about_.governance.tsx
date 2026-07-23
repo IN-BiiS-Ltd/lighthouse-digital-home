@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Section, SectionHeading } from "@/components/blocks";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
+import { ShareBar } from "@/components/share-bar";
 
 export const Route = createFileRoute("/about_/governance")({
   head: () => ({
@@ -10,10 +11,10 @@ export const Route = createFileRoute("/about_/governance")({
       { name: "description", content: "Discover how Lighthouse Campus builds excellence through strong institutional systems, governance, quality assurance and continuous improvement." },
       { property: "og:title", content: "Governance | Lighthouse Campus" },
       { property: "og:description", content: "Excellence begins with strong institutions. A modern framework supporting governance, quality assurance and operational excellence." },
-      { property: "og:url", content: "/about/governance" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/about/governance" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/about/governance" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/about/governance" }],
   }),
   component: Governance,
 });
@@ -82,6 +83,7 @@ function Governance() {
         primary={{ to: "/about/leadership", label: "Explore Leadership" }}
         secondary={{ to: "/about", label: "Read Our Strategic Direction" }}
       />
+      <ShareBar title="Governance | Lighthouse Campus" />
     </>
   );
 }

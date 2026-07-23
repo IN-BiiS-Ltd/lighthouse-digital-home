@@ -12,10 +12,10 @@ export const Route = createFileRoute("/parents_/parent-portal")({
       { name: "description", content: "The Lighthouse parent portal brings communications, calendars and learning updates into one respectful, private place for families." },
       { property: "og:title", content: "Parent Portal | Parents | Lighthouse Campus" },
       { property: "og:description", content: "The Lighthouse parent portal brings communications, calendars and learning updates into one respectful, private place for families." },
-      { property: "og:url", content: "/parents/parent-portal" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/parents/parent-portal" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/parents/parent-portal" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/parents/parent-portal" }],
   }),
   component: Page,
 });

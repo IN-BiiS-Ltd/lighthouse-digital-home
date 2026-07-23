@@ -8,10 +8,10 @@ export const Route = createFileRoute("/student-life_/community-belonging")({
       { name: "description", content: "Belonging is not a decoration on top of school life. It is the ground on which learning, character and confidence grow." },
       { property: "og:title", content: "Community & Belonging | Student Life | Lighthouse Campus" },
       { property: "og:description", content: "Belonging is not a decoration on top of school life. It is the ground on which learning, character and confidence grow." },
-      { property: "og:url", content: "/student-life/community-belonging" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/student-life/community-belonging" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/student-life/community-belonging" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/student-life/community-belonging" }],
   }),
   component: Page,
 });

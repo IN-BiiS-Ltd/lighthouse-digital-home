@@ -48,7 +48,7 @@ export const Route = createFileRoute("/")({
         content:
           "Guiding minds. Inspiring futures. Connecting possibilities. An international learning community where students remain at the centre.",
       },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/" },
       { property: "og:image", content: "https://lighthousecampus.lovable.app/lighthouse-social-card.webp" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
@@ -57,7 +57,7 @@ export const Route = createFileRoute("/")({
       { name: "twitter:image", content: "https://lighthousecampus.lovable.app/lighthouse-social-card.webp" },
       { name: "twitter:image:alt", content: "Lighthouse Campus — Mohandessin, Giza" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/" }],
 
   }),
   component: Home,

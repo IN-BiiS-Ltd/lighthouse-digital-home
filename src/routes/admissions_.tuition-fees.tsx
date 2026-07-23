@@ -8,10 +8,10 @@ export const Route = createFileRoute("/admissions_/tuition-fees")({
       { name: "description", content: "Tuition and fee information is shared directly with enquiring families so it can be discussed in context." },
       { property: "og:title", content: "Tuition & Fees | Admissions | Lighthouse Campus" },
       { property: "og:description", content: "Tuition and fee information is shared directly with enquiring families so it can be discussed in context." },
-      { property: "og:url", content: "/admissions/tuition-fees" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/admissions/tuition-fees" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/admissions/tuition-fees" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/admissions/tuition-fees" }],
   }),
   component: Page,
 });

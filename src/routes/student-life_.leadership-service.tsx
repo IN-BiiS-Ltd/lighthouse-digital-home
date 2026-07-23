@@ -8,10 +8,10 @@ export const Route = createFileRoute("/student-life_/leadership-service")({
       { name: "description", content: "Students develop leadership by taking real responsibility inside a community that trusts them with meaningful work." },
       { property: "og:title", content: "Leadership & Service | Student Life | Lighthouse Campus" },
       { property: "og:description", content: "Students develop leadership by taking real responsibility inside a community that trusts them with meaningful work." },
-      { property: "og:url", content: "/student-life/leadership-service" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/student-life/leadership-service" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/student-life/leadership-service" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/student-life/leadership-service" }],
   }),
   component: Page,
 });

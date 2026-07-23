@@ -8,6 +8,7 @@ import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { PullQuote, StatBand } from "@/components/editorial";
 import officialLockupAsset from "@/assets/lighthouse-official-lockup-v2.png.asset.json";
+import { ShareBar } from "@/components/share-bar";
 const officialLockupSrc = officialLockupAsset.url;
 import {
   BookOpen,
@@ -35,10 +36,10 @@ export const Route = createFileRoute("/about")({
         content:
           "An independent institution with its own philosophy, identity and long-term vision. Discover Lighthouse Campus in Mohandessin, Giza.",
       },
-      { property: "og:url", content: "/about" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/about" },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/about" }],
   }),
   component: About,
 });
@@ -326,6 +327,7 @@ function About() {
         primary={{ to: "/about/our-story", label: "Read Our Story" }}
         secondary={{ to: "/about/why-lighthouse", label: "Why Lighthouse?" }}
       />
+      <ShareBar title="About Lighthouse Campus | An Independent Institution for Modern Learning" />
     </>
   );
 }

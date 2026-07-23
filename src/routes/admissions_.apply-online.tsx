@@ -8,10 +8,10 @@ export const Route = createFileRoute("/admissions_/apply-online")({
       { name: "description", content: "An online application experience is being prepared with the same care as the wider admissions journey. Until it launches, families apply through the admissions team." },
       { property: "og:title", content: "Apply Online | Admissions | Lighthouse Campus" },
       { property: "og:description", content: "An online application experience is being prepared with the same care as the wider admissions journey. Until it launches, families apply through the admissions team." },
-      { property: "og:url", content: "/admissions/apply-online" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/admissions/apply-online" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/admissions/apply-online" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/admissions/apply-online" }],
   }),
   component: Page,
 });

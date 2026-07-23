@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Section, SectionHeading } from "@/components/blocks";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
+import { ShareBar } from "@/components/share-bar";
 
 export const Route = createFileRoute("/learning-journey_/early-years")({
   head: () => ({
@@ -10,10 +11,10 @@ export const Route = createFileRoute("/learning-journey_/early-years")({
       { name: "description", content: "Explore the Lighthouse Campus Early Years experience, where play, relationships, language and discovery build the foundations for lifelong learning." },
       { property: "og:title", content: "Early Years | Lighthouse Campus" },
       { property: "og:description", content: "Wonder, security and the first foundations of learning." },
-      { property: "og:url", content: "/learning-journey/early-years" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/learning-journey/early-years" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/learning-journey/early-years" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/learning-journey/early-years" }],
   }),
   component: EarlyYears,
 });
@@ -121,6 +122,7 @@ function EarlyYears() {
         primary={{ to: "/learning-journey/primary", label: "Explore Primary" }}
         secondary={{ to: "/admissions", label: "Admissions Overview" }}
       />
+      <ShareBar title="Early Years | Lighthouse Campus" />
     </>
   );
 }

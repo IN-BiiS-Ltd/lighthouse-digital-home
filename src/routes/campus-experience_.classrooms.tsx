@@ -9,10 +9,10 @@ export const Route = createFileRoute("/campus-experience_/classrooms")({
       { name: "description", content: "The classroom is where much of daily learning happens. Its design supports attention, dialogue and care." },
       { property: "og:title", content: "Classrooms | Campus | Lighthouse Campus" },
       { property: "og:description", content: "The classroom is where much of daily learning happens. Its design supports attention, dialogue and care." },
-      { property: "og:url", content: "/campus-experience/classrooms" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/campus-experience/classrooms" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/campus-experience/classrooms" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/campus-experience/classrooms" }],
   }),
   component: Page,
 });

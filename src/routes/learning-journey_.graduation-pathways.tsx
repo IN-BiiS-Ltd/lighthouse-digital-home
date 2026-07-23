@@ -30,10 +30,10 @@ export const Route = createFileRoute("/learning-journey_/graduation-pathways")({
         property: "og:description",
         content: "Prepared for university. Ready for life. Grounded in purpose.",
       },
-      { property: "og:url", content: "/learning-journey/graduation-pathways" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/learning-journey/graduation-pathways" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/learning-journey/graduation-pathways" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/learning-journey/graduation-pathways" }],
   }),
   component: GraduationPathways,
 });

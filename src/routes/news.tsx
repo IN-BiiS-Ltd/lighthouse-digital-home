@@ -17,10 +17,10 @@ export const Route = createFileRoute("/news")({
         content:
           "Stories, articles and educational thinking from Lighthouse Campus.",
       },
-      { property: "og:url", content: "/news" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/news" },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "/news" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/news" }],
   }),
   component: News,
 });

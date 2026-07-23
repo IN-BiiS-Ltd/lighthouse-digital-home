@@ -8,10 +8,10 @@ export const Route = createFileRoute("/campus-experience_/transportation")({
       { name: "description", content: "Safe, considered journeys to and from Lighthouse Campus — treated with the same care as life on campus." },
       { property: "og:title", content: "Transportation | Campus | Lighthouse Campus" },
       { property: "og:description", content: "Safe, considered journeys to and from Lighthouse Campus — treated with the same care as life on campus." },
-      { property: "og:url", content: "/campus-experience/transportation" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/campus-experience/transportation" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/campus-experience/transportation" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/campus-experience/transportation" }],
   }),
   component: Page,
 });

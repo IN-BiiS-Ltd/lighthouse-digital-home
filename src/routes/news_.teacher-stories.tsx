@@ -8,10 +8,10 @@ export const Route = createFileRoute("/news_/teacher-stories")({
       { name: "description", content: "Reflections and portraits of the educators who shape daily life at Lighthouse Campus." },
       { property: "og:title", content: "Teacher Stories | News & Insights | Lighthouse Campus" },
       { property: "og:description", content: "Reflections and portraits of the educators who shape daily life at Lighthouse Campus." },
-      { property: "og:url", content: "/news/teacher-stories" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/news/teacher-stories" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/news/teacher-stories" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/news/teacher-stories" }],
   }),
   component: Page,
 });

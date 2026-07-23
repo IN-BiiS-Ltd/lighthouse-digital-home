@@ -10,6 +10,7 @@ import {
 import { Section, SectionHeading, FeatureCard, Eyebrow } from "@/components/blocks";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
+import { ShareBar } from "@/components/share-bar";
 
 export const Route = createFileRoute("/our-model_/parent-partnership")({
   head: () => ({
@@ -26,9 +27,9 @@ export const Route = createFileRoute("/our-model_/parent-partnership")({
         content: "How the school and families work together around every learner.",
       },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/our-model/parent-partnership" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/our-model/parent-partnership" },
     ],
-    links: [{ rel: "canonical", href: "/our-model/parent-partnership" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/our-model/parent-partnership" }],
   }),
   component: ParentPartnership,
 });
@@ -88,6 +89,7 @@ function ParentPartnership() {
         primary={{ to: "/parents", label: "Parents at Lighthouse" }}
         secondary={{ to: "/contact", label: "Schedule a visit" }}
       />
+      <ShareBar title="Families as Educational Partners — Lighthouse Campus" />
     </>
   );
 }

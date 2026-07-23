@@ -27,9 +27,9 @@ export const Route = createFileRoute("/our-model_/learning-ecosystem")({
           "A living educational system where every part of the institution works together around the learner.",
       },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/our-model/learning-ecosystem" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/our-model/learning-ecosystem" },
     ],
-    links: [{ rel: "canonical", href: "/our-model/learning-ecosystem" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/our-model/learning-ecosystem" }],
   }),
   component: LearningEcosystem,
 });

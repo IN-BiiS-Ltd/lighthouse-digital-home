@@ -8,10 +8,10 @@ export const Route = createFileRoute("/campus-experience_/assembly-hall")({
       { name: "description", content: "A gathering space for assemblies, performances and moments that bring the campus community together." },
       { property: "og:title", content: "Assembly & Community Hall | Campus | Lighthouse Campus" },
       { property: "og:description", content: "A gathering space for assemblies, performances and moments that bring the campus community together." },
-      { property: "og:url", content: "/campus-experience/assembly-hall" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/campus-experience/assembly-hall" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/campus-experience/assembly-hall" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/campus-experience/assembly-hall" }],
   }),
   component: Page,
 });

@@ -8,10 +8,10 @@ export const Route = createFileRoute("/student-life_/clubs-activities")({
       { name: "description", content: "Clubs and activities are how learners discover what they care about and how they develop the habits of contribution." },
       { property: "og:title", content: "Clubs & Activities | Student Life | Lighthouse Campus" },
       { property: "og:description", content: "Clubs and activities are how learners discover what they care about and how they develop the habits of contribution." },
-      { property: "og:url", content: "/student-life/clubs-activities" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/student-life/clubs-activities" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/student-life/clubs-activities" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/student-life/clubs-activities" }],
   }),
   component: Page,
 });

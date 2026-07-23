@@ -222,3 +222,68 @@ Recommended future CMS collections: `pages`, `overview_pages`,
 
 - v1.0 — Production Baseline. Frozen for structural changes pending
   ZANOVA integration.
+
+---
+
+## 12. The Four Cadences (Design System)
+
+Every route belongs to exactly one cadence. The cadence is chosen by
+content type — not by section — so unity of identity coexists with
+rhythmic variety across the site.
+
+### Cadence I — Cinematic
+**Purpose:** narrative journeys with chapter-level depth.
+**Toolkit:** `StageCinema` / chapter panels · `ChapterRail`
+(sticky vertical navigator with `IntersectionObserver`, keyboard
+support) · `ChapterActions` (per-chapter Details dialog +
+deep-linked Share) · gilded Roman numerals · alternating
+navy/sand full-bleed panels.
+**Routes:** `/learning-journey`, `/learning-journey/graduation-pathways`.
+
+### Cadence II — Editorial
+**Purpose:** philosophy, vision, reflection.
+**Toolkit:** `EditorialPage` template · generous reading column ·
+drop-cap opening (`.editorial-lead`) · Roman-numeral chapters ·
+`Pullquote` between chapters · closing navy `manifesto` panel ·
+optional odd-count `focus` chip row.
+**Routes:** `/about/mission`, `/about/vision`,
+`/about/educational-philosophy`, `/about/our-story`,
+`/our-model/educational-model`, `/our-model/student-development`,
+`/parents/parent-journey`.
+
+### Cadence III — Architectural
+**Purpose:** structure, systems, components.
+**Toolkit:** `ArchitecturalPage` template with six composable units
+(`pillars`, `cards`, `stats`, `bento`, `principles`, `related`) ·
+in-hero anchor navigation · one navy pin in every bento grid ·
+custom SVG icons from `lighthouse-icons.tsx`.
+**Routes:** `/academic-experience`, `/campus-experience/overview`,
+`/our-model/learning-ecosystem`, `/our-model/teaching-framework`,
+`/student-life`, `/admissions`, `/parents`, `/community`.
+
+### Cadence IV — Reference
+**Purpose:** answers, details, policies, FAQs.
+**Toolkit:** `InternalPage` template · breadcrumb · alternating
+`Section` tones · optional status pill · related links · standard
+CTA band · `ShareBar`.
+**Routes:** all remaining sub-pages (Classrooms, Requirements,
+Policies, Calendar, FAQs, News items, …).
+
+### Unifying threads (present in all four cadences)
+1. Floating logo watermarks via `CrystalField` (tonal variants:
+   navy = `screen` + gold glow; light = `multiply` at 10–14%).
+2. `WatermarkFloat` emblem on hero blocks (4.5% opacity, 62s drift).
+3. `ScrollProgress` gilded bar in `__root.tsx`.
+4. `ShareBar` at the foot of every content route.
+5. Global favicon, OG image (`/lighthouse-social-card.webp`) and
+   canonical / og:url as **absolute** URLs pointing at
+   `https://lighthousecampus.lovable.app`.
+6. Typography scale (display italic numerals, gilded accents).
+7. Palette: navy · gold · sand · brand-blue.
+8. Breadcrumbs + Related links + CTA band structure.
+
+### Selection rule
+Ask of each route: _"Does it tell a journey?"_ → I / II.
+_"Does it show a structure?"_ → III. _"Does it answer a question?"_
+→ IV. This test is enforced at review time; a page never mixes two
+cadences.

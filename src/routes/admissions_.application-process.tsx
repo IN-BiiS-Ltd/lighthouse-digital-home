@@ -8,10 +8,10 @@ export const Route = createFileRoute("/admissions_/application-process")({
       { name: "description", content: "Joining Lighthouse Campus is a deliberate process designed to know each family and each learner well." },
       { property: "og:title", content: "Application Process | Admissions | Lighthouse Campus" },
       { property: "og:description", content: "Joining Lighthouse Campus is a deliberate process designed to know each family and each learner well." },
-      { property: "og:url", content: "/admissions/application-process" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/admissions/application-process" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/admissions/application-process" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/admissions/application-process" }],
   }),
   component: Page,
 });

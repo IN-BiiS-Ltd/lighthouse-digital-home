@@ -8,10 +8,10 @@ export const Route = createFileRoute("/community_/partnerships")({
       { name: "description", content: "Partnerships extend the campus into the wider world — carefully, and with a clear educational purpose. Partners are named only once relationships are formalised." },
       { property: "og:title", content: "Partnerships | Community | Lighthouse Campus" },
       { property: "og:description", content: "Partnerships extend the campus into the wider world — carefully, and with a clear educational purpose. Partners are named only once relationships are formalised." },
-      { property: "og:url", content: "/community/partnerships" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/community/partnerships" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/community/partnerships" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/community/partnerships" }],
   }),
   component: Page,
 });

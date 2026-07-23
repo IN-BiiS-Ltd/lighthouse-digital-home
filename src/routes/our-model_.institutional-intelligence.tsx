@@ -11,6 +11,7 @@ import {
 import { Section, SectionHeading, FeatureCard, Eyebrow } from "@/components/blocks";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
+import { ShareBar } from "@/components/share-bar";
 
 export const Route = createFileRoute("/our-model_/institutional-intelligence")({
   head: () => ({
@@ -27,9 +28,9 @@ export const Route = createFileRoute("/our-model_/institutional-intelligence")({
         content: "How Lighthouse Campus turns meaningful information into better understanding and responsible action.",
       },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/our-model/institutional-intelligence" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/our-model/institutional-intelligence" },
     ],
-    links: [{ rel: "canonical", href: "/our-model/institutional-intelligence" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/our-model/institutional-intelligence" }],
   }),
   component: InstitutionalIntelligence,
 });
@@ -91,6 +92,7 @@ function InstitutionalIntelligence() {
         primary={{ to: "/our-model/innovation", label: "Innovation with Purpose" }}
         secondary={{ to: "/explore/digital-ecosystem", label: "Digital Ecosystem" }}
       />
+      <ShareBar title="An Institution That Learns — Lighthouse Campus" />
     </>
   );
 }

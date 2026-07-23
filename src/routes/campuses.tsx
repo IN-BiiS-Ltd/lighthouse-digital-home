@@ -5,6 +5,7 @@ import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { cn } from "@/lib/utils";
 import exteriorImg from "@/assets/campus-exterior.jpg";
+import { ShareBar } from "@/components/share-bar";
 
 export const Route = createFileRoute("/campuses")({
   head: () => ({
@@ -20,9 +21,9 @@ export const Route = createFileRoute("/campuses")({
         property: "og:description",
         content: "One community, growing across locations.",
       },
-      { property: "og:url", content: "/campuses" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/campuses" },
     ],
-    links: [{ rel: "canonical", href: "/campuses" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/campuses" }],
   }),
   component: Campuses,
 });
@@ -158,6 +159,7 @@ function Campuses() {
         primary={{ to: "/campuses/mohandessin", label: "Explore Mohandessin" }}
         secondary={{ to: "/contact", label: "Schedule a visit" }}
       />
+      <ShareBar title="Our Campuses — Lighthouse Campus" />
     </>
   );
 }

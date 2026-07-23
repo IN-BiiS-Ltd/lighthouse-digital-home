@@ -8,10 +8,10 @@ export const Route = createFileRoute("/admissions_/requirements")({
       { name: "description", content: "The requirements below help the admissions team understand the learner and the family." },
       { property: "og:title", content: "Requirements | Admissions | Lighthouse Campus" },
       { property: "og:description", content: "The requirements below help the admissions team understand the learner and the family." },
-      { property: "og:url", content: "/admissions/requirements" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/admissions/requirements" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/admissions/requirements" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/admissions/requirements" }],
   }),
   component: Page,
 });

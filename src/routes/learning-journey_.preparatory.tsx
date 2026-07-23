@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Section, SectionHeading } from "@/components/blocks";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
+import { ShareBar } from "@/components/share-bar";
 
 export const Route = createFileRoute("/learning-journey_/preparatory")({
   head: () => ({
@@ -10,10 +11,10 @@ export const Route = createFileRoute("/learning-journey_/preparatory")({
       { name: "description", content: "Explore the Lighthouse Campus Preparatory experience, where learners develop independence, critical thinking, subject depth and growing responsibility." },
       { property: "og:title", content: "Preparatory School | Lighthouse Campus" },
       { property: "og:description", content: "Independence, deeper thinking and an expanding view of the world." },
-      { property: "og:url", content: "/learning-journey/preparatory" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/learning-journey/preparatory" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/learning-journey/preparatory" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/learning-journey/preparatory" }],
   }),
   component: Preparatory,
 });
@@ -122,6 +123,7 @@ function Preparatory() {
         primary={{ to: "/learning-journey/secondary", label: "Explore Secondary" }}
         secondary={{ to: "/contact", label: "Schedule a Visit" }}
       />
+      <ShareBar title="Preparatory School | Lighthouse Campus" />
     </>
   );
 }

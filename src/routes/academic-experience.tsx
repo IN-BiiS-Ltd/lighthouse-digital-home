@@ -28,10 +28,10 @@ export const Route = createFileRoute("/academic-experience")({
         content:
           "Deep knowledge and enduring capabilities — curriculum, pathways, teaching and assessment at Lighthouse Campus.",
       },
-      { property: "og:url", content: "/academic-experience" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/academic-experience" },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "/academic-experience" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/academic-experience" }],
   }),
   component: AcademicExperience,
 });

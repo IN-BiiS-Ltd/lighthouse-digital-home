@@ -3,6 +3,7 @@ import { Eye, Heart, Compass, Flag } from "lucide-react";
 import { Section, SectionHeading, FeatureCard } from "@/components/blocks";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
+import { ShareBar } from "@/components/share-bar";
 
 export const Route = createFileRoute("/about_/core-values")({
   head: () => ({
@@ -11,10 +12,10 @@ export const Route = createFileRoute("/about_/core-values")({
       { name: "description", content: "Explore the values of curiosity, belonging, integrity and excellence that guide life and learning at Lighthouse Campus." },
       { property: "og:title", content: "Core Values | Lighthouse Campus" },
       { property: "og:description", content: "The principles that shape learning, relationships and institutional life." },
-      { property: "og:url", content: "/about/core-values" },
+      { property: "og:url", content: "https://lighthousecampus.lovable.app/about/core-values" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "/about/core-values" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/about/core-values" }],
   }),
   component: CoreValues,
 });
@@ -91,6 +92,7 @@ function CoreValues() {
         primary={{ to: "/about/educational-philosophy", label: "Explore Our Educational Philosophy" }}
         secondary={{ to: "/our-model/learner-profile", label: "Meet the Lighthouse Learner" }}
       />
+      <ShareBar title="Core Values | Lighthouse Campus" />
     </>
   );
 }
