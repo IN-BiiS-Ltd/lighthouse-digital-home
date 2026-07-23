@@ -57,7 +57,16 @@ export const Route = createFileRoute("/")({
       { name: "twitter:image", content: "https://lighthousecampus.lovable.app/lighthouse-social-card.webp" },
       { name: "twitter:image:alt", content: "Lighthouse Campus — Mohandessin, Giza" },
     ],
-    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/" }],
+    links: [
+      { rel: "canonical", href: "https://lighthousecampus.lovable.app/" },
+      // Preload the LCP hero image so mobile FCP/LCP kick in earlier.
+      {
+        rel: "preload",
+        as: "image",
+        href: heroImg,
+        fetchpriority: "high",
+      } as unknown as { rel: string },
+    ],
 
   }),
   component: Home,
@@ -96,7 +105,9 @@ function Home() {
           alt="Diverse group of Lighthouse Campus students — Sudanese, Arab and African — exploring an illustrated book together in a warm sunlit classroom"
           width={1600}
           height={1104}
+          sizes="100vw"
           fetchPriority="high"
+          decoding="async"
           className="absolute inset-0 -z-10 size-full object-cover animate-ken-burns"
         />
         <div
@@ -130,10 +141,24 @@ function Home() {
               and belonging.
             </p>
             <div className="mt-9 flex flex-wrap gap-3 animate-[fade-in_1s_cubic-bezier(0.22,1,0.36,1)_0.4s_both]">
-              <ButtonLink to="/admissions" variant="gold" size="lg">
+              <ButtonLink
+                to="/admissions"
+                variant="gold"
+                size="lg"
+                data-event="CTA Click"
+                data-event-prop-cta="Admissions"
+                data-event-prop-location="Home Hero"
+              >
                 Begin the admissions journey
               </ButtonLink>
-              <ButtonLink to="/about" variant="outline-light" size="lg">
+              <ButtonLink
+                to="/about"
+                variant="outline-light"
+                size="lg"
+                data-event="CTA Click"
+                data-event-prop-cta="About"
+                data-event-prop-location="Home Hero"
+              >
                 Discover our story
               </ButtonLink>
             </div>

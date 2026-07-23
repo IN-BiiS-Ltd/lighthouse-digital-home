@@ -76,6 +76,7 @@ export function InternalPage({ config }: { config: InternalPageConfig }) {
                 alt={heroImage.alt}
                 width={1600}
                 height={1008}
+                sizes="(min-width: 1024px) 1024px, 100vw"
                 loading="lazy"
                 decoding="async"
                 className="block h-auto w-full object-cover"
