@@ -57,7 +57,17 @@ export const Route = createFileRoute("/")({
       { name: "twitter:image", content: "https://lighthousecampus.lovable.app/lighthouse-social-card.webp" },
       { name: "twitter:image:alt", content: "Lighthouse Campus — Mohandessin, Giza" },
     ],
-    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/" }],
+    links: [
+      { rel: "canonical", href: "https://lighthousecampus.lovable.app/" },
+      // Preload the LCP hero image so mobile FCP/LCP kick in earlier.
+      {
+        rel: "preload",
+        as: "image",
+        href: heroImg,
+        // @ts-expect-error — valid HTML attribute, not yet in the React types map
+        fetchpriority: "high",
+      },
+    ],
 
   }),
   component: Home,
