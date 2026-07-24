@@ -50,11 +50,11 @@ function DesktopDropdown({
         {section.label}
         <ChevronDown className="size-3.5 opacity-70" aria-hidden />
         {section.label === "Campus" ? (
-          <span className="pointer-events-none absolute -bottom-1 left-1/2 block h-6 w-6 -translate-x-1/2">
+          <span className="pointer-events-none absolute -bottom-1 left-1/2 block h-7 w-7 -translate-x-1/2">
             <img
               src={campusEmblem.url}
               alt=""
-              className="h-full w-full object-contain opacity-100 drop-shadow-[0_0_10px_rgba(212,175,55,0.7)] animate-[float-emblem_4s_ease-in-out_infinite]"
+              className="h-full w-full object-contain opacity-100 drop-shadow-[0_0_12px_rgba(212,175,55,0.85)] animate-[float-emblem_4s_ease-in-out_infinite]"
               loading="eager"
               decoding="async"
             />
