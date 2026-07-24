@@ -34,6 +34,9 @@ import curiosityIcon from "@/assets/value-curiosity.png.asset.json";
 import belongingIcon from "@/assets/value-belonging.png.asset.json";
 import integrityIcon from "@/assets/value-integrity.png.asset.json";
 import excellenceIcon from "@/assets/value-excellence.png.asset.json";
+import heroVideo from "@/assets/hero-cinematic.mp4.asset.json";
+import { useLang } from "@/lib/i18n";
+import { useEffect, useRef, useState } from "react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -101,6 +104,22 @@ const values = [
 ];
 
 function Home() {
+  const { t, dir } = useLang();
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [videoReady, setVideoReady] = useState(false);
+
+  useEffect(() => {
+    // Respect prefers-reduced-motion — keep the still hero image.
+    if (typeof window === "undefined") return;
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    // Skip autoplay on narrow viewports to save data on mobile.
+    const narrow = window.matchMedia("(max-width: 640px)").matches;
+    if (reduced || narrow) return;
+    const v = videoRef.current;
+    if (!v) return;
+    v.play().catch(() => {/* ignore autoplay rejection */});
+  }, []);
+
   return (
     <>
       {/* ---------------------------------------------------------- Hero */}
@@ -118,6 +137,19 @@ function Home() {
             className="absolute inset-0 -z-10 size-full object-cover animate-ken-burns"
           />
         </picture>
+        {/* Cinematic video layer — fades in after loadeddata, hidden on reduced-motion / small screens */}
+        <video
+          ref={videoRef}
+          src={heroVideo.url}
+          poster={heroImg}
+          muted
+          loop
+          playsInline
+          preload="none"
+          aria-hidden
+          onLoadedData={() => setVideoReady(true)}
+          className={`absolute inset-0 -z-10 size-full object-cover transition-opacity duration-[1200ms] ease-out motion-reduce:hidden ${videoReady ? "opacity-100" : "opacity-0"}`}
+        />
         <div
           aria-hidden
           className="absolute inset-0 -z-10"
@@ -126,7 +158,7 @@ function Home() {
               "linear-gradient(90deg, color-mix(in oklab, var(--navy) 92%, transparent) 0%, color-mix(in oklab, var(--navy) 78%, transparent) 45%, color-mix(in oklab, var(--navy) 30%, transparent) 100%)",
           }}
         />
-        <WatermarkFloat side="right" />
+        <WatermarkFloat side={dir === "rtl" ? "left" : "right"} />
         <BrandAtmosphere density={1.1} />
         <Container className="relative flex min-h-[78vh] flex-col justify-center py-24">
           <div className="max-w-2xl">
@@ -138,15 +170,13 @@ function Home() {
               />
             </div>
             <div className="animate-[fade-in_0.8s_cubic-bezier(0.22,1,0.36,1)_both]">
-              <Eyebrow onNavy>Lighthouse Campus · Mohandessin</Eyebrow>
+              <Eyebrow onNavy>{t("home.eyebrow")}</Eyebrow>
             </div>
             <h1 className="mt-6 text-balance font-display text-4xl font-medium leading-[1.04] tracking-tight md:text-6xl lg:text-[4.2rem] animate-[fade-in_1s_cubic-bezier(0.22,1,0.36,1)_0.1s_both]">
-              A place where learning leads and every student is seen.
+              {t("home.hero.title")}
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-navy-foreground/85 md:text-xl animate-[fade-in_1s_cubic-bezier(0.22,1,0.36,1)_0.25s_both]">
-              Guiding minds. Inspiring futures. Connecting possibilities. An
-              international learning community built around curiosity, character
-              and belonging.
+              {t("home.hero.subtitle")}
             </p>
             <div className="mt-9 flex flex-wrap gap-3 animate-[fade-in_1s_cubic-bezier(0.22,1,0.36,1)_0.4s_both]">
               <ButtonLink
@@ -157,7 +187,7 @@ function Home() {
                 data-event-prop-cta="Admissions"
                 data-event-prop-location="Home Hero"
               >
-                Begin the admissions journey
+                {t("home.hero.cta.admissions")}
               </ButtonLink>
               <ButtonLink
                 to="/about"
@@ -167,13 +197,14 @@ function Home() {
                 data-event-prop-cta="About"
                 data-event-prop-location="Home Hero"
               >
-                Discover our story
+                {t("home.hero.cta.about")}
               </ButtonLink>
             </div>
           </div>
 
         </Container>
       </section>
+
 
       {/* ------------------------------------------------------ Our Story */}
       <Section>

@@ -70,6 +70,19 @@ const dict: Record<string, { en: string; ar: string }> = {
   "eco.online-admissions": { en: "Online Admissions", ar: "التسجيل الإلكتروني" },
   "eco.resource-library": { en: "Resource Library", ar: "مكتبة الموارد" },
   "eco.alumni-network": { en: "Alumni Network", ar: "شبكة الخريجين" },
+
+  // ─── Home hero
+  "home.eyebrow": { en: "Lighthouse Campus · Mohandessin", ar: "لايتهاوس كامبس · المهندسين" },
+  "home.hero.title": {
+    en: "A place where learning leads and every student is seen.",
+    ar: "مكان يقود فيه التعلّم، ويُرى فيه كل طالب.",
+  },
+  "home.hero.subtitle": {
+    en: "Guiding minds. Inspiring futures. Connecting possibilities. An international learning community built around curiosity, character and belonging.",
+    ar: "نُرشد العقول. نُلهم المستقبل. نربط الإمكانيات. مجتمع تعلّم دولي يقوم على الفضول والشخصية والانتماء.",
+  },
+  "home.hero.cta.admissions": { en: "Begin the admissions journey", ar: "ابدأ رحلة التسجيل" },
+  "home.hero.cta.about": { en: "Discover our story", ar: "اكتشف قصتنا" },
 };
 
 interface Ctx {
