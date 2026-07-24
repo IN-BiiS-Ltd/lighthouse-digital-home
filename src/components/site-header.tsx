@@ -51,7 +51,7 @@ function DesktopDropdown({
         <ChevronDown className="size-3.5 opacity-70" aria-hidden />
       </SmartLink>
       {section.label === "Campus" ? (
-        <div className="pointer-events-none absolute left-1/2 top-[calc(100%+2cm)] z-10 w-12 -translate-x-1/2">
+        <div className="pointer-events-none absolute left-1/2 top-[calc(100%+2cm)] z-10 h-14 w-14 -translate-x-1/2">
           <span className="absolute inset-0 rounded-full bg-gold/25 blur-[10px] animate-[halo-breathe_3s_ease-in-out_infinite]" aria-hidden="true" />
           <img
             src={campusTransparent.url}
