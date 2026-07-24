@@ -4,6 +4,7 @@ import { Container, Eyebrow, SmartLink, BrandLogo } from "@/components/blocks";
 import { BrandAtmosphere } from "@/components/brand-atmosphere";
 import { WatermarkFloat } from "@/components/watermark-float";
 import { CrystalField } from "@/components/crystal-field";
+import { HeroEmblem } from "@/components/hero-emblem";
 
 /**
  * PageHero — the calm navy header used at the top of every interior page.
@@ -55,7 +56,9 @@ export function PageHero({
         <div className="pointer-events-none absolute inset-0 z-0 hidden md:block">
           {floatingMark}
         </div>
-      ) : null}
+      ) : (
+        <HeroEmblem />
+      )}
       <Container className="relative py-20 md:py-28">
 
         <div className="reveal reveal-in animate-[fade-in_0.9s_cubic-bezier(0.22,1,0.36,1)_both]">

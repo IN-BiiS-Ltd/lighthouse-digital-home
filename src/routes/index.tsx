@@ -22,6 +22,7 @@ import {
 import { NarrativeFlow } from "@/components/page-hero";
 import { BrandAtmosphere } from "@/components/brand-atmosphere";
 import { WatermarkFloat } from "@/components/watermark-float";
+import { HeroEmblem } from "@/components/hero-emblem";
 import { ShareBar } from "@/components/share-bar";
 import heroImg from "@/assets/photo-classroom-primary.jpg?w=1600&format=jpg";
 import heroAvif from "@/assets/photo-classroom-primary.jpg?w=640;960;1280;1600&format=avif&as=srcset";
@@ -160,6 +161,7 @@ function Home() {
         />
         <WatermarkFloat side={dir === "rtl" ? "left" : "right"} />
         <BrandAtmosphere density={1.1} />
+        <HeroEmblem />
         <Container className="relative flex min-h-[78vh] flex-col justify-center py-24">
           <div className="max-w-2xl">
             <div className="mb-8 animate-[fade-in_0.8s_cubic-bezier(0.22,1,0.36,1)_both]">
