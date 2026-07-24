@@ -18,7 +18,7 @@ export function WatermarkFloat({
   className?: string;
   side?: "left" | "right" | "center";
 }) {
-  const left = side === "left" ? "18%" : side === "center" ? "50%" : "68%";
+  const left = side === "left" ? "18%" : side === "center" ? "50%" : "76%";
   return (
     <div aria-hidden="true" className={cn("watermark-float", className)}>
       <img
