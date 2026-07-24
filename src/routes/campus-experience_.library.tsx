@@ -42,6 +42,8 @@ const config = {
   "intro": "The library is a home for readers, researchers and thinkers. Its role in learning is intentional and central.",
   "heroImage": {
     "src": libraryPhoto,
+    "avif": libraryPhotoAvif,
+    "webp": libraryPhotoWebp,
     "alt": "Lighthouse students reading at long oak tables in the campus library, warm afternoon light through arched windows",
     "caption": "A quiet centre of the campus — reading rooms shaped by attention and light."
   },
