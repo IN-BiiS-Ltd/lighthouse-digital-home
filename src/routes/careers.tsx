@@ -53,6 +53,8 @@ function Careers() {
           eyebrow="Working at Lighthouse"
           title="Educators, not employees"
           image={leadershipImg}
+          imageAvif={leadershipImgAvif}
+          imageWebp={leadershipImgWebp}
           imageAlt="Colleagues collaborating around a whiteboard"
         >
           <p>

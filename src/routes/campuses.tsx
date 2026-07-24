@@ -4,7 +4,9 @@ import { Section, SectionHeading, SmartLink } from "@/components/blocks";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { cn } from "@/lib/utils";
-import exteriorImg from "@/assets/campus-exterior.jpg";
+import exteriorImg from "@/assets/campus-exterior.jpg?w=1600&format=jpg";
+import exteriorImgAvif from "@/assets/campus-exterior.jpg?w=640;960;1280;1600&format=avif&as=srcset";
+import exteriorImgWebp from "@/assets/campus-exterior.jpg?w=640;960;1280;1600&format=webp&as=srcset";
 import { ShareBar } from "@/components/share-bar";
 
 export const Route = createFileRoute("/campuses")({
