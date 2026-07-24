@@ -474,6 +474,8 @@ export function MediaRow({
   children,
   image,
   imageAlt,
+  imageAvif,
+  imageWebp,
   reverse = false,
   action,
   id,
@@ -483,6 +485,8 @@ export function MediaRow({
   children: ReactNode;
   image: string;
   imageAlt: string;
+  imageAvif?: string;
+  imageWebp?: string;
   reverse?: boolean;
   action?: ReactNode;
   id?: string;
@@ -504,12 +508,29 @@ export function MediaRow({
       </div>
       <div className={cn(reverse && "md:order-1")}>
         <div className="overflow-hidden rounded-2xl border border-border shadow-[0_20px_60px_-30px_rgba(11,29,58,0.4)]">
-          <img
-            src={image}
-            alt={imageAlt}
-            loading="lazy"
-            className="aspect-[4/3] w-full object-cover"
-          />
+          <picture>
+            {imageAvif ? (
+              <source
+                type="image/avif"
+                srcSet={imageAvif}
+                sizes="(min-width: 768px) 50vw, 100vw"
+              />
+            ) : null}
+            {imageWebp ? (
+              <source
+                type="image/webp"
+                srcSet={imageWebp}
+                sizes="(min-width: 768px) 50vw, 100vw"
+              />
+            ) : null}
+            <img
+              src={image}
+              alt={imageAlt}
+              loading="lazy"
+              decoding="async"
+              className="aspect-[4/3] w-full object-cover"
+            />
+          </picture>
         </div>
       </div>
     </div>

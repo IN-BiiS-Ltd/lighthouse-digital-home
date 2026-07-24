@@ -8,7 +8,9 @@ import {
 } from "@/components/blocks";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
-import leadershipImg from "@/assets/leadership.jpg";
+import leadershipImg from "@/assets/leadership.jpg?w=1200&format=jpg";
+import leadershipImgAvif from "@/assets/leadership.jpg?w=480;800;1200&format=avif&as=srcset";
+import leadershipImgWebp from "@/assets/leadership.jpg?w=480;800;1200&format=webp&as=srcset";
 
 export const Route = createFileRoute("/careers")({
   head: () => ({
@@ -51,6 +53,8 @@ function Careers() {
           eyebrow="Working at Lighthouse"
           title="Educators, not employees"
           image={leadershipImg}
+          imageAvif={leadershipImgAvif}
+          imageWebp={leadershipImgWebp}
           imageAlt="Colleagues collaborating around a whiteboard"
         >
           <p>

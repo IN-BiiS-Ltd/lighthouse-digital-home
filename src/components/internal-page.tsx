@@ -24,7 +24,7 @@ export interface InternalPageConfig {
   eyebrow: string;
   title: string;
   intro: string;
-  heroImage?: { src: string; alt: string; caption?: string };
+  heroImage?: { src: string; alt: string; caption?: string; avif?: string; webp?: string };
   blocks: InternalBlock[];
   status?: { label: string; body: string };
   related?: RelatedLink[];
@@ -71,16 +71,32 @@ export function InternalPage({ config }: { config: InternalPageConfig }) {
         <Section>
           <figure className="mx-auto max-w-5xl">
             <div className="overflow-hidden rounded-2xl bg-navy shadow-[0_40px_100px_-30px_rgba(11,29,58,0.45)] ring-1 ring-gold/25">
-              <img
-                src={heroImage.src}
-                alt={heroImage.alt}
-                width={1600}
-                height={1008}
-                sizes="(min-width: 1024px) 1024px, 100vw"
-                loading="lazy"
-                decoding="async"
-                className="block h-auto w-full object-cover"
-              />
+              <picture>
+                {heroImage.avif ? (
+                  <source
+                    type="image/avif"
+                    srcSet={heroImage.avif}
+                    sizes="(min-width: 1024px) 1024px, 100vw"
+                  />
+                ) : null}
+                {heroImage.webp ? (
+                  <source
+                    type="image/webp"
+                    srcSet={heroImage.webp}
+                    sizes="(min-width: 1024px) 1024px, 100vw"
+                  />
+                ) : null}
+                <img
+                  src={heroImage.src}
+                  alt={heroImage.alt}
+                  width={1600}
+                  height={1008}
+                  sizes="(min-width: 1024px) 1024px, 100vw"
+                  loading="lazy"
+                  decoding="async"
+                  className="block h-auto w-full object-cover"
+                />
+              </picture>
             </div>
             {heroImage.caption ? (
               <figcaption className="mt-4 text-center text-sm text-muted-foreground">

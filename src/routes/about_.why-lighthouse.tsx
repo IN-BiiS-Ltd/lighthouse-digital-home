@@ -17,8 +17,12 @@ import logoLight from "@/assets/logo-light.png.asset.json";
 import logoBook from "@/assets/logo-book.png.asset.json";
 import logoNetwork from "@/assets/logo-network.png.asset.json";
 import logoCircle from "@/assets/logo-circle.png.asset.json";
-import photoClassroom from "@/assets/photo-classroom-primary.jpg";
-import photoLibrary from "@/assets/photo-library.jpg";
+import photoClassroom from "@/assets/photo-classroom-primary.jpg?w=1600&format=jpg";
+import photoClassroomAvif from "@/assets/photo-classroom-primary.jpg?w=640;960;1280;1600&format=avif&as=srcset";
+import photoClassroomWebp from "@/assets/photo-classroom-primary.jpg?w=640;960;1280;1600&format=webp&as=srcset";
+import photoLibrary from "@/assets/photo-library.jpg?w=1600&format=jpg";
+import photoLibraryAvif from "@/assets/photo-library.jpg?w=640;960;1280;1600&format=avif&as=srcset";
+import photoLibraryWebp from "@/assets/photo-library.jpg?w=640;960;1280;1600&format=webp&as=srcset";
 
 import principleLeadership from "@/assets/principle-leadership.png.asset.json";
 import principleInquiry from "@/assets/principle-inquiry.png.asset.json";
@@ -209,12 +213,17 @@ function WhyLighthouse() {
             </div>
           </div>
           <figure className="overflow-hidden rounded-2xl border border-border shadow-[0_30px_80px_-40px_rgba(11,29,58,0.45)]">
-            <img
-              src={photoClassroom}
-              alt="Lighthouse Campus students in a collaborative classroom discussion"
-              loading="lazy"
-              className="block h-full w-full object-cover"
-            />
+            <picture>
+              <source type="image/avif" srcSet={photoClassroomAvif} sizes="(min-width: 1024px) 50vw, 100vw" />
+              <source type="image/webp" srcSet={photoClassroomWebp} sizes="(min-width: 1024px) 50vw, 100vw" />
+              <img
+                src={photoClassroom}
+                alt="Lighthouse Campus students in a collaborative classroom discussion"
+                loading="lazy"
+                decoding="async"
+                className="block h-full w-full object-cover"
+              />
+            </picture>
           </figure>
         </div>
       </Section>
@@ -464,12 +473,17 @@ function WhyLighthouse() {
       <Section id="detail">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <figure className="overflow-hidden rounded-2xl border border-border shadow-[0_30px_80px_-40px_rgba(11,29,58,0.45)]">
-            <img
-              src={photoLibrary}
-              alt="Students studying together in the Lighthouse Campus library"
-              loading="lazy"
-              className="block h-full w-full object-cover"
-            />
+            <picture>
+              <source type="image/avif" srcSet={photoLibraryAvif} sizes="(min-width: 1024px) 50vw, 100vw" />
+              <source type="image/webp" srcSet={photoLibraryWebp} sizes="(min-width: 1024px) 50vw, 100vw" />
+              <img
+                src={photoLibrary}
+                alt="Students studying together in the Lighthouse Campus library"
+                loading="lazy"
+                decoding="async"
+                className="block h-full w-full object-cover"
+              />
+            </picture>
           </figure>
           <div>
             <Eyebrow>Every Detail Has Meaning</Eyebrow>

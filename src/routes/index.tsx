@@ -23,7 +23,9 @@ import { NarrativeFlow } from "@/components/page-hero";
 import { BrandAtmosphere } from "@/components/brand-atmosphere";
 import { WatermarkFloat } from "@/components/watermark-float";
 import { ShareBar } from "@/components/share-bar";
-import heroImg from "@/assets/photo-classroom-primary.jpg";
+import heroImg from "@/assets/photo-classroom-primary.jpg?w=1600&format=jpg";
+import heroAvif from "@/assets/photo-classroom-primary.jpg?w=640;960;1280;1600&format=avif&as=srcset";
+import heroWebp from "@/assets/photo-classroom-primary.jpg?w=640;960;1280;1600&format=webp&as=srcset";
 import stemImg from "@/assets/photo-teacher-portrait.jpg";
 import studentLifeImg from "@/assets/photo-classroom-primary.jpg";
 import parentImg from "@/assets/parent-partnership.jpg";
@@ -60,10 +62,13 @@ export const Route = createFileRoute("/")({
     links: [
       { rel: "canonical", href: "https://lighthousecampus.lovable.app/" },
       // Preload the LCP hero image so mobile FCP/LCP kick in earlier.
+      // Preload the WebP variant with imagesrcset so the browser picks the smallest source.
       {
         rel: "preload",
         as: "image",
         href: heroImg,
+        imagesrcset: heroWebp,
+        imagesizes: "100vw",
         fetchpriority: "high",
       } as unknown as { rel: string },
     ],
@@ -100,16 +105,19 @@ function Home() {
     <>
       {/* ---------------------------------------------------------- Hero */}
       <section className="relative isolate overflow-hidden bg-navy text-navy-foreground">
-        <img
-          src={heroImg}
-          alt="Diverse group of Lighthouse Campus students — Sudanese, Arab and African — exploring an illustrated book together in a warm sunlit classroom"
-          width={1600}
-          height={1104}
-          sizes="100vw"
-          fetchPriority="high"
-          decoding="async"
-          className="absolute inset-0 -z-10 size-full object-cover animate-ken-burns"
-        />
+        <picture>
+          <source type="image/avif" srcSet={heroAvif} sizes="100vw" />
+          <source type="image/webp" srcSet={heroWebp} sizes="100vw" />
+          <img
+            src={heroImg}
+            alt="Diverse group of Lighthouse Campus students — Sudanese, Arab and African — exploring an illustrated book together in a warm sunlit classroom"
+            width={1600}
+            height={1104}
+            fetchPriority="high"
+            decoding="async"
+            className="absolute inset-0 -z-10 size-full object-cover animate-ken-burns"
+          />
+        </picture>
         <div
           aria-hidden
           className="absolute inset-0 -z-10"

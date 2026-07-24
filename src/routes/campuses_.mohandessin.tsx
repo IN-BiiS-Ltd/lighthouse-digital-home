@@ -10,7 +10,9 @@ import {
 } from "@/components/blocks";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
-import exteriorImg from "@/assets/campus-exterior.jpg";
+import exteriorImg from "@/assets/campus-exterior.jpg?w=1600&format=jpg";
+import exteriorImgAvif from "@/assets/campus-exterior.jpg?w=640;960;1280;1600&format=avif&as=srcset";
+import exteriorImgWebp from "@/assets/campus-exterior.jpg?w=640;960;1280;1600&format=webp&as=srcset";
 import { ShareBar } from "@/components/share-bar";
 
 export const Route = createFileRoute("/campuses_/mohandessin")({
@@ -145,14 +147,19 @@ function Mohandessin() {
       <Section id="overview">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
           <div className="overflow-hidden rounded-2xl border border-border shadow-[0_24px_70px_-36px_rgba(11,29,58,0.4)]">
-            <img
-              src={exteriorImg}
-              alt="Mohandessin campus building exterior with courtyard"
-              loading="lazy"
-              width={1600}
-              height={1008}
-              className="aspect-[4/3] w-full object-cover"
-            />
+            <picture>
+              <source type="image/avif" srcSet={exteriorImgAvif} sizes="(min-width: 1024px) 50vw, 100vw" />
+              <source type="image/webp" srcSet={exteriorImgWebp} sizes="(min-width: 1024px) 50vw, 100vw" />
+              <img
+                src={exteriorImg}
+                alt="Mohandessin campus building exterior with courtyard"
+                loading="lazy"
+                decoding="async"
+                width={1600}
+                height={1008}
+                className="aspect-[4/3] w-full object-cover"
+              />
+            </picture>
           </div>
           <div>
             <Eyebrow>Overview</Eyebrow>

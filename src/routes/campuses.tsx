@@ -4,7 +4,9 @@ import { Section, SectionHeading, SmartLink } from "@/components/blocks";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { cn } from "@/lib/utils";
-import exteriorImg from "@/assets/campus-exterior.jpg";
+import exteriorImg from "@/assets/campus-exterior.jpg?w=1600&format=jpg";
+import exteriorImgAvif from "@/assets/campus-exterior.jpg?w=640;960;1280;1600&format=avif&as=srcset";
+import exteriorImgWebp from "@/assets/campus-exterior.jpg?w=640;960;1280;1600&format=webp&as=srcset";
 import { ShareBar } from "@/components/share-bar";
 
 export const Route = createFileRoute("/campuses")({
@@ -134,14 +136,19 @@ function Campuses() {
       <Section tone="muted">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
           <div className="overflow-hidden rounded-2xl border border-border">
-            <img
-              src={exteriorImg}
-              alt="A modern school campus exterior"
-              loading="lazy"
-              width={1600}
-              height={1008}
-              className="aspect-[16/10] w-full object-cover"
-            />
+            <picture>
+              <source type="image/avif" srcSet={exteriorImgAvif} sizes="(min-width: 1024px) 50vw, 100vw" />
+              <source type="image/webp" srcSet={exteriorImgWebp} sizes="(min-width: 1024px) 50vw, 100vw" />
+              <img
+                src={exteriorImg}
+                alt="A modern school campus exterior"
+                loading="lazy"
+                decoding="async"
+                width={1600}
+                height={1008}
+                className="aspect-[16/10] w-full object-cover"
+              />
+            </picture>
           </div>
           <div>
             <SectionHeading

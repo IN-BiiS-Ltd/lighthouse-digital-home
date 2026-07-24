@@ -3,7 +3,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Section, SectionHeading, FeatureCard } from "@/components/blocks";
 import lighthouseFlag from "@/assets/lighthouse-flag.png.asset.json";
 import readersFlag from "@/assets/readers-international-flag.png.asset.json";
-import campusExteriorPhoto from "@/assets/photo-campus-exterior.jpg";
+import campusExteriorPhoto from "@/assets/photo-campus-exterior.jpg?w=1600&format=jpg";
+import campusExteriorAvif from "@/assets/photo-campus-exterior.jpg?w=640;960;1280;1600&format=avif&as=srcset";
+import campusExteriorWebp from "@/assets/photo-campus-exterior.jpg?w=640;960;1280;1600&format=webp&as=srcset";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { PullQuote, StatBand } from "@/components/editorial";
@@ -121,15 +123,19 @@ function About() {
 
         <figure className="mx-auto mt-14 max-w-5xl">
           <div className="overflow-hidden rounded-2xl bg-navy shadow-[0_50px_120px_-30px_rgba(11,29,58,0.55)] ring-1 ring-gold/30">
-            <img
-              src={campusExteriorPhoto}
-              alt="The Lighthouse Campus building in Mohandessin, Giza — a modern limestone institutional facade framed by mature palm trees under a deep blue sky"
-              width={1600}
-              height={1008}
-              loading="lazy"
-              decoding="async"
-              className="block h-auto w-full object-cover"
-            />
+            <picture>
+              <source type="image/avif" srcSet={campusExteriorAvif} sizes="(min-width: 1024px) 1024px, 100vw" />
+              <source type="image/webp" srcSet={campusExteriorWebp} sizes="(min-width: 1024px) 1024px, 100vw" />
+              <img
+                src={campusExteriorPhoto}
+                alt="The Lighthouse Campus building in Mohandessin, Giza — a modern limestone institutional facade framed by mature palm trees under a deep blue sky"
+                width={1600}
+                height={1008}
+                loading="lazy"
+                decoding="async"
+                className="block h-auto w-full object-cover"
+              />
+            </picture>
           </div>
           <figcaption className="mt-4 text-center text-sm text-muted-foreground">
             The Lighthouse Campus · Mohandessin, Giza — Greater Cairo

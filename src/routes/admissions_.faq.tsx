@@ -1,6 +1,45 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { InternalPage } from "@/components/internal-page";
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How does the admissions process work?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Applications follow the five-step journey: Enquire, Visit, Apply, Assessment & Meeting, Offer & Enrolment. The admissions team supports families at each stage.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "When should we apply?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Applications are considered on a rolling basis while places are available for a given year group. Specific timelines and deadlines are communicated directly to enquiring families.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How are fees communicated?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Clear, transparent fee information is available on request from the admissions team. Detailed schedules are shared with enquiring families rather than published publicly.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can we visit the campus?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Campus visits are an important part of the journey and are arranged by request. See Schedule a Visit or contact admissions to plan yours.",
+      },
+    },
+  ],
+};
+
 export const Route = createFileRoute("/admissions_/faq")({
   head: () => ({
     meta: [
@@ -12,6 +51,12 @@ export const Route = createFileRoute("/admissions_/faq")({
       { property: "og:type", content: "article" },
     ],
     links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/admissions/faq" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(faqJsonLd),
+      },
+    ],
   }),
   component: Page,
 });
