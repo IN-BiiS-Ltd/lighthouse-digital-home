@@ -190,6 +190,7 @@ export function OverviewPage({
   paragraphs,
   cards,
   cta,
+  floatingMark,
 }: {
   breadcrumb: { label: string; to?: string }[];
   eyebrow: string;

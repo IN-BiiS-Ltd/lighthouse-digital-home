@@ -17,6 +17,7 @@ export function PageHero({
   sections,
   breadcrumb,
   watermark = false,
+  floatingMark,
 }: {
   eyebrow: string;
   title: ReactNode;
@@ -24,6 +25,7 @@ export function PageHero({
   sections?: { label: string; to: string }[];
   breadcrumb?: { label: string; to?: string }[];
   watermark?: boolean;
+  floatingMark?: ReactNode;
 }) {
   return (
     <header className="relative overflow-hidden bg-navy text-navy-foreground beacon-surface grain"
