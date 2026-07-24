@@ -24,7 +24,7 @@ export interface InternalPageConfig {
   eyebrow: string;
   title: string;
   intro: string;
-  heroImage?: { src: string; alt: string; caption?: string };
+  heroImage?: { src: string; alt: string; caption?: string; avif?: string; webp?: string };
   blocks: InternalBlock[];
   status?: { label: string; body: string };
   related?: RelatedLink[];
