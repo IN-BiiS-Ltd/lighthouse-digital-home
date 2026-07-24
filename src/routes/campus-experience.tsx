@@ -57,6 +57,21 @@ function Campus() {
         primary: { to: "/contact", label: "Schedule a visit" },
         secondary: { to: "/admissions", label: "Admissions overview" },
       }}
+      floatingMark={
+        <div className="pointer-events-none absolute right-[8%] top-[10%] md:right-[12%] md:top-[14%] lg:right-[14%] lg:top-[16%]">
+          <div className="relative h-24 w-24 lg:h-28 lg:w-28">
+            <span className="absolute inset-0 rounded-full bg-gold/40 blur-[20px] animate-[halo-breathe_3s_ease-in-out_infinite]" aria-hidden="true" />
+            <span className="absolute inset-0 rounded-full bg-gold/15 blur-[34px] animate-[halo-breathe_3s_ease-in-out_infinite_reverse]" aria-hidden="true" />
+            <img
+              src={campusTransparent.url}
+              alt=""
+              className="relative h-full w-full object-contain opacity-100 drop-shadow-[0_0_28px_rgba(212,175,55,0.95)] animate-[campus-emblem-float_4s_ease-in-out_infinite]"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+        </div>
+      }
     />
   );
 }
