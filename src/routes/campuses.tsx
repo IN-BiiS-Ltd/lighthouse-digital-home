@@ -136,14 +136,19 @@ function Campuses() {
       <Section tone="muted">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
           <div className="overflow-hidden rounded-2xl border border-border">
-            <img
-              src={exteriorImg}
-              alt="A modern school campus exterior"
-              loading="lazy"
-              width={1600}
-              height={1008}
-              className="aspect-[16/10] w-full object-cover"
-            />
+            <picture>
+              <source type="image/avif" srcSet={exteriorImgAvif} sizes="(min-width: 1024px) 50vw, 100vw" />
+              <source type="image/webp" srcSet={exteriorImgWebp} sizes="(min-width: 1024px) 50vw, 100vw" />
+              <img
+                src={exteriorImg}
+                alt="A modern school campus exterior"
+                loading="lazy"
+                decoding="async"
+                width={1600}
+                height={1008}
+                className="aspect-[16/10] w-full object-cover"
+              />
+            </picture>
           </div>
           <div>
             <SectionHeading
