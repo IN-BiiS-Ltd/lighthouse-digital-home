@@ -33,7 +33,7 @@ function DesktopDropdown({
     return (
       <SmartLink
         to={section.to}
-        className="px-2 py-2 text-sm font-medium text-navy-foreground/85 transition-colors hover:text-gold lg:px-3"
+        className="px-3 py-2 text-sm font-medium text-navy-foreground/85 transition-colors hover:text-gold"
       >
         {section.label}
       </SmartLink>
@@ -43,7 +43,7 @@ function DesktopDropdown({
     <div className="group relative">
       <SmartLink
         to={section.to}
-        className="relative flex items-center gap-1 px-2 py-2 text-sm font-medium text-navy-foreground/85 transition-colors hover:text-gold group-focus-within:text-gold lg:px-3"
+        className="relative flex items-center gap-1 px-3 py-2 text-sm font-medium text-navy-foreground/85 transition-colors hover:text-gold group-focus-within:text-gold"
         aria-haspopup="true"
       >
         {section.label}
@@ -137,7 +137,7 @@ export function SiteHeader() {
 
         <nav
           aria-label="Primary"
-          className="hidden items-center lg:flex"
+          className="hidden items-center xl:flex"
         >
           {primaryNav.map((s) => (
             <DesktopDropdown key={s.to} section={s} />
@@ -165,7 +165,7 @@ export function SiteHeader() {
           {/* Mobile / tablet menu */}
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger
-              className="inline-flex size-11 items-center justify-center rounded-md text-navy-foreground hover:bg-navy-foreground/10 lg:hidden"
+              className="inline-flex size-11 items-center justify-center rounded-md text-navy-foreground hover:bg-navy-foreground/10 xl:hidden"
               aria-label="Open menu"
             >
               <Menu className="size-6" />
@@ -187,18 +187,7 @@ export function SiteHeader() {
                       className="border-navy-foreground/12"
                     >
                       <AccordionTrigger className="py-3 text-left text-base font-medium text-navy-foreground hover:no-underline">
-                        <span className="flex items-center gap-3">
-                          {s.label === "Campus" ? (
-                            <img
-                              src={campusTransparent.url}
-                              alt=""
-                              className="h-6 w-6 object-contain drop-shadow-[0_0_10px_rgba(212,175,55,0.75)]"
-                              loading="eager"
-                              decoding="async"
-                            />
-                          ) : null}
-                          {s.label}
-                        </span>
+                        {s.label}
                       </AccordionTrigger>
                       <AccordionContent className="pb-3">
                         <ul className="space-y-1">
