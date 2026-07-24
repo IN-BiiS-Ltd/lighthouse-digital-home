@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { OverviewPage } from "@/components/internal-page";
-import campusTransparent from "@/assets/lighthouse-transparent-logo.png.asset.json";
 import { Building2, BookOpen, FlaskConical, Lightbulb, Dumbbell, UtensilsCrossed, Stethoscope, ShieldCheck, Bus, Compass, Trees, Users } from "lucide-react";
 
 export const Route = createFileRoute("/campus-experience")({
