@@ -19,8 +19,8 @@ export function WatermarkFloat({
   side?: "left" | "right" | "center";
 }) {
   const position = {
-    left: "94%",
-    top: "16%",
+    left: "6%",
+    top: "18%",
     translate: "-50% -50%",
   };
 
