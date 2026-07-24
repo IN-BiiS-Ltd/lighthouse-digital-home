@@ -105,16 +105,19 @@ function Home() {
     <>
       {/* ---------------------------------------------------------- Hero */}
       <section className="relative isolate overflow-hidden bg-navy text-navy-foreground">
-        <img
-          src={heroImg}
-          alt="Diverse group of Lighthouse Campus students — Sudanese, Arab and African — exploring an illustrated book together in a warm sunlit classroom"
-          width={1600}
-          height={1104}
-          sizes="100vw"
-          fetchPriority="high"
-          decoding="async"
-          className="absolute inset-0 -z-10 size-full object-cover animate-ken-burns"
-        />
+        <picture>
+          <source type="image/avif" srcSet={heroAvif} sizes="100vw" />
+          <source type="image/webp" srcSet={heroWebp} sizes="100vw" />
+          <img
+            src={heroImg}
+            alt="Diverse group of Lighthouse Campus students — Sudanese, Arab and African — exploring an illustrated book together in a warm sunlit classroom"
+            width={1600}
+            height={1104}
+            fetchPriority="high"
+            decoding="async"
+            className="absolute inset-0 -z-10 size-full object-cover animate-ken-burns"
+          />
+        </picture>
         <div
           aria-hidden
           className="absolute inset-0 -z-10"
