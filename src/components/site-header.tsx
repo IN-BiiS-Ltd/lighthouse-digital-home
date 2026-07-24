@@ -171,7 +171,8 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-1">
-          <LanguageToggle className="hidden sm:inline-flex" />
+          {/* Arabic toggle temporarily disabled — full RTL rollout scheduled with content audit */}
+          {/* <LanguageToggle className="hidden sm:inline-flex" /> */}
 
           <ButtonLink
             to="/admissions"
