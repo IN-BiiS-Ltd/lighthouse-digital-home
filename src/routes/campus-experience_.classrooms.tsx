@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { InternalPage } from "@/components/internal-page";
-import classroomPhoto from "@/assets/photo-classroom-primary.jpg";
+import classroomPhoto from "@/assets/photo-classroom-primary.jpg?w=1600&format=jpg";
+import classroomPhotoAvif from "@/assets/photo-classroom-primary.jpg?w=640;960;1280;1600&format=avif&as=srcset";
+import classroomPhotoWebp from "@/assets/photo-classroom-primary.jpg?w=640;960;1280;1600&format=webp&as=srcset";
 
 export const Route = createFileRoute("/campus-experience_/classrooms")({
   head: () => ({
