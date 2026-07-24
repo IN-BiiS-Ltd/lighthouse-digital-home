@@ -198,7 +198,7 @@ export function SiteHeader() {
               <SheetTitle className="sr-only">{t("nav.site-navigation")}</SheetTitle>
               <div className="flex items-center justify-between border-b border-navy-foreground/15 px-6 py-5">
                 <Wordmark />
-                <LanguageToggle />
+                {/* <LanguageToggle /> */}
               </div>
               <div className="px-4 py-4">
                 <Accordion type="multiple" className="w-full">
