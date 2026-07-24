@@ -22,7 +22,7 @@ type Mote = {
 };
 
 const motes: Mote[] = [
-  { top: "8%",  left: "6%",  size: "7rem", opacity: 0.32, dur: "38s", delay: "0s",   dx: "1.4rem",  dy: "-2rem",   rot: "4deg" },
+  { top: "8%",  left: "92%", size: "7rem", opacity: 0.32, dur: "38s", delay: "0s",   dx: "-1.4rem", dy: "-2rem",   rot: "4deg" },
   { top: "22%", left: "48%", size: "5.5rem", opacity: 0.28, dur: "44s", delay: "2.2s", dx: "-1.2rem", dy: "1.8rem",  rot: "-8deg" },
   { top: "34%", left: "78%", size: "7.5rem", opacity: 0.35, dur: "42s", delay: "1.6s", dx: "-1.4rem", dy: "-1.6rem", rot: "-6deg" },
   { top: "52%", left: "18%", size: "6rem", opacity: 0.30, dur: "48s", delay: "3s",   dx: "1.6rem",  dy: "1.2rem",  rot: "7deg" },

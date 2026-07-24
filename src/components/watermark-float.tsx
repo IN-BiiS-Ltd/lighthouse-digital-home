@@ -18,14 +18,21 @@ export function WatermarkFloat({
   className?: string;
   side?: "left" | "right" | "center";
 }) {
-  const left = side === "left" ? "18%" : side === "center" ? "50%" : "92%";
+  const position = {
+    left: "94%",
+    top: "16%",
+    translate: "-50% -50%",
+  };
+
+  void side;
+
   return (
     <div aria-hidden="true" className={cn("watermark-float", className)}>
       <img
         src={emblem.url}
         alt=""
         className="watermark-float__img"
-        style={{ left, translate: "-50% -50%" }}
+        style={position}
         loading="lazy"
         decoding="async"
       />
