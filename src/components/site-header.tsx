@@ -15,7 +15,7 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
-import { primaryNav, secondaryNav, allNav } from "@/lib/site-nav";
+import { primaryNav, secondaryNav, allNav, type NavSection } from "@/lib/site-nav";
 import {
   Container,
   Wordmark,
@@ -23,11 +23,41 @@ import {
   ButtonLink,
   SmartLink,
 } from "@/components/blocks";
+import { useLang, type Lang } from "@/lib/i18n";
+import { LanguageToggle } from "@/components/language-toggle";
+
+/** Map a top-level route to a translation key used by the dictionary. */
+const NAV_KEY: Record<string, string> = {
+  "/about": "nav.about",
+  "/our-model": "nav.our-model",
+  "/learning-journey": "nav.learning-journey",
+  "/academic-experience": "nav.academics",
+  "/student-life": "nav.student-life",
+  "/campus-experience": "nav.campus",
+  "/parents": "nav.parents",
+  "/news": "nav.news",
+  "/campuses": "nav.campuses",
+  "/community": "nav.community",
+  "/explore/digital-ecosystem": "nav.digital-ecosystem",
+};
+
+function sectionLabel(
+  section: NavSection,
+  lang: Lang,
+  t: (k: string, fb?: string) => string,
+): string {
+  if (lang !== "ar") return section.label;
+  if (section.label_ar) return section.label_ar;
+  const key = NAV_KEY[section.to];
+  return key ? t(key, section.label) : section.label;
+}
 
 function DesktopDropdown({
   section,
+  translatedLabel,
 }: {
   section: (typeof allNav)[number];
+  translatedLabel: string;
 }) {
   if (!section.children?.length) {
     return (
@@ -35,7 +65,7 @@ function DesktopDropdown({
         to={section.to}
         className="px-3 py-2 text-sm font-medium text-navy-foreground/85 transition-colors hover:text-gold"
       >
-        {section.label}
+        {translatedLabel}
       </SmartLink>
     );
   }
@@ -46,7 +76,7 @@ function DesktopDropdown({
         className="relative flex items-center gap-1 px-3 py-2 text-sm font-medium text-navy-foreground/85 transition-colors hover:text-gold group-focus-within:text-gold"
         aria-haspopup="true"
       >
-        {section.label}
+        {translatedLabel}
         <ChevronDown className="size-3.5 opacity-70" aria-hidden />
       </SmartLink>
       <div className="invisible absolute left-1/2 top-full z-50 w-[22rem] -translate-x-1/2 pt-3 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
@@ -85,6 +115,7 @@ export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const { lang, t } = useLang();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -104,7 +135,6 @@ export function SiteHeader() {
           : "bg-navy text-navy-foreground border-transparent",
       )}
     >
-
       <Container className="flex h-[4.75rem] items-center justify-between gap-4">
         <Link
           to="/"
@@ -121,48 +151,53 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        <nav
-          aria-label="Primary"
-          className="hidden items-center xl:flex"
-        >
+        <nav aria-label={t("nav.primary")} className="hidden items-center xl:flex">
           {primaryNav.map((s) => (
-            <DesktopDropdown key={s.to} section={s} />
+            <DesktopDropdown
+              key={s.to}
+              section={s}
+              translatedLabel={sectionLabel(s, lang, t)}
+            />
           ))}
           <DesktopDropdown
+            translatedLabel={t("nav.explore")}
             section={{
               label: "Explore",
               to: "/community",
-              summary: "Parents, news, campuses, community and careers.",
+              summary: t("nav.explore-summary"),
               children: secondaryNav.flatMap((s) => s.children ?? []),
             }}
           />
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1">
+          <LanguageToggle className="hidden sm:inline-flex" />
+
           <ButtonLink
             to="/admissions"
             variant="gold"
             size="sm"
             className="hidden sm:inline-flex"
           >
-            Admissions
+            {t("nav.admissions")}
           </ButtonLink>
 
           {/* Mobile / tablet menu */}
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger
               className="inline-flex size-11 items-center justify-center rounded-md text-navy-foreground hover:bg-navy-foreground/10 xl:hidden"
-              aria-label="Open menu"
+              aria-label={t("nav.open-menu")}
             >
               <Menu className="size-6" />
             </SheetTrigger>
             <SheetContent
-              side="right"
+              side={lang === "ar" ? "left" : "right"}
               className="w-[min(88vw,24rem)] overflow-y-auto bg-navy p-0 text-navy-foreground"
             >
-              <SheetTitle className="sr-only">Site navigation</SheetTitle>
-              <div className="border-b border-navy-foreground/15 px-6 py-5">
+              <SheetTitle className="sr-only">{t("nav.site-navigation")}</SheetTitle>
+              <div className="flex items-center justify-between border-b border-navy-foreground/15 px-6 py-5">
                 <Wordmark />
+                <LanguageToggle />
               </div>
               <div className="px-4 py-4">
                 <Accordion type="multiple" className="w-full">
@@ -173,7 +208,7 @@ export function SiteHeader() {
                       className="border-navy-foreground/12"
                     >
                       <AccordionTrigger className="py-3 text-left text-base font-medium text-navy-foreground hover:no-underline">
-                        {s.label}
+                        {sectionLabel(s, lang, t)}
                       </AccordionTrigger>
                       <AccordionContent className="pb-3">
                         <ul className="space-y-1">
@@ -183,7 +218,7 @@ export function SiteHeader() {
                                 to={s.to}
                                 className="block rounded-md px-3 py-2 text-sm font-medium text-gold hover:bg-navy-foreground/10"
                               >
-                                Overview
+                                {t("nav.overview")}
                               </SmartLink>
                             </SheetClose>
                           </li>
@@ -207,12 +242,12 @@ export function SiteHeader() {
                 <div className="mt-6 grid gap-3">
                   <SheetClose asChild>
                     <ButtonLink to="/admissions" variant="gold" size="md">
-                      Admissions
+                      {t("nav.admissions")}
                     </ButtonLink>
                   </SheetClose>
                   <SheetClose asChild>
                     <ButtonLink to="/contact" variant="outline-light" size="md">
-                      Contact
+                      {t("nav.contact")}
                     </ButtonLink>
                   </SheetClose>
                 </div>
