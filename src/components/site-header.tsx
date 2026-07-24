@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import campusEmblem from "@/assets/lighthouse-emblem-watermark.webp.asset.json";
 import {
   Sheet,
   SheetContent,
@@ -43,11 +44,22 @@ function DesktopDropdown({
     <div className="group relative">
       <SmartLink
         to={section.to}
-        className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-navy-foreground/85 transition-colors hover:text-gold group-focus-within:text-gold"
+        className="relative flex items-center gap-1 px-3 py-2 text-sm font-medium text-navy-foreground/85 transition-colors hover:text-gold group-focus-within:text-gold"
         aria-haspopup="true"
       >
         {section.label}
         <ChevronDown className="size-3.5 opacity-70" aria-hidden />
+        {section.label === "Campus" ? (
+          <span className="pointer-events-none absolute -bottom-1 left-1/2 block h-4 w-5 -translate-x-1/2">
+            <img
+              src={campusEmblem.url}
+              alt=""
+              className="h-full w-full object-contain opacity-80 drop-shadow-[0_0_6px_rgba(212,175,55,0.45)] invert animate-[float-emblem_4s_ease-in-out_infinite]"
+              loading="eager"
+              decoding="async"
+            />
+          </span>
+        ) : null}
       </SmartLink>
       <div className="invisible absolute left-1/2 top-full z-50 w-[22rem] -translate-x-1/2 pt-3 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
         <div className="rounded-xl border border-border bg-popover p-3 shadow-[0_24px_60px_-24px_rgba(11,29,58,0.45)]">
