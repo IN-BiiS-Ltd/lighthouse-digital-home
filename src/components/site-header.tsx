@@ -50,11 +50,12 @@ function DesktopDropdown({
         {section.label}
         <ChevronDown className="size-3.5 opacity-70" aria-hidden />
         {section.label === "Campus" ? (
-          <span className="pointer-events-none absolute -bottom-1 left-1/2 block h-7 w-7 -translate-x-1/2">
+          <span className="pointer-events-none absolute -bottom-2 left-1/2 block h-8 w-8 -translate-x-1/2">
+            <span className="absolute inset-0 rounded-full bg-gold/20 blur-[6px] animate-[halo-breathe_3s_ease-in-out_infinite]" aria-hidden="true" />
             <img
               src={campusEmblem.url}
               alt=""
-              className="h-full w-full object-contain opacity-100 drop-shadow-[0_0_12px_rgba(212,175,55,0.85)] animate-[float-emblem_4s_ease-in-out_infinite]"
+              className="relative h-full w-full object-contain opacity-100 drop-shadow-[0_0_14px_rgba(212,175,55,0.95)] animate-[float-emblem_4s_ease-in-out_infinite]"
               loading="eager"
               decoding="async"
             />
@@ -185,7 +186,21 @@ export function SiteHeader() {
                       className="border-navy-foreground/12"
                     >
                       <AccordionTrigger className="py-3 text-left text-base font-medium text-navy-foreground hover:no-underline">
-                        {s.label}
+                        <span className="flex items-center gap-2">
+                          {s.label}
+                          {s.label === "Campus" ? (
+                            <span className="relative inline-flex h-5 w-5 items-center justify-center">
+                              <span className="absolute inset-0 rounded-full bg-gold/20 blur-[4px]" aria-hidden="true" />
+                              <img
+                                src={campusEmblem.url}
+                                alt=""
+                                className="relative h-full w-full object-contain opacity-100 drop-shadow-[0_0_8px_rgba(212,175,55,0.85)] animate-[float-emblem_4s_ease-in-out_infinite]"
+                                loading="eager"
+                                decoding="async"
+                              />
+                            </span>
+                          ) : null}
+                        </span>
                       </AccordionTrigger>
                       <AccordionContent className="pb-3">
                         <ul className="space-y-1">
