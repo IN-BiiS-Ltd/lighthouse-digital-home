@@ -4,16 +4,21 @@
 
 export interface NavChild {
   label: string;
+  label_ar?: string;
   to: string;
   description?: string;
+  description_ar?: string;
 }
 
 export interface NavSection {
   label: string;
+  label_ar?: string;
   to: string;
   summary?: string;
+  summary_ar?: string;
   children?: NavChild[];
 }
+
 
 export const primaryNav: NavSection[] = [
   {
