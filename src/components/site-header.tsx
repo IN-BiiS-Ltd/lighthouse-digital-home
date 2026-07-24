@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
-import campusTransparent from "@/assets/lighthouse-transparent-logo.png.asset.json";
 import {
   Sheet,
   SheetContent,
