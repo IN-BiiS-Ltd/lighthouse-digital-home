@@ -22,6 +22,7 @@ import {
 import { NarrativeFlow } from "@/components/page-hero";
 import { BrandAtmosphere } from "@/components/brand-atmosphere";
 import { WatermarkFloat } from "@/components/watermark-float";
+import { HeroEmblem } from "@/components/hero-emblem";
 import { ShareBar } from "@/components/share-bar";
 import heroImg from "@/assets/photo-classroom-primary.jpg?w=1600&format=jpg";
 import heroAvif from "@/assets/photo-classroom-primary.jpg?w=640;960;1280;1600&format=avif&as=srcset";
