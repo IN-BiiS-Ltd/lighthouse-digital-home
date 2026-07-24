@@ -24,7 +24,7 @@ import {
   SmartLink,
 } from "@/components/blocks";
 import { useLang, type Lang } from "@/lib/i18n";
-import { LanguageToggle } from "@/components/language-toggle";
+// import { LanguageToggle } from "@/components/language-toggle"; // disabled — see hero section
 
 /** Map a top-level route to a translation key used by the dictionary. */
 const NAV_KEY: Record<string, string> = {
@@ -171,7 +171,8 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-1">
-          <LanguageToggle className="hidden sm:inline-flex" />
+          {/* Arabic toggle temporarily disabled — full RTL rollout scheduled with content audit */}
+          {/* <LanguageToggle className="hidden sm:inline-flex" /> */}
 
           <ButtonLink
             to="/admissions"
@@ -197,7 +198,7 @@ export function SiteHeader() {
               <SheetTitle className="sr-only">{t("nav.site-navigation")}</SheetTitle>
               <div className="flex items-center justify-between border-b border-navy-foreground/15 px-6 py-5">
                 <Wordmark />
-                <LanguageToggle />
+                {/* <LanguageToggle /> */}
               </div>
               <div className="px-4 py-4">
                 <Accordion type="multiple" className="w-full">
