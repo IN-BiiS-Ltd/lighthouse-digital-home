@@ -226,13 +226,27 @@ function ModuleBento({ mod }: { mod: BentoModule & { id?: string } }) {
   );
 }
 
-function ModuleRelated({ mod }: { mod: RelatedModule & { id?: string } }) {
+function ModuleRelated({
+  mod,
+  pageEyebrow,
+}: {
+  mod: RelatedModule & { id?: string };
+  pageEyebrow: string;
+}) {
   return (
     <Section id={mod.id} tone={mod.tone ?? "muted"}>
       <SectionHeading eyebrow={mod.eyebrow ?? "Related"} title={mod.title} />
       <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {mod.links.map((r) => (
-          <SmartLink key={r.to} to={r.to} className="block group">
+          <SmartLink
+            key={r.to}
+            to={r.to}
+            className="block group"
+            data-event="Related Link Click"
+            data-event-prop-to={r.to}
+            data-event-prop-title={r.title}
+            data-event-prop-from-section={pageEyebrow}
+          >
             <FeatureCard title={r.title}>{r.body}</FeatureCard>
           </SmartLink>
         ))}
@@ -266,7 +280,7 @@ export function ArchitecturalPage({ config }: { config: ArchitecturalPageConfig 
           case "bento":
             return <ModuleBento key={key} mod={m} />;
           case "related":
-            return <ModuleRelated key={key} mod={m} />;
+            return <ModuleRelated key={key} mod={m} pageEyebrow={eyebrow} />;
         }
       })}
       <CtaBand title={cta.title} body={cta.body} primary={cta.primary} secondary={cta.secondary} />
