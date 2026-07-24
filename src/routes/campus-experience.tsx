@@ -58,7 +58,7 @@ function Campus() {
         secondary: { to: "/admissions", label: "Admissions overview" },
       }}
       floatingMark={
-        <div className="pointer-events-none absolute right-[8%] top-[10%] md:right-[12%] md:top-[14%] lg:right-[14%] lg:top-[16%]">
+        <div className="pointer-events-none absolute right-[24%] top-[16%] md:right-[28%] md:top-[16%] lg:right-[32%] lg:top-[16%]">
           <div className="relative h-24 w-24 lg:h-28 lg:w-28">
             <span className="absolute inset-0 rounded-full bg-gold/40 blur-[20px] animate-[halo-breathe_3s_ease-in-out_infinite]" aria-hidden="true" />
             <span className="absolute inset-0 rounded-full bg-gold/15 blur-[34px] animate-[halo-breathe_3s_ease-in-out_infinite_reverse]" aria-hidden="true" />
