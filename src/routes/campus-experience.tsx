@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { OverviewPage } from "@/components/internal-page";
+import campusTransparent from "@/assets/lighthouse-transparent-logo.png.asset.json";
 import { Building2, BookOpen, FlaskConical, Lightbulb, Dumbbell, UtensilsCrossed, Stethoscope, ShieldCheck, Bus, Compass, Trees, Users } from "lucide-react";
 
 export const Route = createFileRoute("/campus-experience")({
@@ -56,6 +57,21 @@ function Campus() {
         primary: { to: "/contact", label: "Schedule a visit" },
         secondary: { to: "/admissions", label: "Admissions overview" },
       }}
+      floatingMark={
+        <div className="pointer-events-none absolute right-[24%] top-[16%] md:right-[28%] md:top-[16%] lg:right-[32%] lg:top-[16%]">
+          <div className="relative h-24 w-24 lg:h-28 lg:w-28">
+            <span className="absolute inset-0 rounded-full bg-gold/40 blur-[20px] animate-[halo-breathe_3s_ease-in-out_infinite]" aria-hidden="true" />
+            <span className="absolute inset-0 rounded-full bg-gold/15 blur-[34px] animate-[halo-breathe_3s_ease-in-out_infinite_reverse]" aria-hidden="true" />
+            <img
+              src={campusTransparent.url}
+              alt=""
+              className="relative h-full w-full object-contain opacity-100 drop-shadow-[0_0_28px_rgba(212,175,55,0.95)] animate-[campus-emblem-float_4s_ease-in-out_infinite]"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+        </div>
+      }
     />
   );
 }

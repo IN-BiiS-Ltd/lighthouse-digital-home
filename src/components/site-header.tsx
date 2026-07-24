@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
-import campusTransparent from "@/assets/lighthouse-transparent-logo.png.asset.json";
 import {
   Sheet,
   SheetContent,
@@ -34,7 +33,7 @@ function DesktopDropdown({
     return (
       <SmartLink
         to={section.to}
-        className="px-2 py-2 text-sm font-medium text-navy-foreground/85 transition-colors hover:text-gold lg:px-3"
+        className="px-3 py-2 text-sm font-medium text-navy-foreground/85 transition-colors hover:text-gold"
       >
         {section.label}
       </SmartLink>
@@ -44,26 +43,12 @@ function DesktopDropdown({
     <div className="group relative">
       <SmartLink
         to={section.to}
-        className="relative flex items-center gap-1 px-2 py-2 text-sm font-medium text-navy-foreground/85 transition-colors hover:text-gold group-focus-within:text-gold lg:px-3"
+        className="relative flex items-center gap-1 px-3 py-2 text-sm font-medium text-navy-foreground/85 transition-colors hover:text-gold group-focus-within:text-gold"
         aria-haspopup="true"
       >
         {section.label}
         <ChevronDown className="size-3.5 opacity-70" aria-hidden />
       </SmartLink>
-      {section.label === "Campus" ? (
-        <div className="pointer-events-none absolute left-1/2 top-[calc(100%+2cm)] z-10 h-20 w-20 -translate-x-1/2">
-          <span className="absolute inset-0 rounded-full bg-gold/40 blur-[16px] animate-[halo-breathe_3s_ease-in-out_infinite]" aria-hidden="true" />
-          <span className="absolute inset-0 rounded-full bg-gold/15 blur-[28px] animate-[halo-breathe_3s_ease-in-out_infinite_reverse]" aria-hidden="true" />
-          <img
-            src={campusTransparent.url}
-            alt=""
-            className="relative h-full w-full object-contain opacity-100 drop-shadow-[0_0_24px_rgba(212,175,55,0.95)] animate-[campus-emblem-float_4s_ease-in-out_infinite]"
-            loading="eager"
-            decoding="async"
-          />
-        </div>
-      ) : null}
-
       <div className="invisible absolute left-1/2 top-full z-50 w-[22rem] -translate-x-1/2 pt-3 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
         <div className="rounded-xl border border-border bg-popover p-3 shadow-[0_24px_60px_-24px_rgba(11,29,58,0.45)]">
           {section.summary ? (
@@ -138,7 +123,7 @@ export function SiteHeader() {
 
         <nav
           aria-label="Primary"
-          className="hidden items-center lg:flex"
+          className="hidden items-center xl:flex"
         >
           {primaryNav.map((s) => (
             <DesktopDropdown key={s.to} section={s} />
@@ -166,7 +151,7 @@ export function SiteHeader() {
           {/* Mobile / tablet menu */}
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger
-              className="inline-flex size-11 items-center justify-center rounded-md text-navy-foreground hover:bg-navy-foreground/10 lg:hidden"
+              className="inline-flex size-11 items-center justify-center rounded-md text-navy-foreground hover:bg-navy-foreground/10 xl:hidden"
               aria-label="Open menu"
             >
               <Menu className="size-6" />
@@ -188,18 +173,7 @@ export function SiteHeader() {
                       className="border-navy-foreground/12"
                     >
                       <AccordionTrigger className="py-3 text-left text-base font-medium text-navy-foreground hover:no-underline">
-                        <span className="flex items-center gap-3">
-                          {s.label === "Campus" ? (
-                            <img
-                              src={campusTransparent.url}
-                              alt=""
-                              className="h-6 w-6 object-contain drop-shadow-[0_0_10px_rgba(212,175,55,0.75)]"
-                              loading="eager"
-                              decoding="async"
-                            />
-                          ) : null}
-                          {s.label}
-                        </span>
+                        {s.label}
                       </AccordionTrigger>
                       <AccordionContent className="pb-3">
                         <ul className="space-y-1">

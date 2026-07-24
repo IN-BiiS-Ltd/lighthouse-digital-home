@@ -190,6 +190,7 @@ export function OverviewPage({
   paragraphs,
   cards,
   cta,
+  floatingMark,
 }: {
   breadcrumb: { label: string; to?: string }[];
   eyebrow: string;
@@ -203,6 +204,7 @@ export function OverviewPage({
     primary: { to: string; label: string };
     secondary?: { to: string; label: string };
   };
+  floatingMark?: ReactNode;
 }) {
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
@@ -226,6 +228,7 @@ export function OverviewPage({
         title={title}
         intro={intro}
         sections={cards.map((c) => ({ label: c.title, to: c.to }))}
+        floatingMark={floatingMark}
       />
       {paragraphs && paragraphs.length > 0 ? (
         <Section>

@@ -17,6 +17,7 @@ export function PageHero({
   sections,
   breadcrumb,
   watermark = false,
+  floatingMark,
 }: {
   eyebrow: string;
   title: ReactNode;
@@ -24,6 +25,7 @@ export function PageHero({
   sections?: { label: string; to: string }[];
   breadcrumb?: { label: string; to?: string }[];
   watermark?: boolean;
+  floatingMark?: ReactNode;
 }) {
   return (
     <header className="relative overflow-hidden bg-navy text-navy-foreground beacon-surface grain"
@@ -49,6 +51,11 @@ export function PageHero({
       {watermark ? <WatermarkFloat side="right" /> : null}
       <BrandAtmosphere density={0.7} />
       <CrystalField className="opacity-70" />
+      {floatingMark ? (
+        <div className="pointer-events-none absolute inset-0 z-0 hidden md:block">
+          {floatingMark}
+        </div>
+      ) : null}
       <Container className="relative py-20 md:py-28">
 
         <div className="reveal reveal-in animate-[fade-in_0.9s_cubic-bezier(0.22,1,0.36,1)_both]">
