@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
-import campusEmblem from "@/assets/lighthouse-emblem-watermark.webp.asset.json";
+import campusEmblem from "@/assets/lighthouse-mark-light.png.asset.json";
 import {
   Sheet,
   SheetContent,
