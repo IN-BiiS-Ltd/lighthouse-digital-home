@@ -62,10 +62,13 @@ export const Route = createFileRoute("/")({
     links: [
       { rel: "canonical", href: "https://lighthousecampus.lovable.app/" },
       // Preload the LCP hero image so mobile FCP/LCP kick in earlier.
+      // Preload the WebP variant with imagesrcset so the browser picks the smallest source.
       {
         rel: "preload",
         as: "image",
         href: heroImg,
+        imagesrcset: heroWebp,
+        imagesizes: "100vw",
         fetchpriority: "high",
       } as unknown as { rel: string },
     ],
