@@ -129,6 +129,10 @@ export function PageHero({
                 key={s.to}
                 to={s.to}
                 className="text-sm font-medium text-navy-foreground/70 transition-colors hover:text-gold"
+                data-event="Section Anchor Click"
+                data-event-prop-label={s.label}
+                data-event-prop-to={s.to}
+                data-event-prop-page={eyebrow}
               >
                 {s.label}
               </SmartLink>
