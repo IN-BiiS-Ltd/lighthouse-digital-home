@@ -34,6 +34,9 @@ import curiosityIcon from "@/assets/value-curiosity.png.asset.json";
 import belongingIcon from "@/assets/value-belonging.png.asset.json";
 import integrityIcon from "@/assets/value-integrity.png.asset.json";
 import excellenceIcon from "@/assets/value-excellence.png.asset.json";
+import heroVideo from "@/assets/hero-cinematic.mp4.asset.json";
+import { useLang } from "@/lib/i18n";
+import { useEffect, useRef, useState } from "react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
