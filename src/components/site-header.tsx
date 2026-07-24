@@ -24,7 +24,7 @@ import {
   SmartLink,
 } from "@/components/blocks";
 import { useLang, type Lang } from "@/lib/i18n";
-import { LanguageToggle } from "@/components/language-toggle";
+// import { LanguageToggle } from "@/components/language-toggle"; // disabled — see hero section
 
 /** Map a top-level route to a translation key used by the dictionary. */
 const NAV_KEY: Record<string, string> = {
