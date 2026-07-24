@@ -51,17 +51,19 @@ function DesktopDropdown({
         <ChevronDown className="size-3.5 opacity-70" aria-hidden />
       </SmartLink>
       {section.label === "Campus" ? (
-        <div className="pointer-events-none absolute left-1/2 top-[calc(100%+2cm)] z-10 h-14 w-14 -translate-x-1/2">
-          <span className="absolute inset-0 rounded-full bg-gold/25 blur-[10px] animate-[halo-breathe_3s_ease-in-out_infinite]" aria-hidden="true" />
+        <div className="pointer-events-none absolute left-1/2 top-[calc(100%+2cm)] z-10 h-20 w-20 -translate-x-1/2">
+          <span className="absolute inset-0 rounded-full bg-gold/40 blur-[16px] animate-[halo-breathe_3s_ease-in-out_infinite]" aria-hidden="true" />
+          <span className="absolute inset-0 rounded-full bg-gold/15 blur-[28px] animate-[halo-breathe_3s_ease-in-out_infinite_reverse]" aria-hidden="true" />
           <img
             src={campusTransparent.url}
             alt=""
-            className="relative h-full w-full object-contain drop-shadow-[0_0_18px_rgba(212,175,55,0.85)] animate-[float-emblem_4s_ease-in-out_infinite]"
+            className="relative h-full w-full object-contain opacity-100 drop-shadow-[0_0_24px_rgba(212,175,55,0.95)] animate-[campus-emblem-float_4s_ease-in-out_infinite]"
             loading="eager"
             decoding="async"
           />
         </div>
       ) : null}
+
       <div className="invisible absolute left-1/2 top-full z-50 w-[22rem] -translate-x-1/2 pt-3 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
         <div className="rounded-xl border border-border bg-popover p-3 shadow-[0_24px_60px_-24px_rgba(11,29,58,0.45)]">
           {section.summary ? (
