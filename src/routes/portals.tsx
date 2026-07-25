@@ -2,11 +2,24 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/page-hero";
 import { Section, ButtonLink, Eyebrow } from "@/components/blocks";
 import { LhIcon, type LhIconName } from "@/components/lighthouse-icons";
+import portalExecutive from "@/assets/portal-executive.png.asset.json";
+import portalSchool from "@/assets/portal-school.png.asset.json";
+import portalTeacher from "@/assets/portal-teacher.png.asset.json";
+import portalStaff from "@/assets/portal-staff.png.asset.json";
+import portalParent from "@/assets/portal-parent.png.asset.json";
+import portalStudent from "@/assets/portal-student.png.asset.json";
 
 const EDUIOS_SIGNIN = "https://eduios.zanova.systems/";
 const EDUIOS_APPLY = "https://eduios.zanova.systems/apply/lighthouse-campus";
 
-const portals: { title: string; description: string; icon: LhIconName }[] = [
+type Portal = {
+  title: string;
+  description: string;
+  image?: string;
+  icon?: LhIconName;
+};
+
+const portals: Portal[] = [
   {
     title: "Board Portal",
     description: "Governance, board resolutions and executive oversight.",
@@ -15,34 +28,34 @@ const portals: { title: string; description: string; icon: LhIconName }[] = [
   {
     title: "Executive Portal",
     description: "Executive intelligence and institutional decisions.",
-    icon: "lens",
+    image: portalExecutive.url,
   },
   {
     title: "School Portal",
     description:
       "Administration, admissions review, learners and the institutional model.",
-    icon: "arc",
+    image: portalSchool.url,
   },
   {
     title: "Teacher Portal",
     description: "Classes, attendance, homework and learners.",
-    icon: "ledger",
+    image: portalTeacher.url,
   },
   {
     title: "Staff Portal",
     description: "Operations, tasks and day-to-day workflows.",
-    icon: "root",
+    image: portalStaff.url,
   },
   {
     title: "Parent Portal",
     description:
       "Your child's learning, attendance, messages and payments.",
-    icon: "dialogue",
+    image: portalParent.url,
   },
   {
     title: "Student Portal",
     description: "Timetable, homework and learning.",
-    icon: "compass",
+    image: portalStudent.url,
   },
 ];
 
@@ -124,12 +137,27 @@ function PortalsPage() {
                   href={EDUIOS_SIGNIN}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex h-full flex-col rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-gold/60 hover:shadow-e2"
+                  className="group flex h-full flex-col items-center rounded-2xl border border-border bg-card p-6 text-center transition-all hover:-translate-y-0.5 hover:border-gold/60 hover:shadow-e2"
                   data-event="Portal Card Click"
                   data-event-prop-portal={p.title}
                 >
-                  <span className="lh-chip size-11 rounded-xl" aria-hidden>
-                    <LhIcon name={p.icon} className="size-5" />
+                  <span
+                    className="flex size-28 items-center justify-center rounded-2xl bg-navy/95 ring-1 ring-gold/30 shadow-e2"
+                    aria-hidden
+                  >
+                    {p.image ? (
+                      <img
+                        src={p.image}
+                        alt=""
+                        loading="lazy"
+                        className="size-24 object-contain"
+                      />
+                    ) : (
+                      <LhIcon
+                        name={p.icon!}
+                        className="size-14 text-gold"
+                      />
+                    )}
                   </span>
                   <h3 className="mt-5 font-display text-lg font-medium text-foreground group-hover:text-brand-blue">
                     {p.title}
