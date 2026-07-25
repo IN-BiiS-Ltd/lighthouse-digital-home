@@ -195,9 +195,14 @@ function About() {
         <SectionHeading eyebrow="Understanding Lighthouse Campus" title="Explore the ideas, people and principles behind the institution" />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {understanding.map((u) => (
-            <a key={u.to} href={u.to} className="block group">
+            <Link
+              key={u.to}
+              to={u.to}
+              aria-label={`${u.title} — learn more`}
+              className="group block rounded-2xl outline-none transition-shadow focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            >
               <FeatureCard title={u.title} icon={u.icon}>{u.body}</FeatureCard>
-            </a>
+            </Link>
           ))}
           <article className="relative overflow-hidden rounded-2xl bg-navy p-8 text-navy-foreground shadow-[0_30px_80px_-30px_rgba(11,29,58,0.55)] ring-1 ring-gold/40 sm:col-span-2 lg:col-span-2">
             <div
