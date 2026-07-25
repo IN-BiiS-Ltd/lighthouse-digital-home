@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/page-hero";
 import { Section, ButtonLink, Eyebrow } from "@/components/blocks";
-import { LhIcon, type LhIconName } from "@/components/lighthouse-icons";
+import portalBoard from "@/assets/portal-board.png.asset.json";
 import portalExecutive from "@/assets/portal-executive.png.asset.json";
 import portalSchool from "@/assets/portal-school.png.asset.json";
 import portalTeacher from "@/assets/portal-teacher.png.asset.json";
@@ -16,14 +16,13 @@ type Portal = {
   title: string;
   description: string;
   image?: string;
-  icon?: LhIconName;
 };
 
 const portals: Portal[] = [
   {
     title: "Board Portal",
     description: "Governance, board resolutions and executive oversight.",
-    icon: "constellation",
+    image: portalBoard.url,
   },
   {
     title: "Executive Portal",
@@ -145,19 +144,12 @@ function PortalsPage() {
                     className="flex size-28 items-center justify-center rounded-2xl bg-navy/95 ring-1 ring-gold/30 shadow-e2"
                     aria-hidden
                   >
-                    {p.image ? (
-                      <img
-                        src={p.image}
-                        alt=""
-                        loading="lazy"
-                        className="size-24 object-contain"
-                      />
-                    ) : (
-                      <LhIcon
-                        name={p.icon!}
-                        className="size-14 text-gold"
-                      />
-                    )}
+                    <img
+                      src={p.image}
+                      alt=""
+                      loading="lazy"
+                      className="size-24 object-contain"
+                    />
                   </span>
                   <h3 className="mt-5 font-display text-lg font-medium text-foreground group-hover:text-brand-blue">
                     {p.title}
