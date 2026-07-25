@@ -20,6 +20,7 @@ import iconCoreValues from "@/assets/about-core-values.png.asset.json";
 import iconPhilosophy from "@/assets/about-philosophy.png.asset.json";
 import iconLeadership from "@/assets/about-leadership.png.asset.json";
 import iconCampusCulture from "@/assets/about-campus-culture.png.asset.json";
+import lighthouseMarkLight from "@/assets/lighthouse-mark-light.png.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -128,6 +129,21 @@ function About() {
               aria-hidden
               className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-gold/20 blur-3xl"
             />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -bottom-10 -right-10 h-72 w-72 opacity-20 sm:opacity-25 md:h-80 md:w-80"
+            >
+              <img
+                src={lighthouseMarkLight.url}
+                alt=""
+                width={320}
+                height={320}
+                className="h-full w-full object-contain drop-shadow-[0_0_40px_rgba(212,175,110,0.35)]"
+                loading="lazy"
+                decoding="async"
+                draggable={false}
+              />
+            </div>
             <div className="relative">
               <span className="eyebrow text-gold">Shaping Tomorrow's Leaders</span>
               <div className="mt-5 space-y-4 text-base leading-relaxed text-navy-foreground/90 md:text-lg">
