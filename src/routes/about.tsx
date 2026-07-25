@@ -1,5 +1,5 @@
 import { assetUrl } from "@/lib/asset-url";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Section, SectionHeading, FeatureCard } from "@/components/blocks";
 import lighthouseFlag from "@/assets/lighthouse-flag.png.asset.json";
 import readersFlag from "@/assets/readers-international-flag.png.asset.json";
@@ -27,22 +27,68 @@ import campusEmblem from "@/assets/lighthouse-campus-emblem.png.asset.json";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Lighthouse Campus | An Independent Institution for Modern Learning" },
+      { title: "About Lighthouse Campus | Independent K–12 Institution in Mohandessin, Giza" },
       {
         name: "description",
         content:
-          "Lighthouse Campus is an independent educational institution in Mohandessin, Giza — a modern learning community built around curiosity, character and belonging.",
+          "Discover Lighthouse Campus — an independent K–12 educational institution in Mohandessin, Giza. Explore our story, vision, mission, values, philosophy, leadership and campus culture.",
       },
-      { property: "og:title", content: "About Lighthouse Campus" },
+      {
+        name: "keywords",
+        content:
+          "Lighthouse Campus, about Lighthouse Campus, independent school Mohandessin, Giza international school, K-12 Cairo, educational philosophy, school vision and mission",
+      },
+      { name: "robots", content: "index,follow,max-image-preview:large" },
+      { property: "og:title", content: "About Lighthouse Campus — Where Potential Becomes Purpose" },
       {
         property: "og:description",
         content:
-          "An independent institution with its own philosophy, identity and long-term vision. Discover Lighthouse Campus in Mohandessin, Giza.",
+          "An independent institution with its own philosophy, identity and long-term vision. Meet Lighthouse Campus in Mohandessin, Giza.",
       },
       { property: "og:url", content: "https://lighthousecampus.com/about" },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Lighthouse Campus" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "About Lighthouse Campus" },
+      {
+        name: "twitter:description",
+        content:
+          "An independent K–12 institution in Mohandessin, Giza — guiding minds, inspiring futures, connecting possibilities.",
+      },
     ],
     links: [{ rel: "canonical", href: "https://lighthousecampus.com/about" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          name: "About Lighthouse Campus",
+          url: "https://lighthousecampus.com/about",
+          description:
+            "An independent K–12 educational institution in Mohandessin, Giza — its story, philosophy, values and leadership.",
+          mainEntity: {
+            "@type": "EducationalOrganization",
+            name: "Lighthouse Campus",
+            url: "https://lighthousecampus.com",
+            slogan: "Guiding Minds. Inspiring Futures. Connecting Possibilities.",
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Mohandessin",
+              addressRegion: "Giza",
+              addressCountry: "EG",
+            },
+          },
+          breadcrumb: {
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://lighthousecampus.com/" },
+              { "@type": "ListItem", position: 2, name: "About", item: "https://lighthousecampus.com/about" },
+            ],
+          },
+        }),
+      },
+    ],
   }),
   component: About,
 });
@@ -147,19 +193,27 @@ function About() {
 
       <Section tone="muted">
         <SectionHeading eyebrow="Understanding Lighthouse Campus" title="Explore the ideas, people and principles behind the institution" />
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-5 sm:mt-12 sm:gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {understanding.map((u) => (
-            <a key={u.to} href={u.to} className="block group">
+            <Link
+              key={u.to}
+              to={u.to}
+              aria-label={`${u.title} — learn more`}
+              className="group block rounded-2xl outline-none transition-shadow focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            >
               <FeatureCard title={u.title} icon={u.icon}>{u.body}</FeatureCard>
-            </a>
+            </Link>
           ))}
-          <article className="relative overflow-hidden rounded-2xl bg-navy p-8 text-navy-foreground shadow-[0_30px_80px_-30px_rgba(11,29,58,0.55)] ring-1 ring-gold/40 sm:col-span-2 lg:col-span-2">
+          <article
+            aria-labelledby="shaping-tomorrows-leaders"
+            className="relative overflow-hidden rounded-2xl bg-navy p-7 text-navy-foreground shadow-[0_30px_80px_-30px_rgba(11,29,58,0.55)] ring-1 ring-gold/40 sm:col-span-2 sm:p-8 lg:col-span-2"
+          >
             <div
               aria-hidden
               className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-gold/20 blur-3xl"
             />
             <div className="relative">
-              <span className="eyebrow text-gold">Shaping Tomorrow's Leaders</span>
+              <h3 id="shaping-tomorrows-leaders" className="eyebrow text-gold">Shaping Tomorrow's Leaders</h3>
               <div className="mt-5 space-y-4 text-base leading-relaxed text-navy-foreground/90 md:text-lg">
                 <p>
                   At Lighthouse Campus, education extends far beyond the classroom. It is a carefully designed journey that inspires curiosity, builds character, nurtures leadership, and empowers every learner to discover their purpose and unlock their full potential.
