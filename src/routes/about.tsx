@@ -177,43 +177,56 @@ function About() {
             </div>
           </article>
 
-          {/* Institutional emblem — fills the full row below the asymmetric grid block */}
-          <figure className="relative overflow-hidden rounded-2xl bg-navy p-6 shadow-[0_30px_80px_-30px_rgba(11,29,58,0.55)] ring-1 ring-gold/40 sm:col-span-2 lg:col-span-3">
+          {/* Institutional emblem — fills the grid cell below Campus Culture */}
+          <figure className="relative flex flex-col overflow-hidden rounded-2xl bg-navy p-6 shadow-[0_30px_80px_-30px_rgba(11,29,58,0.55)] ring-1 ring-gold/40">
             <div
               aria-hidden
-              className="pointer-events-none absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-gold/15 blur-3xl"
+              className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-gold/15 blur-3xl"
             />
             <div
               aria-hidden
-              className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-gold/10 blur-3xl"
+              className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-gold/10 blur-3xl"
             />
-            <div className="relative grid items-center gap-6 sm:grid-cols-[1fr_auto_1fr]">
-              <div className="hidden text-navy-foreground/20 sm:block">
-                <div className="mx-auto h-px max-w-xs bg-gradient-to-r from-transparent via-gold/60 to-transparent" />
-              </div>
-              <div className="flex flex-col items-center justify-center text-center">
-                <img
-                  src={campusEmblem.url}
-                  alt="Lighthouse Campus — official institutional emblem: lighthouse, book and star beneath the LIGHTHOUSE CAMPUS wordmark and promise."
-                  width={512}
-                  height={512}
-                  loading="lazy"
-                  decoding="async"
-                  draggable={false}
-                  className="block h-auto w-full max-w-[220px] object-contain drop-shadow-[0_8px_30px_rgba(212,175,55,0.25)]"
-                />
-                <figcaption className="mt-4">
-                  <span className="eyebrow text-gold">Lighthouse Campus</span>
-                  <p className="mt-1 text-sm text-navy-foreground/80">
-                    Guiding Minds. Inspiring Futures. Connecting Possibilities.
-                  </p>
-                </figcaption>
-              </div>
-              <div className="hidden text-navy-foreground/20 sm:block">
-                <div className="mx-auto h-px max-w-xs bg-gradient-to-r from-transparent via-gold/60 to-transparent" />
-              </div>
+            <div className="relative flex flex-1 flex-col items-center justify-center text-center">
+              <img
+                src={campusEmblem.url}
+                alt="Lighthouse Campus — official institutional emblem: lighthouse, book and star beneath the LIGHTHOUSE CAMPUS wordmark and promise."
+                width={512}
+                height={512}
+                loading="lazy"
+                decoding="async"
+                draggable={false}
+                className="block h-auto w-full max-w-[220px] object-contain drop-shadow-[0_8px_30px_rgba(212,175,55,0.25)]"
+              />
+              <figcaption className="mt-4">
+                <span className="eyebrow text-gold">Lighthouse Campus</span>
+                <p className="mt-1 text-sm text-navy-foreground/80">
+                  Guiding Minds. Inspiring Futures. Connecting Possibilities.
+                </p>
+              </figcaption>
             </div>
           </figure>
+
+          {/* Premium content cards — fill the remaining empty space beside the emblem */}
+          <article className="relative overflow-hidden rounded-2xl bg-white p-7 shadow-[0_20px_60px_-20px_rgba(11,29,58,0.2)] ring-1 ring-gold/30 transition-shadow hover:shadow-[0_30px_80px_-25px_rgba(11,29,58,0.25)]">
+            <div className="mb-5 inline-flex rounded-2xl bg-navy/5 p-3 ring-1 ring-gold/20">
+              <CommunityIcon />
+            </div>
+            <h3 className="font-display text-xl text-navy">A Community Built on Trust</h3>
+            <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+              At Lighthouse Campus, every learner is known, supported, and encouraged to grow. We build strong relationships between students, families, and educators to create a safe, respectful, and inspiring community where every child feels a true sense of belonging.
+            </p>
+          </article>
+
+          <article className="relative overflow-hidden rounded-2xl bg-white p-7 shadow-[0_20px_60px_-20px_rgba(11,29,58,0.2)] ring-1 ring-gold/30 transition-shadow hover:shadow-[0_30px_80px_-25px_rgba(11,29,58,0.25)]">
+            <div className="mb-5 inline-flex rounded-2xl bg-navy/5 p-3 ring-1 ring-gold/20">
+              <PathwayIcon />
+            </div>
+            <h3 className="font-display text-xl text-navy">Preparing Learners for Life</h3>
+            <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+              Our purpose extends beyond academic achievement. We develop confident thinkers, responsible citizens, and compassionate leaders equipped with the knowledge, character, and adaptability to contribute meaningfully in a changing world.
+            </p>
+          </article>
         </div>
       </Section>
 
