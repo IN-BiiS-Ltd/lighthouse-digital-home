@@ -193,7 +193,7 @@ function About() {
 
       <Section tone="muted">
         <SectionHeading eyebrow="Understanding Lighthouse Campus" title="Explore the ideas, people and principles behind the institution" />
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-5 sm:mt-12 sm:gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {understanding.map((u) => (
             <Link
               key={u.to}
