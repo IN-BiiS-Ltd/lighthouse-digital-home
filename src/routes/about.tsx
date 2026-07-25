@@ -27,22 +27,68 @@ import campusEmblem from "@/assets/lighthouse-campus-emblem.png.asset.json";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Lighthouse Campus | An Independent Institution for Modern Learning" },
+      { title: "About Lighthouse Campus | Independent K–12 Institution in Mohandessin, Giza" },
       {
         name: "description",
         content:
-          "Lighthouse Campus is an independent educational institution in Mohandessin, Giza — a modern learning community built around curiosity, character and belonging.",
+          "Discover Lighthouse Campus — an independent K–12 educational institution in Mohandessin, Giza. Explore our story, vision, mission, values, philosophy, leadership and campus culture.",
       },
-      { property: "og:title", content: "About Lighthouse Campus" },
+      {
+        name: "keywords",
+        content:
+          "Lighthouse Campus, about Lighthouse Campus, independent school Mohandessin, Giza international school, K-12 Cairo, educational philosophy, school vision and mission",
+      },
+      { name: "robots", content: "index,follow,max-image-preview:large" },
+      { property: "og:title", content: "About Lighthouse Campus — Where Potential Becomes Purpose" },
       {
         property: "og:description",
         content:
-          "An independent institution with its own philosophy, identity and long-term vision. Discover Lighthouse Campus in Mohandessin, Giza.",
+          "An independent institution with its own philosophy, identity and long-term vision. Meet Lighthouse Campus in Mohandessin, Giza.",
       },
       { property: "og:url", content: "https://lighthousecampus.com/about" },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Lighthouse Campus" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "About Lighthouse Campus" },
+      {
+        name: "twitter:description",
+        content:
+          "An independent K–12 institution in Mohandessin, Giza — guiding minds, inspiring futures, connecting possibilities.",
+      },
     ],
     links: [{ rel: "canonical", href: "https://lighthousecampus.com/about" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          name: "About Lighthouse Campus",
+          url: "https://lighthousecampus.com/about",
+          description:
+            "An independent K–12 educational institution in Mohandessin, Giza — its story, philosophy, values and leadership.",
+          mainEntity: {
+            "@type": "EducationalOrganization",
+            name: "Lighthouse Campus",
+            url: "https://lighthousecampus.com",
+            slogan: "Guiding Minds. Inspiring Futures. Connecting Possibilities.",
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Mohandessin",
+              addressRegion: "Giza",
+              addressCountry: "EG",
+            },
+          },
+          breadcrumb: {
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://lighthousecampus.com/" },
+              { "@type": "ListItem", position: 2, name: "About", item: "https://lighthousecampus.com/about" },
+            ],
+          },
+        }),
+      },
+    ],
   }),
   component: About,
 });
