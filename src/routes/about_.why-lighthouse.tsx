@@ -6,6 +6,7 @@ import pillarEducators from "@/assets/pillar-exceptional-educators.png.asset.jso
 import pillarCharacter from "@/assets/pillar-character-leadership.png.asset.json";
 import pillarGlobal from "@/assets/pillar-global-perspective.png.asset.json";
 import pillarSafe from "@/assets/principle-humanity.png.asset.json";
+import philosophyEmblem from "@/assets/philosophy-emblem.png.asset.json";
 import {
   Section,
   SectionHeading,
