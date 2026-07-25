@@ -57,7 +57,7 @@ async def main():
         await page.screenshot(path=str(OUT / "1_normal.png"))
 
         # Test 4: scroll updates active state via IntersectionObserver
-        await page.evaluate("() => const el=document.querySelector('#partnership');window.scrollTo(0,el.getBoundingClientRect().top+window.scrollY-window.innerHeight*0.4)")
+        await page.evaluate("() => { const el=document.querySelector('#partnership'); window.scrollTo(0, el.getBoundingClientRect().top+window.scrollY-window.innerHeight*0.4); }")
         await page.wait_for_timeout(800)
         active_scroll = await page.evaluate("() => document.querySelector(\"nav[aria-label='Sections of this page'] a[aria-current]\")?.textContent?.trim()")
         print(f"Scrolled to #partnership → aria-current: {active_scroll!r}")
