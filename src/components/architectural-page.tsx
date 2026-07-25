@@ -88,9 +88,10 @@ export interface ArchitecturalPageConfig {
   cta: {
     title: string;
     body: string;
-    primary: { to: string; label: string };
-    secondary?: { to: string; label: string };
+    primary: { to: string; label: string; target?: string; rel?: string; ariaLabel?: string };
+    secondary?: { to: string; label: string; target?: string; rel?: string; ariaLabel?: string };
   };
+
 }
 
 const colToClass: Record<2 | 3 | 4, string> = {

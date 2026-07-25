@@ -3,6 +3,14 @@ import { Container, Eyebrow, ButtonLink } from "@/components/blocks";
 import { CrystalField } from "@/components/crystal-field";
 
 /** Closing "Invitation" band used at the foot of interior pages. */
+type CtaLink = {
+  to: string;
+  label: string;
+  target?: string;
+  rel?: string;
+  ariaLabel?: string;
+};
+
 export function CtaBand({
   eyebrow = "Invitation",
   title,
@@ -13,8 +21,8 @@ export function CtaBand({
   eyebrow?: string;
   title: ReactNode;
   body: ReactNode;
-  primary?: { to: string; label: string };
-  secondary?: { to: string; label: string };
+  primary?: CtaLink;
+  secondary?: CtaLink;
 }) {
   return (
     <section className="ambient-stage relative overflow-hidden bg-navy text-navy-foreground grain">
@@ -36,6 +44,9 @@ export function CtaBand({
               to={primary.to}
               variant="gold"
               size="lg"
+              target={primary.target}
+              rel={primary.rel}
+              aria-label={primary.ariaLabel}
               data-event="CTA Click"
               data-event-prop-label={primary.label}
               data-event-prop-to={primary.to}
@@ -47,6 +58,9 @@ export function CtaBand({
               to={secondary.to}
               variant="outline-light"
               size="lg"
+              target={secondary.target}
+              rel={secondary.rel}
+              aria-label={secondary.ariaLabel}
               data-event="CTA Click"
               data-event-prop-label={secondary.label}
               data-event-prop-to={secondary.to}
@@ -60,3 +74,4 @@ export function CtaBand({
     </section>
   );
 }
+
