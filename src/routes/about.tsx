@@ -163,35 +163,65 @@ function About() {
           </>
         }
         sections={[
-          { label: "Our Story", to: "/about/our-story" },
-          { label: "Why Lighthouse?", to: "/about/why-lighthouse" },
-          { label: "Vision", to: "/about/vision" },
-          { label: "Mission", to: "/about/mission" },
-          { label: "Core Values", to: "/about/core-values" },
-          { label: "Philosophy", to: "/about/educational-philosophy" },
-          { label: "Leadership", to: "/about/leadership" },
-          { label: "Governance", to: "/about/governance" },
-          { label: "Campus Culture", to: "/about/campus-culture" },
+          { label: "Institutional Footprint", to: "#footprint" },
+          { label: "Understanding Lighthouse", to: "#understanding" },
+          { label: "Our Location", to: "#location" },
+          { label: "Institutional Identity", to: "#identity" },
+          { label: "Strategic Partnership", to: "#partnership" },
+          { label: "Discover Our Story", to: "#invitation" },
         ]}
       />
+
+      {/* In-page table of contents — sticky quick-navigation for keyboard and screen-reader users */}
+      <nav
+        aria-label="On this page"
+        className="sticky top-[64px] z-30 border-y border-gold/20 bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/70"
+      >
+        <div className="mx-auto flex max-w-7xl items-center gap-2 overflow-x-auto px-4 py-3 sm:px-6 lg:px-8">
+          <span className="shrink-0 text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+            On this page
+          </span>
+          <ol className="flex items-center gap-1 text-sm">
+            {[
+              { label: "Footprint", to: "#footprint" },
+              { label: "Understanding", to: "#understanding" },
+              { label: "Location", to: "#location" },
+              { label: "Identity", to: "#identity" },
+              { label: "Partnership", to: "#partnership" },
+              { label: "Invitation", to: "#invitation" },
+            ].map((s) => (
+              <li key={s.to}>
+                <a
+                  href={s.to}
+                  className="inline-flex shrink-0 rounded-full px-3 py-1.5 text-foreground/80 transition-colors hover:bg-gold/10 hover:text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                >
+                  {s.label}
+                </a>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </nav>
 
       <PullQuote
         quote={<>Guiding minds. Inspiring futures. Connecting possibilities.</>}
         attribution="The Lighthouse Promise"
       />
 
-      <StatBand
-        eyebrow="The Institutional Footprint"
-        tone="navy"
-        stats={[
-          { value: "Ages 3–18", label: "Learning Journey", caption: "From Early Years foundations through Upper Secondary readiness." },
-          { value: "10", label: "Educational Pillars", caption: "The interlocking commitments that shape every classroom decision." },
-          { value: "1", label: "Founding Campus", caption: "Mohandessin, Giza — the first campus of a growing institution." },
-          { value: "∞", label: "Possibilities", caption: "A learning community designed to open — not to narrow — futures." },
-        ]}
-      />
+      <div id="footprint" className="scroll-mt-24">
+        <StatBand
+          eyebrow="The Institutional Footprint"
+          tone="navy"
+          stats={[
+            { value: "Ages 3–18", label: "Learning Journey", caption: "From Early Years foundations through Upper Secondary readiness." },
+            { value: "10", label: "Educational Pillars", caption: "The interlocking commitments that shape every classroom decision." },
+            { value: "1", label: "Founding Campus", caption: "Mohandessin, Giza — the first campus of a growing institution." },
+            { value: "∞", label: "Possibilities", caption: "A learning community designed to open — not to narrow — futures." },
+          ]}
+        />
+      </div>
 
-      <Section tone="muted">
+      <Section id="understanding" tone="muted">
         <SectionHeading eyebrow="Understanding Lighthouse Campus" title="Explore the ideas, people and principles behind the institution" />
         <div className="mt-10 grid gap-5 sm:mt-12 sm:gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {understanding.map((u) => (
@@ -284,7 +314,7 @@ function About() {
         </div>
       </Section>
 
-      <Section tone="sand">
+      <Section id="location" tone="sand">
         <SectionHeading eyebrow="Mohandessin, Giza" title="A new campus in the heart of Greater Cairo" />
         <div className="mt-8 max-w-3xl space-y-5 text-lg leading-relaxed text-muted-foreground">
           <p>Lighthouse Campus is located in Mohandessin, Giza, Greater Cairo — the founding campus of an institution designed to grow thoughtfully across the region.</p>
@@ -314,7 +344,7 @@ function About() {
         </figure>
       </Section>
 
-      <Section>
+      <Section id="identity">
         <SectionHeading
           align="center"
           eyebrow="Institutional Identity"
@@ -370,7 +400,7 @@ function About() {
         </div>
       </Section>
 
-      <Section tone="sand">
+      <Section id="partnership" tone="sand">
         <SectionHeading
           eyebrow="Strategic Educational Partnership"
           title="Building on Shared Strengths"
@@ -490,7 +520,7 @@ function About() {
         </div>
       </Section>
 
-      <Section tone="navy">
+      <Section id="invitation" tone="navy">
         <div className="mx-auto max-w-3xl text-center">
           <p className="font-display text-2xl leading-snug text-navy-foreground md:text-[1.9rem]">
             Discover the story behind Lighthouse Campus, explore our educational philosophy, meet the people who lead our community, and learn why families choose Lighthouse as the place where futures begin.
