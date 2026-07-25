@@ -49,7 +49,7 @@ async def main():
         await page.keyboard.press("ArrowRight")
         await page.keyboard.press("ArrowRight")  # Location
         await page.keyboard.press("Enter")
-        await page.wait_for_timeout(400)
+        await page.wait_for_timeout(1200)
         current = await page.evaluate("() => document.querySelector(\"nav[aria-label='Sections of this page'] a[aria-current]\")?.textContent?.trim()")
         print(f"After Enter on Location → aria-current: {current!r}")
         if current != "Location":
