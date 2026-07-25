@@ -10,7 +10,7 @@ import portalParent from "@/assets/portal-parent.png.asset.json";
 import portalStudent from "@/assets/portal-student.png.asset.json";
 
 const EDUIOS_SIGNIN = "https://eduios.lighthousecampus.com/";
-const EDUIOS_APPLY = "https://eduios.lighthousecampus.com/apply";
+const EDUIOS_APPLY = "https://eduios.lighthousecampus.com/apply/lighthouse-campus";
 
 type Portal = {
   title: string;
