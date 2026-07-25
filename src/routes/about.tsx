@@ -314,7 +314,7 @@ function About() {
         </div>
       </Section>
 
-      <Section tone="sand">
+      <Section id="location" tone="sand">
         <SectionHeading eyebrow="Mohandessin, Giza" title="A new campus in the heart of Greater Cairo" />
         <div className="mt-8 max-w-3xl space-y-5 text-lg leading-relaxed text-muted-foreground">
           <p>Lighthouse Campus is located in Mohandessin, Giza, Greater Cairo — the founding campus of an institution designed to grow thoughtfully across the region.</p>
