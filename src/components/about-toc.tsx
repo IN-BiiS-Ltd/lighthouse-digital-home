@@ -78,10 +78,8 @@ export function AboutTOC({ items }: { items: TocItem[] }) {
     e.preventDefault();
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
-    // Update the URL hash without jumping.
     history.replaceState(null, "", to);
-    setActive(to);
-    // Move focus to the section for screen reader / keyboard continuity.
+    // Move focus to the target section for keyboard/SR continuity.
     const prevTabIndex = el.getAttribute("tabindex");
     el.setAttribute("tabindex", "-1");
     el.focus({ preventScroll: true });
