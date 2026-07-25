@@ -100,7 +100,7 @@ const acronym = [
   { letter: "H", title: "Harmony", body: "Creating balance between academic excellence, wellbeing and character.", img: principleHarmony },
   { letter: "O", title: "Opportunity", body: "Helping every learner discover and develop individual strengths.", img: principleOpportunity },
   { letter: "U", title: "Understanding", body: "Promoting reflection, wisdom and global awareness.", img: principleUnderstanding },
-  { letter: "S", title: "Sustainability", body: "Caring for our environment, resources, and communities so that future generations can thrive with responsibility and hope.", img: principleStewardship },
+  { letter: "S", title: "Sustainability", body: "Caring for our environment, resources, and communities so that future generations can thrive with responsibility and hope — والاستدامة المؤسسية والتعليمية.", img: principleStewardship },
   { letter: "E", title: "Excellence", body: "Pursuing quality, achievement and continuous improvement in everything we do.", img: principleExcellence },
 ];
 
