@@ -163,17 +163,45 @@ function About() {
           </>
         }
         sections={[
-          { label: "Our Story", to: "/about/our-story" },
-          { label: "Why Lighthouse?", to: "/about/why-lighthouse" },
-          { label: "Vision", to: "/about/vision" },
-          { label: "Mission", to: "/about/mission" },
-          { label: "Core Values", to: "/about/core-values" },
-          { label: "Philosophy", to: "/about/educational-philosophy" },
-          { label: "Leadership", to: "/about/leadership" },
-          { label: "Governance", to: "/about/governance" },
-          { label: "Campus Culture", to: "/about/campus-culture" },
+          { label: "Institutional Footprint", to: "#footprint" },
+          { label: "Understanding Lighthouse", to: "#understanding" },
+          { label: "Our Location", to: "#location" },
+          { label: "Institutional Identity", to: "#identity" },
+          { label: "Strategic Partnership", to: "#partnership" },
+          { label: "Discover Our Story", to: "#invitation" },
         ]}
       />
+
+      {/* In-page table of contents — sticky quick-navigation for keyboard and screen-reader users */}
+      <nav
+        aria-label="On this page"
+        className="sticky top-[64px] z-30 border-y border-gold/20 bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/70"
+      >
+        <div className="mx-auto flex max-w-7xl items-center gap-2 overflow-x-auto px-4 py-3 sm:px-6 lg:px-8">
+          <span className="shrink-0 text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+            On this page
+          </span>
+          <ol className="flex items-center gap-1 text-sm">
+            {[
+              { label: "Footprint", to: "#footprint" },
+              { label: "Understanding", to: "#understanding" },
+              { label: "Location", to: "#location" },
+              { label: "Identity", to: "#identity" },
+              { label: "Partnership", to: "#partnership" },
+              { label: "Invitation", to: "#invitation" },
+            ].map((s) => (
+              <li key={s.to}>
+                <a
+                  href={s.to}
+                  className="inline-flex shrink-0 rounded-full px-3 py-1.5 text-foreground/80 transition-colors hover:bg-gold/10 hover:text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                >
+                  {s.label}
+                </a>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </nav>
 
       <PullQuote
         quote={<>Guiding minds. Inspiring futures. Connecting possibilities.</>}
