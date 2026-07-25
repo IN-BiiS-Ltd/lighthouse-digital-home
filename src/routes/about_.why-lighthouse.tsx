@@ -1,6 +1,6 @@
 import { assetUrl } from "@/lib/asset-url";
 import { createFileRoute } from "@tanstack/react-router";
-import { Palette, Sun, Compass } from "lucide-react";
+import { Palette, Sun, Compass, Shield } from "lucide-react";
 import pillarInspired from "@/assets/pillar-inspired-learning.png.asset.json";
 import pillarEducators from "@/assets/pillar-exceptional-educators.png.asset.json";
 import pillarCharacter from "@/assets/pillar-character-leadership.png.asset.json";
