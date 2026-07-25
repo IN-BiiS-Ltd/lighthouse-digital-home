@@ -208,18 +208,20 @@ function About() {
         attribution="The Lighthouse Promise"
       />
 
-      <StatBand
-        eyebrow="The Institutional Footprint"
-        tone="navy"
-        stats={[
-          { value: "Ages 3–18", label: "Learning Journey", caption: "From Early Years foundations through Upper Secondary readiness." },
-          { value: "10", label: "Educational Pillars", caption: "The interlocking commitments that shape every classroom decision." },
-          { value: "1", label: "Founding Campus", caption: "Mohandessin, Giza — the first campus of a growing institution." },
-          { value: "∞", label: "Possibilities", caption: "A learning community designed to open — not to narrow — futures." },
-        ]}
-      />
+      <div id="footprint" className="scroll-mt-24">
+        <StatBand
+          eyebrow="The Institutional Footprint"
+          tone="navy"
+          stats={[
+            { value: "Ages 3–18", label: "Learning Journey", caption: "From Early Years foundations through Upper Secondary readiness." },
+            { value: "10", label: "Educational Pillars", caption: "The interlocking commitments that shape every classroom decision." },
+            { value: "1", label: "Founding Campus", caption: "Mohandessin, Giza — the first campus of a growing institution." },
+            { value: "∞", label: "Possibilities", caption: "A learning community designed to open — not to narrow — futures." },
+          ]}
+        />
+      </div>
 
-      <Section tone="muted">
+      <Section id="understanding" tone="muted">
         <SectionHeading eyebrow="Understanding Lighthouse Campus" title="Explore the ideas, people and principles behind the institution" />
         <div className="mt-10 grid gap-5 sm:mt-12 sm:gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {understanding.map((u) => (
