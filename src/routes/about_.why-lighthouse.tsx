@@ -244,29 +244,58 @@ function WhyLighthouse() {
             description="Our educational experience is built on a clear commitment to excellence in every dimension of learning and growth."
           />
           <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {pillars.map((pillar) => {
-              const Icon = pillar.icon;
-              return (
-                <li key={pillar.title}>
-                  <article
-                    className="cine-card group h-full rounded-xl border border-border bg-card/90 p-8 backdrop-blur-sm outline-none transition-shadow focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                    tabIndex={0}
-                    aria-label={`${pillar.title}. ${pillar.body}`}
-                  >
-                    <div className="inline-flex size-14 items-center justify-center rounded-xl bg-navy text-gold shadow-[0_10px_28px_-16px_rgba(11,29,58,0.5)] transition-transform duration-500 group-hover:scale-110 group-focus-visible:scale-110">
-                      <Icon className="size-7" aria-hidden="true" />
-                    </div>
-                    <h3 className="mt-6 font-display text-xl font-medium text-foreground transition-colors duration-300 group-hover:text-brand-blue group-focus-visible:text-brand-blue">
-                      {pillar.title}
-                    </h3>
-                    <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-                      {pillar.body}
+            {pillars.map((pillar) => (
+              <li key={pillar.title}>
+                <article
+                  className="cine-card group h-full rounded-xl border border-border bg-card/90 p-8 backdrop-blur-sm outline-none transition-shadow focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                  tabIndex={0}
+                  aria-label={`${pillar.title}. ${pillar.body}`}
+                >
+                  <div className="inline-flex size-20 items-center justify-center rounded-2xl bg-navy/95 ring-1 ring-gold/30 shadow-[0_10px_28px_-16px_rgba(11,29,58,0.5)] transition-transform duration-500 group-hover:scale-105 group-focus-visible:scale-105">
+                    <img
+                      src={pillar.img.url}
+                      alt=""
+                      loading="lazy"
+                      className="size-16 object-contain"
+                    />
+                  </div>
+                  <h3 className="mt-6 font-display text-xl font-medium text-foreground transition-colors duration-300 group-hover:text-brand-blue group-focus-visible:text-brand-blue">
+                    {pillar.title}
+                  </h3>
+                  <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+                    {pillar.body}
+                  </p>
+                </article>
+              </li>
+            ))}
+            <li>
+              <article className="relative h-full overflow-hidden rounded-xl border border-gold/40 bg-navy p-8 text-navy-foreground shadow-[0_20px_60px_-30px_rgba(11,29,58,0.6)]">
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 opacity-70"
+                  style={{
+                    background:
+                      "radial-gradient(70% 90% at 20% 10%, color-mix(in oklab, var(--gold) 22%, transparent) 0%, transparent 60%)",
+                  }}
+                />
+                <div className="relative">
+                  <p className="eyebrow text-gold">Our Philosophy</p>
+                  <h3 className="mt-3 font-display text-2xl font-medium leading-tight text-navy-foreground">
+                    Excellence in Every Dimension
+                  </h3>
+                  <div className="mt-4 space-y-3 text-sm leading-relaxed text-navy-foreground/85">
+                    <p>
+                      Our five pillars form the foundation of the Lighthouse Campus experience, bringing together inspiring learning, exceptional educators, strong character, a nurturing environment, and a global perspective into one unified educational philosophy.
                     </p>
-                  </article>
-                </li>
-              );
-            })}
+                    <p>
+                      Together, they cultivate curiosity, integrity, resilience, leadership, and a lifelong passion for learning—empowering every learner to discover their purpose, achieve their highest potential, and thrive with confidence in a rapidly changing world.
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </li>
           </ul>
+
         </div>
       </Section>
 
