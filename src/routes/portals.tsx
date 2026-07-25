@@ -144,19 +144,12 @@ function PortalsPage() {
                     className="flex size-28 items-center justify-center rounded-2xl bg-navy/95 ring-1 ring-gold/30 shadow-e2"
                     aria-hidden
                   >
-                    {p.image ? (
-                      <img
-                        src={p.image}
-                        alt=""
-                        loading="lazy"
-                        className="size-24 object-contain"
-                      />
-                    ) : (
-                      <LhIcon
-                        name={p.icon!}
-                        className="size-14 text-gold"
-                      />
-                    )}
+                    <img
+                      src={p.image}
+                      alt=""
+                      loading="lazy"
+                      className="size-24 object-contain"
+                    />
                   </span>
                   <h3 className="mt-5 font-display text-lg font-medium text-foreground group-hover:text-brand-blue">
                     {p.title}
