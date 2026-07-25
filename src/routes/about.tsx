@@ -62,6 +62,33 @@ function PillarIcon({ src, alt }: { src: string; alt: string }) {
   );
 }
 
+function CommunityIcon() {
+  return (
+    <svg viewBox="0 0 64 64" fill="none" className="size-16" aria-hidden="true">
+      <circle cx="32" cy="18" r="7" stroke="currentColor" strokeWidth="2" className="text-gold" />
+      <circle cx="18" cy="36" r="6" stroke="currentColor" strokeWidth="2" className="text-gold" />
+      <circle cx="46" cy="36" r="6" stroke="currentColor" strokeWidth="2" className="text-gold" />
+      <path d="M32 25v6M18 30l-5 5M46 30l5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="text-navy" />
+      <path d="M26 42c-4 2-6 6-6 10M38 42c4 2 6 6 6 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="text-navy" />
+      <path d="M32 31c-8 0-14 6-14 14M32 31c8 0 14 6 14 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="text-navy/60" />
+      <circle cx="32" cy="31" r="3" fill="currentColor" className="text-gold" />
+    </svg>
+  );
+}
+
+function PathwayIcon() {
+  return (
+    <svg viewBox="0 0 64 64" fill="none" className="size-16" aria-hidden="true">
+      <path d="M8 52c8-8 16-16 24-16s16 8 24 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeDasharray="4 4" className="text-navy/40" />
+      <path d="M20 52l8-16 8 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-navy" />
+      <circle cx="36" cy="36" r="5" stroke="currentColor" strokeWidth="2" className="text-navy" />
+      <path d="M42 30l8-8M48 22h6M54 22v6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="text-gold" />
+      <path d="M12 56l6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="text-gold" />
+      <circle cx="54" cy="16" r="5" fill="currentColor" className="text-gold" />
+    </svg>
+  );
+}
+
 const understanding = [
   { icon: <PillarIcon src={iconOurStory.url} alt="" />, title: "Our Story", to: "/about/our-story", body: "The origins, founding purpose and long-term direction of the institution." },
   { icon: <PillarIcon src={iconWhyLighthouse.url} alt="" />, title: "Why Lighthouse?", to: "/about/why-lighthouse", body: "The meaning behind the name, the identity and the educational symbolism." },
