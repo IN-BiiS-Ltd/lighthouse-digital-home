@@ -21,7 +21,7 @@ import iconPhilosophy from "@/assets/about-philosophy.png.asset.json";
 import iconLeadership from "@/assets/about-leadership.png.asset.json";
 import iconCampusCulture from "@/assets/about-campus-culture.png.asset.json";
 import lighthouseMarkLight from "@/assets/lighthouse-mark-light.png.asset.json";
-import lighthouseCampusEmblem from "@/assets/lighthouse-campus-emblem.png.asset.json";
+
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -163,26 +163,6 @@ function About() {
               </p>
             </div>
           </article>
-          <figure className="relative flex flex-col items-center justify-center overflow-hidden rounded-2xl bg-navy p-6 shadow-[0_30px_80px_-30px_rgba(11,29,58,0.55)] ring-1 ring-gold/40">
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,110,0.22),transparent_70%)]"
-            />
-            <img
-              src={lighthouseCampusEmblem.url}
-              alt="Lighthouse Campus — official institutional emblem with the promise: Guiding Minds. Inspiring Futures. Connecting Possibilities."
-              width={640}
-              height={640}
-              className="relative block h-auto w-full max-w-[280px] object-contain drop-shadow-[0_10px_30px_rgba(212,175,110,0.35)]"
-              loading="lazy"
-              decoding="async"
-              draggable={false}
-            />
-            <figcaption className="relative mt-4 text-center">
-              <span className="eyebrow text-gold">Institutional Emblem</span>
-              <p className="mt-1 text-xs text-navy-foreground/75">Guiding Minds · Inspiring Futures · Connecting Possibilities</p>
-            </figcaption>
-          </figure>
         </div>
       </Section>
 
