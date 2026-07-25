@@ -9,8 +9,8 @@ import portalStaff from "@/assets/portal-staff.png.asset.json";
 import portalParent from "@/assets/portal-parent.png.asset.json";
 import portalStudent from "@/assets/portal-student.png.asset.json";
 
-const EDUIOS_SIGNIN = "https://eduios.zanova.systems/";
-const EDUIOS_APPLY = "https://eduios.zanova.systems/apply/lighthouse-campus";
+const EDUIOS_SIGNIN = "https://eduios.lighthousecampus.com/";
+const EDUIOS_APPLY = "https://eduios.lighthousecampus.com/apply";
 
 type Portal = {
   title: string;
