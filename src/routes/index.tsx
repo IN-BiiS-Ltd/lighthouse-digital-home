@@ -192,6 +192,18 @@ function Home() {
                 {t("home.hero.cta.admissions")}
               </ButtonLink>
               <ButtonLink
+                to="https://eduios.zanova.systems/apply/lighthouse-campus"
+                variant="outline-light"
+                size="lg"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-event="CTA Click"
+                data-event-prop-cta="Apply"
+                data-event-prop-location="Home Hero"
+              >
+                Apply / Admissions
+              </ButtonLink>
+              <ButtonLink
                 to="/about"
                 variant="outline-light"
                 size="lg"

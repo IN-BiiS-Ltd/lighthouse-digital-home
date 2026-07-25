@@ -180,6 +180,7 @@ export function SiteFooter() {
             © <span className="num-latin">{new Date().getFullYear()}</span> Lighthouse Campus. {t("footer.rights")}
           </p>
           <div className="flex flex-wrap gap-x-6 gap-y-2">
+            <SmartLink to="/portals" className="hover:text-gold">Portals</SmartLink>
             <SmartLink to="/privacy" className="hover:text-gold">{t("footer.privacy")}</SmartLink>
             <SmartLink to="/terms" className="hover:text-gold">{t("footer.terms")}</SmartLink>
             <SmartLink to="/cookies" className="hover:text-gold">{t("footer.cookies")}</SmartLink>
