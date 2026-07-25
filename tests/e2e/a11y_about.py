@@ -56,13 +56,31 @@ async def main():
             failures.append(f"aria-current expected 'Location', got {current!r}")
         await page.screenshot(path=str(OUT / "1_normal.png"))
 
-        # Test 4: scroll updates active state via IntersectionObserver
+        # Test 3b: sr-only keyboard instructions exist and nav is described by them
+        described_by = await page.evaluate("() => document.querySelector(\"nav[aria-label='Sections of this page']\")?.getAttribute('aria-describedby')")
+        instructions_text = await page.evaluate("() => document.getElementById('page-toc-instructions')?.textContent || ''")
+        print(f"aria-describedby: {described_by!r}; instructions len={len(instructions_text)}")
+        if described_by != "page-toc-instructions":
+            failures.append(f"nav should be aria-describedby='page-toc-instructions', got {described_by!r}")
+        if "arrow" not in instructions_text.lower():
+            failures.append("sr-only keyboard instructions missing or incomplete")
+
+        # Test 3c: aria-live region exists for section announcements
+        live = await page.evaluate("() => { const n=document.querySelector('nav[aria-label=\"Sections of this page\"] [aria-live]'); return n ? {live:n.getAttribute('aria-live'), role:n.getAttribute('role')} : null; }")
+        print(f"aria-live region: {live!r}")
+        if not live or live.get("live") != "polite":
+            failures.append(f"expected polite aria-live region inside TOC, got {live!r}")
+
+        # Test 4: scroll updates active state and announces the change
         await page.evaluate("() => { const el=document.querySelector('#partnership'); window.scrollTo(0, el.getBoundingClientRect().top+window.scrollY-window.innerHeight*0.1); }")
         await page.wait_for_timeout(800)
         active_scroll = await page.evaluate("() => document.querySelector(\"nav[aria-label='Sections of this page'] a[aria-current]\")?.textContent?.trim()")
-        print(f"Scrolled to #partnership → aria-current: {active_scroll!r}")
+        announced = await page.evaluate("() => document.querySelector('nav[aria-label=\"Sections of this page\"] [aria-live]')?.textContent?.trim()")
+        print(f"Scrolled to #partnership → aria-current: {active_scroll!r}; announced: {announced!r}")
         if active_scroll not in ("Partnership", "Invitation"):
             failures.append(f"Scroll active expected Partnership, got {active_scroll!r}")
+        if not announced or "Current section" not in announced:
+            failures.append(f"aria-live did not announce section change, got {announced!r}")
 
         # Test 5: skip link works
         await page.goto("http://localhost:8080/about", wait_until="domcontentloaded")
