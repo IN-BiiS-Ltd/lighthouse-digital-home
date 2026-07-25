@@ -13,6 +13,7 @@ import { Route as TermsRouteImport } from './routes/terms'
 import { Route as StudentLifeRouteImport } from './routes/student-life'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as PortalsRouteImport } from './routes/portals'
 import { Route as ParentsRouteImport } from './routes/parents'
 import { Route as OurModelRouteImport } from './routes/our-model'
 import { Route as NewsRouteImport } from './routes/news'
@@ -121,6 +122,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortalsRoute = PortalsRouteImport.update({
+  id: '/portals',
+  path: '/portals',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ParentsRoute = ParentsRouteImport.update({
@@ -615,6 +621,7 @@ export interface FileRoutesByFullPath {
   '/news': typeof NewsRoute
   '/our-model': typeof OurModelRoute
   '/parents': typeof ParentsRoute
+  '/portals': typeof PortalsRoute
   '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/student-life': typeof StudentLifeRoute
@@ -710,6 +717,7 @@ export interface FileRoutesByTo {
   '/news': typeof NewsRoute
   '/our-model': typeof OurModelRoute
   '/parents': typeof ParentsRoute
+  '/portals': typeof PortalsRoute
   '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/student-life': typeof StudentLifeRoute
@@ -806,6 +814,7 @@ export interface FileRoutesById {
   '/news': typeof NewsRoute
   '/our-model': typeof OurModelRoute
   '/parents': typeof ParentsRoute
+  '/portals': typeof PortalsRoute
   '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/student-life': typeof StudentLifeRoute
@@ -903,6 +912,7 @@ export interface FileRouteTypes {
     | '/news'
     | '/our-model'
     | '/parents'
+    | '/portals'
     | '/privacy'
     | '/sitemap.xml'
     | '/student-life'
@@ -998,6 +1008,7 @@ export interface FileRouteTypes {
     | '/news'
     | '/our-model'
     | '/parents'
+    | '/portals'
     | '/privacy'
     | '/sitemap.xml'
     | '/student-life'
@@ -1093,6 +1104,7 @@ export interface FileRouteTypes {
     | '/news'
     | '/our-model'
     | '/parents'
+    | '/portals'
     | '/privacy'
     | '/sitemap.xml'
     | '/student-life'
@@ -1189,6 +1201,7 @@ export interface RootRouteChildren {
   NewsRoute: typeof NewsRoute
   OurModelRoute: typeof OurModelRoute
   ParentsRoute: typeof ParentsRoute
+  PortalsRoute: typeof PortalsRoute
   PrivacyRoute: typeof PrivacyRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StudentLifeRoute: typeof StudentLifeRoute
@@ -1296,6 +1309,13 @@ declare module '@tanstack/react-router' {
       path: '/privacy'
       fullPath: '/privacy'
       preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portals': {
+      id: '/portals'
+      path: '/portals'
+      fullPath: '/portals'
+      preLoaderRoute: typeof PortalsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/parents': {
@@ -1941,6 +1961,7 @@ const rootRouteChildren: RootRouteChildren = {
   NewsRoute: NewsRoute,
   OurModelRoute: OurModelRoute,
   ParentsRoute: ParentsRoute,
+  PortalsRoute: PortalsRoute,
   PrivacyRoute: PrivacyRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   StudentLifeRoute: StudentLifeRoute,
@@ -2025,13 +2046,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

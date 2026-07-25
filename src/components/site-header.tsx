@@ -174,6 +174,12 @@ export function SiteHeader() {
           {/* Arabic toggle temporarily disabled — full RTL rollout scheduled with content audit */}
           {/* <LanguageToggle className="hidden sm:inline-flex" /> */}
 
+          <SmartLink
+            to="/portals"
+            className="hidden px-3 py-2 text-sm font-medium text-navy-foreground/85 transition-colors hover:text-gold sm:inline-flex"
+          >
+            Portals
+          </SmartLink>
           <ButtonLink
             to="/admissions"
             variant="gold"
