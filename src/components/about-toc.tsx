@@ -86,7 +86,7 @@ export function AboutTOC({ items }: { items: TocItem[] }) {
 
   return (
     <nav
-      aria-label="On this page"
+      aria-label="Sections of this page"
       className="sticky top-[64px] z-30 border-y border-gold/20 bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/70"
     >
       <div className="mx-auto flex max-w-7xl items-center gap-2 overflow-x-auto px-4 py-3 sm:px-6 lg:px-8">
