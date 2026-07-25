@@ -124,8 +124,11 @@ export function StatBand({
           )}
         >
           {stats.map((s, i) => (
-            <Reveal key={s.label} delay={i * 80}>
-              <li className="relative flex flex-col items-start border-t border-gold/40 pt-6">
+            <li
+              key={s.label}
+              className="relative flex flex-col items-start border-t border-gold/40 pt-6"
+            >
+              <Reveal delay={i * 80}>
                 <span
                   className={cn(
                     "font-display italic leading-[0.95] tracking-tight",
@@ -137,19 +140,19 @@ export function StatBand({
                 </span>
                 <span
                   className={cn(
-                    "mt-3 text-base font-semibold uppercase tracking-[0.14em]",
+                    "mt-3 block text-base font-semibold uppercase tracking-[0.14em]",
                     labelTone,
                   )}
                 >
                   {s.label}
                 </span>
                 {s.caption ? (
-                  <span className={cn("mt-2 text-sm leading-relaxed", captionTone)}>
+                  <span className={cn("mt-2 block text-sm leading-relaxed", captionTone)}>
                     {s.caption}
                   </span>
                 ) : null}
-              </li>
-            </Reveal>
+              </Reveal>
+            </li>
           ))}
         </ul>
       </Container>
