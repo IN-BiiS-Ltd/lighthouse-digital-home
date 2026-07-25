@@ -12,16 +12,14 @@ import { PullQuote, StatBand } from "@/components/editorial";
 import officialLockupAsset from "@/assets/lighthouse-official-lockup-v2.png.asset.json";
 import { ShareBar } from "@/components/share-bar";
 const officialLockupSrc = officialLockupAsset.url;
-import {
-  BookOpen,
-  CheckCircle,
-  Compass,
-  Eye,
-  Flag,
-  Landmark,
-  Heart,
-  Sparkles,
-} from "lucide-react";
+import { CheckCircle } from "lucide-react";
+import iconOurStory from "@/assets/about-our-story.png.asset.json";
+import iconWhyLighthouse from "@/assets/about-why-lighthouse.png.asset.json";
+import iconVision from "@/assets/about-vision.png.asset.json";
+import iconCoreValues from "@/assets/about-core-values.png.asset.json";
+import iconPhilosophy from "@/assets/about-philosophy.png.asset.json";
+import iconLeadership from "@/assets/about-leadership.png.asset.json";
+import iconCampusCulture from "@/assets/about-campus-culture.png.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -46,14 +44,29 @@ export const Route = createFileRoute("/about")({
   component: About,
 });
 
+function PillarIcon({ src, alt }: { src: string; alt: string }) {
+  return (
+    <img
+      src={src}
+      alt={alt}
+      width={64}
+      height={64}
+      loading="lazy"
+      decoding="async"
+      draggable={false}
+      className="size-16 object-contain"
+    />
+  );
+}
+
 const understanding = [
-  { icon: <BookOpen className="size-5" />, title: "Our Story", to: "/about/our-story", body: "The origins, founding purpose and long-term direction of the institution." },
-  { icon: <Sparkles className="size-5" />, title: "Why Lighthouse?", to: "/about/why-lighthouse", body: "The meaning behind the name, the identity and the educational symbolism." },
-  { icon: <Eye className="size-5" />, title: "Vision and Mission", to: "/about/vision", body: "The future we seek to build and the work that guides us every day." },
-  { icon: <Flag className="size-5" />, title: "Core Values", to: "/about/core-values", body: "The principles that shape learning, relationships and institutional conduct." },
-  { icon: <Compass className="size-5" />, title: "Educational Philosophy", to: "/about/educational-philosophy", body: "How we understand learning, teaching and student development." },
-  { icon: <Landmark className="size-5" />, title: "Leadership and Governance", to: "/about/leadership", body: "How responsibility, educational purpose and institutional stewardship guide decisions." },
-  { icon: <Heart className="size-5" />, title: "Campus Culture", to: "/about/campus-culture", body: "The relationships, expectations and shared experiences that shape daily life." },
+  { icon: <PillarIcon src={iconOurStory.url} alt="" />, title: "Our Story", to: "/about/our-story", body: "The origins, founding purpose and long-term direction of the institution." },
+  { icon: <PillarIcon src={iconWhyLighthouse.url} alt="" />, title: "Why Lighthouse?", to: "/about/why-lighthouse", body: "The meaning behind the name, the identity and the educational symbolism." },
+  { icon: <PillarIcon src={iconVision.url} alt="" />, title: "Vision and Mission", to: "/about/vision", body: "The future we seek to build and the work that guides us every day." },
+  { icon: <PillarIcon src={iconCoreValues.url} alt="" />, title: "Core Values", to: "/about/core-values", body: "The principles that shape learning, relationships and institutional conduct." },
+  { icon: <PillarIcon src={iconPhilosophy.url} alt="" />, title: "Educational Philosophy", to: "/about/educational-philosophy", body: "How we understand learning, teaching and student development." },
+  { icon: <PillarIcon src={iconLeadership.url} alt="" />, title: "Leadership and Governance", to: "/about/leadership", body: "How responsibility, educational purpose and institutional stewardship guide decisions." },
+  { icon: <PillarIcon src={iconCampusCulture.url} alt="" />, title: "Campus Culture", to: "/about/campus-culture", body: "The relationships, expectations and shared experiences that shape daily life." },
 ];
 
 function About() {
@@ -110,6 +123,29 @@ function About() {
               <FeatureCard title={u.title} icon={u.icon}>{u.body}</FeatureCard>
             </a>
           ))}
+          <article className="relative overflow-hidden rounded-2xl bg-navy p-8 text-navy-foreground shadow-[0_30px_80px_-30px_rgba(11,29,58,0.55)] ring-1 ring-gold/40 sm:col-span-2 lg:col-span-2">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-gold/20 blur-3xl"
+            />
+            <div className="relative">
+              <span className="eyebrow text-gold">Shaping Tomorrow's Leaders</span>
+              <div className="mt-5 space-y-4 text-base leading-relaxed text-navy-foreground/90 md:text-lg">
+                <p>
+                  At Lighthouse Campus, education extends far beyond the classroom. It is a carefully designed journey that inspires curiosity, builds character, nurtures leadership, and empowers every learner to discover their purpose and unlock their full potential.
+                </p>
+                <p>
+                  Our educational philosophy brings together exceptional teaching, meaningful relationships, and a future-focused learning environment to cultivate confident, compassionate, and responsible global citizens. Every experience is intentionally designed to strengthen knowledge, integrity, resilience, and a lifelong passion for learning — preparing learners not only for academic success, but for meaningful lives of leadership and service in an ever-changing world.
+                </p>
+              </div>
+              <p className="mt-6 font-display text-xl text-gold md:text-2xl">
+                Guided by Purpose. Inspired by Excellence.
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-navy-foreground/80 md:text-base">
+                Every step is guided by excellence. Every learner is valued. Every future begins with purpose.
+              </p>
+            </div>
+          </article>
         </div>
       </Section>
 
