@@ -123,6 +123,29 @@ function About() {
               <FeatureCard title={u.title} icon={u.icon}>{u.body}</FeatureCard>
             </a>
           ))}
+          <article className="relative overflow-hidden rounded-2xl bg-navy p-8 text-navy-foreground shadow-[0_30px_80px_-30px_rgba(11,29,58,0.55)] ring-1 ring-gold/40 sm:col-span-2 lg:col-span-2">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-gold/20 blur-3xl"
+            />
+            <div className="relative">
+              <span className="eyebrow text-gold">Shaping Tomorrow's Leaders</span>
+              <div className="mt-5 space-y-4 text-base leading-relaxed text-navy-foreground/90 md:text-lg">
+                <p>
+                  At Lighthouse Campus, education extends far beyond the classroom. It is a carefully designed journey that inspires curiosity, builds character, nurtures leadership, and empowers every learner to discover their purpose and unlock their full potential.
+                </p>
+                <p>
+                  Our educational philosophy brings together exceptional teaching, meaningful relationships, and a future-focused learning environment to cultivate confident, compassionate, and responsible global citizens. Every experience is intentionally designed to strengthen knowledge, integrity, resilience, and a lifelong passion for learning — preparing learners not only for academic success, but for meaningful lives of leadership and service in an ever-changing world.
+                </p>
+              </div>
+              <p className="mt-6 font-display text-xl text-gold md:text-2xl">
+                Guided by Purpose. Inspired by Excellence.
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-navy-foreground/80 md:text-base">
+                Every step is guided by excellence. Every learner is valued. Every future begins with purpose.
+              </p>
+            </div>
+          </article>
         </div>
       </Section>
 
