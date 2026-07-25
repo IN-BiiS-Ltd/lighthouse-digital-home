@@ -64,32 +64,47 @@ export function PageHero({
         <div className="reveal reveal-in animate-[fade-in_0.9s_cubic-bezier(0.22,1,0.36,1)_both]">
 
         {breadcrumb && breadcrumb.length > 0 ? (
-          <nav
-            aria-label="Breadcrumb"
-            className="mb-6 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-navy-foreground/60"
-          >
-            {breadcrumb.map((crumb, i) => (
-              <span key={`${crumb.label}-${i}`} className="flex items-center gap-2">
-                {crumb.to ? (
-                  <SmartLink
-                    to={crumb.to}
-                    className="transition-colors hover:text-gold"
-                  >
-                    {crumb.label}
-                  </SmartLink>
-                ) : (
-                  <span aria-current="page" className="text-navy-foreground/90">
-                    {crumb.label}
-                  </span>
-                )}
-                {i < breadcrumb.length - 1 ? (
-                  <span aria-hidden className="text-navy-foreground/40">
-                    /
-                  </span>
-                ) : null}
-              </span>
-            ))}
-          </nav>
+          <>
+            {(() => {
+              const parent = breadcrumb.length >= 2 ? breadcrumb[breadcrumb.length - 2] : null;
+              return parent && parent.to ? (
+                <SmartLink
+                  to={parent.to}
+                  aria-label={`Back to ${parent.label}`}
+                  className="mb-4 inline-flex items-center gap-2 rounded-full border border-navy-foreground/20 bg-navy-foreground/5 px-3.5 py-1.5 text-xs font-medium uppercase tracking-[0.14em] text-navy-foreground/80 transition-colors hover:border-gold/50 hover:bg-gold/10 hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy"
+                >
+                  <span aria-hidden="true" className="text-base leading-none">←</span>
+                  <span>Back to {parent.label}</span>
+                </SmartLink>
+              ) : null;
+            })()}
+            <nav
+              aria-label="Breadcrumb"
+              className="mb-6 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-navy-foreground/60"
+            >
+              {breadcrumb.map((crumb, i) => (
+                <span key={`${crumb.label}-${i}`} className="flex items-center gap-2">
+                  {crumb.to ? (
+                    <SmartLink
+                      to={crumb.to}
+                      className="transition-colors hover:text-gold"
+                    >
+                      {crumb.label}
+                    </SmartLink>
+                  ) : (
+                    <span aria-current="page" className="text-navy-foreground/90">
+                      {crumb.label}
+                    </span>
+                  )}
+                  {i < breadcrumb.length - 1 ? (
+                    <span aria-hidden className="text-navy-foreground/40">
+                      /
+                    </span>
+                  ) : null}
+                </span>
+              ))}
+            </nav>
+          </>
         ) : null}
         <div className="mb-8 flex items-center gap-5">
           {/* Cinematic luminous halo — decorative layers around the mark */}

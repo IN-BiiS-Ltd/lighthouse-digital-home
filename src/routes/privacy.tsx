@@ -16,10 +16,10 @@ export const Route = createFileRoute("/privacy")({
         content:
           "Our commitments on personal data, children's privacy, retention and family rights.",
       },
-      { property: "og:url", content: "https://lighthousecampus.lovable.app/privacy" },
+      { property: "og:url", content: "https://lighthousecampus.com/privacy" },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/privacy" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.com/privacy" }],
   }),
   component: PrivacyPage,
 });
@@ -38,7 +38,7 @@ function PrivacyPage() {
             eyebrow: "Scope",
             title: "Who this policy applies to",
             body: [
-              "This policy applies to prospective and current families, students, staff, alumni, partners and visitors to lighthousecampus.lovable.app. It covers information collected through the website, admissions enquiries, campus visits and day-to-day school operations.",
+              "This policy applies to prospective and current families, students, staff, alumni, partners and visitors to lighthousecampus.com. It covers information collected through the website, admissions enquiries, campus visits and day-to-day school operations.",
             ],
           },
           {

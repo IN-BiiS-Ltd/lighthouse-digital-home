@@ -13,9 +13,9 @@ export const Route = createFileRoute("/our-model_/educational-model")({
       { property: "og:title", content: "The Lighthouse Educational Model" },
       { property: "og:description", content: "How learning, character, creativity and purpose develop together across every stage." },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "https://lighthousecampus.lovable.app/our-model/educational-model" },
+      { property: "og:url", content: "https://lighthousecampus.com/our-model/educational-model" },
     ],
-    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/our-model/educational-model" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.com/our-model/educational-model" }],
   }),
   component: EducationalModel,
 });

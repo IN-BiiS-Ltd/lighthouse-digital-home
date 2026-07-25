@@ -56,10 +56,10 @@ export const Route = createFileRoute("/about_/why-lighthouse")({
         content:
           "More than a school. A place where futures begin. Explore the five pillars, the meaning behind our name, and the story our identity tells.",
       },
-      { property: "og:url", content: "https://lighthousecampus.lovable.app/about/why-lighthouse" },
+      { property: "og:url", content: "https://lighthousecampus.com/about/why-lighthouse" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/about/why-lighthouse" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.com/about/why-lighthouse" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -269,7 +269,10 @@ function WhyLighthouse() {
               </li>
             ))}
             <li>
-              <article className="relative h-full overflow-hidden rounded-xl border border-gold/40 bg-navy p-8 text-navy-foreground shadow-[0_20px_60px_-30px_rgba(11,29,58,0.6)]">
+              <article
+                className="relative h-full overflow-hidden rounded-xl border border-gold/40 bg-navy p-8 text-navy-foreground shadow-[0_20px_60px_-30px_rgba(11,29,58,0.6)]"
+                aria-label="Our Philosophy. Excellence in Every Dimension."
+              >
                 <div
                   aria-hidden
                   className="pointer-events-none absolute inset-0 opacity-70"
@@ -279,18 +282,16 @@ function WhyLighthouse() {
                   }}
                 />
                 <div className="relative">
-                  <p className="eyebrow text-gold">Our Philosophy</p>
-                  <h3 className="mt-3 font-display text-2xl font-medium leading-tight text-navy-foreground">
+                  <div className="inline-flex size-20 items-center justify-center rounded-2xl bg-navy-foreground/5 ring-1 ring-gold/40 backdrop-blur-sm">
+                    <span aria-hidden="true" className="font-display text-3xl leading-none text-gold">✦</span>
+                  </div>
+                  <p className="mt-6 eyebrow text-gold">Our Philosophy</p>
+                  <h3 className="mt-2 font-display text-xl font-medium leading-tight text-navy-foreground">
                     Excellence in Every Dimension
                   </h3>
-                  <div className="mt-4 space-y-3 text-sm leading-relaxed text-navy-foreground/85">
-                    <p>
-                      Our five pillars form the foundation of the Lighthouse Campus experience, bringing together inspiring learning, exceptional educators, strong character, a nurturing environment, and a global perspective into one unified educational philosophy.
-                    </p>
-                    <p>
-                      Together, they cultivate curiosity, integrity, resilience, leadership, and a lifelong passion for learning—empowering every learner to discover their purpose, achieve their highest potential, and thrive with confidence in a rapidly changing world.
-                    </p>
-                  </div>
+                  <p className="mt-3 text-base leading-relaxed text-navy-foreground/85">
+                    Our five pillars bring together inspired learning, exceptional educators, strong character, a nurturing environment, and a global perspective—cultivating curiosity, integrity, resilience, and a lifelong passion for learning.
+                  </p>
                 </div>
               </article>
             </li>

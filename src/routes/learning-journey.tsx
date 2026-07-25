@@ -24,9 +24,9 @@ export const Route = createFileRoute("/learning-journey")({
         content:
           "Early Years, Primary, Preparatory, Secondary and Graduation Pathways at Lighthouse Campus.",
       },
-      { property: "og:url", content: "https://lighthousecampus.lovable.app/learning-journey" },
+      { property: "og:url", content: "https://lighthousecampus.com/learning-journey" },
     ],
-    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/learning-journey" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.com/learning-journey" }],
   }),
   component: LearningJourney,
 });

@@ -13,10 +13,10 @@ export const Route = createFileRoute("/parents")({
       },
       { property: "og:title", content: "Parents | Lighthouse Campus" },
       { property: "og:description", content: "Partnership, communication and resources for families at Lighthouse Campus." },
-      { property: "og:url", content: "https://lighthousecampus.lovable.app/parents" },
+      { property: "og:url", content: "https://lighthousecampus.com/parents" },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/parents" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.com/parents" }],
   }),
   component: Parents,
 });

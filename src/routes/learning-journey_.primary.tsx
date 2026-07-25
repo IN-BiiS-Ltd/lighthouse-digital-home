@@ -11,10 +11,10 @@ export const Route = createFileRoute("/learning-journey_/primary")({
       { name: "description", content: "Explore the Lighthouse Campus Primary experience, where strong foundations in knowledge, literacy, numeracy, character and curiosity develop together." },
       { property: "og:title", content: "Primary School | Lighthouse Campus" },
       { property: "og:description", content: "Strong foundations for knowledge, character and confident learning." },
-      { property: "og:url", content: "https://lighthousecampus.lovable.app/learning-journey/primary" },
+      { property: "og:url", content: "https://lighthousecampus.com/learning-journey/primary" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/learning-journey/primary" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.com/learning-journey/primary" }],
   }),
   component: Primary,
 });

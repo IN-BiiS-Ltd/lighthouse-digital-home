@@ -23,9 +23,9 @@ export const Route = createFileRoute("/our-model_/teaching-framework")({
       { property: "og:title", content: "Teaching at Lighthouse" },
       { property: "og:description", content: "How Lighthouse teachers know learners, design experiences and invite meaningful thinking." },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "https://lighthousecampus.lovable.app/our-model/teaching-framework" },
+      { property: "og:url", content: "https://lighthousecampus.com/our-model/teaching-framework" },
     ],
-    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/our-model/teaching-framework" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.com/our-model/teaching-framework" }],
   }),
   component: TeachingFramework,
 });

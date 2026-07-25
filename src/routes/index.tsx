@@ -54,17 +54,17 @@ export const Route = createFileRoute("/")({
         content:
           "Guiding minds. Inspiring futures. Connecting possibilities. An international learning community where students remain at the centre.",
       },
-      { property: "og:url", content: "https://lighthousecampus.lovable.app/" },
-      { property: "og:image", content: "https://lighthousecampus.lovable.app/lighthouse-social-card.webp" },
+      { property: "og:url", content: "https://lighthousecampus.com/" },
+      { property: "og:image", content: "https://lighthousecampus.com/lighthouse-social-card.webp" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
       { property: "og:image:alt", content: "Lighthouse Campus — Mohandessin, Giza" },
       { property: "og:image:type", content: "image/webp" },
-      { name: "twitter:image", content: "https://lighthousecampus.lovable.app/lighthouse-social-card.webp" },
+      { name: "twitter:image", content: "https://lighthousecampus.com/lighthouse-social-card.webp" },
       { name: "twitter:image:alt", content: "Lighthouse Campus — Mohandessin, Giza" },
     ],
     links: [
-      { rel: "canonical", href: "https://lighthousecampus.lovable.app/" },
+      { rel: "canonical", href: "https://lighthousecampus.com/" },
       // Preload the LCP hero image so mobile FCP/LCP kick in earlier.
       // Preload the WebP variant with imagesrcset so the browser picks the smallest source.
       {

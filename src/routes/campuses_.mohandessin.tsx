@@ -29,10 +29,10 @@ export const Route = createFileRoute("/campuses_/mohandessin")({
         property: "og:description",
         content: "The first operational Lighthouse campus, in Mohandessin, Giza.",
       },
-      { property: "og:url", content: "https://lighthousecampus.lovable.app/campuses/mohandessin" },
+      { property: "og:url", content: "https://lighthousecampus.com/campuses/mohandessin" },
       { property: "og:type", content: "place" },
     ],
-    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/campuses/mohandessin" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.com/campuses/mohandessin" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -41,12 +41,12 @@ export const Route = createFileRoute("/campuses_/mohandessin")({
           "@graph": [
             {
               "@type": "School",
-              "@id": "https://lighthousecampus.lovable.app/campuses/mohandessin#school",
+              "@id": "https://lighthousecampus.com/campuses/mohandessin#school",
               name: "Lighthouse Campus — Mohandessin",
               alternateName: "Lighthouse Mohandessin Campus",
-              url: "https://lighthousecampus.lovable.app/campuses/mohandessin",
-              logo: "https://lighthousecampus.lovable.app/icon-512.png",
-              image: "https://lighthousecampus.lovable.app/lighthouse-social-card.webp",
+              url: "https://lighthousecampus.com/campuses/mohandessin",
+              logo: "https://lighthousecampus.com/icon-512.png",
+              image: "https://lighthousecampus.com/lighthouse-social-card.webp",
               slogan: "Guiding Minds. Inspiring Futures. Connecting Possibilities.",
               description:
                 "The first operational Lighthouse Campus, located in Mohandessin, Giza — an international K-12 learning community in Greater Cairo.",
@@ -94,7 +94,7 @@ export const Route = createFileRoute("/campuses_/mohandessin")({
               parentOrganization: {
                 "@type": "EducationalOrganization",
                 name: "Lighthouse Campus",
-                url: "https://lighthousecampus.lovable.app",
+                url: "https://lighthousecampus.com",
               },
             },
             {
@@ -104,19 +104,19 @@ export const Route = createFileRoute("/campuses_/mohandessin")({
                   "@type": "ListItem",
                   position: 1,
                   name: "Home",
-                  item: "https://lighthousecampus.lovable.app/",
+                  item: "https://lighthousecampus.com/",
                 },
                 {
                   "@type": "ListItem",
                   position: 2,
                   name: "Campuses",
-                  item: "https://lighthousecampus.lovable.app/campuses",
+                  item: "https://lighthousecampus.com/campuses",
                 },
                 {
                   "@type": "ListItem",
                   position: 3,
                   name: "Mohandessin",
-                  item: "https://lighthousecampus.lovable.app/campuses/mohandessin",
+                  item: "https://lighthousecampus.com/campuses/mohandessin",
                 },
               ],
             },

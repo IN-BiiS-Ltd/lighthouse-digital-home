@@ -47,10 +47,10 @@ export const Route = createFileRoute("/admissions_/faq")({
       { name: "description", content: "A short set of common questions. For anything specific to your family, please contact admissions directly." },
       { property: "og:title", content: "FAQs | Admissions | Lighthouse Campus" },
       { property: "og:description", content: "A short set of common questions. For anything specific to your family, please contact admissions directly." },
-      { property: "og:url", content: "https://lighthousecampus.lovable.app/admissions/faq" },
+      { property: "og:url", content: "https://lighthousecampus.com/admissions/faq" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/admissions/faq" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.com/admissions/faq" }],
     scripts: [
       {
         type: "application/ld+json",

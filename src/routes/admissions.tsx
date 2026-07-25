@@ -20,10 +20,10 @@ export const Route = createFileRoute("/admissions")({
         content:
           "A considered, welcoming path into Lighthouse Campus. Start your application online — no account required.",
       },
-      { property: "og:url", content: "https://lighthousecampus.lovable.app/admissions" },
+      { property: "og:url", content: "https://lighthousecampus.com/admissions" },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/admissions" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.com/admissions" }],
   }),
   component: Admissions,
 });

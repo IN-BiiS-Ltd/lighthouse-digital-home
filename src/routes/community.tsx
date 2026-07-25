@@ -13,10 +13,10 @@ export const Route = createFileRoute("/community")({
       },
       { property: "og:title", content: "Community | Lighthouse Campus" },
       { property: "og:description", content: "The Lighthouse Campus community — families, partners, future alumni and colleagues." },
-      { property: "og:url", content: "https://lighthousecampus.lovable.app/community" },
+      { property: "og:url", content: "https://lighthousecampus.com/community" },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/community" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.com/community" }],
   }),
   component: Community,
 });

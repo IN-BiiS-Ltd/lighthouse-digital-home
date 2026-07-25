@@ -17,10 +17,10 @@ export const Route = createFileRoute("/campus-experience")({
         content:
           "Environments designed to support learning, relationships, safety and wellbeing at Lighthouse Campus.",
       },
-      { property: "og:url", content: "https://lighthousecampus.lovable.app/campus-experience" },
+      { property: "og:url", content: "https://lighthousecampus.com/campus-experience" },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/campus-experience" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.com/campus-experience" }],
   }),
   component: Campus,
 });

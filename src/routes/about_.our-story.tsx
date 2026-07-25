@@ -15,10 +15,10 @@ export const Route = createFileRoute("/about_/our-story")({
         property: "og:description",
         content: "How Lighthouse Campus began and the long-term educational purpose guiding the institution.",
       },
-      { property: "og:url", content: "https://lighthousecampus.lovable.app/about/our-story" },
+      { property: "og:url", content: "https://lighthousecampus.com/about/our-story" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/about/our-story" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.com/about/our-story" }],
   }),
   component: OurStory,
 });

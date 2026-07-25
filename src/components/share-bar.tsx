@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Facebook, Linkedin, Send, Mail, Link as LinkIcon, Check, Share2 } from "lucide-react";
 import { Section, Eyebrow } from "@/components/blocks";
 
-const SITE_ORIGIN = "https://lighthousecampus.lovable.app";
+const SITE_ORIGIN = "https://lighthousecampus.com";
 
 /** X / Twitter glyph (lucide doesn't ship the new X mark). */
 function XGlyph({ className }: { className?: string }) {
