@@ -181,10 +181,16 @@ export function SiteHeader() {
             Portals
           </SmartLink>
           <ButtonLink
-            to="/admissions"
+            to="https://eduios.lighthousecampus.com/apply/lighthouse-campus"
             variant="gold"
             size="sm"
             className="hidden sm:inline-flex"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Apply for admission to Lighthouse Campus"
+            data-event="CTA Click"
+            data-event-prop-cta="Apply"
+            data-event-prop-location="Header"
           >
             {t("nav.admissions")}
           </ButtonLink>
