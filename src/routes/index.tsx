@@ -182,26 +182,27 @@ function Home() {
             </p>
             <div className="mt-9 flex flex-wrap gap-3 animate-[fade-in_1s_cubic-bezier(0.22,1,0.36,1)_0.4s_both]">
               <ButtonLink
-                to="/admissions"
+                to="https://eduios.lighthousecampus.com/apply/lighthouse-campus"
                 variant="gold"
                 size="lg"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Apply for admission to Lighthouse Campus"
                 data-event="CTA Click"
-                data-event-prop-cta="Admissions"
+                data-event-prop-cta="Apply"
                 data-event-prop-location="Home Hero"
               >
                 {t("home.hero.cta.admissions")}
               </ButtonLink>
               <ButtonLink
-                to="https://eduios.zanova.systems/apply/lighthouse-campus"
+                to="/admissions"
                 variant="outline-light"
                 size="lg"
-                target="_blank"
-                rel="noopener noreferrer"
                 data-event="CTA Click"
-                data-event-prop-cta="Apply"
+                data-event-prop-cta="Admissions info"
                 data-event-prop-location="Home Hero"
               >
-                Apply / Admissions
+                Admissions overview
               </ButtonLink>
               <ButtonLink
                 to="/about"

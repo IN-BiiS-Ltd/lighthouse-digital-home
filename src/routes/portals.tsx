@@ -10,7 +10,7 @@ import portalParent from "@/assets/portal-parent.png.asset.json";
 import portalStudent from "@/assets/portal-student.png.asset.json";
 
 const EDUIOS_SIGNIN = "https://eduios.lighthousecampus.com/";
-const EDUIOS_APPLY = "https://eduios.lighthousecampus.com/apply";
+const EDUIOS_APPLY = "https://eduios.lighthousecampus.com/apply/lighthouse-campus";
 
 type Portal = {
   title: string;
@@ -109,6 +109,7 @@ function PortalsPage() {
             size="lg"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Sign in to Lighthouse Campus portals"
             data-event="Portal CTA"
             data-event-prop-cta="Sign in"
           >
@@ -120,10 +121,11 @@ function PortalsPage() {
             size="lg"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Apply for admission to Lighthouse Campus"
             data-event="Portal CTA"
             data-event-prop-cta="Apply"
           >
-            Apply for admission
+            New family? Apply for admission
           </ButtonLink>
         </div>
 
@@ -136,7 +138,8 @@ function PortalsPage() {
                   href={EDUIOS_SIGNIN}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex h-full flex-col items-center rounded-2xl border border-border bg-card p-6 text-center transition-all hover:-translate-y-0.5 hover:border-gold/60 hover:shadow-e2"
+                  aria-label={`Open ${p.title} — sign in to Lighthouse Campus portals`}
+                  className="group flex h-full flex-col items-center rounded-2xl border border-border bg-card p-6 text-center transition-all hover:-translate-y-0.5 hover:border-gold/60 hover:shadow-e2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
                   data-event="Portal Card Click"
                   data-event-prop-portal={p.title}
                 >
@@ -198,6 +201,32 @@ function PortalsPage() {
           <p className="mt-4 text-xs text-muted-foreground">
             Sign-in resolves the right portal for your role automatically.
           </p>
+
+          <div className="mt-10 rounded-2xl border border-gold/40 bg-sand/60 p-6 md:p-8 md:flex md:items-center md:justify-between md:gap-6">
+            <div className="text-center md:text-left">
+              <p className="eyebrow text-brand-blue">New to Lighthouse Campus?</p>
+              <h3 className="mt-2 font-display text-xl leading-snug text-foreground md:text-2xl">
+                You don't need an account to apply.
+              </h3>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Admissions is open to new families. Start your application — no sign-in required.
+              </p>
+            </div>
+            <div className="mt-4 flex justify-center md:mt-0 md:shrink-0">
+              <ButtonLink
+                to={EDUIOS_APPLY}
+                variant="gold"
+                size="lg"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Apply for admission to Lighthouse Campus"
+                data-event="Portal CTA"
+                data-event-prop-cta="Apply callout"
+              >
+                Apply for admission
+              </ButtonLink>
+            </div>
+          </div>
         </div>
       </Section>
 
@@ -205,7 +234,7 @@ function PortalsPage() {
         <div className="mx-auto max-w-3xl text-center">
           <Eyebrow onNavy className="justify-center">EDUIOS</Eyebrow>
           <p className="mt-6 text-balance text-2xl font-display leading-snug text-navy-foreground md:text-3xl">
-            Powered by EDUIOS — the institutional operating system for the whole school.
+            Powered by EDUIOS at eduios.lighthousecampus.com — the institutional operating system for the whole school.
           </p>
         </div>
       </Section>
