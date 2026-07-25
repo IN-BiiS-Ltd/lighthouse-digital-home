@@ -1,11 +1,9 @@
 import { assetUrl } from "@/lib/asset-url";
 import { createFileRoute } from "@tanstack/react-router";
-import {
-  BookOpen,
-  Microscope,
-  Palette,
-  Users,
-} from "lucide-react";
+import teachersIcon from "@/assets/home-teachers-mentors.png.asset.json";
+import studentsIcon from "@/assets/home-students-centre.png.asset.json";
+import discoveryIcon from "@/assets/home-discovery-science.png.asset.json";
+import creativityIcon from "@/assets/home-creativity-arts.png.asset.json";
 import {
   Container,
   Section,
@@ -394,19 +392,19 @@ function Home() {
             </div>
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:col-span-2">
-            <FeatureCard title="Students at the centre" icon={<Users className="size-5" />}>
+            <FeatureCard title="Students at the centre" icon={<img src={studentsIcon.url} alt="" className="size-10 object-contain" />}>
               Learning is designed around real children — their interests,
               development and wellbeing.
             </FeatureCard>
-            <FeatureCard title="Teachers as mentors" icon={<BookOpen className="size-5" />}>
+            <FeatureCard title="Teachers as mentors" icon={<img src={teachersIcon.url} alt="" className="size-10 object-contain" />}>
               Small, trusting relationships where every learner is known,
               challenged and supported.
             </FeatureCard>
-            <FeatureCard title="Creativity & the arts" icon={<Palette className="size-5" />}>
+            <FeatureCard title="Creativity & the arts" icon={<img src={creativityIcon.url} alt="" className="size-10 object-contain" />}>
               Expression, discipline and joy — from the early years through
               senior performance and studio work.
             </FeatureCard>
-            <FeatureCard title="Discovery & science" icon={<Microscope className="size-5" />}>
+            <FeatureCard title="Discovery & science" icon={<img src={discoveryIcon.url} alt="" className="size-10 object-contain" />}>
               Hands-on inquiry that builds confidence, precision and a habit of
               asking better questions.
             </FeatureCard>
