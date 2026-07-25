@@ -81,11 +81,11 @@ export const Route = createFileRoute("/about_/why-lighthouse")({
 });
 
 const pillars = [
-  { icon: Lightbulb, title: "Inspired Learning", body: "Learning that sparks curiosity, creativity, critical thinking, and a lifelong love of discovery." },
-  { icon: Users, title: "Exceptional Educators", body: "Passionate teachers who inspire, mentor, and help every learner reach their full potential." },
-  { icon: Shield, title: "Character & Leadership", body: "Building integrity, responsibility, resilience, empathy, and the confidence to lead with purpose." },
-  { icon: Heart, title: "Safe & Nurturing Environment", body: "A welcoming community where every child feels respected, valued, supported, and encouraged to grow." },
-  { icon: Globe, title: "Global Perspective", body: "Preparing learners with the knowledge, skills, and mindset to succeed in an interconnected world while remaining proud of their identity and values." },
+  { img: pillarInspired, title: "Inspired Learning", body: "Learning that sparks curiosity, creativity, critical thinking, and a lifelong love of discovery." },
+  { img: pillarEducators, title: "Exceptional Educators", body: "Passionate teachers who inspire, mentor, and help every learner reach their full potential." },
+  { img: pillarCharacter, title: "Character & Leadership", body: "Building integrity, responsibility, resilience, empathy, and the confidence to lead with purpose." },
+  { img: pillarSafe, title: "Safe & Nurturing Environment", body: "A welcoming community where every child feels respected, valued, supported, and encouraged to grow." },
+  { img: pillarGlobal, title: "Global Perspective", body: "Preparing learners with the knowledge, skills, and mindset to succeed in an interconnected world while remaining proud of their identity and values." },
 ];
 
 const lighthouseValues = ["Guidance", "Hope", "Vision", "Leadership", "Trust", "Safety", "Direction"];
