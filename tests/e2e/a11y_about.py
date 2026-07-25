@@ -15,7 +15,7 @@ async def main():
         ctx = await browser.new_context(viewport={"width": 1280, "height": 1800})
         page = await ctx.new_page()
         await page.goto("http://localhost:8080/about", wait_until="domcontentloaded")
-        await page.wait_for_selector("nav[aria-label='On this page']")
+        await page.wait_for_selector("nav[aria-label='Sections of this page']")
         await page.add_script_tag(url=AXE_CDN)
         result = await page.evaluate("async () => await axe.run(document, {resultTypes:['violations']})")
         critical = [v for v in result["violations"] if v["impact"] in ("critical", "serious")]
@@ -26,7 +26,7 @@ async def main():
             failures.append(f"{len(critical)} serious/critical axe violations")
 
         # Test 2: keyboard arrow nav in TOC
-        first = page.locator("nav[aria-label='On this page'] a").first
+        first = page.locator("nav[aria-label='Sections of this page'] a").first
         await first.focus()
         await page.keyboard.press("ArrowRight")
         focused = await page.evaluate("() => document.activeElement?.textContent?.trim()")
@@ -48,7 +48,7 @@ async def main():
         await page.keyboard.press("ArrowRight")  # Location
         await page.keyboard.press("Enter")
         await page.wait_for_timeout(400)
-        current = await page.evaluate("() => document.querySelector(\"nav[aria-label='On this page'] a[aria-current]\")?.textContent?.trim()")
+        current = await page.evaluate("() => document.querySelector(\"nav[aria-label='Sections of this page'] a[aria-current]\")?.textContent?.trim()")
         print(f"After Enter on Location → aria-current: {current!r}")
         if current != "Location":
             failures.append(f"aria-current expected 'Location', got {current!r}")
@@ -57,7 +57,7 @@ async def main():
         # Test 4: scroll updates active state via IntersectionObserver
         await page.evaluate("() => document.querySelector('#partnership').scrollIntoView({block:'start'})")
         await page.wait_for_timeout(600)
-        active_scroll = await page.evaluate("() => document.querySelector(\"nav[aria-label='On this page'] a[aria-current]\")?.textContent?.trim()")
+        active_scroll = await page.evaluate("() => document.querySelector(\"nav[aria-label='Sections of this page'] a[aria-current]\")?.textContent?.trim()")
         print(f"Scrolled to #partnership → aria-current: {active_scroll!r}")
         if active_scroll not in ("Partnership", "Invitation"):
             failures.append(f"Scroll active expected Partnership, got {active_scroll!r}")
@@ -76,13 +76,13 @@ async def main():
         ctx2 = await browser.new_context(viewport={"width": 1280, "height": 1800}, reduced_motion="reduce")
         page2 = await ctx2.new_page()
         await page2.goto("http://localhost:8080/about", wait_until="domcontentloaded")
-        await page2.wait_for_selector("nav[aria-label='On this page']")
+        await page2.wait_for_selector("nav[aria-label='Sections of this page']")
         sb = await page2.evaluate("() => getComputedStyle(document.documentElement).scrollBehavior")
         print(f"Reduced motion → scroll-behavior: {sb}")
         if sb != "auto":
             failures.append(f"reduced motion should force scroll-behavior:auto, got {sb}")
         # click TOC item and confirm no smooth animation frames delay
-        await page2.locator("nav[aria-label='On this page'] a", has_text="Identity").click()
+        await page2.locator("nav[aria-label='Sections of this page'] a", has_text="Identity").click()
         await page2.wait_for_timeout(150)
         y = await page2.evaluate("() => document.querySelector('#identity').getBoundingClientRect().top")
         print(f"Reduced motion → #identity top after click: {y:.0f}")
