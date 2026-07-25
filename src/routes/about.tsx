@@ -520,7 +520,7 @@ function About() {
         </div>
       </Section>
 
-      <Section tone="navy">
+      <Section id="invitation" tone="navy">
         <div className="mx-auto max-w-3xl text-center">
           <p className="font-display text-2xl leading-snug text-navy-foreground md:text-[1.9rem]">
             Discover the story behind Lighthouse Campus, explore our educational philosophy, meet the people who lead our community, and learn why families choose Lighthouse as the place where futures begin.
