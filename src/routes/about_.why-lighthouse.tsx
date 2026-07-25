@@ -283,10 +283,17 @@ function WhyLighthouse() {
                   }}
                 />
                 <div className="relative">
-                  <div className="inline-flex size-20 items-center justify-center rounded-2xl bg-navy-foreground/5 ring-1 ring-gold/40 backdrop-blur-sm">
-                    <span aria-hidden="true" className="font-display text-3xl leading-none text-gold">✦</span>
+                  <div className="inline-flex size-20 items-center justify-center overflow-hidden rounded-2xl bg-navy-foreground/5 ring-1 ring-gold/40 backdrop-blur-sm">
+                    <img
+                      src={philosophyEmblem.url}
+                      alt=""
+                      aria-hidden="true"
+                      loading="lazy"
+                      className="size-full object-contain"
+                    />
                   </div>
                   <p className="mt-6 eyebrow text-gold">Our Philosophy</p>
+
                   <h3 className="mt-2 font-display text-xl font-medium leading-tight text-navy-foreground">
                     Excellence in Every Dimension
                   </h3>
