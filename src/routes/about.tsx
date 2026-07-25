@@ -204,13 +204,16 @@ function About() {
               <FeatureCard title={u.title} icon={u.icon}>{u.body}</FeatureCard>
             </Link>
           ))}
-          <article className="relative overflow-hidden rounded-2xl bg-navy p-8 text-navy-foreground shadow-[0_30px_80px_-30px_rgba(11,29,58,0.55)] ring-1 ring-gold/40 sm:col-span-2 lg:col-span-2">
+          <article
+            aria-labelledby="shaping-tomorrows-leaders"
+            className="relative overflow-hidden rounded-2xl bg-navy p-7 text-navy-foreground shadow-[0_30px_80px_-30px_rgba(11,29,58,0.55)] ring-1 ring-gold/40 sm:col-span-2 sm:p-8 lg:col-span-2"
+          >
             <div
               aria-hidden
               className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-gold/20 blur-3xl"
             />
             <div className="relative">
-              <span className="eyebrow text-gold">Shaping Tomorrow's Leaders</span>
+              <h3 id="shaping-tomorrows-leaders" className="eyebrow text-gold">Shaping Tomorrow's Leaders</h3>
               <div className="mt-5 space-y-4 text-base leading-relaxed text-navy-foreground/90 md:text-lg">
                 <p>
                   At Lighthouse Campus, education extends far beyond the classroom. It is a carefully designed journey that inspires curiosity, builds character, nurtures leadership, and empowers every learner to discover their purpose and unlock their full potential.
