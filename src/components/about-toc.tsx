@@ -17,24 +17,30 @@ export function AboutTOC({ items }: { items: TocItem[] }) {
   const listRef = useRef<HTMLOListElement>(null);
 
   useEffect(() => {
-    const targets = items
-      .map((i) => document.querySelector(i.to))
-      .filter((el): el is Element => !!el);
+    const ids = items.map((i) => i.to.slice(1));
+    const targets = ids
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => !!el);
     if (targets.length === 0) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        // Pick the entry closest to the top of the viewport that is intersecting.
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
-        if (visible?.target?.id) setActive(`#${visible.target.id}`);
-      },
-      { rootMargin: "-40% 0px -50% 0px", threshold: 0 },
-    );
+    const update = () => {
+      // Active section = last one whose top is above the 25% viewport line.
+      const line = window.innerHeight * 0.25;
+      let current = targets[0].id;
+      for (const t of targets) {
+        const top = t.getBoundingClientRect().top;
+        if (top - line <= 0) current = t.id;
+      }
+      setActive(`#${current}`);
+    };
 
-    targets.forEach((t) => observer.observe(t));
-    return () => observer.disconnect();
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
   }, [items]);
 
   const handleKey = (e: React.KeyboardEvent<HTMLOListElement>) => {
