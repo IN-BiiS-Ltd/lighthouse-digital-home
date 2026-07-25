@@ -20,6 +20,7 @@ import iconCoreValues from "@/assets/about-core-values.png.asset.json";
 import iconPhilosophy from "@/assets/about-philosophy.png.asset.json";
 import iconLeadership from "@/assets/about-leadership.png.asset.json";
 import iconCampusCulture from "@/assets/about-campus-culture.png.asset.json";
+import campusEmblem from "@/assets/lighthouse-campus-emblem.png.asset.json";
 
 
 
