@@ -30,9 +30,9 @@ export const Route = createFileRoute("/our-model_/learner-profile")({
         content: "The qualities we develop through every stage of a child's journey.",
       },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "https://lighthousecampus.lovable.app/our-model/learner-profile" },
+      { property: "og:url", content: "https://lighthousecampus.com/our-model/learner-profile" },
     ],
-    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/our-model/learner-profile" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.com/our-model/learner-profile" }],
   }),
   component: LearnerProfile,
 });

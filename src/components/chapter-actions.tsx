@@ -10,7 +10,7 @@ import {
 import { BookOpen, Check, Copy, Share2, Sparkles } from "lucide-react";
 
 const SITE_ORIGIN =
-  typeof window !== "undefined" ? window.location.origin : "https://lighthousecampus.lovable.app";
+  typeof window !== "undefined" ? window.location.origin : "https://lighthousecampus.com";
 
 interface ChapterActionsProps {
   hash: string;

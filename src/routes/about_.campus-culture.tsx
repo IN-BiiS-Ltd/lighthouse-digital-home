@@ -11,10 +11,10 @@ export const Route = createFileRoute("/about_/campus-culture")({
       { name: "description", content: "Discover a welcoming campus culture where students, teachers and families build confidence, celebrate diversity, inspire achievement and cultivate lifelong values." },
       { property: "og:title", content: "Campus Culture | Lighthouse Campus" },
       { property: "og:description", content: "A community where everyone belongs. Confidence, achievement, diversity and lifelong values." },
-      { property: "og:url", content: "https://lighthousecampus.lovable.app/about/campus-culture" },
+      { property: "og:url", content: "https://lighthousecampus.com/about/campus-culture" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/about/campus-culture" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.com/about/campus-culture" }],
   }),
   component: CampusCulture,
 });

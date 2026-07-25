@@ -35,9 +35,9 @@ export const Route = createFileRoute("/explore/digital-ecosystem")({
         content: "Connected services designed around the learner and the community.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://lighthousecampus.lovable.app/explore/digital-ecosystem" },
+      { property: "og:url", content: "https://lighthousecampus.com/explore/digital-ecosystem" },
     ],
-    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/explore/digital-ecosystem" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.com/explore/digital-ecosystem" }],
   }),
   component: DigitalEcosystem,
 });

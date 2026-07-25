@@ -17,10 +17,10 @@ export const Route = createFileRoute("/student-life")({
         content:
           "Community, belonging, clubs, athletics, arts, leadership, service, wellbeing and events at Lighthouse Campus.",
       },
-      { property: "og:url", content: "https://lighthousecampus.lovable.app/student-life" },
+      { property: "og:url", content: "https://lighthousecampus.com/student-life" },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/student-life" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.com/student-life" }],
   }),
   component: StudentLife,
 });

@@ -75,13 +75,13 @@ export const Route = createFileRoute("/portals")({
       },
       {
         property: "og:url",
-        content: "https://lighthousecampus.lovable.app/portals",
+        content: "https://lighthousecampus.com/portals",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
-      { rel: "canonical", href: "https://lighthousecampus.lovable.app/portals" },
+      { rel: "canonical", href: "https://lighthousecampus.com/portals" },
     ],
   }),
   component: PortalsPage,

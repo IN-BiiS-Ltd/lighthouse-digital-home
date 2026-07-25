@@ -13,12 +13,12 @@ export const Route = createFileRoute("/cookies")({
       { property: "og:title", content: "Cookie Policy — Lighthouse Campus" },
       {
         property: "og:description",
-        content: "A plain-language explanation of the cookies used on lighthousecampus.lovable.app.",
+        content: "A plain-language explanation of the cookies used on lighthousecampus.com.",
       },
-      { property: "og:url", content: "https://lighthousecampus.lovable.app/cookies" },
+      { property: "og:url", content: "https://lighthousecampus.com/cookies" },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/cookies" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.com/cookies" }],
   }),
   component: CookiesPage,
 });

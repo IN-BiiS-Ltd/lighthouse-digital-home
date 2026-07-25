@@ -28,9 +28,9 @@ export const Route = createFileRoute("/contact")({
         property: "og:description",
         content: "Get in touch, find us, or schedule a visit to Lighthouse Campus.",
       },
-      { property: "og:url", content: "https://lighthousecampus.lovable.app/contact" },
+      { property: "og:url", content: "https://lighthousecampus.com/contact" },
     ],
-    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/contact" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.com/contact" }],
   }),
   component: Contact,
 });

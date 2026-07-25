@@ -50,7 +50,7 @@ export function InternalPage({ config }: { config: InternalPageConfig }) {
       "@type": "ListItem",
       position: i + 1,
       name: b.label,
-      ...(b.to ? { item: `https://lighthousecampus.lovable.app${b.to}` } : {}),
+      ...(b.to ? { item: `https://lighthousecampus.com${b.to}` } : {}),
     })),
   };
   return (
@@ -213,7 +213,7 @@ export function OverviewPage({
       "@type": "ListItem",
       position: i + 1,
       name: b.label,
-      ...(b.to ? { item: `https://lighthousecampus.lovable.app${b.to}` } : {}),
+      ...(b.to ? { item: `https://lighthousecampus.com${b.to}` } : {}),
     })),
   };
   return (

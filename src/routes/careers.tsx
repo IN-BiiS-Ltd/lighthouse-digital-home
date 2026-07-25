@@ -26,9 +26,9 @@ export const Route = createFileRoute("/careers")({
         property: "og:description",
         content: "Working at Lighthouse Campus — a community of mentors.",
       },
-      { property: "og:url", content: "https://lighthousecampus.lovable.app/careers" },
+      { property: "og:url", content: "https://lighthousecampus.com/careers" },
     ],
-    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/careers" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.com/careers" }],
   }),
   component: Careers,
 });

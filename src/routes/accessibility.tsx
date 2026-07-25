@@ -15,10 +15,10 @@ export const Route = createFileRoute("/accessibility")({
         property: "og:description",
         content: "Design, colour, keyboard, screen-reader and structural commitments across the site.",
       },
-      { property: "og:url", content: "https://lighthousecampus.lovable.app/accessibility" },
+      { property: "og:url", content: "https://lighthousecampus.com/accessibility" },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/accessibility" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.com/accessibility" }],
   }),
   component: AccessibilityPage,
 });

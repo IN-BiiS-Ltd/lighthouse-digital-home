@@ -19,10 +19,10 @@ export const Route = createFileRoute("/cookie-settings")({
         property: "og:description",
         content: "Change your cookie preferences at any time.",
       },
-      { property: "og:url", content: "https://lighthousecampus.lovable.app/cookie-settings" },
+      { property: "og:url", content: "https://lighthousecampus.com/cookie-settings" },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/cookie-settings" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.com/cookie-settings" }],
   }),
   component: CookieSettingsPage,
 });

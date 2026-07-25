@@ -13,12 +13,12 @@ export const Route = createFileRoute("/terms")({
       { property: "og:title", content: "Terms of Use — Lighthouse Campus" },
       {
         property: "og:description",
-        content: "Content ownership, permitted use and disclaimers for lighthousecampus.lovable.app.",
+        content: "Content ownership, permitted use and disclaimers for lighthousecampus.com.",
       },
-      { property: "og:url", content: "https://lighthousecampus.lovable.app/terms" },
+      { property: "og:url", content: "https://lighthousecampus.com/terms" },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/terms" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.com/terms" }],
   }),
   component: TermsPage,
 });

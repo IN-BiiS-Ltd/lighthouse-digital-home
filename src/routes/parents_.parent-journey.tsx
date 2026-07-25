@@ -8,10 +8,10 @@ export const Route = createFileRoute("/parents_/parent-journey")({
       { name: "description", content: "A family's journey with Lighthouse Campus follows a natural arc, from first enquiry to long-term partnership." },
       { property: "og:title", content: "Parent Journey | Lighthouse Campus" },
       { property: "og:description", content: "How a family's relationship with Lighthouse Campus begins and grows over time." },
-      { property: "og:url", content: "https://lighthousecampus.lovable.app/parents/parent-journey" },
+      { property: "og:url", content: "https://lighthousecampus.com/parents/parent-journey" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/parents/parent-journey" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.com/parents/parent-journey" }],
   }),
   component: ParentJourney,
 });

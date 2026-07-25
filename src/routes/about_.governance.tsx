@@ -11,10 +11,10 @@ export const Route = createFileRoute("/about_/governance")({
       { name: "description", content: "Discover how Lighthouse Campus builds excellence through strong institutional systems, governance, quality assurance and continuous improvement." },
       { property: "og:title", content: "Governance | Lighthouse Campus" },
       { property: "og:description", content: "Excellence begins with strong institutions. A modern framework supporting governance, quality assurance and operational excellence." },
-      { property: "og:url", content: "https://lighthousecampus.lovable.app/about/governance" },
+      { property: "og:url", content: "https://lighthousecampus.com/about/governance" },
       { property: "og:type", content: "article" },
     ],
-    links: [{ rel: "canonical", href: "https://lighthousecampus.lovable.app/about/governance" }],
+    links: [{ rel: "canonical", href: "https://lighthousecampus.com/about/governance" }],
   }),
   component: Governance,
 });
