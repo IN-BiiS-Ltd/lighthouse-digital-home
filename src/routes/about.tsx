@@ -400,7 +400,7 @@ function About() {
         </div>
       </Section>
 
-      <Section tone="sand">
+      <Section id="partnership" tone="sand">
         <SectionHeading
           eyebrow="Strategic Educational Partnership"
           title="Building on Shared Strengths"
