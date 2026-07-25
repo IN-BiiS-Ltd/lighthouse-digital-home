@@ -20,6 +20,7 @@ import iconCoreValues from "@/assets/about-core-values.png.asset.json";
 import iconPhilosophy from "@/assets/about-philosophy.png.asset.json";
 import iconLeadership from "@/assets/about-leadership.png.asset.json";
 import iconCampusCulture from "@/assets/about-campus-culture.png.asset.json";
+import campusEmblem from "@/assets/lighthouse-campus-emblem.png.asset.json";
 
 
 
@@ -148,6 +149,36 @@ function About() {
               </p>
             </div>
           </article>
+
+          {/* Institutional emblem — fills the grid space below Campus Culture */}
+          <figure className="relative overflow-hidden rounded-2xl bg-navy p-6 shadow-[0_30px_80px_-30px_rgba(11,29,58,0.55)] ring-1 ring-gold/40">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-gold/15 blur-3xl"
+            />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-gold/10 blur-3xl"
+            />
+            <div className="relative flex flex-col items-center justify-center text-center">
+              <img
+                src={campusEmblem.url}
+                alt="Lighthouse Campus — official institutional emblem: lighthouse, book and star beneath the LIGHTHOUSE CAMPUS wordmark and promise."
+                width={512}
+                height={512}
+                loading="lazy"
+                decoding="async"
+                draggable={false}
+                className="block h-auto w-full max-w-[260px] object-contain drop-shadow-[0_8px_30px_rgba(212,175,55,0.25)]"
+              />
+              <figcaption className="mt-4">
+                <span className="eyebrow text-gold">Lighthouse Campus</span>
+                <p className="mt-1 text-sm text-navy-foreground/80">
+                  Guiding Minds. Inspiring Futures. Connecting Possibilities.
+                </p>
+              </figcaption>
+            </div>
+          </figure>
         </div>
       </Section>
 
