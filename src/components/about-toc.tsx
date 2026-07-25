@@ -7,14 +7,26 @@ export interface TocItem {
 }
 
 /**
- * AboutTOC — sticky in-page navigation with:
- * - Active section highlighting via IntersectionObserver
- * - Roving arrow-key navigation (ArrowLeft/Right, Home/End) per WAI-ARIA tabs-like pattern
+ * PageTOC — sticky in-page navigation with:
+ * - Active section highlighting via scroll listener (25% viewport threshold)
+ * - Roving arrow-key navigation (ArrowLeft/Right/Up/Down, Home/End) per WAI-ARIA tabs-like pattern
+ * - aria-live polite announcements when the active section changes
+ * - Visible keyboard-shortcut hint plus sr-only usage instructions
  * - Respects prefers-reduced-motion (smooth scroll only when motion is allowed)
+ *
+ * Exported as PageTOC (generic) and AboutTOC (back-compat alias).
  */
-export function AboutTOC({ items }: { items: TocItem[] }) {
+export function PageTOC({
+  items,
+  label = "Sections of this page",
+}: {
+  items: TocItem[];
+  label?: string;
+}) {
   const [active, setActive] = useState<string>(items[0]?.to ?? "");
+  const [announced, setAnnounced] = useState<string>("");
   const listRef = useRef<HTMLOListElement>(null);
+  const lastAnnouncedRef = useRef<string>("");
 
   useEffect(() => {
     const ids = items.map((i) => i.to.slice(1));
@@ -31,7 +43,17 @@ export function AboutTOC({ items }: { items: TocItem[] }) {
         const top = t.getBoundingClientRect().top;
         if (top - line <= 0) current = t.id;
       }
-      setActive(`#${current}`);
+      const hash = `#${current}`;
+      setActive((prev) => {
+        if (prev !== hash) {
+          const item = items.find((i) => i.to === hash);
+          if (item && lastAnnouncedRef.current !== hash) {
+            lastAnnouncedRef.current = hash;
+            setAnnounced(`Current section: ${item.label}`);
+          }
+        }
+        return hash;
+      });
     };
 
     update();
@@ -88,11 +110,18 @@ export function AboutTOC({ items }: { items: TocItem[] }) {
     }
   };
 
+  const instructionsId = "page-toc-instructions";
+
   return (
     <nav
-      aria-label="Sections of this page"
+      aria-label={label}
+      aria-describedby={instructionsId}
       className="sticky top-[64px] z-30 border-y border-gold/20 bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/70"
     >
+      <p id={instructionsId} className="sr-only">
+        Use Left and Right arrow keys, or Up and Down, to move between sections.
+        Press Home for the first section, End for the last, and Enter to jump to a section.
+      </p>
       <div className="mx-auto flex max-w-7xl items-center gap-2 overflow-x-auto px-4 py-3 sm:px-6 lg:px-8">
         <span className="shrink-0 text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
           On this page
@@ -123,7 +152,23 @@ export function AboutTOC({ items }: { items: TocItem[] }) {
             );
           })}
         </ol>
+        <span
+          aria-hidden="true"
+          title="Use ← → arrows, Home/End, and Enter to navigate sections"
+          className="ml-auto hidden shrink-0 items-center gap-1 rounded-full border border-gold/30 bg-background/60 px-2.5 py-1 text-[0.68rem] font-medium uppercase tracking-[0.14em] text-muted-foreground md:inline-flex"
+        >
+          <kbd className="rounded bg-muted px-1.5 py-0.5 font-mono text-[0.7em] text-foreground">←</kbd>
+          <kbd className="rounded bg-muted px-1.5 py-0.5 font-mono text-[0.7em] text-foreground">→</kbd>
+          <span>navigate</span>
+        </span>
+      </div>
+      {/* Polite live region — announces active section changes to assistive tech */}
+      <div role="status" aria-live="polite" aria-atomic="true" className="sr-only">
+        {announced}
       </div>
     </nav>
   );
 }
+
+/** @deprecated Prefer `PageTOC`. Kept as a back-compat alias. */
+export const AboutTOC = PageTOC;
