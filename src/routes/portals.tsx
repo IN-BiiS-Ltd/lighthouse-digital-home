@@ -205,16 +205,7 @@ function PortalsPage() {
         <div className="mx-auto max-w-3xl text-center">
           <Eyebrow onNavy className="justify-center">EDUIOS</Eyebrow>
           <p className="mt-6 text-balance text-2xl font-display leading-snug text-navy-foreground md:text-3xl">
-            Powered by EDUIOS at{" "}
-            <a
-              href={EDUIOS_SIGNIN}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gold underline-offset-4 hover:underline"
-            >
-              eduios.zanova.systems
-            </a>{" "}
-            — the institutional operating system for the whole school.
+            Powered by EDUIOS — the institutional operating system for the whole school.
           </p>
         </div>
       </Section>
