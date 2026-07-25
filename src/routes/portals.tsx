@@ -201,38 +201,6 @@ function PortalsPage() {
         </div>
       </Section>
 
-      <Section tone="sand">
-        <div className="mx-auto max-w-4xl text-center">
-          <Eyebrow className="justify-center">Digital Heart</Eyebrow>
-          <h2 className="mt-6 font-display text-balance text-3xl leading-tight text-foreground md:text-4xl">
-            Welcome to the Digital Heart of Lighthouse Campus
-          </h2>
-          <p className="mt-4 text-lg font-medium text-brand-blue">
-            One Institution. Seven Portals. One Exceptional Journey.
-          </p>
-          <div className="mt-6 space-y-4 text-lg leading-relaxed text-muted-foreground">
-            <p>
-              At Lighthouse Campus, every learner, parent, educator, staff member,
-              executive, and board member is connected through one trusted
-              gateway—creating a unified digital experience that empowers learning,
-              leadership, collaboration, and academic excellence.
-            </p>
-            <p>
-              More than a collection of portals, this is the digital heart of our
-              community: a secure, connected environment where every role has a
-              personalized journey, every interaction strengthens our community, and
-              every experience supports growth, innovation, and lifelong success.
-            </p>
-          </div>
-          <p className="mt-8 text-sm font-semibold tracking-wide text-foreground">
-            Secure • Connected • Intelligent • Designed for Excellence
-          </p>
-          <p className="mt-3 text-sm font-medium tracking-wide text-gold">
-            Guiding Minds. Inspiring Futures. Connecting Possibilities.
-          </p>
-        </div>
-      </Section>
-
       <Section tone="navy">
         <div className="mx-auto max-w-3xl text-center">
           <Eyebrow onNavy className="justify-center">EDUIOS</Eyebrow>
