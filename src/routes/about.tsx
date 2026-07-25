@@ -11,6 +11,7 @@ import { CtaBand } from "@/components/cta-band";
 import { PullQuote, StatBand } from "@/components/editorial";
 import officialLockupAsset from "@/assets/lighthouse-official-lockup-v2.png.asset.json";
 import { ShareBar } from "@/components/share-bar";
+import { AboutTOC } from "@/components/about-toc";
 const officialLockupSrc = officialLockupAsset.url;
 import { CheckCircle } from "lucide-react";
 import iconOurStory from "@/assets/about-our-story.png.asset.json";
