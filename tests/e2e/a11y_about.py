@@ -16,6 +16,8 @@ async def main():
         page = await ctx.new_page()
         await page.goto("http://localhost:8080/about", wait_until="domcontentloaded")
         await page.wait_for_selector("nav[aria-label='Sections of this page']")
+        await page.wait_for_load_state("networkidle")
+        await page.wait_for_timeout(300)
         await page.add_script_tag(url=AXE_CDN)
         result = await page.evaluate("async () => await axe.run(document, {resultTypes:['violations']})")
         critical = [v for v in result["violations"] if v["impact"] in ("critical", "serious")]
