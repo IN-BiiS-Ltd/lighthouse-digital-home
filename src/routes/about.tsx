@@ -344,7 +344,7 @@ function About() {
         </figure>
       </Section>
 
-      <Section>
+      <Section id="identity">
         <SectionHeading
           align="center"
           eyebrow="Institutional Identity"
