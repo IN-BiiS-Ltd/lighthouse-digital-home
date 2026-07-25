@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/page-hero";
 import { Section, ButtonLink, Eyebrow } from "@/components/blocks";
-import { LhIcon, type LhIconName } from "@/components/lighthouse-icons";
+import portalBoard from "@/assets/portal-board.png.asset.json";
 import portalExecutive from "@/assets/portal-executive.png.asset.json";
 import portalSchool from "@/assets/portal-school.png.asset.json";
 import portalTeacher from "@/assets/portal-teacher.png.asset.json";
@@ -16,14 +16,13 @@ type Portal = {
   title: string;
   description: string;
   image?: string;
-  icon?: LhIconName;
 };
 
 const portals: Portal[] = [
   {
     title: "Board Portal",
     description: "Governance, board resolutions and executive oversight.",
-    icon: "constellation",
+    image: portalBoard.url,
   },
   {
     title: "Executive Portal",
