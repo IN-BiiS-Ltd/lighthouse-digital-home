@@ -109,6 +109,7 @@ function PortalsPage() {
             size="lg"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Sign in to Lighthouse Campus portals"
             data-event="Portal CTA"
             data-event-prop-cta="Sign in"
           >
@@ -120,10 +121,11 @@ function PortalsPage() {
             size="lg"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Apply for admission to Lighthouse Campus"
             data-event="Portal CTA"
             data-event-prop-cta="Apply"
           >
-            Apply for admission
+            New family? Apply for admission
           </ButtonLink>
         </div>
 
