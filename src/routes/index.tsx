@@ -1,11 +1,9 @@
 import { assetUrl } from "@/lib/asset-url";
 import { createFileRoute } from "@tanstack/react-router";
-import {
-  BookOpen,
-  Microscope,
-  Palette,
-  Users,
-} from "lucide-react";
+import teachersIcon from "@/assets/home-teachers-mentors.png.asset.json";
+import studentsIcon from "@/assets/home-students-centre.png.asset.json";
+import discoveryIcon from "@/assets/home-discovery-science.png.asset.json";
+import creativityIcon from "@/assets/home-creativity-arts.png.asset.json";
 import {
   Container,
   Section,
