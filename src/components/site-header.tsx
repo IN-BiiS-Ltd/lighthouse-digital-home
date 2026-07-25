@@ -254,7 +254,14 @@ export function SiteHeader() {
                 </Accordion>
                 <div className="mt-6 grid gap-3">
                   <SheetClose asChild>
-                    <ButtonLink to="/admissions" variant="gold" size="md">
+                    <ButtonLink
+                      to="https://eduios.lighthousecampus.com/apply/lighthouse-campus"
+                      variant="gold"
+                      size="md"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Apply for admission to Lighthouse Campus"
+                    >
                       {t("nav.admissions")}
                     </ButtonLink>
                   </SheetClose>
