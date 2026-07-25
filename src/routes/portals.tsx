@@ -138,7 +138,8 @@ function PortalsPage() {
                   href={EDUIOS_SIGNIN}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex h-full flex-col items-center rounded-2xl border border-border bg-card p-6 text-center transition-all hover:-translate-y-0.5 hover:border-gold/60 hover:shadow-e2"
+                  aria-label={`Open ${p.title} — sign in to Lighthouse Campus portals`}
+                  className="group flex h-full flex-col items-center rounded-2xl border border-border bg-card p-6 text-center transition-all hover:-translate-y-0.5 hover:border-gold/60 hover:shadow-e2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
                   data-event="Portal Card Click"
                   data-event-prop-portal={p.title}
                 >
