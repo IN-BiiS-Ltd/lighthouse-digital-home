@@ -163,6 +163,37 @@ function PortalsPage() {
                 </a>
               </li>
             ))}
+            <li className="lg:col-span-2">
+              <div className="flex h-full flex-col justify-center rounded-2xl border border-gold/30 bg-card p-7 text-center sm:col-span-2 lg:col-span-2">
+                <p className="eyebrow text-brand-blue">Digital Heart</p>
+                <h2 className="mt-3 font-display text-balance text-2xl leading-tight text-foreground md:text-3xl">
+                  Welcome to the Digital Heart of Lighthouse Campus
+                </h2>
+                <p className="mt-3 text-base font-medium text-gold">
+                  One Institution. Seven Portals. One Exceptional Journey.
+                </p>
+                <div className="mt-3 space-y-3 text-sm leading-relaxed text-muted-foreground">
+                  <p>
+                    At Lighthouse Campus, every learner, parent, educator, staff member,
+                    executive, and board member is connected through one trusted
+                    gateway—creating a unified digital experience that empowers learning,
+                    leadership, collaboration, and academic excellence.
+                  </p>
+                  <p>
+                    More than a collection of portals, this is the digital heart of our
+                    community: a secure, connected environment where every role has a
+                    personalized journey, every interaction strengthens our community, and
+                    every experience supports growth, innovation, and lifelong success.
+                  </p>
+                </div>
+                <p className="mt-4 text-xs font-semibold tracking-wide text-foreground">
+                  Secure • Connected • Intelligent • Designed for Excellence
+                </p>
+                <p className="mt-2 text-xs font-medium tracking-wide text-gold">
+                  Guiding Minds. Inspiring Futures. Connecting Possibilities.
+                </p>
+              </div>
+            </li>
           </ul>
           <p className="mt-4 text-xs text-muted-foreground">
             Sign-in resolves the right portal for your role automatically.
