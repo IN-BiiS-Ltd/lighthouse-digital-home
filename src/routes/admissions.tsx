@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArchitecturalPage } from "@/components/architectural-page";
 import { Section, ButtonLink, Eyebrow } from "@/components/blocks";
-import { ClipboardList, FileText, Wallet, GraduationCap, HelpCircle, CalendarCheck, MonitorSmartphone } from "lucide-react";
+import { ClipboardList, FileText, Wallet, GraduationCap, HelpCircle, CalendarCheck, MonitorSmartphone, Bell } from "lucide-react";
 
 const APPLY = "https://eduios.lighthousecampus.com/apply/lighthouse-campus";
 
