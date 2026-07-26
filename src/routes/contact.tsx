@@ -21,7 +21,7 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Contact Lighthouse Campus, find us in Mohandessin, schedule a visit or send an enquiry to our admissions team.",
+          "Contact Lighthouse Campus, find us in Dokki, Giza, schedule a visit or send an enquiry to our admissions team.",
       },
       { property: "og:title", content: "Contact & Visit — Lighthouse Campus" },
       {
@@ -70,7 +70,7 @@ function Contact() {
             <ul className="mt-7 space-y-5 text-muted-foreground">
               <li className="flex gap-4">
                 <MapPin className="mt-0.5 size-5 shrink-0 text-sky" aria-hidden />
-                <span>Mohandessin, Giza, Greater Cairo, Egypt</span>
+                <span>66 El-Zahraa, Ad Doqi, Dokki, Giza Governorate 3751053, Egypt</span>
               </li>
               <li className="flex gap-4">
                 <Phone className="mt-0.5 size-5 shrink-0 text-sky" aria-hidden />
@@ -207,11 +207,11 @@ function Contact() {
       </Section>
 
       <Section tone="muted" id="find">
-        <SectionHeading eyebrow="Find Us" title="Mohandessin, Giza" />
+        <SectionHeading eyebrow="Find Us" title="Dokki, Giza" />
         <div className="mt-10 overflow-hidden rounded-2xl border border-border">
           <iframe
-            title="Map showing Mohandessin, Giza"
-            src="https://www.openstreetmap.org/export/embed.html?bbox=31.19%2C30.04%2C31.22%2C30.07&layer=mapnik"
+            title="Map showing Dokki, Giza"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=31.2075%2C30.0415%2C31.2145%2C30.0455&layer=mapnik"
             className="h-[26rem] w-full"
             loading="lazy"
           />
