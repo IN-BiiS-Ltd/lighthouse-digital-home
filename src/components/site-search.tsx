@@ -2,11 +2,11 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
-import { Search, FileText, Users, HelpCircle, Shield, Cookie, Globe, Compass } from "lucide-react";
+import { Search, FileText, Users, HelpCircle, Shield, Globe, Compass } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { useLang } from "@/lib/i18n";
-import { allNav, type NavSection } from "@/lib/site-nav";
+import { allNav } from "@/lib/site-nav";
 import {
   CommandDialog,
   CommandEmpty,
@@ -59,7 +59,7 @@ const UTILITY_PAGES: SearchItem[] = [
   },
   {
     label: "Privacy Policy",
-    label_ar: "سياسة الخصوصية",
+    label_ar: "سياسة الخصوية",
     to: "/privacy",
     description: "How we collect and protect your data.",
     description_ar: "كيف نجمع ونحمي بياناتك.",
@@ -154,7 +154,12 @@ function groupBySection(items: SearchItem[], lang: "en" | "ar") {
   return groups;
 }
 
-export function SiteSearch() {
+interface SiteSearchProps {
+  variant?: "header" | "menu";
+  className?: string;
+}
+
+export function SiteSearch({ variant = "header", className }: SiteSearchProps) {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
   const { lang, t } = useLang();
@@ -186,6 +191,7 @@ export function SiteSearch() {
 
   const isMac =
     typeof navigator !== "undefined" && /Mac|iPod|iPhone|iPad/.test(navigator.platform);
+  const isHeader = variant === "header";
 
   return (
     <>
@@ -194,16 +200,30 @@ export function SiteSearch() {
         onClick={() => setOpen(true)}
         className={cn(
           "group inline-flex items-center gap-2 rounded-md text-sm transition-colors",
-          "text-navy-foreground/85 hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy",
+          variant === "menu"
+            ? "w-full justify-between border border-navy-foreground/20 bg-navy-foreground/5 px-4 py-3 text-navy-foreground hover:bg-navy-foreground/10 hover:text-gold"
+            : "text-navy-foreground/85 hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy",
+          className,
         )}
         aria-label={t("search.trigger", "Open search")}
       >
-        <Search className="size-5" aria-hidden />
-        <span className="hidden lg:inline">{t("search.placeholder", "Search pages...")}</span>
-        <kbd className="hidden items-center gap-1 rounded border border-navy-foreground/30 bg-navy-foreground/10 px-1.5 py-0.5 text-[0.7rem] font-sans text-navy-foreground/70 lg:inline-flex">
-          <span>{isMac ? "⌘" : "Ctrl"}</span>
-          <span>K</span>
-        </kbd>
+        <span className="inline-flex items-center gap-2">
+          <Search className="size-5 shrink-0" aria-hidden />
+          <span className={cn(isHeader && "hidden lg:inline")}>
+            {t("search.placeholder", "Search pages...")}
+          </span>
+        </span>
+        {isHeader ? (
+          <kbd className="hidden items-center gap-1 rounded border border-navy-foreground/30 bg-navy-foreground/10 px-1.5 py-0.5 text-[0.7rem] font-sans text-navy-foreground/70 lg:inline-flex">
+            <span>{isMac ? "⌘" : "Ctrl"}</span>
+            <span>K</span>
+          </kbd>
+        ) : (
+          <kbd className="inline-flex items-center gap-1 rounded border border-navy-foreground/30 bg-navy-foreground/10 px-1.5 py-0.5 text-[0.7rem] font-sans text-navy-foreground/70">
+            <span>{isMac ? "⌘" : "Ctrl"}</span>
+            <span>K</span>
+          </kbd>
+        )}
       </button>
 
       <CommandDialog open={open} onOpenChange={setOpen}>
