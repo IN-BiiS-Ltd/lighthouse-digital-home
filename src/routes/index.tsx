@@ -56,10 +56,10 @@ export const Route = createFileRoute("/")({
       { property: "og:image", content: "https://lighthousecampus.com/lighthouse-social-card.webp" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "Lighthouse Campus — Mohandessin, Giza" },
+      { property: "og:image:alt", content: "Lighthouse Campus — Dokki, Giza" },
       { property: "og:image:type", content: "image/webp" },
       { name: "twitter:image", content: "https://lighthousecampus.com/lighthouse-social-card.webp" },
-      { name: "twitter:image:alt", content: "Lighthouse Campus — Mohandessin, Giza" },
+      { name: "twitter:image:alt", content: "Lighthouse Campus — Dokki, Giza" },
     ],
     links: [
       { rel: "canonical", href: "https://lighthousecampus.com/" },
@@ -232,7 +232,7 @@ function Home() {
             <p>
               Lighthouse Campus was founded on a simple conviction: that a school
               should feel like a living learning community, not an institution
-              that processes children. Our first campus in Mohandessin is the
+              that processes children. Our first campus in Dokki, Giza is the
               beginning of a long-term commitment to education in Egypt and
               beyond.
             </p>
@@ -467,7 +467,7 @@ function Home() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <Stat value="5" label="Stages across the learning journey" />
           <Stat value="1:1" label="Every student known by their mentors" />
-          <Stat value="Mohandessin" label="Our first operational campus" />
+          <Stat value="Dokki, Giza" label="Our first operational campus" />
           <Stat value="∞" label="Designed to grow across future campuses" />
         </div>
         <div className="mt-12 border-t border-border pt-8">
@@ -490,7 +490,7 @@ function Home() {
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-lg text-navy-foreground/80">
               Meet our people, see our spaces and imagine your child here. We
-              would be glad to welcome your family to Mohandessin Campus.
+              would be glad to welcome your family to Lighthouse Campus.
             </p>
             <div className="mt-9 flex flex-wrap justify-center gap-3">
               <ButtonLink to="/contact" variant="gold" size="lg">

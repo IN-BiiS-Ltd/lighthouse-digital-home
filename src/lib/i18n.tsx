@@ -69,7 +69,7 @@ const dict: Record<string, { en: string; ar: string }> = {
   "footer.cookie-settings": { en: "Cookie settings", ar: "إعدادات الكوكيز" },
   "footer.accessibility": { en: "Accessibility", ar: "إمكانية الوصول" },
   "footer.careers": { en: "Careers", ar: "الوظائف" },
-  "footer.address": { en: "Mohandessin, Giza, Greater Cairo, Egypt", ar: "المهندسين، الجيزة، القاهرة الكبرى، مصر" },
+  "footer.address": { en: "66 El-Zahraa, Ad Doqi, Dokki, Giza Governorate 3751053, Egypt", ar: "٦٦ الزهراء، الدقي، محافظة الجيزة ٣٧٥١٠٥٣، مصر" },
   "footer.official-lockup": { en: "Official Institutional Lockup", ar: "الشعار المؤسسي الرسمي" },
   "footer.brand-tagline": {
     en: "Guiding minds. Inspiring futures. Connecting possibilities. A living learning community where students remain at the centre.",

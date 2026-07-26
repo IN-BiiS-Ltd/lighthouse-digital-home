@@ -28,23 +28,23 @@ import campusEmblem from "@/assets/lighthouse-campus-emblem.png.asset.json";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Lighthouse Campus | Independent K–12 Institution in Mohandessin, Giza" },
+      { title: "About Lighthouse Campus | Independent K–12 Institution in Dokki, Giza" },
       {
         name: "description",
         content:
-          "Discover Lighthouse Campus — an independent K–12 educational institution in Mohandessin, Giza. Explore our story, vision, mission, values, philosophy, leadership and campus culture.",
+          "Discover Lighthouse Campus — an independent K–12 educational institution in Dokki, Giza. Explore our story, vision, mission, values, philosophy, leadership and campus culture.",
       },
       {
         name: "keywords",
         content:
-          "Lighthouse Campus, about Lighthouse Campus, independent school Mohandessin, Giza international school, K-12 Cairo, educational philosophy, school vision and mission",
+          "Lighthouse Campus, about Lighthouse Campus, independent school Dokki, Giza international school, K-12 Cairo, educational philosophy, school vision and mission",
       },
       { name: "robots", content: "index,follow,max-image-preview:large" },
       { property: "og:title", content: "About Lighthouse Campus — Where Potential Becomes Purpose" },
       {
         property: "og:description",
         content:
-          "An independent institution with its own philosophy, identity and long-term vision. Meet Lighthouse Campus in Mohandessin, Giza.",
+          "An independent institution with its own philosophy, identity and long-term vision. Meet Lighthouse Campus in Dokki, Giza.",
       },
       { property: "og:url", content: "https://lighthousecampus.com/about" },
       { property: "og:type", content: "website" },
@@ -54,7 +54,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "twitter:description",
         content:
-          "An independent K–12 institution in Mohandessin, Giza — guiding minds, inspiring futures, connecting possibilities.",
+          "An independent K–12 institution in Dokki, Giza — guiding minds, inspiring futures, connecting possibilities.",
       },
     ],
     links: [{ rel: "canonical", href: "https://lighthousecampus.com/about" }],
@@ -67,7 +67,7 @@ export const Route = createFileRoute("/about")({
           name: "About Lighthouse Campus",
           url: "https://lighthousecampus.com/about",
           description:
-            "An independent K–12 educational institution in Mohandessin, Giza — its story, philosophy, values and leadership.",
+            "An independent K–12 educational institution in Dokki, Giza — its story, philosophy, values and leadership.",
           mainEntity: {
             "@type": "EducationalOrganization",
             name: "Lighthouse Campus",
@@ -75,8 +75,10 @@ export const Route = createFileRoute("/about")({
             slogan: "Guiding Minds. Inspiring Futures. Connecting Possibilities.",
             address: {
               "@type": "PostalAddress",
-              addressLocality: "Mohandessin",
-              addressRegion: "Giza",
+              streetAddress: "66 El-Zahraa, Ad Doqi",
+              addressLocality: "Dokki",
+              addressRegion: "Giza Governorate",
+              postalCode: "3751053",
               addressCountry: "EG",
             },
           },
@@ -197,7 +199,7 @@ function About() {
           stats={[
             { value: "Ages 3–18", label: "Learning Journey", caption: "From Early Years foundations through Upper Secondary readiness." },
             { value: "10", label: "Educational Pillars", caption: "The interlocking commitments that shape every classroom decision." },
-            { value: "1", label: "Founding Campus", caption: "Mohandessin, Giza — the first campus of a growing institution." },
+            { value: "1", label: "Founding Campus", caption: "Dokki, Giza — the first campus of a growing institution." },
             { value: "∞", label: "Possibilities", caption: "A learning community designed to open — not to narrow — futures." },
           ]}
         />
@@ -297,9 +299,9 @@ function About() {
       </Section>
 
       <Section id="location" tone="sand">
-        <SectionHeading eyebrow="Mohandessin, Giza" title="A new campus in the heart of Greater Cairo" />
+        <SectionHeading eyebrow="Dokki, Giza" title="A new campus in the heart of Greater Cairo" />
         <div className="mt-8 max-w-3xl space-y-5 text-lg leading-relaxed text-muted-foreground">
-          <p>Lighthouse Campus is located in Mohandessin, Giza, Greater Cairo — the founding campus of an institution designed to grow thoughtfully across the region.</p>
+          <p>Lighthouse Campus is located at 66 El-Zahraa, Ad Doqi, Dokki, Giza Governorate — the founding campus of an institution designed to grow thoughtfully across the region.</p>
           <p>Here, the strengths of a modern educational institution meet a forward-looking vision for learning, leadership and global readiness.</p>
           <p>Every learner is known, challenged and supported — academically, personally and as a future citizen of the world.</p>
         </div>
@@ -311,7 +313,7 @@ function About() {
               <source type="image/webp" srcSet={campusExteriorWebp} sizes="(min-width: 1024px) 1024px, 100vw" />
               <img
                 src={campusExteriorPhoto}
-                alt="The Lighthouse Campus building in Mohandessin, Giza — a modern limestone institutional facade framed by mature palm trees under a deep blue sky"
+                alt="The Lighthouse Campus building in Dokki, Giza — a modern limestone institutional facade framed by mature palm trees under a deep blue sky"
                 width={1600}
                 height={1008}
                 loading="lazy"
@@ -321,7 +323,7 @@ function About() {
             </picture>
           </div>
           <figcaption className="mt-4 text-center text-sm text-muted-foreground">
-            The Lighthouse Campus · Mohandessin, Giza — Greater Cairo
+            The Lighthouse Campus · Dokki, Giza — Greater Cairo
           </figcaption>
         </figure>
       </Section>
@@ -355,7 +357,7 @@ function About() {
           <figcaption className="mt-5 text-center">
             <span className="eyebrow text-brand-blue">Official Institutional Lockup</span>
             <p className="mt-2 text-sm text-muted-foreground">
-              Lighthouse Campus · Mohandessin, Giza
+              Lighthouse Campus · Dokki, Giza
             </p>
           </figcaption>
         </figure>
@@ -376,7 +378,7 @@ function About() {
             </div>
             <figcaption className="mt-4 text-center">
               <span className="eyebrow text-brand-blue">Lighthouse Campus</span>
-              <p className="mt-1 text-sm text-muted-foreground">Mohandessin, Giza</p>
+              <p className="mt-1 text-sm text-muted-foreground">Dokki, Giza</p>
             </figcaption>
           </figure>
         </div>
@@ -416,7 +418,7 @@ function About() {
             </div>
             <figcaption className="mt-4 text-center">
               <span className="eyebrow text-brand-blue">Lighthouse Campus</span>
-              <p className="mt-1 text-sm text-muted-foreground">Mohandessin, Giza</p>
+              <p className="mt-1 text-sm text-muted-foreground">Dokki, Giza</p>
             </figcaption>
           </figure>
 

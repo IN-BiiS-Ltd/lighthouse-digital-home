@@ -16,7 +16,7 @@ export const Route = createFileRoute("/campuses")({
       {
         name: "description",
         content:
-          "One community, growing across locations. Mohandessin is our first operational campus, with future campuses planned across Egypt and internationally.",
+          "One community, growing across locations. Dokki, Giza is home to our first operational campus, with future campuses planned across Egypt and internationally.",
       },
       { property: "og:title", content: "Our Campuses — Lighthouse Campus" },
       {
@@ -33,7 +33,7 @@ export const Route = createFileRoute("/campuses")({
 const campuses = [
   {
     name: "Mohandessin Campus",
-    location: "Mohandessin, Giza · Greater Cairo",
+    location: "Dokki, Giza · Greater Cairo",
     status: "Operational",
     to: "/campuses/mohandessin",
     body: "Our first operational campus and the foundation of the Lighthouse community.",
@@ -74,7 +74,7 @@ function Campuses() {
       <Section>
         <SectionHeading
           eyebrow="Where we are"
-          title="Beginning in Mohandessin"
+          title="Beginning in Dokki, Giza"
           description="Our first campus is open and thriving. Future campuses will join the community without redesign — the same promise, in new places."
         />
         <div className="mt-14 grid gap-6 md:grid-cols-2">
@@ -163,7 +163,7 @@ function Campuses() {
       <CtaBand
         title="Visit our Mohandessin campus"
         body="Experience the first Lighthouse campus and imagine what is to come."
-        primary={{ to: "/campuses/mohandessin", label: "Explore Mohandessin" }}
+        primary={{ to: "/campuses/mohandessin", label: "Explore the campus" }}
         secondary={{ to: "/contact", label: "Schedule a visit" }}
       />
       <ShareBar title="Our Campuses — Lighthouse Campus" />
