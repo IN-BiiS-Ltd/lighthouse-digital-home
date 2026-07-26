@@ -83,6 +83,14 @@ const dict: Record<string, { en: string; ar: string }> = {
   },
   "home.hero.cta.admissions": { en: "Begin the admissions journey", ar: "ابدأ رحلة التسجيل" },
   "home.hero.cta.about": { en: "Discover our story", ar: "اكتشف قصتنا" },
+
+  // ─── Search
+  "search.trigger": { en: "Open search", ar: "افتح البحث" },
+  "search.placeholder": { en: "Search pages...", ar: "ابحث في الصفحات..." },
+  "search.empty": { en: "No pages found.", ar: "لم يتم العثور على صفحات." },
+  "search.hint": { en: "Press ↑↓ to navigate, ↵ to open", ar: "↑↓ للتنقل، ↵ للفتح" },
+  "search.shortcut": { en: "⌘ + K to toggle", ar: "⌘ + K للفتح والإغلاق" },
+  "search.shortcut.ctrl": { en: "Ctrl + K to toggle", ar: "Ctrl + K للفتح والإغلاق" },
 };
 
 interface Ctx {

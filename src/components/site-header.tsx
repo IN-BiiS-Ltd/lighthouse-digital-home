@@ -24,6 +24,7 @@ import {
   SmartLink,
 } from "@/components/blocks";
 import { useLang, type Lang } from "@/lib/i18n";
+import { SiteSearch } from "@/components/site-search";
 // import { LanguageToggle } from "@/components/language-toggle"; // disabled — see hero section
 
 /** Map a top-level route to a translation key used by the dictionary. */
@@ -180,6 +181,9 @@ export function SiteHeader() {
           >
             Portals
           </SmartLink>
+          <div className="px-1">
+            <SiteSearch />
+          </div>
           <ButtonLink
             to="https://eduios.lighthousecampus.com/apply/lighthouse-campus"
             variant="gold"
@@ -213,6 +217,9 @@ export function SiteHeader() {
                 {/* <LanguageToggle /> */}
               </div>
               <div className="px-4 py-4">
+                <div className="mb-5">
+                  <SiteSearch variant="menu" />
+                </div>
                 <Accordion type="multiple" className="w-full">
                   {allNav.map((s) => (
                     <AccordionItem
