@@ -18,6 +18,19 @@ const dict: Record<string, { en: string; ar: string }> = {
   // ─── Skip link
   "a11y.skip": { en: "Skip to main content", ar: "تخطَّ إلى المحتوى الرئيسي" },
 
+  // ─── Site-wide announcement
+  "announcement.label": { en: "Academic year announcement", ar: "إعلان العام الدراسي" },
+  "announcement.full": {
+    en: "Registration is now open for the new academic year. Apply early and secure your child's place.",
+    ar: "التسجيل مفتوح الآن للعام الدراسي الجديد. قدّم طلبك مبكرًا و احجز مكان طفلك.",
+  },
+  "announcement.short": {
+    en: "Registration is now open for the new academic year.",
+    ar: "التسجيل مفتوح الآن للعام الدراسي الجديد.",
+  },
+  "announcement.cta": { en: "Learn more", ar: "اعرف المزيد" },
+  "announcement.dismiss": { en: "Dismiss announcement", ar: "إغلاق الإعلان" },
+
   // ─── Nav — top level
   "nav.about": { en: "About", ar: "من نحن" },
   "nav.our-model": { en: "Our Model", ar: "نموذجنا" },
