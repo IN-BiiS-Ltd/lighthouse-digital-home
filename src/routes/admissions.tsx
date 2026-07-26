@@ -100,6 +100,7 @@ function Admissions() {
               title: "The practical information families need.",
               description: "Clear, transparent detail — shared honestly, without pressure.",
               tiles: [
+                { title: "Academic Year Announcements", body: "Open registration dates and new academic year updates.", icon: <Bell className="size-5" />, to: "/admissions/academic-year-announcements" },
                 { title: "Application Process", body: "The five-step admissions journey explained in detail.", icon: <ClipboardList className="size-5" /> },
                 { title: "Requirements", body: "What we invite families to prepare.", icon: <FileText className="size-5" /> },
                 { title: "Tuition & Fees", body: "Clear, transparent fee information on request.", icon: <Wallet className="size-5" /> },
