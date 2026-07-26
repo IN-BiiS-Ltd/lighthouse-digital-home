@@ -89,7 +89,8 @@ const dict: Record<string, { en: string; ar: string }> = {
   "search.placeholder": { en: "Search pages...", ar: "ابحث في الصفحات..." },
   "search.empty": { en: "No pages found.", ar: "لم يتم العثور على صفحات." },
   "search.hint": { en: "Press ↑↓ to navigate, ↵ to open", ar: "↑↓ للتنقل، ↵ للفتح" },
-  "search.shortcut": { en: "{{modifier}} + K to toggle", ar: "{{modifier}} + K للفتح والإغلاق" },
+  "search.shortcut": { en: "⌘ + K to toggle", ar: "⌘ + K للفتح والإغلاق" },
+  "search.shortcut.ctrl": { en: "Ctrl + K to toggle", ar: "Ctrl + K للفتح والإغلاق" },
 };
 
 interface Ctx {
