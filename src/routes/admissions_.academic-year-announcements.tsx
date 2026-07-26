@@ -196,7 +196,8 @@ function Page() {
             primary: {
               to: APPLY,
               label: "Apply now",
-              external: true,
+              target: "_blank",
+              rel: "noopener noreferrer",
             },
             secondary: {
               to: "/contact",

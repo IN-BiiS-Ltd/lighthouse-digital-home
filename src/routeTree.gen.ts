@@ -94,6 +94,7 @@ import { Route as AdmissionsRequirementsRouteImport } from './routes/admissions_
 import { Route as AdmissionsFaqRouteImport } from './routes/admissions_.faq'
 import { Route as AdmissionsApplyOnlineRouteImport } from './routes/admissions_.apply-online'
 import { Route as AdmissionsApplicationProcessRouteImport } from './routes/admissions_.application-process'
+import { Route as AdmissionsAcademicYearAnnouncementsRouteImport } from './routes/admissions_.academic-year-announcements'
 import { Route as AboutWhyLighthouseRouteImport } from './routes/about_.why-lighthouse'
 import { Route as AboutVisionRouteImport } from './routes/about_.vision'
 import { Route as AboutOurStoryRouteImport } from './routes/about_.our-story'
@@ -557,6 +558,12 @@ const AdmissionsApplicationProcessRoute =
     path: '/admissions/application-process',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AdmissionsAcademicYearAnnouncementsRoute =
+  AdmissionsAcademicYearAnnouncementsRouteImport.update({
+    id: '/admissions_/academic-year-announcements',
+    path: '/admissions/academic-year-announcements',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AboutWhyLighthouseRoute = AboutWhyLighthouseRouteImport.update({
   id: '/about_/why-lighthouse',
   path: '/about/why-lighthouse',
@@ -635,6 +642,7 @@ export interface FileRoutesByFullPath {
   '/about/our-story': typeof AboutOurStoryRoute
   '/about/vision': typeof AboutVisionRoute
   '/about/why-lighthouse': typeof AboutWhyLighthouseRoute
+  '/admissions/academic-year-announcements': typeof AdmissionsAcademicYearAnnouncementsRoute
   '/admissions/application-process': typeof AdmissionsApplicationProcessRoute
   '/admissions/apply-online': typeof AdmissionsApplyOnlineRoute
   '/admissions/faq': typeof AdmissionsFaqRoute
@@ -731,6 +739,7 @@ export interface FileRoutesByTo {
   '/about/our-story': typeof AboutOurStoryRoute
   '/about/vision': typeof AboutVisionRoute
   '/about/why-lighthouse': typeof AboutWhyLighthouseRoute
+  '/admissions/academic-year-announcements': typeof AdmissionsAcademicYearAnnouncementsRoute
   '/admissions/application-process': typeof AdmissionsApplicationProcessRoute
   '/admissions/apply-online': typeof AdmissionsApplyOnlineRoute
   '/admissions/faq': typeof AdmissionsFaqRoute
@@ -828,6 +837,7 @@ export interface FileRoutesById {
   '/about_/our-story': typeof AboutOurStoryRoute
   '/about_/vision': typeof AboutVisionRoute
   '/about_/why-lighthouse': typeof AboutWhyLighthouseRoute
+  '/admissions_/academic-year-announcements': typeof AdmissionsAcademicYearAnnouncementsRoute
   '/admissions_/application-process': typeof AdmissionsApplicationProcessRoute
   '/admissions_/apply-online': typeof AdmissionsApplyOnlineRoute
   '/admissions_/faq': typeof AdmissionsFaqRoute
@@ -926,6 +936,7 @@ export interface FileRouteTypes {
     | '/about/our-story'
     | '/about/vision'
     | '/about/why-lighthouse'
+    | '/admissions/academic-year-announcements'
     | '/admissions/application-process'
     | '/admissions/apply-online'
     | '/admissions/faq'
@@ -1022,6 +1033,7 @@ export interface FileRouteTypes {
     | '/about/our-story'
     | '/about/vision'
     | '/about/why-lighthouse'
+    | '/admissions/academic-year-announcements'
     | '/admissions/application-process'
     | '/admissions/apply-online'
     | '/admissions/faq'
@@ -1118,6 +1130,7 @@ export interface FileRouteTypes {
     | '/about_/our-story'
     | '/about_/vision'
     | '/about_/why-lighthouse'
+    | '/admissions_/academic-year-announcements'
     | '/admissions_/application-process'
     | '/admissions_/apply-online'
     | '/admissions_/faq'
@@ -1215,6 +1228,7 @@ export interface RootRouteChildren {
   AboutOurStoryRoute: typeof AboutOurStoryRoute
   AboutVisionRoute: typeof AboutVisionRoute
   AboutWhyLighthouseRoute: typeof AboutWhyLighthouseRoute
+  AdmissionsAcademicYearAnnouncementsRoute: typeof AdmissionsAcademicYearAnnouncementsRoute
   AdmissionsApplicationProcessRoute: typeof AdmissionsApplicationProcessRoute
   AdmissionsApplyOnlineRoute: typeof AdmissionsApplyOnlineRoute
   AdmissionsFaqRoute: typeof AdmissionsFaqRoute
@@ -1878,6 +1892,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdmissionsApplicationProcessRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admissions_/academic-year-announcements': {
+      id: '/admissions_/academic-year-announcements'
+      path: '/admissions/academic-year-announcements'
+      fullPath: '/admissions/academic-year-announcements'
+      preLoaderRoute: typeof AdmissionsAcademicYearAnnouncementsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about_/why-lighthouse': {
       id: '/about_/why-lighthouse'
       path: '/about/why-lighthouse'
@@ -1975,6 +1996,8 @@ const rootRouteChildren: RootRouteChildren = {
   AboutOurStoryRoute: AboutOurStoryRoute,
   AboutVisionRoute: AboutVisionRoute,
   AboutWhyLighthouseRoute: AboutWhyLighthouseRoute,
+  AdmissionsAcademicYearAnnouncementsRoute:
+    AdmissionsAcademicYearAnnouncementsRoute,
   AdmissionsApplicationProcessRoute: AdmissionsApplicationProcessRoute,
   AdmissionsApplyOnlineRoute: AdmissionsApplyOnlineRoute,
   AdmissionsFaqRoute: AdmissionsFaqRoute,
