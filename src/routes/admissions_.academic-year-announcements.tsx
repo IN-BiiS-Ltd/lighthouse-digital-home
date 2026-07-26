@@ -168,28 +168,6 @@ function Page() {
               ],
             },
           ],
-          related: [
-            {
-              title: "Application Process",
-              to: "/admissions/application-process",
-              body: "The five-step admissions journey.",
-            },
-            {
-              title: "Requirements",
-              to: "/admissions/requirements",
-              body: "What we invite families to prepare.",
-            },
-            {
-              title: "Schedule a Visit",
-              to: "/admissions/schedule-a-visit",
-              body: "See the campus in person.",
-            },
-            {
-              title: "Apply Online",
-              to: "/admissions/apply-online",
-              body: "Submit your application through the portal.",
-            },
-          ],
           cta: {
             title: "Ready to take the first step?",
             body: "Applications for the new academic year are open. We would be glad to welcome your family.",
