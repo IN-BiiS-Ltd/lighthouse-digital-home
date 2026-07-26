@@ -22,12 +22,12 @@ export const Route = createFileRoute("/campuses_/mohandessin")({
       {
         name: "description",
         content:
-          "The first operational Lighthouse campus in Mohandessin, Giza: overview, leadership, facilities, academic programmes, admissions and contact.",
+          "The first operational Lighthouse campus in Dokki, Giza: overview, leadership, facilities, academic programmes, admissions and contact.",
       },
       { property: "og:title", content: "Mohandessin Campus — Lighthouse Campus" },
       {
         property: "og:description",
-        content: "The first operational Lighthouse campus, in Mohandessin, Giza.",
+        content: "The first operational Lighthouse campus, in Dokki, Giza.",
       },
       { property: "og:url", content: "https://lighthousecampus.com/campuses/mohandessin" },
       { property: "og:type", content: "place" },
@@ -49,20 +49,20 @@ export const Route = createFileRoute("/campuses_/mohandessin")({
               image: "https://lighthousecampus.com/lighthouse-social-card.webp",
               slogan: "Guiding Minds. Inspiring Futures. Connecting Possibilities.",
               description:
-                "The first operational Lighthouse Campus, located in Mohandessin, Giza — an international K-12 learning community in Greater Cairo.",
+                "The first operational Lighthouse Campus, located in Dokki, Giza — an international K-12 learning community in Greater Cairo.",
               telephone: "+20-00-000-0000",
               email: "hello@lighthousecampus.edu",
               address: {
                 "@type": "PostalAddress",
-                streetAddress: "Mohandessin",
-                addressLocality: "Giza",
-                addressRegion: "Greater Cairo Governorate",
-                postalCode: "12411",
+                streetAddress: "66 El-Zahraa, Ad Doqi",
+                addressLocality: "Dokki",
+                addressRegion: "Giza Governorate",
+                postalCode: "3751053",
                 addressCountry: "EG",
               },
-              geo: { "@type": "GeoCoordinates", latitude: 30.055, longitude: 31.205 },
+              geo: { "@type": "GeoCoordinates", latitude: 30.0435, longitude: 31.211 },
               hasMap:
-                "https://www.google.com/maps/search/?api=1&query=Mohandessin%2C%20Giza%2C%20Egypt",
+                "https://www.google.com/maps/search/?api=1&query=66+El-Zahraa%2C+Ad+Doqi%2C+Dokki%2C+Giza+Governorate%2C+Egypt",
               areaServed: { "@type": "AdministrativeArea", name: "Greater Cairo" },
               foundingLocation: "Cairo, Egypt",
               openingHoursSpecification: [
@@ -266,7 +266,7 @@ function Mohandessin() {
             <ul className="mt-7 space-y-4 text-muted-foreground">
               <li className="flex gap-3">
                 <MapPin className="mt-0.5 size-5 shrink-0 text-sky" aria-hidden />
-                Mohandessin, Giza, Greater Cairo, Egypt
+                66 El-Zahraa, Ad Doqi, Dokki, Giza Governorate 3751053, Egypt
               </li>
               <li className="flex gap-3">
                 <Phone className="mt-0.5 size-5 shrink-0 text-sky" aria-hidden />
@@ -295,8 +295,8 @@ function Mohandessin() {
           </div>
           <div className="overflow-hidden rounded-2xl border border-border bg-secondary">
             <iframe
-              title="Map of Mohandessin, Giza"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=31.19%2C30.04%2C31.22%2C30.07&layer=mapnik"
+              title="Map of Dokki, Giza"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=31.2075%2C30.0415%2C31.2145%2C30.0455&layer=mapnik"
               className="h-full min-h-[22rem] w-full"
               loading="lazy"
             />
