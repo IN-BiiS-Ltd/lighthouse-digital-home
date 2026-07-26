@@ -181,6 +181,9 @@ export function SiteHeader() {
           >
             Portals
           </SmartLink>
+          <div className="hidden px-1 sm:inline-flex">
+            <SiteSearch />
+          </div>
           <ButtonLink
             to="https://eduios.lighthousecampus.com/apply/lighthouse-campus"
             variant="gold"
