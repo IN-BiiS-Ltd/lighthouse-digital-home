@@ -8,7 +8,7 @@ export const Route = createFileRoute("/about_/our-story")({
       {
         name: "description",
         content:
-          "Discover how Lighthouse Campus began and the long-term educational purpose guiding the institution from its founding campus in Mohandessin.",
+          "Discover how Lighthouse Campus began and the long-term educational purpose guiding the institution from its founding campus in Dokki, Giza.",
       },
       { property: "og:title", content: "Our Story | Lighthouse Campus" },
       {
@@ -49,7 +49,7 @@ function OurStory() {
             eyebrow: "The Beginning",
             title: "A campus conceived as a place where ambition and human development belong together.",
             body: [
-              "Our first operational campus in Mohandessin represents the beginning of a long-term educational journey. It was not designed to open as a finished institution; it was designed to open as a community that would continue to learn — about its students, its craft, and itself.",
+              "Our first operational campus in Dokki, Giza represents the beginning of a long-term educational journey. It was not designed to open as a finished institution; it was designed to open as a community that would continue to learn — about its students, its craft, and itself.",
               "Learning remains central. Students remain visible. Teachers build meaningful relationships. Families participate in the educational journey. These are not slogans printed on a wall; they are the daily practice by which the campus becomes what it says it is.",
             ],
             quote: {
@@ -86,9 +86,9 @@ function OurStory() {
           {
             numeral: "V",
             eyebrow: "The Founding Campus",
-            title: "Mohandessin — the founding expression of the Lighthouse vision.",
+            title: "Dokki, Giza — the founding expression of the Lighthouse vision.",
             body: [
-              "Mohandessin establishes the first living community from which the institution will learn, develop and grow. Its experience will contribute to the continuing development of the Lighthouse educational model and future campuses.",
+              "Dokki, Giza establishes the first living community from which the institution will learn, develop and grow. Its experience will contribute to the continuing development of the Lighthouse educational model and future campuses.",
               "The Lighthouse Campus story is still being written. Its direction is clear: to build an educational institution that remains human, ambitious, thoughtful and valuable across generations.",
             ],
           },
