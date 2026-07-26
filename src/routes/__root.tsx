@@ -17,6 +17,7 @@ import { ScrollProgress } from "../components/scroll-progress";
 import { CookieConsent } from "../components/cookie-consent";
 import { Analytics } from "../components/analytics";
 import { LanguageProvider } from "../lib/i18n";
+import { AnnouncementBar } from "../components/announcement-bar";
 
 
 function NotFoundComponent() {
@@ -249,6 +250,7 @@ function RootComponent() {
           >
             Skip to main content
           </a>
+          <AnnouncementBar />
           <SiteHeader />
           {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
           <main id="main" tabIndex={-1} className="flex-1 focus:outline-none">
