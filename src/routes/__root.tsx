@@ -66,7 +66,7 @@ function NotFoundComponent() {
           </Link>
         </div>
         <p className="mt-10 text-xs uppercase tracking-[0.35em] text-navy-foreground/50">
-          Lighthouse Campus · Mohandessin, Giza
+          Lighthouse Campus · Dokki, Giza
         </p>
       </div>
     </div>
@@ -197,8 +197,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                 "An international learning community in Cairo where students remain at the centre.",
               address: {
                 "@type": "PostalAddress",
-                addressLocality: "Mohandessin, Giza",
-                addressRegion: "Greater Cairo",
+                streetAddress: "66 El-Zahraa, Ad Doqi",
+                addressLocality: "Dokki",
+                addressRegion: "Giza Governorate",
+                postalCode: "3751053",
                 addressCountry: "EG",
               },
               areaServed: { "@type": "Country", name: "Egypt" },
