@@ -278,7 +278,11 @@ export function SiteSearch({ variant = "header", className }: SiteSearchProps) {
         </CommandList>
         <div className="flex items-center justify-between border-t px-3 py-2 text-xs text-muted-foreground">
           <span>{t("search.hint", "Press ↑↓ to navigate, ↵ to open")}</span>
-          <span>{t("search.shortcut", "{{modifier}} + K to toggle")}</span>
+          <span>
+            {isMac
+              ? t("search.shortcut", "⌘ + K to toggle")
+              : t("search.shortcut.ctrl", "Ctrl + K to toggle")}
+          </span>
         </div>
       </CommandDialog>
     </>
