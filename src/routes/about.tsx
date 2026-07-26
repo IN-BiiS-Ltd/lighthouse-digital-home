@@ -28,23 +28,23 @@ import campusEmblem from "@/assets/lighthouse-campus-emblem.png.asset.json";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Lighthouse Campus | Independent K–12 Institution in Mohandessin, Giza" },
+      { title: "About Lighthouse Campus | Independent K–12 Institution in Dokki, Giza" },
       {
         name: "description",
         content:
-          "Discover Lighthouse Campus — an independent K–12 educational institution in Mohandessin, Giza. Explore our story, vision, mission, values, philosophy, leadership and campus culture.",
+          "Discover Lighthouse Campus — an independent K–12 educational institution in Dokki, Giza. Explore our story, vision, mission, values, philosophy, leadership and campus culture.",
       },
       {
         name: "keywords",
         content:
-          "Lighthouse Campus, about Lighthouse Campus, independent school Mohandessin, Giza international school, K-12 Cairo, educational philosophy, school vision and mission",
+          "Lighthouse Campus, about Lighthouse Campus, independent school Dokki, Giza international school, K-12 Cairo, educational philosophy, school vision and mission",
       },
       { name: "robots", content: "index,follow,max-image-preview:large" },
       { property: "og:title", content: "About Lighthouse Campus — Where Potential Becomes Purpose" },
       {
         property: "og:description",
         content:
-          "An independent institution with its own philosophy, identity and long-term vision. Meet Lighthouse Campus in Mohandessin, Giza.",
+          "An independent institution with its own philosophy, identity and long-term vision. Meet Lighthouse Campus in Dokki, Giza.",
       },
       { property: "og:url", content: "https://lighthousecampus.com/about" },
       { property: "og:type", content: "website" },
@@ -54,7 +54,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "twitter:description",
         content:
-          "An independent K–12 institution in Mohandessin, Giza — guiding minds, inspiring futures, connecting possibilities.",
+          "An independent K–12 institution in Dokki, Giza — guiding minds, inspiring futures, connecting possibilities.",
       },
     ],
     links: [{ rel: "canonical", href: "https://lighthousecampus.com/about" }],
@@ -67,7 +67,7 @@ export const Route = createFileRoute("/about")({
           name: "About Lighthouse Campus",
           url: "https://lighthousecampus.com/about",
           description:
-            "An independent K–12 educational institution in Mohandessin, Giza — its story, philosophy, values and leadership.",
+            "An independent K–12 educational institution in Dokki, Giza — its story, philosophy, values and leadership.",
           mainEntity: {
             "@type": "EducationalOrganization",
             name: "Lighthouse Campus",
@@ -75,8 +75,10 @@ export const Route = createFileRoute("/about")({
             slogan: "Guiding Minds. Inspiring Futures. Connecting Possibilities.",
             address: {
               "@type": "PostalAddress",
-              addressLocality: "Mohandessin",
-              addressRegion: "Giza",
+              streetAddress: "66 El-Zahraa, Ad Doqi",
+              addressLocality: "Dokki",
+              addressRegion: "Giza Governorate",
+              postalCode: "3751053",
               addressCountry: "EG",
             },
           },
