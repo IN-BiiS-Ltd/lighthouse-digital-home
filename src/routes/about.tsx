@@ -199,7 +199,7 @@ function About() {
           stats={[
             { value: "Ages 3–18", label: "Learning Journey", caption: "From Early Years foundations through Upper Secondary readiness." },
             { value: "10", label: "Educational Pillars", caption: "The interlocking commitments that shape every classroom decision." },
-            { value: "1", label: "Founding Campus", caption: "Mohandessin, Giza — the first campus of a growing institution." },
+            { value: "1", label: "Founding Campus", caption: "Dokki, Giza — the first campus of a growing institution." },
             { value: "∞", label: "Possibilities", caption: "A learning community designed to open — not to narrow — futures." },
           ]}
         />
@@ -299,9 +299,9 @@ function About() {
       </Section>
 
       <Section id="location" tone="sand">
-        <SectionHeading eyebrow="Mohandessin, Giza" title="A new campus in the heart of Greater Cairo" />
+        <SectionHeading eyebrow="Dokki, Giza" title="A new campus in the heart of Greater Cairo" />
         <div className="mt-8 max-w-3xl space-y-5 text-lg leading-relaxed text-muted-foreground">
-          <p>Lighthouse Campus is located in Mohandessin, Giza, Greater Cairo — the founding campus of an institution designed to grow thoughtfully across the region.</p>
+          <p>Lighthouse Campus is located at 66 El-Zahraa, Ad Doqi, Dokki, Giza Governorate — the founding campus of an institution designed to grow thoughtfully across the region.</p>
           <p>Here, the strengths of a modern educational institution meet a forward-looking vision for learning, leadership and global readiness.</p>
           <p>Every learner is known, challenged and supported — academically, personally and as a future citizen of the world.</p>
         </div>
