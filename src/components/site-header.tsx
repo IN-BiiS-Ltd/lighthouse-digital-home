@@ -217,6 +217,9 @@ export function SiteHeader() {
                 {/* <LanguageToggle /> */}
               </div>
               <div className="px-4 py-4">
+                <div className="mb-5">
+                  <SiteSearch variant="menu" />
+                </div>
                 <Accordion type="multiple" className="w-full">
                   {allNav.map((s) => (
                     <AccordionItem
