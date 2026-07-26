@@ -181,7 +181,7 @@ export function SiteHeader() {
           >
             Portals
           </SmartLink>
-          <div className="hidden px-1 sm:inline-flex">
+          <div className="px-1">
             <SiteSearch />
           </div>
           <ButtonLink
