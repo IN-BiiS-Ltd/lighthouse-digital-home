@@ -313,7 +313,7 @@ function About() {
               <source type="image/webp" srcSet={campusExteriorWebp} sizes="(min-width: 1024px) 1024px, 100vw" />
               <img
                 src={campusExteriorPhoto}
-                alt="The Lighthouse Campus building in Mohandessin, Giza — a modern limestone institutional facade framed by mature palm trees under a deep blue sky"
+                alt="The Lighthouse Campus building in Dokki, Giza — a modern limestone institutional facade framed by mature palm trees under a deep blue sky"
                 width={1600}
                 height={1008}
                 loading="lazy"
@@ -323,7 +323,7 @@ function About() {
             </picture>
           </div>
           <figcaption className="mt-4 text-center text-sm text-muted-foreground">
-            The Lighthouse Campus · Mohandessin, Giza — Greater Cairo
+            The Lighthouse Campus · Dokki, Giza — Greater Cairo
           </figcaption>
         </figure>
       </Section>
@@ -357,7 +357,7 @@ function About() {
           <figcaption className="mt-5 text-center">
             <span className="eyebrow text-brand-blue">Official Institutional Lockup</span>
             <p className="mt-2 text-sm text-muted-foreground">
-              Lighthouse Campus · Mohandessin, Giza
+              Lighthouse Campus · Dokki, Giza
             </p>
           </figcaption>
         </figure>
@@ -378,7 +378,7 @@ function About() {
             </div>
             <figcaption className="mt-4 text-center">
               <span className="eyebrow text-brand-blue">Lighthouse Campus</span>
-              <p className="mt-1 text-sm text-muted-foreground">Mohandessin, Giza</p>
+              <p className="mt-1 text-sm text-muted-foreground">Dokki, Giza</p>
             </figcaption>
           </figure>
         </div>
@@ -418,7 +418,7 @@ function About() {
             </div>
             <figcaption className="mt-4 text-center">
               <span className="eyebrow text-brand-blue">Lighthouse Campus</span>
-              <p className="mt-1 text-sm text-muted-foreground">Mohandessin, Giza</p>
+              <p className="mt-1 text-sm text-muted-foreground">Dokki, Giza</p>
             </figcaption>
           </figure>
 
