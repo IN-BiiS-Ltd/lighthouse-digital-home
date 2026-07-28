@@ -8,7 +8,7 @@ export type RedirectRecord = {
   inboundLinks: { file: string; line: number }[];
 };
 
-export const redirectsGeneratedAt = "2026-07-28T17:01:19.066Z";
+export const redirectsGeneratedAt = "2026-07-28T17:01:54.239Z";
 
 export const redirectRecords: RedirectRecord[] = [
   {

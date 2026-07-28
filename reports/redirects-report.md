@@ -5,7 +5,7 @@ _Generated 2026-07-28 17:01 UTC · لوحة تحويلات 301 والروابط 
 | Metric | Value |
 | --- | --- |
 | Redirects mapped | 2 |
-| Files scanned for links | 251 |
+| Files scanned for links | 253 |
 | Links pointing at a redirect | 0 |
 | Blocking issues | 0 |
 | Status | ✅ PASSED |
