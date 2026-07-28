@@ -1,5 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { zodValidator, fallback } from "@tanstack/zod-adapter";
+import { z } from "zod";
+import { useEffect, useMemo, useRef } from "react";
 import { PageHero } from "@/components/page-hero";
 import { Section, Eyebrow, ButtonLink, SmartLink } from "@/components/blocks";
 import { ShareBar } from "@/components/share-bar";
@@ -190,12 +192,36 @@ function normalizeText(input: string) {
 }
 
 function AnnouncementsLibrary() {
-  const [query, setQuery] = useState("");
-  const [category, setCategory] = useState<"All" | Poster["category"]>("All");
-  const [dateFrom, setDateFrom] = useState("");
-  const [dateTo, setDateTo] = useState("");
-  const [sortField, setSortField] = useState<"title" | "date">("date");
-  const [sortAsc, setSortAsc] = useState(false);
+  const search = Route.useSearch();
+  const navigate = useNavigate({ from: Route.fullPath });
+
+  const query = search.q;
+  const category: "All" | Poster["category"] =
+    search.category === "Admissions" || search.category === "Careers" ? search.category : "All";
+  const dateFrom = search.from;
+  const dateTo = search.to;
+  const sortField: "title" | "date" = search.sort === "title" ? "title" : "date";
+  const sortAsc = search.dir === "asc";
+  const pageSize = [3, 6, 9, 12].includes(search.size) ? search.size : 6;
+
+  const setSearch = (
+    next: Partial<{ q: string; category: string; from: string; to: string; sort: string; dir: string; size: number; page: number }>,
+    resetPage = true,
+  ) => {
+    navigate({
+      search: (prev) => ({ ...prev, ...(resetPage ? { page: 1 } : {}), ...next }),
+      replace: true,
+      resetScroll: false,
+    });
+  };
+
+  const setQuery = (value: string) => setSearch({ q: value });
+  const setCategory = (value: "All" | Poster["category"]) => setSearch({ category: value });
+  const setDateFrom = (value: string) => setSearch({ from: value });
+  const setDateTo = (value: string) => setSearch({ to: value });
+  const setSortField = (value: "title" | "date") => setSearch({ sort: value });
+  const setSortAsc = (value: boolean) => setSearch({ dir: value ? "asc" : "desc" });
+  const setPageSize = (value: number) => setSearch({ size: value });
 
   const filtered = useMemo(() => {
     const q = normalizeText(query);
@@ -226,19 +252,13 @@ function AnnouncementsLibrary() {
 
   const hasActiveFilters = query || category !== "All" || dateFrom || dateTo || sortField !== "date" || sortAsc;
 
-  const [pageSize, setPageSize] = useState(6);
-  const [page, setPage] = useState(1);
   const gridRef = useRef<HTMLDivElement>(null);
   const shouldScrollRef = useRef(false);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
-  const safePage = Math.min(page, totalPages);
+  const safePage = Math.min(Math.max(1, search.page), totalPages);
   const pageStart = (safePage - 1) * pageSize;
   const visible = filtered.slice(pageStart, pageStart + pageSize);
-
-  useEffect(() => {
-    setPage(1);
-  }, [query, category, dateFrom, dateTo, sortField, sortAsc, pageSize]);
 
   useEffect(() => {
     if (!shouldScrollRef.current) return;
@@ -248,17 +268,15 @@ function AnnouncementsLibrary() {
 
   const goToPage = (next: number) => {
     shouldScrollRef.current = true;
-    setPage(Math.max(1, Math.min(totalPages, next)));
+    setSearch({ page: Math.max(1, Math.min(totalPages, next)) }, false);
   };
 
   const clearFilters = () => {
-    setQuery("");
-    setCategory("All");
-    setDateFrom("");
-    setDateTo("");
-    setSortField("date");
-    setSortAsc(false);
-    setPage(1);
+    navigate({
+      search: { q: "", category: "All", from: "", to: "", sort: "date", dir: "desc", size: 6, page: 1 },
+      replace: true,
+      resetScroll: false,
+    });
   };
 
   return (
