@@ -8,7 +8,7 @@
 | الملف | الوظيفة |
 | --- | --- |
 | `poster-template.html` | التنسيق المعتمد (الترويسة، الشبكة، المراحل، الشريط الذهبي، التذييل). لا يُعدَّل عند إنشاء إعلان جديد. |
-| `generate-poster.py` | مولّد الإعلان: يحقن الشعار الرسمي والمحتوى ثم يصدّر PNG + WebP بمقاس 1024×1536. |
+| `generate-poster.py` | مولّد الإعلان: يحقن الشعار الرسمي والمحتوى ثم يصدّر PNG + WebP بمقاس 1024×1536، بالإضافة إلى نسخ 512×768 و 256×384 للمعاينة المتجاوبة. |
 | `content/*.json` | ملفات المحتوى — هنا فقط تُكتب النصوص. |
 
 ## إنشاء إعلان جديد
@@ -23,7 +23,7 @@
 npm run poster -- scripts/posters/content/<اسم-جديد>.json
 ```
 
-الناتج: `public/<output>.png` و`public/<output>.webp`.
+الناتج: `public/<output>.png` و`public/<output>.webp`، بالإضافة إلى نسخ `<output>-512.png/webp` و`<output>-256.png/webp` للمعاينة المتجاوبة في المكتبة.
 
 5. أضف اسم الملف إلى `ALLOWED_PUBLIC_IMAGES` في `scripts/audit-logo.mjs`، ثم:
 

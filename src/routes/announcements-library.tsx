@@ -91,7 +91,11 @@ export const Route = createFileRoute("/announcements-library")({
   component: AnnouncementsLibrary,
 });
 
-function PosterCard({ p }: { p: Poster }) {
+function PosterCard({ p, priority }: { p: Poster; priority?: boolean }) {
+  const webpSrcSet = `${p.base}-256.webp 256w, ${p.base}-512.webp 512w, ${p.base}.webp 1024w`;
+  const pngSrcSet = `${p.base}-256.png 256w, ${p.base}-512.png 512w, ${p.base}.png 1024w`;
+  const sizes = "(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 360px";
+
   return (
     <article className="flex flex-col overflow-hidden rounded-2xl border border-gold/30 bg-card">
       <a
@@ -101,13 +105,18 @@ function PosterCard({ p }: { p: Poster }) {
         className="block bg-navy/5 p-4"
       >
         <picture>
-          <source srcSet={`${p.base}.webp`} type="image/webp" />
+          <source srcSet={webpSrcSet} sizes={sizes} type="image/webp" />
+          <source srcSet={pngSrcSet} sizes={sizes} type="image/png" />
           <img
             src={`${p.base}.png`}
             alt={`${p.title} — approved Lighthouse Campus announcement poster.`}
             width={1024}
             height={1536}
-            loading="lazy"
+            srcSet={pngSrcSet}
+            sizes={sizes}
+            loading={priority ? "eager" : "lazy"}
+            fetchPriority={priority ? "high" : "auto"}
+            decoding={priority ? "sync" : "async"}
             className="w-full rounded-xl shadow-sm"
           />
         </picture>
@@ -389,8 +398,8 @@ function AnnouncementsLibrary() {
         </div>
 
         <div className="mt-8 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-          {filtered.map((p) => (
-            <PosterCard key={p.key} p={p} />
+          {filtered.map((p, i) => (
+            <PosterCard key={p.key} p={p} priority={i < 3} />
           ))}
         </div>
 

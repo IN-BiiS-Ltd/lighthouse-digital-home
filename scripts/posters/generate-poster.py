@@ -10,7 +10,8 @@ The logo is ALWAYS pulled from the single approved asset pointer
 (src/assets/lighthouse-official-logo.png.asset.json) — it is never cropped,
 recoloured, regenerated or replaced. Only the JSON content changes.
 
-Outputs <out>.png (1024x1536) and <out>.webp into public/.
+Outputs <out>.png (1024x1536) and <out>.webp, plus 512 and 256 pixel
+variants for responsive gallery previews, all into public/.
 """
 import asyncio
 import base64
@@ -75,16 +76,29 @@ async def render(content: dict, out_stem: Path):
         )).new_page()
         await page.goto(tmp.as_uri(), wait_until="networkidle")
         await page.wait_for_timeout(600)
-        png = out_stem.with_suffix(".png")
-        await page.screenshot(path=str(png))
-        await browser.close()
+    png = out_stem.with_suffix(".png")
+    await page.screenshot(path=str(png))
+    await browser.close()
 
     from PIL import Image
 
-    img = Image.open(png).convert("RGB").resize((W, H), Image.LANCZOS)
-    img.save(png, optimize=True)
-    img.save(out_stem.with_suffix(".webp"), quality=88, method=6)
+    img = Image.open(png).convert("RGB")
+    # Save the canonical full-resolution poster.
+    full = img.resize((W, H), Image.LANCZOS)
+    full.save(png, optimize=True)
+    full.save(out_stem.with_suffix(".webp"), quality=88, method=6)
     print(f"✓ {png.relative_to(ROOT)}  +  {out_stem.with_suffix('.webp').relative_to(ROOT)}")
+
+    # Generate responsive downscale variants for gallery previews.
+    for target_w in (512, 256):
+        target_h = int(H * target_w / W)
+        thumb = img.resize((target_w, target_h), Image.LANCZOS)
+        thumb.save(out_stem.with_suffix(f".{target_w}.png"), optimize=True)
+        thumb.save(out_stem.with_suffix(f".{target_w}.webp"), quality=88, method=6)
+        print(
+            f"✓ {out_stem.with_suffix(f'.{target_w}.png').relative_to(ROOT)}  +  "
+            f"{out_stem.with_suffix(f'.{target_w}.webp').relative_to(ROOT)}"
+        )
 
 
 def main():
