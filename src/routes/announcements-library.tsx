@@ -335,32 +335,8 @@ function AnnouncementsLibrary() {
   const setSortAsc = (value: boolean) => setSearch({ dir: value ? "asc" : "desc" });
   const setPageSize = (value: number) => setSearch({ size: value });
 
-  const filtered = useMemo(() => {
-    const q = normalizeText(query);
-    let list = POSTERS.filter((p) => {
-      const matchesQuery =
-        q.length === 0 ||
-        normalizeText(p.title).includes(q) ||
-        normalizeText(p.titleAr).includes(q) ||
-        normalizeText(p.summary).includes(q);
-      const matchesCategory = category === "All" || p.category === category;
-      const matchesDate =
-        (!dateFrom || p.approved >= dateFrom) && (!dateTo || p.approved <= dateTo);
-      return matchesQuery && matchesCategory && matchesDate;
-    });
+  const filtered = useMemo(() => selectPosters(search), [search]);
 
-    list.sort((a, b) => {
-      let cmp = 0;
-      if (sortField === "date") {
-        cmp = a.approved.localeCompare(b.approved);
-      } else {
-        cmp = a.title.localeCompare(b.title);
-      }
-      return sortAsc ? cmp : -cmp;
-    });
-
-    return list;
-  }, [query, category, dateFrom, dateTo, sortField, sortAsc]);
 
   const hasActiveFilters = query || category !== "All" || dateFrom || dateTo || sortField !== "date" || sortAsc;
 
