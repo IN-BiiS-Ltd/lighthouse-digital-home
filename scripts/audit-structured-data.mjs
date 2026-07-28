@@ -126,10 +126,16 @@ for (const path of paths) {
   for (const raw of blocks) {
     try {
       const data = JSON.parse(raw);
-      for (const node of Array.isArray(data) ? data : [data]) {
-        if (!node["@context"]) fail(path, "JSON-LD block missing @context");
-        if (!node["@type"]) fail(path, "JSON-LD block missing @type");
-        parsed.push(node);
+      const top = Array.isArray(data) ? data : [data];
+      for (const entry of top) {
+        if (!entry["@context"] && !Array.isArray(entry["@graph"]))
+          fail(path, "JSON-LD block missing @context");
+        // schema.org allows a @graph container holding the real nodes
+        const nodes = Array.isArray(entry["@graph"]) ? entry["@graph"] : [entry];
+        for (const node of nodes) {
+          if (!node["@type"]) fail(path, "JSON-LD node missing @type");
+          parsed.push(node);
+        }
       }
     } catch (e) {
       fail(path, `invalid JSON-LD: ${e.message}`);
@@ -152,8 +158,8 @@ for (const path of paths) {
       ]) {
         if (!job[field]) fail(path, `JobPosting missing required field "${field}"`);
       }
-      if (job.hiringOrganization && job.hiringOrganization["@type"] !== "Organization")
-        fail(path, "JobPosting.hiringOrganization must be an Organization");
+      if (job.hiringOrganization && !/Organization$/.test(job.hiringOrganization["@type"] || ""))
+        fail(path, "JobPosting.hiringOrganization must be an Organization (or subtype)");
       if (job.jobLocation && job.jobLocation["@type"] !== "Place")
         fail(path, "JobPosting.jobLocation must be a Place");
       if (job.jobLocation?.address?.["@type"] !== "PostalAddress")
