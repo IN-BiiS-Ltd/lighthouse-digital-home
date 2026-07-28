@@ -17,6 +17,12 @@ import {
   SmartLink,
   BrandLogo,
 } from "@/components/blocks";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { NarrativeFlow } from "@/components/page-hero";
 import { BrandAtmosphere } from "@/components/brand-atmosphere";
 import { WatermarkFloat } from "@/components/watermark-float";
@@ -74,10 +80,66 @@ export const Route = createFileRoute("/")({
         fetchpriority: "high",
       } as unknown as { rel: string },
     ],
-
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: parentFaqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }),
+      },
+    ],
   }),
   component: Home,
 });
+
+const parentFaqs = [
+  {
+    q: "Is registration open for the 2026 / 2027 academic year?",
+    a: "Yes. Registration for the 2026 / 2027 academic year is open for Early Years through Secondary. Families can apply online, or schedule a campus visit in Dokki, Giza before applying.",
+  },
+  {
+    q: "Where is Lighthouse Campus located?",
+    a: "Our first operational campus is at 66 El-Zahraa, Ad Doqi, Dokki, Giza Governorate 3751053, Egypt. You can reach the admissions team on +20 110 703 0737.",
+  },
+  {
+    q: "What makes Lighthouse different from other schools?",
+    a: "Lighthouse is an independent institution designed around one continuous learning journey — five stages, each built for who a child is becoming. Every student is known by name by their mentors, and families are treated as educational partners rather than recipients of reports.",
+  },
+  {
+    q: "How does the school communicate with parents?",
+    a: "Parents receive structured, honest communication through the parent portal, scheduled mentor conversations and clear termly reporting — so you always know how your child is progressing academically, socially and emotionally.",
+  },
+  {
+    q: "How do I visit the campus before deciding?",
+    a: "Schedule a visit through the contact page or by phone. You will meet our people, see the learning spaces and ask the questions that matter to your family before any commitment.",
+  },
+];
+
+const parentPromises = [
+  {
+    title: "Your child is known by name",
+    body: "Mentor-led groups kept deliberately small, so progress, wellbeing and character are followed by a person — not a spreadsheet.",
+  },
+  {
+    title: "Safeguarding without compromise",
+    body: "Vetted staff, supervised movement, controlled access and clear health services. Safety is a system on this campus, not a promise.",
+  },
+  {
+    title: "You are never left guessing",
+    body: "Transparent reporting and open mentor conversations. You will know how your child is doing before you have to ask.",
+  },
+  {
+    title: "Ambition held with warmth",
+    body: "High academic expectations paired with real support — challenge that builds confidence instead of anxiety.",
+  },
+];
+
 
 const values = [
   {
@@ -215,6 +277,39 @@ function Home() {
             </div>
           </div>
 
+        </Container>
+      </section>
+
+      {/* ------------------------------------------ Admissions spotlight */}
+      <section className="border-b border-border bg-sand/60">
+        <Container className="flex flex-col gap-6 py-8 lg:flex-row lg:items-center lg:justify-between">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+            <span className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-sm font-semibold text-foreground">
+              <span aria-hidden className="size-2 rounded-full bg-gold" />
+              Registration open — 2026 / 2027
+            </span>
+            <p className="max-w-xl text-[0.975rem] leading-relaxed text-muted-foreground">
+              Early Years through Secondary. Limited places per mentor group, so
+              families are encouraged to visit and apply early.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <ButtonLink
+              to="https://eduios.lighthousecampus.com/apply/lighthouse-campus"
+              variant="gold"
+              size="md"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-event="CTA Click"
+              data-event-prop-cta="Apply"
+              data-event-prop-location="Home Admissions Band"
+            >
+              Apply online
+            </ButtonLink>
+            <ButtonLink to="/admissions/academic-year-announcements" variant="outline" size="md">
+              Key dates
+            </ButtonLink>
+          </div>
         </Container>
       </section>
 
@@ -478,7 +573,62 @@ function Home() {
         </div>
       </Section>
 
+      {/* ------------------------------------------ Promise to parents */}
+      <Section>
+        <SectionHeading
+          eyebrow="Our Promise to Families"
+          title="What you can expect from us, in plain language"
+          description="Choosing a school is a decision about trust. These are the commitments we hold ourselves to every single day."
+        />
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {parentPromises.map((p, i) => (
+            <div key={p.title} className="rounded-xl border border-border bg-card p-7">
+              <span className="font-display text-3xl text-gold/80">0{i + 1}</span>
+              <h3 className="mt-4 font-display text-xl font-medium text-foreground">
+                {p.title}
+              </h3>
+              <p className="mt-3 text-[0.975rem] leading-relaxed text-muted-foreground">
+                {p.body}
+              </p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* ------------------------------------------------------------ FAQ */}
+      <Section tone="muted">
+        <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
+          <div>
+            <SectionHeading
+              eyebrow="Questions Families Ask First"
+              title="Clear answers, before you decide"
+            />
+            <div className="mt-6 flex flex-wrap gap-3">
+              <ButtonLink to="/admissions/faq" variant="outline" size="md">
+                Full admissions FAQ
+              </ButtonLink>
+              <ButtonLink to="/contact" variant="outline" size="md">
+                Talk to admissions
+              </ButtonLink>
+            </div>
+          </div>
+          <Accordion type="single" collapsible className="w-full">
+            {parentFaqs.map((f, i) => (
+              <AccordionItem key={f.q} value={`faq-${i}`}>
+                <AccordionTrigger className="text-start font-display text-lg font-medium">
+                  {f.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-[0.975rem] leading-relaxed text-muted-foreground">
+                  {f.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </Section>
+
       {/* --------------------------------------------------- Admissions CTA */}
+
       <section className="bg-navy text-navy-foreground">
         <Container className="py-20 md:py-28">
           <div className="mx-auto max-w-3xl text-center">
