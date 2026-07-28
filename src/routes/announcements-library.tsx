@@ -216,6 +216,7 @@ function PosterCard({ p, priority, layout = "grid" }: { p: Poster; priority?: bo
   const webpSrcSet = `${p.base}-256.webp 256w, ${p.base}-512.webp 512w, ${p.base}.webp 1024w`;
   const pngSrcSet = `${p.base}-256.png 256w, ${p.base}-512.png 512w, ${p.base}.png 1024w`;
   const isList = layout === "list";
+  const [loaded, setLoaded] = useState(false);
   const sizes = isList
     ? "(max-width: 768px) 40vw, 220px"
     : "(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 360px";
@@ -234,6 +235,13 @@ function PosterCard({ p, priority, layout = "grid" }: { p: Poster; priority?: bo
         rel="noopener noreferrer"
         className={isList ? "block shrink-0 bg-navy/5 p-4 sm:w-56" : "block bg-navy/5 p-4"}
       >
+        <div
+          className="relative w-full overflow-hidden rounded-xl bg-navy/5"
+          style={{ aspectRatio: "1024 / 1536" }}
+        >
+          {!loaded && (
+            <div className="absolute inset-0 animate-pulse rounded-xl bg-gradient-to-b from-navy/10 to-navy/5" aria-hidden />
+          )}
         <picture>
           <source srcSet={webpSrcSet} sizes={sizes} type="image/webp" />
           <source srcSet={pngSrcSet} sizes={sizes} type="image/png" />
@@ -247,9 +255,11 @@ function PosterCard({ p, priority, layout = "grid" }: { p: Poster; priority?: bo
             loading={priority ? "eager" : "lazy"}
             fetchPriority={priority ? "high" : "auto"}
             decoding={priority ? "sync" : "async"}
-            className="w-full rounded-xl shadow-sm"
+            onLoad={() => setLoaded(true)}
+            className={`absolute inset-0 size-full rounded-xl object-cover shadow-sm transition-opacity duration-300 ${loaded ? "opacity-100" : "opacity-0"}`}
           />
         </picture>
+        </div>
       </a>
 
       <div className="flex flex-1 flex-col gap-3 p-5">
@@ -316,6 +326,34 @@ function PosterCard({ p, priority, layout = "grid" }: { p: Poster; priority?: bo
 }
 
 
+function PosterSkeleton({ layout }: { layout: "grid" | "list" }) {
+  const isList = layout === "list";
+  return (
+    <div
+      aria-hidden
+      className={
+        isList
+          ? "flex animate-pulse flex-col gap-4 rounded-2xl border border-gold/20 bg-card sm:flex-row"
+          : "flex animate-pulse flex-col rounded-2xl border border-gold/20 bg-card"
+      }
+    >
+      <div className={isList ? "shrink-0 p-4 sm:w-56" : "p-4"}>
+        <div className="w-full rounded-xl bg-navy/10" style={{ aspectRatio: "1024 / 1536" }} />
+      </div>
+      <div className="flex flex-1 flex-col gap-3 p-5">
+        <div className="h-5 w-24 rounded-full bg-navy/10" />
+        <div className="h-5 w-3/4 rounded bg-navy/10" />
+        <div className="h-4 w-1/2 rounded bg-navy/10" />
+        <div className="h-4 w-full rounded bg-navy/10" />
+        <div className="mt-auto flex gap-2 pt-4">
+          <div className="h-9 w-32 rounded-full bg-navy/10" />
+          <div className="h-9 w-24 rounded-full bg-navy/10" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function AnnouncementsLibrary() {
   const search = Route.useSearch();
   const navigate = useNavigate({ from: Route.fullPath });
@@ -361,6 +399,8 @@ function AnnouncementsLibrary() {
   const paginationRef = useRef<HTMLDivElement>(null);
   const shouldScrollRef = useRef(false);
   const [status, setStatus] = useState("");
+  const [isPending, setIsPending] = useState(false);
+  const [reservedHeight, setReservedHeight] = useState<number | undefined>(undefined);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
   const safePage = Math.min(Math.max(1, search.page), totalPages);
@@ -373,6 +413,23 @@ function AnnouncementsLibrary() {
     gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
     resultsHeadingRef.current?.focus({ preventScroll: true });
   }, [safePage]);
+
+  const transitionKey = `${search.q}|${search.category}|${search.from}|${search.to}|${search.sort}|${search.dir}|${search.size}|${search.page}|${search.view}`;
+  const firstTransitionRef = useRef(true);
+  useEffect(() => {
+    if (firstTransitionRef.current) {
+      firstTransitionRef.current = false;
+      return;
+    }
+    // Freeze the current results height so swapping layouts or pages cannot shift the page.
+    setReservedHeight(gridRef.current?.getBoundingClientRect().height);
+    setIsPending(true);
+    const timer = window.setTimeout(() => {
+      setIsPending(false);
+      setReservedHeight(undefined);
+    }, 260);
+    return () => window.clearTimeout(timer);
+  }, [transitionKey]);
 
   const filterKey = `${search.q}|${search.category}|${search.from}|${search.to}|${search.sort}|${search.dir}|${search.size}`;
   const firstRunRef = useRef(true);
@@ -630,10 +687,19 @@ function AnnouncementsLibrary() {
               ? "mt-4 flex scroll-mt-24 flex-col gap-4"
               : "mt-4 grid scroll-mt-24 gap-8 md:grid-cols-2 xl:grid-cols-3"
           }
+          style={reservedHeight ? { minHeight: reservedHeight } : undefined}
+          aria-busy={isPending}
         >
-          {visible.map((p, i) => (
-            <PosterCard key={p.key} p={p} layout={viewMode} priority={safePage === 1 && i < 3} />
-          ))}
+          {isPending
+            ? visible.map((p) => <PosterSkeleton key={`sk-${p.key}`} layout={viewMode} />)
+            : visible.map((p, i) => (
+                <PosterCard
+                  key={`${viewMode}-${p.key}`}
+                  p={p}
+                  layout={viewMode}
+                  priority={safePage === 1 && i < 3}
+                />
+              ))}
         </div>
 
         {filtered.length > 0 && (
