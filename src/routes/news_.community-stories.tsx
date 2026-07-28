@@ -47,42 +47,38 @@ const config = {
       ]
     },
     {
-      "eyebrow": "Editorial Standards",
-      "title": "How we write",
-      "bullets": [
-        "truthful and verified",
-        "respectful of learners and families",
-        "clear over clever",
-        "reflective, not promotional",
-        "aligned with institutional values",
-        "useful to readers"
+      "eyebrow": "Perspective",
+      "title": "How community stories are gathered",
+      "body": [
+        "These stories are told with partners, neighbours and families, in their own words wherever possible.",
+        "The school appears in them as one participant in a wider community, not the centre of it."
       ]
     }
   ],
   "status": {
-    "label": "Articles are published as they are ready",
-    "body": "Article listings appear here once approved editorial content is published. Categories, tags and reading time are supported by the article template."
+    "label": "Stories are published as relationships develop",
+    "body": "Community coverage grows with the partnerships and neighbourhood work it describes."
   },
   "related": [
+    {
+      "title": "Campus Events",
+      "to": "/news/campus-events",
+      "body": "Public moments across the school year."
+    },
+    {
+      "title": "Parent Guides",
+      "to": "/news/parent-guides",
+      "body": "Practical guides for families."
+    },
     {
       "title": "School News",
       "to": "/news/school-news",
       "body": "Institutional announcements and milestones."
-    },
-    {
-      "title": "Educational Insights",
-      "to": "/news/educational-insights",
-      "body": "Reflections on learning."
-    },
-    {
-      "title": "Student Stories",
-      "to": "/news/student-stories",
-      "body": "Voices from the campus."
     }
   ],
   "cta": {
-    "title": "Follow the story of the campus.",
-    "body": "Contact us to be kept in touch as new articles are published.",
+    "title": "See the campus in its community.",
+    "body": "Contact us to follow community stories as they are published.",
     "primary": {
       "to": "/contact",
       "label": "Get in touch"

@@ -47,42 +47,38 @@ const config = {
       ]
     },
     {
-      "eyebrow": "Editorial Standards",
-      "title": "How we write",
-      "bullets": [
-        "truthful and verified",
-        "respectful of learners and families",
-        "clear over clever",
-        "reflective, not promotional",
-        "aligned with institutional values",
-        "useful to readers"
+      "eyebrow": "Editorial Approach",
+      "title": "Ideas examined, not asserted",
+      "body": [
+        "Insight pieces set out an educational question, the thinking behind it and what it means in daily practice.",
+        "Where evidence is cited, its source and its limits are stated."
       ]
     }
   ],
   "status": {
-    "label": "Articles are published as they are ready",
-    "body": "Article listings appear here once approved editorial content is published. Categories, tags and reading time are supported by the article template."
+    "label": "Essays are published as the thinking matures",
+    "body": "Pieces appear here when they are genuinely ready — depth is preferred to frequency."
   },
   "related": [
     {
-      "title": "School News",
-      "to": "/news/school-news",
-      "body": "Institutional announcements and milestones."
+      "title": "Research & Reflection",
+      "to": "/news/research-reflection",
+      "body": "Longer-form institutional thinking."
     },
     {
-      "title": "Educational Insights",
-      "to": "/news/educational-insights",
-      "body": "Reflections on learning."
+      "title": "Teacher Stories",
+      "to": "/news/teacher-stories",
+      "body": "The people who teach on campus."
     },
     {
-      "title": "Student Stories",
-      "to": "/news/student-stories",
-      "body": "Voices from the campus."
+      "title": "Parent Guides",
+      "to": "/news/parent-guides",
+      "body": "Practical guides for families."
     }
   ],
   "cta": {
-    "title": "Follow the story of the campus.",
-    "body": "Contact us to be kept in touch as new articles are published.",
+    "title": "Follow the thinking behind the school.",
+    "body": "Contact us to be notified when new insight pieces are published.",
     "primary": {
       "to": "/contact",
       "label": "Get in touch"

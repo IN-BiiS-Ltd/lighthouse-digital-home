@@ -47,42 +47,38 @@ const config = {
       ]
     },
     {
-      "eyebrow": "Editorial Standards",
-      "title": "How we write",
-      "bullets": [
-        "truthful and verified",
-        "respectful of learners and families",
-        "clear over clever",
-        "reflective, not promotional",
-        "aligned with institutional values",
-        "useful to readers"
+      "eyebrow": "Consent and Care",
+      "title": "How student stories are told",
+      "body": [
+        "No learner appears in a story without the informed consent of the family and the student.",
+        "Names, images and details are used only to the extent the story genuinely needs."
       ]
     }
   ],
   "status": {
-    "label": "Articles are published as they are ready",
-    "body": "Article listings appear here once approved editorial content is published. Categories, tags and reading time are supported by the article template."
+    "label": "Stories are published with family consent",
+    "body": "A story appears here only after review and family approval. Consent can be withdrawn at any time."
   },
   "related": [
     {
-      "title": "School News",
-      "to": "/news/school-news",
-      "body": "Institutional announcements and milestones."
+      "title": "Teacher Stories",
+      "to": "/news/teacher-stories",
+      "body": "The people who teach on campus."
+    },
+    {
+      "title": "Campus Events",
+      "to": "/news/campus-events",
+      "body": "Public moments across the school year."
     },
     {
       "title": "Educational Insights",
       "to": "/news/educational-insights",
-      "body": "Reflections on learning."
-    },
-    {
-      "title": "Student Stories",
-      "to": "/news/student-stories",
-      "body": "Voices from the campus."
+      "body": "Reflections on learning and teaching."
     }
   ],
   "cta": {
-    "title": "Follow the story of the campus.",
-    "body": "Contact us to be kept in touch as new articles are published.",
+    "title": "Meet the learners.",
+    "body": "Contact us to follow new student stories as they are published.",
     "primary": {
       "to": "/contact",
       "label": "Get in touch"

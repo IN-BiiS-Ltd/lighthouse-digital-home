@@ -47,21 +47,17 @@ const config = {
       ]
     },
     {
-      "eyebrow": "Editorial Standards",
-      "title": "How we write",
-      "bullets": [
-        "truthful and verified",
-        "respectful of learners and families",
-        "clear over clever",
-        "reflective, not promotional",
-        "aligned with institutional values",
-        "useful to readers"
+      "eyebrow": "How Guides Are Built",
+      "title": "Practical, checked and dated",
+      "body": [
+        "Each guide answers one recurring family question with concrete steps rather than general advice.",
+        "Guides carry a review date and are updated when school practice changes."
       ]
     }
   ],
   "status": {
-    "label": "Articles are published as they are ready",
-    "body": "Article listings appear here once approved editorial content is published. Categories, tags and reading time are supported by the article template."
+    "label": "Guides are released ahead of the moments they support",
+    "body": "A guide is published before the point in the year at which families need it, then reviewed annually."
   },
   "related": [
     {
@@ -72,17 +68,17 @@ const config = {
     {
       "title": "Educational Insights",
       "to": "/news/educational-insights",
-      "body": "Reflections on learning."
+      "body": "Reflections on learning and teaching."
     },
     {
-      "title": "Student Stories",
-      "to": "/news/student-stories",
-      "body": "Voices from the campus."
+      "title": "Community Stories",
+      "to": "/news/community-stories",
+      "body": "The campus in its community."
     }
   ],
   "cta": {
-    "title": "Follow the story of the campus.",
-    "body": "Contact us to be kept in touch as new articles are published.",
+    "title": "Support for families, in one place.",
+    "body": "Contact us to be notified when new family guides are published.",
     "primary": {
       "to": "/contact",
       "label": "Get in touch"

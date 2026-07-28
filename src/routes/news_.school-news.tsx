@@ -48,41 +48,37 @@ const config = {
     },
     {
       "eyebrow": "Editorial Standards",
-      "title": "How we write",
-      "bullets": [
-        "truthful and verified",
-        "respectful of learners and families",
-        "clear over clever",
-        "reflective, not promotional",
-        "aligned with institutional values",
-        "useful to readers"
+      "title": "News you can rely on",
+      "body": [
+        "Institutional news is verified before publication and written plainly, without promotional language.",
+        "Announcements state what has been decided, when it takes effect and who it affects."
       ]
     }
   ],
   "status": {
-    "label": "Articles are published as they are ready",
-    "body": "Article listings appear here once approved editorial content is published. Categories, tags and reading time are supported by the article template."
+    "label": "Announcements are published as decisions are confirmed",
+    "body": "Notices appear here once they are formally approved. Time-sensitive announcements are also shared with families directly."
   },
   "related": [
     {
-      "title": "School News",
-      "to": "/news/school-news",
-      "body": "Institutional announcements and milestones."
-    },
-    {
       "title": "Educational Insights",
       "to": "/news/educational-insights",
-      "body": "Reflections on learning."
+      "body": "Reflections on learning and teaching."
     },
     {
-      "title": "Student Stories",
-      "to": "/news/student-stories",
-      "body": "Voices from the campus."
+      "title": "Campus Events",
+      "to": "/news/campus-events",
+      "body": "Public moments across the school year."
+    },
+    {
+      "title": "Community Stories",
+      "to": "/news/community-stories",
+      "body": "The campus in its community."
     }
   ],
   "cta": {
-    "title": "Follow the story of the campus.",
-    "body": "Contact us to be kept in touch as new articles are published.",
+    "title": "Stay informed about the school.",
+    "body": "Contact us to receive institutional announcements as they are published.",
     "primary": {
       "to": "/contact",
       "label": "Get in touch"
