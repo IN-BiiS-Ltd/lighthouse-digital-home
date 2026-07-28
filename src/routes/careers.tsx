@@ -18,19 +18,33 @@ import leadershipImgWebp from "@/assets/leadership.jpg?w=480;800;1200&format=web
 export const Route = createFileRoute("/careers")({
   head: () => ({
     meta: [
-      { title: "Careers — Working at Lighthouse Campus" },
+      { title: "Teachers Wanted 2025/2026 — Careers at Lighthouse Campus" },
       {
         name: "description",
         content:
-          "Join a community of mentors. Professional growth, opportunities and our recruitment process at Lighthouse Campus.",
+          "Lighthouse Campus is hiring teachers for 2025/2026 — Science, Maths, English, Arabic, Social Studies, Arts, PE, ICT and Music. Apply now.",
       },
-      { property: "og:title", content: "Careers — Lighthouse Campus" },
+      { property: "og:title", content: "Teachers Wanted 2025/2026 — Lighthouse Campus" },
       {
         property: "og:description",
-        content: "Working at Lighthouse Campus — a community of mentors.",
+        content:
+          "Join the Lighthouse Campus teaching team. Open teaching roles across nine subjects for the 2025/2026 academic year.",
       },
       { property: "og:url", content: "https://lighthousecampus.com/careers" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      {
+        property: "og:image",
+        content:
+          "https://id-preview--626b9399-5e69-4cf1-8f55-da2c8e16cb29.lovable.app/__l5e/assets-v1/89072032-02a7-40fd-a168-2e27ba7c5b0d/teachers-hiring-2025-2026.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://id-preview--626b9399-5e69-4cf1-8f55-da2c8e16cb29.lovable.app/__l5e/assets-v1/89072032-02a7-40fd-a168-2e27ba7c5b0d/teachers-hiring-2025-2026.png",
+      },
     ],
+
     links: [{ rel: "canonical", href: "https://lighthousecampus.com/careers" }],
   }),
   component: Careers,
