@@ -36,16 +36,55 @@ export const Route = createFileRoute("/careers")({
       {
         property: "og:image",
         content:
-          "https://id-preview--626b9399-5e69-4cf1-8f55-da2c8e16cb29.lovable.app/__l5e/assets-v1/89072032-02a7-40fd-a168-2e27ba7c5b0d/teachers-hiring-2025-2026.png",
+          "https://lighthousecampus.com/__l5e/assets-v1/89072032-02a7-40fd-a168-2e27ba7c5b0d/teachers-hiring-2025-2026.png",
       },
+      {
+        property: "og:image:secure_url",
+        content:
+          "https://lighthousecampus.com/__l5e/assets-v1/89072032-02a7-40fd-a168-2e27ba7c5b0d/teachers-hiring-2025-2026.png",
+      },
+      { property: "og:image:width", content: "1024" },
+      { property: "og:image:height", content: "1536" },
+      { property: "og:image:type", content: "image/png" },
+      { property: "og:image:alt", content: "Lighthouse Campus teacher recruitment 2025/2026" },
       {
         name: "twitter:image",
         content:
-          "https://id-preview--626b9399-5e69-4cf1-8f55-da2c8e16cb29.lovable.app/__l5e/assets-v1/89072032-02a7-40fd-a168-2e27ba7c5b0d/teachers-hiring-2025-2026.png",
+          "https://lighthousecampus.com/__l5e/assets-v1/89072032-02a7-40fd-a168-2e27ba7c5b0d/teachers-hiring-2025-2026.png",
       },
     ],
 
     links: [{ rel: "canonical", href: "https://lighthousecampus.com/careers" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "JobPosting",
+          title: "Teachers — Academic Year 2025/2026",
+          description:
+            "Lighthouse Campus is hiring teachers across Science, Mathematics, English Language, Arabic Language, Social Studies, Arts, Physical Education, ICT and Music for the 2025/2026 academic year.",
+          employmentType: "FULL_TIME",
+          hiringOrganization: {
+            "@type": "EducationalOrganization",
+            name: "Lighthouse Campus",
+            sameAs: "https://lighthousecampus.com",
+          },
+          jobLocation: {
+            "@type": "Place",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "66 El-Zahraa, Ad Doqi, Dokki",
+              addressLocality: "Giza",
+              postalCode: "3751053",
+              addressCountry: "EG",
+            },
+          },
+          directApply: true,
+          url: "https://lighthousecampus.com/careers",
+        }),
+      },
+    ],
   }),
   component: Careers,
 });

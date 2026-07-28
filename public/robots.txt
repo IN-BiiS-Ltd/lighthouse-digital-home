@@ -1,2 +1,6 @@
 User-agent: *
 Allow: /
+Allow: /careers
+Disallow: /community/careers
+
+Sitemap: https://lighthousecampus.com/sitemap.xml

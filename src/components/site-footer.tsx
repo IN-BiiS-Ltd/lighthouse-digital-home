@@ -59,6 +59,7 @@ export function SiteFooter() {
       titleKey: "footer.community",
       items: [
         { label: "Admissions", to: "/admissions" } as NavSection,
+        { label: "Careers — We are hiring", to: "/careers" } as NavSection,
         ...secondaryNav,
       ],
     },
