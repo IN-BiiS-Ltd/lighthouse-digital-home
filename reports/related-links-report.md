@@ -1,13 +1,13 @@
 # Related Links — Supervisor Report
-_Generated 2026-07-28 17:02 UTC · تقرير المشرف لروابط "Related"_
+_Generated 2026-07-28 18:09 UTC · تقرير المشرف لروابط "Related"_
 
 ## Summary / الملخص
 | Metric | Value |
 | --- | --- |
-| Routes audited | 96 |
+| Routes audited | 99 |
 | Related links | 129 |
 | Blocking issues | 0 |
-| Advisories | 83 |
+| Advisories | 86 |
 | Status | ✅ PASSED |
 
 ## Blocking issues / مخالفات توقف النشر
@@ -48,6 +48,8 @@ _Generated 2026-07-28 17:02 UTC · تقرير المشرف لروابط "Related
 - Peer pair (allowed) — /student-life/athletics <-> /student-life/clubs-activities link to each other within the same section
 - Peer pair (allowed) — /student-life/community-belonging <-> /student-life/leadership-service link to each other within the same section
 - Peer pair (allowed) — /student-life/community-belonging <-> /student-life/wellbeing link to each other within the same section
+- Orphan — no related block points to /_authenticated/admin/applications
+- Orphan — no related block points to /_authenticated
 - Orphan — no related block points to /about
 - Orphan — no related block points to /about/campus-culture
 - Orphan — no related block points to /about/leadership
@@ -59,6 +61,7 @@ _Generated 2026-07-28 17:02 UTC · تقرير المشرف لروابط "Related
 - Orphan — no related block points to /admissions
 - Orphan — no related block points to /admissions/academic-year-announcements
 - Orphan — no related block points to /admissions/apply-online
+- Orphan — no related block points to /auth
 - Orphan — no related block points to /campus-experience
 - Orphan — no related block points to /campus-experience/assembly-hall
 - Orphan — no related block points to /campus-experience/dining
