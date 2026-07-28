@@ -5,239 +5,112 @@ _Generated 2026-07-28 16:58 UTC · تقرير المشرف لروابط "Related
 | Metric | Value |
 | --- | --- |
 | Routes audited | 95 |
-| Related links | 12 |
-| Blocking issues | 123 |
-| Advisories | 90 |
+| Related links | 129 |
+| Blocking issues | 39 |
+| Advisories | 47 |
 | Status | ❌ FAILED |
 
 ## Blocking issues / مخالفات توقف النشر
-- Broken link — /admissions_/application-process -> /admissions/requirements (no such route)
-- Broken link — /admissions_/application-process -> /admissions/schedule-a-visit (no such route)
-- Broken link — /admissions_/application-process -> /admissions/faq (no such route)
-- Broken link — /admissions_/faq -> /admissions/application-process (no such route)
-- Broken link — /admissions_/faq -> /admissions/schedule-a-visit (no such route)
-- Broken link — /admissions_/faq -> /admissions/requirements (no such route)
-- Broken link — /admissions_/requirements -> /admissions/application-process (no such route)
-- Broken link — /admissions_/requirements -> /admissions/faq (no such route)
-- Broken link — /admissions_/requirements -> /admissions/tuition-fees (no such route)
-- Broken link — /admissions_/schedule-a-visit -> /admissions/application-process (no such route)
-- Broken link — /admissions_/schedule-a-visit -> /admissions/requirements (no such route)
-- Broken link — /admissions_/schedule-a-visit -> /admissions/faq (no such route)
-- Broken link — /admissions_/scholarships -> /admissions/tuition-fees (no such route)
-- Broken link — /admissions_/scholarships -> /admissions/application-process (no such route)
-- Broken link — /admissions_/scholarships -> /admissions/faq (no such route)
-- Broken link — /admissions_/tuition-fees -> /admissions/application-process (no such route)
-- Broken link — /admissions_/tuition-fees -> /admissions/scholarships (no such route)
-- Broken link — /admissions_/tuition-fees -> /admissions/faq (no such route)
-- Broken link — /campus-experience_/assembly-hall -> /student-life/arts-performance (no such route)
-- Broken link — /campus-experience_/assembly-hall -> /student-life/events (no such route)
-- Broken link — /campus-experience_/assembly-hall -> /student-life/community-belonging (no such route)
-- Broken link — /campus-experience_/classrooms -> /campus-experience/library (no such route)
-- Broken link — /campus-experience_/classrooms -> /campus-experience/laboratories (no such route)
-- Broken link — /campus-experience_/classrooms -> /campus-experience/innovation-creative-spaces (no such route)
-- Broken link — /campus-experience_/dining -> /student-life/wellbeing (no such route)
-- Broken link — /campus-experience_/dining -> /campus-experience/health-services (no such route)
-- Broken link — /campus-experience_/dining -> /campus-experience/overview (no such route)
-- Broken link — /campus-experience_/health-services -> /student-life/wellbeing (no such route)
-- Broken link — /campus-experience_/health-services -> /campus-experience/safety (no such route)
-- Broken link — /campus-experience_/health-services -> /our-model/parent-partnership (no such route)
-- Broken link — /campus-experience_/innovation-creative-spaces -> /campus-experience/laboratories (no such route)
-- Broken link — /campus-experience_/innovation-creative-spaces -> /student-life/arts-performance (no such route)
-- Broken link — /campus-experience_/innovation-creative-spaces -> /our-model/innovation (no such route)
-- Broken link — /campus-experience_/laboratories -> /campus-experience/innovation-creative-spaces (no such route)
-- Broken link — /campus-experience_/laboratories -> /campus-experience/classrooms (no such route)
-- Broken link — /campus-experience_/laboratories -> /about/educational-philosophy (no such route)
-- Broken link — /campus-experience_/library -> /campus-experience/classrooms (no such route)
-- Broken link — /campus-experience_/library -> /about/educational-philosophy (no such route)
-- Broken link — /campus-experience_/library -> /campus-experience/innovation-creative-spaces (no such route)
-- Broken link — /campus-experience_/outdoor-learning -> /campus-experience/overview (no such route)
-- Broken link — /campus-experience_/outdoor-learning -> /student-life/wellbeing (no such route)
-- Broken link — /campus-experience_/outdoor-learning -> /student-life/community-belonging (no such route)
-- Broken link — /campus-experience_/safety -> /campus-experience/health-services (no such route)
-- Broken link — /campus-experience_/safety -> /campus-experience/transportation (no such route)
-- Broken link — /campus-experience_/safety -> /parents/school-policies (no such route)
-- Broken link — /campus-experience_/sports-facilities -> /student-life/athletics (no such route)
-- Broken link — /campus-experience_/sports-facilities -> /student-life/wellbeing (no such route)
-- Broken link — /campus-experience_/sports-facilities -> /campus-experience/overview (no such route)
-- Broken link — /campus-experience_/transportation -> /campus-experience/safety (no such route)
-- Broken link — /campus-experience_/transportation -> /our-model/parent-partnership (no such route)
-- Broken link — /campus-experience_/transportation -> /parents/communication (no such route)
-- Broken link — /community_/community-programmes -> /student-life/leadership-service (no such route)
-- Broken link — /community_/community-programmes -> /community/partnerships (no such route)
-- Broken link — /community_/community-programmes -> /community/events (no such route)
-- Broken link — /community_/events -> /student-life/events (no such route)
-- Broken link — /community_/events -> /news/campus-events (no such route)
-- Broken link — /community_/events -> /community/community-programmes (no such route)
-- Broken link — /news_/campus-events -> /news/community-stories (no such route)
-- Broken link — /news_/campus-events -> /news/student-stories (no such route)
-- Broken link — /news_/campus-events -> /news/school-news (no such route)
-- Broken link — /news_/community-stories -> /news/campus-events (no such route)
-- Broken link — /news_/community-stories -> /news/parent-guides (no such route)
-- Broken link — /news_/community-stories -> /news/school-news (no such route)
-- Broken link — /news_/educational-insights -> /news/research-reflection (no such route)
-- Broken link — /news_/educational-insights -> /news/teacher-stories (no such route)
-- Broken link — /news_/educational-insights -> /news/parent-guides (no such route)
-- Broken link — /news_/parent-guides -> /news/school-news (no such route)
-- Broken link — /news_/parent-guides -> /news/educational-insights (no such route)
-- Broken link — /news_/parent-guides -> /news/community-stories (no such route)
-- Broken link — /news_/research-reflection -> /news/educational-insights (no such route)
-- Broken link — /news_/research-reflection -> /news/teacher-stories (no such route)
-- Broken link — /news_/research-reflection -> /news/school-news (no such route)
-- Broken link — /news_/school-news -> /news/educational-insights (no such route)
-- Broken link — /news_/school-news -> /news/campus-events (no such route)
-- Broken link — /news_/school-news -> /news/community-stories (no such route)
-- Broken link — /news_/student-stories -> /news/teacher-stories (no such route)
-- Broken link — /news_/student-stories -> /news/campus-events (no such route)
-- Broken link — /news_/student-stories -> /news/educational-insights (no such route)
-- Broken link — /news_/teacher-stories -> /news/student-stories (no such route)
-- Broken link — /news_/teacher-stories -> /news/educational-insights (no such route)
-- Broken link — /news_/teacher-stories -> /news/research-reflection (no such route)
-- Broken link — /parents_/communication -> /our-model/parent-partnership (no such route)
-- Broken link — /parents_/communication -> /parents/parent-portal (no such route)
-- Broken link — /parents_/communication -> /parents/family-resources (no such route)
-- Broken link — /parents_/family-engagement -> /our-model/parent-partnership (no such route)
-- Broken link — /parents_/family-engagement -> /student-life/community-belonging (no such route)
-- Broken link — /parents_/family-engagement -> /student-life/events (no such route)
-- Broken link — /parents_/family-resources -> /parents/communication (no such route)
-- Broken link — /parents_/family-resources -> /parents/school-policies (no such route)
-- Broken link — /parents_/family-resources -> /our-model/parent-partnership (no such route)
-- Broken link — /parents_/school-calendar -> /parents/communication (no such route)
-- Broken link — /parents_/school-calendar -> /parents/family-engagement (no such route)
-- Broken link — /parents_/school-calendar -> /student-life/events (no such route)
-- Broken link — /parents_/school-policies -> /about/governance (no such route)
-- Broken link — /parents_/school-policies -> /campus-experience/safety (no such route)
-- Broken link — /parents_/school-policies -> /parents/family-resources (no such route)
-- Broken link — /student-life_/arts-performance -> /student-life/clubs-activities (no such route)
-- Broken link — /student-life_/arts-performance -> /campus-experience/innovation-creative-spaces (no such route)
-- Broken link — /student-life_/arts-performance -> /student-life/community-belonging (no such route)
-- Broken link — /student-life_/athletics -> /student-life/wellbeing (no such route)
-- Broken link — /student-life_/athletics -> /student-life/clubs-activities (no such route)
-- Broken link — /student-life_/athletics -> /campus-experience/sports-facilities (no such route)
-- Broken link — /student-life_/clubs-activities -> /student-life/athletics (no such route)
-- Broken link — /student-life_/clubs-activities -> /student-life/arts-performance (no such route)
-- Broken link — /student-life_/clubs-activities -> /student-life/leadership-service (no such route)
-- Broken link — /student-life_/community-belonging -> /student-life/leadership-service (no such route)
-- Broken link — /student-life_/community-belonging -> /student-life/wellbeing (no such route)
-- Broken link — /student-life_/community-belonging -> /student-life/clubs-activities (no such route)
-- Broken link — /student-life_/events -> /student-life/community-belonging (no such route)
-- Broken link — /student-life_/events -> /news/campus-events (no such route)
-- Broken link — /student-life_/events -> /our-model/parent-partnership (no such route)
-- Broken link — /student-life_/leadership-service -> /about/core-values (no such route)
-- Broken link — /student-life_/leadership-service -> /student-life/community-belonging (no such route)
-- Broken link — /student-life_/leadership-service -> /community/community-programmes (no such route)
-- Broken link — /student-life_/wellbeing -> /student-life/community-belonging (no such route)
-- Broken link — /student-life_/wellbeing -> /campus-experience/health-services (no such route)
-- Broken link — /student-life_/wellbeing -> /our-model/parent-partnership (no such route)
 - Reciprocal loop — /accessibility <-> /privacy; related links must move forward, keep one direction only
 - Reciprocal loop — /accessibility <-> /terms; related links must move forward, keep one direction only
 - Reciprocal loop — /accessibility <-> /cookies; related links must move forward, keep one direction only
+- Reciprocal loop — /admissions/application-process <-> /admissions/requirements; related links must move forward, keep one direction only
+- Reciprocal loop — /admissions/application-process <-> /admissions/schedule-a-visit; related links must move forward, keep one direction only
+- Reciprocal loop — /admissions/application-process <-> /admissions/faq; related links must move forward, keep one direction only
+- Reciprocal loop — /admissions/faq <-> /admissions/schedule-a-visit; related links must move forward, keep one direction only
+- Reciprocal loop — /admissions/faq <-> /admissions/requirements; related links must move forward, keep one direction only
+- Reciprocal loop — /admissions/scholarships <-> /admissions/tuition-fees; related links must move forward, keep one direction only
+- Reciprocal loop — /campus-experience/classrooms <-> /campus-experience/library; related links must move forward, keep one direction only
+- Reciprocal loop — /campus-experience/classrooms <-> /campus-experience/laboratories; related links must move forward, keep one direction only
+- Reciprocal loop — /campus-experience/health-services <-> /student-life/wellbeing; related links must move forward, keep one direction only
+- Reciprocal loop — /campus-experience/health-services <-> /campus-experience/safety; related links must move forward, keep one direction only
+- Reciprocal loop — /campus-experience/innovation-creative-spaces <-> /campus-experience/laboratories; related links must move forward, keep one direction only
+- Reciprocal loop — /campus-experience/innovation-creative-spaces <-> /student-life/arts-performance; related links must move forward, keep one direction only
+- Reciprocal loop — /campus-experience/safety <-> /campus-experience/transportation; related links must move forward, keep one direction only
+- Reciprocal loop — /campus-experience/safety <-> /parents/school-policies; related links must move forward, keep one direction only
+- Reciprocal loop — /campus-experience/sports-facilities <-> /student-life/athletics; related links must move forward, keep one direction only
+- Reciprocal loop — /community/community-programmes <-> /student-life/leadership-service; related links must move forward, keep one direction only
+- Reciprocal loop — /community/community-programmes <-> /community/events; related links must move forward, keep one direction only
 - Reciprocal loop — /cookies <-> /privacy; related links must move forward, keep one direction only
 - Reciprocal loop — /cookies <-> /terms; related links must move forward, keep one direction only
+- Reciprocal loop — /news/campus-events <-> /news/community-stories; related links must move forward, keep one direction only
+- Reciprocal loop — /news/campus-events <-> /news/student-stories; related links must move forward, keep one direction only
+- Reciprocal loop — /news/campus-events <-> /news/school-news; related links must move forward, keep one direction only
+- Reciprocal loop — /news/community-stories <-> /news/parent-guides; related links must move forward, keep one direction only
+- Reciprocal loop — /news/community-stories <-> /news/school-news; related links must move forward, keep one direction only
+- Reciprocal loop — /news/educational-insights <-> /news/research-reflection; related links must move forward, keep one direction only
+- Reciprocal loop — /news/educational-insights <-> /news/teacher-stories; related links must move forward, keep one direction only
+- Reciprocal loop — /news/educational-insights <-> /news/parent-guides; related links must move forward, keep one direction only
+- Reciprocal loop — /news/research-reflection <-> /news/teacher-stories; related links must move forward, keep one direction only
+- Reciprocal loop — /news/student-stories <-> /news/teacher-stories; related links must move forward, keep one direction only
+- Reciprocal loop — /parents/communication <-> /parents/family-resources; related links must move forward, keep one direction only
+- Reciprocal loop — /parents/family-resources <-> /parents/school-policies; related links must move forward, keep one direction only
 - Reciprocal loop — /privacy <-> /terms; related links must move forward, keep one direction only
+- Reciprocal loop — /student-life/arts-performance <-> /student-life/clubs-activities; related links must move forward, keep one direction only
+- Reciprocal loop — /student-life/athletics <-> /student-life/clubs-activities; related links must move forward, keep one direction only
+- Reciprocal loop — /student-life/community-belonging <-> /student-life/leadership-service; related links must move forward, keep one direction only
+- Reciprocal loop — /student-life/community-belonging <-> /student-life/wellbeing; related links must move forward, keep one direction only
 
 ## Advisories / ملاحظات
 - Orphan — no related block points to /about
-- Orphan — no related block points to /about_/campus-culture
-- Orphan — no related block points to /about_/core-values
-- Orphan — no related block points to /about_/educational-philosophy
-- Orphan — no related block points to /about_/governance
-- Orphan — no related block points to /about_/leadership
-- Orphan — no related block points to /about_/mission
-- Orphan — no related block points to /about_/our-story
-- Orphan — no related block points to /about_/vision
-- Orphan — no related block points to /about_/why-lighthouse
+- Orphan — no related block points to /about/campus-culture
+- Orphan — no related block points to /about/leadership
+- Orphan — no related block points to /about/mission
+- Orphan — no related block points to /about/our-story
+- Orphan — no related block points to /about/vision
+- Orphan — no related block points to /about/why-lighthouse
 - Orphan — no related block points to /academic-experience
 - Orphan — no related block points to /admissions
-- Orphan — no related block points to /admissions_/academic-year-announcements
-- Orphan — no related block points to /admissions_/application-process
-- Orphan — no related block points to /admissions_/apply-online
-- Orphan — no related block points to /admissions_/faq
-- Orphan — no related block points to /admissions_/requirements
-- Orphan — no related block points to /admissions_/schedule-a-visit
-- Orphan — no related block points to /admissions_/scholarships
-- Orphan — no related block points to /admissions_/tuition-fees
+- Orphan — no related block points to /admissions/academic-year-announcements
+- Orphan — no related block points to /admissions/apply-online
 - Orphan — no related block points to /campus-experience
-- Orphan — no related block points to /campus-experience_/assembly-hall
-- Orphan — no related block points to /campus-experience_/classrooms
-- Orphan — no related block points to /campus-experience_/dining
-- Orphan — no related block points to /campus-experience_/health-services
-- Orphan — no related block points to /campus-experience_/innovation-creative-spaces
-- Orphan — no related block points to /campus-experience_/laboratories
-- Orphan — no related block points to /campus-experience_/library
-- Orphan — no related block points to /campus-experience_/outdoor-learning
-- Orphan — no related block points to /campus-experience_/overview
-- Orphan — no related block points to /campus-experience_/safety
-- Orphan — no related block points to /campus-experience_/sports-facilities
-- Orphan — no related block points to /campus-experience_/transportation
+- Orphan — no related block points to /campus-experience/assembly-hall
+- Orphan — no related block points to /campus-experience/dining
+- Orphan — no related block points to /campus-experience/outdoor-learning
 - Orphan — no related block points to /campuses
-- Orphan — no related block points to /campuses_/mohandessin
+- Orphan — no related block points to /campuses/mohandessin
 - Orphan — no related block points to /careers
 - Orphan — no related block points to /community
-- Orphan — no related block points to /community_/alumni
-- Orphan — no related block points to /community_/careers
-- Orphan — no related block points to /community_/community-programmes
-- Orphan — no related block points to /community_/events
-- Orphan — no related block points to /community_/partnerships
+- Orphan — no related block points to /community/alumni
+- Orphan — no related block points to /community/careers
 - Orphan — no related block points to /contact
 - Orphan — no related block points to /cookie-settings
 - Orphan — no related block points to /explore/digital-ecosystem
 - Orphan — no related block points to /learning-journey
-- Orphan — no related block points to /learning-journey_/early-years
-- Orphan — no related block points to /learning-journey_/graduation-pathways
-- Orphan — no related block points to /learning-journey_/preparatory
-- Orphan — no related block points to /learning-journey_/primary
-- Orphan — no related block points to /learning-journey_/secondary
+- Orphan — no related block points to /learning-journey/early-years
+- Orphan — no related block points to /learning-journey/graduation-pathways
+- Orphan — no related block points to /learning-journey/preparatory
+- Orphan — no related block points to /learning-journey/primary
+- Orphan — no related block points to /learning-journey/secondary
 - Orphan — no related block points to /news
-- Orphan — no related block points to /news_/campus-events
-- Orphan — no related block points to /news_/community-stories
-- Orphan — no related block points to /news_/educational-insights
-- Orphan — no related block points to /news_/parent-guides
-- Orphan — no related block points to /news_/research-reflection
-- Orphan — no related block points to /news_/school-news
-- Orphan — no related block points to /news_/student-stories
-- Orphan — no related block points to /news_/teacher-stories
 - Orphan — no related block points to /our-model
-- Orphan — no related block points to /our-model_/assessment-framework
-- Orphan — no related block points to /our-model_/educational-model
-- Orphan — no related block points to /our-model_/graduate-profile
-- Orphan — no related block points to /our-model_/innovation
-- Orphan — no related block points to /our-model_/institutional-intelligence
-- Orphan — no related block points to /our-model_/learner-profile
-- Orphan — no related block points to /our-model_/learning-ecosystem
-- Orphan — no related block points to /our-model_/parent-partnership
-- Orphan — no related block points to /our-model_/student-development
-- Orphan — no related block points to /our-model_/teaching-framework
+- Orphan — no related block points to /our-model/assessment-framework
+- Orphan — no related block points to /our-model/educational-model
+- Orphan — no related block points to /our-model/graduate-profile
+- Orphan — no related block points to /our-model/institutional-intelligence
+- Orphan — no related block points to /our-model/learner-profile
+- Orphan — no related block points to /our-model/learning-ecosystem
+- Orphan — no related block points to /our-model/student-development
+- Orphan — no related block points to /our-model/teaching-framework
 - Orphan — no related block points to /parents
-- Orphan — no related block points to /parents_/communication
-- Orphan — no related block points to /parents_/family-engagement
-- Orphan — no related block points to /parents_/family-resources
-- Orphan — no related block points to /parents_/parent-journey
-- Orphan — no related block points to /parents_/parent-partnership
-- Orphan — no related block points to /parents_/parent-portal
-- Orphan — no related block points to /parents_/school-calendar
-- Orphan — no related block points to /parents_/school-policies
+- Orphan — no related block points to /parents/parent-journey
+- Orphan — no related block points to /parents/parent-partnership
+- Orphan — no related block points to /parents/school-calendar
 - Orphan — no related block points to /portals
 - Orphan — no related block points to /sitemap.xml
 - Orphan — no related block points to /student-life
-- Orphan — no related block points to /student-life_/arts-performance
-- Orphan — no related block points to /student-life_/athletics
-- Orphan — no related block points to /student-life_/clubs-activities
-- Orphan — no related block points to /student-life_/community-belonging
-- Orphan — no related block points to /student-life_/events
-- Orphan — no related block points to /student-life_/leadership-service
-- Orphan — no related block points to /student-life_/wellbeing
 
 ## Most referenced destinations / الأكثر ارتباطًا
-- /accessibility — 3 inbound
-- /cookies — 3 inbound
-- /privacy — 3 inbound
-- /terms — 3 inbound
-- /about — 0 inbound
-- /about_/campus-culture — 0 inbound
-- /about_/core-values — 0 inbound
-- /about_/educational-philosophy — 0 inbound
-- /about_/governance — 0 inbound
-- /about_/leadership — 0 inbound
+- /our-model/parent-partnership — 7 inbound
+- /student-life/community-belonging — 7 inbound
+- /student-life/wellbeing — 6 inbound
+- /admissions/application-process — 5 inbound
+- /admissions/faq — 5 inbound
+- /news/campus-events — 5 inbound
+- /news/educational-insights — 5 inbound
+- /campus-experience/innovation-creative-spaces — 4 inbound
+- /news/school-news — 4 inbound
+- /student-life/events — 4 inbound
 
 ---
 Rules: related links are forward navigation only — no self-links, no repeated

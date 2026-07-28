@@ -19,7 +19,7 @@
  *
  *   node scripts/audit-related-links.mjs
  */
-import { readdirSync, readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { readdirSync, readFileSync, writeFileSync, mkdirSync, statSync } from "node:fs";
 import { join } from "node:path";
 
 const ROUTES_DIR = "src/routes";
@@ -27,16 +27,26 @@ const REPORT_PATH = "reports/related-links-report.md";
 const HUB_LIMIT = 12;
 
 /* ------------------------------------------------------------ route discovery */
-const files = readdirSync(ROUTES_DIR).filter((f) => /\.tsx?$/.test(f) && !f.startsWith("__") && f !== "routeTree.gen.ts");
+const walkDir = (dir) =>
+  readdirSync(dir).flatMap((entry) => {
+    const full = join(dir, entry);
+    if (statSync(full).isDirectory()) return walkDir(full);
+    return /\.tsx?$/.test(entry) && !entry.startsWith("__") && entry !== "routeTree.gen.ts" ? [full] : [];
+  });
+const files = walkDir(ROUTES_DIR);
+
+// Flat-route ids use a trailing underscore for non-nesting segments
+// (/about_/vision) while links use the real URL (/about/vision).
+const toUrl = (id) => id.replace(/_\//g, "/").replace(/\/$/, "") || "/";
 
 const pages = [];
 const redirectRoutes = new Map(); // route id -> redirect destination
 
 for (const file of files) {
-  const src = readFileSync(join(ROUTES_DIR, file), "utf8");
+  const src = readFileSync(file, "utf8");
   const m = src.match(/createFileRoute\(\s*["']([^"']+)["']\s*\)/);
   if (!m) continue;
-  const id = m[1].replace(/\/$/, "") || "/";
+  const id = toUrl(m[1]);
   if (id.startsWith("/api")) continue;
 
   const redirect = src.match(/redirect\(\s*{[^}]*to:\s*["']([^"']+)["']/);
