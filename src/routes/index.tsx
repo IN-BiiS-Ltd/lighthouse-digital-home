@@ -44,9 +44,9 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "An international learning community in Cairo where students remain at the centre. Discover our educational philosophy, learning journey, campus life and admissions.",
+          "An independent international learning community in Dokki, Giza. Explore our philosophy, learning journey, campus life and admissions.",
       },
-      { property: "og:title", content: "Lighthouse Campus" },
+      { property: "og:title", content: "Lighthouse Campus — Guiding Minds. Inspiring Futures." },
       {
         property: "og:description",
         content:
