@@ -4,13 +4,19 @@ import type { Database } from "@/integrations/supabase/types";
 
 type Client = SupabaseClient<Database>;
 
-export async function assertAdmin(supabase: Client, userId: string) {
-  const { data, error } = await supabase.rpc("has_role", {
-    _user_id: userId,
-    _role: "admin",
-  });
+export async function isAdmin(supabase: Client, userId: string) {
+  const { data, error } = await supabase
+    .from("user_roles")
+    .select("role")
+    .eq("user_id", userId)
+    .eq("role", "admin")
+    .maybeSingle();
   if (error) throw new Error(error.message);
-  if (!data) throw new Error("Forbidden");
+  return Boolean(data);
+}
+
+export async function assertAdmin(supabase: Client, userId: string) {
+  if (!(await isAdmin(supabase, userId))) throw new Error("Forbidden");
 }
 
 export async function fetchApplications(
