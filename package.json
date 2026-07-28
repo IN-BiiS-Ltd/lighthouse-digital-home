@@ -10,6 +10,7 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "audit:content": "node scripts/audit-content.mjs",
+    "audit:schema": "node scripts/audit-structured-data.mjs",
     "format": "prettier --write ."
   },
   "dependencies": {

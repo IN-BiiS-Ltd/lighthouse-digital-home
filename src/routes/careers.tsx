@@ -65,6 +65,8 @@ export const Route = createFileRoute("/careers")({
           description:
             "Lighthouse Campus is hiring teachers across Science, Mathematics, English Language, Arabic Language, Social Studies, Arts, Physical Education, ICT and Music for the 2025/2026 academic year.",
           employmentType: "FULL_TIME",
+          datePosted: "2026-07-01",
+          validThrough: "2026-12-31",
           hiringOrganization: {
             "@type": "EducationalOrganization",
             name: "Lighthouse Campus",
