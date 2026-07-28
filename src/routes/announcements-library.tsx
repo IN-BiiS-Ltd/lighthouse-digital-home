@@ -49,7 +49,7 @@ const POSTERS: Poster[] = [
     category: "Admissions",
     approved: "2026-07-28",
     approvedLabel: "28 July 2026",
-    size: "PNG 396 KB · 1024 × 1536",
+    size: "PNG 495 KB · 1024 × 1536",
     related: { label: "Admissions overview", to: "/admissions" },
   },
   {
