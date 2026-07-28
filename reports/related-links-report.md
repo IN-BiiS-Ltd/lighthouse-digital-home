@@ -6,12 +6,12 @@ _Generated 2026-07-28 16:59 UTC · تقرير المشرف لروابط "Related
 | --- | --- |
 | Routes audited | 95 |
 | Related links | 129 |
-| Blocking issues | 1 |
-| Advisories | 81 |
-| Status | ❌ FAILED |
+| Blocking issues | 0 |
+| Advisories | 82 |
+| Status | ✅ PASSED |
 
 ## Blocking issues / مخالفات توقف النشر
-- Cross-section loop — /campus-experience/dining <-> /student-life/wellbeing; related links must move forward, keep one direction only
+- None
 
 ## Advisories / ملاحظات
 - Peer pair (allowed) — /accessibility <-> /privacy link to each other within the same section
@@ -61,6 +61,7 @@ _Generated 2026-07-28 16:59 UTC · تقرير المشرف لروابط "Related
 - Orphan — no related block points to /admissions/apply-online
 - Orphan — no related block points to /campus-experience
 - Orphan — no related block points to /campus-experience/assembly-hall
+- Orphan — no related block points to /campus-experience/dining
 - Orphan — no related block points to /campus-experience/outdoor-learning
 - Orphan — no related block points to /campus-experience/sports-facilities
 - Orphan — no related block points to /campuses
