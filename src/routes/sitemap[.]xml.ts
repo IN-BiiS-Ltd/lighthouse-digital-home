@@ -90,15 +90,15 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/news/research-reflection", changefreq: "weekly", priority: "0.6" },
           { path: "/news/campus-events", changefreq: "weekly", priority: "0.6" },
           { path: "/news/community-stories", changefreq: "weekly", priority: "0.6" },
-          // Careers
-          { path: "/careers", changefreq: "monthly", priority: "0.6" },
+          // Careers — active teacher recruitment
+          { path: "/careers", changefreq: "weekly", priority: "0.9" },
           // Community
           { path: "/community", changefreq: "monthly", priority: "0.6" },
           { path: "/community/partnerships", changefreq: "monthly", priority: "0.6" },
           { path: "/community/alumni", changefreq: "monthly", priority: "0.6" },
           { path: "/community/community-programmes", changefreq: "monthly", priority: "0.6" },
           { path: "/community/events", changefreq: "monthly", priority: "0.6" },
-          { path: "/community/careers", changefreq: "monthly", priority: "0.6" },
+          // /community/careers is an interim placeholder that canonicalises to /careers
           // Campuses
           { path: "/campuses", changefreq: "monthly", priority: "0.8" },
           { path: "/campuses/mohandessin", changefreq: "monthly", priority: "0.8" },
