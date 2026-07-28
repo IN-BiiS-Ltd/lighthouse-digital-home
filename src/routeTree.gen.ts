@@ -25,10 +25,12 @@ import { Route as CommunityRouteImport } from './routes/community'
 import { Route as CareersRouteImport } from './routes/careers'
 import { Route as CampusesRouteImport } from './routes/campuses'
 import { Route as CampusExperienceRouteImport } from './routes/campus-experience'
+import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AdmissionsRouteImport } from './routes/admissions'
 import { Route as AccessibilityRouteImport } from './routes/accessibility'
 import { Route as AcademicExperienceRouteImport } from './routes/academic-experience'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as StudentLifeWellbeingRouteImport } from './routes/student-life_.wellbeing'
 import { Route as StudentLifeLeadershipServiceRouteImport } from './routes/student-life_.leadership-service'
@@ -105,6 +107,7 @@ import { Route as AboutGovernanceRouteImport } from './routes/about_.governance'
 import { Route as AboutEducationalPhilosophyRouteImport } from './routes/about_.educational-philosophy'
 import { Route as AboutCoreValuesRouteImport } from './routes/about_.core-values'
 import { Route as AboutCampusCultureRouteImport } from './routes/about_.campus-culture'
+import { Route as AuthenticatedAdminApplicationsRouteImport } from './routes/_authenticated/admin.applications'
 
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
@@ -186,6 +189,11 @@ const CampusExperienceRoute = CampusExperienceRouteImport.update({
   path: '/campus-experience',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdmissionsRoute = AdmissionsRouteImport.update({
   id: '/admissions',
   path: '/admissions',
@@ -204,6 +212,10 @@ const AcademicExperienceRoute = AcademicExperienceRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -616,6 +628,12 @@ const AboutCampusCultureRoute = AboutCampusCultureRouteImport.update({
   path: '/about/campus-culture',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedAdminApplicationsRoute =
+  AuthenticatedAdminApplicationsRouteImport.update({
+    id: '/admin/applications',
+    path: '/admin/applications',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -623,6 +641,7 @@ export interface FileRoutesByFullPath {
   '/academic-experience': typeof AcademicExperienceRoute
   '/accessibility': typeof AccessibilityRoute
   '/admissions': typeof AdmissionsRoute
+  '/auth': typeof AuthRoute
   '/campus-experience': typeof CampusExperienceRoute
   '/campuses': typeof CampusesRoute
   '/careers': typeof CareersRoute
@@ -714,6 +733,7 @@ export interface FileRoutesByFullPath {
   '/student-life/events': typeof StudentLifeEventsRoute
   '/student-life/leadership-service': typeof StudentLifeLeadershipServiceRoute
   '/student-life/wellbeing': typeof StudentLifeWellbeingRoute
+  '/admin/applications': typeof AuthenticatedAdminApplicationsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -721,6 +741,7 @@ export interface FileRoutesByTo {
   '/academic-experience': typeof AcademicExperienceRoute
   '/accessibility': typeof AccessibilityRoute
   '/admissions': typeof AdmissionsRoute
+  '/auth': typeof AuthRoute
   '/campus-experience': typeof CampusExperienceRoute
   '/campuses': typeof CampusesRoute
   '/careers': typeof CareersRoute
@@ -812,14 +833,17 @@ export interface FileRoutesByTo {
   '/student-life/events': typeof StudentLifeEventsRoute
   '/student-life/leadership-service': typeof StudentLifeLeadershipServiceRoute
   '/student-life/wellbeing': typeof StudentLifeWellbeingRoute
+  '/admin/applications': typeof AuthenticatedAdminApplicationsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/about': typeof AboutRoute
   '/academic-experience': typeof AcademicExperienceRoute
   '/accessibility': typeof AccessibilityRoute
   '/admissions': typeof AdmissionsRoute
+  '/auth': typeof AuthRoute
   '/campus-experience': typeof CampusExperienceRoute
   '/campuses': typeof CampusesRoute
   '/careers': typeof CareersRoute
@@ -911,6 +935,7 @@ export interface FileRoutesById {
   '/student-life_/events': typeof StudentLifeEventsRoute
   '/student-life_/leadership-service': typeof StudentLifeLeadershipServiceRoute
   '/student-life_/wellbeing': typeof StudentLifeWellbeingRoute
+  '/_authenticated/admin/applications': typeof AuthenticatedAdminApplicationsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -920,6 +945,7 @@ export interface FileRouteTypes {
     | '/academic-experience'
     | '/accessibility'
     | '/admissions'
+    | '/auth'
     | '/campus-experience'
     | '/campuses'
     | '/careers'
@@ -1011,6 +1037,7 @@ export interface FileRouteTypes {
     | '/student-life/events'
     | '/student-life/leadership-service'
     | '/student-life/wellbeing'
+    | '/admin/applications'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -1018,6 +1045,7 @@ export interface FileRouteTypes {
     | '/academic-experience'
     | '/accessibility'
     | '/admissions'
+    | '/auth'
     | '/campus-experience'
     | '/campuses'
     | '/careers'
@@ -1109,13 +1137,16 @@ export interface FileRouteTypes {
     | '/student-life/events'
     | '/student-life/leadership-service'
     | '/student-life/wellbeing'
+    | '/admin/applications'
   id:
     | '__root__'
     | '/'
+    | '/_authenticated'
     | '/about'
     | '/academic-experience'
     | '/accessibility'
     | '/admissions'
+    | '/auth'
     | '/campus-experience'
     | '/campuses'
     | '/careers'
@@ -1207,14 +1238,17 @@ export interface FileRouteTypes {
     | '/student-life_/events'
     | '/student-life_/leadership-service'
     | '/student-life_/wellbeing'
+    | '/_authenticated/admin/applications'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AboutRoute: typeof AboutRoute
   AcademicExperienceRoute: typeof AcademicExperienceRoute
   AccessibilityRoute: typeof AccessibilityRoute
   AdmissionsRoute: typeof AdmissionsRoute
+  AuthRoute: typeof AuthRoute
   CampusExperienceRoute: typeof CampusExperienceRoute
   CampusesRoute: typeof CampusesRoute
   CareersRoute: typeof CareersRoute
@@ -1422,6 +1456,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CampusExperienceRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/admissions': {
       id: '/admissions'
       path: '/admissions'
@@ -1448,6 +1489,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -1982,15 +2030,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutCampusCultureRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/admin/applications': {
+      id: '/_authenticated/admin/applications'
+      path: '/admin/applications'
+      fullPath: '/admin/applications'
+      preLoaderRoute: typeof AuthenticatedAdminApplicationsRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
   }
 }
 
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedAdminApplicationsRoute: typeof AuthenticatedAdminApplicationsRoute
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedAdminApplicationsRoute: AuthenticatedAdminApplicationsRoute,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AboutRoute: AboutRoute,
   AcademicExperienceRoute: AcademicExperienceRoute,
   AccessibilityRoute: AccessibilityRoute,
   AdmissionsRoute: AdmissionsRoute,
+  AuthRoute: AuthRoute,
   CampusExperienceRoute: CampusExperienceRoute,
   CampusesRoute: CampusesRoute,
   CareersRoute: CareersRoute,
@@ -2090,13 +2158,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
