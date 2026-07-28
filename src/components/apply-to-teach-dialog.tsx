@@ -259,7 +259,10 @@ export function ApplyToTeachDialog() {
       open={open}
       onOpenChange={(next) => {
         setOpen(next);
-        if (!next) setDone(false);
+        if (!next) {
+          setDone(false);
+          setReceipt(null);
+        }
       }}
     >
       <DialogTrigger asChild>

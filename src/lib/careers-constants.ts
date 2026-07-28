@@ -71,3 +71,8 @@ export const ACCEPTED_FILE_TYPES =
   ".pdf,.doc,.docx,.png,.jpg,.jpeg,.webp,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,image/png,image/jpeg,image/webp";
 
 export const MAX_FILE_BYTES = 10 * 1024 * 1024;
+
+/** Short, human-quotable reference derived from the application id. */
+export function applicationNumber(id: string) {
+  return `LHC-${id.replace(/-/g, "").slice(0, 8).toUpperCase()}`;
+}

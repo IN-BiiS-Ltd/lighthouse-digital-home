@@ -10,6 +10,9 @@ export {
   type StoredFile,
 } from "./careers.server";
 
+import { applicationNumber } from "./careers-constants";
+export { applicationNumber };
+
 import {
   RECIPIENT_EMAIL,
   type SavedApplication,
@@ -78,11 +81,6 @@ function buildAdminHtml(input: TeacherApplicationInput, saved: SavedApplication)
       <ul>${docs}</ul>
       <p style="color:#777;font-size:12px">Application number: ${applicationNumber(saved.id)}</p>
     </div>`;
-}
-
-/** Short, human-quotable reference derived from the application id. */
-export function applicationNumber(id: string) {
-  return `LHC-${id.replace(/-/g, "").slice(0, 8).toUpperCase()}`;
 }
 
 function buildApplicantHtml(input: TeacherApplicationInput, saved: SavedApplication) {
