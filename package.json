@@ -15,7 +15,8 @@
     "audit:all": "npm run audit:content && npm run audit:links && npm run audit:redirects && npm run audit:logo",
     "format": "prettier --write .",
     "audit:redirects": "node scripts/audit-redirects.mjs",
-    "audit:logo": "node scripts/audit-logo.mjs"
+    "audit:logo": "node scripts/audit-logo.mjs",
+    "poster": "python3 scripts/posters/generate-poster.py"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
