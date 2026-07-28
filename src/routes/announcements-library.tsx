@@ -3,7 +3,7 @@ import { useMemo, useState } from "react";
 import { PageHero } from "@/components/page-hero";
 import { Section, Eyebrow, ButtonLink, SmartLink } from "@/components/blocks";
 import { ShareBar } from "@/components/share-bar";
-import { Download, CheckCircle2, CalendarDays, Search, SlidersHorizontal, ArrowUpDown, ArrowUp, ArrowDown, X } from "lucide-react";
+import { Download, CheckCircle2, CalendarDays, Search, SlidersHorizontal, ArrowUp, ArrowDown, X } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
