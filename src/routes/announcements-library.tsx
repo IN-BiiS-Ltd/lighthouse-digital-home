@@ -1,4 +1,4 @@
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, useNavigate, useRouterState } from "@tanstack/react-router";
 import { zodValidator, fallback } from "@tanstack/zod-adapter";
 import { z } from "zod";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -354,9 +354,12 @@ function PosterSkeleton({ layout }: { layout: "grid" | "list" }) {
   );
 }
 
+const VIEW_STORAGE_KEY = "lighthouse:announcements-library:view";
+
 function AnnouncementsLibrary() {
   const search = Route.useSearch();
   const navigate = useNavigate({ from: Route.fullPath });
+  const searchStr = useRouterState({ select: (s) => s.location.searchStr });
 
   const query = search.q;
   const category: "All" | Poster["category"] =
@@ -412,6 +415,11 @@ function AnnouncementsLibrary() {
     if (value === viewMode) return;
     // Keep the user in place: no page reset, no scroll, focus stays on the toggle.
     setSearch({ view: value }, false);
+    try {
+      window.localStorage.setItem(VIEW_STORAGE_KEY, value);
+    } catch {
+      /* storage unavailable — preference simply is not persisted */
+    }
     setStatus(
       value === "list"
         ? `List view. Showing ${visible.length} of ${filtered.length} posters on page ${safePage} of ${totalPages}.`
@@ -444,6 +452,26 @@ function AnnouncementsLibrary() {
     gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
     resultsHeadingRef.current?.focus({ preventScroll: true });
   }, [safePage]);
+
+  // Restore the saved view preference only when the URL does not specify one,
+  // so shared links keep the view their author chose.
+  const restoredViewRef = useRef(false);
+  useEffect(() => {
+    if (restoredViewRef.current) return;
+    restoredViewRef.current = true;
+    if (searchStr.includes("view=")) return;
+    let saved: string | null = null;
+    try {
+      saved = window.localStorage.getItem(VIEW_STORAGE_KEY);
+    } catch {
+      saved = null;
+    }
+    if (saved === "list" || saved === "grid") {
+      if (saved !== viewMode) {
+        navigate({ search: { ...search, view: saved }, replace: true, resetScroll: false });
+      }
+    }
+  }, []);
 
   const transitionKey = `${search.q}|${search.category}|${search.from}|${search.to}|${search.sort}|${search.dir}|${search.size}|${search.page}|${search.view}`;
   const firstTransitionRef = useRef(true);
