@@ -47,42 +47,38 @@ const config = {
       ]
     },
     {
-      "eyebrow": "Editorial Standards",
-      "title": "How we write",
-      "bullets": [
-        "truthful and verified",
-        "respectful of learners and families",
-        "clear over clever",
-        "reflective, not promotional",
-        "aligned with institutional values",
-        "useful to readers"
+      "eyebrow": "Portraits of Practice",
+      "title": "How educator profiles are written",
+      "body": [
+        "Each profile is written with the teacher, not about them, and reviewed before publication.",
+        "Profiles focus on practice — how a teacher thinks, plans and works with learners."
       ]
     }
   ],
   "status": {
-    "label": "Articles are published as they are ready",
-    "body": "Article listings appear here once approved editorial content is published. Categories, tags and reading time are supported by the article template."
+    "label": "Profiles are published across the academic year",
+    "body": "Educator profiles appear gradually as colleagues join and settle into the campus."
   },
   "related": [
-    {
-      "title": "School News",
-      "to": "/news/school-news",
-      "body": "Institutional announcements and milestones."
-    },
-    {
-      "title": "Educational Insights",
-      "to": "/news/educational-insights",
-      "body": "Reflections on learning."
-    },
     {
       "title": "Student Stories",
       "to": "/news/student-stories",
       "body": "Voices from the campus."
+    },
+    {
+      "title": "Educational Insights",
+      "to": "/news/educational-insights",
+      "body": "Reflections on learning and teaching."
+    },
+    {
+      "title": "Research & Reflection",
+      "to": "/news/research-reflection",
+      "body": "Longer-form institutional thinking."
     }
   ],
   "cta": {
-    "title": "Follow the story of the campus.",
-    "body": "Contact us to be kept in touch as new articles are published.",
+    "title": "Meet the educators.",
+    "body": "Contact us to follow new educator profiles as they are published.",
     "primary": {
       "to": "/contact",
       "label": "Get in touch"

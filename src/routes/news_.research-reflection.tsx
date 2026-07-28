@@ -47,42 +47,38 @@ const config = {
       ]
     },
     {
-      "eyebrow": "Editorial Standards",
-      "title": "How we write",
-      "bullets": [
-        "truthful and verified",
-        "respectful of learners and families",
-        "clear over clever",
-        "reflective, not promotional",
-        "aligned with institutional values",
-        "useful to readers"
+      "eyebrow": "Method and Honesty",
+      "title": "Slow writing, stated limits",
+      "body": [
+        "Longer pieces show their reasoning: what was observed, what was tried and what remains uncertain.",
+        "Institutional practice is reported honestly, including what has not yet worked."
       ]
     }
   ],
   "status": {
-    "label": "Articles are published as they are ready",
-    "body": "Article listings appear here once approved editorial content is published. Categories, tags and reading time are supported by the article template."
+    "label": "Longer pieces are published a few times a year",
+    "body": "This section moves deliberately slowly; publication follows the completion of real institutional work."
   },
   "related": [
+    {
+      "title": "Educational Insights",
+      "to": "/news/educational-insights",
+      "body": "Reflections on learning and teaching."
+    },
+    {
+      "title": "Teacher Stories",
+      "to": "/news/teacher-stories",
+      "body": "The people who teach on campus."
+    },
     {
       "title": "School News",
       "to": "/news/school-news",
       "body": "Institutional announcements and milestones."
-    },
-    {
-      "title": "Educational Insights",
-      "to": "/news/educational-insights",
-      "body": "Reflections on learning."
-    },
-    {
-      "title": "Student Stories",
-      "to": "/news/student-stories",
-      "body": "Voices from the campus."
     }
   ],
   "cta": {
-    "title": "Follow the story of the campus.",
-    "body": "Contact us to be kept in touch as new articles are published.",
+    "title": "Read the longer thinking.",
+    "body": "Contact us to receive longer-form pieces as they are published.",
     "primary": {
       "to": "/contact",
       "label": "Get in touch"
