@@ -1,13 +1,13 @@
 # Related Links — Supervisor Report
-_Generated 2026-07-28 18:09 UTC · تقرير المشرف لروابط "Related"_
+_Generated 2026-07-28 19:01 UTC · تقرير المشرف لروابط "Related"_
 
 ## Summary / الملخص
 | Metric | Value |
 | --- | --- |
-| Routes audited | 99 |
+| Routes audited | 100 |
 | Related links | 129 |
 | Blocking issues | 0 |
-| Advisories | 86 |
+| Advisories | 87 |
 | Status | ✅ PASSED |
 
 ## Blocking issues / مخالفات توقف النشر
@@ -61,6 +61,7 @@ _Generated 2026-07-28 18:09 UTC · تقرير المشرف لروابط "Related
 - Orphan — no related block points to /admissions
 - Orphan — no related block points to /admissions/academic-year-announcements
 - Orphan — no related block points to /admissions/apply-online
+- Orphan — no related block points to /announcements-library
 - Orphan — no related block points to /auth
 - Orphan — no related block points to /campus-experience
 - Orphan — no related block points to /campus-experience/assembly-hall

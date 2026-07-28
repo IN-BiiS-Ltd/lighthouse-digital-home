@@ -121,6 +121,7 @@ export const primaryNav: NavSection[] = [
     children: [
       { label: "Admissions Overview", to: "/admissions", description: "The Lighthouse admissions journey." },
       { label: "Academic Year Announcements", label_ar: "إعلانات العام الدراسي", to: "/admissions/academic-year-announcements", description: "Open registration dates and new academic year updates." },
+      { label: "Announcements Library", label_ar: "مكتبة الإعلانات", to: "/announcements-library", description: "Approved posters with previews, approval dates and downloads." },
       { label: "Application Process", to: "/admissions/application-process", description: "The five-step journey." },
       { label: "Requirements", to: "/admissions/requirements", description: "What we invite families to prepare." },
       { label: "Tuition & Fees", to: "/admissions/tuition-fees", description: "Clear, transparent fee information." },
