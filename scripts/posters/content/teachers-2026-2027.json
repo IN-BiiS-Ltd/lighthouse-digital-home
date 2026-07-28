@@ -7,12 +7,21 @@
   "ctaNote": "التقديم مفتوح — عبر صفحة الوظائف",
   "locality": "القاهرة",
   "localityNote": "الدقي - الجيزة",
-  "photo": "public/teachers-photo.jpg",
+  "photo": null,
   "listTitle": "التخصصات المطلوبة",
   "list": [
-    { "title": "English · Mathematics · Science", "note": "المرحلتان الابتدائية والمتوسطة" },
-    { "title": "Arabic · Islamic Studies · Social Studies", "note": "جميع المراحل" },
-    { "title": "ICT · Art · Physical Education", "note": "معلمو التخصصات" }
+    {
+      "title": "English · Mathematics · Science",
+      "note": "المرحلتان الابتدائية والمتوسطة"
+    },
+    {
+      "title": "Arabic · Islamic Studies · Social Studies",
+      "note": "جميع المراحل"
+    },
+    {
+      "title": "ICT · Art · Physical Education",
+      "note": "معلمو التخصصات"
+    }
   ],
   "bullets": [
     "مؤهل تربوي معتمد",
@@ -24,17 +33,48 @@
   ],
   "stagesTitle": "بيئة عمل مؤسسية",
   "stages": [
-    { "title": "تطوير مهني", "en": "Professional growth", "note": "برامج تدريب مستمرة" },
-    { "title": "قيادة تربوية", "en": "Instructional leadership", "note": "إشراف ومتابعة" },
-    { "title": "موارد حديثة", "en": "Modern resources", "note": "فصول مجهزة" },
-    { "title": "حزمة تنافسية", "en": "Competitive package", "note": "رواتب ومزايا" }
+    {
+      "title": "تطوير مهني",
+      "en": "Professional growth",
+      "note": "برامج تدريب مستمرة"
+    },
+    {
+      "title": "قيادة تربوية",
+      "en": "Instructional leadership",
+      "note": "إشراف ومتابعة"
+    },
+    {
+      "title": "موارد حديثة",
+      "en": "Modern resources",
+      "note": "فصول مجهزة"
+    },
+    {
+      "title": "حزمة تنافسية",
+      "en": "Competitive package",
+      "note": "رواتب ومزايا"
+    }
   ],
   "strip": [
-    { "title": "معايير دولية", "note": "في التدريس" },
-    { "title": "فريق داعم", "note": "وثقافة تعاون" },
-    { "title": "مسار وظيفي", "note": "واضح" },
-    { "title": "بيئة آمنة", "note": "ومحترمة" },
-    { "title": "أثر حقيقي", "note": "في حياة المتعلمين" }
+    {
+      "title": "معايير دولية",
+      "note": "في التدريس"
+    },
+    {
+      "title": "فريق داعم",
+      "note": "وثقافة تعاون"
+    },
+    {
+      "title": "مسار وظيفي",
+      "note": "واضح"
+    },
+    {
+      "title": "بيئة آمنة",
+      "note": "ومحترمة"
+    },
+    {
+      "title": "أثر حقيقي",
+      "note": "في حياة المتعلمين"
+    }
   ],
   "email": "ceo@lighthousecampus.com",
   "phone": "+20 110 703 0737",
