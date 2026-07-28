@@ -23,6 +23,9 @@ jobs:
       - name: Audit related links (self-links, loops, orphans) + supervisor report
         run: node scripts/audit-related-links.mjs
 
+      - name: Enforce official logo usage (reject modified or unofficial logos)
+        run: node scripts/audit-logo.mjs
+
       - name: Audit 301 redirects + links pointing at redirect hops
         run: node scripts/audit-redirects.mjs
 
