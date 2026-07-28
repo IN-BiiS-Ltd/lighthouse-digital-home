@@ -67,6 +67,18 @@ const POSTERS: Poster[] = [
   },
 ];
 
+const librarySearchSchema = z.object({
+  q: fallback(z.string(), "").default(""),
+  category: fallback(z.string(), "All").default("All"),
+  from: fallback(z.string(), "").default(""),
+  to: fallback(z.string(), "").default(""),
+  sort: fallback(z.string(), "date").default("date"),
+  dir: fallback(z.string(), "desc").default("desc"),
+  size: fallback(z.number().int(), 6).default(6),
+  page: fallback(z.number().int(), 1).default(1),
+});
+
+
 export const Route = createFileRoute("/announcements-library")({
   head: () => ({
     meta: [
