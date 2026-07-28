@@ -23,7 +23,7 @@
 npm run poster -- scripts/posters/content/<اسم-جديد>.json
 ```
 
-الناتج: `public/<output>.png` و`public/<output>.webp`.
+الناتج: `public/<output>.png` و`public/<output>.webp`، بالإضافة إلى نسخ `<output>-512.png/webp` و`<output>-256.png/webp` للمعاينة المتجاوبة في المكتبة.
 
 5. أضف اسم الملف إلى `ALLOWED_PUBLIC_IMAGES` في `scripts/audit-logo.mjs`، ثم:
 
