@@ -112,6 +112,8 @@ function selectPosters(search: LibrarySearch) {
   return list;
 }
 
+// Canonical URLs intentionally omit `view` (grid/list): both views render the
+// same posters in the same order, so they must collapse to one indexed URL.
 function pagedUrl(page: number) {
   return page <= 1 ? URL : `${URL}?page=${page}`;
 }
@@ -127,8 +129,8 @@ export const Route = createFileRoute("/announcements-library")({
       Boolean(search.to) ||
       search.sort !== "date" ||
       search.dir !== "desc" ||
-      search.size !== 6 ||
-      search.view === "list";
+      search.size !== 6;
+
 
     const pageSize = [3, 6, 9, 12].includes(search.size) ? search.size : 6;
     const list = selectPosters(search);
