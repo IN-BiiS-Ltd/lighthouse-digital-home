@@ -26,6 +26,7 @@ import { Route as CareersRouteImport } from './routes/careers'
 import { Route as CampusesRouteImport } from './routes/campuses'
 import { Route as CampusExperienceRouteImport } from './routes/campus-experience'
 import { Route as AuthRouteImport } from './routes/auth'
+import { Route as AnnouncementsLibraryRouteImport } from './routes/announcements-library'
 import { Route as AdmissionsRouteImport } from './routes/admissions'
 import { Route as AccessibilityRouteImport } from './routes/accessibility'
 import { Route as AcademicExperienceRouteImport } from './routes/academic-experience'
@@ -192,6 +193,11 @@ const CampusExperienceRoute = CampusExperienceRouteImport.update({
 const AuthRoute = AuthRouteImport.update({
   id: '/auth',
   path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnnouncementsLibraryRoute = AnnouncementsLibraryRouteImport.update({
+  id: '/announcements-library',
+  path: '/announcements-library',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdmissionsRoute = AdmissionsRouteImport.update({
@@ -641,6 +647,7 @@ export interface FileRoutesByFullPath {
   '/academic-experience': typeof AcademicExperienceRoute
   '/accessibility': typeof AccessibilityRoute
   '/admissions': typeof AdmissionsRoute
+  '/announcements-library': typeof AnnouncementsLibraryRoute
   '/auth': typeof AuthRoute
   '/campus-experience': typeof CampusExperienceRoute
   '/campuses': typeof CampusesRoute
@@ -741,6 +748,7 @@ export interface FileRoutesByTo {
   '/academic-experience': typeof AcademicExperienceRoute
   '/accessibility': typeof AccessibilityRoute
   '/admissions': typeof AdmissionsRoute
+  '/announcements-library': typeof AnnouncementsLibraryRoute
   '/auth': typeof AuthRoute
   '/campus-experience': typeof CampusExperienceRoute
   '/campuses': typeof CampusesRoute
@@ -843,6 +851,7 @@ export interface FileRoutesById {
   '/academic-experience': typeof AcademicExperienceRoute
   '/accessibility': typeof AccessibilityRoute
   '/admissions': typeof AdmissionsRoute
+  '/announcements-library': typeof AnnouncementsLibraryRoute
   '/auth': typeof AuthRoute
   '/campus-experience': typeof CampusExperienceRoute
   '/campuses': typeof CampusesRoute
@@ -945,6 +954,7 @@ export interface FileRouteTypes {
     | '/academic-experience'
     | '/accessibility'
     | '/admissions'
+    | '/announcements-library'
     | '/auth'
     | '/campus-experience'
     | '/campuses'
@@ -1045,6 +1055,7 @@ export interface FileRouteTypes {
     | '/academic-experience'
     | '/accessibility'
     | '/admissions'
+    | '/announcements-library'
     | '/auth'
     | '/campus-experience'
     | '/campuses'
@@ -1146,6 +1157,7 @@ export interface FileRouteTypes {
     | '/academic-experience'
     | '/accessibility'
     | '/admissions'
+    | '/announcements-library'
     | '/auth'
     | '/campus-experience'
     | '/campuses'
@@ -1248,6 +1260,7 @@ export interface RootRouteChildren {
   AcademicExperienceRoute: typeof AcademicExperienceRoute
   AccessibilityRoute: typeof AccessibilityRoute
   AdmissionsRoute: typeof AdmissionsRoute
+  AnnouncementsLibraryRoute: typeof AnnouncementsLibraryRoute
   AuthRoute: typeof AuthRoute
   CampusExperienceRoute: typeof CampusExperienceRoute
   CampusesRoute: typeof CampusesRoute
@@ -1461,6 +1474,13 @@ declare module '@tanstack/react-router' {
       path: '/auth'
       fullPath: '/auth'
       preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/announcements-library': {
+      id: '/announcements-library'
+      path: '/announcements-library'
+      fullPath: '/announcements-library'
+      preLoaderRoute: typeof AnnouncementsLibraryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admissions': {
@@ -2058,6 +2078,7 @@ const rootRouteChildren: RootRouteChildren = {
   AcademicExperienceRoute: AcademicExperienceRoute,
   AccessibilityRoute: AccessibilityRoute,
   AdmissionsRoute: AdmissionsRoute,
+  AnnouncementsLibraryRoute: AnnouncementsLibraryRoute,
   AuthRoute: AuthRoute,
   CampusExperienceRoute: CampusExperienceRoute,
   CampusesRoute: CampusesRoute,
