@@ -14,45 +14,155 @@ export type Database = {
   }
   public: {
     Tables: {
-      teacher_applications: {
+      application_documents: {
         Row: {
+          application_id: string
+          content_type: string | null
           created_at: string
-          cv_filename: string | null
-          cv_path: string | null
-          email: string
-          experience_years: string
-          full_name: string
+          file_name: string
+          file_path: string
           id: string
-          message: string | null
-          phone: string
-          qualification: string
-          subject: string
+          kind: string
+          size_bytes: number | null
         }
         Insert: {
+          application_id: string
+          content_type?: string | null
           created_at?: string
-          cv_filename?: string | null
-          cv_path?: string | null
+          file_name: string
+          file_path: string
+          id?: string
+          kind: string
+          size_bytes?: number | null
+        }
+        Update: {
+          application_id?: string
+          content_type?: string | null
+          created_at?: string
+          file_name?: string
+          file_path?: string
+          id?: string
+          kind?: string
+          size_bytes?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "application_documents_application_id_fkey"
+            columns: ["application_id"]
+            isOneToOne: false
+            referencedRelation: "teacher_applications"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      teacher_applications: {
+        Row: {
+          admin_notes: string | null
+          available_from: string | null
+          city: string | null
+          country_of_residence: string | null
+          cover_letter: string | null
+          created_at: string
+          current_employer: string | null
+          current_position: string | null
+          curriculum_experience: string[]
+          cv_filename: string | null
+          cv_path: string | null
+          date_of_birth: string | null
           email: string
           experience_years: string
           full_name: string
-          id?: string
-          message?: string | null
+          gender: string | null
+          id: string
+          message: string | null
+          motivation: string | null
+          nationality: string | null
           phone: string
+          position_applied_for: string | null
           qualification: string
+          status: Database["public"]["Enums"]["application_status"]
           subject: string
+          university: string | null
+          updated_at: string
         }
-        Update: {
+        Insert: {
+          admin_notes?: string | null
+          available_from?: string | null
+          city?: string | null
+          country_of_residence?: string | null
+          cover_letter?: string | null
           created_at?: string
+          current_employer?: string | null
+          current_position?: string | null
+          curriculum_experience?: string[]
           cv_filename?: string | null
           cv_path?: string | null
+          date_of_birth?: string | null
+          email: string
+          experience_years: string
+          full_name: string
+          gender?: string | null
+          id?: string
+          message?: string | null
+          motivation?: string | null
+          nationality?: string | null
+          phone: string
+          position_applied_for?: string | null
+          qualification: string
+          status?: Database["public"]["Enums"]["application_status"]
+          subject: string
+          university?: string | null
+          updated_at?: string
+        }
+        Update: {
+          admin_notes?: string | null
+          available_from?: string | null
+          city?: string | null
+          country_of_residence?: string | null
+          cover_letter?: string | null
+          created_at?: string
+          current_employer?: string | null
+          current_position?: string | null
+          curriculum_experience?: string[]
+          cv_filename?: string | null
+          cv_path?: string | null
+          date_of_birth?: string | null
           email?: string
           experience_years?: string
           full_name?: string
+          gender?: string | null
           id?: string
           message?: string | null
+          motivation?: string | null
+          nationality?: string | null
           phone?: string
+          position_applied_for?: string | null
           qualification?: string
+          status?: Database["public"]["Enums"]["application_status"]
           subject?: string
+          university?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
         }
         Relationships: []
       }
@@ -61,10 +171,23 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "moderator" | "user"
+      application_status:
+        | "new"
+        | "under_review"
+        | "shortlisted"
+        | "interview"
+        | "accepted"
+        | "rejected"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -191,6 +314,16 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "moderator", "user"],
+      application_status: [
+        "new",
+        "under_review",
+        "shortlisted",
+        "interview",
+        "accepted",
+        "rejected",
+      ],
+    },
   },
 } as const
