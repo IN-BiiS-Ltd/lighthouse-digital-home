@@ -222,7 +222,7 @@ function AnnouncementsLibrary() {
     resetPage = true,
   ) => {
     navigate({
-      search: (prev) => ({ ...prev, ...(resetPage ? { page: 1 } : {}), ...next }),
+      search: { ...search, ...(resetPage ? { page: 1 } : {}), ...next },
       replace: true,
       resetScroll: false,
     });
