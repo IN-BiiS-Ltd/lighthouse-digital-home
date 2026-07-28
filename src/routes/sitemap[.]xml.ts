@@ -89,6 +89,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/news/research-reflection", changefreq: "weekly", priority: "0.6" },
           { path: "/news/campus-events", changefreq: "weekly", priority: "0.6" },
           { path: "/news/community-stories", changefreq: "weekly", priority: "0.6" },
+          { path: "/announcements-library", changefreq: "weekly", priority: "0.8" },
           // Careers — active teacher recruitment
           { path: "/careers", changefreq: "weekly", priority: "0.9" },
           // Community
