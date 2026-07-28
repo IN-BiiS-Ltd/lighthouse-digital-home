@@ -83,9 +83,9 @@ const config = {
       "body": "Interests beyond the timetable."
     },
     {
-      "title": "Sports Facilities",
-      "to": "/campus-experience/sports-facilities",
-      "body": "Spaces designed for healthy, purposeful movement."
+      "title": "Student Events",
+      "to": "/student-life/events",
+      "body": "Fixtures, tournaments and the shared moments around them."
     }
   ],
   "cta": {

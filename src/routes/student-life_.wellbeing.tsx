@@ -78,9 +78,9 @@ const config = {
       "body": "Belonging comes before performance."
     },
     {
-      "title": "Health Services",
-      "to": "/campus-experience/health-services",
-      "body": "Care available on campus."
+      "title": "Family Resources",
+      "to": "/parents/family-resources",
+      "body": "Practical guidance families use to support wellbeing at home."
     },
     {
       "title": "Parent Partnership",

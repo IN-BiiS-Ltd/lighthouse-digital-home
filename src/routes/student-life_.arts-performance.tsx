@@ -74,9 +74,9 @@ const config = {
       "body": "Interests explored beyond the timetable."
     },
     {
-      "title": "Innovation & Creative Spaces",
-      "to": "/campus-experience/innovation-creative-spaces",
-      "body": "Environments that invite making."
+      "title": "Student Stories",
+      "to": "/news/student-stories",
+      "body": "Creative work and performance seen through learners' own accounts."
     },
     {
       "title": "Community & Belonging",

@@ -66,9 +66,9 @@ const config = {
       "body": "Long-term stewardship of educational purpose."
     },
     {
-      "title": "Safety",
-      "to": "/campus-experience/safety",
-      "body": "A safe and orderly campus."
+      "title": "Communication",
+      "to": "/parents/communication",
+      "body": "How policy changes reach families clearly and in good time."
     },
     {
       "title": "Family Resources",

@@ -20,6 +20,16 @@ jobs:
       - name: Audit duplicate titles, meta descriptions, body blocks and related links
         run: node scripts/audit-content.mjs
 
+      - name: Audit related links (self-links, loops, orphans) + supervisor report
+        run: node scripts/audit-related-links.mjs
+
+      - name: Upload supervisor report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: related-links-report
+          path: reports/related-links-report.md
+
       - name: Install dependencies
         run: npm ci
 
