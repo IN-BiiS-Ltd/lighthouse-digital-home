@@ -199,6 +199,13 @@ function Careers() {
             <figcaption className="mt-3 text-center text-xs text-muted-foreground">
               Open the poster in full size to read or share the announcement.
             </figcaption>
+            <ShareRow
+              className="mt-4 justify-center"
+              label="Share this vacancy"
+              title="Teachers Wanted 2026/2027 — Lighthouse Campus"
+              url="/careers"
+            />
+
           </figure>
         </div>
       </Section>
