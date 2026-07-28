@@ -5,7 +5,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { PageHero } from "@/components/page-hero";
 import { Section, Eyebrow, ButtonLink, SmartLink } from "@/components/blocks";
 import { ShareBar } from "@/components/share-bar";
-import { Download, CheckCircle2, CalendarDays, Search, SlidersHorizontal, ArrowUp, ArrowDown, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { Download, CheckCircle2, CalendarDays, Search, SlidersHorizontal, ArrowUp, ArrowDown, X, ChevronLeft, ChevronRight, LayoutGrid, List } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
@@ -76,6 +76,7 @@ const librarySearchSchema = z.object({
   dir: fallback(z.string(), "desc").default("desc"),
   size: fallback(z.number().int(), 6).default(6),
   page: fallback(z.number().int(), 1).default(1),
+  view: fallback(z.string(), "grid").default("grid"),
 });
 
 type LibrarySearch = z.infer<typeof librarySearchSchema>;
@@ -126,7 +127,8 @@ export const Route = createFileRoute("/announcements-library")({
       Boolean(search.to) ||
       search.sort !== "date" ||
       search.dir !== "desc" ||
-      search.size !== 6;
+      search.size !== 6 ||
+      search.view === "list";
 
     const pageSize = [3, 6, 9, 12].includes(search.size) ? search.size : 6;
     const list = selectPosters(search);
@@ -208,18 +210,27 @@ export const Route = createFileRoute("/announcements-library")({
   component: AnnouncementsLibrary,
 });
 
-function PosterCard({ p, priority }: { p: Poster; priority?: boolean }) {
+function PosterCard({ p, priority, layout = "grid" }: { p: Poster; priority?: boolean; layout?: "grid" | "list" }) {
   const webpSrcSet = `${p.base}-256.webp 256w, ${p.base}-512.webp 512w, ${p.base}.webp 1024w`;
   const pngSrcSet = `${p.base}-256.png 256w, ${p.base}-512.png 512w, ${p.base}.png 1024w`;
-  const sizes = "(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 360px";
+  const isList = layout === "list";
+  const sizes = isList
+    ? "(max-width: 768px) 40vw, 220px"
+    : "(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 360px";
 
   return (
-    <article className="flex flex-col overflow-hidden rounded-2xl border border-gold/30 bg-card">
+    <article
+      className={
+        isList
+          ? "flex flex-col gap-4 overflow-hidden rounded-2xl border border-gold/30 bg-card sm:flex-row"
+          : "flex flex-col overflow-hidden rounded-2xl border border-gold/30 bg-card"
+      }
+    >
       <a
         href={`${p.base}.png`}
         target="_blank"
         rel="noopener noreferrer"
-        className="block bg-navy/5 p-4"
+        className={isList ? "block shrink-0 bg-navy/5 p-4 sm:w-56" : "block bg-navy/5 p-4"}
       >
         <picture>
           <source srcSet={webpSrcSet} sizes={sizes} type="image/webp" />
@@ -317,7 +328,7 @@ function AnnouncementsLibrary() {
   const pageSize = [3, 6, 9, 12].includes(search.size) ? search.size : 6;
 
   const setSearch = (
-    next: Partial<{ q: string; category: string; from: string; to: string; sort: string; dir: string; size: number; page: number }>,
+    next: Partial<{ q: string; category: string; from: string; to: string; sort: string; dir: string; size: number; page: number; view: string }>,
     resetPage = true,
   ) => {
     navigate({
@@ -334,6 +345,8 @@ function AnnouncementsLibrary() {
   const setSortField = (value: "title" | "date") => setSearch({ sort: value });
   const setSortAsc = (value: boolean) => setSearch({ dir: value ? "asc" : "desc" });
   const setPageSize = (value: number) => setSearch({ size: value });
+  const viewMode: "grid" | "list" = search.view === "list" ? "list" : "grid";
+  const setViewMode = (value: "grid" | "list") => setSearch({ view: value }, false);
 
   const filtered = useMemo(() => selectPosters(search), [search]);
 
@@ -584,9 +597,40 @@ function AnnouncementsLibrary() {
           )}
         </div>
 
-        <div ref={gridRef} className="mt-8 grid scroll-mt-24 gap-8 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-8 flex items-center justify-end gap-2">
+          <span className="text-xs font-medium text-muted-foreground">View</span>
+          <div role="group" aria-label="Results view" className="inline-flex rounded-full border border-gold/30 p-1">
+            <button
+              type="button"
+              onClick={() => setViewMode("grid")}
+              aria-pressed={viewMode === "grid"}
+              className={`inline-flex min-h-11 items-center gap-2 rounded-full px-4 text-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold ${viewMode === "grid" ? "bg-gold text-navy" : "text-muted-foreground hover:text-foreground"}`}
+            >
+              <LayoutGrid className="size-4" aria-hidden />
+              Grid
+            </button>
+            <button
+              type="button"
+              onClick={() => setViewMode("list")}
+              aria-pressed={viewMode === "list"}
+              className={`inline-flex min-h-11 items-center gap-2 rounded-full px-4 text-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold ${viewMode === "list" ? "bg-gold text-navy" : "text-muted-foreground hover:text-foreground"}`}
+            >
+              <List className="size-4" aria-hidden />
+              List
+            </button>
+          </div>
+        </div>
+
+        <div
+          ref={gridRef}
+          className={
+            viewMode === "list"
+              ? "mt-4 flex scroll-mt-24 flex-col gap-4"
+              : "mt-4 grid scroll-mt-24 gap-8 md:grid-cols-2 xl:grid-cols-3"
+          }
+        >
           {visible.map((p, i) => (
-            <PosterCard key={p.key} p={p} priority={safePage === 1 && i < 3} />
+            <PosterCard key={p.key} p={p} layout={viewMode} priority={safePage === 1 && i < 3} />
           ))}
         </div>
 
