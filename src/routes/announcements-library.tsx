@@ -443,12 +443,14 @@ function AnnouncementsLibrary() {
                 <Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" aria-hidden />
                 <Input
                   id="poster-search"
+                  ref={searchInputRef}
                   type="search"
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   placeholder="Search title or Arabic title..."
                   className="pl-9"
                 />
+
               </div>
             </div>
 
