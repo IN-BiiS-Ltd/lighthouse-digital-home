@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArchitecturalPage } from "@/components/architectural-page";
 import { Section, ButtonLink, Eyebrow } from "@/components/blocks";
+import { ShareBar, ShareRow } from "@/components/share-bar";
 import { CalendarDays, Clock, Bell, FileText, Users, MailOpen } from "lucide-react";
 
 const APPLY = "https://eduios.lighthousecampus.com/apply/lighthouse-campus";
