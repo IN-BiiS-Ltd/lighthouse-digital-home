@@ -38,6 +38,14 @@ export const Route = createFileRoute("/careers")({
         content:
           "https://lighthousecampus.com/__l5e/assets-v1/89072032-02a7-40fd-a168-2e27ba7c5b0d/teachers-hiring-2025-2026.png",
       },
+      {
+        property: "og:image:secure_url",
+        content:
+          "https://lighthousecampus.com/__l5e/assets-v1/89072032-02a7-40fd-a168-2e27ba7c5b0d/teachers-hiring-2025-2026.png",
+      },
+      { property: "og:image:width", content: "1024" },
+      { property: "og:image:height", content: "1536" },
+      { property: "og:image:type", content: "image/png" },
       { property: "og:image:alt", content: "Lighthouse Campus teacher recruitment 2025/2026" },
       {
         name: "twitter:image",
