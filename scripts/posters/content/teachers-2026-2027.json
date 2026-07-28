@@ -1,0 +1,44 @@
+{
+  "output": "teachers-hiring-2026-2027",
+  "title": "انضم إلى <span class=\"gold\">فريقنا</span>",
+  "subtitle": "شواغر المعلمين 2026 - 2027",
+  "lede": "نبحث عن معلمين متميزين يشاركوننا رسالة بناء مؤسسة تعليمية عالمية المعايير.",
+  "cta": "قدّم الآن",
+  "ctaNote": "التقديم مفتوح — عبر صفحة الوظائف",
+  "locality": "القاهرة",
+  "localityNote": "الدقي - الجيزة",
+  "photo": "public/teachers-photo.jpg",
+  "listTitle": "التخصصات المطلوبة",
+  "list": [
+    { "title": "English · Mathematics · Science", "note": "المرحلتان الابتدائية والمتوسطة" },
+    { "title": "Arabic · Islamic Studies · Social Studies", "note": "جميع المراحل" },
+    { "title": "ICT · Art · Physical Education", "note": "معلمو التخصصات" }
+  ],
+  "bullets": [
+    "مؤهل تربوي معتمد",
+    "إجادة اللغة الإنجليزية",
+    "خبرة لا تقل عن سنتين",
+    "خبرة بالمناهج الدولية ميزة إضافية",
+    "التزام بمعايير رعاية الطلاب",
+    "مهارات تواصل مؤسسي عالية"
+  ],
+  "stagesTitle": "بيئة عمل مؤسسية",
+  "stages": [
+    { "title": "تطوير مهني", "en": "Professional growth", "note": "برامج تدريب مستمرة" },
+    { "title": "قيادة تربوية", "en": "Instructional leadership", "note": "إشراف ومتابعة" },
+    { "title": "موارد حديثة", "en": "Modern resources", "note": "فصول مجهزة" },
+    { "title": "حزمة تنافسية", "en": "Competitive package", "note": "رواتب ومزايا" }
+  ],
+  "strip": [
+    { "title": "معايير دولية", "note": "في التدريس" },
+    { "title": "فريق داعم", "note": "وثقافة تعاون" },
+    { "title": "مسار وظيفي", "note": "واضح" },
+    { "title": "بيئة آمنة", "note": "ومحترمة" },
+    { "title": "أثر حقيقي", "note": "في حياة المتعلمين" }
+  ],
+  "email": "ceo@lighthousecampus.com",
+  "phone": "+20 110 703 0737",
+  "address": "66 El-Zahraa, Ad Doqi, Dokki, Giza Governorate 3751053, Egypt",
+  "website": "lighthousecampus.com/careers",
+  "promise": "GUIDING MINDS. &nbsp;·&nbsp; INSPIRING FUTURES. &nbsp;·&nbsp; CONNECTING POSSIBILITIES."
+}
