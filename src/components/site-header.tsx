@@ -176,6 +176,12 @@ export function SiteHeader() {
           {/* <LanguageToggle className="hidden sm:inline-flex" /> */}
 
           <SmartLink
+            to="/careers"
+            className="hidden px-3 py-2 text-sm font-medium text-navy-foreground/85 transition-colors hover:text-gold lg:inline-flex"
+          >
+            Careers
+          </SmartLink>
+          <SmartLink
             to="/portals"
             className="hidden px-3 py-2 text-sm font-medium text-navy-foreground/85 transition-colors hover:text-gold sm:inline-flex"
           >
