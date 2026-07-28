@@ -163,16 +163,17 @@ function Careers() {
 
             <div className="mt-9 flex flex-wrap gap-3">
               <ButtonLink
-                to="/contact"
+                to="mailto:ceo@lighthousecampus.com?subject=Teaching%20Application%20%E2%80%94%202025%2F2026&body=Full%20name%3A%0ASubject%20applied%20for%3A%0AQualification%3A%0AYears%20of%20teaching%20experience%3A%0APhone%20number%3A%0A%0APlease%20attach%20your%20CV%20to%20this%20email."
                 variant="gold"
                 size="lg"
-                aria-label="Apply to teach at Lighthouse Campus"
+                aria-label="Apply to teach at Lighthouse Campus by email to ceo@lighthousecampus.com"
                 data-event="CTA Click"
                 data-event-prop-label="Apply to teach"
                 data-event-prop-placement="careers-hiring"
               >
                 Apply to teach →
               </ButtonLink>
+
               <ButtonLink
                 to="tel:+201107030737"
                 variant="outline"
@@ -183,7 +184,7 @@ function Careers() {
               </ButtonLink>
             </div>
             <p className="mt-4 text-sm text-muted-foreground">
-              66 El-Zahraa, Ad Doqi, Dokki, Giza Governorate 3751053, Egypt
+              Applications by email: <a href="mailto:ceo@lighthousecampus.com" className="underline underline-offset-4">ceo@lighthousecampus.com</a> · 66 El-Zahraa, Ad Doqi, Dokki, Giza Governorate 3751053, Egypt
             </p>
           </div>
 
