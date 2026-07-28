@@ -181,14 +181,20 @@ function Careers() {
               rel="noopener noreferrer"
               className="block overflow-hidden rounded-2xl border border-gold/40 bg-card shadow-lg transition hover:shadow-xl"
             >
-              <img
-                src="/teachers-hiring-2026-2027.png"
-                alt="Teacher recruitment announcement for Lighthouse Campus, academic year 2026-2027, listing required subjects and contact details"
-                width={1024}
-                height={1536}
-                loading="lazy"
-                className="h-auto w-full"
-              />
+              <picture>
+                <source
+                  srcSet="/teachers-hiring-2026-2027.webp"
+                  type="image/webp"
+                />
+                <img
+                  src="/teachers-hiring-2026-2027.png"
+                  alt="Teacher recruitment announcement for Lighthouse Campus, academic year 2026-2027, listing required subjects and contact details"
+                  width={1024}
+                  height={1536}
+                  loading="lazy"
+                  className="h-auto w-full"
+                />
+              </picture>
             </a>
             <figcaption className="mt-3 text-center text-xs text-muted-foreground">
               Open the poster in full size to read or share the announcement.
