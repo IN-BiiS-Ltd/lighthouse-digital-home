@@ -1,7 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { zodValidator, fallback } from "@tanstack/zod-adapter";
 import { z } from "zod";
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { PageHero } from "@/components/page-hero";
 import { Section, Eyebrow, ButtonLink, SmartLink } from "@/components/blocks";
 import { ShareBar } from "@/components/share-bar";
@@ -341,7 +341,11 @@ function AnnouncementsLibrary() {
   const hasActiveFilters = query || category !== "All" || dateFrom || dateTo || sortField !== "date" || sortAsc;
 
   const gridRef = useRef<HTMLDivElement>(null);
+  const resultsHeadingRef = useRef<HTMLParagraphElement>(null);
+  const searchInputRef = useRef<HTMLInputElement>(null);
+  const paginationRef = useRef<HTMLDivElement>(null);
   const shouldScrollRef = useRef(false);
+  const [status, setStatus] = useState("");
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
   const safePage = Math.min(Math.max(1, search.page), totalPages);
@@ -352,11 +356,47 @@ function AnnouncementsLibrary() {
     if (!shouldScrollRef.current) return;
     shouldScrollRef.current = false;
     gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    resultsHeadingRef.current?.focus({ preventScroll: true });
   }, [safePage]);
 
+  const filterKey = `${search.q}|${search.category}|${search.from}|${search.to}|${search.sort}|${search.dir}|${search.size}`;
+  const firstRunRef = useRef(true);
+  useEffect(() => {
+    if (firstRunRef.current) {
+      firstRunRef.current = false;
+      return;
+    }
+    setStatus(
+      filtered.length === 0
+        ? "No posters match the current filters."
+        : `${filtered.length} ${filtered.length === 1 ? "poster matches" : "posters match"} the current filters. Showing page 1 of ${Math.max(1, Math.ceil(filtered.length / pageSize))}.`,
+    );
+  }, [filterKey]);
+
+
   const goToPage = (next: number) => {
+    const target = Math.max(1, Math.min(totalPages, next));
+    if (target === safePage) return;
     shouldScrollRef.current = true;
-    setSearch({ page: Math.max(1, Math.min(totalPages, next)) }, false);
+    setStatus(`Page ${target} of ${totalPages}. Showing posters ${(target - 1) * pageSize + 1} to ${Math.min(target * pageSize, filtered.length)} of ${filtered.length}.`);
+    setSearch({ page: target }, false);
+  };
+
+  const onPaginationKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    const keys = ["ArrowRight", "ArrowLeft", "Home", "End"];
+    if (!keys.includes(event.key)) return;
+    event.preventDefault();
+    const next =
+      event.key === "ArrowRight" ? safePage + 1
+      : event.key === "ArrowLeft" ? safePage - 1
+      : event.key === "Home" ? 1
+      : totalPages;
+    goToPage(next);
+    requestAnimationFrame(() => {
+      paginationRef.current
+        ?.querySelector<HTMLButtonElement>('button[aria-current="page"]')
+        ?.focus();
+    });
   };
 
   const clearFilters = () => {
@@ -365,7 +405,10 @@ function AnnouncementsLibrary() {
       replace: true,
       resetScroll: false,
     });
+    setStatus(`Filters cleared. Showing all ${POSTERS.length} approved posters.`);
+    requestAnimationFrame(() => searchInputRef.current?.focus());
   };
+
 
   return (
     <>
@@ -385,10 +428,20 @@ function AnnouncementsLibrary() {
         <h2 className="mt-3 font-display text-2xl leading-snug text-foreground md:text-3xl">
           Announcement library.
         </h2>
-        <p className="mt-2 max-w-2xl text-sm text-muted-foreground md:text-base">
-          {filtered.length} approved {filtered.length === 1 ? "poster" : "posters"} match your filters.
+        <p
+          ref={resultsHeadingRef}
+          tabIndex={-1}
+          className="mt-2 max-w-2xl scroll-mt-24 text-sm text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 md:text-base"
+        >
+          {filtered.length} approved {filtered.length === 1 ? "poster" : "posters"} match your filters
+          {totalPages > 1 ? ` — page ${safePage} of ${totalPages}` : ""}.
           Files are supplied at print resolution; the WebP version is lighter for messaging and social channels.
         </p>
+
+        <p className="sr-only" role="status" aria-live="polite" aria-atomic="true">
+          {status}
+        </p>
+
 
         <div className="mt-8 rounded-2xl border border-gold/20 bg-card p-4 shadow-sm md:p-6">
           <div className="mb-4 flex items-center gap-2 text-sm font-medium text-foreground">
@@ -405,12 +458,14 @@ function AnnouncementsLibrary() {
                 <Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" aria-hidden />
                 <Input
                   id="poster-search"
+                  ref={searchInputRef}
                   type="search"
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   placeholder="Search title or Arabic title..."
                   className="pl-9"
                 />
+
               </div>
             </div>
 
@@ -529,11 +584,7 @@ function AnnouncementsLibrary() {
           )}
         </div>
 
-        <div
-          ref={gridRef}
-          className="mt-8 grid gap-8 md:grid-cols-2 xl:grid-cols-3"
-          aria-live="polite"
-        >
+        <div ref={gridRef} className="mt-8 grid scroll-mt-24 gap-8 md:grid-cols-2 xl:grid-cols-3">
           {visible.map((p, i) => (
             <PosterCard key={p.key} p={p} priority={safePage === 1 && i < 3} />
           ))}
@@ -557,7 +608,7 @@ function AnnouncementsLibrary() {
                 id="page-size"
                 value={pageSize}
                 onChange={(e) => setPageSize(Number(e.target.value))}
-                className="h-9 rounded-full border border-gold/30 bg-background px-3 text-sm text-foreground"
+                className="h-11 rounded-full border border-gold/30 bg-background px-3 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
               >
                 {[3, 6, 9, 12].map((n) => (
                   <option key={n} value={n}>
@@ -566,12 +617,17 @@ function AnnouncementsLibrary() {
                 ))}
               </select>
 
-              <div className="flex items-center gap-1">
+              <div
+                ref={paginationRef}
+                className="flex items-center gap-1"
+                onKeyDown={onPaginationKeyDown}
+              >
                 <button
                   type="button"
                   onClick={() => goToPage(safePage - 1)}
                   disabled={safePage === 1}
-                  className="inline-flex h-9 items-center gap-1 rounded-full border border-gold/30 px-3 text-sm text-foreground transition hover:border-gold disabled:opacity-40"
+                  aria-label={`Go to previous page, page ${Math.max(1, safePage - 1)}`}
+                  className="inline-flex h-11 items-center gap-1 rounded-full border border-gold/30 px-3 text-sm text-foreground transition hover:border-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 disabled:opacity-40"
                 >
                   <ChevronLeft className="size-4" aria-hidden />
                   Previous
@@ -583,8 +639,8 @@ function AnnouncementsLibrary() {
                     type="button"
                     onClick={() => goToPage(n)}
                     aria-current={n === safePage ? "page" : undefined}
-                    aria-label={`Page ${n}`}
-                    className={`inline-flex size-9 items-center justify-center rounded-full border text-sm transition ${
+                    aria-label={n === safePage ? `Page ${n}, current page` : `Go to page ${n}`}
+                    className={`inline-flex size-11 items-center justify-center rounded-full border text-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 ${
                       n === safePage
                         ? "border-gold bg-gold font-medium text-navy"
                         : "border-gold/30 text-foreground hover:border-gold"
@@ -598,15 +654,21 @@ function AnnouncementsLibrary() {
                   type="button"
                   onClick={() => goToPage(safePage + 1)}
                   disabled={safePage === totalPages}
-                  className="inline-flex h-9 items-center gap-1 rounded-full border border-gold/30 px-3 text-sm text-foreground transition hover:border-gold disabled:opacity-40"
+                  aria-label={`Go to next page, page ${Math.min(totalPages, safePage + 1)}`}
+                  className="inline-flex h-11 items-center gap-1 rounded-full border border-gold/30 px-3 text-sm text-foreground transition hover:border-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 disabled:opacity-40"
                 >
                   Next
                   <ChevronRight className="size-4" aria-hidden />
                 </button>
               </div>
+
+              <p className="sr-only">
+                Use the left and right arrow keys, or Home and End, to move between pages.
+              </p>
             </div>
           </nav>
         )}
+
 
         {filtered.length === 0 && (
           <div className="mt-12 rounded-2xl border border-gold/20 bg-card p-8 text-center">
