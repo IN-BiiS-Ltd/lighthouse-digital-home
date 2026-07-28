@@ -216,11 +216,34 @@ export function ApplyToTeachDialog() {
         ),
       };
 
-      await submit({ data: payload });
+      const result = await submit({ data: payload });
+
+      setReceipt({
+        reference: result.reference,
+        emailed: result.emailed,
+        summary: [
+          ["Full name", payload.fullName],
+          ["Email", payload.email],
+          ["Mobile", payload.phone],
+          ["Nationality", payload.nationality],
+          ["Residence", `${payload.city}, ${payload.countryOfResidence}`],
+          ["Position applied for", payload.positionAppliedFor],
+          ["Subject / specialization", payload.subject],
+          ["Highest qualification", payload.qualification],
+          ["Years of experience", payload.experienceYears],
+          [
+            "Curriculum experience",
+            payload.curriculumExperience.join(", ") || "—",
+          ],
+          ["Earliest start date", payload.availableFrom || "—"],
+          ["Documents received", payload.files.map((f) => f.name).join(", ")],
+        ],
+      });
 
       form.reset();
       setFiles([]);
       setDone(true);
+
     } catch (error) {
       console.error(error);
       toast.error("We could not send your application", {
