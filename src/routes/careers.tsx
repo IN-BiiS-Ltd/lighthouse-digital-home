@@ -44,12 +44,117 @@ function Careers() {
         title="Join a community of mentors and lifelong learners."
         intro="Working at Lighthouse Campus means shaping an institution built to last — where educators are trusted, supported and given room to grow."
         sections={[
+          { label: "We are hiring", to: "/careers#hiring" },
           { label: "Working here", to: "/careers" },
           { label: "Professional growth", to: "/careers#growth" },
           { label: "Opportunities", to: "/careers#opportunities" },
           { label: "Process", to: "/careers#process" },
         ]}
       />
+
+      <Section tone="sand" id="hiring">
+        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]">
+          <div className="order-2 lg:order-1">
+            <Eyebrow>Teacher recruitment — 2025 / 2026</Eyebrow>
+            <h2 className="mt-5 text-balance font-display text-3xl font-medium leading-tight md:text-4xl">
+              We are hiring passionate teachers.
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Lighthouse Campus is looking for inspiring, creative and committed
+              teachers to help shape the leaders of the future — across three
+              curricula: Cambridge Assessment International Education, the South
+              Sudan National Curriculum and the Sudan National Curriculum.
+            </p>
+
+            <h3 className="mt-8 font-display text-lg font-medium">
+              Subjects required
+            </h3>
+            <ul className="mt-4 grid grid-cols-2 gap-x-6 gap-y-2 text-sm text-muted-foreground sm:grid-cols-3">
+              {[
+                "Science",
+                "Mathematics",
+                "English Language",
+                "Arts",
+                "Social Studies",
+                "Arabic Language",
+                "Physical Education",
+                "ICT",
+                "Music",
+              ].map((s) => (
+                <li key={s} className="flex items-start gap-2">
+                  <span aria-hidden className="mt-2 size-1.5 shrink-0 rounded-full bg-gold" />
+                  {s}
+                </li>
+              ))}
+            </ul>
+
+            <h3 className="mt-8 font-display text-lg font-medium">
+              What we look for
+            </h3>
+            <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+              {[
+                "A university qualification in the relevant subject.",
+                "Teaching experience — international curricula preferred.",
+                "Excellent communication skills and a genuine passion for education.",
+                "The ability to inspire learners and lead a classroom with care.",
+                "Commitment to the values and educational mission of the institution.",
+              ].map((s) => (
+                <li key={s} className="flex items-start gap-2">
+                  <span aria-hidden className="mt-2 size-1.5 shrink-0 rounded-full bg-gold" />
+                  {s}
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-9 flex flex-wrap gap-3">
+              <ButtonLink
+                to="/contact"
+                variant="gold"
+                size="lg"
+                aria-label="Apply to teach at Lighthouse Campus"
+                data-event="CTA Click"
+                data-event-prop-label="Apply to teach"
+                data-event-prop-placement="careers-hiring"
+              >
+                Apply to teach →
+              </ButtonLink>
+              <ButtonLink
+                to="tel:+201107030737"
+                variant="outline"
+                size="lg"
+                aria-label="Call the recruitment team on +20 110 703 0737"
+              >
+                +20 110 703 0737
+              </ButtonLink>
+            </div>
+            <p className="mt-4 text-sm text-muted-foreground">
+              66 El-Zahraa, Ad Doqi, Dokki, Giza Governorate 3751053, Egypt
+            </p>
+          </div>
+
+          <figure className="order-1 lg:order-2">
+            <a
+              href={assetUrl(hiringPoster)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block overflow-hidden rounded-2xl border border-gold/40 bg-card shadow-lg transition hover:shadow-xl"
+            >
+              <img
+                src={assetUrl(hiringPoster)}
+                alt="Teacher recruitment announcement for Lighthouse Campus, academic year 2025-2026, listing required subjects and contact details"
+                width={1024}
+                height={1536}
+                loading="lazy"
+                className="h-auto w-full"
+              />
+            </a>
+            <figcaption className="mt-3 text-center text-xs text-muted-foreground">
+              Open the poster in full size to read or share the announcement.
+            </figcaption>
+          </figure>
+        </div>
+      </Section>
+
 
       <Section>
         <MediaRow
