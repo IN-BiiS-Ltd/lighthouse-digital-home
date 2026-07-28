@@ -12,6 +12,7 @@ import {
   APPLICATION_STATUSES,
   STATUS_LABELS,
   SUBJECTS,
+  applicationNumber,
   type ApplicationStatus,
 } from "@/lib/careers-constants";
 import {
@@ -174,6 +175,9 @@ function ApplicationsDashboard() {
             <div className="flex flex-wrap items-start justify-between gap-4">
               <div>
                 <h2 className="font-display text-lg font-medium">{application.full_name}</h2>
+                <p className="text-xs uppercase tracking-widest text-muted-foreground">
+                  {applicationNumber(application.id)}
+                </p>
                 <p className="text-sm text-muted-foreground">
                   {application.position_applied_for ?? "—"} · {application.subject} ·{" "}
                   {application.experience_years} yrs
