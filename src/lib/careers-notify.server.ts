@@ -177,9 +177,10 @@ export async function notifyTeacherApplication(
   await sendEmail({
     to: [input.email],
     reply_to: RECIPIENT_EMAIL,
-    subject: "We have received your application — Lighthouse Campus",
+    subject: `Application received — ${applicationNumber(saved.id)} — Lighthouse Campus`,
     html: buildApplicantHtml(input, saved),
   });
+
 
   return adminSent;
 }
