@@ -79,9 +79,9 @@ const config = {
       "body": "Shared responsibility for community."
     },
     {
-      "title": "Community Programmes",
-      "to": "/community/community-programmes",
-      "body": "Ways the campus contributes beyond its walls."
+      "title": "Partnerships",
+      "to": "/community/partnerships",
+      "body": "Organisations that host and extend student service work."
     }
   ],
   "cta": {

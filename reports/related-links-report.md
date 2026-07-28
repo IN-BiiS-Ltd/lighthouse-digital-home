@@ -1,29 +1,22 @@
 # Related Links — Supervisor Report
-_Generated 2026-07-28 16:58 UTC · تقرير المشرف لروابط "Related"_
+_Generated 2026-07-28 16:59 UTC · تقرير المشرف لروابط "Related"_
 
 ## Summary / الملخص
 | Metric | Value |
 | --- | --- |
 | Routes audited | 95 |
 | Related links | 129 |
-| Blocking issues | 11 |
-| Advisories | 75 |
+| Blocking issues | 1 |
+| Advisories | 81 |
 | Status | ❌ FAILED |
 
 ## Blocking issues / مخالفات توقف النشر
-- Cross-section loop — /accessibility <-> /privacy; related links must move forward, keep one direction only
-- Cross-section loop — /accessibility <-> /terms; related links must move forward, keep one direction only
-- Cross-section loop — /accessibility <-> /cookies; related links must move forward, keep one direction only
-- Cross-section loop — /campus-experience/health-services <-> /student-life/wellbeing; related links must move forward, keep one direction only
-- Cross-section loop — /campus-experience/innovation-creative-spaces <-> /student-life/arts-performance; related links must move forward, keep one direction only
-- Cross-section loop — /campus-experience/safety <-> /parents/school-policies; related links must move forward, keep one direction only
-- Cross-section loop — /campus-experience/sports-facilities <-> /student-life/athletics; related links must move forward, keep one direction only
-- Cross-section loop — /community/community-programmes <-> /student-life/leadership-service; related links must move forward, keep one direction only
-- Cross-section loop — /cookies <-> /privacy; related links must move forward, keep one direction only
-- Cross-section loop — /cookies <-> /terms; related links must move forward, keep one direction only
-- Cross-section loop — /privacy <-> /terms; related links must move forward, keep one direction only
+- Cross-section loop — /campus-experience/dining <-> /student-life/wellbeing; related links must move forward, keep one direction only
 
 ## Advisories / ملاحظات
+- Peer pair (allowed) — /accessibility <-> /privacy link to each other within the same section
+- Peer pair (allowed) — /accessibility <-> /terms link to each other within the same section
+- Peer pair (allowed) — /accessibility <-> /cookies link to each other within the same section
 - Peer pair (allowed) — /admissions/application-process <-> /admissions/requirements link to each other within the same section
 - Peer pair (allowed) — /admissions/application-process <-> /admissions/schedule-a-visit link to each other within the same section
 - Peer pair (allowed) — /admissions/application-process <-> /admissions/faq link to each other within the same section
@@ -36,6 +29,8 @@ _Generated 2026-07-28 16:58 UTC · تقرير المشرف لروابط "Related
 - Peer pair (allowed) — /campus-experience/innovation-creative-spaces <-> /campus-experience/laboratories link to each other within the same section
 - Peer pair (allowed) — /campus-experience/safety <-> /campus-experience/transportation link to each other within the same section
 - Peer pair (allowed) — /community/community-programmes <-> /community/events link to each other within the same section
+- Peer pair (allowed) — /cookies <-> /privacy link to each other within the same section
+- Peer pair (allowed) — /cookies <-> /terms link to each other within the same section
 - Peer pair (allowed) — /news/campus-events <-> /news/community-stories link to each other within the same section
 - Peer pair (allowed) — /news/campus-events <-> /news/student-stories link to each other within the same section
 - Peer pair (allowed) — /news/campus-events <-> /news/school-news link to each other within the same section
@@ -48,6 +43,7 @@ _Generated 2026-07-28 16:58 UTC · تقرير المشرف لروابط "Related
 - Peer pair (allowed) — /news/student-stories <-> /news/teacher-stories link to each other within the same section
 - Peer pair (allowed) — /parents/communication <-> /parents/family-resources link to each other within the same section
 - Peer pair (allowed) — /parents/family-resources <-> /parents/school-policies link to each other within the same section
+- Peer pair (allowed) — /privacy <-> /terms link to each other within the same section
 - Peer pair (allowed) — /student-life/arts-performance <-> /student-life/clubs-activities link to each other within the same section
 - Peer pair (allowed) — /student-life/athletics <-> /student-life/clubs-activities link to each other within the same section
 - Peer pair (allowed) — /student-life/community-belonging <-> /student-life/leadership-service link to each other within the same section
@@ -65,8 +61,8 @@ _Generated 2026-07-28 16:58 UTC · تقرير المشرف لروابط "Related
 - Orphan — no related block points to /admissions/apply-online
 - Orphan — no related block points to /campus-experience
 - Orphan — no related block points to /campus-experience/assembly-hall
-- Orphan — no related block points to /campus-experience/dining
 - Orphan — no related block points to /campus-experience/outdoor-learning
+- Orphan — no related block points to /campus-experience/sports-facilities
 - Orphan — no related block points to /campuses
 - Orphan — no related block points to /campuses/mohandessin
 - Orphan — no related block points to /careers
@@ -108,9 +104,9 @@ _Generated 2026-07-28 16:58 UTC · تقرير المشرف لروابط "Related
 - /admissions/faq — 5 inbound
 - /news/campus-events — 5 inbound
 - /news/educational-insights — 5 inbound
-- /campus-experience/innovation-creative-spaces — 4 inbound
+- /student-life/events — 5 inbound
 - /news/school-news — 4 inbound
-- /student-life/events — 4 inbound
+- /parents/communication — 4 inbound
 
 ---
 Rules: related links are forward navigation only — no self-links, no repeated

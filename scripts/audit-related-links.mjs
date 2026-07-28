@@ -93,7 +93,12 @@ for (const page of pages) {
 }
 
 /* ------------------------------------------------------------- loop detection */
-const section = (id) => id.split("/")[1] || "";
+const LEGAL = new Set(["privacy", "terms", "cookies", "cookie-settings", "accessibility"]);
+// Legal/compliance pages are one family even though each sits at the root.
+const section = (id) => {
+  const first = id.split("/")[1] || "";
+  return LEGAL.has(first) ? "legal" : first;
+};
 const reciprocal = [];
 const siblingPairs = [];
 for (const [from, tos] of edges) {
