@@ -569,11 +569,7 @@ function AnnouncementsLibrary() {
           )}
         </div>
 
-        <div
-          ref={gridRef}
-          className="mt-8 grid gap-8 md:grid-cols-2 xl:grid-cols-3"
-          aria-live="polite"
-        >
+        <div ref={gridRef} className="mt-8 grid scroll-mt-24 gap-8 md:grid-cols-2 xl:grid-cols-3">
           {visible.map((p, i) => (
             <PosterCard key={p.key} p={p} priority={safePage === 1 && i < 3} />
           ))}
@@ -597,7 +593,7 @@ function AnnouncementsLibrary() {
                 id="page-size"
                 value={pageSize}
                 onChange={(e) => setPageSize(Number(e.target.value))}
-                className="h-9 rounded-full border border-gold/30 bg-background px-3 text-sm text-foreground"
+                className="h-11 rounded-full border border-gold/30 bg-background px-3 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
               >
                 {[3, 6, 9, 12].map((n) => (
                   <option key={n} value={n}>
@@ -606,12 +602,17 @@ function AnnouncementsLibrary() {
                 ))}
               </select>
 
-              <div className="flex items-center gap-1">
+              <div
+                ref={paginationRef}
+                className="flex items-center gap-1"
+                onKeyDown={onPaginationKeyDown}
+              >
                 <button
                   type="button"
                   onClick={() => goToPage(safePage - 1)}
                   disabled={safePage === 1}
-                  className="inline-flex h-9 items-center gap-1 rounded-full border border-gold/30 px-3 text-sm text-foreground transition hover:border-gold disabled:opacity-40"
+                  aria-label={`Go to previous page, page ${Math.max(1, safePage - 1)}`}
+                  className="inline-flex h-11 items-center gap-1 rounded-full border border-gold/30 px-3 text-sm text-foreground transition hover:border-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 disabled:opacity-40"
                 >
                   <ChevronLeft className="size-4" aria-hidden />
                   Previous
@@ -623,8 +624,8 @@ function AnnouncementsLibrary() {
                     type="button"
                     onClick={() => goToPage(n)}
                     aria-current={n === safePage ? "page" : undefined}
-                    aria-label={`Page ${n}`}
-                    className={`inline-flex size-9 items-center justify-center rounded-full border text-sm transition ${
+                    aria-label={n === safePage ? `Page ${n}, current page` : `Go to page ${n}`}
+                    className={`inline-flex size-11 items-center justify-center rounded-full border text-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 ${
                       n === safePage
                         ? "border-gold bg-gold font-medium text-navy"
                         : "border-gold/30 text-foreground hover:border-gold"
@@ -638,15 +639,21 @@ function AnnouncementsLibrary() {
                   type="button"
                   onClick={() => goToPage(safePage + 1)}
                   disabled={safePage === totalPages}
-                  className="inline-flex h-9 items-center gap-1 rounded-full border border-gold/30 px-3 text-sm text-foreground transition hover:border-gold disabled:opacity-40"
+                  aria-label={`Go to next page, page ${Math.min(totalPages, safePage + 1)}`}
+                  className="inline-flex h-11 items-center gap-1 rounded-full border border-gold/30 px-3 text-sm text-foreground transition hover:border-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 disabled:opacity-40"
                 >
                   Next
                   <ChevronRight className="size-4" aria-hidden />
                 </button>
               </div>
+
+              <p className="sr-only">
+                Use the left and right arrow keys, or Home and End, to move between pages.
+              </p>
             </div>
           </nav>
         )}
+
 
         {filtered.length === 0 && (
           <div className="mt-12 rounded-2xl border border-gold/20 bg-card p-8 text-center">
