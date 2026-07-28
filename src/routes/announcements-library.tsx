@@ -413,10 +413,20 @@ function AnnouncementsLibrary() {
         <h2 className="mt-3 font-display text-2xl leading-snug text-foreground md:text-3xl">
           Announcement library.
         </h2>
-        <p className="mt-2 max-w-2xl text-sm text-muted-foreground md:text-base">
-          {filtered.length} approved {filtered.length === 1 ? "poster" : "posters"} match your filters.
+        <p
+          ref={resultsHeadingRef}
+          tabIndex={-1}
+          className="mt-2 max-w-2xl scroll-mt-24 text-sm text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 md:text-base"
+        >
+          {filtered.length} approved {filtered.length === 1 ? "poster" : "posters"} match your filters
+          {totalPages > 1 ? ` — page ${safePage} of ${totalPages}` : ""}.
           Files are supplied at print resolution; the WebP version is lighter for messaging and social channels.
         </p>
+
+        <p className="sr-only" role="status" aria-live="polite" aria-atomic="true">
+          {status}
+        </p>
+
 
         <div className="mt-8 rounded-2xl border border-gold/20 bg-card p-4 shadow-sm md:p-6">
           <div className="mb-4 flex items-center gap-2 text-sm font-medium text-foreground">
