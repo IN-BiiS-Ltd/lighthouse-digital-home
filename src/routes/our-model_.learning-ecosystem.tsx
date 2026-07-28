@@ -18,7 +18,7 @@ export const Route = createFileRoute("/our-model_/learning-ecosystem")({
       {
         name: "description",
         content:
-          "Where people, knowledge and intelligence grow together. How students, teachers, families, leadership, learning, technology and institutional intelligence connect around every learner.",
+          "Where people, knowledge and intelligence grow together: how students, teachers, families, leadership and technology connect around every learner.",
       },
       { property: "og:title", content: "The Lighthouse Learning Ecosystem" },
       {

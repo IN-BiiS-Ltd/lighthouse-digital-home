@@ -20,7 +20,7 @@ export const Route = createFileRoute("/our-model_/institutional-intelligence")({
       {
         name: "description",
         content:
-          "Understanding experience. Improving decisions. Strengthening education. How institutional intelligence supports Lighthouse Campus — with human judgement at the centre.",
+          "How institutional intelligence supports Lighthouse Campus — understanding experience and improving decisions, with human judgement at the centre.",
       },
       { property: "og:title", content: "An Institution That Learns" },
       {

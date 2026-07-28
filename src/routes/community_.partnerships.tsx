@@ -5,9 +5,9 @@ export const Route = createFileRoute("/community_/partnerships")({
   head: () => ({
     meta: [
       { title: "Partnerships | Community | Lighthouse Campus" },
-      { name: "description", content: "Partnerships extend the campus into the wider world — carefully, and with a clear educational purpose. Partners are named only once relationships are formalised." },
+      { name: "description", content: "Partnerships extend the campus into the wider world with a clear educational purpose. Partners are named once relationships are formalised." },
       { property: "og:title", content: "Partnerships | Community | Lighthouse Campus" },
-      { property: "og:description", content: "Partnerships extend the campus into the wider world — carefully, and with a clear educational purpose. Partners are named only once relationships are formalised." },
+      { property: "og:description", content: "Partnerships extend the campus into the wider world with a clear educational purpose. Partners are named once relationships are formalised." },
       { property: "og:url", content: "https://lighthousecampus.com/community/partnerships" },
       { property: "og:type", content: "article" },
     ],

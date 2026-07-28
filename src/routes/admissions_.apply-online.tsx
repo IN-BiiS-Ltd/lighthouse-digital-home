@@ -5,9 +5,9 @@ export const Route = createFileRoute("/admissions_/apply-online")({
   head: () => ({
     meta: [
       { title: "Apply Online | Admissions | Lighthouse Campus" },
-      { name: "description", content: "An online application experience is being prepared with the same care as the wider admissions journey. Until it launches, families apply through the admissions team." },
+      { name: "description", content: "An online application experience is being prepared. Until it launches, families apply directly through the Lighthouse Campus admissions team." },
       { property: "og:title", content: "Apply Online | Admissions | Lighthouse Campus" },
-      { property: "og:description", content: "An online application experience is being prepared with the same care as the wider admissions journey. Until it launches, families apply through the admissions team." },
+      { property: "og:description", content: "An online application experience is being prepared. Until it launches, families apply directly through the Lighthouse Campus admissions team." },
       { property: "og:url", content: "https://lighthousecampus.com/admissions/apply-online" },
       { property: "og:type", content: "article" },
     ],

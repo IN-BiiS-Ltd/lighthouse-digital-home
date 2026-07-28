@@ -8,7 +8,7 @@ export const Route = createFileRoute("/about_/campus-culture")({
   head: () => ({
     meta: [
       { title: "Campus Culture | Lighthouse Campus" },
-      { name: "description", content: "Discover a welcoming campus culture where students, teachers and families build confidence, celebrate diversity, inspire achievement and cultivate lifelong values." },
+      { name: "description", content: "A welcoming campus culture where students, teachers and families build confidence, celebrate diversity and cultivate lifelong values." },
       { property: "og:title", content: "Campus Culture | Lighthouse Campus" },
       { property: "og:description", content: "A community where everyone belongs. Confidence, achievement, diversity and lifelong values." },
       { property: "og:url", content: "https://lighthousecampus.com/about/campus-culture" },

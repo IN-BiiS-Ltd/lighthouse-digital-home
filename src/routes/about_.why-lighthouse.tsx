@@ -49,7 +49,7 @@ export const Route = createFileRoute("/about_/why-lighthouse")({
       {
         name: "description",
         content:
-          "Discover why families choose LIGHTHOUSE CAMPUS — inspired learning, exceptional educators, character and leadership, a safe nurturing environment, and a global perspective.",
+          "Why families choose Lighthouse Campus — inspired learning, exceptional educators, character and leadership, a safe environment and a global perspective.",
       },
       { property: "og:title", content: "Why LIGHTHOUSE CAMPUS? | Lighthouse Campus" },
       {

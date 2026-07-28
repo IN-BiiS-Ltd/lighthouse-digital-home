@@ -27,7 +27,7 @@ export const Route = createFileRoute("/explore/digital-ecosystem")({
       {
         name: "description",
         content:
-          "Connected digital services designed around the learner and the community. A transparent view of what is available today, what is in development and what is planned.",
+          "Connected digital services designed around the learner: what is available today, what is in development and what is planned.",
       },
       { property: "og:title", content: "A Growing Digital Ecosystem" },
       {
