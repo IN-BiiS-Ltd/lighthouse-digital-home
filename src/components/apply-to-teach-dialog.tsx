@@ -134,7 +134,13 @@ export function ApplyToTeachDialog() {
   const [open, setOpen] = useState(false);
   const [pending, setPending] = useState(false);
   const [done, setDone] = useState(false);
+  const [receipt, setReceipt] = useState<{
+    reference: string;
+    emailed: boolean;
+    summary: Array<[string, string]>;
+  } | null>(null);
   const [files, setFiles] = useState<PickedFile[]>([]);
+
 
   function addFiles(kind: string, list: FileList | null) {
     if (!list?.length) return;
