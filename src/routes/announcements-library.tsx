@@ -90,6 +90,7 @@ export const Route = createFileRoute("/announcements-library")({
     ],
     links: [{ rel: "canonical", href: URL }],
   }),
+  validateSearch: zodValidator(librarySearchSchema),
   component: AnnouncementsLibrary,
 });
 
@@ -358,7 +359,7 @@ function AnnouncementsLibrary() {
                 </select>
                 <button
                   type="button"
-                  onClick={() => setSortAsc((prev) => !prev)}
+                  onClick={() => setSortAsc(!sortAsc)}
                   className="inline-flex h-9 items-center justify-center gap-1 rounded-md border border-input px-3 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold"
                   aria-label={sortAsc ? "Sort ascending" : "Sort descending"}
                   title={sortAsc ? "Ascending" : "Descending"}
