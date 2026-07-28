@@ -5,9 +5,12 @@ import {
   FeatureCard,
   MediaRow,
   Eyebrow,
+  ButtonLink,
 } from "@/components/blocks";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
+import { assetUrl } from "@/lib/asset-url";
+import hiringPoster from "@/assets/teachers-hiring-2025-2026.png.asset.json";
 import leadershipImg from "@/assets/leadership.jpg?w=1200&format=jpg";
 import leadershipImgAvif from "@/assets/leadership.jpg?w=480;800;1200&format=avif&as=srcset";
 import leadershipImgWebp from "@/assets/leadership.jpg?w=480;800;1200&format=webp&as=srcset";
