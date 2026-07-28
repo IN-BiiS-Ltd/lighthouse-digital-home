@@ -5,9 +5,12 @@ import {
   FeatureCard,
   MediaRow,
   Eyebrow,
+  ButtonLink,
 } from "@/components/blocks";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
+import { assetUrl } from "@/lib/asset-url";
+import hiringPoster from "@/assets/teachers-hiring-2025-2026.png.asset.json";
 import leadershipImg from "@/assets/leadership.jpg?w=1200&format=jpg";
 import leadershipImgAvif from "@/assets/leadership.jpg?w=480;800;1200&format=avif&as=srcset";
 import leadershipImgWebp from "@/assets/leadership.jpg?w=480;800;1200&format=webp&as=srcset";
@@ -15,19 +18,33 @@ import leadershipImgWebp from "@/assets/leadership.jpg?w=480;800;1200&format=web
 export const Route = createFileRoute("/careers")({
   head: () => ({
     meta: [
-      { title: "Careers — Working at Lighthouse Campus" },
+      { title: "Teachers Wanted 2025/2026 — Careers at Lighthouse Campus" },
       {
         name: "description",
         content:
-          "Join a community of mentors. Professional growth, opportunities and our recruitment process at Lighthouse Campus.",
+          "Lighthouse Campus is hiring teachers for 2025/2026 — Science, Maths, English, Arabic, Social Studies, Arts, PE, ICT and Music. Apply now.",
       },
-      { property: "og:title", content: "Careers — Lighthouse Campus" },
+      { property: "og:title", content: "Teachers Wanted 2025/2026 — Lighthouse Campus" },
       {
         property: "og:description",
-        content: "Working at Lighthouse Campus — a community of mentors.",
+        content:
+          "Join the Lighthouse Campus teaching team. Open teaching roles across nine subjects for the 2025/2026 academic year.",
       },
       { property: "og:url", content: "https://lighthousecampus.com/careers" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      {
+        property: "og:image",
+        content:
+          "https://id-preview--626b9399-5e69-4cf1-8f55-da2c8e16cb29.lovable.app/__l5e/assets-v1/89072032-02a7-40fd-a168-2e27ba7c5b0d/teachers-hiring-2025-2026.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://id-preview--626b9399-5e69-4cf1-8f55-da2c8e16cb29.lovable.app/__l5e/assets-v1/89072032-02a7-40fd-a168-2e27ba7c5b0d/teachers-hiring-2025-2026.png",
+      },
     ],
+
     links: [{ rel: "canonical", href: "https://lighthousecampus.com/careers" }],
   }),
   component: Careers,
@@ -41,12 +58,117 @@ function Careers() {
         title="Join a community of mentors and lifelong learners."
         intro="Working at Lighthouse Campus means shaping an institution built to last — where educators are trusted, supported and given room to grow."
         sections={[
+          { label: "We are hiring", to: "/careers#hiring" },
           { label: "Working here", to: "/careers" },
           { label: "Professional growth", to: "/careers#growth" },
           { label: "Opportunities", to: "/careers#opportunities" },
           { label: "Process", to: "/careers#process" },
         ]}
       />
+
+      <Section tone="sand" id="hiring">
+        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]">
+          <div className="order-2 lg:order-1">
+            <Eyebrow>Teacher recruitment — 2025 / 2026</Eyebrow>
+            <h2 className="mt-5 text-balance font-display text-3xl font-medium leading-tight md:text-4xl">
+              We are hiring passionate teachers.
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Lighthouse Campus is looking for inspiring, creative and committed
+              teachers to help shape the leaders of the future — across three
+              curricula: Cambridge Assessment International Education, the South
+              Sudan National Curriculum and the Sudan National Curriculum.
+            </p>
+
+            <h3 className="mt-8 font-display text-lg font-medium">
+              Subjects required
+            </h3>
+            <ul className="mt-4 grid grid-cols-2 gap-x-6 gap-y-2 text-sm text-muted-foreground sm:grid-cols-3">
+              {[
+                "Science",
+                "Mathematics",
+                "English Language",
+                "Arts",
+                "Social Studies",
+                "Arabic Language",
+                "Physical Education",
+                "ICT",
+                "Music",
+              ].map((s) => (
+                <li key={s} className="flex items-start gap-2">
+                  <span aria-hidden className="mt-2 size-1.5 shrink-0 rounded-full bg-gold" />
+                  {s}
+                </li>
+              ))}
+            </ul>
+
+            <h3 className="mt-8 font-display text-lg font-medium">
+              What we look for
+            </h3>
+            <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+              {[
+                "A university qualification in the relevant subject.",
+                "Teaching experience — international curricula preferred.",
+                "Excellent communication skills and a genuine passion for education.",
+                "The ability to inspire learners and lead a classroom with care.",
+                "Commitment to the values and educational mission of the institution.",
+              ].map((s) => (
+                <li key={s} className="flex items-start gap-2">
+                  <span aria-hidden className="mt-2 size-1.5 shrink-0 rounded-full bg-gold" />
+                  {s}
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-9 flex flex-wrap gap-3">
+              <ButtonLink
+                to="/contact"
+                variant="gold"
+                size="lg"
+                aria-label="Apply to teach at Lighthouse Campus"
+                data-event="CTA Click"
+                data-event-prop-label="Apply to teach"
+                data-event-prop-placement="careers-hiring"
+              >
+                Apply to teach →
+              </ButtonLink>
+              <ButtonLink
+                to="tel:+201107030737"
+                variant="outline"
+                size="lg"
+                aria-label="Call the recruitment team on +20 110 703 0737"
+              >
+                +20 110 703 0737
+              </ButtonLink>
+            </div>
+            <p className="mt-4 text-sm text-muted-foreground">
+              66 El-Zahraa, Ad Doqi, Dokki, Giza Governorate 3751053, Egypt
+            </p>
+          </div>
+
+          <figure className="order-1 lg:order-2">
+            <a
+              href={assetUrl(hiringPoster)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block overflow-hidden rounded-2xl border border-gold/40 bg-card shadow-lg transition hover:shadow-xl"
+            >
+              <img
+                src={assetUrl(hiringPoster)}
+                alt="Teacher recruitment announcement for Lighthouse Campus, academic year 2025-2026, listing required subjects and contact details"
+                width={1024}
+                height={1536}
+                loading="lazy"
+                className="h-auto w-full"
+              />
+            </a>
+            <figcaption className="mt-3 text-center text-xs text-muted-foreground">
+              Open the poster in full size to read or share the announcement.
+            </figcaption>
+          </figure>
+        </div>
+      </Section>
+
 
       <Section>
         <MediaRow
