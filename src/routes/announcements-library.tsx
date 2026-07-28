@@ -115,7 +115,7 @@ function PosterCard({ p, priority }: { p: Poster; priority?: boolean }) {
             srcSet={pngSrcSet}
             sizes={sizes}
             loading={priority ? "eager" : "lazy"}
-            fetchpriority={priority ? "high" : "auto"}
+            fetchPriority={priority ? "high" : "auto"}
             decoding={priority ? "sync" : "async"}
             className="w-full rounded-xl shadow-sm"
           />
