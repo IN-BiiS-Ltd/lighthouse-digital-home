@@ -49,10 +49,15 @@ export const submitTeacherApplication = createServerFn({ method: "POST" })
     if (!application.files.some((f) => f.kind === "cv")) {
       throw new Error("A CV or resume is required.");
     }
-    const { saveTeacherApplication, notifyTeacherApplication } = await import(
-      "./careers-notify.server"
-    );
+    const { saveTeacherApplication, notifyTeacherApplication, applicationNumber } =
+      await import("./careers-notify.server");
     const saved = await saveTeacherApplication(application);
     const emailed = await notifyTeacherApplication(application, saved);
-    return { ok: true as const, id: saved.id, emailed };
+    return {
+      ok: true as const,
+      id: saved.id,
+      reference: applicationNumber(saved.id),
+      emailed,
+    };
   });
+
