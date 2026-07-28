@@ -76,23 +76,55 @@ function buildAdminHtml(input: TeacherApplicationInput, saved: SavedApplication)
       </table>
       <h3 style="color:#0b2545">Documents</h3>
       <ul>${docs}</ul>
-      <p style="color:#777;font-size:12px">Reference: ${saved.id}</p>
+      <p style="color:#777;font-size:12px">Application number: ${applicationNumber(saved.id)}</p>
     </div>`;
 }
 
+/** Short, human-quotable reference derived from the application id. */
+export function applicationNumber(id: string) {
+  return `LHC-${id.replace(/-/g, "").slice(0, 8).toUpperCase()}`;
+}
+
 function buildApplicantHtml(input: TeacherApplicationInput, saved: SavedApplication) {
+  const documents = saved.files.length
+    ? saved.files.map((f) => escapeHtml(f.name)).join(", ")
+    : "—";
+
   return `
     <div style="font-family:Georgia,serif;max-width:600px;color:#333">
       <h2 style="color:#0b2545">Thank you for your application</h2>
       <p>Dear ${escapeHtml(input.fullName)},</p>
-      <p>Your application for <strong>${escapeHtml(
-        input.positionAppliedFor,
-      )} — ${escapeHtml(input.subject)}</strong> has been received successfully.</p>
+      <p>Your application has been received successfully. Please keep your
+      application number for any future correspondence.</p>
+
+      <p style="background:#0b2545;color:#e9c46a;padding:12px 18px;border-radius:8px;
+      display:inline-block;font-size:18px;letter-spacing:1px">
+        ${applicationNumber(saved.id)}
+      </p>
+
+      <h3 style="color:#0b2545">Summary of your application</h3>
+      <table style="border-collapse:collapse;width:100%">
+        ${row("Full name", input.fullName)}
+        ${row("Email", input.email)}
+        ${row("Mobile", input.phone)}
+        ${row("Nationality", input.nationality)}
+        ${row("Residence", `${input.city}, ${input.countryOfResidence}`)}
+        ${row("Position applied for", input.positionAppliedFor)}
+        ${row("Subject / specialization", input.subject)}
+        ${row("Highest qualification", input.qualification)}
+        ${row("University", input.university)}
+        ${row("Years of experience", input.experienceYears)}
+        ${row("Curriculum experience", input.curriculumExperience.join(", "))}
+        ${row("Earliest start date", input.availableFrom)}
+        ${row("Documents received", documents)}
+        ${row("Submitted on", new Date().toUTCString())}
+      </table>
+
       <p>Our recruitment team will review your application and contact you if your
       profile matches our current requirements.</p>
-      <p style="color:#777;font-size:12px">Reference: ${saved.id}</p>
       <p style="color:#0b2545">Lighthouse Campus · 66 El-Zahraa, Ad Doqi, Dokki, Giza, Egypt</p>
     </div>`;
+
 }
 
 async function sendEmail(payload: Record<string, unknown>) {
