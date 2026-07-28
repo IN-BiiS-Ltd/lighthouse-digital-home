@@ -301,22 +301,6 @@ function PosterCard({ p, priority, layout = "grid" }: { p: Poster; priority?: bo
         </p>
         <p className="text-sm text-muted-foreground">{p.summary}</p>
 
-        <dl className="mt-1 grid gap-1 text-xs text-muted-foreground">
-          <div className="flex items-center gap-2">
-            <CalendarDays className="size-3.5 text-gold" aria-hidden />
-            <dt className="sr-only">Approval date</dt>
-            <dd>
-              Approved on{" "}
-              <time dateTime={p.approved} className="text-foreground">
-                {p.approvedLabel}
-              </time>
-            </dd>
-          </div>
-          <div>
-            <dt className="sr-only">File</dt>
-            <dd>{p.size}</dd>
-          </div>
-        </dl>
 
         <div className="mt-auto flex flex-wrap gap-2 pt-4">
           <a
