@@ -84,7 +84,7 @@ const config: PrincipledPageConfig = {
   related: [
     { title: "Wellbeing", to: "/student-life/wellbeing", body: "Care for the whole learner across the school day." },
     { title: "Safety", to: "/campus-experience/safety", body: "A safe and orderly campus." },
-    { title: "Parent Partnership", to: "/parents/parent-partnership", body: "Home and school working together." },
+    { title: "Parent Partnership", to: "/our-model/parent-partnership", body: "Home and school working together." },
   ],
   cta: {
     title: "Ask us any question.",

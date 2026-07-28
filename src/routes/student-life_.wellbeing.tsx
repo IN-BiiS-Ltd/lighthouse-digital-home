@@ -84,7 +84,7 @@ const config = {
     },
     {
       "title": "Parent Partnership",
-      "to": "/parents/parent-partnership",
+      "to": "/our-model/parent-partnership",
       "body": "Home and school together."
     }
   ],
