@@ -85,7 +85,7 @@ function Community() {
             links: [
               { title: "Partnerships", to: "/community/partnerships", body: "Considered relationships that shape our reach." },
               { title: "Alumni", to: "/community/alumni", body: "The future Lighthouse alumni community." },
-              { title: "Careers", to: "/community/careers", body: "Working at Lighthouse Campus." },
+              { title: "Careers", to: "/careers", body: "Working at Lighthouse Campus — we are hiring." },
             ],
           },
         ],

@@ -72,7 +72,6 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/admissions/apply-online", changefreq: "monthly", priority: "0.7" },
           // Parents
           { path: "/parents", changefreq: "monthly", priority: "0.7" },
-          { path: "/parents/parent-partnership", changefreq: "monthly", priority: "0.6" },
           { path: "/parents/parent-journey", changefreq: "monthly", priority: "0.6" },
           { path: "/parents/communication", changefreq: "monthly", priority: "0.6" },
           { path: "/parents/parent-portal", changefreq: "monthly", priority: "0.6" },
