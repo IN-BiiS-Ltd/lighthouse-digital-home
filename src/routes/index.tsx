@@ -17,6 +17,12 @@ import {
   SmartLink,
   BrandLogo,
 } from "@/components/blocks";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { NarrativeFlow } from "@/components/page-hero";
 import { BrandAtmosphere } from "@/components/brand-atmosphere";
 import { WatermarkFloat } from "@/components/watermark-float";
