@@ -57,9 +57,6 @@ export const getDocumentUrl = createServerFn({ method: "POST" })
 export const currentUserIsAdmin = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
   .handler(async ({ context }) => {
-    const { data } = await context.supabase.rpc("has_role", {
-      _user_id: context.userId,
-      _role: "admin",
-    });
-    return { isAdmin: Boolean(data) };
+    const { isAdmin } = await import("./careers-admin.server");
+    return { isAdmin: await isAdmin(context.supabase, context.userId) };
   });
