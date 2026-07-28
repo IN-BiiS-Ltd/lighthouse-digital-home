@@ -1,4 +1,4 @@
-import campusTransparent from "@/assets/lighthouse-transparent-logo.png.asset.json";
+import campusTransparent from "@/assets/lighthouse-official-logo.png.asset.json";
 import { cn } from "@/lib/utils";
 
 /**
