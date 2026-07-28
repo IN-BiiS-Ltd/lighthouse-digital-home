@@ -276,23 +276,62 @@ export function ApplyToTeachDialog() {
 
       <DialogContent className="max-h-[90dvh] overflow-y-auto sm:max-w-3xl">
         {done ? (
-          <div className="py-8 text-center">
+          <div className="py-6">
             <CheckCircle2 className="mx-auto size-12 text-gold" aria-hidden />
-            <h2 className="mt-5 font-display text-2xl font-medium">
+            <h2 className="mt-5 text-center font-display text-2xl font-medium">
               Thank you for your application.
             </h2>
-            <p className="mx-auto mt-4 max-w-md text-muted-foreground">
+            <p className="mx-auto mt-4 max-w-md text-center text-muted-foreground">
               Your application has been received successfully. Our recruitment team
               will review your application and contact you if your profile matches
               our current requirements.
             </p>
-            <Button
-              className="mt-7 rounded-full bg-gold px-7 text-navy hover:bg-gold/90"
-              onClick={() => setOpen(false)}
-            >
-              Close
-            </Button>
+
+            {receipt && (
+              <>
+                <div className="mx-auto mt-7 w-fit rounded-xl border border-gold/50 bg-navy px-7 py-4 text-center">
+                  <p className="text-xs uppercase tracking-widest text-gold/80">
+                    Application number
+                  </p>
+                  <p className="mt-1 font-display text-2xl tracking-wider text-gold">
+                    {receipt.reference}
+                  </p>
+                </div>
+
+                <p className="mt-4 text-center text-sm text-muted-foreground">
+                  {receipt.emailed
+                    ? `A confirmation email with your application number and a summary of your details has been sent to ${
+                        receipt.summary.find(([l]) => l === "Email")?.[1] ?? "you"
+                      }.`
+                    : "Please keep this application number for any future correspondence with our recruitment team."}
+                </p>
+
+                <div className="mt-7 rounded-xl border border-border/70 p-5">
+                  <h3 className="font-display text-lg font-medium">
+                    Summary of your application
+                  </h3>
+                  <dl className="mt-4 grid gap-3 text-sm sm:grid-cols-2">
+                    {receipt.summary.map(([label, value]) => (
+                      <div key={label}>
+                        <dt className="font-medium text-foreground">{label}</dt>
+                        <dd className="text-muted-foreground">{value || "—"}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                </div>
+              </>
+            )}
+
+            <div className="mt-7 text-center">
+              <Button
+                className="rounded-full bg-gold px-7 text-navy hover:bg-gold/90"
+                onClick={() => setOpen(false)}
+              >
+                Close
+              </Button>
+            </div>
           </div>
+
         ) : (
           <>
             <DialogHeader>
