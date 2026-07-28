@@ -342,6 +342,13 @@ function PosterCard({ p, priority, layout = "grid" }: { p: Poster; priority?: bo
             {p.related.label}
           </SmartLink>
         </div>
+
+        <ShareRow
+          className="mt-4 border-t border-gold/20 pt-4"
+          label="Share"
+          title={`${p.title} — Lighthouse Campus`}
+          url={`${p.base}.png`}
+        />
       </div>
     </article>
   );
