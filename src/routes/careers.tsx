@@ -184,7 +184,7 @@ function Careers() {
               </ButtonLink>
             </div>
             <p className="mt-4 text-sm text-muted-foreground">
-              66 El-Zahraa, Ad Doqi, Dokki, Giza Governorate 3751053, Egypt
+              Applications by email: <a href="mailto:ceo@lighthousecampus.com" className="underline underline-offset-4">ceo@lighthousecampus.com</a> · 66 El-Zahraa, Ad Doqi, Dokki, Giza Governorate 3751053, Egypt
             </p>
           </div>
 
