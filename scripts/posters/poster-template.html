@@ -1,0 +1,197 @@
+<!doctype html>
+<!--
+  Lighthouse Campus — Official Announcement Poster Template
+  ---------------------------------------------------------
+  DO NOT edit the logo block. The mark is injected from the single approved
+  asset (src/assets/lighthouse-official-logo.png.asset.json) by
+  scripts/generate-poster.py and must never be cropped, recoloured or replaced.
+
+  Everything else is driven by a JSON content file — swap content only.
+-->
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <title>Lighthouse Campus — Poster</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --navy: #0b1d3a;
+        --gold: #d4af37;
+        --blue: #1e4c8a;
+        --ink: #10233f;
+        --line: #d9dee8;
+        --sand: #f5f6f9;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        width: 1024px;
+        height: 1536px;
+        font-family: "IBM Plex Sans Arabic", "Inter", sans-serif;
+        color: var(--ink);
+        background: #fff;
+        overflow: hidden;
+      }
+      .poster { position: relative; width: 1024px; height: 1536px; padding: 44px 44px 0; }
+
+      /* ---- Head: approved logo (left) + headline (right) ---- */
+      .head { display: grid; grid-template-columns: 400px 1fr; gap: 24px; align-items: start; direction: ltr; }
+      .headline, .curricula, .bullets { direction: rtl; }
+      .logo-lockup { padding-top: 6px; }
+      .logo-lockup img { width: 100%; height: auto; display: block; }
+      .headline { text-align: right; padding-top: 18px; }
+      .headline h1 { font-size: 60px; line-height: 1.12; color: var(--navy); font-weight: 700; }
+      .headline h1 .gold { color: var(--gold); }
+      .headline h2 { font-size: 40px; line-height: 1.2; color: var(--navy); font-weight: 700; margin-top: 4px; }
+      .headline p.lede { margin-top: 18px; font-size: 21px; line-height: 1.7; color: #3b4a63; }
+
+      .cta-pill {
+        display: inline-block; margin-top: 22px; background: var(--navy); color: #fff;
+        font-size: 27px; font-weight: 700; padding: 14px 40px; border-radius: 10px;
+      }
+      .cta-note { margin-top: 14px; font-size: 20px; font-weight: 700; color: var(--gold); }
+      .locality {
+        margin-top: 18px; display: inline-block; text-align: right;
+        border: 2px solid var(--gold); border-radius: 10px; padding: 10px 26px;
+      }
+      .locality strong { display: block; font-size: 30px; color: var(--navy); }
+      .locality span { font-size: 17px; color: #56637a; }
+
+      /* ---- Photo + curricula ---- */
+      .band { display: grid; grid-template-columns: 380px 1fr; gap: 28px; margin-top: 30px; align-items: start; direction: ltr; }
+      .band.no-photo { grid-template-columns: 1fr; }
+      .photo { border-radius: 12px; overflow: hidden; background: var(--sand); }
+      .photo img { width: 100%; height: 320px; object-fit: cover; display: block; }
+      .curricula h3 { text-align: right; font-size: 27px; color: var(--navy); font-weight: 700; margin-bottom: 14px; }
+      .curriculum { border-bottom: 1px solid var(--line); padding: 12px 0; text-align: right; }
+      .curriculum:last-child { border-bottom: 0; }
+      .curriculum b { display: block; font-size: 19px; color: var(--navy); }
+      .curriculum span { font-size: 17px; color: #56637a; }
+
+      /* ---- Stages ---- */
+      .stages-title { text-align: center; font-size: 27px; font-weight: 700; color: var(--navy); margin: 30px 0 16px; }
+      .stages { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+      .stage { text-align: center; padding: 6px 10px; border-left: 1px solid var(--line); }
+      .stage:last-child { border-left: 0; }
+      .stage b { display: block; font-size: 20px; color: var(--navy); }
+      .stage .en { font-size: 15px; color: #56637a; margin-top: 2px; }
+      .stage .sub { font-size: 14px; color: #7b8697; margin-top: 4px; }
+
+      /* ---- Value strip ---- */
+      .strip { display: grid; grid-template-columns: repeat(5, 1fr); background: var(--navy); border-radius: 10px; margin-top: 22px; overflow: hidden; }
+      .strip div { text-align: center; padding: 16px 8px; border-left: 1px solid rgba(255,255,255,.14); }
+      .strip div:last-child { border-left: 0; }
+      .strip b { display: block; color: var(--gold); font-size: 18px; }
+      .strip span { color: #dbe3f0; font-size: 14px; }
+
+      /* ---- Bullets (used by recruitment-style posters) ---- */
+      .bullets { margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 26px; text-align: right; }
+      .bullets li { list-style: none; font-size: 18px; color: var(--ink); padding-right: 18px; position: relative; }
+      .bullets li::before { content: "•"; color: var(--gold); position: absolute; right: 0; }
+
+      /* ---- Footer ---- */
+      .foot { position: absolute; left: 44px; right: 44px; bottom: 74px; display: flex; justify-content: space-between; align-items: center; }
+      .contact { text-align: left; direction: ltr; font-family: "Inter", sans-serif; }
+      .contact .mail { font-size: 20px; font-weight: 700; color: var(--navy); }
+      .contact .row { font-size: 16px; color: #56637a; margin-top: 6px; }
+      .site { background: var(--navy); color: #fff; font-family: "Inter", sans-serif; font-size: 19px; font-weight: 600; padding: 14px 26px; border-radius: 8px; }
+      .promise {
+        position: absolute; left: 0; right: 0; bottom: 26px; text-align: center;
+        font-family: "Inter", sans-serif; font-size: 13px; letter-spacing: .18em; color: #8a93a4;
+      }
+      .hidden { display: none !important; }
+    </style>
+  </head>
+  <body>
+    <div class="poster">
+      <div class="head">
+        <!-- APPROVED LOGO — injected, never modified -->
+        <div class="logo-lockup"><img id="logo" alt="Lighthouse Campus" /></div>
+        <div class="headline">
+          <h1 id="title"></h1>
+          <h2 id="subtitle"></h2>
+          <p class="lede" id="lede"></p>
+          <div class="cta-pill" id="cta"></div>
+          <div class="cta-note" id="ctaNote"></div>
+          <div class="locality" id="localityBox">
+            <strong id="locality"></strong><span id="localityNote"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="band" id="bandBox">
+        <div class="photo"><img id="photo" alt="" /></div>
+        <div class="curricula">
+          <h3 id="listTitle"></h3>
+          <div id="list"></div>
+        </div>
+      </div>
+
+      <ul class="bullets" id="bullets"></ul>
+
+      <div class="stages-title" id="stagesTitle"></div>
+      <div class="stages" id="stages"></div>
+
+      <div class="strip" id="strip"></div>
+
+      <div class="foot">
+        <div class="contact">
+          <div class="mail" id="email"></div>
+          <div class="row" id="phone"></div>
+          <div class="row" id="address"></div>
+        </div>
+        <div class="site" id="website"></div>
+      </div>
+      <div class="promise" id="promise"></div>
+    </div>
+
+    <script>
+      const d = window.__POSTER__ || {};
+      const set = (id, val) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        if (val === undefined || val === null || val === "") { el.classList.add("hidden"); return; }
+        el.innerHTML = val;
+      };
+      document.getElementById("logo").src = d.logoDataUrl || "";
+      set("title", d.title);
+      set("subtitle", d.subtitle);
+      set("lede", d.lede);
+      set("cta", d.cta);
+      set("ctaNote", d.ctaNote);
+      set("locality", d.locality);
+      set("localityNote", d.localityNote);
+      if (!d.locality) document.getElementById("localityBox").classList.add("hidden");
+
+      if (d.photoDataUrl) document.getElementById("photo").src = d.photoDataUrl;
+      else { document.querySelector(".photo").classList.add("hidden"); document.getElementById("bandBox").classList.add("no-photo"); }
+      set("listTitle", d.listTitle);
+      document.getElementById("list").innerHTML = (d.list || [])
+        .map((i) => `<div class="curriculum"><b>${i.title}</b><span>${i.note || ""}</span></div>`)
+        .join("");
+      if (!d.photoDataUrl && !(d.list || []).length) document.getElementById("bandBox").classList.add("hidden");
+
+      document.getElementById("bullets").innerHTML = (d.bullets || []).map((b) => `<li>${b}</li>`).join("");
+      if (!(d.bullets || []).length) document.getElementById("bullets").classList.add("hidden");
+
+      set("stagesTitle", d.stagesTitle);
+      document.getElementById("stages").innerHTML = (d.stages || [])
+        .map((s) => `<div class="stage"><b>${s.title}</b><div class="en">${s.en || ""}</div><div class="sub">${s.note || ""}</div></div>`)
+        .join("");
+      document.getElementById("strip").innerHTML = (d.strip || [])
+        .map((s) => `<div><b>${s.title}</b><span>${s.note || ""}</span></div>`)
+        .join("");
+      if (!(d.strip || []).length) document.getElementById("strip").classList.add("hidden");
+
+      set("email", d.email);
+      set("phone", d.phone);
+      set("address", d.address);
+      set("website", d.website);
+      set("promise", d.promise);
+    </script>
+  </body>
+</html>

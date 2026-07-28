@@ -1,0 +1,76 @@
+{
+  "output": "admissions-2026-2027-a",
+  "title": "سجّل الآن <span class=\"gold\">لبناء مستقبل</span>",
+  "subtitle": "يبدأ من هنا",
+  "lede": "تعليم عصري مُلهم يبني العقول، ويصنع قادة المستقبل.",
+  "cta": "فتح باب التسجيل",
+  "ctaNote": "للعام الدراسي 2026 - 2027",
+  "locality": "القاهرة",
+  "localityNote": "الدقي - الجيزة",
+  "photo": null,
+  "listTitle": "مناهج عالمية … لهوية وعمق محلي",
+  "list": [
+    {
+      "title": "Cambridge Assessment International Education",
+      "note": "منهج كامبريدج الدولي"
+    },
+    {
+      "title": "South Sudan National Curriculum",
+      "note": "منهج دولة جنوب السودان"
+    },
+    {
+      "title": "Sudan National Curriculum",
+      "note": "منهج السودان الوطني"
+    }
+  ],
+  "stagesTitle": "أربع مراحل تعليمية متكاملة",
+  "stages": [
+    {
+      "title": "المرحلة الثانوية",
+      "en": "Grades 9 - 12",
+      "note": "قيادة · تميّز · استقبال"
+    },
+    {
+      "title": "المرحلة المتوسطة",
+      "en": "Grades 6 - 8",
+      "note": "تفكير · مهارات · تطوير"
+    },
+    {
+      "title": "المرحلة الابتدائية",
+      "en": "Grades 3 - 5",
+      "note": "فضول · أساس · فهم"
+    },
+    {
+      "title": "المرحلة التمهيدية",
+      "en": "KG - Grade 2",
+      "note": "اكتشاف · لعب · نمو"
+    }
+  ],
+  "strip": [
+    {
+      "title": "رعاية شاملة",
+      "note": "لكل متعلم"
+    },
+    {
+      "title": "تنمية شخصية",
+      "note": "وقيم قيادية"
+    },
+    {
+      "title": "منهج عالمي",
+      "note": "بمعايير دولية"
+    },
+    {
+      "title": "بيئة آمنة",
+      "note": "وداعمة"
+    },
+    {
+      "title": "تعليم مبتكر",
+      "note": "ومتكامل"
+    }
+  ],
+  "email": "ceo@lighthousecampus.com",
+  "phone": "+20 110 703 0737",
+  "address": "66 El-Zahraa, Ad Doqi, Dokki, Giza Governorate 3751053, Egypt",
+  "website": "lighthousecampus.com",
+  "promise": "GUIDING MINDS. &nbsp;·&nbsp; INSPIRING FUTURES. &nbsp;·&nbsp; CONNECTING POSSIBILITIES."
+}
