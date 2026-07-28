@@ -11,6 +11,8 @@
     "lint": "eslint .",
     "audit:content": "node scripts/audit-content.mjs",
     "audit:schema": "node scripts/audit-structured-data.mjs",
+    "audit:links": "node scripts/audit-related-links.mjs",
+    "audit:all": "npm run audit:content && npm run audit:links",
     "format": "prettier --write ."
   },
   "dependencies": {
