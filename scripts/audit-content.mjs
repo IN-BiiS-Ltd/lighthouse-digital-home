@@ -69,7 +69,11 @@ for (const file of files) {
     titles: matchAll(src, /\{\s*title:\s*"((?:[^"\\]|\\.)*)"\s*\}/g),
     descriptions: matchAll(
       src,
-      /name:\s*"description",\s*content:\s*"((?:[^"\\]|\\.)*)"/g,
+      /name:\s*"description",\s*content:\s*\n?\s*"((?:[^"\\]|\\.)*)"/g,
+    ),
+    ogTitles: matchAll(
+      src,
+      /property:\s*"og:title",\s*content:\s*\n?\s*"((?:[^"\\]|\\.)*)"/g,
     ),
     // page's own H1 = first `title:` in the route config (later ones are
     // section headings and related-card labels, which may legitimately repeat)
@@ -107,6 +111,18 @@ function assertUnique(label, pick, { ignore = () => false } = {}) {
 
 assertUnique("Head <title>", (p) => p.titles);
 assertUnique("Meta description", (p) => p.descriptions);
+assertUnique("og:title", (p) => p.ogTitles);
+
+// meta descriptions must stay within the 50–160 character search-result window
+for (const page of pages) {
+  for (const d of page.descriptions) {
+    if (d.length > 160 || d.length < 50) {
+      failures.push(
+        `Meta description on ${page.id} is ${d.length} chars (must be 50–160)`,
+      );
+    }
+  }
+}
 assertUnique("Page title / H1", (p) => p.pageTitles);
 assertUnique("Intro paragraph", (p) => p.intros);
 assertUnique(`Body paragraph (>=${MIN_PARAGRAPH} chars)`, (p) => p.bodies);
