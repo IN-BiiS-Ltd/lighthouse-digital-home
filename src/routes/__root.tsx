@@ -116,19 +116,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lighthouse Campus — Guiding Minds. Inspiring Futures." },
+      { title: "Lighthouse Campus — International School in Dokki, Giza" },
       {
         name: "description",
         content:
-          "Lighthouse Campus is an international learning community in Cairo where students remain at the centre — guiding minds, inspiring futures and connecting possibilities.",
+          "Lighthouse Campus is an independent international school in Dokki, Giza, where students remain at the centre of every decision.",
       },
       { name: "author", content: "Lighthouse Campus" },
       { name: "theme-color", content: "#0B1D3A" },
-      { property: "og:title", content: "Lighthouse Campus" },
+      { property: "og:title", content: "Lighthouse Campus — International School in Dokki, Giza" },
       {
         property: "og:description",
         content:
-          "An international learning community where students remain at the centre. Guiding minds. Inspiring futures. Connecting possibilities.",
+          "An independent international school in Dokki, Giza. Guiding minds. Inspiring futures. Connecting possibilities.",
       },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Lighthouse Campus" },
