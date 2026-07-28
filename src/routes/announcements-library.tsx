@@ -94,7 +94,7 @@ export const Route = createFileRoute("/announcements-library")({
 function PosterCard({ p, priority }: { p: Poster; priority?: boolean }) {
   const webpSrcSet = `${p.base}-256.webp 256w, ${p.base}-512.webp 512w, ${p.base}.webp 1024w`;
   const pngSrcSet = `${p.base}-256.png 256w, ${p.base}-512.png 512w, ${p.base}.png 1024w`;
-  const sizes = "(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw";
+  const sizes = "(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 360px";
 
   return (
     <article className="flex flex-col overflow-hidden rounded-2xl border border-gold/30 bg-card">
