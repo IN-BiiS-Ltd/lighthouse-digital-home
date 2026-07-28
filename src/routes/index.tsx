@@ -74,10 +74,66 @@ export const Route = createFileRoute("/")({
         fetchpriority: "high",
       } as unknown as { rel: string },
     ],
-
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: parentFaqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }),
+      },
+    ],
   }),
   component: Home,
 });
+
+const parentFaqs = [
+  {
+    q: "Is registration open for the 2026 / 2027 academic year?",
+    a: "Yes. Registration for the 2026 / 2027 academic year is open for Early Years through Secondary. Families can apply online, or schedule a campus visit in Dokki, Giza before applying.",
+  },
+  {
+    q: "Where is Lighthouse Campus located?",
+    a: "Our first operational campus is at 66 El-Zahraa, Ad Doqi, Dokki, Giza Governorate 3751053, Egypt. You can reach the admissions team on +20 110 703 0737.",
+  },
+  {
+    q: "What makes Lighthouse different from other schools?",
+    a: "Lighthouse is an independent institution designed around one continuous learning journey — five stages, each built for who a child is becoming. Every student is known by name by their mentors, and families are treated as educational partners rather than recipients of reports.",
+  },
+  {
+    q: "How does the school communicate with parents?",
+    a: "Parents receive structured, honest communication through the parent portal, scheduled mentor conversations and clear termly reporting — so you always know how your child is progressing academically, socially and emotionally.",
+  },
+  {
+    q: "How do I visit the campus before deciding?",
+    a: "Schedule a visit through the contact page or by phone. You will meet our people, see the learning spaces and ask the questions that matter to your family before any commitment.",
+  },
+];
+
+const parentPromises = [
+  {
+    title: "Your child is known by name",
+    body: "Mentor-led groups kept deliberately small, so progress, wellbeing and character are followed by a person — not a spreadsheet.",
+  },
+  {
+    title: "Safeguarding without compromise",
+    body: "Vetted staff, supervised movement, controlled access and clear health services. Safety is a system on this campus, not a promise.",
+  },
+  {
+    title: "You are never left guessing",
+    body: "Transparent reporting and open mentor conversations. You will know how your child is doing before you have to ask.",
+  },
+  {
+    title: "Ambition held with warmth",
+    body: "High academic expectations paired with real support — challenge that builds confidence instead of anxiety.",
+  },
+];
+
 
 const values = [
   {
