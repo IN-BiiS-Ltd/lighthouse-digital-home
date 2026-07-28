@@ -74,8 +74,8 @@ function Contact() {
               </li>
               <li className="flex gap-4">
                 <Phone className="mt-0.5 size-5 shrink-0 text-sky" aria-hidden />
-                <a href="tel:+20000000000" className="hover:text-brand-blue">
-                  +20 00 000 0000
+                <a href="tel:+201107030737" className="hover:text-brand-blue">
+                  +20 110 703 0737
                 </a>
               </li>
               <li className="flex gap-4">

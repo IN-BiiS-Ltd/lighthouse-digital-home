@@ -50,7 +50,7 @@ export const Route = createFileRoute("/campuses_/mohandessin")({
               slogan: "Guiding Minds. Inspiring Futures. Connecting Possibilities.",
               description:
                 "The first operational Lighthouse Campus, located in Dokki, Giza — an international K-12 learning community in Greater Cairo.",
-              telephone: "+20-00-000-0000",
+              telephone: "+20-110-703-0737",
               email: "hello@lighthousecampus.edu",
               address: {
                 "@type": "PostalAddress",
@@ -270,8 +270,8 @@ function Mohandessin() {
               </li>
               <li className="flex gap-3">
                 <Phone className="mt-0.5 size-5 shrink-0 text-sky" aria-hidden />
-                <a href="tel:+20000000000" className="hover:text-brand-blue">
-                  +20 00 000 0000
+                <a href="tel:+201107030737" className="hover:text-brand-blue">
+                  +20 110 703 0737
                 </a>
               </li>
               <li className="flex gap-3">
