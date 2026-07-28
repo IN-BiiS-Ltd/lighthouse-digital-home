@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { PageHero } from "@/components/page-hero";
 import { Section, Eyebrow, ButtonLink, SmartLink } from "@/components/blocks";
 import { ShareBar } from "@/components/share-bar";
-import { Download, CheckCircle2, CalendarDays, Search, SlidersHorizontal, ArrowUp, ArrowDown, X } from "lucide-react";
+import { Download, CheckCircle2, CalendarDays, Search, SlidersHorizontal, ArrowUp, ArrowDown, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
@@ -226,6 +226,31 @@ function AnnouncementsLibrary() {
 
   const hasActiveFilters = query || category !== "All" || dateFrom || dateTo || sortField !== "date" || sortAsc;
 
+  const [pageSize, setPageSize] = useState(6);
+  const [page, setPage] = useState(1);
+  const gridRef = useRef<HTMLDivElement>(null);
+  const shouldScrollRef = useRef(false);
+
+  const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
+  const safePage = Math.min(page, totalPages);
+  const pageStart = (safePage - 1) * pageSize;
+  const visible = filtered.slice(pageStart, pageStart + pageSize);
+
+  useEffect(() => {
+    setPage(1);
+  }, [query, category, dateFrom, dateTo, sortField, sortAsc, pageSize]);
+
+  useEffect(() => {
+    if (!shouldScrollRef.current) return;
+    shouldScrollRef.current = false;
+    gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [safePage]);
+
+  const goToPage = (next: number) => {
+    shouldScrollRef.current = true;
+    setPage(Math.max(1, Math.min(totalPages, next)));
+  };
+
   const clearFilters = () => {
     setQuery("");
     setCategory("All");
@@ -233,6 +258,7 @@ function AnnouncementsLibrary() {
     setDateTo("");
     setSortField("date");
     setSortAsc(false);
+    setPage(1);
   };
 
   return (
@@ -397,11 +423,84 @@ function AnnouncementsLibrary() {
           )}
         </div>
 
-        <div className="mt-8 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-          {filtered.map((p, i) => (
-            <PosterCard key={p.key} p={p} priority={i < 3} />
+        <div
+          ref={gridRef}
+          className="mt-8 grid gap-8 md:grid-cols-2 xl:grid-cols-3"
+          aria-live="polite"
+        >
+          {visible.map((p, i) => (
+            <PosterCard key={p.key} p={p} priority={safePage === 1 && i < 3} />
           ))}
         </div>
+
+        {filtered.length > 0 && (
+          <nav
+            aria-label="Announcements library pagination"
+            className="mt-10 flex flex-col gap-4 border-t border-gold/20 pt-6 md:flex-row md:items-center md:justify-between"
+          >
+            <p className="text-sm text-muted-foreground">
+              Showing {pageStart + 1}–{Math.min(pageStart + pageSize, filtered.length)} of{" "}
+              {filtered.length} posters
+            </p>
+
+            <div className="flex flex-wrap items-center gap-3">
+              <Label htmlFor="page-size" className="text-xs text-muted-foreground">
+                Per page
+              </Label>
+              <select
+                id="page-size"
+                value={pageSize}
+                onChange={(e) => setPageSize(Number(e.target.value))}
+                className="h-9 rounded-full border border-gold/30 bg-background px-3 text-sm text-foreground"
+              >
+                {[3, 6, 9, 12].map((n) => (
+                  <option key={n} value={n}>
+                    {n}
+                  </option>
+                ))}
+              </select>
+
+              <div className="flex items-center gap-1">
+                <button
+                  type="button"
+                  onClick={() => goToPage(safePage - 1)}
+                  disabled={safePage === 1}
+                  className="inline-flex h-9 items-center gap-1 rounded-full border border-gold/30 px-3 text-sm text-foreground transition hover:border-gold disabled:opacity-40"
+                >
+                  <ChevronLeft className="size-4" aria-hidden />
+                  Previous
+                </button>
+
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map((n) => (
+                  <button
+                    key={n}
+                    type="button"
+                    onClick={() => goToPage(n)}
+                    aria-current={n === safePage ? "page" : undefined}
+                    aria-label={`Page ${n}`}
+                    className={`inline-flex size-9 items-center justify-center rounded-full border text-sm transition ${
+                      n === safePage
+                        ? "border-gold bg-gold font-medium text-navy"
+                        : "border-gold/30 text-foreground hover:border-gold"
+                    }`}
+                  >
+                    {n}
+                  </button>
+                ))}
+
+                <button
+                  type="button"
+                  onClick={() => goToPage(safePage + 1)}
+                  disabled={safePage === totalPages}
+                  className="inline-flex h-9 items-center gap-1 rounded-full border border-gold/30 px-3 text-sm text-foreground transition hover:border-gold disabled:opacity-40"
+                >
+                  Next
+                  <ChevronRight className="size-4" aria-hidden />
+                </button>
+              </div>
+            </div>
+          </nav>
+        )}
 
         {filtered.length === 0 && (
           <div className="mt-12 rounded-2xl border border-gold/20 bg-card p-8 text-center">
