@@ -93,7 +93,7 @@ export const primaryNav: NavSection[] = [
       { label: "Arts & Performance", to: "/student-life/arts-performance", description: "Voice, craft and expression." },
       { label: "Leadership & Service", to: "/student-life/leadership-service", description: "Responsibility in service of others." },
       { label: "Wellbeing", to: "/student-life/wellbeing", description: "Care for the whole learner." },
-      { label: "Events", to: "/student-life/events", description: "Moments that mark the school year." },
+      { label: "Student Events", to: "/student-life/events", description: "Moments that mark the school year." },
     ],
   },
   {
@@ -102,7 +102,7 @@ export const primaryNav: NavSection[] = [
     summary: "Purposeful spaces designed for learning and care.",
     children: [
       { label: "Campus Experience Overview", to: "/campus-experience", description: "Every space serves the learner." },
-      { label: "Campus Overview", to: "/campus-experience/overview", description: "How the campus is organised around learning." },
+      { label: "How the Campus Works", to: "/campus-experience/overview", description: "How the campus is organised around learning." },
       { label: "Classrooms", to: "/campus-experience/classrooms", description: "Where daily learning happens." },
       { label: "Library", to: "/campus-experience/library", description: "A place for reading, thinking and quiet." },
       { label: "Laboratories", to: "/campus-experience/laboratories", description: "Where inquiry becomes practice." },
@@ -140,7 +140,6 @@ export const secondaryNav: NavSection[] = [
     summary: "Partnership, communication and resources for families.",
     children: [
       { label: "Parents Overview", to: "/parents", description: "Families as educational partners." },
-      { label: "Parent Partnership", to: "/parents/parent-partnership", description: "Families as educational partners." },
       { label: "Parent Journey", to: "/parents/parent-journey", description: "How the relationship begins and grows." },
       { label: "Communication", to: "/parents/communication", description: "How families and school stay in touch." },
       { label: "Parent Portal", to: "/parents/parent-portal", description: "A family-facing portal, in development." },
@@ -184,7 +183,7 @@ export const secondaryNav: NavSection[] = [
       { label: "Partnerships", to: "/community/partnerships", description: "Values-aligned relationships." },
       { label: "Alumni", to: "/community/alumni", description: "The future Lighthouse alumni community." },
       { label: "Community Programmes", to: "/community/community-programmes", description: "Contribution beyond the walls." },
-      { label: "Events", to: "/community/events", description: "Public community moments." },
+      { label: "Community Events", to: "/community/events", description: "Public community moments." },
       { label: "Careers — We are hiring", to: "/careers", description: "Teacher vacancies 2025/2026 and working at Lighthouse Campus." },
     ],
   },
