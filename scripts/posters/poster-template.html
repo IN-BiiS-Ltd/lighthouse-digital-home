@@ -42,6 +42,16 @@
       .head { display: grid; grid-template-columns: 400px 1fr; gap: 24px; align-items: start; direction: ltr; }
       .headline, .curricula, .bullets { direction: rtl; }
       .logo-lockup { padding-top: 6px; }
+      .logo-tagline {
+        margin-top: 12px;
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        color: var(--blue);
+        text-transform: uppercase;
+        text-align: center;
+      }
       .logo-lockup img { width: 100%; height: auto; display: block; }
       .headline { text-align: right; padding-top: 18px; }
       .headline h1 { font-size: 60px; line-height: 1.12; color: var(--navy); font-weight: 700; }
@@ -110,7 +120,10 @@
     <div class="poster">
       <div class="head">
         <!-- APPROVED LOGO — injected, never modified -->
-        <div class="logo-lockup"><img id="logo" alt="Lighthouse Campus" /></div>
+        <div class="logo-lockup">
+          <img id="logo" alt="Lighthouse Campus" />
+          <div class="logo-tagline" id="poweredBy"></div>
+        </div>
         <div class="headline">
           <h1 id="title"></h1>
           <h2 id="subtitle"></h2>
@@ -158,6 +171,7 @@
         el.innerHTML = val;
       };
       document.getElementById("logo").src = d.logoDataUrl || "";
+      set("poweredBy", d.poweredBy !== undefined ? d.poweredBy : "Powered by Readers International School");
       set("title", d.title);
       set("subtitle", d.subtitle);
       set("lede", d.lede);

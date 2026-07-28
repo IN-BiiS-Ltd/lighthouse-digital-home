@@ -1,14 +1,14 @@
 {
-  "output": "admissions-2026-2027-a",
+  "output": "admissions-2026-2027-b",
   "poweredBy": "Powered by Readers International School",
   "title": "سجّل الآن <span class=\"gold\">لبناء مستقبل</span>",
   "subtitle": "يبدأ من هنا",
-  "lede": "تعليم عصري مُلهم يبني العقول، ويصنع قادة المستقبل.",
+  "lede": "تعليم عصري ملهم يبني العقول، ويصنع قادة المستقبل.",
   "cta": "فتح باب التسجيل",
   "ctaNote": "للعام الدراسي 2026 - 2027",
   "locality": "القاهرة",
-  "localityNote": "الدقي - الجيزة",
-  "photo": null,
+  "localityNote": "العجوزة - المهندسين",
+  "photo": "src/assets/poster-diverse-students.png",
   "listTitle": "مناهج عالمية … لهوية وعمق محلي",
   "list": [
     {
@@ -34,7 +34,7 @@
     {
       "title": "المرحلة المتوسطة",
       "en": "Grades 6 - 8",
-      "note": "تفكير · مهارات · تطوير"
+      "note": "تفكير · مشاركة · تطوير"
     },
     {
       "title": "المرحلة الابتدائية",

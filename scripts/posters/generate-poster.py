@@ -76,9 +76,9 @@ async def render(content: dict, out_stem: Path):
         )).new_page()
         await page.goto(tmp.as_uri(), wait_until="networkidle")
         await page.wait_for_timeout(600)
-    png = out_stem.with_suffix(".png")
-    await page.screenshot(path=str(png))
-    await browser.close()
+        png = out_stem.with_suffix(".png")
+        await page.screenshot(path=str(png))
+        await browser.close()
 
     from PIL import Image
 
