@@ -39,7 +39,8 @@
       .poster { position: relative; width: 1024px; height: 1536px; padding: 44px 44px 0; }
 
       /* ---- Head: approved logo (left) + headline (right) ---- */
-      .head { display: grid; grid-template-columns: 400px 1fr; gap: 24px; align-items: start; }
+      .head { display: grid; grid-template-columns: 400px 1fr; gap: 24px; align-items: start; direction: ltr; }
+      .headline, .curricula, .bullets { direction: rtl; }
       .logo-lockup { padding-top: 6px; }
       .logo-lockup img { width: 100%; height: auto; display: block; }
       .headline { text-align: right; padding-top: 18px; }
@@ -61,7 +62,8 @@
       .locality span { font-size: 17px; color: #56637a; }
 
       /* ---- Photo + curricula ---- */
-      .band { display: grid; grid-template-columns: 380px 1fr; gap: 28px; margin-top: 30px; align-items: start; }
+      .band { display: grid; grid-template-columns: 380px 1fr; gap: 28px; margin-top: 30px; align-items: start; direction: ltr; }
+      .band.no-photo { grid-template-columns: 1fr; }
       .photo { border-radius: 12px; overflow: hidden; background: var(--sand); }
       .photo img { width: 100%; height: 320px; object-fit: cover; display: block; }
       .curricula h3 { text-align: right; font-size: 27px; color: var(--navy); font-weight: 700; margin-bottom: 14px; }
@@ -166,7 +168,7 @@
       if (!d.locality) document.getElementById("localityBox").classList.add("hidden");
 
       if (d.photoDataUrl) document.getElementById("photo").src = d.photoDataUrl;
-      else document.querySelector(".photo").classList.add("hidden");
+      else { document.querySelector(".photo").classList.add("hidden"); document.getElementById("bandBox").classList.add("no-photo"); }
       set("listTitle", d.listTitle);
       document.getElementById("list").innerHTML = (d.list || [])
         .map((i) => `<div class="curriculum"><b>${i.title}</b><span>${i.note || ""}</span></div>`)
