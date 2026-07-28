@@ -19,3 +19,15 @@ jobs:
           node-version: 20
       - name: Audit duplicate titles, meta descriptions, body blocks and related links
         run: node scripts/audit-content.mjs
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Start preview server
+        run: |
+          npm run build
+          npx vite preview --port 8080 &
+          for i in $(seq 1 60); do curl -sf -o /dev/null http://localhost:8080/ && break; sleep 2; done
+
+      - name: Audit Schema.org / JobPosting JSON-LD and Open Graph previews
+        run: node scripts/audit-structured-data.mjs http://localhost:8080
