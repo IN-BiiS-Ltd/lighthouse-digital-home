@@ -359,6 +359,21 @@ function AnnouncementsLibrary() {
     resultsHeadingRef.current?.focus({ preventScroll: true });
   }, [safePage]);
 
+  const filterKey = `${search.q}|${search.category}|${search.from}|${search.to}|${search.sort}|${search.dir}|${search.size}`;
+  const firstRunRef = useRef(true);
+  useEffect(() => {
+    if (firstRunRef.current) {
+      firstRunRef.current = false;
+      return;
+    }
+    setStatus(
+      filtered.length === 0
+        ? "No posters match the current filters."
+        : `${filtered.length} ${filtered.length === 1 ? "poster matches" : "posters match"} the current filters. Showing page 1 of ${Math.max(1, Math.ceil(filtered.length / pageSize))}.`,
+    );
+  }, [filterKey]);
+
+
   const goToPage = (next: number) => {
     const target = Math.max(1, Math.min(totalPages, next));
     if (target === safePage) return;
