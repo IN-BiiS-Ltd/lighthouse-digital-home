@@ -339,7 +339,7 @@ export function ApplyToTeachDialog() {
           <>
             <DialogHeader>
               <DialogTitle className="font-display text-2xl font-medium">
-                Teacher application — 2025 / 2026
+                Teacher application — 2026 / 2027
               </DialogTitle>
               <DialogDescription>
                 Complete the form and attach your documents. Your application is sent
