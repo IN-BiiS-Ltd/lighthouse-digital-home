@@ -78,31 +78,133 @@ const librarySearchSchema = z.object({
   page: fallback(z.number().int(), 1).default(1),
 });
 
+type LibrarySearch = z.infer<typeof librarySearchSchema>;
+
+function normalizeText(input: string) {
+  return input.toLowerCase().trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
+function selectPosters(search: LibrarySearch) {
+  const q = normalizeText(search.q);
+  const category = search.category === "Admissions" || search.category === "Careers" ? search.category : "All";
+  const sortField = search.sort === "title" ? "title" : "date";
+  const sortAsc = search.dir === "asc";
+
+  const list = POSTERS.filter((p) => {
+    const matchesQuery =
+      q.length === 0 ||
+      normalizeText(p.title).includes(q) ||
+      normalizeText(p.titleAr).includes(q) ||
+      normalizeText(p.summary).includes(q);
+    const matchesCategory = category === "All" || p.category === category;
+    const matchesDate =
+      (!search.from || p.approved >= search.from) && (!search.to || p.approved <= search.to);
+    return matchesQuery && matchesCategory && matchesDate;
+  });
+
+  list.sort((a, b) => {
+    const cmp =
+      sortField === "date" ? a.approved.localeCompare(b.approved) : a.title.localeCompare(b.title);
+    return sortAsc ? cmp : -cmp;
+  });
+
+  return list;
+}
+
+function pagedUrl(page: number) {
+  return page <= 1 ? URL : `${URL}?page=${page}`;
+}
 
 export const Route = createFileRoute("/announcements-library")({
-  head: () => ({
-    meta: [
-      { title: "Announcements Library | Official Posters | Lighthouse Campus" },
+  validateSearch: zodValidator(librarySearchSchema),
+  head: ({ match }) => {
+    const search = match.search as LibrarySearch;
+    const isFiltered =
+      Boolean(search.q) ||
+      (search.category && search.category !== "All") ||
+      Boolean(search.from) ||
+      Boolean(search.to) ||
+      search.sort !== "date" ||
+      search.dir !== "desc" ||
+      search.size !== 6;
+
+    const pageSize = [3, 6, 9, 12].includes(search.size) ? search.size : 6;
+    const list = selectPosters(search);
+    const totalPages = Math.max(1, Math.ceil(list.length / pageSize));
+    const page = Math.min(Math.max(1, search.page), totalPages);
+    const start = (page - 1) * pageSize;
+    const visible = list.slice(start, start + pageSize);
+
+    const pageSuffix = page > 1 ? ` — page ${page} of ${totalPages}` : "";
+    const title = `Announcements Library | Official Posters | Lighthouse Campus${pageSuffix}`;
+
+    const links: Array<{ rel: string; href: string }> = [
+      { rel: "canonical", href: isFiltered ? URL : pagedUrl(page) },
+    ];
+    if (!isFiltered) {
+      if (page > 1) links.push({ rel: "prev", href: pagedUrl(page - 1) });
+      if (page < totalPages) links.push({ rel: "next", href: pagedUrl(page + 1) });
+    }
+
+    const meta: Array<Record<string, string>> = [
+      { title },
       {
         name: "description",
         content:
           "Browse every approved Lighthouse Campus announcement poster with previews, approval dates and full-resolution downloads for print and social media.",
       },
-      { property: "og:title", content: "Announcements Library | Official Posters | Lighthouse Campus" },
+      { property: "og:title", content: title },
       {
         property: "og:description",
         content:
           "Approved Lighthouse Campus posters — registration and recruitment announcements with preview images, approval dates and downloads.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: URL },
+      { property: "og:url", content: isFiltered ? URL : pagedUrl(page) },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:image", content: "https://lighthousecampus.com/admissions-2026-2027-a.png" },
       { name: "twitter:image", content: "https://lighthousecampus.com/admissions-2026-2027-a.png" },
-    ],
-    links: [{ rel: "canonical", href: URL }],
-  }),
-  validateSearch: zodValidator(librarySearchSchema),
+    ];
+    if (isFiltered) meta.push({ name: "robots", content: "noindex,follow" });
+
+    return {
+      meta,
+      links,
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            name: title,
+            url: isFiltered ? URL : pagedUrl(page),
+            isPartOf: { "@type": "WebSite", name: "Lighthouse Campus", url: "https://lighthousecampus.com" },
+            mainEntity: {
+              "@type": "ItemList",
+              name: "Approved Lighthouse Campus announcement posters",
+              numberOfItems: list.length,
+              itemListOrder:
+                search.dir === "asc" ? "https://schema.org/ItemListOrderAscending" : "https://schema.org/ItemListOrderDescending",
+              itemListElement: visible.map((p, i) => ({
+                "@type": "ListItem",
+                position: start + i + 1,
+                url: `https://lighthousecampus.com${p.base}.png`,
+                item: {
+                  "@type": "CreativeWork",
+                  name: p.title,
+                  description: p.summary,
+                  datePublished: p.approved,
+                  image: `https://lighthousecampus.com${p.base}.png`,
+                  genre: p.category,
+                },
+              })),
+            },
+          }),
+        },
+      ],
+    };
+  },
+
   component: AnnouncementsLibrary,
 });
 
