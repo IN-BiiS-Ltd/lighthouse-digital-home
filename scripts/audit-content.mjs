@@ -71,7 +71,9 @@ for (const file of files) {
       src,
       /name:\s*"description",\s*content:\s*"((?:[^"\\]|\\.)*)"/g,
     ),
-    pageTitles: matchAll(src, /^\s*"?title"?:\s*"((?:[^"\\]|\\.)*)",?$/gm),
+    // page's own H1 = first `title:` in the route config (later ones are
+    // section headings and related-card labels, which may legitimately repeat)
+    pageTitles: matchAll(src, /^\s*"?title"?:\s*"((?:[^"\\]|\\.)*)",?$/gm).slice(0, 1),
     intros: matchAll(src, /^\s*"?intro"?:\s*"((?:[^"\\]|\\.)*)",?$/gm),
     bodies: matchAll(src, /^\s*"?body"?:\s*"((?:[^"\\]|\\.)*)",?$/gm).filter(
       (b) => b.length >= MIN_PARAGRAPH,
