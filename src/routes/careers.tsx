@@ -280,6 +280,8 @@ function Careers() {
         primary={{ to: "/contact", label: "Contact our team" }}
         secondary={{ to: "/about", label: "About the campus" }}
       />
+
+      <ShareBar title="Teachers Wanted 2026/2027 — Careers at Lighthouse Campus" path="/careers" />
     </>
   );
 }
