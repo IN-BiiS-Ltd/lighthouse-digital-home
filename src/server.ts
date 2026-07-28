@@ -44,6 +44,27 @@ function isH3SwallowedErrorBody(body: string): boolean {
   }
 }
 
+// HTML documents must never be served from a stale edge/browser cache, otherwise
+// a new deployment stays invisible on the live domain until the cache expires.
+// Hashed assets (/_build/*, images, fonts) keep their long-lived caching.
+function withFreshHtmlCacheHeaders(response: Response): Response {
+  const contentType = response.headers.get("content-type") ?? "";
+  if (!contentType.includes("text/html")) return response;
+
+  const headers = new Headers(response.headers);
+  headers.set("cache-control", "no-cache, no-store, must-revalidate, max-age=0");
+  headers.set("cdn-cache-control", "no-store");
+  headers.set("pragma", "no-cache");
+  headers.set("expires", "0");
+  headers.delete("etag");
+
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
+}
+
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
