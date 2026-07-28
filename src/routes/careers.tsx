@@ -10,8 +10,6 @@ import {
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { ApplyToTeachDialog } from "@/components/apply-to-teach-dialog";
-import { assetUrl } from "@/lib/asset-url";
-import hiringPoster from "@/assets/teachers-hiring-2025-2026.png.asset.json";
 import leadershipImg from "@/assets/leadership.jpg?w=1200&format=jpg";
 import leadershipImgAvif from "@/assets/leadership.jpg?w=480;800;1200&format=avif&as=srcset";
 import leadershipImgWebp from "@/assets/leadership.jpg?w=480;800;1200&format=webp&as=srcset";
@@ -19,39 +17,36 @@ import leadershipImgWebp from "@/assets/leadership.jpg?w=480;800;1200&format=web
 export const Route = createFileRoute("/careers")({
   head: () => ({
     meta: [
-      { title: "Teachers Wanted 2025/2026 — Careers at Lighthouse Campus" },
+      { title: "Teachers Wanted 2026/2027 — Careers at Lighthouse Campus" },
       {
         name: "description",
         content:
-          "Lighthouse Campus is hiring teachers for 2025/2026 — Science, Maths, English, Arabic, Social Studies, Arts, PE, ICT and Music. Apply now.",
+          "Lighthouse Campus is hiring teachers for 2026/2027 — Science, Maths, English, Arabic, Social Studies, Arts, PE, ICT and Music. Apply now.",
       },
-      { property: "og:title", content: "Teachers Wanted 2025/2026 — Lighthouse Campus" },
+      { property: "og:title", content: "Teachers Wanted 2026/2027 — Lighthouse Campus" },
       {
         property: "og:description",
         content:
-          "Join the Lighthouse Campus teaching team. Open teaching roles across nine subjects for the 2025/2026 academic year.",
+          "Join the Lighthouse Campus teaching team. Open teaching roles across nine subjects for the 2026/2027 academic year.",
       },
       { property: "og:url", content: "https://lighthousecampus.com/careers" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       {
         property: "og:image",
-        content:
-          "https://lighthousecampus.com/__l5e/assets-v1/89072032-02a7-40fd-a168-2e27ba7c5b0d/teachers-hiring-2025-2026.png",
+        content: "https://lighthousecampus.com/teachers-hiring-2026-2027.png",
       },
       {
         property: "og:image:secure_url",
-        content:
-          "https://lighthousecampus.com/__l5e/assets-v1/89072032-02a7-40fd-a168-2e27ba7c5b0d/teachers-hiring-2025-2026.png",
+        content: "https://lighthousecampus.com/teachers-hiring-2026-2027.png",
       },
       { property: "og:image:width", content: "1024" },
       { property: "og:image:height", content: "1536" },
       { property: "og:image:type", content: "image/png" },
-      { property: "og:image:alt", content: "Lighthouse Campus teacher recruitment 2025/2026" },
+      { property: "og:image:alt", content: "Lighthouse Campus teacher recruitment 2026/2027" },
       {
         name: "twitter:image",
-        content:
-          "https://lighthousecampus.com/__l5e/assets-v1/89072032-02a7-40fd-a168-2e27ba7c5b0d/teachers-hiring-2025-2026.png",
+        content: "https://lighthousecampus.com/teachers-hiring-2026-2027.png",
       },
     ],
 
@@ -62,12 +57,12 @@ export const Route = createFileRoute("/careers")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "JobPosting",
-          title: "Teachers — Academic Year 2025/2026",
+          title: "Teachers — Academic Year 2026/2027",
           description:
-            "Lighthouse Campus is hiring teachers across Science, Mathematics, English Language, Arabic Language, Social Studies, Arts, Physical Education, ICT and Music for the 2025/2026 academic year.",
+            "Lighthouse Campus is hiring teachers across Science, Mathematics, English Language, Arabic Language, Social Studies, Arts, Physical Education, ICT and Music for the 2026/2027 academic year.",
           employmentType: "FULL_TIME",
           datePosted: "2026-07-01",
-          validThrough: "2026-12-31",
+          validThrough: "2027-12-31",
           hiringOrganization: {
             "@type": "EducationalOrganization",
             name: "Lighthouse Campus",
@@ -111,7 +106,7 @@ function Careers() {
       <Section tone="sand" id="hiring">
         <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]">
           <div className="order-2 lg:order-1">
-            <Eyebrow>Teacher recruitment — 2025 / 2026</Eyebrow>
+            <Eyebrow>Teacher recruitment — 2026 / 2027</Eyebrow>
             <h2 className="mt-5 text-balance font-display text-3xl font-medium leading-tight md:text-4xl">
               We are hiring passionate teachers.
             </h2>
@@ -181,19 +176,25 @@ function Careers() {
 
           <figure className="order-1 lg:order-2">
             <a
-              href={assetUrl(hiringPoster)}
+              href="/teachers-hiring-2026-2027.png"
               target="_blank"
               rel="noopener noreferrer"
               className="block overflow-hidden rounded-2xl border border-gold/40 bg-card shadow-lg transition hover:shadow-xl"
             >
-              <img
-                src={assetUrl(hiringPoster)}
-                alt="Teacher recruitment announcement for Lighthouse Campus, academic year 2025-2026, listing required subjects and contact details"
-                width={1024}
-                height={1536}
-                loading="lazy"
-                className="h-auto w-full"
-              />
+              <picture>
+                <source
+                  srcSet="/teachers-hiring-2026-2027.webp"
+                  type="image/webp"
+                />
+                <img
+                  src="/teachers-hiring-2026-2027.png"
+                  alt="Teacher recruitment announcement for Lighthouse Campus, academic year 2026-2027, listing required subjects and contact details"
+                  width={1024}
+                  height={1536}
+                  loading="lazy"
+                  className="h-auto w-full"
+                />
+              </picture>
             </a>
             <figcaption className="mt-3 text-center text-xs text-muted-foreground">
               Open the poster in full size to read or share the announcement.

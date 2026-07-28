@@ -184,7 +184,7 @@ export const secondaryNav: NavSection[] = [
       { label: "Alumni", to: "/community/alumni", description: "The future Lighthouse alumni community." },
       { label: "Community Programmes", to: "/community/community-programmes", description: "Contribution beyond the walls." },
       { label: "Community Events", to: "/community/events", description: "Public community moments." },
-      { label: "Careers — We are hiring", to: "/careers", description: "Teacher vacancies 2025/2026 and working at Lighthouse Campus." },
+      { label: "Careers — We are hiring", to: "/careers", description: "Teacher vacancies 2026/2027 and working at Lighthouse Campus." },
     ],
   },
   {
