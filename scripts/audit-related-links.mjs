@@ -93,14 +93,20 @@ for (const page of pages) {
 }
 
 /* ------------------------------------------------------------- loop detection */
+const section = (id) => id.split("/")[1] || "";
 const reciprocal = [];
+const siblingPairs = [];
 for (const [from, tos] of edges) {
   for (const to of tos) {
-    if (from < to && (edges.get(to) || []).includes(from)) reciprocal.push([from, to]);
+    if (from < to && (edges.get(to) || []).includes(from)) {
+      // Siblings inside one section are peer navigation, not a trap: both pages
+      // still sit under the same parent hub. Cross-section pairs are loops.
+      (section(from) === section(to) ? siblingPairs : reciprocal).push([from, to]);
+    }
   }
 }
 for (const [a, b] of reciprocal)
-  failures.push(`Reciprocal loop — ${a} <-> ${b}; related links must move forward, keep one direction only`);
+  failures.push(`Cross-section loop — ${a} <-> ${b}; related links must move forward, keep one direction only`);
 
 // Longer closed cycles (A -> B -> C -> A), ignoring the reciprocal pairs above.
 const cycles = [];
@@ -121,13 +127,17 @@ const walk = (node) => {
   colour.set(node, 2);
 };
 for (const id of edges.keys()) if (!colour.has(id)) walk(id);
-for (const c of cycles) failures.push(`Closed loop — ${c.join(" -> ")}; break the cycle so navigation stays forward`);
+const crossCycles = cycles.filter((c) => new Set(c.map(section)).size > 1);
+for (const c of crossCycles) failures.push(`Closed loop — ${c.join(" -> ")}; break the cycle so navigation stays forward`);
 
 /* --------------------------------------------------------------- graph health */
 const inbound = new Map([...routeIds].map((id) => [id, 0]));
 for (const tos of edges.values()) for (const to of tos) inbound.set(to, (inbound.get(to) || 0) + 1);
 
 const warnings = [];
+for (const [a, b] of siblingPairs) warnings.push(`Peer pair (allowed) — ${a} <-> ${b} link to each other within the same section`);
+for (const c of cycles.filter((c) => new Set(c.map(section)).size === 1))
+  warnings.push(`Same-section cycle (allowed) — ${c.join(" -> ")}`);
 const orphans = [...inbound].filter(([id, n]) => n === 0 && id !== "/").map(([id]) => id);
 for (const o of orphans) warnings.push(`Orphan — no related block points to ${o}`);
 const hubs = [...inbound].filter(([, n]) => n > HUB_LIMIT).sort((a, b) => b[1] - a[1]);
