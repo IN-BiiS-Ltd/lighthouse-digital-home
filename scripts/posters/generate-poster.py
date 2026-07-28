@@ -10,7 +10,8 @@ The logo is ALWAYS pulled from the single approved asset pointer
 (src/assets/lighthouse-official-logo.png.asset.json) — it is never cropped,
 recoloured, regenerated or replaced. Only the JSON content changes.
 
-Outputs <out>.png (1024x1536) and <out>.webp into public/.
+Outputs <out>.png (1024x1536) and <out>.webp, plus 512 and 256 pixel
+variants for responsive gallery previews, all into public/.
 """
 import asyncio
 import base64
