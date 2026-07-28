@@ -567,7 +567,62 @@ function Home() {
         </div>
       </Section>
 
+      {/* ------------------------------------------ Promise to parents */}
+      <Section>
+        <SectionHeading
+          eyebrow="Our Promise to Families"
+          title="What you can expect from us, in plain language"
+          description="Choosing a school is a decision about trust. These are the commitments we hold ourselves to every single day."
+        />
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {parentPromises.map((p, i) => (
+            <div key={p.title} className="rounded-xl border border-border bg-card p-7">
+              <span className="font-display text-3xl text-gold/80">0{i + 1}</span>
+              <h3 className="mt-4 font-display text-xl font-medium text-foreground">
+                {p.title}
+              </h3>
+              <p className="mt-3 text-[0.975rem] leading-relaxed text-muted-foreground">
+                {p.body}
+              </p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* ------------------------------------------------------------ FAQ */}
+      <Section tone="muted">
+        <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
+          <div>
+            <SectionHeading
+              eyebrow="Questions Families Ask First"
+              title="Clear answers, before you decide"
+            />
+            <div className="mt-6 flex flex-wrap gap-3">
+              <ButtonLink to="/admissions/faq" variant="outline" size="md">
+                Full admissions FAQ
+              </ButtonLink>
+              <ButtonLink to="/contact" variant="outline" size="md">
+                Talk to admissions
+              </ButtonLink>
+            </div>
+          </div>
+          <Accordion type="single" collapsible className="w-full">
+            {parentFaqs.map((f, i) => (
+              <AccordionItem key={f.q} value={`faq-${i}`}>
+                <AccordionTrigger className="text-start font-display text-lg font-medium">
+                  {f.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-[0.975rem] leading-relaxed text-muted-foreground">
+                  {f.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </Section>
+
       {/* --------------------------------------------------- Admissions CTA */}
+
       <section className="bg-navy text-navy-foreground">
         <Container className="py-20 md:py-28">
           <div className="mx-auto max-w-3xl text-center">
