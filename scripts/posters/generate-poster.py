@@ -43,7 +43,10 @@ def load_official_logo() -> str:
     last = None
     for base in CDN_BASES:
         try:
-            with urllib.request.urlopen(base + pointer["url"], timeout=20) as r:
+            req = urllib.request.Request(
+                base + pointer["url"], headers={"User-Agent": "lighthouse-poster-generator"}
+            )
+            with urllib.request.urlopen(req, timeout=20) as r:
                 return data_url(r.read(), "image/png")
         except Exception as exc:  # try next source
             last = exc
