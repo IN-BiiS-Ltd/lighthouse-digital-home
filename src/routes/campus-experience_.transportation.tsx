@@ -83,7 +83,7 @@ const config: PrincipledPageConfig = {
   },
   related: [
     { title: "Safety", to: "/campus-experience/safety", body: "A safe, orderly campus." },
-    { title: "Parent Partnership", to: "/parents/parent-partnership", body: "Home and school together." },
+    { title: "Parent Partnership", to: "/our-model/parent-partnership", body: "Home and school together." },
     { title: "Communication", to: "/parents/communication", body: "How families and school stay in touch." },
   ],
   cta: {
