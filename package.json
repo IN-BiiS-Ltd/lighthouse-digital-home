@@ -12,8 +12,9 @@
     "audit:content": "node scripts/audit-content.mjs",
     "audit:schema": "node scripts/audit-structured-data.mjs",
     "audit:links": "node scripts/audit-related-links.mjs",
-    "audit:all": "npm run audit:content && npm run audit:links",
-    "format": "prettier --write ."
+    "audit:all": "npm run audit:content && npm run audit:links && npm run audit:redirects",
+    "format": "prettier --write .",
+    "audit:redirects": "node scripts/audit-redirects.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

@@ -23,6 +23,16 @@ jobs:
       - name: Audit related links (self-links, loops, orphans) + supervisor report
         run: node scripts/audit-related-links.mjs
 
+      - name: Audit 301 redirects + links pointing at redirect hops
+        run: node scripts/audit-redirects.mjs
+
+      - name: Upload redirect board report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: redirects-report
+          path: reports/redirects-report.md
+
       - name: Upload supervisor report
         if: always()
         uses: actions/upload-artifact@v4

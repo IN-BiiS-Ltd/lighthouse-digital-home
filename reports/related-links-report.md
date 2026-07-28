@@ -1,13 +1,13 @@
 # Related Links — Supervisor Report
-_Generated 2026-07-28 16:59 UTC · تقرير المشرف لروابط "Related"_
+_Generated 2026-07-28 17:02 UTC · تقرير المشرف لروابط "Related"_
 
 ## Summary / الملخص
 | Metric | Value |
 | --- | --- |
-| Routes audited | 95 |
+| Routes audited | 96 |
 | Related links | 129 |
 | Blocking issues | 0 |
-| Advisories | 82 |
+| Advisories | 83 |
 | Status | ✅ PASSED |
 
 ## Blocking issues / مخالفات توقف النشر
@@ -73,6 +73,7 @@ _Generated 2026-07-28 16:59 UTC · تقرير المشرف لروابط "Related
 - Orphan — no related block points to /contact
 - Orphan — no related block points to /cookie-settings
 - Orphan — no related block points to /explore/digital-ecosystem
+- Orphan — no related block points to /internal/redirects
 - Orphan — no related block points to /learning-journey
 - Orphan — no related block points to /learning-journey/early-years
 - Orphan — no related block points to /learning-journey/graduation-pathways

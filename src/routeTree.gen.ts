@@ -68,6 +68,7 @@ import { Route as LearningJourneyPrimaryRouteImport } from './routes/learning-jo
 import { Route as LearningJourneyPreparatoryRouteImport } from './routes/learning-journey_.preparatory'
 import { Route as LearningJourneyGraduationPathwaysRouteImport } from './routes/learning-journey_.graduation-pathways'
 import { Route as LearningJourneyEarlyYearsRouteImport } from './routes/learning-journey_.early-years'
+import { Route as InternalRedirectsRouteImport } from './routes/internal.redirects'
 import { Route as ExploreDigitalEcosystemRouteImport } from './routes/explore.digital-ecosystem'
 import { Route as CommunityPartnershipsRouteImport } from './routes/community_.partnerships'
 import { Route as CommunityEventsRouteImport } from './routes/community_.events'
@@ -416,6 +417,11 @@ const LearningJourneyEarlyYearsRoute =
     path: '/learning-journey/early-years',
     getParentRoute: () => rootRouteImport,
   } as any)
+const InternalRedirectsRoute = InternalRedirectsRouteImport.update({
+  id: '/internal/redirects',
+  path: '/internal/redirects',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ExploreDigitalEcosystemRoute = ExploreDigitalEcosystemRouteImport.update({
   id: '/explore/digital-ecosystem',
   path: '/explore/digital-ecosystem',
@@ -669,6 +675,7 @@ export interface FileRoutesByFullPath {
   '/community/events': typeof CommunityEventsRoute
   '/community/partnerships': typeof CommunityPartnershipsRoute
   '/explore/digital-ecosystem': typeof ExploreDigitalEcosystemRoute
+  '/internal/redirects': typeof InternalRedirectsRoute
   '/learning-journey/early-years': typeof LearningJourneyEarlyYearsRoute
   '/learning-journey/graduation-pathways': typeof LearningJourneyGraduationPathwaysRoute
   '/learning-journey/preparatory': typeof LearningJourneyPreparatoryRoute
@@ -766,6 +773,7 @@ export interface FileRoutesByTo {
   '/community/events': typeof CommunityEventsRoute
   '/community/partnerships': typeof CommunityPartnershipsRoute
   '/explore/digital-ecosystem': typeof ExploreDigitalEcosystemRoute
+  '/internal/redirects': typeof InternalRedirectsRoute
   '/learning-journey/early-years': typeof LearningJourneyEarlyYearsRoute
   '/learning-journey/graduation-pathways': typeof LearningJourneyGraduationPathwaysRoute
   '/learning-journey/preparatory': typeof LearningJourneyPreparatoryRoute
@@ -864,6 +872,7 @@ export interface FileRoutesById {
   '/community_/events': typeof CommunityEventsRoute
   '/community_/partnerships': typeof CommunityPartnershipsRoute
   '/explore/digital-ecosystem': typeof ExploreDigitalEcosystemRoute
+  '/internal/redirects': typeof InternalRedirectsRoute
   '/learning-journey_/early-years': typeof LearningJourneyEarlyYearsRoute
   '/learning-journey_/graduation-pathways': typeof LearningJourneyGraduationPathwaysRoute
   '/learning-journey_/preparatory': typeof LearningJourneyPreparatoryRoute
@@ -963,6 +972,7 @@ export interface FileRouteTypes {
     | '/community/events'
     | '/community/partnerships'
     | '/explore/digital-ecosystem'
+    | '/internal/redirects'
     | '/learning-journey/early-years'
     | '/learning-journey/graduation-pathways'
     | '/learning-journey/preparatory'
@@ -1060,6 +1070,7 @@ export interface FileRouteTypes {
     | '/community/events'
     | '/community/partnerships'
     | '/explore/digital-ecosystem'
+    | '/internal/redirects'
     | '/learning-journey/early-years'
     | '/learning-journey/graduation-pathways'
     | '/learning-journey/preparatory'
@@ -1157,6 +1168,7 @@ export interface FileRouteTypes {
     | '/community_/events'
     | '/community_/partnerships'
     | '/explore/digital-ecosystem'
+    | '/internal/redirects'
     | '/learning-journey_/early-years'
     | '/learning-journey_/graduation-pathways'
     | '/learning-journey_/preparatory'
@@ -1255,6 +1267,7 @@ export interface RootRouteChildren {
   CommunityEventsRoute: typeof CommunityEventsRoute
   CommunityPartnershipsRoute: typeof CommunityPartnershipsRoute
   ExploreDigitalEcosystemRoute: typeof ExploreDigitalEcosystemRoute
+  InternalRedirectsRoute: typeof InternalRedirectsRoute
   LearningJourneyEarlyYearsRoute: typeof LearningJourneyEarlyYearsRoute
   LearningJourneyGraduationPathwaysRoute: typeof LearningJourneyGraduationPathwaysRoute
   LearningJourneyPreparatoryRoute: typeof LearningJourneyPreparatoryRoute
@@ -1710,6 +1723,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LearningJourneyEarlyYearsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/internal/redirects': {
+      id: '/internal/redirects'
+      path: '/internal/redirects'
+      fullPath: '/internal/redirects'
+      preLoaderRoute: typeof InternalRedirectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/explore/digital-ecosystem': {
       id: '/explore/digital-ecosystem'
       path: '/explore/digital-ecosystem'
@@ -2025,6 +2045,7 @@ const rootRouteChildren: RootRouteChildren = {
   CommunityEventsRoute: CommunityEventsRoute,
   CommunityPartnershipsRoute: CommunityPartnershipsRoute,
   ExploreDigitalEcosystemRoute: ExploreDigitalEcosystemRoute,
+  InternalRedirectsRoute: InternalRedirectsRoute,
   LearningJourneyEarlyYearsRoute: LearningJourneyEarlyYearsRoute,
   LearningJourneyGraduationPathwaysRoute:
     LearningJourneyGraduationPathwaysRoute,
