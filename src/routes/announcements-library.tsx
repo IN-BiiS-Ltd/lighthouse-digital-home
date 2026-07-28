@@ -36,7 +36,7 @@ const POSTERS: Poster[] = [
     category: "Admissions",
     approved: "2026-07-28",
     approvedLabel: "28 July 2026",
-    size: "PNG 517 KB · 1024 × 1536",
+    size: "PNG 309 KB · 1024 × 1536",
     related: { label: "Academic year announcements", to: "/admissions/academic-year-announcements" },
   },
   {
@@ -53,6 +53,19 @@ const POSTERS: Poster[] = [
     related: { label: "Admissions overview", to: "/admissions" },
   },
   {
+    key: "admissions-c",
+    base: "/admissions-2026-2027-c",
+    title: "Registration 2026 / 2027 — recruitment edition",
+    titleAr: "إعلان التسجيل ٢٠٢٦ / ٢٠٢٧ — نسخة التوظيف والتسجيل",
+    summary:
+      "A professional recruitment and admissions variant featuring a diverse student group and combined curriculum details.",
+    category: "Admissions",
+    approved: "2026-07-28",
+    approvedLabel: "28 July 2026",
+    size: "PNG 531 KB · 1024 × 1536",
+    related: { label: "Admissions overview", to: "/admissions" },
+  },
+  {
     key: "teachers",
     base: "/teachers-hiring-2026-2027",
     title: "Teacher recruitment 2026 / 2027",
@@ -62,7 +75,7 @@ const POSTERS: Poster[] = [
     category: "Careers",
     approved: "2026-07-28",
     approvedLabel: "28 July 2026",
-    size: "PNG 357 KB · 1024 × 1536",
+    size: "PNG 331 KB · 1024 × 1536",
     related: { label: "Careers — we are hiring", to: "/careers" },
   },
 ];
@@ -213,8 +226,8 @@ export const Route = createFileRoute("/announcements-library")({
 });
 
 function PosterCard({ p, priority, layout = "grid" }: { p: Poster; priority?: boolean; layout?: "grid" | "list" }) {
-  const webpSrcSet = `${p.base}-256.webp 256w, ${p.base}-512.webp 512w, ${p.base}.webp 1024w`;
-  const pngSrcSet = `${p.base}-256.png 256w, ${p.base}-512.png 512w, ${p.base}.png 1024w`;
+  const webpSrcSet = `${p.base}.256.webp 256w, ${p.base}.512.webp 512w, ${p.base}.webp 1024w`;
+  const pngSrcSet = `${p.base}.256.png 256w, ${p.base}.512.png 512w, ${p.base}.png 1024w`;
   const isList = layout === "list";
   const [loaded, setLoaded] = useState(false);
   const sizes = isList
