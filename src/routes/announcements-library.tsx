@@ -341,7 +341,11 @@ function AnnouncementsLibrary() {
   const hasActiveFilters = query || category !== "All" || dateFrom || dateTo || sortField !== "date" || sortAsc;
 
   const gridRef = useRef<HTMLDivElement>(null);
+  const resultsHeadingRef = useRef<HTMLParagraphElement>(null);
+  const searchInputRef = useRef<HTMLInputElement>(null);
+  const paginationRef = useRef<HTMLDivElement>(null);
   const shouldScrollRef = useRef(false);
+  const [status, setStatus] = useState("");
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
   const safePage = Math.min(Math.max(1, search.page), totalPages);
@@ -352,11 +356,32 @@ function AnnouncementsLibrary() {
     if (!shouldScrollRef.current) return;
     shouldScrollRef.current = false;
     gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    resultsHeadingRef.current?.focus({ preventScroll: true });
   }, [safePage]);
 
   const goToPage = (next: number) => {
+    const target = Math.max(1, Math.min(totalPages, next));
+    if (target === safePage) return;
     shouldScrollRef.current = true;
-    setSearch({ page: Math.max(1, Math.min(totalPages, next)) }, false);
+    setStatus(`Page ${target} of ${totalPages}. Showing posters ${(target - 1) * pageSize + 1} to ${Math.min(target * pageSize, filtered.length)} of ${filtered.length}.`);
+    setSearch({ page: target }, false);
+  };
+
+  const onPaginationKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    const keys = ["ArrowRight", "ArrowLeft", "Home", "End"];
+    if (!keys.includes(event.key)) return;
+    event.preventDefault();
+    const next =
+      event.key === "ArrowRight" ? safePage + 1
+      : event.key === "ArrowLeft" ? safePage - 1
+      : event.key === "Home" ? 1
+      : totalPages;
+    goToPage(next);
+    requestAnimationFrame(() => {
+      paginationRef.current
+        ?.querySelector<HTMLButtonElement>('button[aria-current="page"]')
+        ?.focus();
+    });
   };
 
   const clearFilters = () => {
@@ -365,7 +390,10 @@ function AnnouncementsLibrary() {
       replace: true,
       resetScroll: false,
     });
+    setStatus(`Filters cleared. Showing all ${POSTERS.length} approved posters.`);
+    requestAnimationFrame(() => searchInputRef.current?.focus());
   };
+
 
   return (
     <>
