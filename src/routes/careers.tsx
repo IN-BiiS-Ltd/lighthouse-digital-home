@@ -9,6 +9,7 @@ import {
 } from "@/components/blocks";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
+import { ApplyToTeachDialog } from "@/components/apply-to-teach-dialog";
 import { assetUrl } from "@/lib/asset-url";
 import hiringPoster from "@/assets/teachers-hiring-2025-2026.png.asset.json";
 import leadershipImg from "@/assets/leadership.jpg?w=1200&format=jpg";
@@ -161,18 +162,8 @@ function Careers() {
               ))}
             </ul>
 
-            <div className="mt-9 flex flex-wrap gap-3">
-              <ButtonLink
-                to="mailto:ceo@lighthousecampus.com?subject=Teaching%20Application%20%E2%80%94%202025%2F2026&body=Full%20name%3A%0ASubject%20applied%20for%3A%0AQualification%3A%0AYears%20of%20teaching%20experience%3A%0APhone%20number%3A%0A%0APlease%20attach%20your%20CV%20to%20this%20email."
-                variant="gold"
-                size="lg"
-                aria-label="Apply to teach at Lighthouse Campus by email to ceo@lighthousecampus.com"
-                data-event="CTA Click"
-                data-event-prop-label="Apply to teach"
-                data-event-prop-placement="careers-hiring"
-              >
-                Apply to teach →
-              </ButtonLink>
+            <div className="mt-9 flex flex-wrap items-center gap-3">
+              <ApplyToTeachDialog />
 
               <ButtonLink
                 to="tel:+201107030737"
