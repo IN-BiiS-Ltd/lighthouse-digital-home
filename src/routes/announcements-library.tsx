@@ -386,7 +386,6 @@ function AnnouncementsLibrary() {
   const setSortAsc = (value: boolean) => setSearch({ dir: value ? "asc" : "desc" });
   const setPageSize = (value: number) => setSearch({ size: value });
   const viewMode: "grid" | "list" = search.view === "list" ? "list" : "grid";
-  const setViewMode = (value: "grid" | "list") => setSearch({ view: value }, false);
 
   const filtered = useMemo(() => selectPosters(search), [search]);
 
@@ -400,12 +399,44 @@ function AnnouncementsLibrary() {
   const shouldScrollRef = useRef(false);
   const [status, setStatus] = useState("");
   const [isPending, setIsPending] = useState(false);
+  const gridViewRef = useRef<HTMLButtonElement>(null);
+  const listViewRef = useRef<HTMLButtonElement>(null);
   const [reservedHeight, setReservedHeight] = useState<number | undefined>(undefined);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
   const safePage = Math.min(Math.max(1, search.page), totalPages);
   const pageStart = (safePage - 1) * pageSize;
   const visible = filtered.slice(pageStart, pageStart + pageSize);
+
+  const setViewMode = (value: "grid" | "list") => {
+    if (value === viewMode) return;
+    // Keep the user in place: no page reset, no scroll, focus stays on the toggle.
+    setSearch({ view: value }, false);
+    setStatus(
+      value === "list"
+        ? `List view. Showing ${visible.length} of ${filtered.length} posters on page ${safePage} of ${totalPages}.`
+        : `Grid view. Showing ${visible.length} of ${filtered.length} posters on page ${safePage} of ${totalPages}.`,
+    );
+    requestAnimationFrame(() => {
+      (value === "list" ? listViewRef : gridViewRef).current?.focus({ preventScroll: true });
+    });
+  };
+
+  const onViewKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+      event.preventDefault();
+      setViewMode("list");
+    } else if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+      event.preventDefault();
+      setViewMode("grid");
+    } else if (event.key === "Home") {
+      event.preventDefault();
+      setViewMode("grid");
+    } else if (event.key === "End") {
+      event.preventDefault();
+      setViewMode("list");
+    }
+  };
 
   useEffect(() => {
     if (!shouldScrollRef.current) return;
@@ -658,11 +689,19 @@ function AnnouncementsLibrary() {
 
         <div className="mt-8 flex items-center justify-end gap-2">
           <span className="text-xs font-medium text-muted-foreground">View</span>
-          <div role="group" aria-label="Results view" className="inline-flex rounded-full border border-gold/30 p-1">
+          <div
+            role="group"
+            aria-label="Results view"
+            onKeyDown={onViewKeyDown}
+            className="inline-flex rounded-full border border-gold/30 p-1"
+          >
             <button
               type="button"
+              ref={gridViewRef}
               onClick={() => setViewMode("grid")}
               aria-pressed={viewMode === "grid"}
+              aria-controls="poster-results"
+              tabIndex={viewMode === "grid" ? 0 : -1}
               className={`inline-flex min-h-11 items-center gap-2 rounded-full px-4 text-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold ${viewMode === "grid" ? "bg-gold text-navy" : "text-muted-foreground hover:text-foreground"}`}
             >
               <LayoutGrid className="size-4" aria-hidden />
@@ -670,8 +709,11 @@ function AnnouncementsLibrary() {
             </button>
             <button
               type="button"
+              ref={listViewRef}
               onClick={() => setViewMode("list")}
               aria-pressed={viewMode === "list"}
+              aria-controls="poster-results"
+              tabIndex={viewMode === "list" ? 0 : -1}
               className={`inline-flex min-h-11 items-center gap-2 rounded-full px-4 text-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold ${viewMode === "list" ? "bg-gold text-navy" : "text-muted-foreground hover:text-foreground"}`}
             >
               <List className="size-4" aria-hidden />
@@ -681,6 +723,7 @@ function AnnouncementsLibrary() {
         </div>
 
         <div
+          id="poster-results"
           ref={gridRef}
           className={
             viewMode === "list"
