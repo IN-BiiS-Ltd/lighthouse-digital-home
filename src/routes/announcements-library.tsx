@@ -398,8 +398,8 @@ function AnnouncementsLibrary() {
         </div>
 
         <div className="mt-8 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-          {filtered.map((p) => (
-            <PosterCard key={p.key} p={p} />
+          {filtered.map((p, i) => (
+            <PosterCard key={p.key} p={p} priority={i < 3} />
           ))}
         </div>
 
