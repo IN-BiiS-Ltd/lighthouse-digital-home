@@ -274,6 +274,39 @@ function Home() {
         </Container>
       </section>
 
+      {/* ------------------------------------------ Admissions spotlight */}
+      <section className="border-b border-border bg-sand/60">
+        <Container className="flex flex-col gap-6 py-8 lg:flex-row lg:items-center lg:justify-between">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+            <span className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-sm font-semibold text-foreground">
+              <span aria-hidden className="size-2 rounded-full bg-gold" />
+              Registration open — 2026 / 2027
+            </span>
+            <p className="max-w-xl text-[0.975rem] leading-relaxed text-muted-foreground">
+              Early Years through Secondary. Limited places per mentor group, so
+              families are encouraged to visit and apply early.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <ButtonLink
+              to="https://eduios.lighthousecampus.com/apply/lighthouse-campus"
+              variant="gold"
+              size="md"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-event="CTA Click"
+              data-event-prop-cta="Apply"
+              data-event-prop-location="Home Admissions Band"
+            >
+              Apply online
+            </ButtonLink>
+            <ButtonLink to="/admissions/academic-year-announcements" variant="outline" size="md">
+              Key dates
+            </ButtonLink>
+          </div>
+        </Container>
+      </section>
+
 
       {/* ------------------------------------------------------ Our Story */}
       <Section>
