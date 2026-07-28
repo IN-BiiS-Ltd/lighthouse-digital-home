@@ -302,9 +302,6 @@ function PosterCard({ p, priority }: { p: Poster; priority?: boolean }) {
   );
 }
 
-function normalizeText(input: string) {
-  return input.toLowerCase().trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-}
 
 function AnnouncementsLibrary() {
   const search = Route.useSearch();
