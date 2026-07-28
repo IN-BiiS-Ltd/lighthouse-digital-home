@@ -1,6 +1,6 @@
 import type { CSSProperties } from "react";
 import { cn } from "@/lib/utils";
-import emblem from "@/assets/lighthouse-emblem-watermark.webp.asset.json";
+import emblem from "@/assets/lighthouse-official-logo.png.asset.json";
 
 /**
  * CrystalField — a decorative layer of drifting Lighthouse emblems used as

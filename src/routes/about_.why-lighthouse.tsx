@@ -17,7 +17,7 @@ import { CtaBand } from "@/components/cta-band";
 import { CrystalField } from "@/components/crystal-field";
 
 import lighthouseFlag from "@/assets/lighthouse-flag.png.asset.json";
-import lighthouseLogo from "@/assets/lighthouse-campus-approved.png.asset.json";
+import lighthouseLogo from "@/assets/lighthouse-official-logo.png.asset.json";
 import logoLighthouse from "@/assets/logo-lighthouse.png.asset.json";
 import logoLight from "@/assets/logo-light.png.asset.json";
 import logoBook from "@/assets/logo-book.png.asset.json";

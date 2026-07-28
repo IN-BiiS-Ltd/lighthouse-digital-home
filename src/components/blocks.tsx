@@ -5,7 +5,8 @@ import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/reveal";
 import { BrandAtmosphere } from "@/components/brand-atmosphere";
 import { CrystalField } from "@/components/crystal-field";
-import primaryLogoSrc from "@/assets/lighthouse-campus-logo.webp";
+import primaryLogoAsset from "@/assets/lighthouse-official-logo.png.asset.json";
+const primaryLogoSrc = primaryLogoAsset.url;
 
 /* ------------------------------------------------------------------ */
 /* SmartLink — internal (TanStack) or external, with hash support     */

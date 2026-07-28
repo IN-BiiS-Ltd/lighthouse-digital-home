@@ -9,7 +9,7 @@ import campusExteriorWebp from "@/assets/photo-campus-exterior.jpg?w=640;960;128
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { PullQuote, StatBand } from "@/components/editorial";
-import officialLockupAsset from "@/assets/lighthouse-official-lockup-v2.png.asset.json";
+import officialLockupAsset from "@/assets/lighthouse-official-logo.png.asset.json";
 import { ShareBar } from "@/components/share-bar";
 import { AboutTOC } from "@/components/about-toc";
 const officialLockupSrc = officialLockupAsset.url;
@@ -21,7 +21,7 @@ import iconCoreValues from "@/assets/about-core-values.png.asset.json";
 import iconPhilosophy from "@/assets/about-philosophy.png.asset.json";
 import iconLeadership from "@/assets/about-leadership.png.asset.json";
 import iconCampusCulture from "@/assets/about-campus-culture.png.asset.json";
-import campusEmblem from "@/assets/lighthouse-campus-emblem.png.asset.json";
+import campusEmblem from "@/assets/lighthouse-official-logo.png.asset.json";
 
 
 
