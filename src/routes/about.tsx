@@ -32,7 +32,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Discover Lighthouse Campus — an independent K–12 educational institution in Dokki, Giza. Explore our story, vision, mission, values, philosophy, leadership and campus culture.",
+          "Discover Lighthouse Campus — an independent K–12 institution in Dokki, Giza. Explore our story, vision, mission, values, leadership and campus culture.",
       },
       {
         name: "keywords",

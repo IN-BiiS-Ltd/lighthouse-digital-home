@@ -5,9 +5,9 @@ export const Route = createFileRoute("/community_/alumni")({
   head: () => ({
     meta: [
       { title: "Alumni | Community | Lighthouse Campus" },
-      { name: "description", content: "Lighthouse Campus is at the beginning of its story. The alumni community described here is the one we are preparing to welcome — a relationship of long-term contribution, not a mailing list." },
+      { name: "description", content: "The Lighthouse Campus alumni community we are preparing to welcome — a relationship built on long-term contribution, not a mailing list." },
       { property: "og:title", content: "Alumni | Community | Lighthouse Campus" },
-      { property: "og:description", content: "Lighthouse Campus is at the beginning of its story. The alumni community described here is the one we are preparing to welcome — a relationship of long-term contribution, not a mailing list." },
+      { property: "og:description", content: "The Lighthouse Campus alumni community we are preparing to welcome — a relationship built on long-term contribution, not a mailing list." },
       { property: "og:url", content: "https://lighthousecampus.com/community/alumni" },
       { property: "og:type", content: "article" },
     ],
