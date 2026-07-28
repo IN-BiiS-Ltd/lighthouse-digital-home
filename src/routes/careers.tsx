@@ -10,7 +10,6 @@ import {
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { ApplyToTeachDialog } from "@/components/apply-to-teach-dialog";
-import { assetUrl } from "@/lib/asset-url";
 import leadershipImg from "@/assets/leadership.jpg?w=1200&format=jpg";
 import leadershipImgAvif from "@/assets/leadership.jpg?w=480;800;1200&format=avif&as=srcset";
 import leadershipImgWebp from "@/assets/leadership.jpg?w=480;800;1200&format=webp&as=srcset";
