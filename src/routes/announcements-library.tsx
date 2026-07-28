@@ -230,9 +230,17 @@ function PosterCard({ p, priority, layout = "grid" }: { p: Poster; priority?: bo
   const pngSrcSet = `${p.base}.256.png 256w, ${p.base}.512.png 512w, ${p.base}.png 1024w`;
   const isList = layout === "list";
   const [loaded, setLoaded] = useState(false);
+  const imgRef = useRef<HTMLImageElement | null>(null);
   const sizes = isList
     ? "(max-width: 768px) 40vw, 220px"
     : "(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 360px";
+
+  useEffect(() => {
+    const el = imgRef.current;
+    if (el && el.complete && el.naturalWidth > 0) {
+      setLoaded(true);
+    }
+  }, []);
 
   return (
     <article
@@ -259,6 +267,7 @@ function PosterCard({ p, priority, layout = "grid" }: { p: Poster; priority?: bo
           <source srcSet={webpSrcSet} sizes={sizes} type="image/webp" />
           <source srcSet={pngSrcSet} sizes={sizes} type="image/png" />
           <img
+            ref={imgRef}
             src={`${p.base}.png`}
             alt={`${p.title} — approved Lighthouse Campus announcement poster.`}
             width={1024}
