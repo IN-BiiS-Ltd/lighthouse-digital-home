@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { PageHero } from "@/components/page-hero";
 import { Section, Eyebrow, ButtonLink, SmartLink } from "@/components/blocks";
 import { ShareBar } from "@/components/share-bar";
@@ -226,6 +226,31 @@ function AnnouncementsLibrary() {
 
   const hasActiveFilters = query || category !== "All" || dateFrom || dateTo || sortField !== "date" || sortAsc;
 
+  const [pageSize, setPageSize] = useState(6);
+  const [page, setPage] = useState(1);
+  const gridRef = useRef<HTMLDivElement>(null);
+  const shouldScrollRef = useRef(false);
+
+  const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
+  const safePage = Math.min(page, totalPages);
+  const pageStart = (safePage - 1) * pageSize;
+  const visible = filtered.slice(pageStart, pageStart + pageSize);
+
+  useEffect(() => {
+    setPage(1);
+  }, [query, category, dateFrom, dateTo, sortField, sortAsc, pageSize]);
+
+  useEffect(() => {
+    if (!shouldScrollRef.current) return;
+    shouldScrollRef.current = false;
+    gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [safePage]);
+
+  const goToPage = (next: number) => {
+    shouldScrollRef.current = true;
+    setPage(Math.max(1, Math.min(totalPages, next)));
+  };
+
   const clearFilters = () => {
     setQuery("");
     setCategory("All");
@@ -233,6 +258,7 @@ function AnnouncementsLibrary() {
     setDateTo("");
     setSortField("date");
     setSortAsc(false);
+    setPage(1);
   };
 
   return (
