@@ -4,7 +4,7 @@ import { z } from "zod";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { PageHero } from "@/components/page-hero";
 import { Section, Eyebrow, ButtonLink, SmartLink } from "@/components/blocks";
-import { ShareBar } from "@/components/share-bar";
+import { ShareBar, ShareRow } from "@/components/share-bar";
 import { Download, CheckCircle2, CalendarDays, Search, SlidersHorizontal, ArrowUp, ArrowDown, X, ChevronLeft, ChevronRight, LayoutGrid, List } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -342,6 +342,13 @@ function PosterCard({ p, priority, layout = "grid" }: { p: Poster; priority?: bo
             {p.related.label}
           </SmartLink>
         </div>
+
+        <ShareRow
+          className="mt-4 border-t border-gold/20 pt-4"
+          label="Share"
+          title={`${p.title} — Lighthouse Campus`}
+          url={`${p.base}.png`}
+        />
       </div>
     </article>
   );

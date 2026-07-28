@@ -191,6 +191,107 @@ export function ShareBar({ title = "Lighthouse Campus", path }: ShareBarProps) {
   );
 }
 
+interface ShareRowProps {
+  /** Absolute URL or site-relative path of the item being shared. */
+  url: string;
+  /** Text used as the share title / tweet text. */
+  title: string;
+  /** Optional label shown before the icons. */
+  label?: string;
+  className?: string;
+}
+
+/**
+ * ShareRow — compact inline share control for a single item
+ * (an announcement poster, a vacancy, a downloadable asset).
+ */
+export function ShareRow({ url, title, label = "Share", className = "" }: ShareRowProps) {
+  const [copied, setCopied] = useState(false);
+  const absolute = url.startsWith("http") ? url : SITE_ORIGIN + (url.startsWith("/") ? url : `/${url}`);
+  const enc = encodeURIComponent;
+
+  const items = [
+    {
+      key: "facebook",
+      label: `Share ${title} on Facebook`,
+      href: `https://www.facebook.com/sharer/sharer.php?u=${enc(absolute)}`,
+      icon: Facebook,
+    },
+    {
+      key: "x",
+      label: `Share ${title} on X`,
+      href: `https://twitter.com/intent/tweet?url=${enc(absolute)}&text=${enc(title)}`,
+      icon: XGlyph,
+    },
+    {
+      key: "linkedin",
+      label: `Share ${title} on LinkedIn`,
+      href: `https://www.linkedin.com/sharing/share-offsite/?url=${enc(absolute)}`,
+      icon: Linkedin,
+    },
+    {
+      key: "whatsapp",
+      label: `Share ${title} on WhatsApp`,
+      href: `https://wa.me/?text=${enc(`${title} — ${absolute}`)}`,
+      icon: WhatsAppGlyph,
+    },
+    {
+      key: "telegram",
+      label: `Share ${title} on Telegram`,
+      href: `https://t.me/share/url?url=${enc(absolute)}&text=${enc(title)}`,
+      icon: Send,
+    },
+    {
+      key: "email",
+      label: `Share ${title} by email`,
+      href: `mailto:?subject=${enc(title)}&body=${enc(`${title}\n\n${absolute}`)}`,
+      icon: Mail,
+    },
+  ] as const;
+
+  async function onCopy() {
+    try {
+      await navigator.clipboard.writeText(absolute);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1800);
+    } catch {
+      /* ignore */
+    }
+  }
+
+  return (
+    <div className={`flex flex-wrap items-center gap-1.5 ${className}`}>
+      <span className="mr-1 text-xs font-medium text-muted-foreground">{label}</span>
+      {items.map((n) => {
+        const Icon = n.icon;
+        return (
+          <a
+            key={n.key}
+            href={n.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={n.label}
+            className="inline-flex size-9 items-center justify-center rounded-full border border-border text-foreground/75 transition hover:border-gold hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
+          >
+            <Icon className="size-4" />
+          </a>
+        );
+      })}
+      <button
+        type="button"
+        onClick={onCopy}
+        aria-label={copied ? `Link to ${title} copied` : `Copy link to ${title}`}
+        className="inline-flex size-9 items-center justify-center rounded-full border border-border text-foreground/75 transition hover:border-gold hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
+      >
+        {copied ? <Check className="size-4" /> : <LinkIcon className="size-4" />}
+      </button>
+      <span aria-live="polite" className="sr-only">
+        {copied ? "Link copied to clipboard." : ""}
+      </span>
+    </div>
+  );
+}
+
 /** Compact set of "Follow us" links — for the site footer. */
 export function FollowLinks() {
   const links = [

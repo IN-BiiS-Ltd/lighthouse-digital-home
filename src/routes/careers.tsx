@@ -10,6 +10,7 @@ import {
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { ApplyToTeachDialog } from "@/components/apply-to-teach-dialog";
+import { ShareBar, ShareRow } from "@/components/share-bar";
 import leadershipImg from "@/assets/leadership.jpg?w=1200&format=jpg";
 import leadershipImgAvif from "@/assets/leadership.jpg?w=480;800;1200&format=avif&as=srcset";
 import leadershipImgWebp from "@/assets/leadership.jpg?w=480;800;1200&format=webp&as=srcset";
@@ -199,6 +200,13 @@ function Careers() {
             <figcaption className="mt-3 text-center text-xs text-muted-foreground">
               Open the poster in full size to read or share the announcement.
             </figcaption>
+            <ShareRow
+              className="mt-4 justify-center"
+              label="Share this vacancy"
+              title="Teachers Wanted 2026/2027 — Lighthouse Campus"
+              url="/careers"
+            />
+
           </figure>
         </div>
       </Section>
@@ -272,6 +280,8 @@ function Careers() {
         primary={{ to: "/contact", label: "Contact our team" }}
         secondary={{ to: "/about", label: "About the campus" }}
       />
+
+      <ShareBar title="Teachers Wanted 2026/2027 — Careers at Lighthouse Campus" path="/careers" />
     </>
   );
 }

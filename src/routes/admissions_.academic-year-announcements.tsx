@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArchitecturalPage } from "@/components/architectural-page";
 import { Section, ButtonLink, Eyebrow } from "@/components/blocks";
+import { ShareRow } from "@/components/share-bar";
 import { CalendarDays, Clock, Bell, FileText, Users, MailOpen } from "lucide-react";
 
 const APPLY = "https://eduios.lighthousecampus.com/apply/lighthouse-campus";
@@ -137,6 +138,12 @@ function PosterGallery() {
               >
                 Download full size
               </ButtonLink>
+              <ShareRow
+                className="pt-3"
+                label="Share"
+                title={`${p.caption} — Lighthouse Campus`}
+                url={`/admissions-2026-2027-${p.key}.png`}
+              />
             </figcaption>
           </figure>
         ))}
