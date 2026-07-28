@@ -137,6 +137,12 @@ function PosterGallery() {
               >
                 Download full size
               </ButtonLink>
+              <ShareRow
+                className="pt-3"
+                label="Share"
+                title={`${p.caption} — Lighthouse Campus`}
+                url={`/admissions-2026-2027-${p.key}.png`}
+              />
             </figcaption>
           </figure>
         ))}
