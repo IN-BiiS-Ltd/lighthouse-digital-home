@@ -314,12 +314,6 @@ function PosterCard({ p, priority, layout = "grid" }: { p: Poster; priority?: bo
             <Download className="size-4" aria-hidden />
             WebP
           </a>
-          <SmartLink
-            to={p.related.to}
-            className="inline-flex items-center rounded-full px-3 py-2 text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground"
-          >
-            {p.related.label}
-          </SmartLink>
         </div>
 
         <ShareRow
