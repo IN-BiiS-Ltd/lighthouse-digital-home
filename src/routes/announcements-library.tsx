@@ -72,7 +72,6 @@ const POSTERS: Poster[] = [
     approved: "2026-07-28",
     approvedLabel: "28 July 2026",
     size: "PNG 328 KB · 1024 × 1536",
-    related: { label: "Careers — we are hiring", to: "/careers" },
   },
 ];
 
