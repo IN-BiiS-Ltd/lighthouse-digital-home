@@ -3,7 +3,7 @@ import { zodValidator, fallback } from "@tanstack/zod-adapter";
 import { z } from "zod";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { PageHero } from "@/components/page-hero";
-import { Section, Eyebrow, ButtonLink, SmartLink } from "@/components/blocks";
+import { Section, Eyebrow, ButtonLink } from "@/components/blocks";
 import { ShareBar, ShareRow } from "@/components/share-bar";
 import { Download, CheckCircle2, CalendarDays, Search, SlidersHorizontal, ArrowUp, ArrowDown, X, ChevronLeft, ChevronRight, LayoutGrid, List } from "lucide-react";
 import { Input } from "@/components/ui/input";
@@ -22,7 +22,6 @@ type Poster = {
   approved: string;
   approvedLabel: string;
   size: string;
-  related: { label: string; to: string };
 };
 
 const POSTERS: Poster[] = [
@@ -37,7 +36,6 @@ const POSTERS: Poster[] = [
     approved: "2026-07-28",
     approvedLabel: "28 July 2026",
     size: "PNG 306 KB · 1024 × 1536",
-    related: { label: "Academic year announcements", to: "/admissions/academic-year-announcements" },
   },
   {
     key: "admissions-b",
@@ -50,7 +48,6 @@ const POSTERS: Poster[] = [
     approved: "2026-07-28",
     approvedLabel: "28 July 2026",
     size: "PNG 492 KB · 1024 × 1536",
-    related: { label: "Admissions overview", to: "/admissions" },
   },
   {
     key: "admissions-c",
@@ -63,7 +60,6 @@ const POSTERS: Poster[] = [
     approved: "2026-07-28",
     approvedLabel: "28 July 2026",
     size: "PNG 528 KB · 1024 × 1536",
-    related: { label: "Admissions overview", to: "/admissions" },
   },
   {
     key: "teachers",
@@ -76,7 +72,6 @@ const POSTERS: Poster[] = [
     approved: "2026-07-28",
     approvedLabel: "28 July 2026",
     size: "PNG 328 KB · 1024 × 1536",
-    related: { label: "Careers — we are hiring", to: "/careers" },
   },
 ];
 
@@ -319,12 +314,6 @@ function PosterCard({ p, priority, layout = "grid" }: { p: Poster; priority?: bo
             <Download className="size-4" aria-hidden />
             WebP
           </a>
-          <SmartLink
-            to={p.related.to}
-            className="inline-flex items-center rounded-full px-3 py-2 text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground"
-          >
-            {p.related.label}
-          </SmartLink>
         </div>
 
         <ShareRow
