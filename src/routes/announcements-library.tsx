@@ -36,7 +36,6 @@ const POSTERS: Poster[] = [
     approved: "2026-07-28",
     approvedLabel: "28 July 2026",
     size: "PNG 306 KB · 1024 × 1536",
-    related: { label: "Academic year announcements", to: "/admissions/academic-year-announcements" },
   },
   {
     key: "admissions-b",
