@@ -3,7 +3,7 @@ import { zodValidator, fallback } from "@tanstack/zod-adapter";
 import { z } from "zod";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { PageHero } from "@/components/page-hero";
-import { Section, Eyebrow, ButtonLink, SmartLink } from "@/components/blocks";
+import { Section, Eyebrow, ButtonLink } from "@/components/blocks";
 import { ShareBar, ShareRow } from "@/components/share-bar";
 import { Download, CheckCircle2, CalendarDays, Search, SlidersHorizontal, ArrowUp, ArrowDown, X, ChevronLeft, ChevronRight, LayoutGrid, List } from "lucide-react";
 import { Input } from "@/components/ui/input";
@@ -22,7 +22,6 @@ type Poster = {
   approved: string;
   approvedLabel: string;
   size: string;
-  related: { label: string; to: string };
 };
 
 const POSTERS: Poster[] = [
