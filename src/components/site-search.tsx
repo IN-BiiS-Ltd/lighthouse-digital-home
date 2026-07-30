@@ -189,8 +189,12 @@ export function SiteSearch({ variant = "header", className }: SiteSearchProps) {
     setOpen(false);
   };
 
-  const isMac =
-    typeof navigator !== "undefined" && /Mac|iPod|iPhone|iPad/.test(navigator.platform);
+  // Resolved after hydration only — the server cannot know the platform,
+  // so deriving it during render would cause a hydration mismatch.
+  const [isMac, setIsMac] = useState(false);
+  useEffect(() => {
+    setIsMac(/Mac|iPod|iPhone|iPad/.test(navigator.platform));
+  }, []);
   const isHeader = variant === "header";
 
   return (
