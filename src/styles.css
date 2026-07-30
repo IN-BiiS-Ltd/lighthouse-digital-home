@@ -167,13 +167,13 @@ html[dir="rtl"] .rtl-flip {
   --silver: oklch(0.9 0.008 247);
   --sand: oklch(0.97 0.008 90);
 
-  --sidebar: oklch(0.24 0.055 262);
+  --sidebar: oklch(0.42 0.08 255);
   --sidebar-foreground: oklch(0.97 0.006 250);
   --sidebar-primary: oklch(0.77 0.13 88);
   --sidebar-primary-foreground: oklch(0.24 0.05 262);
-  --sidebar-accent: oklch(0.3 0.05 262);
+  --sidebar-accent: oklch(0.5 0.07 255);
   --sidebar-accent-foreground: oklch(0.97 0.006 250);
-  --sidebar-border: oklch(0.34 0.04 262);
+  --sidebar-border: oklch(0.55 0.06 255);
   --sidebar-ring: oklch(0.77 0.13 88);
 }
 
