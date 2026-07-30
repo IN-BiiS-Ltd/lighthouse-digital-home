@@ -69,17 +69,17 @@ function Contact() {
             </h2>
             <ul className="mt-7 space-y-5 text-muted-foreground">
               <li className="flex gap-4">
-                <MapPin className="mt-0.5 size-5 shrink-0 text-sky" aria-hidden />
+                <MapPin className="mt-0.5 size-5 shrink-0 text-sapphire" aria-hidden />
                 <span>66 El-Zahraa, Ad Doqi, Dokki, Giza Governorate 3751053, Egypt</span>
               </li>
               <li className="flex gap-4">
-                <Phone className="mt-0.5 size-5 shrink-0 text-sky" aria-hidden />
+                <Phone className="mt-0.5 size-5 shrink-0 text-sapphire" aria-hidden />
                 <a href="tel:+201107030737" className="hover:text-brand-blue">
                   +20 110 703 0737
                 </a>
               </li>
               <li className="flex gap-4">
-                <Mail className="mt-0.5 size-5 shrink-0 text-sky" aria-hidden />
+                <Mail className="mt-0.5 size-5 shrink-0 text-sapphire" aria-hidden />
                 <a
                   href="mailto:hello@lighthousecampus.edu"
                   className="hover:text-brand-blue"
@@ -88,7 +88,7 @@ function Contact() {
                 </a>
               </li>
               <li className="flex gap-4">
-                <Clock className="mt-0.5 size-5 shrink-0 text-sky" aria-hidden />
+                <Clock className="mt-0.5 size-5 shrink-0 text-sapphire" aria-hidden />
                 <span>Sunday–Thursday, 8:00–16:00</span>
               </li>
             </ul>

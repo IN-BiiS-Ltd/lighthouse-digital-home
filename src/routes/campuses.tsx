@@ -107,7 +107,7 @@ function Campuses() {
                   {c.name}
                 </h3>
                 <p className="mt-2 flex items-center gap-2 text-sm text-muted-foreground">
-                  <MapPin className="size-4 text-sky" aria-hidden />
+                  <MapPin className="size-4 text-sapphire" aria-hidden />
                   {c.location}
                 </p>
                 <p className="mt-4 flex-1 text-muted-foreground">{c.body}</p>
