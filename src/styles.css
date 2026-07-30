@@ -137,36 +137,38 @@ html[dir="rtl"] .rtl-flip {
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.245 0.035 245);
 
-  /* Primary = Prussian Midnight #08253C */
-  --primary: oklch(0.28 0.055 245);
+  /* Primary = Imperial Prussian #072B47 */
+  --primary: oklch(0.265 0.062 248);
   --primary-foreground: oklch(0.99 0.004 95);
 
   /* Secondary = soft silver surface */
   --secondary: oklch(0.955 0.012 88);
-  --secondary-foreground: oklch(0.28 0.055 245);
+  --secondary-foreground: oklch(0.265 0.062 248);
 
   --muted: oklch(0.955 0.012 88);
   --muted-foreground: oklch(0.49 0.025 240);
 
-  /* Accent = Antique Gold #C1A15A */
-  --accent: oklch(0.72 0.09 85);
-  --accent-foreground: oklch(0.245 0.035 245);
+  /* Accent = Antique Gold #C9A227 (richer, aged) */
+  --accent: oklch(0.735 0.115 88);
+  --accent-foreground: oklch(0.235 0.04 248);
 
   --destructive: oklch(0.55 0.2 27);
   --destructive-foreground: oklch(0.99 0.004 95);
 
   --border: oklch(0.895 0.014 88);
   --input: oklch(0.895 0.014 88);
-  --ring: oklch(0.72 0.09 85);
+  --ring: oklch(0.735 0.115 88);
 
-  /* Brand palette — Prussian heritage family */
-  --navy: oklch(0.28 0.055 245);
+  /* Brand palette — Imperial Prussian heritage family */
+  --navy: oklch(0.265 0.062 248);
   --navy-foreground: oklch(0.965 0.012 88);
-  --navy-muted: oklch(0.45 0.05 240);
-  --gold: oklch(0.72 0.09 85);
-  --gold-foreground: oklch(0.245 0.035 245);
-  --brand-blue: oklch(0.36 0.062 242);
-  --sky: oklch(0.56 0.055 210);
+  --navy-muted: oklch(0.44 0.055 248);
+  --gold: oklch(0.735 0.115 88);
+  --gold-foreground: oklch(0.235 0.04 248);
+  /* Heritage Sapphire — the distinguished blue for links & interaction */
+  --sapphire: oklch(0.45 0.125 254);
+  --brand-blue: oklch(0.45 0.125 254);
+  --sky: oklch(0.6 0.085 235);
   /* Verdigris — heritage secondary (aged bronze-green) */
   --verdigris: oklch(0.49 0.062 190);
   /* Campaign-only accents — posters, social cards, admissions banners */
@@ -175,14 +177,15 @@ html[dir="rtl"] .rtl-flip {
   --silver: oklch(0.9 0.012 274);
   --sand: oklch(0.97 0.008 90);
 
-  --sidebar: oklch(0.28 0.055 245);
+  --sidebar: oklch(0.265 0.062 248);
   --sidebar-foreground: oklch(0.965 0.012 88);
-  --sidebar-primary: oklch(0.72 0.09 85);
-  --sidebar-primary-foreground: oklch(0.245 0.035 245);
-  --sidebar-accent: oklch(0.36 0.062 242);
+  --sidebar-primary: oklch(0.735 0.115 88);
+  --sidebar-primary-foreground: oklch(0.235 0.04 248);
+  --sidebar-accent: oklch(0.45 0.125 254);
   --sidebar-accent-foreground: oklch(0.965 0.012 88);
-  --sidebar-border: oklch(0.45 0.05 240);
-  --sidebar-ring: oklch(0.72 0.09 85);
+  --sidebar-border: oklch(0.44 0.055 248);
+  --sidebar-ring: oklch(0.735 0.115 88);
+
 }
 
 .dark {
