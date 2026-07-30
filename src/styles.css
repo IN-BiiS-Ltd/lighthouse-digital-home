@@ -92,6 +92,8 @@ html[dir="rtl"] .rtl-flip {
   --color-gold-foreground: var(--gold-foreground);
   --color-brand-blue: var(--brand-blue);
   --color-sky: var(--sky);
+  --color-royal: var(--royal);
+  --color-indigo-deep: var(--indigo-deep);
   --color-silver: var(--silver);
   --color-sand: var(--sand);
 
@@ -164,6 +166,9 @@ html[dir="rtl"] .rtl-flip {
   --gold-foreground: oklch(0.269 0.158 277);
   --brand-blue: oklch(0.45 0.14 255);
   --sky: oklch(0.65 0.13 245);
+  /* Campaign-only accents — posters, social cards, admissions banners */
+  --royal: oklch(0.40 0.24 274);
+  --indigo-deep: oklch(0.26 0.19 285);
   --silver: oklch(0.9 0.012 274);
   --sand: oklch(0.97 0.008 90);
 
