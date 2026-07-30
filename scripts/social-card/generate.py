@@ -86,7 +86,18 @@ async def render(logo: str):
 
     tmp = Path("/tmp/lh-social-card.html")
     tmp.write_text(HTML.replace("__LOGO__", logo), encoding="utf-8")
-    out = ROOT / "public/lighthouse-social-card.jpg"
+    out = ROOT / "public/lighthouse-social-card-v5.jpg"
+
+    # Remove stale versions so only the latest card remains in the deploy bundle
+    for stale in ROOT.glob("public/lighthouse-social-card-v*.jpg"):
+        if stale != out:
+            stale.unlink()
+    for stale in ROOT.glob("public/lighthouse-social-card-v*.webp"):
+        if stale.with_suffix(".jpg") != out:
+            stale.unlink()
+    legacy_webp = ROOT / "public/lighthouse-social-card.webp"
+    if legacy_webp.exists():
+        legacy_webp.unlink()
 
     async with async_playwright() as pw:
         browser = await pw.chromium.launch(headless=True)
