@@ -601,7 +601,9 @@
             <div class="sub">${esc(p.sub)}</div>
             <h1>${esc(p.title)}</h1>
             <p class="lede">${esc(p.lede)}</p>
+            ${p.image ? `<div class="band"><img src="${img(p.image)}" alt="" /></div>` : ""}
             <div class="contact">${p.contact
+
               .map((f) => `<div><h4>${esc(f.label)}</h4><p>${f.lines.map(esc).join("<br />")}</p></div>`)
               .join("")}</div>
             <p class="tag" style="margin-top:8mm">${esc(p.tagline)}</p>
