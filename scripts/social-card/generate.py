@@ -3,7 +3,7 @@
 Lighthouse Campus — social share card (1200x630) generator.
 
 The logo is always the single approved asset pointer; only layout/text here.
-Outputs public/lighthouse-social-card-v9.jpg (versioned path follows SOCIAL_CARD_VERSION).
+Outputs public/lighthouse-social-card-v10.jpg (versioned path follows SOCIAL_CARD_VERSION).
 """
 import asyncio
 import base64
@@ -45,7 +45,7 @@ HTML = """<!doctype html>
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body { width:1200px; height:630px; overflow:hidden;
-    background: radial-gradient(120% 140% at 18% 30%, #2C6E6B 0%, #0E3A56 45%, #08253C 100%); }
+    background: radial-gradient(125% 150% at 20% 28%, #1F4F8F 0%, #0D3557 42%, #061F35 100%); }
   .card { display:grid; grid-template-columns: 600px 1fr; height:630px; align-items:center; }
   .logo { display:flex; align-items:center; justify-content:center; padding:34px; }
   .logo img { width:100%; max-width:520px; height:auto; display:block;
@@ -53,12 +53,12 @@ HTML = """<!doctype html>
   .panel { position:relative; height:100%; display:flex; flex-direction:column;
     align-items:center; justify-content:center; text-align:center; padding:0 60px; gap:0; }
   .panel::before { content:""; position:absolute; left:0; top:96px; bottom:96px; width:1px;
-    background:linear-gradient(180deg, rgba(212,175,55,0), rgba(212,175,55,.55), rgba(212,175,55,0)); }
+    background:linear-gradient(180deg, rgba(201,162,39,0), rgba(201,162,39,.55), rgba(201,162,39,0)); }
   h1 { font-family:"Cormorant Garamond", serif; font-weight:700; font-size:66px; line-height:1.05;
-    letter-spacing:.02em; color:#e6c465; text-transform:uppercase; }
+    letter-spacing:.02em; color:#D9B75F; text-transform:uppercase; }
   h1 span { white-space:nowrap; }
   .rule { width:120px; height:2px; margin:22px auto 20px;
-    background:linear-gradient(90deg, rgba(212,175,55,0), #d4af37, rgba(212,175,55,0)); }
+    background:linear-gradient(90deg, rgba(201,162,39,0), #C9A227, rgba(201,162,39,0)); }
   h2 { font-family:"Inter", sans-serif; font-weight:500; font-size:34px; color:#ffffff;
     letter-spacing:.01em; }
   p { font-family:"Inter", sans-serif; font-weight:300; font-size:22px; color:#c3cfe3;
@@ -86,7 +86,7 @@ async def render(logo: str):
 
     tmp = Path("/tmp/lh-social-card.html")
     tmp.write_text(HTML.replace("__LOGO__", logo), encoding="utf-8")
-    out = ROOT / "public/lighthouse-social-card-v9.jpg"
+    out = ROOT / "public/lighthouse-social-card-v10.jpg"
 
     # Remove stale versions so only the latest card remains in the deploy bundle
     for stale in ROOT.glob("public/lighthouse-social-card-v*.jpg"):
