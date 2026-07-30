@@ -708,7 +708,7 @@ function AnnouncementsLibrary() {
               <button
                 type="button"
                 onClick={clearFilters}
-                className="ml-auto inline-flex items-center gap-1 text-xs text-gold hover:underline"
+                className="ml-auto inline-flex items-center gap-1 text-xs text-sapphire hover:underline"
               >
                 <X className="size-3" />
                 Clear all

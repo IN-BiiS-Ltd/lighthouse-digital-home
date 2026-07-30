@@ -88,7 +88,7 @@ function CookieSettingsPage() {
                 ].join(" ")}
               >
                 <div className="flex items-center justify-between gap-4">
-                  <span className="eyebrow text-gold">{active ? "Selected" : "Choose"}</span>
+                  <span className="eyebrow text-sapphire">{active ? "Selected" : "Choose"}</span>
                   <span
                     aria-hidden
                     className={[
