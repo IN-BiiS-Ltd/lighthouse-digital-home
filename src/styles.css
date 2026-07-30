@@ -178,27 +178,27 @@ html[dir="rtl"] .rtl-flip {
 }
 
 .dark {
-  --background: oklch(0.19 0.045 262);
+  --background: oklch(0.3 0.06 255);
   --foreground: oklch(0.97 0.006 250);
-  --card: oklch(0.24 0.055 262);
+  --card: oklch(0.37 0.07 255);
   --card-foreground: oklch(0.97 0.006 250);
-  --popover: oklch(0.24 0.055 262);
+  --popover: oklch(0.37 0.07 255);
   --popover-foreground: oklch(0.97 0.006 250);
   --primary: oklch(0.77 0.13 88);
   --primary-foreground: oklch(0.2 0.05 262);
-  --secondary: oklch(0.3 0.05 262);
+  --secondary: oklch(0.45 0.07 255);
   --secondary-foreground: oklch(0.97 0.006 250);
-  --muted: oklch(0.3 0.05 262);
+  --muted: oklch(0.45 0.07 255);
   --muted-foreground: oklch(0.75 0.03 255);
   --accent: oklch(0.77 0.13 88);
   --accent-foreground: oklch(0.2 0.05 262);
   --border: oklch(1 0 0 / 12%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.77 0.13 88);
-  --navy: oklch(0.19 0.045 262);
+  --navy: oklch(0.3 0.06 255);
   --navy-foreground: oklch(0.97 0.006 250);
-  --silver: oklch(0.3 0.05 262);
-  --sand: oklch(0.24 0.055 262);
+  --silver: oklch(0.45 0.07 255);
+  --sand: oklch(0.37 0.07 255);
 }
 
 @layer base {
