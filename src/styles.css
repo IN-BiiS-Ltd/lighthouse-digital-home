@@ -115,9 +115,9 @@ html[dir="rtl"] .rtl-flip {
   --tracking-display: -0.025em;
 
   /* Elevation — layered, brand-tinted shadows */
-  --shadow-e1: 0 1px 2px rgba(28, 7, 112, 0.05), 0 2px 8px -2px rgba(28, 7, 112, 0.06);
-  --shadow-e2: 0 6px 18px -8px rgba(28, 7, 112, 0.18), 0 2px 6px -2px rgba(28, 7, 112, 0.08);
-  --shadow-e3: 0 24px 60px -24px rgba(28, 7, 112, 0.35), 0 6px 20px -8px rgba(28, 7, 112, 0.16);
+  --shadow-e1: 0 1px 2px rgba(30, 58, 138, 0.05), 0 2px 8px -2px rgba(30, 58, 138, 0.06);
+  --shadow-e2: 0 6px 18px -8px rgba(30, 58, 138, 0.18), 0 2px 6px -2px rgba(30, 58, 138, 0.08);
+  --shadow-e3: 0 24px 60px -24px rgba(30, 58, 138, 0.35), 0 6px 20px -8px rgba(30, 58, 138, 0.16);
   --shadow-gold-glow: 0 0 40px -10px color-mix(in oklab, var(--gold) 55%, transparent);
 }
 
