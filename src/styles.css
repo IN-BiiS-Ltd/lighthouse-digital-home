@@ -42,9 +42,9 @@ html[dir="rtl"] .rtl-flip {
  * LIGHTHOUSE CAMPUS — Institutional Design System
  * ------------------------------------------------
  * Colours are extracted directly from the official logo:
- *   Deep Navy      #0B1D3A   — primary institutional colour
+ *   Light Navy     #3D5A80   — primary institutional colour
  *   Lighthouse Gold#D4AF37   — accent, guidance, warmth
- *   Lighthouse Blue#1E5BC6   — secondary, trust, depth
+ *   Lighthouse Blue#4A6FA5   — secondary, trust, depth
  *   Sky Blue       #4DA6FF   — highlight, openness, future
  *   Silver         #DCE1E6   — neutral structure
  *   White          #FFFFFF   — clarity, space
@@ -115,9 +115,9 @@ html[dir="rtl"] .rtl-flip {
   --tracking-display: -0.025em;
 
   /* Elevation — layered, brand-tinted shadows */
-  --shadow-e1: 0 1px 2px rgba(11, 29, 58, 0.05), 0 2px 8px -2px rgba(11, 29, 58, 0.06);
-  --shadow-e2: 0 6px 18px -8px rgba(11, 29, 58, 0.18), 0 2px 6px -2px rgba(11, 29, 58, 0.08);
-  --shadow-e3: 0 24px 60px -24px rgba(11, 29, 58, 0.35), 0 6px 20px -8px rgba(11, 29, 58, 0.16);
+  --shadow-e1: 0 1px 2px rgba(61, 90, 128, 0.05), 0 2px 8px -2px rgba(61, 90, 128, 0.06);
+  --shadow-e2: 0 6px 18px -8px rgba(61, 90, 128, 0.18), 0 2px 6px -2px rgba(61, 90, 128, 0.08);
+  --shadow-e3: 0 24px 60px -24px rgba(61, 90, 128, 0.35), 0 6px 20px -8px rgba(61, 90, 128, 0.16);
   --shadow-gold-glow: 0 0 40px -10px color-mix(in oklab, var(--gold) 55%, transparent);
 }
 
@@ -134,8 +134,8 @@ html[dir="rtl"] .rtl-flip {
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.24 0.05 262);
 
-  /* Primary = Deep Navy */
-  --primary: oklch(0.26 0.06 262);
+  /* Primary = Light Navy */
+  --primary: oklch(0.45 0.085 255);
   --primary-foreground: oklch(0.99 0.004 95);
 
   /* Secondary = soft silver surface */
@@ -156,49 +156,49 @@ html[dir="rtl"] .rtl-flip {
   --input: oklch(0.9 0.008 250);
   --ring: oklch(0.77 0.13 88);
 
-  /* Brand palette */
-  --navy: oklch(0.24 0.055 262);
+  /* Brand palette — light navy family */
+  --navy: oklch(0.42 0.08 255);
   --navy-foreground: oklch(0.97 0.006 250);
-  --navy-muted: oklch(0.72 0.03 255);
+  --navy-muted: oklch(0.7 0.05 250);
   --gold: oklch(0.77 0.13 88);
   --gold-foreground: oklch(0.24 0.05 262);
-  --brand-blue: oklch(0.52 0.17 263);
+  --brand-blue: oklch(0.55 0.15 255);
   --sky: oklch(0.72 0.13 248);
   --silver: oklch(0.9 0.008 247);
   --sand: oklch(0.97 0.008 90);
 
-  --sidebar: oklch(0.24 0.055 262);
+  --sidebar: oklch(0.42 0.08 255);
   --sidebar-foreground: oklch(0.97 0.006 250);
   --sidebar-primary: oklch(0.77 0.13 88);
   --sidebar-primary-foreground: oklch(0.24 0.05 262);
-  --sidebar-accent: oklch(0.3 0.05 262);
+  --sidebar-accent: oklch(0.5 0.07 255);
   --sidebar-accent-foreground: oklch(0.97 0.006 250);
-  --sidebar-border: oklch(0.34 0.04 262);
+  --sidebar-border: oklch(0.55 0.06 255);
   --sidebar-ring: oklch(0.77 0.13 88);
 }
 
 .dark {
-  --background: oklch(0.19 0.045 262);
+  --background: oklch(0.3 0.06 255);
   --foreground: oklch(0.97 0.006 250);
-  --card: oklch(0.24 0.055 262);
+  --card: oklch(0.37 0.07 255);
   --card-foreground: oklch(0.97 0.006 250);
-  --popover: oklch(0.24 0.055 262);
+  --popover: oklch(0.37 0.07 255);
   --popover-foreground: oklch(0.97 0.006 250);
   --primary: oklch(0.77 0.13 88);
   --primary-foreground: oklch(0.2 0.05 262);
-  --secondary: oklch(0.3 0.05 262);
+  --secondary: oklch(0.45 0.07 255);
   --secondary-foreground: oklch(0.97 0.006 250);
-  --muted: oklch(0.3 0.05 262);
+  --muted: oklch(0.45 0.07 255);
   --muted-foreground: oklch(0.75 0.03 255);
   --accent: oklch(0.77 0.13 88);
   --accent-foreground: oklch(0.2 0.05 262);
   --border: oklch(1 0 0 / 12%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.77 0.13 88);
-  --navy: oklch(0.19 0.045 262);
+  --navy: oklch(0.3 0.06 255);
   --navy-foreground: oklch(0.97 0.006 250);
-  --silver: oklch(0.3 0.05 262);
-  --sand: oklch(0.24 0.055 262);
+  --silver: oklch(0.45 0.07 255);
+  --sand: oklch(0.37 0.07 255);
 }
 
 @layer base {

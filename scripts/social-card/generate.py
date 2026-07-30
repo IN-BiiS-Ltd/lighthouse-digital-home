@@ -3,7 +3,7 @@
 Lighthouse Campus — social share card (1200x630) generator.
 
 The logo is always the single approved asset pointer; only layout/text here.
-Outputs public/lighthouse-social-card.jpg and .webp
+Outputs public/lighthouse-social-card-v5.jpg (versioned path follows SOCIAL_CARD_VERSION).
 """
 import asyncio
 import base64
@@ -45,7 +45,7 @@ HTML = """<!doctype html>
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body { width:1200px; height:630px; overflow:hidden;
-    background: radial-gradient(120% 140% at 18% 30%, #16305c 0%, #0b1d3a 55%, #071429 100%); }
+    background: radial-gradient(120% 140% at 18% 30%, #5d7b9d 0%, #4a6fa5 45%, #3d5a80 100%); }
   .card { display:grid; grid-template-columns: 600px 1fr; height:630px; align-items:center; }
   .logo { display:flex; align-items:center; justify-content:center; padding:34px; }
   .logo img { width:100%; max-width:520px; height:auto; display:block;
@@ -86,7 +86,18 @@ async def render(logo: str):
 
     tmp = Path("/tmp/lh-social-card.html")
     tmp.write_text(HTML.replace("__LOGO__", logo), encoding="utf-8")
-    out = ROOT / "public/lighthouse-social-card.jpg"
+    out = ROOT / "public/lighthouse-social-card-v5.jpg"
+
+    # Remove stale versions so only the latest card remains in the deploy bundle
+    for stale in ROOT.glob("public/lighthouse-social-card-v*.jpg"):
+        if stale != out:
+            stale.unlink()
+    for stale in ROOT.glob("public/lighthouse-social-card-v*.webp"):
+        if stale.with_suffix(".jpg") != out:
+            stale.unlink()
+    legacy_webp = ROOT / "public/lighthouse-social-card.webp"
+    if legacy_webp.exists():
+        legacy_webp.unlink()
 
     async with async_playwright() as pw:
         browser = await pw.chromium.launch(headless=True)
