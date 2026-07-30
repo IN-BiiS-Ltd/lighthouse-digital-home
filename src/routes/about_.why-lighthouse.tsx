@@ -138,7 +138,7 @@ const logoElements = [
 ];
 
 const palette = [
-  { name: "Executive Blue", swatch: "#1E3A8A", ink: "text-white", body: "A symbol of trust, wisdom, confidence, stability, and thoughtful leadership." },
+  { name: "Prussian Midnight", swatch: "#08253C", ink: "text-white", body: "A symbol of trust, wisdom, confidence, stability, and thoughtful leadership." },
   { name: "Lighthouse Gold", swatch: "#C9A24C", ink: "text-navy", body: "A symbol of excellence, aspiration, achievement, and the transformative power of education." },
   { name: "Silver", swatch: "#C7CBD1", ink: "text-navy", body: "A symbol of clarity, precision, balance, and modern thinking." },
   { name: "White", swatch: "#FFFFFF", ink: "text-navy", body: "A symbol of openness, integrity, transparency, and new beginnings." },
