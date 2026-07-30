@@ -412,6 +412,8 @@ const ar: ProspectusCopy = {
     { label: "البرامج", to: "#programmes" },
     { label: "هيئة التدريس", to: "#faculty" },
     { label: "بيئة الدراسة", to: "#environment" },
+    { label: "الصحة النفسية", to: "#wellbeing" },
+    { label: "الأنشطة", to: "#activities" },
     { label: "نظام التشغيل", to: "#eeios" },
     { label: "فلسفتنا", to: "#philosophy" },
     { label: "لماذا لايت هاوس", to: "#why" },
