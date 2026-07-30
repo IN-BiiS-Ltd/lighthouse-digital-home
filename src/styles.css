@@ -134,8 +134,8 @@ html[dir="rtl"] .rtl-flip {
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.24 0.05 262);
 
-  /* Primary = Royal Blue #261CC1 */
-  --primary: oklch(0.396 0.234 271);
+  /* Primary = Oxford International Blue #1E3A8A */
+  --primary: oklch(0.37 0.13 260);
   --primary-foreground: oklch(0.99 0.004 95);
 
   /* Secondary = soft silver surface */
@@ -156,24 +156,24 @@ html[dir="rtl"] .rtl-flip {
   --input: oklch(0.9 0.012 274);
   --ring: oklch(0.77 0.13 88);
 
-  /* Brand palette — indigo / royal blue / sky */
-  --navy: oklch(0.269 0.158 277);
+  /* Brand palette — Oxford blue family */
+  --navy: oklch(0.37 0.13 260);
   --navy-foreground: oklch(0.97 0.008 274);
-  --navy-muted: oklch(0.45 0.13 275);
+  --navy-muted: oklch(0.55 0.09 255);
   --gold: oklch(0.77 0.13 88);
   --gold-foreground: oklch(0.269 0.158 277);
-  --brand-blue: oklch(0.396 0.234 271);
-  --sky: oklch(0.679 0.174 253);
+  --brand-blue: oklch(0.45 0.14 255);
+  --sky: oklch(0.65 0.13 245);
   --silver: oklch(0.9 0.012 274);
   --sand: oklch(0.97 0.008 90);
 
-  --sidebar: oklch(0.269 0.158 277);
+  --sidebar: oklch(0.37 0.13 260);
   --sidebar-foreground: oklch(0.97 0.008 274);
   --sidebar-primary: oklch(0.77 0.13 88);
   --sidebar-primary-foreground: oklch(0.269 0.158 277);
-  --sidebar-accent: oklch(0.396 0.234 271);
+  --sidebar-accent: oklch(0.45 0.14 255);
   --sidebar-accent-foreground: oklch(0.97 0.008 274);
-  --sidebar-border: oklch(0.42 0.16 274);
+  --sidebar-border: oklch(0.55 0.09 255);
   --sidebar-ring: oklch(0.77 0.13 88);
 }
 
