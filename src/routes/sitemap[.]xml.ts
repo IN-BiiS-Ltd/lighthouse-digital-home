@@ -4,6 +4,11 @@ import type {} from "@tanstack/react-start";
 // TODO: replace with your project URL once a project name or custom domain is set.
 const BASE_URL = "https://lighthousecampus.com";
 
+interface AlternateLink {
+  hreflang: string;
+  path: string;
+}
+
 interface SitemapEntry {
   path: string;
   changefreq?:
@@ -15,7 +20,23 @@ interface SitemapEntry {
     | "yearly"
     | "never";
   priority?: string;
+  /** hreflang alternates emitted as xhtml:link rel="alternate" */
+  alternates?: AlternateLink[];
 }
+
+// Bilingual prospectus: English on the clean URL, Arabic on ?lang=ar.
+const prospectusAlternates: AlternateLink[] = [
+  { hreflang: "en", path: "/prospectus" },
+  { hreflang: "ar", path: "/prospectus?lang=ar" },
+  { hreflang: "x-default", path: "/prospectus" },
+];
+
+const xmlEscape = (value: string) =>
+  value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
@@ -23,8 +44,18 @@ export const Route = createFileRoute("/sitemap.xml")({
       GET: async () => {
         const entries: SitemapEntry[] = [
           { path: "/", changefreq: "weekly", priority: "1.0" },
-          { path: "/prospectus", changefreq: "monthly", priority: "0.9" },
-          { path: "/prospectus?lang=ar", changefreq: "monthly", priority: "0.8" },
+          {
+            path: "/prospectus",
+            changefreq: "monthly",
+            priority: "0.9",
+            alternates: prospectusAlternates,
+          },
+          {
+            path: "/prospectus?lang=ar",
+            changefreq: "monthly",
+            priority: "0.9",
+            alternates: prospectusAlternates,
+          },
           { path: "/about", changefreq: "monthly", priority: "0.9" },
           { path: "/about/our-story", changefreq: "monthly", priority: "0.7" },
           { path: "/about/why-lighthouse", changefreq: "monthly", priority: "0.7" },
@@ -129,7 +160,11 @@ export const Route = createFileRoute("/sitemap.xml")({
         const urls = entries.map((e) =>
           [
             `  <url>`,
-            `    <loc>${BASE_URL}${e.path}</loc>`,
+            `    <loc>${xmlEscape(`${BASE_URL}${e.path}`)}</loc>`,
+            ...(e.alternates ?? []).map(
+              (a) =>
+                `    <xhtml:link rel="alternate" hreflang="${a.hreflang}" href="${xmlEscape(`${BASE_URL}${a.path}`)}" />`,
+            ),
             e.changefreq ? `    <changefreq>${e.changefreq}</changefreq>` : null,
             e.priority ? `    <priority>${e.priority}</priority>` : null,
             `  </url>`,
@@ -140,7 +175,7 @@ export const Route = createFileRoute("/sitemap.xml")({
 
         const xml = [
           `<?xml version="1.0" encoding="UTF-8"?>`,
-          `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`,
+          `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">`,
           ...urls,
           `</urlset>`,
         ].join("\n");
