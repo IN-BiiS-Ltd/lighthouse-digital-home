@@ -71,6 +71,7 @@ import { Route as LearningJourneyPrimaryRouteImport } from './routes/learning-jo
 import { Route as LearningJourneyPreparatoryRouteImport } from './routes/learning-journey_.preparatory'
 import { Route as LearningJourneyGraduationPathwaysRouteImport } from './routes/learning-journey_.graduation-pathways'
 import { Route as LearningJourneyEarlyYearsRouteImport } from './routes/learning-journey_.early-years'
+import { Route as InternalSocialPreviewRouteImport } from './routes/internal.social-preview'
 import { Route as InternalRedirectsRouteImport } from './routes/internal.redirects'
 import { Route as ExploreDigitalEcosystemRouteImport } from './routes/explore.digital-ecosystem'
 import { Route as CommunityPartnershipsRouteImport } from './routes/community_.partnerships'
@@ -435,6 +436,11 @@ const LearningJourneyEarlyYearsRoute =
     path: '/learning-journey/early-years',
     getParentRoute: () => rootRouteImport,
   } as any)
+const InternalSocialPreviewRoute = InternalSocialPreviewRouteImport.update({
+  id: '/internal/social-preview',
+  path: '/internal/social-preview',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const InternalRedirectsRoute = InternalRedirectsRouteImport.update({
   id: '/internal/redirects',
   path: '/internal/redirects',
@@ -702,6 +708,7 @@ export interface FileRoutesByFullPath {
   '/community/partnerships': typeof CommunityPartnershipsRoute
   '/explore/digital-ecosystem': typeof ExploreDigitalEcosystemRoute
   '/internal/redirects': typeof InternalRedirectsRoute
+  '/internal/social-preview': typeof InternalSocialPreviewRoute
   '/learning-journey/early-years': typeof LearningJourneyEarlyYearsRoute
   '/learning-journey/graduation-pathways': typeof LearningJourneyGraduationPathwaysRoute
   '/learning-journey/preparatory': typeof LearningJourneyPreparatoryRoute
@@ -803,6 +810,7 @@ export interface FileRoutesByTo {
   '/community/partnerships': typeof CommunityPartnershipsRoute
   '/explore/digital-ecosystem': typeof ExploreDigitalEcosystemRoute
   '/internal/redirects': typeof InternalRedirectsRoute
+  '/internal/social-preview': typeof InternalSocialPreviewRoute
   '/learning-journey/early-years': typeof LearningJourneyEarlyYearsRoute
   '/learning-journey/graduation-pathways': typeof LearningJourneyGraduationPathwaysRoute
   '/learning-journey/preparatory': typeof LearningJourneyPreparatoryRoute
@@ -906,6 +914,7 @@ export interface FileRoutesById {
   '/community_/partnerships': typeof CommunityPartnershipsRoute
   '/explore/digital-ecosystem': typeof ExploreDigitalEcosystemRoute
   '/internal/redirects': typeof InternalRedirectsRoute
+  '/internal/social-preview': typeof InternalSocialPreviewRoute
   '/learning-journey_/early-years': typeof LearningJourneyEarlyYearsRoute
   '/learning-journey_/graduation-pathways': typeof LearningJourneyGraduationPathwaysRoute
   '/learning-journey_/preparatory': typeof LearningJourneyPreparatoryRoute
@@ -1009,6 +1018,7 @@ export interface FileRouteTypes {
     | '/community/partnerships'
     | '/explore/digital-ecosystem'
     | '/internal/redirects'
+    | '/internal/social-preview'
     | '/learning-journey/early-years'
     | '/learning-journey/graduation-pathways'
     | '/learning-journey/preparatory'
@@ -1110,6 +1120,7 @@ export interface FileRouteTypes {
     | '/community/partnerships'
     | '/explore/digital-ecosystem'
     | '/internal/redirects'
+    | '/internal/social-preview'
     | '/learning-journey/early-years'
     | '/learning-journey/graduation-pathways'
     | '/learning-journey/preparatory'
@@ -1212,6 +1223,7 @@ export interface FileRouteTypes {
     | '/community_/partnerships'
     | '/explore/digital-ecosystem'
     | '/internal/redirects'
+    | '/internal/social-preview'
     | '/learning-journey_/early-years'
     | '/learning-journey_/graduation-pathways'
     | '/learning-journey_/preparatory'
@@ -1315,6 +1327,7 @@ export interface RootRouteChildren {
   CommunityPartnershipsRoute: typeof CommunityPartnershipsRoute
   ExploreDigitalEcosystemRoute: typeof ExploreDigitalEcosystemRoute
   InternalRedirectsRoute: typeof InternalRedirectsRoute
+  InternalSocialPreviewRoute: typeof InternalSocialPreviewRoute
   LearningJourneyEarlyYearsRoute: typeof LearningJourneyEarlyYearsRoute
   LearningJourneyGraduationPathwaysRoute: typeof LearningJourneyGraduationPathwaysRoute
   LearningJourneyPreparatoryRoute: typeof LearningJourneyPreparatoryRoute
@@ -1791,6 +1804,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LearningJourneyEarlyYearsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/internal/social-preview': {
+      id: '/internal/social-preview'
+      path: '/internal/social-preview'
+      fullPath: '/internal/social-preview'
+      preLoaderRoute: typeof InternalSocialPreviewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/internal/redirects': {
       id: '/internal/redirects'
       path: '/internal/redirects'
@@ -2135,6 +2155,7 @@ const rootRouteChildren: RootRouteChildren = {
   CommunityPartnershipsRoute: CommunityPartnershipsRoute,
   ExploreDigitalEcosystemRoute: ExploreDigitalEcosystemRoute,
   InternalRedirectsRoute: InternalRedirectsRoute,
+  InternalSocialPreviewRoute: InternalSocialPreviewRoute,
   LearningJourneyEarlyYearsRoute: LearningJourneyEarlyYearsRoute,
   LearningJourneyGraduationPathwaysRoute:
     LearningJourneyGraduationPathwaysRoute,
@@ -2179,3 +2200,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
