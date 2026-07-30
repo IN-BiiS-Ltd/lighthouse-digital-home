@@ -129,93 +129,95 @@ html[dir="rtl"] .rtl-flip {
 :root {
   --radius: 0.5rem;
 
-  /* Core surfaces — warm, calm, premium */
-  --background: oklch(0.978 0.011 88);
-  --foreground: oklch(0.245 0.035 245);
+  /* Core surfaces — Beacon Ivory #F4EEDF, warm archival paper */
+  --background: oklch(0.962 0.016 88);
+  --foreground: oklch(0.235 0.09 283);
 
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.245 0.035 245);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.245 0.035 245);
+  --card: oklch(0.995 0.006 88);
+  --card-foreground: oklch(0.235 0.09 283);
+  --popover: oklch(0.995 0.006 88);
+  --popover-foreground: oklch(0.235 0.09 283);
 
-  /* Primary = Imperial Prussian #072B47 */
-  --primary: oklch(0.265 0.062 248);
-  --primary-foreground: oklch(0.99 0.004 95);
+  /* Primary = Meridian Lapis (deep violet-leaning lazuli) */
+  --primary: oklch(0.245 0.165 282);
+  --primary-foreground: oklch(0.985 0.012 88);
 
-  /* Secondary = soft silver surface */
-  --secondary: oklch(0.955 0.012 88);
-  --secondary-foreground: oklch(0.265 0.062 248);
+  /* Secondary = warm ivory surface */
+  --secondary: oklch(0.94 0.017 88);
+  --secondary-foreground: oklch(0.245 0.165 282);
 
-  --muted: oklch(0.955 0.012 88);
-  --muted-foreground: oklch(0.49 0.025 240);
+  --muted: oklch(0.94 0.017 88);
+  --muted-foreground: oklch(0.47 0.045 283);
 
-  /* Accent = Antique Gold #C9A227 (richer, aged) */
-  --accent: oklch(0.735 0.115 88);
-  --accent-foreground: oklch(0.235 0.04 248);
+  /* Accent = Honey Bronze (ذهبي عسلي) */
+  --accent: oklch(0.762 0.128 74);
+  --accent-foreground: oklch(0.225 0.11 283);
 
   --destructive: oklch(0.55 0.2 27);
   --destructive-foreground: oklch(0.99 0.004 95);
 
-  --border: oklch(0.895 0.014 88);
-  --input: oklch(0.895 0.014 88);
-  --ring: oklch(0.735 0.115 88);
+  --border: oklch(0.885 0.018 88);
+  --input: oklch(0.885 0.018 88);
+  --ring: oklch(0.762 0.128 74);
 
-  /* Brand palette — Imperial Prussian heritage family */
-  --navy: oklch(0.265 0.062 248);
-  --navy-foreground: oklch(0.965 0.012 88);
-  --navy-muted: oklch(0.44 0.055 248);
-  --gold: oklch(0.735 0.115 88);
-  --gold-foreground: oklch(0.235 0.04 248);
-  /* Heritage Sapphire — the distinguished blue for links & interaction */
-  --sapphire: oklch(0.45 0.125 254);
-  --brand-blue: oklch(0.45 0.125 254);
-  --sky: oklch(0.6 0.085 235);
-  /* Verdigris — heritage secondary (aged bronze-green) */
+  /* Brand palette — Lighthouse Lapis signature spectrum */
+  --navy: oklch(0.245 0.165 282);
+  --navy-foreground: oklch(0.96 0.016 88);
+  --navy-muted: oklch(0.40 0.175 279);
+  /* Honey gold — عسلي دافئ بدل الذهب الأصفر */
+  --gold: oklch(0.762 0.128 74);
+  --gold-foreground: oklch(0.225 0.11 283);
+  /* Sovereign Lapis — the interactive blue for links & focus */
+  --sapphire: oklch(0.415 0.225 274);
+  --brand-blue: oklch(0.415 0.225 274);
+  --sky: oklch(0.60 0.155 268);
+  /* Archive Verdigris — the signature third tone */
   --verdigris: oklch(0.49 0.062 190);
   /* Campaign-only accents — posters, social cards, admissions banners */
-  --royal: oklch(0.40 0.24 274);
-  --indigo-deep: oklch(0.26 0.19 285);
-  --silver: oklch(0.9 0.012 274);
-  --sand: oklch(0.97 0.008 90);
+  --royal: oklch(0.415 0.225 274);
+  --indigo-deep: oklch(0.215 0.155 283);
+  --silver: oklch(0.9 0.014 280);
+  --sand: oklch(0.965 0.014 88);
 
-  --sidebar: oklch(0.265 0.062 248);
-  --sidebar-foreground: oklch(0.965 0.012 88);
-  --sidebar-primary: oklch(0.735 0.115 88);
-  --sidebar-primary-foreground: oklch(0.235 0.04 248);
-  --sidebar-accent: oklch(0.45 0.125 254);
-  --sidebar-accent-foreground: oklch(0.965 0.012 88);
-  --sidebar-border: oklch(0.44 0.055 248);
-  --sidebar-ring: oklch(0.735 0.115 88);
+  --sidebar: oklch(0.245 0.165 282);
+  --sidebar-foreground: oklch(0.96 0.016 88);
+  --sidebar-primary: oklch(0.762 0.128 74);
+  --sidebar-primary-foreground: oklch(0.225 0.11 283);
+  --sidebar-accent: oklch(0.415 0.225 274);
+  --sidebar-accent-foreground: oklch(0.96 0.016 88);
+  --sidebar-border: oklch(0.40 0.175 279);
+  --sidebar-ring: oklch(0.762 0.128 74);
 
 }
 
 .dark {
-  --background: oklch(0.18 0.045 248);
-  --foreground: oklch(0.965 0.012 88);
-  --card: oklch(0.24 0.05 248);
-  --card-foreground: oklch(0.965 0.012 88);
-  --popover: oklch(0.24 0.05 248);
-  --popover-foreground: oklch(0.965 0.012 88);
-  --primary: oklch(0.775 0.12 88);
-  --primary-foreground: oklch(0.18 0.045 248);
-  --secondary: oklch(0.35 0.075 250);
-  --secondary-foreground: oklch(0.965 0.012 88);
-  --muted: oklch(0.28 0.055 248);
-  --muted-foreground: oklch(0.78 0.025 240);
-  --accent: oklch(0.775 0.12 88);
-  --accent-foreground: oklch(0.18 0.045 248);
+  --background: oklch(0.185 0.115 283);
+  --foreground: oklch(0.96 0.016 88);
+  --card: oklch(0.235 0.135 282);
+  --card-foreground: oklch(0.96 0.016 88);
+  --popover: oklch(0.235 0.135 282);
+  --popover-foreground: oklch(0.96 0.016 88);
+  --primary: oklch(0.80 0.13 76);
+  --primary-foreground: oklch(0.185 0.115 283);
+  --secondary: oklch(0.33 0.16 279);
+  --secondary-foreground: oklch(0.96 0.016 88);
+  --muted: oklch(0.27 0.13 282);
+  --muted-foreground: oklch(0.78 0.035 283);
+  --accent: oklch(0.80 0.13 76);
+  --accent-foreground: oklch(0.185 0.115 283);
   --border: oklch(1 0 0 / 12%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.775 0.12 88);
-  --navy: oklch(0.18 0.045 248);
-  --navy-foreground: oklch(0.965 0.012 88);
-  --gold: oklch(0.775 0.12 88);
-  --sapphire: oklch(0.62 0.13 252);
-  --brand-blue: oklch(0.62 0.13 252);
+  --ring: oklch(0.80 0.13 76);
+  --navy: oklch(0.185 0.115 283);
+  --navy-foreground: oklch(0.96 0.016 88);
+  --gold: oklch(0.80 0.13 76);
+  --sapphire: oklch(0.60 0.19 272);
+  --brand-blue: oklch(0.60 0.19 272);
   --verdigris: oklch(0.55 0.06 190);
-  --silver: oklch(0.28 0.055 248);
-  --sand: oklch(0.24 0.05 248);
+  --silver: oklch(0.27 0.13 282);
+  --sand: oklch(0.235 0.135 282);
 }
+
 
 
 @layer base {
