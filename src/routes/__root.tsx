@@ -134,8 +134,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Lighthouse Campus" },
       { property: "og:url", content: "https://lighthousecampus.com/" },
-      { property: "og:image", content: "https://lighthousecampus.com/lighthouse-social-card.jpg" },
-      { property: "og:image:secure_url", content: "https://lighthousecampus.com/lighthouse-social-card.jpg" },
+      { property: "og:image", content: "https://lighthousecampus.com/lighthouse-social-card.jpg?v=3" },
+      { property: "og:image:secure_url", content: "https://lighthousecampus.com/lighthouse-social-card.jpg?v=3" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
       { property: "og:image:alt", content: "Lighthouse Campus — Guiding Minds. Inspiring Futures." },
@@ -144,7 +144,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:site", content: "@lighthousecampus" },
       { name: "twitter:title", content: "Lighthouse Campus — Guiding Minds. Inspiring Futures." },
       { name: "twitter:description", content: "An international learning community in Cairo where students remain at the centre." },
-      { name: "twitter:image", content: "https://lighthousecampus.com/lighthouse-social-card.jpg" },
+      { name: "twitter:image", content: "https://lighthousecampus.com/lighthouse-social-card.jpg?v=3" },
       { name: "twitter:image:alt", content: "Lighthouse Campus — Guiding Minds. Inspiring Futures." },
 
     ],
@@ -192,7 +192,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               alternateName: "Lighthouse Campus — By Readers International",
               url: "https://lighthousecampus.com",
               logo: "https://lighthousecampus.com/icon-512.png",
-              image: "https://lighthousecampus.com/lighthouse-social-card.webp",
+              image: "https://lighthousecampus.com/lighthouse-social-card.webp?v=3",
               slogan: "Guiding Minds. Inspiring Futures. Connecting Possibilities.",
               description:
                 "An international learning community in Cairo where students remain at the centre.",
