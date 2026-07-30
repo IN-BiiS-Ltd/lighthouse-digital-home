@@ -142,6 +142,12 @@ const ADMISSION_ICONS = [
   <MapPin className="size-5" key="d" />,
 ];
 
+const ACTIVITY_ICONS = [
+  <Trophy className="size-5" key="a" />,
+  <Library className="size-5" key="b" />,
+  <Theater className="size-5" key="c" />,
+];
+
 /** Segmented AR / EN switch — updates the URL (?lang=) and the site-wide language. */
 function GuideLangSwitch({
   onNavy = false,
