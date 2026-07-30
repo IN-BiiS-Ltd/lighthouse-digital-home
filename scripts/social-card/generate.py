@@ -3,7 +3,7 @@
 Lighthouse Campus — social share card (1200x630) generator.
 
 The logo is always the single approved asset pointer; only layout/text here.
-Outputs public/lighthouse-social-card.jpg and .webp
+Outputs public/lighthouse-social-card-v5.jpg (versioned path follows SOCIAL_CARD_VERSION).
 """
 import asyncio
 import base64
