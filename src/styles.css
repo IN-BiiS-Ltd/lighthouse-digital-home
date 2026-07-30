@@ -42,11 +42,10 @@ html[dir="rtl"] .rtl-flip {
  * LIGHTHOUSE CAMPUS — Institutional Design System
  * ------------------------------------------------
  * Colours are extracted directly from the official brand:
- *   Deep Indigo    #1C0770   — deep institutional ground
- *   Royal Blue     #261CC1   — primary institutional colour
+ *   Oxford Blue    #1E3A8A   — primary institutional colour (distinctive, global-school blue)
+ *   Royal Blue     #2743A8   — lighter institutional variant
  *   Lighthouse Gold#D4AF37   — accent, guidance, warmth
- *   Lighthouse Blue#5371E4   — secondary, trust, vibrancy
- *   Sky Blue       #4DA6FF   — highlight, openness, future
+ *   Sky Blue       #5B9BD5   — highlight, openness, future
  *   Silver         #DCE1E6   — neutral structure
  *   White          #FFFFFF   — clarity, space
  *
@@ -116,9 +115,9 @@ html[dir="rtl"] .rtl-flip {
   --tracking-display: -0.025em;
 
   /* Elevation — layered, brand-tinted shadows */
-  --shadow-e1: 0 1px 2px rgba(28, 7, 112, 0.05), 0 2px 8px -2px rgba(28, 7, 112, 0.06);
-  --shadow-e2: 0 6px 18px -8px rgba(28, 7, 112, 0.18), 0 2px 6px -2px rgba(28, 7, 112, 0.08);
-  --shadow-e3: 0 24px 60px -24px rgba(28, 7, 112, 0.35), 0 6px 20px -8px rgba(28, 7, 112, 0.16);
+  --shadow-e1: 0 1px 2px rgba(30, 58, 138, 0.05), 0 2px 8px -2px rgba(30, 58, 138, 0.06);
+  --shadow-e2: 0 6px 18px -8px rgba(30, 58, 138, 0.18), 0 2px 6px -2px rgba(30, 58, 138, 0.08);
+  --shadow-e3: 0 24px 60px -24px rgba(30, 58, 138, 0.35), 0 6px 20px -8px rgba(30, 58, 138, 0.16);
   --shadow-gold-glow: 0 0 40px -10px color-mix(in oklab, var(--gold) 55%, transparent);
 }
 
@@ -135,8 +134,8 @@ html[dir="rtl"] .rtl-flip {
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.24 0.05 262);
 
-  /* Primary = Royal Blue #261CC1 */
-  --primary: oklch(0.396 0.234 271);
+  /* Primary = Oxford International Blue #1E3A8A */
+  --primary: oklch(0.37 0.13 260);
   --primary-foreground: oklch(0.99 0.004 95);
 
   /* Secondary = soft silver surface */
@@ -157,49 +156,49 @@ html[dir="rtl"] .rtl-flip {
   --input: oklch(0.9 0.012 274);
   --ring: oklch(0.77 0.13 88);
 
-  /* Brand palette — indigo / royal blue / sky */
-  --navy: oklch(0.269 0.158 277);
+  /* Brand palette — Oxford blue family */
+  --navy: oklch(0.37 0.13 260);
   --navy-foreground: oklch(0.97 0.008 274);
-  --navy-muted: oklch(0.45 0.13 275);
+  --navy-muted: oklch(0.55 0.09 255);
   --gold: oklch(0.77 0.13 88);
   --gold-foreground: oklch(0.269 0.158 277);
-  --brand-blue: oklch(0.396 0.234 271);
-  --sky: oklch(0.679 0.174 253);
+  --brand-blue: oklch(0.45 0.14 255);
+  --sky: oklch(0.65 0.13 245);
   --silver: oklch(0.9 0.012 274);
   --sand: oklch(0.97 0.008 90);
 
-  --sidebar: oklch(0.269 0.158 277);
+  --sidebar: oklch(0.37 0.13 260);
   --sidebar-foreground: oklch(0.97 0.008 274);
   --sidebar-primary: oklch(0.77 0.13 88);
   --sidebar-primary-foreground: oklch(0.269 0.158 277);
-  --sidebar-accent: oklch(0.396 0.234 271);
+  --sidebar-accent: oklch(0.45 0.14 255);
   --sidebar-accent-foreground: oklch(0.97 0.008 274);
-  --sidebar-border: oklch(0.42 0.16 274);
+  --sidebar-border: oklch(0.55 0.09 255);
   --sidebar-ring: oklch(0.77 0.13 88);
 }
 
 .dark {
-  --background: oklch(0.22 0.12 277);
+  --background: oklch(0.22 0.08 255);
   --foreground: oklch(0.97 0.008 274);
-  --card: oklch(0.269 0.158 277);
+  --card: oklch(0.3 0.1 255);
   --card-foreground: oklch(0.97 0.008 274);
-  --popover: oklch(0.269 0.158 277);
+  --popover: oklch(0.3 0.1 255);
   --popover-foreground: oklch(0.97 0.008 274);
   --primary: oklch(0.77 0.13 88);
-  --primary-foreground: oklch(0.22 0.12 277);
-  --secondary: oklch(0.396 0.234 271);
+  --primary-foreground: oklch(0.22 0.08 255);
+  --secondary: oklch(0.45 0.14 255);
   --secondary-foreground: oklch(0.97 0.008 274);
-  --muted: oklch(0.34 0.14 274);
+  --muted: oklch(0.34 0.1 255);
   --muted-foreground: oklch(0.78 0.05 260);
   --accent: oklch(0.77 0.13 88);
-  --accent-foreground: oklch(0.22 0.12 277);
+  --accent-foreground: oklch(0.22 0.08 255);
   --border: oklch(1 0 0 / 12%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.77 0.13 88);
-  --navy: oklch(0.22 0.12 277);
+  --navy: oklch(0.22 0.08 255);
   --navy-foreground: oklch(0.97 0.008 274);
-  --silver: oklch(0.34 0.14 274);
-  --sand: oklch(0.269 0.158 277);
+  --silver: oklch(0.34 0.1 255);
+  --sand: oklch(0.3 0.1 255);
 }
 
 @layer base {
