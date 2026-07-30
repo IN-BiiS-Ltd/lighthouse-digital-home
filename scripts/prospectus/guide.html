@@ -565,8 +565,9 @@
                 .join("")}</div>`;
           case "figure":
             return `<figure style="${b.width ? `width:${b.width};margin-inline:auto;` : ""}">
-              <img src="${img(b.image)}" alt="" />
+              <img src="${img(b.image)}" alt="" style="${b.height ? `height:${b.height};object-fit:cover;` : ""}" />
               ${b.caption ? `<figcaption>${esc(b.caption)}</figcaption>` : ""}</figure>`;
+
           case "note":
             return `<p class="note">${esc(b.text)}</p>`;
           default:
