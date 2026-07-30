@@ -91,6 +91,7 @@ html[dir="rtl"] .rtl-flip {
   --color-gold: var(--gold);
   --color-gold-foreground: var(--gold-foreground);
   --color-brand-blue: var(--brand-blue);
+  --color-sapphire: var(--sapphire);
   --color-sky: var(--sky);
   --color-royal: var(--royal);
   --color-indigo-deep: var(--indigo-deep);
