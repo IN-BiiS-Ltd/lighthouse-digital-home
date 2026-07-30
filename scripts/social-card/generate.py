@@ -86,7 +86,7 @@ async def render(logo: str):
 
     tmp = Path("/tmp/lh-social-card.html")
     tmp.write_text(HTML.replace("__LOGO__", logo), encoding="utf-8")
-    out = ROOT / "public/lighthouse-social-card-v7.jpg"
+    out = ROOT / "public/lighthouse-social-card-v8.jpg"
 
     # Remove stale versions so only the latest card remains in the deploy bundle
     for stale in ROOT.glob("public/lighthouse-social-card-v*.jpg"):
