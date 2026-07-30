@@ -218,7 +218,7 @@ function ProspectusPage() {
               registration decision.
             </p>
           </div>
-          <PageTOC items={SECTIONS.map((s) => ({ id: s.to.replace("#", ""), label: s.label }))} />
+          <PageTOC items={SECTIONS} />
         </div>
       </Section>
 
@@ -491,7 +491,7 @@ function ProspectusPage() {
         </dl>
       </Section>
 
-      <ShareBar url={URL} title="Lighthouse Campus — School Guide 2026 / 2027" />
+      <ShareBar title="Lighthouse Campus — School Guide 2026 / 2027" path="/prospectus" />
 
       <CtaBand
         title="Admissions are open now for 2026 / 2027"
