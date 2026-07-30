@@ -1,0 +1,625 @@
+{
+  "lang": "en",
+  "dir": "ltr",
+  "footer": "LIGHT HOUSE CAMPUS — SCHOOL GUIDE 2026 / 2027",
+  "pages": [
+    {
+      "type": "cover",
+      "wordmark": "LIGHT HOUSE CAMPUS",
+      "sub": "Readers International",
+      "badge": "Admissions open now — academic year 2026 / 2027",
+      "title": "An education that balances academic excellence, character formation, and readiness for the future.",
+      "lede": "A school guide to our academic programmes, teaching faculty, learning environment, and the education operating system we run on.",
+      "facts": [
+        {
+          "label": "Academic programmes",
+          "lines": [
+            "Cambridge International",
+            "Sudanese National (Arabic)",
+            "Sudanese National (Translated)"
+          ]
+        },
+        {
+          "label": "Operating system",
+          "lines": [
+            "Education Enterprise",
+            "Intelligence Operating System",
+            "(EEIOS)"
+          ]
+        },
+        {
+          "label": "Location & contact",
+          "lines": [
+            "58 El-Zahraa St., Dokki, Cairo",
+            "+20 110 703 0737",
+            "www.lighthousecampus.com"
+          ]
+        }
+      ],
+      "tagline": "Guiding minds. Inspiring futures. Connecting possibilities.",
+      "image": "hero"
+    },
+    {
+      "running": "Welcome",
+      "eyebrow": "Welcome",
+      "title": "Welcome to Light House Campus",
+      "blocks": [
+        {
+          "type": "lede",
+          "html": "At Light House Campus we offer an integrated educational experience that places the student at the centre of learning, bringing together <strong>accredited curricula, qualified teachers, a supportive learning environment, and modern technology</strong> — to develop a confident, responsible learner who can succeed in a fast-changing world."
+        },
+        {
+          "type": "columns",
+          "columns": 2,
+          "items": [
+            {
+              "title": "Education beyond knowledge",
+              "body": "We believe real education is not limited to transferring knowledge. It shapes character, develops thinking, instils values, and prepares students for life, for university, and for the world of work."
+            },
+            {
+              "title": "What this guide covers",
+              "body": "Our academic programmes and available stages, the criteria we use to select teachers, the components of our learning environment, the operating system that connects family, student, teacher and administration, and finally the admissions and registration procedure."
+            }
+          ]
+        },
+        {
+          "type": "bar",
+          "chips": [
+            "3 academic programmes",
+            "AR / EN languages of instruction",
+            "EEIOS — one unified operating system",
+            "2026 / 2027 admissions open now"
+          ]
+        },
+        {
+          "type": "figure",
+          "image": "classroom",
+          "width": "120mm",
+          "caption": "Participatory, inquiry-based learning in the classroom, with direct teacher follow-up.",
+          "height": "46mm"
+        },
+        {
+          "type": "note",
+          "text": "Our message to families: this guide describes what is actually in place at the school, without exaggeration. We welcome families to visit the campus to see the classrooms and facilities and to meet the administration before making a registration decision."
+        }
+      ]
+    },
+    {
+      "running": "Our academic programmes",
+      "eyebrow": "Academic programmes",
+      "title": "Three academic programmes — families choose the pathway that fits their child's future.",
+      "blocks": [
+        {
+          "type": "cards",
+          "columns": 3,
+          "items": [
+            {
+              "kicker": "International",
+              "title": "Cambridge International",
+              "body": "An international programme focused on deep understanding, critical thinking, creativity and problem solving, with academic preparation that qualifies students to continue their education at respected universities worldwide.",
+              "meta": "Available stages: Grade 1 – Grade 8"
+            },
+            {
+              "kicker": "National — Arabic",
+              "title": "Sudanese National (Arabic)",
+              "body": "A complete academic programme delivering the Sudanese national curriculum in a modern learning environment, with emphasis on teaching quality, skills development and academic achievement.",
+              "meta": "Available stages: Grade 6 (Primary) · Middle school (Years 1–3) · Secondary school (Years 1–3)"
+            },
+            {
+              "kicker": "National — Translated",
+              "title": "Sudanese National (Translated)",
+              "body": "A programme that combines the content of the Sudanese national curriculum with English-language delivery, supporting students in building a strong academic base while developing their language skills and readiness for higher education.",
+              "meta": "Sudanese national content delivered in English"
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "heading": "Available stages by programme",
+          "head": [
+            "Programme",
+            "Language of instruction",
+            "Available stages"
+          ],
+          "rows": [
+            [
+              "Cambridge International",
+              "English",
+              "Grade 1 – Grade 8"
+            ],
+            [
+              "Sudanese National (Arabic)",
+              "Arabic",
+              "Grade 6 · Middle school (Years 1–3) · Secondary school (Years 1–3)"
+            ],
+            [
+              "Sudanese National (Translated)",
+              "Arabic & English",
+              "Sudanese national content delivered in English"
+            ]
+          ]
+        },
+        {
+          "type": "columns",
+          "columns": 2,
+          "items": [
+            {
+              "title": "Choosing the right programme",
+              "body": "The admissions office helps each family select the appropriate programme and grade based on the student's previous academic record and the placement assessment, with a clear explanation of the differences between the three programmes."
+            },
+            {
+              "title": "Language and assessment",
+              "body": "Continuous assessment runs alongside formal examinations in all programmes. Arabic is taught to every student, and language-support programmes are available for those who need them at the start of the year."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "running": "Faculty and learning environment",
+      "eyebrow": "Our teachers",
+      "title": "Teachers who make a difference",
+      "blocks": [
+        {
+          "type": "lede",
+          "html": "Learning is led by a team of qualified teachers who combine academic expertise, continuous professional development, and up-to-date teaching strategies that encourage participation, inquiry and active learning."
+        },
+        {
+          "type": "columns",
+          "columns": 2,
+          "items": [
+            {
+              "title": "Selection and development criteria",
+              "items": [
+                "A subject-specific qualification and documented classroom experience",
+                "A demonstration lesson before a panel, and an educational interview",
+                "A periodic in-house training programme and classroom visits",
+                "Review of lesson plans and student outcomes"
+              ]
+            },
+            {
+              "title": "An inspiring learning environment",
+              "body": "We provide a safe, motivating environment that helps students learn with confidence — modern classrooms, applied laboratory work, a weekly activity programme, and continuous academic follow-up."
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "columns": 3,
+          "items": [
+            {
+              "title": "Modern classrooms",
+              "body": "Controlled class sizes and equipment that supports group work and interactive presentation."
+            },
+            {
+              "title": "Labs and applied activity",
+              "body": "Science and computer labs with practical work tied directly to curriculum content."
+            },
+            {
+              "title": "Sport, culture and arts",
+              "body": "A weekly activity programme and student clubs built into the school timetable."
+            },
+            {
+              "title": "Continuous academic follow-up",
+              "body": "Regular performance tracking and early identification of students who need subject support."
+            },
+            {
+              "title": "Integrated student care",
+              "body": "A published behaviour policy, health care provision, and individual follow-up where support is needed."
+            },
+            {
+              "title": "Participation and inquiry",
+              "body": "Research tasks and classroom projects that build thinking and independent learning."
+            }
+          ]
+        },
+        {
+          "type": "figure",
+          "image": "teacher",
+          "width": "104mm",
+          "caption": "Close classroom follow-up with small groups, with progress notes recorded as learning happens.",
+          "height": "38mm"
+        }
+      ]
+    },
+    {
+      "running": "Education supported by institutional intelligence",
+      "eyebrow": "Education Enterprise Intelligence Operating System",
+      "title": "Education supported by institutional intelligence",
+      "blocks": [
+        {
+          "type": "lede",
+          "html": "The school runs on a modern education operating system built on the <strong>Education Enterprise Intelligence Operating System (EEIOS)</strong>, providing an integrated digital environment on a single platform that supports communication, follow-up, and management of the educational process with efficiency and transparency."
+        },
+        {
+          "type": "bar",
+          "heading": "Who the system connects",
+          "chips": [
+            "Student",
+            "Family",
+            "Teachers",
+            "Academic body",
+            "School administration"
+          ],
+          "body": "All on one platform that supports communication, follow-up, and efficient, transparent management of the educational process."
+        },
+        {
+          "type": "columns",
+          "columns": 2,
+          "items": [
+            {
+              "title": "An integrated experience for parents",
+              "body": "The system allows parents to:",
+              "items": [
+                "Follow academic performance.",
+                "Track attendance and discipline.",
+                "Review periodic reports.",
+                "Follow homework and activities.",
+                "Communicate directly with the school.",
+                "Receive important notifications in good time."
+              ]
+            },
+            {
+              "title": "A learning experience for the student",
+              "body": "Each student receives:",
+              "items": [
+                "Interactive learning.",
+                "Individual follow-up.",
+                "Digital learning resources.",
+                "Continuous assessment.",
+                "Activities that build creativity, leadership and teamwork.",
+                "Support to reach their full potential."
+              ]
+            }
+          ]
+        },
+        {
+          "type": "figure",
+          "image": "eeios",
+          "width": "54mm",
+          "caption": "A parent-teacher follow-up meeting informed by the student's record on the system."
+        },
+        {
+          "type": "note",
+          "text": "The system supports — it does not replace — the educational judgement of teachers and administration. Every user has permissions defined by their role, and data is used for educational and administrative purposes only."
+        }
+      ]
+    },
+    {
+      "running": "Our educational philosophy",
+      "eyebrow": "Our educational philosophy",
+      "title": "Our educational philosophy",
+      "blocks": [
+        {
+          "type": "lede",
+          "html": "We focus on developing a student who possesses a strong academic foundation, firmly held values, a confident character, an authentic identity, thinking and creative skills, and the ability to communicate and collaborate."
+        },
+        {
+          "type": "pills",
+          "items": [
+            "A strong academic foundation",
+            "Firmly held values",
+            "A confident character",
+            "An authentic identity",
+            "Thinking and creative skills",
+            "Communication and collaboration",
+            "Readiness for the future"
+          ]
+        },
+        {
+          "type": "bar",
+          "heading": "Readiness for the future",
+          "body": "We prepare students for life, university and the workplace through thinking skills, teamwork, personal responsibility, and the conscious, purposeful use of technology."
+        },
+        {
+          "type": "columns",
+          "columns": 3,
+          "items": [
+            {
+              "title": "From philosophy to daily practice",
+              "body": "A written scheme of work for every subject, continuous assessment that measures understanding rather than memorisation, classroom activities that build thinking and cooperation, and individual follow-up for any student who needs support."
+            },
+            {
+              "title": "Values and identity",
+              "body": "We safeguard the student's identity, Arabic language and values alongside academic openness to international standards — so they graduate confident both in themselves and in where they belong."
+            },
+            {
+              "title": "Partnership with the family",
+              "body": "This philosophy is incomplete without the family. Parents are given an up-to-date picture of their child's performance and a direct channel to the teacher and administration throughout the year."
+            }
+          ]
+        },
+        {
+          "type": "figure",
+          "image": "campusClean",
+          "width": "116mm",
+          "caption": "The school buildings and outdoor spaces — the philosophy applied beyond the classroom.",
+          "height": "40mm"
+        }
+      ]
+    },
+    {
+      "running": "Why Light House Campus",
+      "eyebrow": "Why Light House Campus",
+      "title": "Why Light House Campus?",
+      "blocks": [
+        {
+          "type": "cards",
+          "columns": 3,
+          "items": [
+            {
+              "title": "Diverse academic programmes",
+              "body": "Three programmes serving different family needs within one school."
+            },
+            {
+              "title": "Cambridge International",
+              "body": "An international pathway focused on understanding, critical thinking and problem solving."
+            },
+            {
+              "title": "Sudanese National (Arabic)",
+              "body": "The national curriculum in its original language, in a modern learning environment."
+            },
+            {
+              "title": "Sudanese National (Translated)",
+              "body": "National content in English to strengthen academic language."
+            },
+            {
+              "title": "Qualified teachers",
+              "body": "Selected against written criteria, with continuous professional development."
+            },
+            {
+              "title": "Safe, motivating environment",
+              "body": "Structure, supervision, and integrated pastoral and health care."
+            },
+            {
+              "title": "Modern learning technology",
+              "body": "Digital resources and one unified education operating system."
+            },
+            {
+              "title": "Active family partnership",
+              "body": "Documented communication, periodic reports and scheduled meetings."
+            },
+            {
+              "title": "Continuous growth tracking",
+              "body": "Academic and personal follow-up throughout the school year."
+            }
+          ]
+        },
+        {
+          "type": "columns",
+          "columns": 2,
+          "items": [
+            {
+              "title": "What this means for your family",
+              "body": "A clear scheme of work for every grade, a teacher accountable for every subject, reports delivered on known dates, and one system that brings everything you need to know about your child into a single place."
+            },
+            {
+              "title": "Visit before you decide",
+              "body": "We welcome you to visit the campus to see the classrooms, labs and facilities, meet the administration, and ask every question that matters to you before registering."
+            }
+          ]
+        },
+        {
+          "type": "figure",
+          "image": "stem",
+          "width": "104mm",
+          "caption": "The science lab — hands-on application within science lessons across all three programmes.",
+          "height": "36mm"
+        }
+      ]
+    },
+    {
+      "running": "Admissions 2026 / 2027",
+      "eyebrow": "Admissions 2026 / 2027",
+      "title": "Admissions are open now",
+      "blocks": [
+        {
+          "type": "lede",
+          "html": "Light House Campus is pleased to receive applications for the <strong>2026 / 2027</strong> academic year. Begin an educational journey that brings together academic quality, values, innovation and care, in a modern environment that prepares students for the future with confidence."
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Submit application",
+            "Complete documents",
+            "Interview & placement",
+            "Programme & grade set",
+            "Enrolment confirmed"
+          ]
+        },
+        {
+          "type": "columns",
+          "columns": 2,
+          "items": [
+            {
+              "title": "Required documents",
+              "items": [
+                "Student's birth certificate or equivalent.",
+                "Most recent school certificate or transcript.",
+                "Passport or national ID copy for student and parent.",
+                "Recent personal photographs.",
+                "Health record, where available."
+              ]
+            },
+            {
+              "title": "Placement assessment",
+              "body": "A short assessment in language and mathematics to place the student in the appropriate grade and programme, and to establish whether language or academic support is needed at the start of the year. The result is explained to the parent."
+            }
+          ]
+        },
+        {
+          "type": "columns",
+          "columns": 2,
+          "items": [
+            {
+              "title": "Tuition fees",
+              "body": "Fee schedules are issued in writing for each stage and programme, setting out what is and is not included, with instalment payment options. Schedules are available from the admissions office or through the website."
+            },
+            {
+              "title": "Campus visit",
+              "body": "Families are welcome to visit and view the classrooms and facilities and meet the administration before registering. Visits are arranged by phone or email."
+            }
+          ]
+        },
+        {
+          "type": "figure",
+          "image": "leadership",
+          "width": "116mm",
+          "height": "44mm",
+          "caption": "Collaborative project work — what a place at Light House Campus looks like day to day."
+        },
+        {
+          "type": "note",
+          "text": "Limited places per class: we hold to a defined number of students per class to protect the quality of follow-up, and registration for a grade closes once it is full. Applying early gives families wider choice of programme and grade."
+        }
+      ]
+    },
+    {
+      "running": "A child mental-health specialist on campus",
+      "eyebrow": "Wellbeing and child care",
+      "title": "A child mental-health specialist on campus",
+      "blocks": [
+        {
+          "type": "lede",
+          "html": "The school includes a <strong>child mental-health specialist</strong> working within the student care team, following the wellbeing of pupils and addressing difficulties early and in confidence."
+        },
+        {
+          "type": "columns",
+          "columns": 1,
+          "items": [
+            {
+              "title": "What the specialist does",
+              "items": [
+                "Individual sessions and regular follow-up where a pupil needs it",
+                "Early identification of anxiety, withdrawal, or changes in behaviour",
+                "Short-term support plans agreed with the teacher and the family",
+                "Guidance for parents with practical recommendations for home",
+                "Teacher training on individual differences and classroom behaviour",
+                "Referral to an external specialist when necessary, with family consent"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "columns": 3,
+          "items": [
+            {
+              "title": "Early intervention",
+              "body": "Follow-up begins at the first classroom observation, so a small difficulty does not become an academic or behavioural setback."
+            },
+            {
+              "title": "Confidentiality protected",
+              "body": "Wellbeing records are held in confidence and shared only with those who genuinely need them to support the pupil."
+            },
+            {
+              "title": "Partnership with the family",
+              "body": "Families are part of every support plan, with clear communication about the steps taken and the outcomes expected."
+            }
+          ]
+        },
+        {
+          "type": "figure",
+          "image": "parents",
+          "width": "104mm",
+          "caption": "Wellbeing follow-up is agreed with the family, with clear next steps for home and school.",
+          "height": "38mm"
+        },
+        {
+          "type": "note",
+          "text": "School-based psychological and pastoral support is part of student care; it does not replace medical treatment or clinical diagnosis."
+        }
+      ]
+    },
+    {
+      "running": "Extracurricular activities",
+      "eyebrow": "Extracurricular activities",
+      "title": "Sport, literary and cultural societies, and theatre",
+      "blocks": [
+        {
+          "type": "lede",
+          "html": "A weekly activity programme built into the school timetable, giving every pupil a field to excel in alongside their studies, supervised by accountable teachers and coaches."
+        },
+        {
+          "type": "columns",
+          "columns": 3,
+          "items": [
+            {
+              "title": "Sport",
+              "body": "Regular sessions, school teams, and internal competitions that build fitness and team spirit.",
+              "items": [
+                "Football",
+                "Basketball",
+                "Table tennis",
+                "Athletics",
+                "Movement and fitness for early years"
+              ]
+            },
+            {
+              "title": "Literary and cultural societies",
+              "body": "Clubs that build habits of reading, writing, and structured discussion, and present pupils' work to the school community.",
+              "items": [
+                "Reading club",
+                "Creative writing",
+                "Debate and public speaking",
+                "School journalism",
+                "Science and inquiry club"
+              ]
+            },
+            {
+              "title": "Theatre and arts",
+              "body": "Theatre and arts work with clear performance seasons, developing stage confidence, expression, and collaboration.",
+              "items": [
+                "School theatre",
+                "Choir and music",
+                "Visual arts",
+                "Backstage and lighting crew"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "figure",
+          "image": "life",
+          "width": "116mm",
+          "caption": "Activity sessions run inside the school week, supervised by teachers and coaches.",
+          "height": "42mm"
+        },
+        {
+          "type": "note",
+          "text": "Activities open according to age stage and participant numbers; the activity timetable is published to families at the start of each term."
+        }
+      ]
+    },
+    {
+      "type": "closing",
+      "wordmark": "LIGHT HOUSE CAMPUS",
+      "sub": "Readers International",
+      "title": "Begin the registration process for the 2026 / 2027 year",
+      "lede": "Contact us to arrange a campus visit, or to request the fee schedule and details of the programme best suited to your child. Admissions are open now.",
+      "contact": [
+        {
+          "label": "Address",
+          "lines": [
+            "58 El-Zahraa St., Dokki, Cairo"
+          ]
+        },
+        {
+          "label": "Phone & email",
+          "lines": [
+            "+20 110 703 0737",
+            "ceo@lighthousecampus.com"
+          ]
+        },
+        {
+          "label": "Website",
+          "lines": [
+            "www.lighthousecampus.com"
+          ]
+        }
+      ],
+      "tagline": "Guiding minds. Inspiring futures. Connecting possibilities.",
+      "image": "library"
+    }
+  ]
+}
