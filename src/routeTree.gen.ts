@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as StudentLifeRouteImport } from './routes/student-life'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ProspectusRouteImport } from './routes/prospectus'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PortalsRouteImport } from './routes/portals'
 import { Route as ParentsRouteImport } from './routes/parents'
@@ -124,6 +125,11 @@ const StudentLifeRoute = StudentLifeRouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProspectusRoute = ProspectusRouteImport.update({
+  id: '/prospectus',
+  path: '/prospectus',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -668,6 +674,7 @@ export interface FileRoutesByFullPath {
   '/parents': typeof ParentsRoute
   '/portals': typeof PortalsRoute
   '/privacy': typeof PrivacyRoute
+  '/prospectus': typeof ProspectusRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/student-life': typeof StudentLifeRoute
   '/terms': typeof TermsRoute
@@ -770,6 +777,7 @@ export interface FileRoutesByTo {
   '/parents': typeof ParentsRoute
   '/portals': typeof PortalsRoute
   '/privacy': typeof PrivacyRoute
+  '/prospectus': typeof ProspectusRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/student-life': typeof StudentLifeRoute
   '/terms': typeof TermsRoute
@@ -874,6 +882,7 @@ export interface FileRoutesById {
   '/parents': typeof ParentsRoute
   '/portals': typeof PortalsRoute
   '/privacy': typeof PrivacyRoute
+  '/prospectus': typeof ProspectusRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/student-life': typeof StudentLifeRoute
   '/terms': typeof TermsRoute
@@ -978,6 +987,7 @@ export interface FileRouteTypes {
     | '/parents'
     | '/portals'
     | '/privacy'
+    | '/prospectus'
     | '/sitemap.xml'
     | '/student-life'
     | '/terms'
@@ -1080,6 +1090,7 @@ export interface FileRouteTypes {
     | '/parents'
     | '/portals'
     | '/privacy'
+    | '/prospectus'
     | '/sitemap.xml'
     | '/student-life'
     | '/terms'
@@ -1183,6 +1194,7 @@ export interface FileRouteTypes {
     | '/parents'
     | '/portals'
     | '/privacy'
+    | '/prospectus'
     | '/sitemap.xml'
     | '/student-life'
     | '/terms'
@@ -1287,6 +1299,7 @@ export interface RootRouteChildren {
   ParentsRoute: typeof ParentsRoute
   PortalsRoute: typeof PortalsRoute
   PrivacyRoute: typeof PrivacyRoute
+  ProspectusRoute: typeof ProspectusRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StudentLifeRoute: typeof StudentLifeRoute
   TermsRoute: typeof TermsRoute
@@ -1389,6 +1402,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/prospectus': {
+      id: '/prospectus'
+      path: '/prospectus'
+      fullPath: '/prospectus'
+      preLoaderRoute: typeof ProspectusRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -2113,6 +2133,7 @@ const rootRouteChildren: RootRouteChildren = {
   ParentsRoute: ParentsRoute,
   PortalsRoute: PortalsRoute,
   PrivacyRoute: PrivacyRoute,
+  ProspectusRoute: ProspectusRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   StudentLifeRoute: StudentLifeRoute,
   TermsRoute: TermsRoute,
@@ -2200,13 +2221,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
