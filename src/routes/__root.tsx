@@ -125,7 +125,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Lighthouse Campus is an independent international school in Dokki, Giza, where students remain at the centre of every decision.",
       },
       { name: "author", content: "Lighthouse Campus" },
-      { name: "theme-color", content: "#0B1D3A" },
+      { name: "theme-color", content: "#3D5A80" },
       { property: "og:title", content: "Lighthouse Campus — International School in Dokki, Giza" },
       {
         property: "og:description",
