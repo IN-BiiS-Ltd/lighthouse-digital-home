@@ -206,8 +206,8 @@ html[dir="rtl"] .rtl-flip {
   --muted-foreground: oklch(0.78 0.035 283);
   --accent: oklch(0.80 0.13 76);
   --accent-foreground: oklch(0.185 0.115 283);
-  --border: oklch(1 0 0 / 35%);
-  --input: oklch(1 0 0 / 35%);
+  --border: oklch(1 0 0 / 38%);
+  --input: oklch(1 0 0 / 38%);
   --ring: oklch(0.80 0.13 76);
   --navy: oklch(0.185 0.115 283);
   --navy-foreground: oklch(0.96 0.016 88);
