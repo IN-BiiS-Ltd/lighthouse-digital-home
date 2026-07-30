@@ -40,6 +40,22 @@ export interface ProspectusCopy {
   };
   faculty: { eyebrow: string; title: string; description: string; cards: { title: string; body: string }[] };
   environment: { eyebrow: string; title: string; description: string; cards: { title: string; body: string }[] };
+  wellbeing: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    roleLabel: string;
+    role: string[];
+    cards: { title: string; body: string }[];
+    note: string;
+  };
+  activities: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    groups: { title: string; body: string; items: string[] }[];
+    note: string;
+  };
   eeios: {
     eyebrow: string;
     title: string;
