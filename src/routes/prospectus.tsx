@@ -146,7 +146,7 @@ function GuideLangSwitch({
 }) {
   const { setLang } = useLang();
   const navigate = Route.useNavigate();
-  const { lang } = Route.useSearch();
+  const lang = parseLang(Route.useSearch().lang);
   const c = PROSPECTUS_COPY[lang];
   const options: { value: GuideLang; label: string }[] = [
     { value: "en", label: c.actions.langEn },
