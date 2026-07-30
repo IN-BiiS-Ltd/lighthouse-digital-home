@@ -152,9 +152,20 @@
         color: var(--muted);
       }
       .groups {
-        margin-top: 8mm;
+        margin-top: 6mm;
         display: grid;
-        gap: 5mm;
+        gap: 4mm;
+      }
+      .group {
+        padding: 5mm 6mm;
+      }
+      .group ul {
+        margin-top: 2.5mm;
+      }
+      .group li {
+        margin-bottom: 0.8mm;
+        font-size: 9pt;
+        line-height: 1.5;
       }
       .note {
         margin-top: auto;
@@ -221,7 +232,6 @@
               .join("")}
           </div>
           <div class="bar">${esc(w.note)}</div>
-          <p class="note"></p>
           ${foot(D.pageA)}
         </section>
         <section class="page">
@@ -238,7 +248,6 @@
               .join("")}
           </div>
           <div class="bar">${esc(a.note)}</div>
-          <p class="note"></p>
           ${foot(D.pageB)}
         </section>
       `);
