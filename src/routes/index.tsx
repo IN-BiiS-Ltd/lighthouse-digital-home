@@ -584,7 +584,7 @@ function Home() {
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {parentPromises.map((p, i) => (
             <div key={p.title} className="rounded-xl border border-border bg-card p-7">
-              <span className="font-display text-3xl text-gold/80">0{i + 1}</span>
+              <span className="font-display text-3xl text-sapphire">0{i + 1}</span>
               <h3 className="mt-4 font-display text-xl font-medium text-foreground">
                 {p.title}
               </h3>

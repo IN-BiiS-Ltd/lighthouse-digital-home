@@ -156,8 +156,9 @@ html[dir="rtl"] .rtl-flip {
   --destructive: oklch(0.55 0.2 27);
   --destructive-foreground: oklch(0.99 0.004 95);
 
-  --border: oklch(0.885 0.018 88);
-  --input: oklch(0.885 0.018 88);
+  /* Borders and inputs — darkened to meet WCAG 2.2 AA 3:1 UI boundary ratio */
+  --border: oklch(0.72 0.018 88);
+  --input: oklch(0.72 0.018 88);
   --ring: oklch(0.762 0.128 74);
 
   /* Brand palette — Lighthouse Lapis signature spectrum */

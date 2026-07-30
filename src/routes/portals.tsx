@@ -172,7 +172,7 @@ function PortalsPage() {
                 <h2 className="mt-3 font-display text-balance text-2xl leading-tight text-foreground md:text-3xl">
                   Welcome to the Digital Heart of Lighthouse Campus
                 </h2>
-                <p className="mt-3 text-base font-medium text-gold">
+                <p className="mt-3 text-base font-medium text-sapphire">
                   One Institution. Seven Portals. One Exceptional Journey.
                 </p>
                 <div className="mt-3 space-y-3 text-sm leading-relaxed text-muted-foreground">
@@ -192,7 +192,7 @@ function PortalsPage() {
                 <p className="mt-4 text-xs font-semibold tracking-wide text-foreground">
                   Secure • Connected • Intelligent • Designed for Excellence
                 </p>
-                <p className="mt-2 text-xs font-medium tracking-wide text-gold">
+                <p className="mt-2 text-xs font-medium tracking-wide text-sapphire">
                   Guiding Minds. Inspiring Futures. Connecting Possibilities.
                 </p>
               </div>
