@@ -32,6 +32,10 @@ import {
   Phone,
   Mail,
   Globe,
+  HeartPulse,
+  Trophy,
+  Theater,
+  Library,
 } from "lucide-react";
 
 const BASE = "https://lighthousecampus.com/prospectus";
