@@ -33,47 +33,90 @@ import {
   Globe,
 } from "lucide-react";
 
-const URL = "https://lighthousecampus.com/prospectus";
+const BASE = "https://lighthousecampus.com/prospectus";
 const APPLY = "https://eduios.lighthousecampus.com/apply/lighthouse-campus";
 
+/** Per-language, structured head metadata for the guide. */
+const SEO = {
+  en: {
+    url: BASE,
+    locale: "en_US",
+    title: "School Guide 2026 / 2027 | Lighthouse Campus Prospectus",
+    description:
+      "Read the Lighthouse Campus school guide for 2026 / 2027 — three academic programmes, faculty standards, learning environment, EEIOS, and the admissions procedure, with a downloadable PDF.",
+    ogTitle: "School Guide 2026 / 2027 | Lighthouse Campus Prospectus",
+    ogDescription:
+      "Three academic programmes, qualified faculty, a modern learning environment and one education operating system. Admissions open now for 2026 / 2027.",
+    headline: "Lighthouse Campus School Guide 2026 / 2027",
+    about: "Admissions, academic programmes and learning environment at Lighthouse Campus.",
+    org: "Lighthouse Campus",
+  },
+  ar: {
+    url: `${BASE}?lang=ar`,
+    locale: "ar_EG",
+    title: "دليل المدرسة 2026 / 2027 | لايت هاوس كامبس",
+    description:
+      "دليل لايت هاوس كامبس للعام الدراسي 2026 / 2027 — ثلاثة مسارات أكاديمية، معايير هيئة التدريس، بيئة الدراسة، نظام الذكاء التعليمي، وإجراءات القبول، مع نسخة PDF للتنزيل.",
+    ogTitle: "دليل المدرسة 2026 / 2027 | لايت هاوس كامبس",
+    ogDescription:
+      "ثلاثة مسارات أكاديمية، هيئة تدريس مؤهلة، بيئة تعليمية حديثة، ونظام تشغيل تعليمي واحد. التسجيل مفتوح الآن للعام 2026 / 2027.",
+    headline: "دليل لايت هاوس كامبس للعام الدراسي 2026 / 2027",
+    about: "القبول والمسارات الأكاديمية وبيئة الدراسة في لايت هاوس كامبس.",
+    org: "لايت هاوس كامبس",
+  },
+} as const;
+
+type GuideLang = keyof typeof SEO;
+
+const parseLang = (v: unknown): GuideLang => (v === "ar" ? "ar" : "en");
+
 export const Route = createFileRoute("/prospectus")({
-  head: () => ({
-    meta: [
-      { title: "School Guide 2026 / 2027 | Lighthouse Campus Prospectus" },
-      {
-        name: "description",
-        content:
-          "Read the Lighthouse Campus school guide for 2026 / 2027 — three academic programmes, faculty standards, learning environment, EEIOS, and the admissions procedure. Available in English and Arabic, with a downloadable PDF.",
-      },
-      { property: "og:title", content: "School Guide 2026 / 2027 | Lighthouse Campus Prospectus" },
-      {
-        property: "og:description",
-        content:
-          "Three academic programmes, qualified faculty, a modern learning environment and one education operating system. Admissions open now for 2026 / 2027.",
-      },
-      { property: "og:url", content: URL },
-      { property: "og:type", content: "article" },
-    ],
-    links: [{ rel: "canonical", href: URL }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Article",
-          headline: "Lighthouse Campus School Guide 2026 / 2027",
-          inLanguage: ["en", "ar"],
-          about: "Admissions, academic programmes and learning environment at Lighthouse Campus.",
-          mainEntityOfPage: URL,
-          publisher: {
-            "@type": "EducationalOrganization",
-            name: "Lighthouse Campus",
-            url: "https://lighthousecampus.com",
-          },
-        }),
-      },
-    ],
+  validateSearch: (search: Record<string, unknown>) => ({
+    lang: parseLang(search.lang),
   }),
+  head: ({ match }) => {
+    const l = parseLang(match?.search?.lang);
+    const s = SEO[l];
+    return {
+      meta: [
+        { title: s.title },
+        { name: "description", content: s.description },
+        { property: "og:title", content: s.ogTitle },
+        { property: "og:description", content: s.ogDescription },
+        { property: "og:url", content: s.url },
+        { property: "og:type", content: "article" },
+        { property: "og:locale", content: s.locale },
+        { property: "og:locale:alternate", content: SEO[l === "ar" ? "en" : "ar"].locale },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: s.ogTitle },
+        { name: "twitter:description", content: s.ogDescription },
+      ],
+      links: [
+        { rel: "canonical", href: s.url },
+        { rel: "alternate", hrefLang: "en", href: SEO.en.url },
+        { rel: "alternate", hrefLang: "ar", href: SEO.ar.url },
+        { rel: "alternate", hrefLang: "x-default", href: SEO.en.url },
+      ],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: s.headline,
+            inLanguage: l,
+            about: s.about,
+            mainEntityOfPage: s.url,
+            publisher: {
+              "@type": "EducationalOrganization",
+              name: s.org,
+              url: "https://lighthousecampus.com",
+            },
+          }),
+        },
+      ],
+    };
+  },
   component: ProspectusPage,
 });
 
