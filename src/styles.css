@@ -42,12 +42,12 @@ html[dir="rtl"] .rtl-flip {
  * LIGHTHOUSE CAMPUS — Institutional Design System
  * ------------------------------------------------
  * Colours are extracted directly from the official brand:
- *   Oxford Blue    #1E3A8A   — primary institutional colour (distinctive, global-school blue)
- *   Royal Blue     #2743A8   — lighter institutional variant
- *   Lighthouse Gold#D4AF37   — accent, guidance, warmth
- *   Sky Blue       #5B9BD5   — highlight, openness, future
- *   Silver         #DCE1E6   — neutral structure
- *   White          #FFFFFF   — clarity, space
+ *   Prussian Midnight #08253C — primary institutional colour (heritage, unrepeatable)
+ *   Deep Harbour      #0E3A56 — lighter institutional variant
+ *   Antique Gold      #C1A15A — accent, guidance, patina, prestige
+ *   Verdigris         #2C6E6B — heritage secondary (aged bronze-green)
+ *   Parchment         #FAF6EE — warm archival ground
+ *   Silver            #DCE1E6 — neutral structure
  *
  * All colours use the oklch() format. Never hard-code colours in
  * components — always reference the semantic tokens defined here.
@@ -94,6 +94,7 @@ html[dir="rtl"] .rtl-flip {
   --color-sky: var(--sky);
   --color-royal: var(--royal);
   --color-indigo-deep: var(--indigo-deep);
+  --color-verdigris: var(--verdigris);
   --color-silver: var(--silver);
   --color-sand: var(--sand);
 
@@ -117,9 +118,9 @@ html[dir="rtl"] .rtl-flip {
   --tracking-display: -0.025em;
 
   /* Elevation — layered, brand-tinted shadows */
-  --shadow-e1: 0 1px 2px rgba(30, 58, 138, 0.05), 0 2px 8px -2px rgba(30, 58, 138, 0.06);
-  --shadow-e2: 0 6px 18px -8px rgba(30, 58, 138, 0.18), 0 2px 6px -2px rgba(30, 58, 138, 0.08);
-  --shadow-e3: 0 24px 60px -24px rgba(30, 58, 138, 0.35), 0 6px 20px -8px rgba(30, 58, 138, 0.16);
+  --shadow-e1: 0 1px 2px rgba(8, 37, 60, 0.05), 0 2px 8px -2px rgba(8, 37, 60, 0.06);
+  --shadow-e2: 0 6px 18px -8px rgba(8, 37, 60, 0.18), 0 2px 6px -2px rgba(8, 37, 60, 0.08);
+  --shadow-e3: 0 24px 60px -24px rgba(8, 37, 60, 0.35), 0 6px 20px -8px rgba(8, 37, 60, 0.16);
   --shadow-gold-glow: 0 0 40px -10px color-mix(in oklab, var(--gold) 55%, transparent);
 }
 
@@ -128,82 +129,85 @@ html[dir="rtl"] .rtl-flip {
   --radius: 0.5rem;
 
   /* Core surfaces — warm, calm, premium */
-  --background: oklch(0.994 0.003 95);
-  --foreground: oklch(0.24 0.05 262);
+  --background: oklch(0.978 0.011 88);
+  --foreground: oklch(0.245 0.035 245);
 
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.24 0.05 262);
+  --card-foreground: oklch(0.245 0.035 245);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.24 0.05 262);
+  --popover-foreground: oklch(0.245 0.035 245);
 
-  /* Primary = Oxford International Blue #1E3A8A */
-  --primary: oklch(0.37 0.13 260);
+  /* Primary = Prussian Midnight #08253C */
+  --primary: oklch(0.28 0.055 245);
   --primary-foreground: oklch(0.99 0.004 95);
 
   /* Secondary = soft silver surface */
-  --secondary: oklch(0.965 0.005 274);
-  --secondary-foreground: oklch(0.269 0.158 277);
+  --secondary: oklch(0.955 0.012 88);
+  --secondary-foreground: oklch(0.28 0.055 245);
 
-  --muted: oklch(0.965 0.005 274);
-  --muted-foreground: oklch(0.5 0.03 274);
+  --muted: oklch(0.955 0.012 88);
+  --muted-foreground: oklch(0.49 0.025 240);
 
-  /* Accent = Lighthouse Gold */
-  --accent: oklch(0.77 0.13 88);
-  --accent-foreground: oklch(0.269 0.158 277);
+  /* Accent = Antique Gold #C1A15A */
+  --accent: oklch(0.72 0.09 85);
+  --accent-foreground: oklch(0.245 0.035 245);
 
   --destructive: oklch(0.55 0.2 27);
   --destructive-foreground: oklch(0.99 0.004 95);
 
-  --border: oklch(0.9 0.012 274);
-  --input: oklch(0.9 0.012 274);
-  --ring: oklch(0.77 0.13 88);
+  --border: oklch(0.895 0.014 88);
+  --input: oklch(0.895 0.014 88);
+  --ring: oklch(0.72 0.09 85);
 
-  /* Brand palette — Oxford blue family */
-  --navy: oklch(0.37 0.13 260);
-  --navy-foreground: oklch(0.97 0.008 274);
-  --navy-muted: oklch(0.55 0.09 255);
-  --gold: oklch(0.77 0.13 88);
-  --gold-foreground: oklch(0.269 0.158 277);
-  --brand-blue: oklch(0.45 0.14 255);
-  --sky: oklch(0.65 0.13 245);
+  /* Brand palette — Prussian heritage family */
+  --navy: oklch(0.28 0.055 245);
+  --navy-foreground: oklch(0.965 0.012 88);
+  --navy-muted: oklch(0.45 0.05 240);
+  --gold: oklch(0.72 0.09 85);
+  --gold-foreground: oklch(0.245 0.035 245);
+  --brand-blue: oklch(0.36 0.062 242);
+  --sky: oklch(0.56 0.055 210);
+  /* Verdigris — heritage secondary (aged bronze-green) */
+  --verdigris: oklch(0.49 0.062 190);
   /* Campaign-only accents — posters, social cards, admissions banners */
   --royal: oklch(0.40 0.24 274);
   --indigo-deep: oklch(0.26 0.19 285);
   --silver: oklch(0.9 0.012 274);
   --sand: oklch(0.97 0.008 90);
 
-  --sidebar: oklch(0.37 0.13 260);
-  --sidebar-foreground: oklch(0.97 0.008 274);
-  --sidebar-primary: oklch(0.77 0.13 88);
-  --sidebar-primary-foreground: oklch(0.269 0.158 277);
-  --sidebar-accent: oklch(0.45 0.14 255);
-  --sidebar-accent-foreground: oklch(0.97 0.008 274);
-  --sidebar-border: oklch(0.55 0.09 255);
-  --sidebar-ring: oklch(0.77 0.13 88);
+  --sidebar: oklch(0.28 0.055 245);
+  --sidebar-foreground: oklch(0.965 0.012 88);
+  --sidebar-primary: oklch(0.72 0.09 85);
+  --sidebar-primary-foreground: oklch(0.245 0.035 245);
+  --sidebar-accent: oklch(0.36 0.062 242);
+  --sidebar-accent-foreground: oklch(0.965 0.012 88);
+  --sidebar-border: oklch(0.45 0.05 240);
+  --sidebar-ring: oklch(0.72 0.09 85);
 }
 
 .dark {
-  --background: oklch(0.22 0.08 255);
-  --foreground: oklch(0.97 0.008 274);
-  --card: oklch(0.3 0.1 255);
-  --card-foreground: oklch(0.97 0.008 274);
-  --popover: oklch(0.3 0.1 255);
-  --popover-foreground: oklch(0.97 0.008 274);
-  --primary: oklch(0.77 0.13 88);
-  --primary-foreground: oklch(0.22 0.08 255);
-  --secondary: oklch(0.45 0.14 255);
-  --secondary-foreground: oklch(0.97 0.008 274);
-  --muted: oklch(0.34 0.1 255);
-  --muted-foreground: oklch(0.78 0.05 260);
-  --accent: oklch(0.77 0.13 88);
-  --accent-foreground: oklch(0.22 0.08 255);
+  --background: oklch(0.19 0.04 243);
+  --foreground: oklch(0.965 0.012 88);
+  --card: oklch(0.25 0.045 243);
+  --card-foreground: oklch(0.965 0.012 88);
+  --popover: oklch(0.25 0.045 243);
+  --popover-foreground: oklch(0.965 0.012 88);
+  --primary: oklch(0.72 0.09 85);
+  --primary-foreground: oklch(0.19 0.04 243);
+  --secondary: oklch(0.36 0.062 242);
+  --secondary-foreground: oklch(0.965 0.012 88);
+  --muted: oklch(0.29 0.05 243);
+  --muted-foreground: oklch(0.78 0.025 240);
+  --accent: oklch(0.72 0.09 85);
+  --accent-foreground: oklch(0.19 0.04 243);
   --border: oklch(1 0 0 / 12%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.77 0.13 88);
-  --navy: oklch(0.22 0.08 255);
-  --navy-foreground: oklch(0.97 0.008 274);
-  --silver: oklch(0.34 0.1 255);
-  --sand: oklch(0.3 0.1 255);
+  --ring: oklch(0.72 0.09 85);
+  --navy: oklch(0.19 0.04 243);
+  --navy-foreground: oklch(0.965 0.012 88);
+  --verdigris: oklch(0.55 0.06 190);
+  --silver: oklch(0.29 0.05 243);
+  --sand: oklch(0.25 0.045 243);
 }
 
 @layer base {

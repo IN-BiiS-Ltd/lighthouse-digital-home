@@ -25,7 +25,7 @@ type Mote = {
 };
 
 const GOLD: [number, number, number] = [212, 175, 55]; // #D4AF37
-const SKY: [number, number, number] = [91, 155, 213]; // #5B9BD5
+const SKY: [number, number, number] = [44, 110, 107]; // #2C6E6B verdigris
 
 export function BrandAtmosphere({
   className,

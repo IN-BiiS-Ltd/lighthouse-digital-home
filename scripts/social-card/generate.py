@@ -3,7 +3,7 @@
 Lighthouse Campus — social share card (1200x630) generator.
 
 The logo is always the single approved asset pointer; only layout/text here.
-Outputs public/lighthouse-social-card-v7.jpg (versioned path follows SOCIAL_CARD_VERSION).
+Outputs public/lighthouse-social-card-v9.jpg (versioned path follows SOCIAL_CARD_VERSION).
 """
 import asyncio
 import base64
@@ -45,7 +45,7 @@ HTML = """<!doctype html>
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body { width:1200px; height:630px; overflow:hidden;
-    background: radial-gradient(120% 140% at 18% 30%, #6A9BD5 0%, #2743A8 48%, #1E3A8A 100%); }
+    background: radial-gradient(120% 140% at 18% 30%, #2C6E6B 0%, #0E3A56 45%, #08253C 100%); }
   .card { display:grid; grid-template-columns: 600px 1fr; height:630px; align-items:center; }
   .logo { display:flex; align-items:center; justify-content:center; padding:34px; }
   .logo img { width:100%; max-width:520px; height:auto; display:block;
