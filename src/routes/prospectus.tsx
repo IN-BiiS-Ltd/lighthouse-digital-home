@@ -180,7 +180,10 @@ function GuideLangSwitch({
               type="button"
               lang={o.value}
               aria-pressed={active}
-              onClick={() => setLang(o.value)}
+              onClick={() => {
+                setLang(o.value);
+                navigate({ search: { lang: o.value }, replace: true });
+              }}
               className={cn(
                 "rounded-full px-4 py-1.5 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold",
                 active
