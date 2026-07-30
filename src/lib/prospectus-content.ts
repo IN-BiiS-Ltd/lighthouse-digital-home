@@ -106,6 +106,8 @@ const en: ProspectusCopy = {
     { label: "Programmes", to: "#programmes" },
     { label: "Faculty", to: "#faculty" },
     { label: "Environment", to: "#environment" },
+    { label: "Wellbeing", to: "#wellbeing" },
+    { label: "Activities", to: "#activities" },
     { label: "EEIOS", to: "#eeios" },
     { label: "Philosophy", to: "#philosophy" },
     { label: "Why Lighthouse", to: "#why" },
