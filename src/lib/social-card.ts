@@ -6,7 +6,7 @@
  * SOCIAL_CARD_VERSION — and republish — whenever the artwork is regenerated;
  * every og:image / twitter:image / JSON-LD reference follows automatically.
  */
-export const SOCIAL_CARD_VERSION = 6;
+export const SOCIAL_CARD_VERSION = 7;
 
 export const SITE_ORIGIN = "https://lighthousecampus.com";
 

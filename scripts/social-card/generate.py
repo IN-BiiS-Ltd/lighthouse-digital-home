@@ -3,7 +3,7 @@
 Lighthouse Campus — social share card (1200x630) generator.
 
 The logo is always the single approved asset pointer; only layout/text here.
-Outputs public/lighthouse-social-card-v6.jpg (versioned path follows SOCIAL_CARD_VERSION).
+Outputs public/lighthouse-social-card-v7.jpg (versioned path follows SOCIAL_CARD_VERSION).
 """
 import asyncio
 import base64
@@ -45,7 +45,7 @@ HTML = """<!doctype html>
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body { width:1200px; height:630px; overflow:hidden;
-    background: radial-gradient(120% 140% at 18% 30%, #5b7ec9 0%, #4c63b8 45%, #3a4f9f 100%); }
+    background: radial-gradient(120% 140% at 18% 30%, #3A9AFF 0%, #261CC1 48%, #1C0770 100%); }
   .card { display:grid; grid-template-columns: 600px 1fr; height:630px; align-items:center; }
   .logo { display:flex; align-items:center; justify-content:center; padding:34px; }
   .logo img { width:100%; max-width:520px; height:auto; display:block;
@@ -86,7 +86,7 @@ async def render(logo: str):
 
     tmp = Path("/tmp/lh-social-card.html")
     tmp.write_text(HTML.replace("__LOGO__", logo), encoding="utf-8")
-    out = ROOT / "public/lighthouse-social-card-v6.jpg"
+    out = ROOT / "public/lighthouse-social-card-v7.jpg"
 
     # Remove stale versions so only the latest card remains in the deploy bundle
     for stale in ROOT.glob("public/lighthouse-social-card-v*.jpg"):

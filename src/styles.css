@@ -42,7 +42,8 @@ html[dir="rtl"] .rtl-flip {
  * LIGHTHOUSE CAMPUS — Institutional Design System
  * ------------------------------------------------
  * Colours are extracted directly from the official brand:
- *   Royal Navy     #3A4F9F   — primary institutional colour (deeper version of the signature blue)
+ *   Deep Indigo    #1C0770   — deep institutional ground
+ *   Royal Blue     #261CC1   — primary institutional colour
  *   Lighthouse Gold#D4AF37   — accent, guidance, warmth
  *   Lighthouse Blue#5371E4   — secondary, trust, vibrancy
  *   Sky Blue       #4DA6FF   — highlight, openness, future
@@ -115,9 +116,9 @@ html[dir="rtl"] .rtl-flip {
   --tracking-display: -0.025em;
 
   /* Elevation — layered, brand-tinted shadows */
-  --shadow-e1: 0 1px 2px rgba(58, 79, 159, 0.05), 0 2px 8px -2px rgba(58, 79, 159, 0.06);
-  --shadow-e2: 0 6px 18px -8px rgba(58, 79, 159, 0.18), 0 2px 6px -2px rgba(58, 79, 159, 0.08);
-  --shadow-e3: 0 24px 60px -24px rgba(58, 79, 159, 0.35), 0 6px 20px -8px rgba(58, 79, 159, 0.16);
+  --shadow-e1: 0 1px 2px rgba(28, 7, 112, 0.05), 0 2px 8px -2px rgba(28, 7, 112, 0.06);
+  --shadow-e2: 0 6px 18px -8px rgba(28, 7, 112, 0.18), 0 2px 6px -2px rgba(28, 7, 112, 0.08);
+  --shadow-e3: 0 24px 60px -24px rgba(28, 7, 112, 0.35), 0 6px 20px -8px rgba(28, 7, 112, 0.16);
   --shadow-gold-glow: 0 0 40px -10px color-mix(in oklab, var(--gold) 55%, transparent);
 }
 
@@ -134,71 +135,71 @@ html[dir="rtl"] .rtl-flip {
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.24 0.05 262);
 
-  /* Primary = Royal Navy */
-  --primary: oklch(0.456 0.113 226);
+  /* Primary = Royal Blue #261CC1 */
+  --primary: oklch(0.396 0.234 271);
   --primary-foreground: oklch(0.99 0.004 95);
 
   /* Secondary = soft silver surface */
-  --secondary: oklch(0.965 0.004 250);
-  --secondary-foreground: oklch(0.26 0.06 262);
+  --secondary: oklch(0.965 0.005 274);
+  --secondary-foreground: oklch(0.269 0.158 277);
 
-  --muted: oklch(0.965 0.004 250);
-  --muted-foreground: oklch(0.5 0.02 258);
+  --muted: oklch(0.965 0.005 274);
+  --muted-foreground: oklch(0.5 0.03 274);
 
   /* Accent = Lighthouse Gold */
   --accent: oklch(0.77 0.13 88);
-  --accent-foreground: oklch(0.24 0.05 262);
+  --accent-foreground: oklch(0.269 0.158 277);
 
   --destructive: oklch(0.55 0.2 27);
   --destructive-foreground: oklch(0.99 0.004 95);
 
-  --border: oklch(0.9 0.008 250);
-  --input: oklch(0.9 0.008 250);
+  --border: oklch(0.9 0.012 274);
+  --input: oklch(0.9 0.012 274);
   --ring: oklch(0.77 0.13 88);
 
-  /* Brand palette — royal navy family */
-  --navy: oklch(0.456 0.113 226);
-  --navy-foreground: oklch(0.97 0.006 250);
-  --navy-muted: oklch(0.65 0.05 226);
+  /* Brand palette — indigo / royal blue / sky */
+  --navy: oklch(0.269 0.158 277);
+  --navy-foreground: oklch(0.97 0.008 274);
+  --navy-muted: oklch(0.45 0.13 275);
   --gold: oklch(0.77 0.13 88);
-  --gold-foreground: oklch(0.24 0.05 262);
-  --brand-blue: oklch(0.589 0.156 226);
-  --sky: oklch(0.72 0.13 248);
-  --silver: oklch(0.9 0.008 247);
+  --gold-foreground: oklch(0.269 0.158 277);
+  --brand-blue: oklch(0.396 0.234 271);
+  --sky: oklch(0.679 0.174 253);
+  --silver: oklch(0.9 0.012 274);
   --sand: oklch(0.97 0.008 90);
 
-  --sidebar: oklch(0.456 0.113 226);
-  --sidebar-foreground: oklch(0.97 0.006 250);
+  --sidebar: oklch(0.269 0.158 277);
+  --sidebar-foreground: oklch(0.97 0.008 274);
   --sidebar-primary: oklch(0.77 0.13 88);
-  --sidebar-primary-foreground: oklch(0.24 0.05 262);
-  --sidebar-accent: oklch(0.5 0.07 226);
-  --sidebar-accent-foreground: oklch(0.97 0.006 250);
-  --sidebar-border: oklch(0.55 0.06 226);
+  --sidebar-primary-foreground: oklch(0.269 0.158 277);
+  --sidebar-accent: oklch(0.396 0.234 271);
+  --sidebar-accent-foreground: oklch(0.97 0.008 274);
+  --sidebar-border: oklch(0.42 0.16 274);
   --sidebar-ring: oklch(0.77 0.13 88);
 }
 
 .dark {
-  --background: oklch(0.3 0.06 226);
-  --foreground: oklch(0.97 0.006 250);
-  --card: oklch(0.37 0.07 226);
-  --card-foreground: oklch(0.97 0.006 250);
-  --popover: oklch(0.37 0.07 226);
-  --popover-foreground: oklch(0.97 0.006 250);
+  --background: oklch(0.22 0.12 277);
+  --foreground: oklch(0.97 0.008 274);
+  --card: oklch(0.269 0.158 277);
+  --card-foreground: oklch(0.97 0.008 274);
+  --popover: oklch(0.269 0.158 277);
+  --popover-foreground: oklch(0.97 0.008 274);
   --primary: oklch(0.77 0.13 88);
-  --primary-foreground: oklch(0.2 0.05 262);
-  --secondary: oklch(0.45 0.07 226);
-  --secondary-foreground: oklch(0.97 0.006 250);
-  --muted: oklch(0.45 0.07 226);
-  --muted-foreground: oklch(0.75 0.03 226);
+  --primary-foreground: oklch(0.22 0.12 277);
+  --secondary: oklch(0.396 0.234 271);
+  --secondary-foreground: oklch(0.97 0.008 274);
+  --muted: oklch(0.34 0.14 274);
+  --muted-foreground: oklch(0.78 0.05 260);
   --accent: oklch(0.77 0.13 88);
-  --accent-foreground: oklch(0.2 0.05 262);
+  --accent-foreground: oklch(0.22 0.12 277);
   --border: oklch(1 0 0 / 12%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.77 0.13 88);
-  --navy: oklch(0.3 0.06 226);
-  --navy-foreground: oklch(0.97 0.006 250);
-  --silver: oklch(0.45 0.07 226);
-  --sand: oklch(0.37 0.07 226);
+  --navy: oklch(0.22 0.12 277);
+  --navy-foreground: oklch(0.97 0.008 274);
+  --silver: oklch(0.34 0.14 274);
+  --sand: oklch(0.269 0.158 277);
 }
 
 @layer base {
