@@ -69,7 +69,7 @@ HTML = """<!doctype html>
   <div class="card">
     <div class="logo"><img id="logo" alt="Lighthouse Campus" /></div>
     <div class="panel">
-      <h1>Light House<br />Campus</h1>
+      <h1><span>Light House</span><br />Campus</h1>
       <div class="rule"></div>
       <h2>International School</h2>
       <p>Sudan &nbsp;·&nbsp; South Sudan &nbsp;·&nbsp; Egypt &nbsp;·&nbsp; Uganda</p>
