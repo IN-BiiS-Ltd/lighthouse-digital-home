@@ -214,6 +214,65 @@ const en: ProspectusCopy = {
       { title: "Participation and inquiry", body: "Research tasks and classroom projects that build thinking and independent learning." },
     ],
   },
+  wellbeing: {
+    eyebrow: "Wellbeing and child care",
+    title: "A child mental-health specialist on campus",
+    description:
+      "The school includes a child mental-health specialist working within the student care team, following the wellbeing of pupils and addressing difficulties early and in confidence.",
+    roleLabel: "What the specialist does",
+    role: [
+      "Individual sessions and regular follow-up where a pupil needs it",
+      "Early identification of anxiety, withdrawal, or changes in behaviour",
+      "Short-term support plans agreed with the teacher and the family",
+      "Guidance for parents with practical recommendations for home",
+      "Teacher training on individual differences and classroom behaviour",
+      "Referral to an external specialist when necessary, with family consent",
+    ],
+    cards: [
+      {
+        title: "Early intervention, not waiting",
+        body:
+          "Follow-up begins at the first classroom observation, so a small difficulty does not become an academic or behavioural setback.",
+      },
+      {
+        title: "Confidentiality protected",
+        body:
+          "Wellbeing records are held in confidence and shared only with those who genuinely need them to support the pupil.",
+      },
+      {
+        title: "Partnership with the family",
+        body:
+          "Families are part of every support plan, with clear communication about the steps taken and the outcomes expected.",
+      },
+    ],
+    note:
+      "School-based psychological and pastoral support is part of student care; it does not replace medical treatment or clinical diagnosis.",
+  },
+  activities: {
+    eyebrow: "Extracurricular activities",
+    title: "Sport, literary and cultural societies, and theatre",
+    description:
+      "A weekly activity programme built into the school timetable, giving every pupil a field to excel in alongside their studies, supervised by accountable teachers and coaches.",
+    groups: [
+      {
+        title: "Sport",
+        body: "Regular sessions, school teams, and internal competitions that build fitness and team spirit.",
+        items: ["Football", "Basketball", "Table tennis", "Athletics", "Movement and fitness for early years"],
+      },
+      {
+        title: "Literary and cultural societies",
+        body: "Clubs that build habits of reading, writing, and structured discussion, and present pupils' work to the school community.",
+        items: ["Reading club", "Creative writing", "Debate and public speaking", "School journalism", "Science and inquiry club"],
+      },
+      {
+        title: "Theatre and arts",
+        body: "Theatre and arts work with clear performance seasons, developing stage confidence, expression, and collaboration.",
+        items: ["School theatre", "Choir and music", "Visual arts", "Backstage and lighting crew"],
+      },
+    ],
+    note:
+      "Activities open according to age stage and participant numbers; the activity timetable is published to families at the start of each term.",
+  },
   eeios: {
     eyebrow: "Education Enterprise Intelligence Operating System",
     title: "Education supported by institutional intelligence",
