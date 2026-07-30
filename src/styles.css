@@ -134,8 +134,8 @@ html[dir="rtl"] .rtl-flip {
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.24 0.05 262);
 
-  /* Primary = Deep Navy */
-  --primary: oklch(0.26 0.06 262);
+  /* Primary = Light Navy */
+  --primary: oklch(0.45 0.085 255);
   --primary-foreground: oklch(0.99 0.004 95);
 
   /* Secondary = soft silver surface */
@@ -156,13 +156,13 @@ html[dir="rtl"] .rtl-flip {
   --input: oklch(0.9 0.008 250);
   --ring: oklch(0.77 0.13 88);
 
-  /* Brand palette */
-  --navy: oklch(0.24 0.055 262);
+  /* Brand palette — light navy family */
+  --navy: oklch(0.42 0.08 255);
   --navy-foreground: oklch(0.97 0.006 250);
-  --navy-muted: oklch(0.72 0.03 255);
+  --navy-muted: oklch(0.7 0.05 250);
   --gold: oklch(0.77 0.13 88);
   --gold-foreground: oklch(0.24 0.05 262);
-  --brand-blue: oklch(0.52 0.17 263);
+  --brand-blue: oklch(0.55 0.15 255);
   --sky: oklch(0.72 0.13 248);
   --silver: oklch(0.9 0.008 247);
   --sand: oklch(0.97 0.008 90);
