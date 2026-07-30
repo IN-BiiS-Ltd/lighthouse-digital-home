@@ -73,7 +73,8 @@ const parseLang = (v: unknown): GuideLang => (v === "ar" ? "ar" : "en");
 
 export const Route = createFileRoute("/prospectus")({
   validateSearch: (search: Record<string, unknown>) => ({
-    lang: parseLang(search.lang),
+    // Only the Arabic variant carries a search param, so the English URL stays clean.
+    lang: search.lang === "ar" ? ("ar" as const) : undefined,
   }),
   head: ({ match }) => {
     const l = parseLang(match?.search?.lang);
