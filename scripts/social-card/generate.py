@@ -54,9 +54,10 @@ HTML = """<!doctype html>
     align-items:center; justify-content:center; text-align:center; padding:0 60px; gap:0; }
   .panel::before { content:""; position:absolute; left:0; top:96px; bottom:96px; width:1px;
     background:linear-gradient(180deg, rgba(212,175,55,0), rgba(212,175,55,.55), rgba(212,175,55,0)); }
-  h1 { font-family:"Cormorant Garamond", serif; font-weight:700; font-size:74px; line-height:1.02;
+  h1 { font-family:"Cormorant Garamond", serif; font-weight:700; font-size:66px; line-height:1.05;
     letter-spacing:.02em; color:#e6c465; text-transform:uppercase; }
-  .rule { width:120px; height:2px; margin:26px auto 24px;
+  h1 span { white-space:nowrap; }
+  .rule { width:120px; height:2px; margin:22px auto 20px;
     background:linear-gradient(90deg, rgba(212,175,55,0), #d4af37, rgba(212,175,55,0)); }
   h2 { font-family:"Inter", sans-serif; font-weight:500; font-size:34px; color:#ffffff;
     letter-spacing:.01em; }
@@ -68,7 +69,7 @@ HTML = """<!doctype html>
   <div class="card">
     <div class="logo"><img id="logo" alt="Lighthouse Campus" /></div>
     <div class="panel">
-      <h1>Light House<br />Campus</h1>
+      <h1><span>Light House</span><br />Campus</h1>
       <div class="rule"></div>
       <h2>International School</h2>
       <p>Sudan &nbsp;·&nbsp; South Sudan &nbsp;·&nbsp; Egypt &nbsp;·&nbsp; Uganda</p>
