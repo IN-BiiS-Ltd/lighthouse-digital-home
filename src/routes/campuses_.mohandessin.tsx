@@ -1,3 +1,4 @@
+import { SOCIAL_CARD_URL, SOCIAL_CARD_ALT, SOCIAL_CARD_TYPE, SOCIAL_CARD_WIDTH, SOCIAL_CARD_HEIGHT } from "@/lib/social-card";
 import { createFileRoute } from "@tanstack/react-router";
 import { MapPin, Phone, Mail } from "lucide-react";
 import {

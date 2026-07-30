@@ -1,3 +1,4 @@
+import { SOCIAL_CARD_URL, SOCIAL_CARD_ALT, SOCIAL_CARD_TYPE, SOCIAL_CARD_WIDTH, SOCIAL_CARD_HEIGHT } from "@/lib/social-card";
 import { assetUrl } from "@/lib/asset-url";
 import { createFileRoute } from "@tanstack/react-router";
 import teachersIcon from "@/assets/home-teachers-mentors.png.asset.json";
