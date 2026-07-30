@@ -1,0 +1,620 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @page {
+        size: A4;
+        margin: 0;
+      }
+      :root {
+        --navy: #1c2360;
+        --navy-deep: #141a4a;
+        --gold: #c08a2e;
+        --gold-soft: #e9c37c;
+        --ink: #1a1d2b;
+        --muted: #4a4f63;
+        --line: #d8dae4;
+        --sand: #f7f5ef;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Manrope", sans-serif;
+        color: var(--ink);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      body[dir="rtl"] {
+        font-family: "IBM Plex Sans Arabic", sans-serif;
+      }
+      .page {
+        position: relative;
+        width: 210mm;
+        height: 296mm;
+        overflow: hidden;
+        padding: 16mm 18mm 14mm;
+        display: flex;
+        flex-direction: column;
+        page-break-after: always;
+        background: #fff;
+      }
+      .page:last-child {
+        page-break-after: auto;
+      }
+      /* ---------- cover ---------- */
+      .cover {
+        background: radial-gradient(120% 90% at 20% 0%, #242c72 0%, #141a4a 60%, #0f143b 100%);
+        color: #f6f2e6;
+        padding: 20mm 18mm 16mm;
+      }
+      .cover .crest {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4mm;
+        text-align: center;
+      }
+      .cover .crest img {
+        height: 34mm;
+      }
+      .cover .wordmark {
+        font-family: "Fraunces", serif;
+        font-size: 15pt;
+        letter-spacing: 0.16em;
+        color: #fff;
+      }
+      .cover .sub {
+        font-size: 9.5pt;
+        letter-spacing: 0.18em;
+        color: var(--gold-soft);
+      }
+      .cover .badge {
+        margin: 9mm auto 0;
+        border: 0.4mm solid rgba(233, 195, 124, 0.65);
+        border-radius: 20mm;
+        padding: 3mm 8mm;
+        font-size: 8.5pt;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--gold-soft);
+      }
+      .cover h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 500;
+        font-size: 27pt;
+        line-height: 1.3;
+        margin: 9mm 0 0;
+        color: #fff;
+        text-align: center;
+      }
+      .cover .lede {
+        margin: 6mm auto 0;
+        max-width: 150mm;
+        text-align: center;
+        font-size: 10pt;
+        line-height: 1.75;
+        color: rgba(246, 242, 230, 0.86);
+      }
+      .cover .facts {
+        margin-top: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6mm;
+        border-top: 0.4mm solid rgba(233, 195, 124, 0.35);
+        padding-top: 7mm;
+      }
+      .cover .facts h4 {
+        margin: 0 0 2.5mm;
+        font-size: 7.5pt;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--gold-soft);
+      }
+      .cover .facts p {
+        margin: 0;
+        font-size: 9pt;
+        line-height: 1.6;
+        color: rgba(246, 242, 230, 0.9);
+      }
+      .cover .tag {
+        margin: 8mm 0 0;
+        text-align: center;
+        font-size: 8pt;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold-soft);
+      }
+      body[dir="rtl"] .cover .badge,
+      body[dir="rtl"] .cover .tag,
+      body[dir="rtl"] .cover .facts h4,
+      body[dir="rtl"] .cover .sub,
+      body[dir="rtl"] .cover .wordmark {
+        letter-spacing: 0;
+      }
+      body[dir="rtl"] .cover h1,
+      body[dir="rtl"] .cover .wordmark {
+        font-family: "IBM Plex Sans Arabic", sans-serif;
+        font-weight: 600;
+      }
+      /* ---------- inner page furniture ---------- */
+      .top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8mm;
+        border-bottom: 0.4mm solid var(--line);
+        padding-bottom: 5mm;
+      }
+      .top img {
+        height: 15mm;
+      }
+      .top span {
+        font-size: 8.5pt;
+        color: var(--navy);
+      }
+      .eyebrow {
+        margin: 5mm 0 0;
+        font-size: 8pt;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold);
+        font-weight: 700;
+      }
+      body[dir="rtl"] .eyebrow {
+        letter-spacing: 0;
+      }
+      h1.title {
+        font-family: "Fraunces", serif;
+        font-weight: 500;
+        font-size: 21pt;
+        line-height: 1.25;
+        margin: 3mm 0 0;
+        color: var(--navy-deep);
+      }
+      body[dir="rtl"] h1.title,
+      body[dir="rtl"] h2,
+      body[dir="rtl"] h3 {
+        font-family: "IBM Plex Sans Arabic", sans-serif;
+        font-weight: 600;
+      }
+      .rule {
+        margin-top: 4mm;
+        height: 0.6mm;
+        width: 54mm;
+        background: linear-gradient(90deg, var(--gold), rgba(192, 138, 46, 0));
+      }
+      body[dir="rtl"] .rule {
+        background: linear-gradient(270deg, var(--gold), rgba(192, 138, 46, 0));
+      }
+      .lede {
+        margin: 5mm 0 0;
+        font-size: 10pt;
+        line-height: 1.7;
+        color: var(--muted);
+      }
+      .lede strong {
+        color: var(--navy-deep);
+        font-weight: 700;
+      }
+      .blk {
+        margin-top: 5mm;
+      }
+      .subhead {
+        font-size: 8pt;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold);
+        font-weight: 700;
+        margin: 0 0 2mm;
+      }
+      body[dir="rtl"] .subhead {
+        letter-spacing: 0;
+      }
+      h2.sec {
+        font-family: "Fraunces", serif;
+        font-weight: 500;
+        font-size: 14pt;
+        margin: 0 0 3mm;
+        color: var(--navy-deep);
+      }
+      /* cards */
+      .cards {
+        display: grid;
+        gap: 4mm;
+      }
+      .card {
+        border: 0.4mm solid var(--line);
+        border-top: 1mm solid var(--gold);
+        border-radius: 3mm;
+        padding: 4.5mm 5mm;
+        background: #fff;
+      }
+      .card .kicker {
+        font-size: 7pt;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--gold);
+        font-weight: 700;
+        margin: 0 0 1.5mm;
+      }
+      body[dir="rtl"] .card .kicker {
+        letter-spacing: 0;
+      }
+      .card h3 {
+        font-family: "Fraunces", serif;
+        font-weight: 500;
+        font-size: 11pt;
+        line-height: 1.3;
+        margin: 0;
+        color: var(--navy);
+      }
+      .card p {
+        margin: 2mm 0 0;
+        font-size: 8.5pt;
+        line-height: 1.6;
+        color: var(--muted);
+      }
+      .card .meta {
+        margin-top: 2.5mm;
+        padding-top: 2.5mm;
+        border-top: 0.3mm solid var(--line);
+        font-size: 8pt;
+        line-height: 1.5;
+        color: var(--navy);
+      }
+      /* dark bar */
+      .bar {
+        border-radius: 3mm;
+        background: var(--navy-deep);
+        color: #f6f2e6;
+        padding: 6mm 7mm;
+      }
+      .bar h2 {
+        font-family: "Fraunces", serif;
+        font-weight: 500;
+        font-size: 12.5pt;
+        margin: 0;
+        color: var(--gold-soft);
+      }
+      .bar p {
+        margin: 4mm 0 0;
+        font-size: 9pt;
+        line-height: 1.65;
+      }
+      .chips {
+        margin: 5mm 0 0;
+        display: flex;
+        gap: 3mm;
+        flex-wrap: wrap;
+      }
+      .bar .chip {
+        flex: 1;
+        border: 0.4mm solid rgba(233, 195, 124, 0.5);
+        border-radius: 2.5mm;
+        padding: 4mm 2mm;
+        text-align: center;
+        font-size: 8.5pt;
+        line-height: 1.35;
+        color: var(--gold-soft);
+      }
+      /* light chips */
+      .pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3mm;
+      }
+      .pill {
+        border: 0.4mm solid var(--line);
+        border-radius: 2mm;
+        background: var(--sand);
+        padding: 3mm 5mm;
+        font-size: 9pt;
+        color: var(--navy);
+      }
+      /* table */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 8.5pt;
+      }
+      th {
+        text-align: start;
+        background: var(--navy-deep);
+        color: var(--gold-soft);
+        font-size: 8pt;
+        padding: 3mm 4mm;
+        font-weight: 600;
+      }
+      td {
+        padding: 3mm 4mm;
+        border-bottom: 0.3mm solid var(--line);
+        color: var(--muted);
+        line-height: 1.5;
+        vertical-align: top;
+      }
+      tr td:first-child {
+        color: var(--navy);
+        font-weight: 600;
+      }
+      /* steps */
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 3mm;
+      }
+      .step {
+        border: 0.4mm solid var(--line);
+        border-radius: 3mm;
+        padding: 4mm 3mm;
+        text-align: center;
+      }
+      .step b {
+        display: block;
+        font-family: "Fraunces", serif;
+        font-size: 14pt;
+        color: var(--gold);
+        margin-bottom: 2mm;
+      }
+      .step span {
+        font-size: 8pt;
+        line-height: 1.4;
+        color: var(--navy);
+      }
+      /* columns */
+      .cols {
+        display: grid;
+        gap: 7mm;
+      }
+      .cols h3 {
+        font-family: "Fraunces", serif;
+        font-weight: 500;
+        font-size: 11pt;
+        margin: 0;
+        color: var(--navy);
+      }
+      .cols p {
+        margin: 2.5mm 0 0;
+        font-size: 8.8pt;
+        line-height: 1.65;
+        color: var(--muted);
+      }
+      ul {
+        margin: 3mm 0 0;
+        padding-inline-start: 5.5mm;
+      }
+      li {
+        font-size: 8.8pt;
+        line-height: 1.55;
+        color: var(--muted);
+        margin-bottom: 1.2mm;
+      }
+      li::marker {
+        color: var(--gold);
+      }
+      /* figure */
+      figure {
+        margin: 5mm 0 0;
+        flex: 0 0 auto;
+        border: 0.4mm solid var(--line);
+        border-radius: 3mm;
+        overflow: hidden;
+        background: var(--sand);
+      }
+      figure img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      figcaption {
+        padding: 3mm 4mm;
+        font-size: 8pt;
+        line-height: 1.5;
+        color: var(--muted);
+        border-top: 0.4mm solid var(--line);
+      }
+      .note {
+        margin-top: auto;
+        padding-top: 4mm;
+        font-size: 8.5pt;
+        line-height: 1.6;
+        color: var(--muted);
+      }
+      .foot {
+        margin-top: 3.5mm;
+        border-top: 0.4mm solid var(--line);
+        padding-top: 4mm;
+        display: flex;
+        justify-content: space-between;
+        font-size: 7.5pt;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #6b7085;
+      }
+      body[dir="rtl"] .foot {
+        letter-spacing: 0;
+      }
+      /* closing page */
+      .closing {
+        background: radial-gradient(120% 90% at 80% 0%, #242c72 0%, #141a4a 60%, #0f143b 100%);
+        color: #f6f2e6;
+        padding: 22mm 18mm 16mm;
+        text-align: center;
+      }
+      .closing img.crest {
+        height: 30mm;
+        margin: 0 auto;
+        display: block;
+      }
+      .closing .wordmark {
+        margin-top: 4mm;
+        font-family: "Fraunces", serif;
+        font-size: 14pt;
+        letter-spacing: 0.16em;
+        color: #fff;
+      }
+      .closing .sub {
+        font-size: 9.5pt;
+        letter-spacing: 0.18em;
+        color: var(--gold-soft);
+      }
+      .closing h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 500;
+        font-size: 22pt;
+        line-height: 1.35;
+        margin: 10mm 0 0;
+        color: #fff;
+      }
+      .closing p.lede {
+        color: rgba(246, 242, 230, 0.86);
+        max-width: 140mm;
+        margin: 6mm auto 0;
+      }
+      .closing .contact {
+        margin-top: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6mm;
+        border-top: 0.4mm solid rgba(233, 195, 124, 0.35);
+        padding-top: 7mm;
+        text-align: start;
+      }
+      .closing .contact h4 {
+        margin: 0 0 2.5mm;
+        font-size: 7.5pt;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--gold-soft);
+      }
+      .closing .contact p {
+        margin: 0;
+        font-size: 9pt;
+        line-height: 1.6;
+        color: rgba(246, 242, 230, 0.9);
+      }
+      body[dir="rtl"] .closing h1,
+      body[dir="rtl"] .closing .wordmark {
+        font-family: "IBM Plex Sans Arabic", sans-serif;
+        font-weight: 600;
+        letter-spacing: 0;
+      }
+      body[dir="rtl"] .closing .sub,
+      body[dir="rtl"] .closing .contact h4 {
+        letter-spacing: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      const D = window.__GUIDE__ || {};
+      document.body.setAttribute("dir", D.dir);
+      document.body.setAttribute("lang", D.lang);
+      const esc = (s) => String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;");
+      const img = (key) => D.images[key];
+
+      function block(b) {
+        switch (b.type) {
+          case "lede":
+            return `<p class="lede">${b.html}</p>`;
+          case "cards":
+            return `<div class="blk">${b.heading ? `<h2 class="sec">${esc(b.heading)}</h2>` : ""}
+              <div class="cards" style="grid-template-columns: repeat(${b.columns || 3}, 1fr)">
+                ${b.items
+                  .map(
+                    (c) => `<div class="card">
+                      ${c.kicker ? `<p class="kicker">${esc(c.kicker)}</p>` : ""}
+                      <h3>${esc(c.title)}</h3>
+                      ${c.body ? `<p>${esc(c.body)}</p>` : ""}
+                      ${c.meta ? `<div class="meta">${esc(c.meta)}</div>` : ""}
+                    </div>`,
+                  )
+                  .join("")}
+              </div></div>`;
+          case "bar":
+            return `<div class="blk bar">
+              ${b.heading ? `<h2>${esc(b.heading)}</h2>` : ""}
+              ${b.chips ? `<div class="chips">${b.chips.map((c) => `<span class="chip">${esc(c)}</span>`).join("")}</div>` : ""}
+              ${b.body ? `<p>${esc(b.body)}</p>` : ""}
+            </div>`;
+          case "pills":
+            return `<div class="blk">${b.heading ? `<h2 class="sec">${esc(b.heading)}</h2>` : ""}
+              <div class="pills">${b.items.map((p) => `<span class="pill">${esc(p)}</span>`).join("")}</div></div>`;
+          case "table":
+            return `<div class="blk">${b.heading ? `<h2 class="sec">${esc(b.heading)}</h2>` : ""}
+              <table><thead><tr>${b.head.map((h) => `<th>${esc(h)}</th>`).join("")}</tr></thead>
+              <tbody>${b.rows.map((r) => `<tr>${r.map((c) => `<td>${esc(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+          case "steps":
+            return `<div class="blk"><div class="steps">${b.items
+              .map((s, i) => `<div class="step"><b>${String(i + 1).padStart(2, "0")}</b><span>${esc(s)}</span></div>`)
+              .join("")}</div></div>`;
+          case "columns":
+            return `<div class="blk cols" style="grid-template-columns: repeat(${b.columns || 2}, 1fr)">
+              ${b.items
+                .map(
+                  (c) => `<div>${c.title ? `<h3>${esc(c.title)}</h3>` : ""}
+                    ${c.body ? `<p>${esc(c.body)}</p>` : ""}
+                    ${c.items ? `<ul>${c.items.map((i) => `<li>${esc(i)}</li>`).join("")}</ul>` : ""}</div>`,
+                )
+                .join("")}</div>`;
+          case "figure":
+            return `<figure style="${b.width ? `width:${b.width};margin-inline:auto;` : ""}">
+              <img src="${img(b.image)}" alt="" />
+              ${b.caption ? `<figcaption>${esc(b.caption)}</figcaption>` : ""}</figure>`;
+          case "note":
+            return `<p class="note">${esc(b.text)}</p>`;
+          default:
+            return "";
+        }
+      }
+
+      function page(p, index) {
+        if (p.type === "cover") {
+          return `<section class="page cover">
+            <div class="crest">
+              <img src="${img("logo")}" alt="" />
+              <div class="wordmark">${esc(p.wordmark)}</div>
+              <div class="sub">${esc(p.sub)}</div>
+            </div>
+            <div class="badge">${esc(p.badge)}</div>
+            <h1>${esc(p.title)}</h1>
+            <p class="lede">${esc(p.lede)}</p>
+            <div class="facts">${p.facts
+              .map((f) => `<div><h4>${esc(f.label)}</h4><p>${f.lines.map(esc).join("<br />")}</p></div>`)
+              .join("")}</div>
+            <p class="tag">${esc(p.tagline)}</p>
+          </section>`;
+        }
+        if (p.type === "closing") {
+          return `<section class="page closing">
+            <img class="crest" src="${img("logo")}" alt="" />
+            <div class="wordmark">${esc(p.wordmark)}</div>
+            <div class="sub">${esc(p.sub)}</div>
+            <h1>${esc(p.title)}</h1>
+            <p class="lede">${esc(p.lede)}</p>
+            <div class="contact">${p.contact
+              .map((f) => `<div><h4>${esc(f.label)}</h4><p>${f.lines.map(esc).join("<br />")}</p></div>`)
+              .join("")}</div>
+            <p class="tag" style="margin-top:8mm">${esc(p.tagline)}</p>
+          </section>`;
+        }
+        return `<section class="page">
+          <div class="top"><img src="${img("logo")}" alt="" /><span>${esc(p.running || p.title)}</span></div>
+          <p class="eyebrow">${esc(p.eyebrow)}</p>
+          <h1 class="title">${esc(p.title)}</h1>
+          <div class="rule"></div>
+          ${(p.blocks || []).map(block).join("")}
+          <div class="foot"><span>${esc(D.footer)}</span><span>${String(index + 1).padStart(2, "0")}</span></div>
+        </section>`;
+      }
+
+      document.write(D.pages.map(page).join(""));
+    </script>
+  </body>
+</html>
