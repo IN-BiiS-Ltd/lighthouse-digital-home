@@ -1,0 +1,258 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @page {
+        size: A4;
+        margin: 0;
+      }
+      :root {
+        --navy: #1c2360;
+        --navy-deep: #141a4a;
+        --gold: #c08a2e;
+        --ink: #1a1d2b;
+        --muted: #4a4f63;
+        --line: #d8dae4;
+        --sand: #f7f5ef;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Manrope", sans-serif;
+        color: var(--ink);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      body[dir="rtl"] {
+        font-family: "IBM Plex Sans Arabic", sans-serif;
+      }
+      .page {
+        position: relative;
+        width: 210mm;
+        height: 297mm;
+        padding: 16mm 18mm 14mm;
+        page-break-after: always;
+        display: flex;
+        flex-direction: column;
+      }
+      .page:last-child {
+        page-break-after: auto;
+      }
+      .top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8mm;
+        border-bottom: 0.4mm solid var(--line);
+        padding-bottom: 5mm;
+      }
+      .top img {
+        height: 15mm;
+      }
+      .top span {
+        font-size: 8.5pt;
+        color: var(--navy);
+        letter-spacing: 0.02em;
+      }
+      .eyebrow {
+        margin: 10mm 0 0;
+        font-size: 8pt;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold);
+        font-weight: 700;
+      }
+      body[dir="rtl"] .eyebrow {
+        letter-spacing: 0;
+      }
+      h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 500;
+        font-size: 21pt;
+        line-height: 1.25;
+        margin: 3mm 0 0;
+        color: var(--navy-deep);
+      }
+      body[dir="rtl"] h1 {
+        font-family: "IBM Plex Sans Arabic", sans-serif;
+        font-weight: 600;
+      }
+      .lede {
+        margin: 5mm 0 0;
+        font-size: 10pt;
+        line-height: 1.7;
+        color: var(--muted);
+        max-width: 165mm;
+      }
+      .panel {
+        margin-top: 8mm;
+        border: 0.4mm solid var(--line);
+        border-radius: 3mm;
+        background: var(--sand);
+        padding: 7mm;
+      }
+      .panel h2,
+      .card h3,
+      .group h3 {
+        font-family: "Fraunces", serif;
+        font-weight: 500;
+        color: var(--navy);
+        margin: 0;
+      }
+      body[dir="rtl"] .panel h2,
+      body[dir="rtl"] .card h3,
+      body[dir="rtl"] .group h3 {
+        font-family: "IBM Plex Sans Arabic", sans-serif;
+        font-weight: 600;
+      }
+      .panel h2 {
+        font-size: 13pt;
+      }
+      ul {
+        margin: 4mm 0 0;
+        padding-inline-start: 6mm;
+      }
+      li {
+        font-size: 9.5pt;
+        line-height: 1.65;
+        color: var(--muted);
+        margin-bottom: 1.6mm;
+      }
+      li::marker {
+        color: var(--gold);
+      }
+      .cards {
+        margin-top: 7mm;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5mm;
+      }
+      .card,
+      .group {
+        border: 0.4mm solid var(--line);
+        border-radius: 3mm;
+        padding: 6mm;
+      }
+      .card h3,
+      .group h3 {
+        font-size: 11.5pt;
+      }
+      .card p,
+      .group p {
+        margin: 3mm 0 0;
+        font-size: 9pt;
+        line-height: 1.6;
+        color: var(--muted);
+      }
+      .groups {
+        margin-top: 6mm;
+        display: grid;
+        gap: 4mm;
+      }
+      .group {
+        padding: 5mm 6mm;
+      }
+      .group ul {
+        margin-top: 2.5mm;
+        columns: 2;
+        column-gap: 8mm;
+      }
+      .group li {
+        margin-bottom: 0.8mm;
+        font-size: 9pt;
+        line-height: 1.5;
+      }
+      .note {
+        margin-top: auto;
+        padding-top: 7mm;
+        font-size: 8.5pt;
+        line-height: 1.6;
+        color: var(--muted);
+      }
+      .foot {
+        margin-top: 5mm;
+        border-top: 0.4mm solid var(--line);
+        padding-top: 4mm;
+        display: flex;
+        justify-content: space-between;
+        font-size: 7.5pt;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #6b7085;
+      }
+      body[dir="rtl"] .foot {
+        letter-spacing: 0;
+      }
+      .bar {
+        margin-top: 7mm;
+        border-radius: 3mm;
+        background: var(--navy-deep);
+        color: #f6f2e6;
+        padding: 6mm 7mm;
+        font-size: 9pt;
+        line-height: 1.65;
+      }
+      .bar strong {
+        color: #e9c37c;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      const D = window.__ADDENDUM__ || {};
+      document.body.setAttribute("dir", D.dir);
+      document.body.setAttribute("lang", D.lang);
+      const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;");
+      const head = (t) =>
+        `<div class="top"><img src="${D.logoDataUrl}" alt="" /><span>${esc(t)}</span></div>`;
+      const foot = (n) =>
+        `<div class="foot"><span>${esc(D.footer)}</span><span>${esc(n)}</span></div>`;
+
+      const w = D.wellbeing;
+      const a = D.activities;
+      document.write(`
+        <section class="page">
+          ${head(w.title)}
+          <p class="eyebrow">${esc(w.eyebrow)}</p>
+          <h1>${esc(w.title)}</h1>
+          <p class="lede">${esc(w.description)}</p>
+          <div class="panel">
+            <h2>${esc(w.roleLabel)}</h2>
+            <ul>${w.role.map((r) => `<li>${esc(r)}</li>`).join("")}</ul>
+          </div>
+          <div class="cards">
+            ${w.cards
+              .map((c) => `<div class="card"><h3>${esc(c.title)}</h3><p>${esc(c.body)}</p></div>`)
+              .join("")}
+          </div>
+          <div class="bar">${esc(w.note)}</div>
+          ${foot(D.pageA)}
+        </section>
+        <section class="page">
+          ${head(a.title)}
+          <p class="eyebrow">${esc(a.eyebrow)}</p>
+          <h1>${esc(a.title)}</h1>
+          <p class="lede">${esc(a.description)}</p>
+          <div class="groups">
+            ${a.groups
+              .map(
+                (g) => `<div class="group"><h3>${esc(g.title)}</h3><p>${esc(g.body)}</p>
+                <ul>${g.items.map((i) => `<li>${esc(i)}</li>`).join("")}</ul></div>`,
+              )
+              .join("")}
+          </div>
+          <div class="bar">${esc(a.note)}</div>
+          ${foot(D.pageB)}
+        </section>
+      `);
+    </script>
+  </body>
+</html>

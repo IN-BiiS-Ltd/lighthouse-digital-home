@@ -40,6 +40,22 @@ export interface ProspectusCopy {
   };
   faculty: { eyebrow: string; title: string; description: string; cards: { title: string; body: string }[] };
   environment: { eyebrow: string; title: string; description: string; cards: { title: string; body: string }[] };
+  wellbeing: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    roleLabel: string;
+    role: string[];
+    cards: { title: string; body: string }[];
+    note: string;
+  };
+  activities: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    groups: { title: string; body: string; items: string[] }[];
+    note: string;
+  };
   eeios: {
     eyebrow: string;
     title: string;
@@ -90,6 +106,8 @@ const en: ProspectusCopy = {
     { label: "Programmes", to: "#programmes" },
     { label: "Faculty", to: "#faculty" },
     { label: "Environment", to: "#environment" },
+    { label: "Wellbeing", to: "#wellbeing" },
+    { label: "Activities", to: "#activities" },
     { label: "EEIOS", to: "#eeios" },
     { label: "Philosophy", to: "#philosophy" },
     { label: "Why Lighthouse", to: "#why" },
@@ -197,6 +215,65 @@ const en: ProspectusCopy = {
       { title: "Integrated student care", body: "A published behaviour policy, health care provision, and individual follow-up where support is needed." },
       { title: "Participation and inquiry", body: "Research tasks and classroom projects that build thinking and independent learning." },
     ],
+  },
+  wellbeing: {
+    eyebrow: "Wellbeing and child care",
+    title: "A child mental-health specialist on campus",
+    description:
+      "The school includes a child mental-health specialist working within the student care team, following the wellbeing of pupils and addressing difficulties early and in confidence.",
+    roleLabel: "What the specialist does",
+    role: [
+      "Individual sessions and regular follow-up where a pupil needs it",
+      "Early identification of anxiety, withdrawal, or changes in behaviour",
+      "Short-term support plans agreed with the teacher and the family",
+      "Guidance for parents with practical recommendations for home",
+      "Teacher training on individual differences and classroom behaviour",
+      "Referral to an external specialist when necessary, with family consent",
+    ],
+    cards: [
+      {
+        title: "Early intervention, not waiting",
+        body:
+          "Follow-up begins at the first classroom observation, so a small difficulty does not become an academic or behavioural setback.",
+      },
+      {
+        title: "Confidentiality protected",
+        body:
+          "Wellbeing records are held in confidence and shared only with those who genuinely need them to support the pupil.",
+      },
+      {
+        title: "Partnership with the family",
+        body:
+          "Families are part of every support plan, with clear communication about the steps taken and the outcomes expected.",
+      },
+    ],
+    note:
+      "School-based psychological and pastoral support is part of student care; it does not replace medical treatment or clinical diagnosis.",
+  },
+  activities: {
+    eyebrow: "Extracurricular activities",
+    title: "Sport, literary and cultural societies, and theatre",
+    description:
+      "A weekly activity programme built into the school timetable, giving every pupil a field to excel in alongside their studies, supervised by accountable teachers and coaches.",
+    groups: [
+      {
+        title: "Sport",
+        body: "Regular sessions, school teams, and internal competitions that build fitness and team spirit.",
+        items: ["Football", "Basketball", "Table tennis", "Athletics", "Movement and fitness for early years"],
+      },
+      {
+        title: "Literary and cultural societies",
+        body: "Clubs that build habits of reading, writing, and structured discussion, and present pupils' work to the school community.",
+        items: ["Reading club", "Creative writing", "Debate and public speaking", "School journalism", "Science and inquiry club"],
+      },
+      {
+        title: "Theatre and arts",
+        body: "Theatre and arts work with clear performance seasons, developing stage confidence, expression, and collaboration.",
+        items: ["School theatre", "Choir and music", "Visual arts", "Backstage and lighting crew"],
+      },
+    ],
+    note:
+      "Activities open according to age stage and participant numbers; the activity timetable is published to families at the start of each term.",
   },
   eeios: {
     eyebrow: "Education Enterprise Intelligence Operating System",
@@ -335,6 +412,8 @@ const ar: ProspectusCopy = {
     { label: "البرامج", to: "#programmes" },
     { label: "هيئة التدريس", to: "#faculty" },
     { label: "بيئة الدراسة", to: "#environment" },
+    { label: "الصحة النفسية", to: "#wellbeing" },
+    { label: "الأنشطة", to: "#activities" },
     { label: "نظام التشغيل", to: "#eeios" },
     { label: "فلسفتنا", to: "#philosophy" },
     { label: "لماذا لايت هاوس", to: "#why" },
@@ -439,6 +518,65 @@ const ar: ProspectusCopy = {
       { title: "رعاية طلابية متكاملة", body: "لائحة سلوك معلنة، ورعاية صحية، ومتابعة فردية عند الحاجة إلى الدعم." },
       { title: "مشاركة واستقصاء", body: "مهام بحثية ومشروعات صفّية تبني التفكير والتعلّم المستقل." },
     ],
+  },
+  wellbeing: {
+    eyebrow: "الصحة النفسية ورعاية الطفل",
+    title: "اختصاصي صحة نفسية للأطفال داخل المدرسة",
+    description:
+      "تضمّ المدرسة اختصاصي صحة نفسية للأطفال يعمل ضمن فريق الرعاية الطلابية، لمتابعة الصحة النفسية للتلاميذ والتعامل مع ما يعرض لهم من صعوبات في وقت مبكر وبسرّية تامة.",
+    roleLabel: "مهام الاختصاصي",
+    role: [
+      "مقابلات فردية ومتابعة دورية للتلاميذ عند الحاجة",
+      "الرصد المبكر لعلامات القلق أو الانسحاب أو تغيّر السلوك",
+      "خطط دعم قصيرة المدى بالتنسيق مع المعلّم والأسرة",
+      "إرشاد أولياء الأمور وتقديم توصيات عملية للمنزل",
+      "تدريب المعلّمين على التعامل مع الفروق الفردية والسلوك الصفّي",
+      "التحويل إلى جهة تخصصية خارجية عند الضرورة بموافقة الأسرة",
+    ],
+    cards: [
+      {
+        title: "تدخّل مبكر لا انتظار",
+        body:
+          "المتابعة تبدأ من أول ملاحظة صفّية، فلا تتحوّل الصعوبة الصغيرة إلى تعثّر أكاديمي أو سلوكي.",
+      },
+      {
+        title: "سرّية محفوظة",
+        body:
+          "تُحفظ ملاحظات الرعاية النفسية بسرّية، ولا تُشارك إلا مع من يحتاجها فعلًا لدعم الطالب.",
+      },
+      {
+        title: "شراكة مع الأسرة",
+        body:
+          "الأسرة طرف أساسي في أي خطة دعم، مع تواصل واضح حول الخطوات والنتائج المتوقعة.",
+      },
+    ],
+    note:
+      "الدعم النفسي والتربوي المدرسي جزء من الرعاية الطلابية، وليس بديلًا عن العلاج الطبي أو التشخيص الإكلينيكي.",
+  },
+  activities: {
+    eyebrow: "الأنشطة غير الصفّية",
+    title: "رياضة وجمعيات أدبية وثقافية ومسرح",
+    description:
+      "برنامج أنشطة أسبوعي مدرج في الجدول المدرسي، يمنح كل تلميذ مجالًا يتميّز فيه إلى جانب دراسته، بإشراف معلّمين ومدرّبين مسؤولين.",
+    groups: [
+      {
+        title: "الرياضة",
+        body: "حصص وتدريبات منتظمة وفِرق مدرسية ومنافسات داخلية تبني اللياقة وروح الفريق.",
+        items: ["كرة القدم", "كرة السلة", "تنس الطاولة", "ألعاب القوى", "لياقة وحركة للمراحل الأولى"],
+      },
+      {
+        title: "الجمعيات الأدبية والثقافية",
+        body: "أندية تصنع عادة القراءة والكتابة والحوار المنظّم وتعرض نتاج الطلاب على المجتمع المدرسي.",
+        items: ["نادي القراءة", "الكتابة الإبداعية", "المناظرات والخطابة", "الصحافة المدرسية", "نادي العلوم والاستقصاء"],
+      },
+      {
+        title: "المسرح والفنون",
+        body: "عمل مسرحي وفنّي بمواسم عرض واضحة، يطوّر الثقة في الحضور والتعبير والعمل الجماعي.",
+        items: ["المسرح المدرسي", "الإنشاد والموسيقى", "الفنون البصرية", "العمل خلف الكواليس والإضاءة"],
+      },
+    ],
+    note:
+      "تُفتح الأنشطة بحسب المرحلة العمرية وأعداد المشاركين، ويُعلن جدول الأنشطة لأولياء الأمور في بداية كل فصل دراسي.",
   },
   eeios: {
     eyebrow: "هندسة الذكاء التعليمي المؤسسي",

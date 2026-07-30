@@ -32,6 +32,10 @@ import {
   Phone,
   Mail,
   Globe,
+  HeartPulse,
+  Trophy,
+  Theater,
+  Library,
 } from "lucide-react";
 
 const BASE = "https://lighthousecampus.com/prospectus";
@@ -136,6 +140,12 @@ const ADMISSION_ICONS = [
   <ClipboardList className="size-5" key="b" />,
   <CalendarCheck className="size-5" key="c" />,
   <MapPin className="size-5" key="d" />,
+];
+
+const ACTIVITY_ICONS = [
+  <Trophy className="size-5" key="a" />,
+  <Library className="size-5" key="b" />,
+  <Theater className="size-5" key="c" />,
 ];
 
 /** Segmented AR / EN switch — updates the URL (?lang=) and the site-wide language. */
@@ -382,6 +392,69 @@ function ProspectusPage() {
             </FeatureCard>
           ))}
         </div>
+      </Section>
+
+      <Section id="wellbeing">
+        <SectionHeading
+          eyebrow={c.wellbeing.eyebrow}
+          title={c.wellbeing.title}
+          description={c.wellbeing.description}
+        />
+        <div className="mt-10 grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-start">
+          <div className="rounded-2xl border border-border bg-card p-7">
+            <Eyebrow>{c.wellbeing.roleLabel}</Eyebrow>
+            <ul className="mt-5 space-y-3" role="list">
+              {c.wellbeing.role.map((r) => (
+                <li key={r} className="flex gap-3 text-[0.975rem] leading-relaxed text-muted-foreground">
+                  <HeartPulse className="mt-0.5 size-4 shrink-0 text-sapphire" aria-hidden />
+                  <span>{r}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="grid gap-6">
+            {c.wellbeing.cards.map((card) => (
+              <FeatureCard key={card.title} title={card.title} icon={<ShieldCheck className="size-5" />}>
+                {card.body}
+              </FeatureCard>
+            ))}
+          </div>
+        </div>
+        <p className="mt-8 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+          {c.wellbeing.note}
+        </p>
+      </Section>
+
+      <Section id="activities" tone="sand">
+        <SectionHeading
+          eyebrow={c.activities.eyebrow}
+          title={c.activities.title}
+          description={c.activities.description}
+        />
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {c.activities.groups.map((g, i) => (
+            <article key={g.title} className="rounded-xl border border-border bg-card p-7">
+              <span className="inline-flex size-10 items-center justify-center rounded-full bg-navy text-gold">
+                {ACTIVITY_ICONS[i]}
+              </span>
+              <h3 className="mt-4 font-display text-xl font-medium text-foreground">{g.title}</h3>
+              <p className="mt-3 text-[0.975rem] leading-relaxed text-muted-foreground">{g.body}</p>
+              <ul className="mt-5 space-y-1.5 text-sm text-muted-foreground" role="list">
+                {g.items.map((it) => (
+                  <li key={it} className="flex gap-2">
+                    <span className="text-gold" aria-hidden>
+                      •
+                    </span>
+                    <span>{it}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+        <p className="mt-8 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+          {c.activities.note}
+        </p>
       </Section>
 
       <Section id="eeios">
