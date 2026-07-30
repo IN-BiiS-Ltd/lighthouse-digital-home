@@ -136,7 +136,7 @@ const ADMISSION_ICONS = [
   <MapPin className="size-5" key="d" />,
 ];
 
-/** Segmented AR / EN switch for the guide — drives the site-wide language. */
+/** Segmented AR / EN switch — updates the URL (?lang=) and the site-wide language. */
 function GuideLangSwitch({
   onNavy = false,
   className,
@@ -144,12 +144,15 @@ function GuideLangSwitch({
   onNavy?: boolean;
   className?: string;
 }) {
-  const { lang, setLang } = useLang();
+  const { setLang } = useLang();
+  const navigate = Route.useNavigate();
+  const { lang } = Route.useSearch();
   const c = PROSPECTUS_COPY[lang];
-  const options: { value: "en" | "ar"; label: string }[] = [
+  const options: { value: GuideLang; label: string }[] = [
     { value: "en", label: c.actions.langEn },
     { value: "ar", label: c.actions.langAr },
   ];
+
 
   return (
     <div className={cn("flex flex-wrap items-center gap-3", className)}>
