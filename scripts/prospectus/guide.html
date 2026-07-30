@@ -586,6 +586,8 @@
             <div class="badge">${esc(p.badge)}</div>
             <h1>${esc(p.title)}</h1>
             <p class="lede">${esc(p.lede)}</p>
+            ${p.image ? `<div class="band"><img src="${img(p.image)}" alt="" /></div>` : ""}
+
             <div class="facts">${p.facts
               .map((f) => `<div><h4>${esc(f.label)}</h4><p>${f.lines.map(esc).join("<br />")}</p></div>`)
               .join("")}</div>
