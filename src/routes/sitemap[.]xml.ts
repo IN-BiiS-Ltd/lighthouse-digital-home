@@ -4,6 +4,11 @@ import type {} from "@tanstack/react-start";
 // TODO: replace with your project URL once a project name or custom domain is set.
 const BASE_URL = "https://lighthousecampus.com";
 
+interface AlternateLink {
+  hreflang: string;
+  path: string;
+}
+
 interface SitemapEntry {
   path: string;
   changefreq?:
@@ -15,7 +20,23 @@ interface SitemapEntry {
     | "yearly"
     | "never";
   priority?: string;
+  /** hreflang alternates emitted as xhtml:link rel="alternate" */
+  alternates?: AlternateLink[];
 }
+
+// Bilingual prospectus: English on the clean URL, Arabic on ?lang=ar.
+const prospectusAlternates: AlternateLink[] = [
+  { hreflang: "en", path: "/prospectus" },
+  { hreflang: "ar", path: "/prospectus?lang=ar" },
+  { hreflang: "x-default", path: "/prospectus" },
+];
+
+const xmlEscape = (value: string) =>
+  value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
