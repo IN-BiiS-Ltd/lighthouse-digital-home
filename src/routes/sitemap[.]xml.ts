@@ -160,7 +160,11 @@ export const Route = createFileRoute("/sitemap.xml")({
         const urls = entries.map((e) =>
           [
             `  <url>`,
-            `    <loc>${BASE_URL}${e.path}</loc>`,
+            `    <loc>${xmlEscape(`${BASE_URL}${e.path}`)}</loc>`,
+            ...(e.alternates ?? []).map(
+              (a) =>
+                `    <xhtml:link rel="alternate" hreflang="${a.hreflang}" href="${xmlEscape(`${BASE_URL}${a.path}`)}" />`,
+            ),
             e.changefreq ? `    <changefreq>${e.changefreq}</changefreq>` : null,
             e.priority ? `    <priority>${e.priority}</priority>` : null,
             `  </url>`,
@@ -171,7 +175,7 @@ export const Route = createFileRoute("/sitemap.xml")({
 
         const xml = [
           `<?xml version="1.0" encoding="UTF-8"?>`,
-          `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`,
+          `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">`,
           ...urls,
           `</urlset>`,
         ].join("\n");
