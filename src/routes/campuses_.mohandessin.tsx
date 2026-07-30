@@ -46,7 +46,7 @@ export const Route = createFileRoute("/campuses_/mohandessin")({
               alternateName: "Lighthouse Mohandessin Campus",
               url: "https://lighthousecampus.com/campuses/mohandessin",
               logo: "https://lighthousecampus.com/icon-512.png",
-              image: "https://lighthousecampus.com/lighthouse-social-card.webp",
+              image: "https://lighthousecampus.com/lighthouse-social-card.webp?v=3",
               slogan: "Guiding Minds. Inspiring Futures. Connecting Possibilities.",
               description:
                 "The first operational Lighthouse Campus, located in Dokki, Giza — an international K-12 learning community in Greater Cairo.",
