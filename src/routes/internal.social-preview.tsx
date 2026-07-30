@@ -3,11 +3,11 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/page-hero";
 import { Container, Section, Eyebrow } from "@/components/blocks";
 import { RefreshCw, Check, ExternalLink, Link as LinkIcon } from "lucide-react";
+import { SOCIAL_CARD_URL } from "@/lib/social-card";
 
 const SITE_ORIGIN = "https://lighthousecampus.com";
 const CARD_PATHS = [
-  "/lighthouse-social-card.jpg",
-  "/lighthouse-social-card.webp",
+  SOCIAL_CARD_URL.replace(SITE_ORIGIN, ""),
 ];
 
 export const Route = createFileRoute("/internal/social-preview")({
