@@ -203,7 +203,7 @@ function GuideLangSwitch({
 }
 
 function DownloadRow({ compact = false }: { compact?: boolean }) {
-  const { lang } = useLang();
+  const lang = parseLang(Route.useSearch().lang);
   const c = PROSPECTUS_COPY[lang];
   return (
     <div className={compact ? "flex flex-wrap gap-3" : "mt-8 flex flex-wrap gap-3"}>
