@@ -114,17 +114,17 @@ export function SiteFooter() {
             <h2 className="eyebrow text-gold">{t("footer.mohandessin")}</h2>
             <ul className="mt-5 space-y-4 text-sm text-navy-foreground/75">
               <li className="flex gap-3">
-                <MapPin className="mt-0.5 size-4 shrink-0 text-sky" aria-hidden />
+                <MapPin className="mt-0.5 size-4 shrink-0 text-gold" aria-hidden />
                 <span>{t("footer.address")}</span>
               </li>
               <li className="flex gap-3">
-                <Phone className="mt-0.5 size-4 shrink-0 text-sky" aria-hidden />
+                <Phone className="mt-0.5 size-4 shrink-0 text-gold" aria-hidden />
                 <a href="tel:+201107030737" className="hover:text-gold num-latin" dir="ltr">
                   +20 110 703 0737
                 </a>
               </li>
               <li className="flex gap-3">
-                <Mail className="mt-0.5 size-4 shrink-0 text-sky" aria-hidden />
+                <Mail className="mt-0.5 size-4 shrink-0 text-gold" aria-hidden />
                 <a
                   href="mailto:hello@lighthousecampus.edu"
                   className="hover:text-gold num-latin"
