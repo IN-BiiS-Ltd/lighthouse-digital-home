@@ -192,7 +192,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               alternateName: "Lighthouse Campus — By Readers International",
               url: "https://lighthousecampus.com",
               logo: "https://lighthousecampus.com/icon-512.png",
-              image: "https://lighthousecampus.com/lighthouse-social-card.webp?v=3",
+              image: "https://lighthousecampus.com/lighthouse-social-card.jpg?v=3",
               slogan: "Guiding Minds. Inspiring Futures. Connecting Possibilities.",
               description:
                 "An international learning community in Cairo where students remain at the centre.",
