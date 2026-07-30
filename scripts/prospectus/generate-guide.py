@@ -36,6 +36,10 @@ PHOTOS = {
     "stem": "academic-stem.jpg",
     "parents": "parent-partnership.jpg",
     "life": "student-life.jpg",
+    "library": "campus-library.jpg",
+    "hero": "hero-learning.jpg",
+    "leadership": "leadership.jpg",
+    "campusClean": "campus-clean.jpg",
 }
 
 

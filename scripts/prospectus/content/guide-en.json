@@ -331,9 +331,9 @@
         },
         {
           "type": "figure",
-          "image": "library",
+          "image": "campusClean",
           "width": "116mm",
-          "caption": "The school library and study spaces — the philosophy applied in practice beyond the classroom.",
+          "caption": "The school buildings and outdoor spaces — the philosophy applied beyond the classroom.",
           "height": "40mm"
         }
       ]
@@ -619,7 +619,7 @@
         }
       ],
       "tagline": "Guiding minds. Inspiring futures. Connecting possibilities.",
-      "image": "campus"
+      "image": "library"
     }
   ]
 }
