@@ -13,18 +13,31 @@
       "facts": [
         {
           "label": "Academic programmes",
-          "lines": ["Cambridge International", "Sudanese National (Arabic)", "Sudanese National (Translated)"]
+          "lines": [
+            "Cambridge International",
+            "Sudanese National (Arabic)",
+            "Sudanese National (Translated)"
+          ]
         },
         {
           "label": "Operating system",
-          "lines": ["Education Enterprise", "Intelligence Operating System", "(EEIOS)"]
+          "lines": [
+            "Education Enterprise",
+            "Intelligence Operating System",
+            "(EEIOS)"
+          ]
         },
         {
           "label": "Location & contact",
-          "lines": ["58 El-Zahraa St., Dokki, Cairo", "+20 110 703 0737", "www.lighthousecampus.com"]
+          "lines": [
+            "58 El-Zahraa St., Dokki, Cairo",
+            "+20 110 703 0737",
+            "www.lighthousecampus.com"
+          ]
         }
       ],
-      "tagline": "Guiding minds. Inspiring futures. Connecting possibilities."
+      "tagline": "Guiding minds. Inspiring futures. Connecting possibilities.",
+      "image": "hero"
     },
     {
       "running": "Welcome",
@@ -62,7 +75,8 @@
           "type": "figure",
           "image": "classroom",
           "width": "120mm",
-          "caption": "Participatory, inquiry-based learning in the classroom, with direct teacher follow-up."
+          "caption": "Participatory, inquiry-based learning in the classroom, with direct teacher follow-up.",
+          "height": "46mm"
         },
         {
           "type": "note",
@@ -102,9 +116,17 @@
         {
           "type": "table",
           "heading": "Available stages by programme",
-          "head": ["Programme", "Language of instruction", "Available stages"],
+          "head": [
+            "Programme",
+            "Language of instruction",
+            "Available stages"
+          ],
           "rows": [
-            ["Cambridge International", "English", "Grade 1 – Grade 8"],
+            [
+              "Cambridge International",
+              "English",
+              "Grade 1 – Grade 8"
+            ],
             [
               "Sudanese National (Arabic)",
               "Arabic",
@@ -195,7 +217,8 @@
           "type": "figure",
           "image": "teacher",
           "width": "104mm",
-          "caption": "Close classroom follow-up with small groups, with progress notes recorded as learning happens."
+          "caption": "Close classroom follow-up with small groups, with progress notes recorded as learning happens.",
+          "height": "38mm"
         }
       ]
     },
@@ -211,7 +234,13 @@
         {
           "type": "bar",
           "heading": "Who the system connects",
-          "chips": ["Student", "Family", "Teachers", "Academic body", "School administration"],
+          "chips": [
+            "Student",
+            "Family",
+            "Teachers",
+            "Academic body",
+            "School administration"
+          ],
           "body": "All on one platform that supports communication, follow-up, and efficient, transparent management of the educational process."
         },
         {
@@ -302,9 +331,10 @@
         },
         {
           "type": "figure",
-          "image": "campus",
+          "image": "library",
           "width": "116mm",
-          "caption": "Activity spaces and school facilities — the philosophy applied in practice beyond the classroom."
+          "caption": "The school library and study spaces — the philosophy applied in practice beyond the classroom.",
+          "height": "40mm"
         }
       ]
     },
@@ -373,7 +403,8 @@
           "type": "figure",
           "image": "stem",
           "width": "104mm",
-          "caption": "The science lab — hands-on application within science lessons across all three programmes."
+          "caption": "The science lab — hands-on application within science lessons across all three programmes.",
+          "height": "36mm"
         }
       ]
     },
@@ -431,6 +462,13 @@
           ]
         },
         {
+          "type": "figure",
+          "image": "leadership",
+          "width": "116mm",
+          "height": "44mm",
+          "caption": "Collaborative project work — what a place at Light House Campus looks like day to day."
+        },
+        {
           "type": "note",
           "text": "Limited places per class: we hold to a defined number of students per class to protect the quality of follow-up, and registration for a grade closes once it is full. Applying early gives families wider choice of programme and grade."
         }
@@ -484,7 +522,8 @@
           "type": "figure",
           "image": "parents",
           "width": "104mm",
-          "caption": "Wellbeing follow-up is agreed with the family, with clear next steps for home and school."
+          "caption": "Wellbeing follow-up is agreed with the family, with clear next steps for home and school.",
+          "height": "38mm"
         },
         {
           "type": "note",
@@ -530,7 +569,12 @@
             {
               "title": "Theatre and arts",
               "body": "Theatre and arts work with clear performance seasons, developing stage confidence, expression, and collaboration.",
-              "items": ["School theatre", "Choir and music", "Visual arts", "Backstage and lighting crew"]
+              "items": [
+                "School theatre",
+                "Choir and music",
+                "Visual arts",
+                "Backstage and lighting crew"
+              ]
             }
           ]
         },
@@ -538,7 +582,8 @@
           "type": "figure",
           "image": "life",
           "width": "116mm",
-          "caption": "Activity sessions run inside the school week, supervised by teachers and coaches."
+          "caption": "Activity sessions run inside the school week, supervised by teachers and coaches.",
+          "height": "42mm"
         },
         {
           "type": "note",
@@ -553,11 +598,28 @@
       "title": "Begin the registration process for the 2026 / 2027 year",
       "lede": "Contact us to arrange a campus visit, or to request the fee schedule and details of the programme best suited to your child. Admissions are open now.",
       "contact": [
-        { "label": "Address", "lines": ["58 El-Zahraa St., Dokki, Cairo"] },
-        { "label": "Phone & email", "lines": ["+20 110 703 0737", "ceo@lighthousecampus.com"] },
-        { "label": "Website", "lines": ["www.lighthousecampus.com"] }
+        {
+          "label": "Address",
+          "lines": [
+            "58 El-Zahraa St., Dokki, Cairo"
+          ]
+        },
+        {
+          "label": "Phone & email",
+          "lines": [
+            "+20 110 703 0737",
+            "ceo@lighthousecampus.com"
+          ]
+        },
+        {
+          "label": "Website",
+          "lines": [
+            "www.lighthousecampus.com"
+          ]
+        }
       ],
-      "tagline": "Guiding minds. Inspiring futures. Connecting possibilities."
+      "tagline": "Guiding minds. Inspiring futures. Connecting possibilities.",
+      "image": "campus"
     }
   ]
 }
