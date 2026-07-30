@@ -238,8 +238,16 @@ function DownloadRow({ compact = false }: { compact?: boolean }) {
 }
 
 function ProspectusPage() {
-  const { lang, dir } = useLang();
+  const { lang: siteLang, setLang } = useLang();
+  const lang = parseLang(Route.useSearch().lang);
+  const dir = lang === "ar" ? "rtl" : "ltr";
   const c = PROSPECTUS_COPY[lang];
+
+  // Keep the site-wide language in step with the URL (crawlable source of truth).
+  useEffect(() => {
+    if (siteLang !== lang) setLang(lang);
+  }, [lang, siteLang, setLang]);
+
 
   return (
     <div lang={lang} dir={dir}>
