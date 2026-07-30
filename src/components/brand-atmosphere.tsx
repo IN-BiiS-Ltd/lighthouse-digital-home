@@ -25,7 +25,7 @@ type Mote = {
 };
 
 const GOLD: [number, number, number] = [212, 175, 55]; // #D4AF37
-const SKY: [number, number, number] = [44, 110, 107]; // #2C6E6B verdigris
+const SKY: [number, number, number] = [31, 79, 143]; // #1F4F8F heritage sapphire
 
 export function BrandAtmosphere({
   className,
