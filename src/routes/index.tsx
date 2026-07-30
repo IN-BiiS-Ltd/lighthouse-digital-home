@@ -1,3 +1,4 @@
+import { SOCIAL_CARD_URL, SOCIAL_CARD_ALT, SOCIAL_CARD_TYPE, SOCIAL_CARD_WIDTH, SOCIAL_CARD_HEIGHT } from "@/lib/social-card";
 import { assetUrl } from "@/lib/asset-url";
 import { createFileRoute } from "@tanstack/react-router";
 import teachersIcon from "@/assets/home-teachers-mentors.png.asset.json";
@@ -59,13 +60,13 @@ export const Route = createFileRoute("/")({
           "Guiding minds. Inspiring futures. Connecting possibilities. An international learning community where students remain at the centre.",
       },
       { property: "og:url", content: "https://lighthousecampus.com/" },
-      { property: "og:image", content: "https://lighthousecampus.com/lighthouse-social-card.jpg?v=3" },
-      { property: "og:image:width", content: "1200" },
-      { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "Light House Campus — International School" },
-      { property: "og:image:type", content: "image/jpeg" },
-      { name: "twitter:image", content: "https://lighthousecampus.com/lighthouse-social-card.jpg?v=3" },
-      { name: "twitter:image:alt", content: "Light House Campus — International School" },
+      { property: "og:image", content: SOCIAL_CARD_URL },
+      { property: "og:image:width", content: SOCIAL_CARD_WIDTH },
+      { property: "og:image:height", content: SOCIAL_CARD_HEIGHT },
+      { property: "og:image:alt", content: SOCIAL_CARD_ALT },
+      { property: "og:image:type", content: SOCIAL_CARD_TYPE },
+      { name: "twitter:image", content: SOCIAL_CARD_URL },
+      { name: "twitter:image:alt", content: SOCIAL_CARD_ALT },
     ],
     links: [
       { rel: "canonical", href: "https://lighthousecampus.com/" },

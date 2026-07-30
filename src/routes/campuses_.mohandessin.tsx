@@ -1,3 +1,4 @@
+import { SOCIAL_CARD_URL, SOCIAL_CARD_ALT, SOCIAL_CARD_TYPE, SOCIAL_CARD_WIDTH, SOCIAL_CARD_HEIGHT } from "@/lib/social-card";
 import { createFileRoute } from "@tanstack/react-router";
 import { MapPin, Phone, Mail } from "lucide-react";
 import {
@@ -46,7 +47,7 @@ export const Route = createFileRoute("/campuses_/mohandessin")({
               alternateName: "Lighthouse Mohandessin Campus",
               url: "https://lighthousecampus.com/campuses/mohandessin",
               logo: "https://lighthousecampus.com/icon-512.png",
-              image: "https://lighthousecampus.com/lighthouse-social-card.jpg?v=3",
+              image: SOCIAL_CARD_URL,
               slogan: "Guiding Minds. Inspiring Futures. Connecting Possibilities.",
               description:
                 "The first operational Lighthouse Campus, located in Dokki, Giza — an international K-12 learning community in Greater Cairo.",
