@@ -206,7 +206,9 @@ function Contact() {
         </div>
       </Section>
 
-      <Section tone="muted" id="find">
+      <RegionalPresence id="network" />
+
+      <Section id="find">
         <SectionHeading eyebrow="Find Us" title="Dokki, Giza" />
         <div className="mt-10 overflow-hidden rounded-2xl border border-border">
           <iframe
@@ -217,6 +219,7 @@ function Contact() {
           />
         </div>
       </Section>
+
     </>
   );
 }
