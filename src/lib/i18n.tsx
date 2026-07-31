@@ -18,6 +18,7 @@ const dict: Record<string, { en: string; ar: string }> = {
   // ─── Skip link
   "a11y.skip": { en: "Skip to main content", ar: "تخطَّ إلى المحتوى الرئيسي" },
   "a11y.skipSearch": { en: "Skip to search", ar: "تخطَّ إلى البحث" },
+  "a11y.skipFooter": { en: "Skip to footer", ar: "تخطَّ إلى التذييل" },
 
   // ─── Site-wide announcement
   "announcement.label": { en: "Academic year announcement", ar: "إعلان العام الدراسي" },
