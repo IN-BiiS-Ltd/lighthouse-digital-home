@@ -173,9 +173,17 @@ export function SiteSearch({ variant = "header", className }: SiteSearchProps) {
         setOpen((prev) => !prev);
       }
     };
+    // Skip link / programmatic opening from anywhere in the shell.
+    const onOpenRequest = () => setOpen(true);
     document.addEventListener("keydown", onKeyDown);
-    return () => document.removeEventListener("keydown", onKeyDown);
-  }, []);
+    if (variant === "header") {
+      document.addEventListener("lighthouse:open-search", onOpenRequest);
+    }
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.removeEventListener("lighthouse:open-search", onOpenRequest);
+    };
+  }, [variant]);
 
   const groups = useMemo(() => groupBySection(allItems, lang), [allItems, lang]);
 

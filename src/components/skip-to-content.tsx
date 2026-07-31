@@ -16,10 +16,14 @@ export function SkipToContent() {
     const trigger = document.getElementById(
       "site-search-trigger",
     ) as HTMLButtonElement | null;
-    if (!trigger) return;
+    if (!trigger) {
+      document.dispatchEvent(new CustomEvent("lighthouse:open-search"));
+      return;
+    }
     trigger.focus();
-    // Click opens the dialog, which moves focus into the search input.
-    trigger.click();
+    // Opening via event avoids click/focus races; the dialog then moves
+    // focus into the search input, and closing returns it to this button.
+    document.dispatchEvent(new CustomEvent("lighthouse:open-search"));
   };
 
   return (
