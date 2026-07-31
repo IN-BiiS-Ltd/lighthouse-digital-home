@@ -1087,3 +1087,33 @@ p, li      { text-wrap: pretty; }
   font: inherit;
   background: var(--secondary);
 }
+
+/* ============================================================
+   HEADER + NAVIGATION — reduced motion
+   Honour prefers-reduced-motion for the sticky header, the
+   Explore dropdown panels, and the mobile navigation sheet.
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  /* Sticky header shell, nav links, underlines, chevrons */
+  header,
+  header * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Chevron stays static instead of rotating */
+  header [aria-expanded] svg {
+    transform: none !important;
+  }
+
+  /* Mobile navigation sheet + submenu accordions: no slide/expand motion */
+  [data-slot="sheet-content"],
+  [data-slot="sheet-overlay"],
+  [data-radix-popper-content-wrapper] > *,
+  [data-slot="accordion-content"] {
+    animation: none !important;
+    transition: none !important;
+  }
+}
