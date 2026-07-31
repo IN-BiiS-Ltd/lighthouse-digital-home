@@ -329,9 +329,11 @@ export function SiteHeader() {
                             ? "border-gold text-gold"
                             : "border-transparent text-navy-foreground",
                         )}
-                        aria-current={active ? "true" : undefined}
                       >
                         {sectionLabel(s, lang, t)}
+                        {active ? (
+                          <span className="sr-only"> (current section)</span>
+                        ) : null}
                       </AccordionTrigger>
                       <AccordionContent className="pb-3">
                         <ul className="space-y-1">
