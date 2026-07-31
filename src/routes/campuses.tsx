@@ -8,6 +8,8 @@ import exteriorImg from "@/assets/campus-exterior.jpg?w=1600&format=jpg";
 import exteriorImgAvif from "@/assets/campus-exterior.jpg?w=640;960;1280;1600&format=avif&as=srcset";
 import exteriorImgWebp from "@/assets/campus-exterior.jpg?w=640;960;1280;1600&format=webp&as=srcset";
 import { ShareBar } from "@/components/share-bar";
+import { RegionalPresence } from "@/components/regional-presence";
+
 
 export const Route = createFileRoute("/campuses")({
   head: () => ({
