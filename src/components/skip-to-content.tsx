@@ -102,6 +102,23 @@ export function SkipToContent() {
       >
         {t("a11y.skipSearch", "Skip to search")}
       </a>
+      <a
+        href="#site-footer"
+        onClick={(event) => {
+          // Jump straight to the closing content (contact, quick links, legal).
+          const footer = document.getElementById("site-footer");
+          if (footer) {
+            event.preventDefault();
+            footer.focus();
+            footer.scrollIntoView({ block: "start", behavior: "auto" });
+          }
+        }}
+        className="sr-only focus:not-sr-only focus:rounded-md focus:bg-gold focus:px-4 focus:py-2.5 focus:text-sm focus:font-semibold focus:text-navy focus:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.5)]"
+        aria-label={t("a11y.skipFooter", "Skip to footer")}
+      >
+        {t("a11y.skipFooter", "Skip to footer")}
+      </a>
     </div>
+
   );
 }
