@@ -129,6 +129,23 @@ const navSectionsSource: NavSection[] = [
   },
 ];
 
+// Visual priority order in the header: what families look for first.
+// Academics leads, then Admissions, then daily life, then institutional depth.
+const primaryOrder = [
+  "/learning-journey", // Academics
+  "/admissions",
+  "/student-life", // Students
+  "/campus-experience", // Campus
+  "/our-model", // Model
+  "/about",
+];
+
+export const primaryNav: NavSection[] = [...navSectionsSource].sort(
+  (a, b) => primaryOrder.indexOf(a.to) - primaryOrder.indexOf(b.to),
+);
+
+
+
 // Secondary sections grouped under an "Explore" menu and in the footer.
 export const secondaryNav: NavSection[] = [
   {
