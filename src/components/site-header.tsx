@@ -121,7 +121,7 @@ function DesktopDropdown({
                     to={child.to}
                     aria-current={childActive ? "page" : undefined}
                     className={cn(
-                      "block rounded-lg border-l-2 px-3 py-2.5 transition-colors hover:bg-secondary",
+                      "block rounded-lg border-l-2 px-3 py-2.5 transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-1",
                       childActive
                         ? "border-gold bg-secondary"
                         : "border-transparent",
