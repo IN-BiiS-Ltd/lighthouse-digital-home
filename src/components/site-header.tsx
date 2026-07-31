@@ -211,7 +211,8 @@ export function SiteHeader() {
             data-event-prop-cta="Apply"
             data-event-prop-location="Header"
           >
-            {t("nav.admissions")}
+            {t("nav.apply")}
+
           </ButtonLink>
 
           {/* Mobile / tablet menu */}
