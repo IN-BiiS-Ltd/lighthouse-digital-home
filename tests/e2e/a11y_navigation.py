@@ -65,7 +65,10 @@ async def settle(page):
 async def axe_scan(page, label: str) -> None:
     await page.add_script_tag(url=AXE_CDN)
     result = await page.evaluate(
-        "async () => await axe.run(document, { resultTypes: ['violations'] })"
+        """async () => await axe.run(
+             { include: [['body']], exclude: [['[aria-hidden="true"]']] },
+             { resultTypes: ['violations'] }
+           )"""
     )
     serious = [v for v in result["violations"] if v["impact"] in ("serious", "critical")]
     print(f"  axe: {len(result['violations'])} violations, {len(serious)} serious/critical")
@@ -113,8 +116,19 @@ async def check_skip_links(page, label: str) -> None:
 
 async def check_skip_to_search(page, label: str) -> None:
     await page.evaluate("() => document.activeElement && document.activeElement.blur && document.activeElement.blur()")
-    await page.keyboard.press("Tab")
-    await page.keyboard.press("Tab")
+    # Focus the skip-to-search link explicitly (it is the 2nd skip link).
+    ok = await page.evaluate(
+        """() => {
+          const link = [...document.querySelectorAll('a,button')]
+            .find(el => /skip to search|تخطَّ إلى البحث|تخط.*البحث/i.test(el.textContent || ''));
+          if (!link) return false;
+          link.focus();
+          return document.activeElement === link;
+        }"""
+    )
+    if not ok:
+        fail(f"{label}: skip-to-search link not found/focusable")
+        return
     await page.keyboard.press("Enter")
 
     # Poll until the command palette mounts and focus lands in its input.

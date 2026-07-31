@@ -16,6 +16,8 @@
     "format": "prettier --write .",
     "audit:redirects": "node scripts/audit-redirects.mjs",
     "audit:logo": "node scripts/audit-logo.mjs",
+    "test:a11y": "python3 tests/e2e/a11y_navigation.py",
+    "test:e2e": "python3 tests/e2e/navigation.py",
     "poster": "python3 scripts/posters/generate-poster.py"
   },
   "dependencies": {
