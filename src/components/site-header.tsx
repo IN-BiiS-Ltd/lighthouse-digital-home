@@ -15,7 +15,7 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
-import { primaryNav, familiesNav, communityNav, allNav, type NavSection } from "@/lib/site-nav";
+import { headerNav, type NavSection } from "@/lib/site-nav";
 import {
   Container,
   Wordmark,
@@ -57,7 +57,7 @@ function DesktopDropdown({
   section,
   translatedLabel,
 }: {
-  section: (typeof allNav)[number];
+  section: NavSection;
   translatedLabel: string;
 }) {
   if (!section.children?.length) {
@@ -153,32 +153,15 @@ export function SiteHeader() {
         </Link>
 
         <nav aria-label={t("nav.primary")} className="hidden items-center xl:flex">
-          {primaryNav.map((s) => (
+          {headerNav.map((s) => (
             <DesktopDropdown
               key={s.to}
               section={s}
               translatedLabel={sectionLabel(s, lang, t)}
             />
           ))}
-          <DesktopDropdown
-            translatedLabel="Families"
-            section={{
-              label: "Families",
-              to: "/parents",
-              summary: "Partnership, communication and stories from campus life.",
-              children: familiesNav.flatMap((s) => s.children ?? []),
-            }}
-          />
-          <DesktopDropdown
-            translatedLabel="Community"
-            section={{
-              label: "Community",
-              to: "/community",
-              summary: "Campuses, partnerships, careers and our digital ecosystem.",
-              children: communityNav.flatMap((s) => s.children ?? []),
-            }}
-          />
         </nav>
+
 
         <div className="flex items-center gap-1">
           {/* Arabic toggle temporarily disabled — full RTL rollout scheduled with content audit */}
@@ -237,7 +220,7 @@ export function SiteHeader() {
                   <SiteSearch variant="menu" />
                 </div>
                 <Accordion type="multiple" className="w-full">
-                  {allNav.map((s) => (
+                  {headerNav.map((s) => (
                     <AccordionItem
                       key={s.to}
                       value={s.to}
