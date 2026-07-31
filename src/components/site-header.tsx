@@ -137,6 +137,18 @@ function DesktopDropdown({
         aria-expanded={open}
         aria-controls={panelId}
         aria-label={`${translatedLabel} — ${open ? "hide" : "show"} submenu`}
+        data-state={open ? "open" : "closed"}
+        onKeyDown={(e) => {
+          // Normalise activation across browsers: Firefox fires click for
+          // Space only on keyup, Safari may not focus buttons on click.
+          // Handling both keys here (and preventing the default) guarantees a
+          // single, identical toggle everywhere and stops Space page-scroll.
+          if (e.key === "Enter" || e.key === " " || e.key === "Spacebar") {
+            e.preventDefault();
+            if (open) close();
+            else setPinned(true);
+          }
+        }}
         onClick={() => (open ? close() : setPinned(true))}
         className={cn(
           "-ml-2 flex size-7 items-center justify-center rounded-md transition-colors hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold",
