@@ -70,8 +70,17 @@ function Campuses() {
     <>
       <PageHero
         eyebrow="Our Campuses"
-        title="A growing international community, rooted in Cairo."
-        intro="Lighthouse Campus is built for the long term. Our network now spans Egypt, Sudan, South Sudan and Uganda, and every campus shares the same culture, philosophy and commitment to students."
+        title="A Growing International Community, Rooted in Excellence."
+        intro={
+          <>
+            <span className="block text-xl font-medium text-navy-foreground md:text-2xl">
+              Growing Confident Learners. Building Global Futures.
+            </span>
+            <span className="mt-3 block text-lg leading-relaxed text-navy-foreground/80 md:text-xl">
+              Lighthouse Campus is built for the long term. Our network now spans Egypt, Sudan, South Sudan and Uganda, and every campus shares the same culture, philosophy and commitment to students.
+            </span>
+          </>
+        }
       />
 
       <RegionalPresence id="network" />
