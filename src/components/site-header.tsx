@@ -161,9 +161,9 @@ export function SiteHeader() {
             />
           ))}
           <DesktopDropdown
-            translatedLabel="Families & News"
+            translatedLabel="Families"
             section={{
-              label: "Families & News",
+              label: "Families",
               to: "/parents",
               summary: "Partnership, communication and stories from campus life.",
               children: familiesNav.flatMap((s) => s.children ?? []),
