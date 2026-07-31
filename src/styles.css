@@ -250,12 +250,30 @@ html[dir="rtl"] .rtl-flip {
     color: var(--navy);
   }
 
-  /* Accessible, visible focus for keyboard users */
+  /* Accessible, high-contrast focus — keyboard only.
+     Gold outline reads on dark surfaces; the translucent navy halo keeps the
+     indicator visible on ivory/light surfaces too (>= 3:1 both ways). */
   :focus-visible {
-    outline: 2px solid var(--gold);
+    outline: 3px solid var(--gold);
     outline-offset: 2px;
-    border-radius: 2px;
+    border-radius: 3px;
+    box-shadow:
+      0 0 0 2px color-mix(in oklab, var(--beacon-ivory, white) 92%, transparent),
+      0 0 0 6px color-mix(in oklab, var(--navy) 70%, transparent);
   }
+
+  /* Never show the indicator for pointer/touch activation */
+  :focus:not(:focus-visible) {
+    outline: none;
+    box-shadow: none;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    :focus-visible {
+      transition: outline-offset 120ms ease-out;
+    }
+  }
+
 }
 
 @layer components {
