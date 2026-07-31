@@ -56,9 +56,10 @@ export const primaryNav: NavSection[] = [
     ],
   },
   {
-    label: "Learning Journey",
+    label: "Academics & Learning Journey",
+    label_ar: "الأكاديميات ومسار التعلّم",
     to: "/learning-journey",
-    summary: "A continuous path from early years to graduation.",
+    summary: "One continuous path from Early Years to graduation, and the academic programme behind it.",
     children: [
       { label: "Learning Journey Overview", to: "/learning-journey", description: "One continuous path from Early Years to graduation." },
       { label: "Early Years", to: "/learning-journey/early-years", description: "Wonder, play and first discoveries." },
@@ -66,13 +67,7 @@ export const primaryNav: NavSection[] = [
       { label: "Preparatory", to: "/learning-journey/preparatory", description: "Independence and deeper thinking." },
       { label: "Secondary", to: "/learning-journey/secondary", description: "Scholarship, identity and direction." },
       { label: "Graduation Pathways", to: "/learning-journey/graduation-pathways", description: "Ready for university and life." },
-    ],
-  },
-  {
-    label: "Academics",
-    to: "/academic-experience",
-    summary: "A rigorous, human curriculum for a changing world.",
-    children: [
+      { label: "Academic Experience", to: "/academic-experience", description: "A rigorous, human curriculum for a changing world." },
       { label: "Curriculum", to: "/academic-experience#curriculum", description: "A coherent, ambitious programme." },
       { label: "Teaching Approach", to: "/academic-experience#teaching", description: "Mentors, not lecturers." },
       { label: "Languages", to: "/academic-experience#languages", description: "Confident, multilingual learners." },
@@ -198,5 +193,14 @@ export const secondaryNav: NavSection[] = [
     ],
   },
 ];
+
+// "Explore" is split into two shorter menus so no dropdown becomes overly long.
+export const familiesNav: NavSection[] = secondaryNav.filter((s) =>
+  ["/parents", "/news"].includes(s.to),
+);
+
+export const communityNav: NavSection[] = secondaryNav.filter(
+  (s) => !["/parents", "/news"].includes(s.to),
+);
 
 export const allNav: NavSection[] = [...primaryNav, ...secondaryNav];
