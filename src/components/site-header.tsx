@@ -153,32 +153,15 @@ export function SiteHeader() {
         </Link>
 
         <nav aria-label={t("nav.primary")} className="hidden items-center xl:flex">
-          {primaryNav.map((s) => (
+          {headerNav.map((s) => (
             <DesktopDropdown
               key={s.to}
               section={s}
               translatedLabel={sectionLabel(s, lang, t)}
             />
           ))}
-          <DesktopDropdown
-            translatedLabel="Families"
-            section={{
-              label: "Families",
-              to: "/parents",
-              summary: "Partnership, communication and stories from campus life.",
-              children: familiesNav.flatMap((s) => s.children ?? []),
-            }}
-          />
-          <DesktopDropdown
-            translatedLabel="Community"
-            section={{
-              label: "Community",
-              to: "/community",
-              summary: "Campuses, partnerships, careers and our digital ecosystem.",
-              children: communityNav.flatMap((s) => s.children ?? []),
-            }}
-          />
         </nav>
+
 
         <div className="flex items-center gap-1">
           {/* Arabic toggle temporarily disabled — full RTL rollout scheduled with content audit */}
