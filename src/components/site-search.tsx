@@ -241,7 +241,12 @@ export function SiteSearch({ variant = "header", className }: SiteSearchProps) {
         )}
       </button>
 
-      <CommandDialog open={open} onOpenChange={setOpen}>
+      <CommandDialog
+        open={open}
+        onOpenChange={setOpen}
+        title={t("search.trigger", "Open search")}
+        description={t("search.placeholder", "Search pages...")}
+      >
         <CommandInput
           placeholder={t("search.placeholder", "Search pages...")}
           aria-label={t("search.placeholder", "Search pages...")}
