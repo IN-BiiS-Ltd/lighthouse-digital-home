@@ -73,7 +73,7 @@ const SEO = {
 
 type GuideLang = keyof typeof SEO;
 
-const parseLang = (v: unknown): GuideLang => (v === "ar" ? "ar" : "en");
+export const parseLang = (v: unknown): GuideLang => (v === "ar" ? "ar" : "en");
 
 export const Route = createFileRoute("/prospectus")({
   validateSearch: (search: Record<string, unknown>) => ({
