@@ -30,9 +30,9 @@ export const branches: Branch[] = [
     id: "sudan",
     country: "Sudan",
     countryAr: "السودان",
-    city: "Darfur",
+    city: "Sudan",
     status: "Opening",
-    coords: [25.35, 13.63],
+    coords: [30.0, 15.0],
     body:
       "A Sudanese campus community carrying the same curriculum, culture and standards of care as our founding campus.",
     email: "sudan@lighthousecampus.com",
