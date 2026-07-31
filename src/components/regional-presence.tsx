@@ -380,7 +380,7 @@ export function RegionalPresence({ id = "network" }: { id?: string }) {
 
       <div className="mt-14 grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14">
         {/* Map */}
-        <div className="relative overflow-hidden rounded-2xl border border-border bg-card p-5">
+        <div className="relative flex flex-col justify-center overflow-hidden rounded-2xl border border-border bg-card p-5">
           <div className="flex items-center gap-2">
             <Globe2 className="size-4 text-sapphire" aria-hidden />
             <Eyebrow>Four countries · one community</Eyebrow>
