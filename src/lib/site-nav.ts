@@ -20,7 +20,7 @@ export interface NavSection {
 }
 
 
-export const primaryNav: NavSection[] = [
+const navSectionsSource: NavSection[] = [
   {
     label: "About",
     to: "/about",
@@ -62,13 +62,13 @@ export const primaryNav: NavSection[] = [
     summary: "One continuous path from Early Years to graduation, and the academic programme behind it.",
     children: [
       { label: "Learning Journey Overview", to: "/learning-journey", description: "One continuous path from Early Years to graduation." },
+      { label: "Academic Experience", to: "/academic-experience", description: "A rigorous, human curriculum for a changing world." },
+      { label: "Curriculum", to: "/academic-experience#curriculum", description: "A coherent, ambitious programme." },
       { label: "Early Years", to: "/learning-journey/early-years", description: "Wonder, play and first discoveries." },
       { label: "Primary", to: "/learning-journey/primary", description: "Foundations of knowledge and character." },
       { label: "Preparatory", to: "/learning-journey/preparatory", description: "Independence and deeper thinking." },
       { label: "Secondary", to: "/learning-journey/secondary", description: "Scholarship, identity and direction." },
       { label: "Graduation Pathways", to: "/learning-journey/graduation-pathways", description: "Ready for university and life." },
-      { label: "Academic Experience", to: "/academic-experience", description: "A rigorous, human curriculum for a changing world." },
-      { label: "Curriculum", to: "/academic-experience#curriculum", description: "A coherent, ambitious programme." },
       { label: "Teaching Approach", to: "/academic-experience#teaching", description: "Mentors, not lecturers." },
       { label: "Languages", to: "/academic-experience#languages", description: "Confident, multilingual learners." },
       { label: "STEM & Innovation", to: "/academic-experience#stem", description: "Curiosity turned into capability." },
@@ -129,6 +129,23 @@ export const primaryNav: NavSection[] = [
   },
 ];
 
+// Visual priority order in the header: what families look for first.
+// Academics leads, then Admissions, then daily life, then institutional depth.
+const primaryOrder = [
+  "/learning-journey", // Academics
+  "/admissions",
+  "/student-life", // Students
+  "/campus-experience", // Campus
+  "/our-model", // Model
+  "/about",
+];
+
+export const primaryNav: NavSection[] = [...navSectionsSource].sort(
+  (a, b) => primaryOrder.indexOf(a.to) - primaryOrder.indexOf(b.to),
+);
+
+
+
 // Secondary sections grouped under an "Explore" menu and in the footer.
 export const secondaryNav: NavSection[] = [
   {
@@ -178,11 +195,11 @@ export const secondaryNav: NavSection[] = [
     summary: "Partnerships, alumni, programmes and careers.",
     children: [
       { label: "Community Overview", to: "/community", description: "One considered community." },
+      { label: "Careers — We are hiring", to: "/careers", description: "Teacher vacancies 2026/2027 and working at Lighthouse Campus." },
       { label: "Partnerships", to: "/community/partnerships", description: "Values-aligned relationships." },
-      { label: "Alumni", to: "/community/alumni", description: "The future Lighthouse alumni community." },
       { label: "Community Programmes", to: "/community/community-programmes", description: "Contribution beyond the walls." },
       { label: "Community Events", to: "/community/events", description: "Public community moments." },
-      { label: "Careers — We are hiring", to: "/careers", description: "Teacher vacancies 2026/2027 and working at Lighthouse Campus." },
+      { label: "Alumni", to: "/community/alumni", description: "The future Lighthouse alumni community." },
     ],
   },
   {
