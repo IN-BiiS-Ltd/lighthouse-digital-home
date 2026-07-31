@@ -17,6 +17,7 @@ export function RouteFocusReset() {
       firstRender.current = false;
       return;
     }
+    const sentinel = document.getElementById("route-focus-start");
     const active = document.activeElement as HTMLElement | null;
     // Don't steal focus from an open dialog / input the user is typing in.
     if (
@@ -25,11 +26,22 @@ export function RouteFocusReset() {
       !active.closest("[role='dialog']") &&
       !["INPUT", "TEXTAREA", "SELECT"].includes(active.tagName)
     ) {
+      // Blur alone keeps the browser's sequential-focus starting point mid-page,
+      // so move focus to a hidden sentinel that sits before the skip links.
       active.blur();
+      sentinel?.focus({ preventScroll: true });
     }
   }, [pathname]);
 
-  return null;
+  return (
+    <div
+      id="route-focus-start"
+      tabIndex={-1}
+      className="sr-only"
+      // Not announced as content; it only resets the focus starting point.
+      aria-hidden={false}
+    />
+  );
 }
 
 
