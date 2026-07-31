@@ -163,11 +163,12 @@ export const secondaryNav: NavSection[] = [
     ],
   },
   {
-    label: "Campuses",
+    label: "Branches",
     to: "/campuses",
     summary: "One community, growing across locations.",
     children: [
-      { label: "All Campuses", to: "/campuses" },
+      { label: "All Branches", to: "/campuses" },
+
       { label: "Mohandessin Campus", to: "/campuses/mohandessin" },
     ],
   },
