@@ -222,3 +222,28 @@ export const communityNav: NavSection[] = secondaryNav.filter(
 );
 
 export const allNav: NavSection[] = [...primaryNav, ...secondaryNav];
+
+// Single source of truth for the header order — used by the desktop dropdowns
+// and the mobile / tablet menu so both show the same sections, same priority.
+export const familiesSection: NavSection = {
+  label: "Families",
+  label_ar: "الأسر",
+  to: "/parents",
+  summary: "Partnership, communication and stories from campus life.",
+  children: familiesNav.flatMap((s) => s.children ?? []),
+};
+
+export const communitySection: NavSection = {
+  label: "Community",
+  label_ar: "المجتمع",
+  to: "/community",
+  summary: "Campuses, partnerships, careers and our digital ecosystem.",
+  children: communityNav.flatMap((s) => s.children ?? []),
+};
+
+export const headerNav: NavSection[] = [
+  ...primaryNav,
+  familiesSection,
+  communitySection,
+];
+
