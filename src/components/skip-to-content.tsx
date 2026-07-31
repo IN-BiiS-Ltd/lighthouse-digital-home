@@ -1,4 +1,37 @@
+import { useEffect, useRef } from "react";
+import { useRouterState } from "@tanstack/react-router";
+
 import { useLang } from "@/lib/i18n";
+
+/**
+ * RouteFocusReset — after a client-side route change, sequential focus must
+ * restart at the top of the document (as it does on a full page load), so the
+ * skip links are always the first Tab stop on every page.
+ */
+export function RouteFocusReset() {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const firstRender = useRef(true);
+
+  useEffect(() => {
+    if (firstRender.current) {
+      firstRender.current = false;
+      return;
+    }
+    const active = document.activeElement as HTMLElement | null;
+    // Don't steal focus from an open dialog / input the user is typing in.
+    if (
+      active &&
+      active !== document.body &&
+      !active.closest("[role='dialog']") &&
+      !["INPUT", "TEXTAREA", "SELECT"].includes(active.tagName)
+    ) {
+      active.blur();
+    }
+  }, [pathname]);
+
+  return null;
+}
+
 
 /**
  * SkipLinks — the first focusable elements on every page.
