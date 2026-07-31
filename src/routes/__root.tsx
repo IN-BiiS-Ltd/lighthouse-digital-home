@@ -20,6 +20,8 @@ import { Analytics } from "../components/analytics";
 import { LanguageProvider } from "../lib/i18n";
 import { AnnouncementBar } from "../components/announcement-bar";
 import { Toaster } from "../components/ui/sonner";
+import { SkipToContent } from "../components/skip-to-content";
+
 
 
 function NotFoundComponent() {
