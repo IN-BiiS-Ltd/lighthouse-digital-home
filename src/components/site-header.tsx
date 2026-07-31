@@ -57,7 +57,7 @@ function DesktopDropdown({
   section,
   translatedLabel,
 }: {
-  section: (typeof allNav)[number];
+  section: NavSection;
   translatedLabel: string;
 }) {
   if (!section.children?.length) {
