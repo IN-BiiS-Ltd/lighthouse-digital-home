@@ -151,7 +151,7 @@ function DesktopDropdown({
         }}
         onClick={() => (open ? close() : setPinned(true))}
         className={cn(
-          "-ml-2 flex size-7 items-center justify-center rounded-md transition-colors hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold",
+          "-ml-2 flex size-7 items-center justify-center rounded-md transition-colors hover:text-gold",
           active ? "text-gold" : "text-navy-foreground/85",
         )}
       >
@@ -184,7 +184,7 @@ function DesktopDropdown({
                     aria-current={childActive ? "page" : undefined}
                     onClick={close}
                     className={cn(
-                      "block rounded-lg border-l-2 px-3 py-2.5 transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-1",
+                      "block rounded-lg border-l-2 px-3 py-2.5 transition-colors hover:bg-secondary",
                       childActive
                         ? "border-gold bg-secondary"
                         : "border-transparent",
@@ -242,7 +242,7 @@ export function SiteHeader() {
       <Container className="flex h-[4.75rem] items-center justify-between gap-4">
         <Link
           to="/"
-          className="flex shrink-0 items-center gap-3 rounded-md outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy"
+          className="flex shrink-0 items-center gap-3 rounded-md"
           aria-label="Lighthouse Campus — go to homepage"
         >
           <BrandLogo
