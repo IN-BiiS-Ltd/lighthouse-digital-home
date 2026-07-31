@@ -20,7 +20,7 @@ import { Analytics } from "../components/analytics";
 import { LanguageProvider } from "../lib/i18n";
 import { AnnouncementBar } from "../components/announcement-bar";
 import { Toaster } from "../components/ui/sonner";
-import { SkipToContent } from "../components/skip-to-content";
+import { RouteFocusReset, SkipToContent } from "../components/skip-to-content";
 
 
 
@@ -255,6 +255,7 @@ function RootComponent() {
       <LanguageProvider>
         <div className="flex min-h-dvh flex-col">
           <ScrollProgress />
+          <RouteFocusReset />
           <SkipToContent />
           <AnnouncementBar />
           <SiteHeader />

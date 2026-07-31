@@ -1,4 +1,49 @@
+import { useEffect, useRef } from "react";
+import { useRouterState } from "@tanstack/react-router";
+
 import { useLang } from "@/lib/i18n";
+
+/**
+ * RouteFocusReset — after a client-side route change, sequential focus must
+ * restart at the top of the document (as it does on a full page load), so the
+ * skip links are always the first Tab stop on every page.
+ */
+export function RouteFocusReset() {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const firstRender = useRef(true);
+
+  useEffect(() => {
+    if (firstRender.current) {
+      firstRender.current = false;
+      return;
+    }
+    const sentinel = document.getElementById("route-focus-start");
+    const active = document.activeElement as HTMLElement | null;
+    // Don't steal focus from an open dialog / input the user is typing in.
+    if (
+      active &&
+      active !== document.body &&
+      !active.closest("[role='dialog']") &&
+      !["INPUT", "TEXTAREA", "SELECT"].includes(active.tagName)
+    ) {
+      // Blur alone keeps the browser's sequential-focus starting point mid-page,
+      // so move focus to a hidden sentinel that sits before the skip links.
+      active.blur();
+      sentinel?.focus({ preventScroll: true });
+    }
+  }, [pathname]);
+
+  return (
+    <div
+      id="route-focus-start"
+      tabIndex={-1}
+      className="sr-only"
+      // Not announced as content; it only resets the focus starting point.
+      aria-hidden={false}
+    />
+  );
+}
+
 
 /**
  * SkipLinks — the first focusable elements on every page.
@@ -34,6 +79,16 @@ export function SkipToContent() {
     >
       <a
         href="#main"
+        onClick={(event) => {
+          // Focus the landmark explicitly: hash targets are unreliable during
+          // client-side navigation, and this guarantees focus lands on <main>.
+          const main = document.getElementById("main");
+          if (main) {
+            event.preventDefault();
+            main.focus();
+            main.scrollIntoView({ block: "start", behavior: "auto" });
+          }
+        }}
         className="sr-only focus:not-sr-only focus:rounded-md focus:bg-gold focus:px-4 focus:py-2.5 focus:text-sm focus:font-semibold focus:text-navy focus:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.5)]"
         aria-label={t("a11y.skip", "Skip to main content")}
       >
