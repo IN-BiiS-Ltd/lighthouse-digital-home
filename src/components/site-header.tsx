@@ -171,7 +171,7 @@ function DesktopDropdown({
                   <SmartLink
                     to={child.to}
                     aria-current={childActive ? "page" : undefined}
-                    onClick={() => setOpen(false)}
+                    onClick={close}
                     className={cn(
                       "block rounded-lg border-l-2 px-3 py-2.5 transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-1",
                       childActive
