@@ -70,8 +70,8 @@ function Campuses() {
     <>
       <PageHero
         eyebrow="Our Campuses"
-        title="One community, present in Egypt, Sudan, South Sudan and Uganda."
-        intro="Lighthouse Campus is built for the long term. Our network now spans four countries, and every campus shares the same culture, philosophy and commitment to students."
+        title="A growing international community, rooted in Cairo."
+        intro="Lighthouse Campus is built for the long term. Our network now spans Egypt, Sudan, South Sudan and Uganda, and every campus shares the same culture, philosophy and commitment to students."
       />
 
       <RegionalPresence id="network" />
