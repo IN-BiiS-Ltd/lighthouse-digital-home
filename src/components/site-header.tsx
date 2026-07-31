@@ -74,9 +74,17 @@ function DesktopDropdown({
 }) {
   const active = isSectionActive(section, pathname);
   const panelId = `nav-panel-${section.to.replace(/[^a-z0-9]+/gi, "-")}`;
-  const [open, setOpen] = useState(false);
+  const [pinned, setPinned] = useState(false);
+  const [hovered, setHovered] = useState(false);
+  const open = pinned || hovered;
   const wrapRef = useRef<HTMLDivElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
+
+  const close = () => {
+    setPinned(false);
+    setHovered(false);
+  };
+
 
   const linkClass = cn(
     "relative flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors hover:text-gold",
