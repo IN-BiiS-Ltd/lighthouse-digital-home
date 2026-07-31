@@ -14,6 +14,17 @@ export interface Branch {
 
 export const branches: Branch[] = [
   {
+    id: "sudan",
+    country: "Sudan",
+    countryAr: "السودان",
+    city: "Sudan",
+    status: "Opening",
+    coords: [30.0, 15.0],
+    body:
+      "A Sudanese campus community carrying the same curriculum, culture and standards of care as our founding campus.",
+    email: "sudan@lighthousecampus.com",
+  },
+  {
     id: "egypt",
     country: "Egypt",
     countryAr: "مصر",
@@ -25,17 +36,6 @@ export const branches: Branch[] = [
     email: "hello@lighthousecampus.com",
     phone: "+20 110 703 0737",
     address: "66 El-Zahraa, Ad Doqi, Dokki, Giza Governorate 3751053, Egypt",
-  },
-  {
-    id: "sudan",
-    country: "Sudan",
-    countryAr: "السودان",
-    city: "Sudan",
-    status: "Opening",
-    coords: [30.0, 15.0],
-    body:
-      "A Sudanese campus community carrying the same curriculum, culture and standards of care as our founding campus.",
-    email: "sudan@lighthousecampus.com",
   },
   {
     id: "south-sudan",
