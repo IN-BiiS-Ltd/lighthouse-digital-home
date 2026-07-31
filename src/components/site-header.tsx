@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -73,8 +73,21 @@ function DesktopDropdown({
   pathname: string;
 }) {
   const active = isSectionActive(section, pathname);
+  const panelId = `nav-panel-${section.to.replace(/[^a-z0-9]+/gi, "-")}`;
+  const [pinned, setPinned] = useState(false);
+  const [hovered, setHovered] = useState(false);
+  const open = pinned || hovered;
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
+
+  const close = () => {
+    setPinned(false);
+    setHovered(false);
+  };
+
+
   const linkClass = cn(
-    "relative flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors hover:text-gold group-focus-within:text-gold",
+    "relative flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors hover:text-gold",
     active ? "text-gold" : "text-navy-foreground/85",
     "after:absolute after:inset-x-3 after:bottom-1 after:h-0.5 after:rounded-full after:bg-gold after:transition-transform after:duration-200",
     active ? "after:scale-x-100" : "after:scale-x-0",
@@ -91,28 +104,66 @@ function DesktopDropdown({
       </SmartLink>
     );
   }
+
   return (
-    <div className="group relative">
+    <div
+      ref={wrapRef}
+      className="relative flex items-center"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      onFocus={() => setPinned(true)}
+      onBlur={(e) => {
+        if (!wrapRef.current?.contains(e.relatedTarget as Node | null)) {
+          setPinned(false);
+        }
+      }}
+      onKeyDown={(e) => {
+        if (e.key === "Escape" && open) {
+          e.stopPropagation();
+          close();
+          toggleRef.current?.focus();
+        }
+      }}
+    >
       <SmartLink
         to={section.to}
         className={linkClass}
-        aria-haspopup="true"
         aria-current={active ? "page" : undefined}
       >
         {translatedLabel}
-        <ChevronDown className="size-3.5 opacity-70" aria-hidden />
       </SmartLink>
-      {/* Panel: visibility flips instantly (only opacity/transform animate) so
-          the very next Tab press always lands on the first submenu link. */}
-      <div className="invisible absolute left-1/2 top-full z-50 w-[22rem] -translate-x-1/2 pt-3 opacity-0 transition-[opacity,transform] duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-
+      <button
+        ref={toggleRef}
+        type="button"
+        aria-expanded={open}
+        aria-controls={panelId}
+        aria-label={`${translatedLabel} — ${open ? "hide" : "show"} submenu`}
+        onClick={() => (open ? close() : setPinned(true))}
+        className={cn(
+          "-ml-2 flex size-7 items-center justify-center rounded-md transition-colors hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold",
+          active ? "text-gold" : "text-navy-foreground/85",
+        )}
+      >
+        <ChevronDown
+          className={cn(
+            "size-3.5 opacity-70 transition-transform",
+            open && "rotate-180",
+          )}
+          aria-hidden="true"
+        />
+      </button>
+      <div
+        id={panelId}
+        hidden={!open}
+        className="absolute left-1/2 top-full z-50 w-[22rem] -translate-x-1/2 pt-3"
+      >
         <div className="rounded-xl border border-border bg-popover p-3 shadow-[0_24px_60px_-24px_rgba(11,29,58,0.45)]">
           {section.summary ? (
             <p className="px-3 pb-2 pt-1 text-xs leading-relaxed text-muted-foreground">
               {section.summary}
             </p>
           ) : null}
-          <ul className="grid gap-0.5">
+          <ul className="grid gap-0.5" aria-label={translatedLabel}>
             {section.children.map((child) => {
               const childActive = pathname === child.to;
               return (
@@ -120,6 +171,7 @@ function DesktopDropdown({
                   <SmartLink
                     to={child.to}
                     aria-current={childActive ? "page" : undefined}
+                    onClick={close}
                     className={cn(
                       "block rounded-lg border-l-2 px-3 py-2.5 transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-1",
                       childActive
@@ -193,15 +245,17 @@ export function SiteHeader() {
         </Link>
 
         <nav aria-label={t("nav.primary")} className="hidden items-center xl:flex">
-          {headerNav.map((s) => (
-            <DesktopDropdown
-              key={s.to}
-              section={s}
-              pathname={pathname}
-              translatedLabel={sectionLabel(s, lang, t)}
-            />
-
-          ))}
+          <ul className="flex items-center">
+            {headerNav.map((s) => (
+              <li key={s.to} className="flex items-center">
+                <DesktopDropdown
+                  section={s}
+                  pathname={pathname}
+                  translatedLabel={sectionLabel(s, lang, t)}
+                />
+              </li>
+            ))}
+          </ul>
         </nav>
 
 
@@ -283,9 +337,11 @@ export function SiteHeader() {
                             ? "border-gold text-gold"
                             : "border-transparent text-navy-foreground",
                         )}
-                        aria-current={active ? "true" : undefined}
                       >
                         {sectionLabel(s, lang, t)}
+                        {active ? (
+                          <span className="sr-only"> (current section)</span>
+                        ) : null}
                       </AccordionTrigger>
                       <AccordionContent className="pb-3">
                         <ul className="space-y-1">
