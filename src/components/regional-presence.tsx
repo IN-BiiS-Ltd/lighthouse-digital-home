@@ -368,27 +368,139 @@ function BranchForm({ branch }: { branch: Branch }) {
 
 export function RegionalPresence({ id = "network" }: { id?: string }) {
   const [active, setActive] = useState<string>("egypt");
+  const [view, setView] = useState<"map" | "list">("map");
   const branch = useMemo(
     () => branches.find((b) => b.id === active) ?? branches[0],
     [active],
   );
+  const instructionsId = `${id}-map-instructions`;
+  const listId = `${id}-branch-list`;
 
   return (
     <Section id={id} tone="muted">
       <SectionHeading
         eyebrow="Regional Network"
         title="A connected international presence"
-        description="One institution, one philosophy, several homes. Lighthouse Campus is present in Egypt, Sudan, South Sudan and Uganda — each campus sharing the same curriculum architecture, teaching culture and digital learning ecosystem. Select a country on the map to contact that campus directly."
+        description="One institution, one philosophy, several homes. Lighthouse Campus is present in Egypt, Sudan, South Sudan and Uganda — each campus sharing the same curriculum architecture, teaching culture and digital learning ecosystem. Select a country on the map or the list below to contact that campus directly."
       />
 
       <div className="mt-14 grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14">
-        {/* Map */}
-        <div className="relative flex flex-col justify-center overflow-hidden rounded-2xl border border-border bg-card p-5">
-          <div className="flex items-center gap-2">
-            <Globe2 className="size-4 text-sapphire" aria-hidden />
-            <Eyebrow>Four countries · one community</Eyebrow>
+        {/* Map / list */}
+        <div className="relative flex flex-col justify-start overflow-hidden rounded-2xl border border-border bg-card p-5">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div className="flex items-center gap-2">
+              <Globe2 className="size-4 text-sapphire" aria-hidden />
+              <Eyebrow>Four countries · one community</Eyebrow>
+            </div>
+            <div className="flex items-center rounded-full border border-border bg-background p-1">
+              <button
+                type="button"
+                onClick={() => setView("map")}
+                aria-pressed={view === "map"}
+                className={cn(
+                  "inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold",
+                  view === "map"
+                    ? "bg-navy text-navy-foreground"
+                    : "text-muted-foreground hover:text-foreground",
+                )}
+              >
+                <MapIcon className="size-3.5" aria-hidden />
+                Map
+              </button>
+              <button
+                type="button"
+                onClick={() => setView("list")}
+                aria-pressed={view === "list"}
+                className={cn(
+                  "inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold",
+                  view === "list"
+                    ? "bg-navy text-navy-foreground"
+                    : "text-muted-foreground hover:text-foreground",
+                )}
+              >
+                <List className="size-3.5" aria-hidden />
+                List
+              </button>
+            </div>
           </div>
-          <RegionalMap active={active} onSelect={setActive} />
+
+          {view === "map" ? (
+            <>
+              <div
+                id={instructionsId}
+                className="mt-4 flex items-start gap-2.5 rounded-xl border border-gold/30 bg-gold/10 p-3 text-sm text-foreground"
+              >
+                <Info className="mt-0.5 size-4 shrink-0 text-sapphire" aria-hidden />
+                <div>
+                  <p className="font-semibold">How to use the map</p>
+                  <p className="mt-0.5 text-muted-foreground">
+                    Click a country, or press Tab to move through the map and Enter/Space to select it.
+                    The country list to the right also updates the active campus.
+                  </p>
+                </div>
+              </div>
+              <RegionalMap
+                active={active}
+                onSelect={setActive}
+                instructionsId={instructionsId}
+              />
+            </>
+          ) : (
+            <div id={listId} className="mt-5 space-y-3">
+              <p className="sr-only">
+                Text list of all Lighthouse campuses. Each card includes the country, city, status, and a button to select the campus and show its contact form.
+              </p>
+              {branches.map((b) => (
+                <button
+                  key={b.id}
+                  type="button"
+                  onClick={() => {
+                    setActive(b.id);
+                    setView("map");
+                  }}
+                  className={cn(
+                    "w-full rounded-xl border p-4 text-left transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold",
+                    b.id === active
+                      ? "border-gold/60 bg-navy text-navy-foreground"
+                      : "border-border bg-card hover:border-navy/40",
+                  )}
+                >
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <div>
+                      <span className={cn("eyebrow text-xs", b.id === active ? "text-gold" : "text-sapphire")}>
+                        {b.country}
+                        <span className="mx-1.5 opacity-60">·</span>
+                        {b.countryAr}
+                      </span>
+                      <h4 className="mt-1 font-display text-lg font-medium">
+                        {b.city}
+                      </h4>
+                    </div>
+                    <span
+                      className={cn(
+                        "rounded-full px-2.5 py-1 text-xs font-semibold",
+                        b.id === active ? "bg-gold/20 text-white" : "bg-gold/15 text-gold-foreground",
+                      )}
+                    >
+                      {b.status}
+                    </span>
+                  </div>
+                  <p
+                    className={cn(
+                      "mt-2 line-clamp-2 text-sm",
+                      b.id === active ? "text-navy-foreground/90" : "text-muted-foreground",
+                    )}
+                  >
+                    {b.body}
+                  </p>
+                  <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-sapphire">
+                    <Mail className="size-3.5" aria-hidden />
+                    {b.email}
+                  </span>
+                </button>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Branch detail + form */}
