@@ -171,7 +171,8 @@ async def check_header_disclosure(page, label: str) -> None:
 
 async def run_device(browser, device: str, viewport: dict) -> None:
     print(f"\n=== {device} {viewport['width']}x{viewport['height']} ===")
-    ctx = await browser.new_context(viewport=viewport)
+    # reduced motion keeps reveal animations from being scanned mid-transition
+    ctx = await browser.new_context(viewport=viewport, reduced_motion="reduce")
     page = await ctx.new_page()
 
     for route in ROUTES:
