@@ -67,6 +67,17 @@ export function SkipToContent() {
     >
       <a
         href="#main"
+        onClick={(event) => {
+          // Focus the landmark explicitly: hash targets are unreliable during
+          // client-side navigation, and this guarantees focus lands on <main>.
+          const main = document.getElementById("main");
+          if (main) {
+            event.preventDefault();
+            main.focus();
+            window.history.replaceState(null, "", "#main");
+            main.scrollIntoView({ block: "start", behavior: "auto" });
+          }
+        }}
         className="sr-only focus:not-sr-only focus:rounded-md focus:bg-gold focus:px-4 focus:py-2.5 focus:text-sm focus:font-semibold focus:text-navy focus:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.5)]"
         aria-label={t("a11y.skip", "Skip to main content")}
       >
