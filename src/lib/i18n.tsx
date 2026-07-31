@@ -40,7 +40,9 @@ const dict: Record<string, { en: string; ar: string }> = {
   "nav.campus": { en: "Campus", ar: "الحرم" },
   "nav.parents": { en: "Parents", ar: "أولياء الأمور" },
   "nav.news": { en: "News & Insights", ar: "الأخبار والرؤى" },
-  "nav.campuses": { en: "Campuses", ar: "الفروع" },
+  "nav.campuses": { en: "Branches", ar: "الفروع" },
+  "nav.apply": { en: "Apply", ar: "قدّم الآن" },
+
   "nav.community": { en: "Community", ar: "المجتمع" },
   "nav.digital-ecosystem": { en: "Digital Ecosystem", ar: "المنظومة الرقمية" },
   "nav.explore": { en: "Explore", ar: "استكشف" },
