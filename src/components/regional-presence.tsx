@@ -1,4 +1,5 @@
-import { useMemo, useState, type FormEvent } from "react";
+import { lazy, useMemo, useState, type FormEvent } from "react";
+import { ClientOnly } from "@tanstack/react-router";
 import { MapPin, Phone, Mail, CheckCircle2, Globe2, Info, List, Map as MapIcon } from "lucide-react";
 import { z } from "zod";
 import { Section, SectionHeading, Eyebrow } from "@/components/blocks";
@@ -6,232 +7,30 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
+import { branches, type Branch } from "@/lib/regional-branches";
 
-/* ------------------------------------------------------------------ */
-/* Regional network data                                               */
-/* ------------------------------------------------------------------ */
+export { branches, type Branch };
 
-export interface Branch {
-  id: string;
-  country: string;
-  countryAr: string;
-  city: string;
-  status: "Operational" | "Opening" | "Planned";
-  /** [longitude, latitude] */
-  coords: [number, number];
-  body: string;
-  email: string;
-  phone?: string;
-  address?: string;
-}
-
-export const branches: Branch[] = [
-  {
-    id: "egypt",
-    country: "Egypt",
-    countryAr: "مصر",
-    city: "Dokki, Giza · Greater Cairo",
-    status: "Operational",
-    coords: [31.21, 30.043],
-    body:
-      "Our founding campus and the institutional headquarters of the Lighthouse network, serving families across Greater Cairo.",
-    email: "hello@lighthousecampus.com",
-    phone: "+20 110 703 0737",
-    address: "66 El-Zahraa, Ad Doqi, Dokki, Giza Governorate 3751053, Egypt",
-  },
-  {
-    id: "sudan",
-    country: "Sudan",
-    countryAr: "السودان",
-    city: "Khartoum region",
-    status: "Opening",
-    coords: [32.53, 15.5],
-    body:
-      "A Sudanese campus community carrying the same curriculum, culture and standards of care as our founding campus.",
-    email: "sudan@lighthousecampus.com",
-  },
-  {
-    id: "south-sudan",
-    country: "South Sudan",
-    countryAr: "جنوب السودان",
-    city: "Juba",
-    status: "Opening",
-    coords: [31.58, 4.85],
-    body:
-      "Serving families in Juba with international pathways, mentored teaching and a connected digital learning ecosystem.",
-    email: "southsudan@lighthousecampus.com",
-  },
-  {
-    id: "uganda",
-    country: "Uganda",
-    countryAr: "يوغندا",
-    city: "Kampala",
-    status: "Planned",
-    coords: [32.58, 0.32],
-    body:
-      "Our East African gateway, extending the Lighthouse promise to Ugandan and international families in Kampala.",
-    email: "uganda@lighthousecampus.com",
-  },
-];
-
-/* ------------------------------------------------------------------ */
-/* Stylised regional map (hand-plotted geo outlines)                   */
-/* ------------------------------------------------------------------ */
-
-type Pt = [number, number];
-
-const project = (pts: Pt[]) =>
-  pts.map(([lon, lat]) => `${((lon - 20) * 20).toFixed(1)},${((34 - lat) * 20).toFixed(1)}`).join(" ");
-
-const shapes: { id: string; points: string }[] = [
-  {
-    id: "egypt",
-    points: project([
-      [25, 31.6], [30, 31.4], [34, 31.2], [34.9, 29.4], [34.2, 27.9],
-      [33.2, 28.0], [35.7, 23.9], [36.9, 22], [25, 22],
-    ]),
-  },
-  {
-    id: "sudan",
-    points: project([
-      [25, 22], [36.9, 22], [37.2, 21], [38.6, 18], [37.5, 17.4], [36.9, 14.3],
-      [36.4, 12.4], [35, 11.7], [34.3, 10.8], [33.9, 9.5], [33.2, 8.5],
-      [29.5, 9.8], [27.8, 9.6], [24.1, 8.7], [23.5, 10.6], [22, 12.6],
-      [24, 15.7], [23.9, 19.6],
-    ]),
-  },
-  {
-    id: "south-sudan",
-    points: project([
-      [24.1, 8.7], [27.8, 9.6], [29.5, 9.8], [33.2, 8.5], [33.9, 9.5],
-      [34.3, 10.8], [35.3, 5.4], [34.4, 4.6], [33.5, 3.8], [31.2, 3.6],
-      [30.8, 4.9], [29.6, 4.6], [27.4, 5.1], [26.5, 6.1], [24.8, 7.7],
-    ]),
-  },
-  {
-    id: "uganda",
-    points: project([
-      [30.8, 4.9], [31.2, 3.6], [33.5, 3.8], [34.0, 1.0], [33.9, -1.0],
-      [31.8, -1.0], [29.6, -1.4], [29.6, 0.8], [29.7, 2.3], [30.8, 3.9],
-    ]),
-  },
-];
+const RegionalMapLeaflet = lazy(() => import("@/components/regional-map-leaflet"));
 
 function RegionalMap({
   active,
   onSelect,
-  instructionsId,
 }: {
   active: string;
   onSelect: (id: string) => void;
-  instructionsId: string;
 }) {
   return (
-    <svg
-      viewBox="20 30 372 700"
-      role="img"
-      aria-label="Map of the Lighthouse Campus network across Egypt, Sudan, South Sudan and Uganda"
-      preserveAspectRatio="xMidYMid meet"
-      className="mx-auto mt-4 h-[clamp(320px,52vh,560px)] w-full"
-
+    <ClientOnly
+      fallback={
+        <div className="mt-4 h-[clamp(340px,52vh,560px)] w-full animate-pulse rounded-xl border border-border bg-secondary" />
+      }
     >
-      <defs>
-        <linearGradient id="lh-map-fill" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="currentColor" stopOpacity="0.16" />
-          <stop offset="100%" stopColor="currentColor" stopOpacity="0.06" />
-        </linearGradient>
-        <pattern id="lh-map-grid" width="16" height="16" patternUnits="userSpaceOnUse">
-          <circle cx="1" cy="1" r="0.9" fill="currentColor" opacity="0.18" />
-        </pattern>
-        <filter id="lh-map-glow" x="-60%" y="-60%" width="220%" height="220%">
-          <feGaussianBlur stdDeviation="7" result="b" />
-          <feMerge>
-            <feMergeNode in="b" />
-            <feMergeNode in="SourceGraphic" />
-          </feMerge>
-        </filter>
-      </defs>
-
-      <g className="text-brand-blue">
-        {shapes.map((s) => {
-          const isActive = s.id === active;
-          const branch = branches.find((b) => b.id === s.id)!;
-          return (
-            <g key={s.id}>
-              <polygon points={s.points} fill="url(#lh-map-grid)" className="text-navy" />
-              <polygon
-                points={s.points}
-                fill="url(#lh-map-fill)"
-                stroke="currentColor"
-                strokeWidth={isActive ? 3.4 : 1.6}
-                strokeOpacity={isActive ? 0.95 : 0.45}
-                className={cn(
-                  "cursor-pointer transition-all duration-300",
-                  isActive ? "text-gold" : "text-brand-blue hover:text-sapphire",
-                )}
-                aria-describedby={instructionsId}
-                tabIndex={0}
-                role="button"
-                aria-label={`${branch.country} — ${branch.city}`}
-                aria-pressed={isActive}
-                onClick={() => onSelect(s.id)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
-                    e.preventDefault();
-                    onSelect(s.id);
-                  }
-                }}
-              />
-            </g>
-          );
-        })}
-
-        {branches.map((b) => {
-          const [x, y] = [((b.coords[0] - 20) * 20), ((34 - b.coords[1]) * 20)];
-          const isActive = b.id === active;
-          return (
-            <g
-              key={b.id}
-              className="cursor-pointer"
-              onClick={() => onSelect(b.id)}
-              aria-hidden
-            >
-              {isActive ? (
-                <circle
-                  cx={x}
-                  cy={y}
-                  r={16}
-                  className="text-gold"
-                  fill="currentColor"
-                  fillOpacity="0.18"
-                  filter="url(#lh-map-glow)"
-                />
-              ) : null}
-              <circle
-                cx={x}
-                cy={y}
-                r={isActive ? 7 : 5}
-                fill="currentColor"
-                className={cn("transition-all duration-300", isActive ? "text-gold" : "text-brand-blue")}
-              />
-              <text
-                x={x + 14}
-                y={y + 5}
-                fontSize="17"
-                className={cn(
-                  "font-display transition-colors duration-300",
-                  isActive ? "fill-gold" : "fill-current text-navy",
-                )}
-              >
-                {b.country}
-              </text>
-            </g>
-          );
-        })}
-      </g>
-    </svg>
+      <RegionalMapLeaflet active={active} onSelect={onSelect} />
+    </ClientOnly>
   );
 }
+
 
 /* ------------------------------------------------------------------ */
 /* Per-branch enquiry form                                             */
@@ -434,16 +233,13 @@ export function RegionalPresence({ id = "network" }: { id?: string }) {
                 <div>
                   <p className="font-semibold">How to use the map</p>
                   <p className="mt-0.5 text-muted-foreground">
-                    Click a country, or press Tab to move through the map and Enter/Space to select it.
-                    The country list to the right also updates the active campus.
+                    Click an emblem marker to open that campus, or use the List view below for a
+                    keyboard-friendly text alternative. Drag to pan and use +/− to zoom.
                   </p>
                 </div>
               </div>
-              <RegionalMap
-                active={active}
-                onSelect={setActive}
-                instructionsId={instructionsId}
-              />
+              <RegionalMap active={active} onSelect={setActive} />
+
             </>
           ) : (
             <div id={listId} className="mt-5 space-y-3">
