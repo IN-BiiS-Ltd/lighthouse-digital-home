@@ -15,7 +15,7 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
-import { primaryNav, secondaryNav, allNav, type NavSection } from "@/lib/site-nav";
+import { primaryNav, familiesNav, communityNav, allNav, type NavSection } from "@/lib/site-nav";
 import {
   Container,
   Wordmark,
