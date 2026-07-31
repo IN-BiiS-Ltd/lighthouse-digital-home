@@ -1,5 +1,5 @@
 import { useMemo, useState, type FormEvent } from "react";
-import { MapPin, Phone, Mail, CheckCircle2, Globe2 } from "lucide-react";
+import { MapPin, Phone, Mail, CheckCircle2, Globe2, Info, List, Map as MapIcon } from "lucide-react";
 import { z } from "zod";
 import { Section, SectionHeading, Eyebrow } from "@/components/blocks";
 import { Input } from "@/components/ui/input";
