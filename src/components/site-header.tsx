@@ -102,7 +102,10 @@ function DesktopDropdown({
         {translatedLabel}
         <ChevronDown className="size-3.5 opacity-70" aria-hidden />
       </SmartLink>
-      <div className="invisible absolute left-1/2 top-full z-50 w-[22rem] -translate-x-1/2 pt-3 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+      {/* Panel: visibility flips instantly (only opacity/transform animate) so
+          the very next Tab press always lands on the first submenu link. */}
+      <div className="invisible absolute left-1/2 top-full z-50 w-[22rem] -translate-x-1/2 pt-3 opacity-0 transition-[opacity,transform] duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+
         <div className="rounded-xl border border-border bg-popover p-3 shadow-[0_24px_60px_-24px_rgba(11,29,58,0.45)]">
           {section.summary ? (
             <p className="px-3 pb-2 pt-1 text-xs leading-relaxed text-muted-foreground">
@@ -118,7 +121,7 @@ function DesktopDropdown({
                     to={child.to}
                     aria-current={childActive ? "page" : undefined}
                     className={cn(
-                      "block rounded-lg border-l-2 px-3 py-2.5 transition-colors hover:bg-secondary",
+                      "block rounded-lg border-l-2 px-3 py-2.5 transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-1",
                       childActive
                         ? "border-gold bg-secondary"
                         : "border-transparent",
