@@ -169,6 +169,7 @@ function RegionalMap({
                   "cursor-pointer transition-all duration-300",
                   isActive ? "text-gold" : "text-brand-blue hover:text-sapphire",
                 )}
+                aria-describedby={instructionsId}
                 tabIndex={0}
                 role="button"
                 aria-label={`${branch.country} — ${branch.city}`}
