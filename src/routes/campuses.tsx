@@ -8,6 +8,8 @@ import exteriorImg from "@/assets/campus-exterior.jpg?w=1600&format=jpg";
 import exteriorImgAvif from "@/assets/campus-exterior.jpg?w=640;960;1280;1600&format=avif&as=srcset";
 import exteriorImgWebp from "@/assets/campus-exterior.jpg?w=640;960;1280;1600&format=webp&as=srcset";
 import { ShareBar } from "@/components/share-bar";
+import { RegionalPresence } from "@/components/regional-presence";
+
 
 export const Route = createFileRoute("/campuses")({
   head: () => ({
@@ -16,8 +18,9 @@ export const Route = createFileRoute("/campuses")({
       {
         name: "description",
         content:
-          "One community, growing across locations. Dokki, Giza is home to our first operational campus, with future campuses planned across Egypt and internationally.",
+          "Lighthouse Campus spans Egypt, Sudan, South Sudan and Uganda. Explore our regional map, campus statuses and contact each branch directly.",
       },
+
       { property: "og:title", content: "Our Campuses — Lighthouse Campus" },
       {
         property: "og:description",
@@ -67,9 +70,12 @@ function Campuses() {
     <>
       <PageHero
         eyebrow="Our Campuses"
-        title="One community, designed to grow across locations."
-        intro="Lighthouse Campus is built for the long term. As we expand, every campus will share the same culture, philosophy and commitment to students."
+        title="One community, present in Egypt, Sudan, South Sudan and Uganda."
+        intro="Lighthouse Campus is built for the long term. Our network now spans four countries, and every campus shares the same culture, philosophy and commitment to students."
       />
+
+      <RegionalPresence id="network" />
+
 
       <Section>
         <SectionHeading

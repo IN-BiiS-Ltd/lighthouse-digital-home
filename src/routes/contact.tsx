@@ -2,6 +2,8 @@ import { useState, type FormEvent } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { MapPin, Phone, Mail, Clock, CheckCircle2 } from "lucide-react";
 import { Section, Eyebrow, SectionHeading } from "@/components/blocks";
+import { RegionalPresence } from "@/components/regional-presence";
+
 import { PageHero } from "@/components/page-hero";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -206,7 +208,9 @@ function Contact() {
         </div>
       </Section>
 
-      <Section tone="muted" id="find">
+      <RegionalPresence id="network" />
+
+      <Section id="find">
         <SectionHeading eyebrow="Find Us" title="Dokki, Giza" />
         <div className="mt-10 overflow-hidden rounded-2xl border border-border">
           <iframe
@@ -217,6 +221,7 @@ function Contact() {
           />
         </div>
       </Section>
+
     </>
   );
 }
