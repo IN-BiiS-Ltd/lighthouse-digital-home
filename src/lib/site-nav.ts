@@ -20,7 +20,7 @@ export interface NavSection {
 }
 
 
-export const primaryNav: NavSection[] = [
+const navSectionsSource: NavSection[] = [
   {
     label: "About",
     to: "/about",
