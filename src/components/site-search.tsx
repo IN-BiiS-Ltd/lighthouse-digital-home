@@ -229,16 +229,17 @@ export function SiteSearch({ variant = "header", className }: SiteSearchProps) {
           </span>
         </span>
         {isHeader ? (
-          <kbd className="hidden items-center gap-1 rounded border border-navy-foreground/30 bg-navy-foreground/10 px-1.5 py-0.5 text-[0.7rem] font-sans text-navy-foreground/70 lg:inline-flex">
+          <kbd className="hidden items-center gap-1 rounded border border-navy-foreground/40 bg-navy px-1.5 py-0.5 text-[0.7rem] font-sans text-navy-foreground lg:inline-flex">
             <span>{isMac ? "⌘" : "Ctrl"}</span>
             <span>K</span>
           </kbd>
         ) : (
-          <kbd className="inline-flex items-center gap-1 rounded border border-navy-foreground/30 bg-navy-foreground/10 px-1.5 py-0.5 text-[0.7rem] font-sans text-navy-foreground/70">
+          <kbd className="inline-flex items-center gap-1 rounded border border-navy-foreground/40 bg-navy px-1.5 py-0.5 text-[0.7rem] font-sans text-navy-foreground">
             <span>{isMac ? "⌘" : "Ctrl"}</span>
             <span>K</span>
           </kbd>
         )}
+
       </button>
 
       <CommandDialog
