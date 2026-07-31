@@ -202,11 +202,14 @@ export function SiteSearch({ variant = "header", className }: SiteSearchProps) {
       <button
         type="button"
         onClick={() => setOpen(true)}
+        // Target of the "Skip to search" link (header instance only).
+        id={variant === "header" ? "site-search-trigger" : undefined}
+        data-site-search-trigger={variant}
         className={cn(
           "group inline-flex items-center gap-2 rounded-md text-sm transition-colors",
           variant === "menu"
             ? "w-full justify-between border border-navy-foreground/20 bg-navy-foreground/5 px-4 py-3 text-navy-foreground hover:bg-navy-foreground/10 hover:text-gold"
-            : "text-navy-foreground/85 hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy",
+            : "text-navy-foreground/85 hover:text-gold",
           className,
         )}
         aria-label={t("search.trigger", "Open search")}
