@@ -86,7 +86,6 @@ export function SkipToContent() {
           if (main) {
             event.preventDefault();
             main.focus();
-            window.history.replaceState(null, "", "#main");
             main.scrollIntoView({ block: "start", behavior: "auto" });
           }
         }}
