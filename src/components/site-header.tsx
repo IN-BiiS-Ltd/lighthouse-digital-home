@@ -111,7 +111,6 @@ function DesktopDropdown({
       className="relative flex items-center"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      onFocus={() => setPinned(true)}
       onBlur={(e) => {
         if (!wrapRef.current?.contains(e.relatedTarget as Node | null)) {
           setPinned(false);
