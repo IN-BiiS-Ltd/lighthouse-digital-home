@@ -138,7 +138,7 @@ function DesktopDropdown({
         aria-expanded={open}
         aria-controls={panelId}
         aria-label={`${translatedLabel} — ${open ? "hide" : "show"} submenu`}
-        onClick={() => setOpen((v) => !v)}
+        onClick={() => (open ? close() : setPinned(true))}
         className={cn(
           "-ml-2 flex size-7 items-center justify-center rounded-md transition-colors hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold",
           active ? "text-gold" : "text-navy-foreground/85",
