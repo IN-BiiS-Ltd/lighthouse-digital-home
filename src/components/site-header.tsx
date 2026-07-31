@@ -237,15 +237,17 @@ export function SiteHeader() {
         </Link>
 
         <nav aria-label={t("nav.primary")} className="hidden items-center xl:flex">
-          {headerNav.map((s) => (
-            <DesktopDropdown
-              key={s.to}
-              section={s}
-              pathname={pathname}
-              translatedLabel={sectionLabel(s, lang, t)}
-            />
-
-          ))}
+          <ul className="flex items-center">
+            {headerNav.map((s) => (
+              <li key={s.to} className="flex items-center">
+                <DesktopDropdown
+                  section={s}
+                  pathname={pathname}
+                  translatedLabel={sectionLabel(s, lang, t)}
+                />
+              </li>
+            ))}
+          </ul>
         </nav>
 
 
