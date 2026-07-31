@@ -194,8 +194,10 @@ export function SiteHeader() {
             <DesktopDropdown
               key={s.to}
               section={s}
+              pathname={pathname}
               translatedLabel={sectionLabel(s, lang, t)}
             />
+
           ))}
         </nav>
 
