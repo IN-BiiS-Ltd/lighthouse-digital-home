@@ -66,7 +66,11 @@ export function SiteFooter() {
   ];
 
   return (
-    <footer className="relative overflow-hidden bg-navy text-navy-foreground">
+    <footer
+      id="site-footer"
+      tabIndex={-1}
+      className="relative overflow-hidden bg-navy text-navy-foreground focus:outline-none"
+    >
       <CrystalField className="opacity-70" />
       <Container className="relative py-16 md:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1.1fr]">
