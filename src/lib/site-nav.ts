@@ -194,4 +194,13 @@ export const secondaryNav: NavSection[] = [
   },
 ];
 
+// "Explore" is split into two shorter menus so no dropdown becomes overly long.
+export const familiesNav: NavSection[] = secondaryNav.filter((s) =>
+  ["/parents", "/news"].includes(s.to),
+);
+
+export const communityNav: NavSection[] = secondaryNav.filter(
+  (s) => !["/parents", "/news"].includes(s.to),
+);
+
 export const allNav: NavSection[] = [...primaryNav, ...secondaryNav];
