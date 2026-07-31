@@ -374,7 +374,7 @@ export function RegionalPresence({ id = "network" }: { id?: string }) {
     <Section id={id} tone="muted">
       <SectionHeading
         eyebrow="Regional Network"
-        title="Lighthouse across Egypt, Sudan, South Sudan and Uganda"
+        title="A connected international presence"
         description="One institution, one philosophy, several homes. Lighthouse Campus is present in Egypt, Sudan, South Sudan and Uganda — each campus sharing the same curriculum architecture, teaching culture and digital learning ecosystem. Select a country on the map to contact that campus directly."
       />
 
@@ -417,9 +417,12 @@ export function RegionalPresence({ id = "network" }: { id?: string }) {
 
           <div className="mt-7 rounded-2xl border border-border bg-card p-7 md:p-9">
             <div className="flex flex-wrap items-center justify-between gap-3">
-              <h3 className="font-display text-2xl font-medium">
-                {branch.country} Campus
-              </h3>
+              <div>
+                <Eyebrow>{branch.country}</Eyebrow>
+                <h3 className="mt-1 font-display text-2xl font-medium">
+                  {branch.city}
+                </h3>
+              </div>
               <span className="eyebrow rounded-full bg-gold/15 px-3 py-1 text-gold-foreground">
                 {branch.status}
               </span>
