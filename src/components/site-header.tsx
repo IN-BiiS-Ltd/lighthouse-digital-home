@@ -109,18 +109,18 @@ function DesktopDropdown({
     <div
       ref={wrapRef}
       className="relative flex items-center"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
-      onFocus={() => setOpen(true)}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      onFocus={() => setPinned(true)}
       onBlur={(e) => {
         if (!wrapRef.current?.contains(e.relatedTarget as Node | null)) {
-          setOpen(false);
+          setPinned(false);
         }
       }}
       onKeyDown={(e) => {
         if (e.key === "Escape" && open) {
           e.stopPropagation();
-          setOpen(false);
+          close();
           toggleRef.current?.focus();
         }
       }}
