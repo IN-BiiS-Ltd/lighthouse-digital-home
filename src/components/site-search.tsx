@@ -173,9 +173,17 @@ export function SiteSearch({ variant = "header", className }: SiteSearchProps) {
         setOpen((prev) => !prev);
       }
     };
+    // Skip link / programmatic opening from anywhere in the shell.
+    const onOpenRequest = () => setOpen(true);
     document.addEventListener("keydown", onKeyDown);
-    return () => document.removeEventListener("keydown", onKeyDown);
-  }, []);
+    if (variant === "header") {
+      document.addEventListener("lighthouse:open-search", onOpenRequest);
+    }
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.removeEventListener("lighthouse:open-search", onOpenRequest);
+    };
+  }, [variant]);
 
   const groups = useMemo(() => groupBySection(allItems, lang), [allItems, lang]);
 
@@ -202,11 +210,14 @@ export function SiteSearch({ variant = "header", className }: SiteSearchProps) {
       <button
         type="button"
         onClick={() => setOpen(true)}
+        // Target of the "Skip to search" link (header instance only).
+        id={variant === "header" ? "site-search-trigger" : undefined}
+        data-site-search-trigger={variant}
         className={cn(
           "group inline-flex items-center gap-2 rounded-md text-sm transition-colors",
           variant === "menu"
             ? "w-full justify-between border border-navy-foreground/20 bg-navy-foreground/5 px-4 py-3 text-navy-foreground hover:bg-navy-foreground/10 hover:text-gold"
-            : "text-navy-foreground/85 hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy",
+            : "text-navy-foreground/85 hover:text-gold",
           className,
         )}
         aria-label={t("search.trigger", "Open search")}
@@ -230,7 +241,12 @@ export function SiteSearch({ variant = "header", className }: SiteSearchProps) {
         )}
       </button>
 
-      <CommandDialog open={open} onOpenChange={setOpen}>
+      <CommandDialog
+        open={open}
+        onOpenChange={setOpen}
+        title={t("search.trigger", "Open search")}
+        description={t("search.placeholder", "Search pages...")}
+      >
         <CommandInput
           placeholder={t("search.placeholder", "Search pages...")}
           aria-label={t("search.placeholder", "Search pages...")}
