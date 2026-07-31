@@ -55,7 +55,7 @@ function LearnerProfile() {
       <PageHero
         breadcrumb={[
           { label: "Home", to: "/" },
-          { label: "Our Model", to: "/our-model" },
+          { label: "Model", to: "/our-model" },
           { label: "Learner Profile" },
         ]}
         eyebrow="The Lighthouse Learner"

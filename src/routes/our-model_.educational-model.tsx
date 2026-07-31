@@ -26,7 +26,7 @@ function EducationalModel() {
       config={{
         breadcrumb: [
           { label: "Home", to: "/" },
-          { label: "Our Model", to: "/our-model" },
+          { label: "Model", to: "/our-model" },
           { label: "Educational Model" },
         ],
         eyebrow: "The Lighthouse Educational Model",

@@ -37,7 +37,7 @@ function Preparatory() {
   return (
     <>
       <PageHero
-        breadcrumb={[{ label: "Home", to: "/" }, { label: "Learning Journey", to: "/learning-journey" }, { label: "Preparatory" }]}
+        breadcrumb={[{ label: "Home", to: "/" }, { label: "Academics", to: "/learning-journey" }, { label: "Preparatory" }]}
         eyebrow="Learning Journey / Preparatory"
         title="Independence, deeper thinking and an expanding view of the world."
         intro="Preparatory learners begin to take greater ownership of their work, relationships and future direction."

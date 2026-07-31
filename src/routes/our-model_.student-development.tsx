@@ -26,7 +26,7 @@ function StudentDevelopment() {
       config={{
         breadcrumb: [
           { label: "Home", to: "/" },
-          { label: "Our Model", to: "/our-model" },
+          { label: "Model", to: "/our-model" },
           { label: "Student Development" },
         ],
         eyebrow: "Growing the Whole Learner",

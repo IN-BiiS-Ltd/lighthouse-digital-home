@@ -49,7 +49,7 @@ function Innovation() {
       <PageHero
         breadcrumb={[
           { label: "Home", to: "/" },
-          { label: "Our Model", to: "/our-model" },
+          { label: "Model", to: "/our-model" },
           { label: "Innovation" },
         ]}
         eyebrow="Innovation with Purpose"

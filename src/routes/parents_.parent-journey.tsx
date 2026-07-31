@@ -22,7 +22,7 @@ function ParentJourney() {
       config={{
         breadcrumb: [
           { label: "Home", to: "/" },
-          { label: "Parents", to: "/parents" },
+          { label: "Families", to: "/parents" },
           { label: "Parent Journey" },
         ],
         eyebrow: "Parents / Parent Journey",
