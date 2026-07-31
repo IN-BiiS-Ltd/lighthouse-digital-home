@@ -36,7 +36,7 @@ function TeachingFramework() {
       config={{
         breadcrumb: [
           { label: "Home", to: "/" },
-          { label: "Our Model", to: "/our-model" },
+          { label: "Model", to: "/our-model" },
           { label: "Teaching Framework" },
         ],
         eyebrow: "Teaching at Lighthouse",

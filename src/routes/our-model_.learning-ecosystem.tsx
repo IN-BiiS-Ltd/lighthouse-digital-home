@@ -37,7 +37,7 @@ export const Route = createFileRoute("/our-model_/learning-ecosystem")({
 const config: ArchitecturalPageConfig = {
   breadcrumb: [
     { label: "Home", to: "/" },
-    { label: "Our Model", to: "/our-model" },
+    { label: "Model", to: "/our-model" },
     { label: "Learning Ecosystem" },
   ],
   eyebrow: "The Learning Ecosystem",

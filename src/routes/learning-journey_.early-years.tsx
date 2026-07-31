@@ -35,7 +35,7 @@ function EarlyYears() {
   return (
     <>
       <PageHero
-        breadcrumb={[{ label: "Home", to: "/" }, { label: "Learning Journey", to: "/learning-journey" }, { label: "Early Years" }]}
+        breadcrumb={[{ label: "Home", to: "/" }, { label: "Academics", to: "/learning-journey" }, { label: "Early Years" }]}
         eyebrow="Learning Journey / Early Years"
         title="Wonder, security and the first foundations of learning."
         intro="Young children learn through movement, play, language, imagination, relationships and direct experience. The Early Years environment protects curiosity while building confidence, communication and belonging."

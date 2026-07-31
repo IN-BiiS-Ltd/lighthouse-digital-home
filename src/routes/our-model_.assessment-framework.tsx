@@ -49,7 +49,7 @@ function AssessmentFramework() {
       <PageHero
         breadcrumb={[
           { label: "Home", to: "/" },
-          { label: "Our Model", to: "/our-model" },
+          { label: "Model", to: "/our-model" },
           { label: "Assessment Framework" },
         ]}
         eyebrow="Assessment for Growth"

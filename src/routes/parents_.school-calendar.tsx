@@ -23,7 +23,7 @@ function Page() {
 const config: PrincipledPageConfig = {
   breadcrumb: [
     { label: "Home", to: "/" },
-    { label: "Parents", to: "/parents" },
+    { label: "Families", to: "/parents" },
     { label: "School Calendar" },
   ],
   eyebrow: "Parents / School Calendar",

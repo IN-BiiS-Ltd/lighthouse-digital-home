@@ -42,7 +42,7 @@ function Primary() {
   return (
     <>
       <PageHero
-        breadcrumb={[{ label: "Home", to: "/" }, { label: "Learning Journey", to: "/learning-journey" }, { label: "Primary" }]}
+        breadcrumb={[{ label: "Home", to: "/" }, { label: "Academics", to: "/learning-journey" }, { label: "Primary" }]}
         eyebrow="Learning Journey / Primary"
         title="Strong foundations for knowledge, character and confident learning."
         intro="Primary students develop secure literacy and numeracy while building knowledge across sciences, humanities, languages, arts and physical education."

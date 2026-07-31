@@ -40,7 +40,7 @@ function Secondary() {
   return (
     <>
       <PageHero
-        breadcrumb={[{ label: "Home", to: "/" }, { label: "Learning Journey", to: "/learning-journey" }, { label: "Secondary" }]}
+        breadcrumb={[{ label: "Home", to: "/" }, { label: "Academics", to: "/learning-journey" }, { label: "Secondary" }]}
         eyebrow="Learning Journey / Secondary"
         title="Scholarship, identity and purposeful direction."
         intro="Secondary students pursue rigorous academic learning while developing the judgement, independence and self-knowledge required for life beyond school."

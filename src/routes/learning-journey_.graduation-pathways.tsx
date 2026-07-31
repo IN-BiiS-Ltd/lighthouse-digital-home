@@ -156,7 +156,7 @@ function GraduationPathways() {
       <PageHero
         breadcrumb={[
           { label: "Home", to: "/" },
-          { label: "Learning Journey", to: "/learning-journey" },
+          { label: "Academics", to: "/learning-journey" },
           { label: "Graduation Pathways" },
         ]}
         eyebrow="Learning Journey / Graduation Pathways"

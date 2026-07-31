@@ -49,7 +49,7 @@ function ParentPartnership() {
       <PageHero
         breadcrumb={[
           { label: "Home", to: "/" },
-          { label: "Our Model", to: "/our-model" },
+          { label: "Model", to: "/our-model" },
           { label: "Parent Partnership" },
         ]}
         eyebrow="Families as Educational Partners"

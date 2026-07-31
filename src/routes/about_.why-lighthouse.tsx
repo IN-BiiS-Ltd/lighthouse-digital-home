@@ -151,7 +151,7 @@ function WhyLighthouse() {
         watermark
         breadcrumb={[
           { label: "Home", to: "/" },
-          { label: "About Lighthouse Campus", to: "/about" },
+          { label: "About", to: "/about" },
           { label: "Why LIGHTHOUSE CAMPUS?" },
         ]}
         eyebrow="Our Promise"

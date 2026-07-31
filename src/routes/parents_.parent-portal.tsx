@@ -22,7 +22,7 @@ export const Route = createFileRoute("/parents_/parent-portal")({
 
 const breadcrumb = [
   { label: "Home", to: "/" },
-  { label: "Parents", to: "/parents" },
+  { label: "Families", to: "/parents" },
   { label: "Parent Portal" },
 ];
 
