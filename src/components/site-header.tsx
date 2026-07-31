@@ -258,14 +258,30 @@ export function SiteHeader() {
                 <div className="mb-5">
                   <SiteSearch variant="menu" />
                 </div>
-                <Accordion type="multiple" className="w-full">
-                  {headerNav.map((s) => (
+                <Accordion
+                  type="multiple"
+                  className="w-full"
+                  defaultValue={headerNav
+                    .filter((s) => isSectionActive(s, pathname))
+                    .map((s) => s.to)}
+                >
+                  {headerNav.map((s) => {
+                    const active = isSectionActive(s, pathname);
+                    return (
                     <AccordionItem
                       key={s.to}
                       value={s.to}
                       className="border-navy-foreground/12"
                     >
-                      <AccordionTrigger className="py-3 text-left text-base font-medium text-navy-foreground hover:no-underline">
+                      <AccordionTrigger
+                        className={cn(
+                          "border-l-2 py-3 pl-3 text-left text-base font-medium hover:no-underline",
+                          active
+                            ? "border-gold text-gold"
+                            : "border-transparent text-navy-foreground",
+                        )}
+                        aria-current={active ? "true" : undefined}
+                      >
                         {sectionLabel(s, lang, t)}
                       </AccordionTrigger>
                       <AccordionContent className="pb-3">
@@ -274,29 +290,44 @@ export function SiteHeader() {
                             <SheetClose asChild>
                               <SmartLink
                                 to={s.to}
-                                className="block rounded-md px-3 py-2 text-sm font-medium text-gold hover:bg-navy-foreground/10"
+                                aria-current={pathname === s.to ? "page" : undefined}
+                                className={cn(
+                                  "block rounded-md px-3 py-2 text-sm font-medium text-gold hover:bg-navy-foreground/10",
+                                  pathname === s.to && "bg-navy-foreground/10",
+                                )}
                               >
                                 {t("nav.overview")}
                               </SmartLink>
                             </SheetClose>
                           </li>
-                          {(s.children ?? []).map((c) => (
+                          {(s.children ?? []).map((c) => {
+                            const childActive = pathname === c.to;
+                            return (
                             <li key={c.to}>
                               <SheetClose asChild>
                                 <SmartLink
                                   to={c.to}
-                                  className="block rounded-md px-3 py-2 text-sm text-navy-foreground/80 hover:bg-navy-foreground/10 hover:text-navy-foreground"
+                                  aria-current={childActive ? "page" : undefined}
+                                  className={cn(
+                                    "block rounded-md px-3 py-2 text-sm hover:bg-navy-foreground/10 hover:text-navy-foreground",
+                                    childActive
+                                      ? "bg-navy-foreground/10 font-medium text-gold"
+                                      : "text-navy-foreground/80",
+                                  )}
                                 >
                                   {c.label}
                                 </SmartLink>
                               </SheetClose>
                             </li>
-                          ))}
+                            );
+                          })}
                         </ul>
                       </AccordionContent>
                     </AccordionItem>
-                  ))}
+                    );
+                  })}
                 </Accordion>
+
                 <div className="mt-6 grid gap-3">
                   <SheetClose asChild>
                     <ButtonLink
