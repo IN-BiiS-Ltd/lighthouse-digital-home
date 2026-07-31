@@ -129,7 +129,9 @@ function RegionalMap({
       viewBox="20 30 372 700"
       role="img"
       aria-label="Map of the Lighthouse Campus network across Egypt, Sudan, South Sudan and Uganda"
-      className="w-full"
+      preserveAspectRatio="xMidYMid meet"
+      className="mx-auto mt-4 h-[clamp(320px,52vh,560px)] w-full"
+
     >
       <defs>
         <linearGradient id="lh-map-fill" x1="0" y1="0" x2="0" y2="1">
