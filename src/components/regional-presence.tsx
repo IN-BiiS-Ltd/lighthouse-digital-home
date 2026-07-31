@@ -233,16 +233,13 @@ export function RegionalPresence({ id = "network" }: { id?: string }) {
                 <div>
                   <p className="font-semibold">How to use the map</p>
                   <p className="mt-0.5 text-muted-foreground">
-                    Click a country, or press Tab to move through the map and Enter/Space to select it.
-                    The country list to the right also updates the active campus.
+                    Click an emblem marker to open that campus, or use the List view below for a
+                    keyboard-friendly text alternative. Drag to pan and use +/− to zoom.
                   </p>
                 </div>
               </div>
-              <RegionalMap
-                active={active}
-                onSelect={setActive}
-                instructionsId={instructionsId}
-              />
+              <RegionalMap active={active} onSelect={setActive} />
+
             </>
           ) : (
             <div id={listId} className="mt-5 space-y-3">
