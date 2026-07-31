@@ -120,9 +120,11 @@ const shapes: { id: string; points: string }[] = [
 function RegionalMap({
   active,
   onSelect,
+  instructionsId,
 }: {
   active: string;
   onSelect: (id: string) => void;
+  instructionsId: string;
 }) {
   return (
     <svg
