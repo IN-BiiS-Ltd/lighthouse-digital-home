@@ -53,18 +53,39 @@ function sectionLabel(
   return key ? t(key, section.label) : section.label;
 }
 
+/** True when the current pathname belongs to this section (overview or child). */
+function isPathIn(to: string, pathname: string): boolean {
+  return pathname === to || pathname.startsWith(`${to}/`) || pathname.startsWith(`${to}_`);
+}
+
+function isSectionActive(section: NavSection, pathname: string): boolean {
+  if (isPathIn(section.to, pathname)) return true;
+  return (section.children ?? []).some((c) => isPathIn(c.to, pathname));
+}
+
 function DesktopDropdown({
   section,
   translatedLabel,
+  pathname,
 }: {
   section: NavSection;
   translatedLabel: string;
+  pathname: string;
 }) {
+  const active = isSectionActive(section, pathname);
+  const linkClass = cn(
+    "relative flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors hover:text-gold group-focus-within:text-gold",
+    active ? "text-gold" : "text-navy-foreground/85",
+    "after:absolute after:inset-x-3 after:bottom-1 after:h-0.5 after:rounded-full after:bg-gold after:transition-transform after:duration-200",
+    active ? "after:scale-x-100" : "after:scale-x-0",
+  );
+
   if (!section.children?.length) {
     return (
       <SmartLink
         to={section.to}
-        className="px-3 py-2 text-sm font-medium text-navy-foreground/85 transition-colors hover:text-gold"
+        className={linkClass}
+        aria-current={active ? "page" : undefined}
       >
         {translatedLabel}
       </SmartLink>
@@ -74,8 +95,9 @@ function DesktopDropdown({
     <div className="group relative">
       <SmartLink
         to={section.to}
-        className="relative flex items-center gap-1 px-3 py-2 text-sm font-medium text-navy-foreground/85 transition-colors hover:text-gold group-focus-within:text-gold"
+        className={linkClass}
         aria-haspopup="true"
+        aria-current={active ? "page" : undefined}
       >
         {translatedLabel}
         <ChevronDown className="size-3.5 opacity-70" aria-hidden />
@@ -88,29 +110,44 @@ function DesktopDropdown({
             </p>
           ) : null}
           <ul className="grid gap-0.5">
-            {section.children.map((child) => (
-              <li key={child.to}>
-                <SmartLink
-                  to={child.to}
-                  className="block rounded-lg px-3 py-2.5 transition-colors hover:bg-secondary"
-                >
-                  <span className="block text-sm font-medium text-foreground">
-                    {child.label}
-                  </span>
-                  {child.description ? (
-                    <span className="mt-0.5 block text-xs leading-snug text-muted-foreground">
-                      {child.description}
+            {section.children.map((child) => {
+              const childActive = pathname === child.to;
+              return (
+                <li key={child.to}>
+                  <SmartLink
+                    to={child.to}
+                    aria-current={childActive ? "page" : undefined}
+                    className={cn(
+                      "block rounded-lg border-l-2 px-3 py-2.5 transition-colors hover:bg-secondary",
+                      childActive
+                        ? "border-gold bg-secondary"
+                        : "border-transparent",
+                    )}
+                  >
+                    <span
+                      className={cn(
+                        "block text-sm font-medium",
+                        childActive ? "text-sapphire" : "text-foreground",
+                      )}
+                    >
+                      {child.label}
                     </span>
-                  ) : null}
-                </SmartLink>
-              </li>
-            ))}
+                    {child.description ? (
+                      <span className="mt-0.5 block text-xs leading-snug text-muted-foreground">
+                        {child.description}
+                      </span>
+                    ) : null}
+                  </SmartLink>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>
     </div>
   );
 }
+
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
