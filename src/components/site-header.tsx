@@ -220,7 +220,7 @@ export function SiteHeader() {
                   <SiteSearch variant="menu" />
                 </div>
                 <Accordion type="multiple" className="w-full">
-                  {allNav.map((s) => (
+                  {headerNav.map((s) => (
                     <AccordionItem
                       key={s.to}
                       value={s.to}
