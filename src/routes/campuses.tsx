@@ -18,8 +18,9 @@ export const Route = createFileRoute("/campuses")({
       {
         name: "description",
         content:
-          "One community, growing across locations. Dokki, Giza is home to our first operational campus, with future campuses planned across Egypt and internationally.",
+          "Lighthouse Campus spans Egypt, Sudan, South Sudan and Uganda. Explore our regional map, campus statuses and contact each branch directly.",
       },
+
       { property: "og:title", content: "Our Campuses — Lighthouse Campus" },
       {
         property: "og:description",
