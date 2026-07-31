@@ -116,24 +116,28 @@ async def check_skip_to_search(page, label: str) -> None:
     await page.keyboard.press("Tab")
     await page.keyboard.press("Tab")
     await page.keyboard.press("Enter")
-    try:
-        await page.wait_for_selector("[role='dialog'] input", timeout=4000)
-    except Exception:
-        fail(f"{label}: skip-to-search did not open the search dialog")
-        return
-    await page.wait_for_timeout(500)
-    state = await page.evaluate(
-        """() => ({
-          dialogs: document.querySelectorAll("[role='dialog']").length,
-          tag: document.activeElement?.tagName,
-        })"""
-    )
-    if state["dialogs"] == 0:
-        fail(f"{label}: skip-to-search did not open the search dialog")
-    elif state["tag"] != "INPUT":
-        fail(f"{label}: search dialog opened but focus is on {state['tag']}, expected the input")
+
+    # Poll until the command palette mounts and focus lands in its input.
+    focused_input = False
+    for _ in range(20):
+        await page.wait_for_timeout(200)
+        focused_input = await page.evaluate(
+            """() => {
+              const a = document.activeElement;
+              return !!a && a.tagName === 'INPUT'
+                && !!a.closest("[role='dialog'],[cmdk-root]");
+            }"""
+        )
+        if focused_input:
+            break
+
+    if not focused_input:
+        tag = await page.evaluate("document.activeElement?.tagName || '(none)'")
+        fail(f"{label}: skip-to-search did not focus the search input (focus on {tag})")
+
     await page.keyboard.press("Escape")
-    await page.wait_for_timeout(300)
+    await page.wait_for_timeout(400)
+
 
 
 async def check_header_disclosure(page, label: str) -> None:
