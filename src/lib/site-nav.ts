@@ -39,7 +39,7 @@ export const primaryNav: NavSection[] = [
     ],
   },
   {
-    label: "Our Model",
+    label: "Model",
     to: "/our-model",
     summary: "How education, relationships, leadership and intelligence work together at Lighthouse Campus.",
     children: [
@@ -56,8 +56,8 @@ export const primaryNav: NavSection[] = [
     ],
   },
   {
-    label: "Academics & Learning Journey",
-    label_ar: "الأكاديميات ومسار التعلّم",
+    label: "Academics",
+    label_ar: "الأكاديميات",
     to: "/learning-journey",
     summary: "One continuous path from Early Years to graduation, and the academic programme behind it.",
     children: [
@@ -77,7 +77,7 @@ export const primaryNav: NavSection[] = [
     ],
   },
   {
-    label: "Student Life",
+    label: "Students",
     to: "/student-life",
     summary: "Community, wellbeing and belonging beyond the classroom.",
     children: [
@@ -132,7 +132,7 @@ export const primaryNav: NavSection[] = [
 // Secondary sections grouped under an "Explore" menu and in the footer.
 export const secondaryNav: NavSection[] = [
   {
-    label: "Parents",
+    label: "Families",
     to: "/parents",
     summary: "Partnership, communication and resources for families.",
     children: [
@@ -147,7 +147,7 @@ export const secondaryNav: NavSection[] = [
     ],
   },
   {
-    label: "News & Insights",
+    label: "News",
     to: "/news",
     summary: "Stories, articles and educational thinking.",
     children: [
@@ -185,7 +185,7 @@ export const secondaryNav: NavSection[] = [
     ],
   },
   {
-    label: "Digital Ecosystem",
+    label: "Digital",
     to: "/explore/digital-ecosystem",
     summary: "Connected services designed around the learner and the community.",
     children: [
