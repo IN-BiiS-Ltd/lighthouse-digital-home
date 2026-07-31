@@ -285,7 +285,7 @@ export function SiteHeader() {
                       rel="noopener noreferrer"
                       aria-label="Apply for admission to Lighthouse Campus"
                     >
-                      {t("nav.admissions")}
+                      {t("nav.apply")}
                     </ButtonLink>
                   </SheetClose>
                   <SheetClose asChild>
