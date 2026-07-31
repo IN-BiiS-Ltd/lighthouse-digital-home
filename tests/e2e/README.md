@@ -30,3 +30,23 @@ summary and a list of failures is printed at the end.
 `routes.json` mirrors the entries in `src/lib/site-nav.ts` plus a few
 top-level pages (`/`, `/contact`, `/careers`). When you add a new route
 under `src/routes/`, add its URL there so the smoke test picks it up.
+
+## Accessibility regression suite
+
+```bash
+npm run test:a11y     # python3 tests/e2e/a11y_navigation.py
+```
+
+Runs on desktop (1280×1800) and mobile (390×844) across 10 representative
+routes and checks, on every page **and after client-side route changes /
+history back**:
+
+- axe-core scan (fails on serious/critical; decorative `aria-hidden` nodes excluded)
+- "Skip to main content" is the first Tab stop and moves focus to `<main id="main">`
+- "Skip to search" opens the command palette with focus in its input
+- Header disclosure buttons expose `aria-expanded` / `aria-controls`, and
+  Escape collapses them and returns focus to the trigger
+- Focus indicators are actually rendered for keyboard users
+
+Contexts use `reduced_motion="reduce"` so reveal animations are never scanned
+mid-transition. Exit code is non-zero on any failure.

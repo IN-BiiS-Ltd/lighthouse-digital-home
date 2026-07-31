@@ -327,7 +327,13 @@ function ProspectusPage() {
           ))}
         </div>
 
-        <div className="mt-12 overflow-x-auto rounded-xl border border-border bg-card">
+        <div
+          className="mt-12 overflow-x-auto rounded-xl border border-border bg-card"
+          tabIndex={0}
+          role="region"
+          aria-label={c.programmes.tableCaption}
+        >
+
           <table className="w-full min-w-[40rem] text-start text-sm">
             <caption className="sr-only">{c.programmes.tableCaption}</caption>
             <thead className="bg-navy text-navy-foreground">
