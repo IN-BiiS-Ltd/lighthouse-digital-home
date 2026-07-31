@@ -69,9 +69,12 @@ function Campuses() {
     <>
       <PageHero
         eyebrow="Our Campuses"
-        title="One community, designed to grow across locations."
-        intro="Lighthouse Campus is built for the long term. As we expand, every campus will share the same culture, philosophy and commitment to students."
+        title="One community, present in Egypt, Sudan, South Sudan and Uganda."
+        intro="Lighthouse Campus is built for the long term. Our network now spans four countries, and every campus shares the same culture, philosophy and commitment to students."
       />
+
+      <RegionalPresence id="network" />
+
 
       <Section>
         <SectionHeading
