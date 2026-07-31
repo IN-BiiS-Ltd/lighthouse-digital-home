@@ -161,12 +161,21 @@ export function SiteHeader() {
             />
           ))}
           <DesktopDropdown
-            translatedLabel={t("nav.explore")}
+            translatedLabel="Families & News"
             section={{
-              label: "Explore",
+              label: "Families & News",
+              to: "/parents",
+              summary: "Partnership, communication and stories from campus life.",
+              children: familiesNav.flatMap((s) => s.children ?? []),
+            }}
+          />
+          <DesktopDropdown
+            translatedLabel="Community"
+            section={{
+              label: "Community",
               to: "/community",
-              summary: t("nav.explore-summary"),
-              children: secondaryNav.flatMap((s) => s.children ?? []),
+              summary: "Campuses, partnerships, careers and our digital ecosystem.",
+              children: communityNav.flatMap((s) => s.children ?? []),
             }}
           />
         </nav>
