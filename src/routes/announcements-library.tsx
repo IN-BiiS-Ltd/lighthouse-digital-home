@@ -26,6 +26,31 @@ type Poster = {
 
 const POSTERS: Poster[] = [
   {
+    key: "prek-kg1-en",
+    base: "/admissions-prek-kg1-2026-2027-en",
+    title: "Pre-K & KG1 registration 2026 / 2027 — English edition",
+    titleAr: "إعلان تسجيل Pre-K و KG1 ٢٠٢٦ / ٢٠٢٧ — النسخة الإنجليزية",
+    summary:
+      "Early years admissions announcement for Pre-K (2 years 6 months) and KG1 (3 years 6 months), with campus address and enquiry line.",
+    category: "Admissions",
+    approved: "2026-08-09",
+    approvedLabel: "9 August 2026",
+    size: "PNG 2.1 MB · 1019 × 1543",
+  },
+  {
+    key: "prek-kg1-ar",
+    base: "/admissions-prek-kg1-2026-2027-ar",
+    title: "Pre-K & KG1 registration 2026 / 2027 — Arabic edition",
+    titleAr: "إعلان تسجيل Pre-K و KG1 ٢٠٢٦ / ٢٠٢٧ — النسخة العربية",
+    summary:
+      "النسخة العربية من إعلان القبول والتسجيل لمرحلتي Pre-K و KG1 للعام الدراسي ٢٠٢٦ / ٢٠٢٧ مع بيانات التواصل والعنوان.",
+    category: "Admissions",
+    approved: "2026-08-09",
+    approvedLabel: "9 August 2026",
+    size: "PNG 2.1 MB · 1016 × 1548",
+  },
+  {
+
     key: "admissions-a",
     base: "/admissions-2026-2027-a",
     title: "Registration 2026 / 2027 — official campus edition",

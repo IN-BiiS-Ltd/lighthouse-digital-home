@@ -77,13 +77,29 @@ function RegistrationStrip() {
 
 const POSTERS = [
   {
+    key: "prek-kg1-en",
+    base: "/admissions-prek-kg1-2026-2027-en",
+    title: "إعلان تسجيل Pre-K و KG1 — النسخة الإنجليزية",
+    caption:
+      "Pre-K & KG1 registration announcement 2026 / 2027 — English edition.",
+  },
+  {
+    key: "prek-kg1-ar",
+    base: "/admissions-prek-kg1-2026-2027-ar",
+    title: "إعلان تسجيل Pre-K و KG1 — النسخة العربية",
+    caption:
+      "Pre-K & KG1 registration announcement 2026 / 2027 — Arabic edition.",
+  },
+  {
     key: "a",
+    base: "/admissions-2026-2027-a",
     title: "إعلان التسجيل — النسخة الرسمية",
     caption:
       "Registration announcement 2026 / 2027 — official campus edition.",
   },
   {
     key: "b",
+    base: "/admissions-2026-2027-b",
     title: "إعلان التسجيل — نسخة التنوع الدولي",
     caption:
       "Registration announcement 2026 / 2027 — international diversity edition.",
@@ -104,18 +120,11 @@ function PosterGallery() {
       <div className="mt-8 grid gap-8 sm:grid-cols-2">
         {POSTERS.map((p) => (
           <figure key={p.key} className="rounded-2xl border border-gold/30 bg-card p-4">
-            <a
-              href={`/admissions-2026-2027-${p.key}.png`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href={`${p.base}.png`} target="_blank" rel="noopener noreferrer">
               <picture>
-                <source
-                  srcSet={`/admissions-2026-2027-${p.key}.webp`}
-                  type="image/webp"
-                />
+                <source srcSet={`${p.base}.webp`} type="image/webp" />
                 <img
-                  src={`/admissions-2026-2027-${p.key}.png`}
+                  src={`${p.base}.png`}
                   alt={`${p.caption} Lighthouse Campus registration poster.`}
                   width={1024}
                   height={1536}
@@ -130,7 +139,7 @@ function PosterGallery() {
               </p>
               <p className="text-sm text-muted-foreground">{p.caption}</p>
               <ButtonLink
-                to={`/admissions-2026-2027-${p.key}.png`}
+                to={`${p.base}.png`}
                 variant="outline"
                 size="sm"
                 target="_blank"
@@ -142,7 +151,7 @@ function PosterGallery() {
                 className="pt-3"
                 label="Share"
                 title={`${p.caption} — Lighthouse Campus`}
-                url={`/admissions-2026-2027-${p.key}.png`}
+                url={`${p.base}.png`}
               />
             </figcaption>
           </figure>
@@ -151,6 +160,7 @@ function PosterGallery() {
     </Section>
   );
 }
+
 
 function Page() {
   return (
