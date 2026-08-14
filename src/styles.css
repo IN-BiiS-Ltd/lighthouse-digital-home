@@ -183,6 +183,9 @@ html[dir="rtl"] .rtl-flip {
   --indigo-deep: oklch(0.215 0.155 283);
   --silver: oklch(0.9 0.014 280);
   --sand: oklch(0.965 0.014 88);
+  /* Borrowed secondary accents — modern air without diluting Lapis identity */
+  --soft-sky: oklch(0.96 0.025 245);
+  --azure-hero: oklch(0.42 0.16 250);
 
   --sidebar: oklch(0.245 0.165 282);
   --sidebar-foreground: oklch(0.96 0.016 88);
