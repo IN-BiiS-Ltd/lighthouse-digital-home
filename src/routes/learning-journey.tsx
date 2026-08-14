@@ -130,7 +130,7 @@ function LearningJourney() {
               </>
             );
             const cls =
-              "group block rounded-2xl border border-border bg-card p-6 transition-colors hover:border-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold";
+              "group block rounded-2xl border border-border bg-soft-sky p-6 transition-colors hover:border-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold";
             return item.anchor ? (
               <a key={item.label} href={item.to} className={cls}>
                 {inner}
