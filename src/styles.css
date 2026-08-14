@@ -99,6 +99,10 @@ html[dir="rtl"] .rtl-flip {
   --color-silver: var(--silver);
   --color-sand: var(--sand);
 
+  /* Borrowed secondary accents — keep Lapis identity, add subtle modern air */
+  --color-soft-sky: var(--soft-sky);
+  --color-azure-hero: var(--azure-hero);
+
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
