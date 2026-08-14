@@ -100,21 +100,21 @@ function LearningJourney() {
               label: "Overview",
               ar: "نظرة عامة",
               body: "The journey at a glance — five continuous chapters.",
-              to: "#journey-overview" as const,
+              to: "#journey-overview",
               anchor: true,
             },
             {
               label: "Programme",
               ar: "البرنامج",
               body: "Curriculum, teaching approach, languages, STEM and arts.",
-              to: "/academic-experience" as const,
+              to: "/academic-experience",
               anchor: false,
             },
             {
               label: "Stages",
               ar: "المراحل",
               body: "Early Years through Graduation Pathways, stage by stage.",
-              to: "#early-years" as const,
+              to: "#early-years",
               anchor: true,
             },
           ].map((item) => {
@@ -136,7 +136,7 @@ function LearningJourney() {
                 {inner}
               </a>
             ) : (
-              <Link key={item.label} to={item.to} className={cls}>
+              <Link key={item.label} to={item.to as "/academic-experience"} className={cls}>
                 {inner}
               </Link>
             );
