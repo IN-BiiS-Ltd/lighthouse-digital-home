@@ -99,6 +99,10 @@ html[dir="rtl"] .rtl-flip {
   --color-silver: var(--silver);
   --color-sand: var(--sand);
 
+  /* Borrowed secondary accents — keep Lapis identity, add subtle modern air */
+  --color-soft-sky: var(--soft-sky);
+  --color-azure-hero: var(--azure-hero);
+
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -179,6 +183,9 @@ html[dir="rtl"] .rtl-flip {
   --indigo-deep: oklch(0.215 0.155 283);
   --silver: oklch(0.9 0.014 280);
   --sand: oklch(0.965 0.014 88);
+  /* Borrowed secondary accents — modern air without diluting Lapis identity */
+  --soft-sky: oklch(0.96 0.025 245);
+  --azure-hero: oklch(0.42 0.16 250);
 
   --sidebar: oklch(0.245 0.165 282);
   --sidebar-foreground: oklch(0.96 0.016 88);
@@ -303,6 +310,33 @@ html[dir="rtl"] .rtl-flip {
   margin-inline: auto;
   max-width: 80rem;
   padding-inline: 1.5rem;
+}
+
+/* Soft section/cards — borrowed modern-air blue, never replaces Lapis identity */
+@utility bg-soft-sky {
+  background-color: var(--soft-sky);
+}
+@utility text-soft-sky {
+  color: var(--soft-sky);
+}
+@utility border-soft-sky {
+  border-color: var(--soft-sky);
+}
+
+/* Hero-only secondary blue accent — deep azure for cinematic gradient layers */
+@utility bg-azure-hero {
+  background-color: var(--azure-hero);
+}
+@utility text-azure-hero {
+  color: var(--azure-hero);
+}
+@utility hero-azure-glow {
+  background: radial-gradient(
+    120% 80% at 50% 0%,
+    color-mix(in oklab, var(--azure-hero) 42%, transparent) 0%,
+    color-mix(in oklab, var(--navy) 82%, transparent) 55%,
+    transparent 100%
+  );
 }
 
 /*
