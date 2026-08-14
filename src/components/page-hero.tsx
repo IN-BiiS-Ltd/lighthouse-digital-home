@@ -49,6 +49,8 @@ export function PageHero({
             "radial-gradient(90% 100% at 50% 30%, transparent 30%, color-mix(in oklab, var(--navy) 60%, transparent) 100%)",
         }}
       />
+      {/* Secondary azure glow — reserved for cinematic hero accents only */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 hero-azure-glow opacity-60" />
       {watermark ? <WatermarkFloat side="right" /> : null}
       <BrandAtmosphere density={0.7} />
       <CrystalField className="opacity-70" />
