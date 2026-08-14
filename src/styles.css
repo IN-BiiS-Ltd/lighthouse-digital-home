@@ -312,6 +312,33 @@ html[dir="rtl"] .rtl-flip {
   padding-inline: 1.5rem;
 }
 
+/* Soft section/cards — borrowed modern-air blue, never replaces Lapis identity */
+@utility bg-soft-sky {
+  background-color: var(--soft-sky);
+}
+@utility text-soft-sky {
+  color: var(--soft-sky);
+}
+@utility border-soft-sky {
+  border-color: var(--soft-sky);
+}
+
+/* Hero-only secondary blue accent — deep azure for cinematic gradient layers */
+@utility bg-azure-hero {
+  background-color: var(--azure-hero);
+}
+@utility text-azure-hero {
+  color: var(--azure-hero);
+}
+@utility hero-azure-glow {
+  background: radial-gradient(
+    120% 80% at 50% 0%,
+    color-mix(in oklab, var(--azure-hero) 42%, transparent) 0%,
+    color-mix(in oklab, var(--navy) 82%, transparent) 55%,
+    transparent 100%
+  );
+}
+
 /*
  * CINEMATIC BRAND LAYER
  * ------------------------------------------------
